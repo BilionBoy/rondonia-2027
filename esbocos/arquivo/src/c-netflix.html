@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esboço C · Netflix</title>
+<style>
+:root{--fundo:#0b0b0d;--card:#18181c;--texto:#f6f3ec;--apagado:#9a9aa3;--ambar:#f5b334;--ambar2:rgba(245,179,52,.28);--coral:#ff6b4f;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--fundo);color:var(--texto);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow:hidden}
+body{display:grid;grid-template-rows:minmax(300px,44svh) 1fr;height:100svh}
+.num{font-variant-numeric:tabular-nums}
+/* destaque */
+.hero{position:relative;overflow:hidden;padding:clamp(18px,3vw,56px) clamp(16px,3.4vw,64px) 18px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero .fundo{position:absolute;inset:0;transition:background 1s}
+.hero .fundo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--fundo) 18%,rgba(11,11,13,.35) 60%,rgba(11,11,13,.85)),linear-gradient(0deg,var(--fundo),transparent 45%)}
+.hero .eco{position:absolute;right:-1vw;bottom:-6vh;font-size:clamp(9rem,30vw,30rem);font-weight:900;letter-spacing:-.06em;line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.10);pointer-events:none;transition:opacity .6s}
+.hero .area{font-size:clamp(.66rem,.8vw,.82rem);letter-spacing:.2em;text-transform:uppercase;color:var(--ambar);position:relative}
+.hero h1{position:relative;margin:.15em 0 .05em;font-size:clamp(2.8rem,8vw,7.6rem);font-weight:850;letter-spacing:-.05em;line-height:.88}
+.hero .nome{position:relative;color:var(--apagado);font-size:clamp(.85rem,1.2vw,1.15rem);max-width:56ch}
+.hero .chips{position:relative;display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 12px;font-size:clamp(.82rem,1.15vw,1.1rem)}
+.hero .chips b{font-weight:700} .hero .chips .atr{color:var(--coral)}
+.hero .barra{position:relative;height:6px;border-radius:3px;background:rgba(255,255,255,.12);max-width:620px}
+.hero .barra i{position:absolute;left:0;top:0;bottom:0;border-radius:3px;transition:width 1s cubic-bezier(.2,.7,.1,1)}
+.hero .barra .c{background:var(--ambar2)} .hero .barra .p{background:var(--ambar)}
+.hero .barra .t{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--texto);left:76.7%}
+.hero .acoes{position:relative;display:flex;gap:10px;margin-top:16px}
+.hero button{border:0;border-radius:6px;padding:10px 18px;font:inherit;font-size:.9rem;font-weight:650;cursor:pointer}
+.hero .b1{background:var(--texto);color:var(--fundo)} .hero .b2{background:rgba(255,255,255,.14);color:var(--texto)}
+.troco{transition:opacity .35s}.troco.sai{opacity:0}
+/* fileiras */
+.fileiras{overflow-y:auto;padding:4px 0 24px;scrollbar-width:none}
+.fileiras::-webkit-scrollbar{display:none}
+.fila{margin:0 0 clamp(10px,1.4vh,18px)}
+.fila h2{margin:0 0 8px;padding:0 clamp(16px,3.4vw,64px);font-size:clamp(.85rem,1.1vw,1.1rem);font-weight:650;letter-spacing:-.01em}
+.fila h2 span{color:var(--apagado);font-weight:400;margin-left:8px;font-size:.85em}
+.trilho{display:flex;gap:6px;overflow-x:auto;padding:10px clamp(16px,3.4vw,64px) 14px;scroll-padding-inline:clamp(16px,3.4vw,64px);scroll-snap-type:x proximity;scrollbar-width:none}
+.trilho::-webkit-scrollbar{display:none}
+.card{all:unset;box-sizing:border-box;flex:0 0 auto;height:clamp(76px,10vh,104px);border-radius:6px;background:linear-gradient(160deg,#222228,#141418);position:relative;cursor:pointer;scroll-snap-align:start;
+  padding:9px 10px;transition:transform .22s cubic-bezier(.2,.7,.1,1),box-shadow .22s;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.card:hover,.card:focus-visible{transform:scale(1.12);z-index:3;box-shadow:0 18px 40px rgba(0,0,0,.6),0 0 0 2px var(--texto)}
+.card .s{font-weight:800;font-size:clamp(.8rem,1vw,1rem);letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .pc{font-weight:300;font-size:clamp(1.1rem,1.7vw,1.7rem);letter-spacing:-.03em;line-height:1;margin-bottom:6px}
+.card.atr .pc{color:var(--coral)}
+.card .v{position:absolute;right:10px;bottom:12px;font-size:.68rem;color:var(--apagado);opacity:0;transition:opacity .2s}
+.card:hover .v,.card:focus-visible .v{opacity:1}
+.card .nv{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08)}
+.card .nv i{position:absolute;left:0;top:0;bottom:0}
+.card .nv .c{background:var(--ambar2)} .card .nv .p{background:var(--ambar)}
+.card .nv b{position:absolute;top:-3px;bottom:0;width:2px;background:var(--texto);left:76.7%;opacity:.7}
+.troca{position:fixed;top:10px;right:12px;z-index:20;display:flex;gap:4px;font-family:var(--mono);font-size:.7rem}
+.troca a{color:var(--apagado);text-decoration:none;border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:3px 7px;background:var(--fundo)}
+.troca a.on{color:var(--fundo);background:var(--texto)}
+/* ficha */
+.veu{position:fixed;inset:0;background:rgba(0,0,0,.7);opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.veu.on{opacity:1;pointer-events:auto}
+.ficha{position:fixed;z-index:11;left:50%;top:50%;transform:translate(-50%,-46%) scale(.97);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.2,.7,.1,1);display:flex;gap:16px;max-width:94vw}
+.ficha.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.cartao{width:min(460px,90vw);background:#17171b;border-radius:12px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+.cartao .topo{padding:22px 24px 16px;background:linear-gradient(160deg,#2a2a31,#17171b)}
+.cartao .topo .area{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ambar)}
+.cartao h3{margin:6px 0 4px;font-size:2.2rem;font-weight:850;letter-spacing:-.05em}
+.cartao .nome{color:var(--apagado);font-size:.85rem}
+.cartao dl{margin:0;padding:16px 24px;display:grid;grid-template-columns:1fr auto;gap:9px 16px;font-size:.9rem}
+.cartao dt{color:var(--apagado)}.cartao dd{margin:0;text-align:right;font-weight:650;font-variant-numeric:tabular-nums}
+.cartao .meses{display:flex;gap:4px;align-items:flex-end;height:70px;padding:0 24px}
+.cartao .meses div{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.6rem;color:var(--apagado)}
+.cartao .meses i{display:block;width:70%;background:var(--ambar);border-radius:2px}
+.cartao .acao{display:flex;gap:8px;padding:14px 24px 20px}
+.cartao button{border:0;border-radius:6px;padding:9px 14px;font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;background:rgba(255,255,255,.12);color:var(--texto)}
+@media (max-width:700px){body{grid-template-rows:auto 1fr}.hero{min-height:46svh}.ficha{flex-direction:column;max-height:92svh;overflow:auto}}
+</style>
+</head>
+<body>
+<nav class="troca"><a href="a-o-ano-passando.html">A</a><a href="b-vidro-e-liquido.html">B</a><a class="on" href="c-netflix.html">C</a></nav>
+<section class="hero" id="hero" aria-live="polite">
+  <div class="fundo" id="hFundo"></div><div class="eco num" id="hEco"></div>
+  <div class="troco" id="hTroco">
+    <div class="area" id="hArea"></div>
+    <h1 id="hTit"></h1>
+    <div class="nome" id="hNome"></div>
+    <div class="chips num" id="hChips"></div>
+    <div class="barra"><i class="c" id="hC"></i><i class="p" id="hP"></i><span class="t"></span></div>
+    <div class="acoes"><button class="b1" id="hAbrir">Ver ficha</button><button class="b2" id="hEstado">Rondônia inteira</button></div>
+  </div>
+</section>
+<main class="fileiras" id="fileiras"></main>
+<div class="veu" id="veu"></div>
+<div class="ficha" id="ficha" role="dialog" aria-modal="true"></div>
+<script>
+const D=/*__DADOS__*/null;
+const ROT={'FUNPRECAP':'IPERON · fundo','RECURSOS-SEFIN':'Encargos · SEFIN'};
+const TEMPO=280/365,MES=['jan','fev','mar','abr','mai','jun','jul','ago','set','out'];
+const br=(v,c=0)=>v.toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
+const din=v=>{const a=Math.abs(v);return a>=1e9?'R$ '+br(v/1e9,2)+' bi':a>=1e6?'R$ '+br(v/1e6,1)+' mi':a>=1e3?'R$ '+br(v/1e3,0)+' mil':'R$ '+br(v)};
+const O=D.orgaos.filter(o=>o.orc>0),atrasado=o=>o.orc>=20e6&&o.emp/o.orc<TEMPO-.10,rot=o=>ROT[o.sigla]||o.sigla||o.nome;
+const ORDEM=['Educação','Saúde','Segurança e cidadania','Poderes e controle','Finanças, gestão e previdência','Infraestrutura e desenvolvimento','Social, cultura e esporte'];
+const grupos=ORDEM.map(a=>({a,os:O.filter(o=>o.area===a).sort((x,y)=>y.orc-x.orc)})).filter(g=>g.os.length);
+// fileira extra no começo: os atrasados, como "em alta" na Netflix
+const atr=O.filter(atrasado).sort((x,y)=>(y.orc-y.emp)-(x.orc-x.emp));
+const FILAS=[{a:'Atrasados: dinheiro parado',os:atr,extra:`${atr.length} órgãos · ${din(atr.reduce((s,o)=>s+o.orc-o.emp,0))} sem destino`},...grupos.map(g=>({...g,extra:din(g.os.reduce((s,o)=>s+o.orc,0))}))];
+const larg=o=>Math.max(136,Math.min(320,70+Math.sqrt(o.orc/1e6)*5.2));
+document.getElementById('fileiras').innerHTML=FILAS.map((f,fi)=>`<section class="fila"><h2>${f.a}<span>${f.extra}</span></h2><div class="trilho">${f.os.map(o=>{const c=o.emp/o.orc,p=o.pag/o.orc;
+  return `<button class="card ${atrasado(o)?'atr':''}" data-i="${O.indexOf(o)}" data-f="${fi}" style="width:${larg(o)}px"><span class="s">${rot(o)}</span><span class="pc num">${br(c*100,0)}%</span><span class="v num">${din(o.orc)} · pago ${br(p*100,0)}%</span><span class="nv"><i class="c" style="width:${c*100}%"></i><i class="p" style="width:${p*100}%"></i><b></b></span></button>`}).join('')}</div></section>`).join('');
+
+/* destaque */
+let atual=null;
+function destaque(o){const el=document.getElementById('hTroco');el.classList.add('sai');setTimeout(()=>{
+  const tot=!o,orc=tot?D.despesa.orc:o.orc,emp=tot?D.despesa.emp:o.emp,pag=tot?D.despesa.pag:o.pag,c=emp/orc,p=pag/orc,a=!tot&&atrasado(o);
+  document.getElementById('hArea').textContent=tot?'Rondônia · orçamento de 2026 · 81 órgãos':`${o.area} · ${din(orc)}`;
+  document.getElementById('hTit').textContent=tot?din(orc):rot(o);
+  document.getElementById('hNome').textContent=tot?'Faltando 85 dias para o fim do ano. Passe pelos órgãos ou use as setas do controle.':o.nome;
+  document.getElementById('hChips').innerHTML=`<span class="${a?'atr':''}"><b>${br(c*100,0)}%</b> comprometido</span><span><b>${br(p*100,0)}%</b> pago</span><span><b>${din(orc-emp)}</b> sem destino</span><span>o ano está em <b>77%</b></span>`;
+  document.getElementById('hC').style.width=c*100+'%';document.getElementById('hP').style.width=p*100+'%';
+  document.getElementById('hEco').textContent=br(c*100,0)+'%';
+  document.getElementById('hFundo').style.background=`radial-gradient(70% 120% at 85% 30%,${a?'rgba(255,107,79,.35)':'rgba(245,179,52,.28)'},transparent 70%)`;
+  atual=o;el.classList.remove('sai')},o===atual?0:260)}
+destaque(null);
+let ciclo=0,parou=false;const vitrine=[null,...O.slice(0,6)];
+const giro=setInterval(()=>{if(parou)return clearInterval(giro);ciclo=(ciclo+1)%vitrine.length;destaque(vitrine[ciclo])},6000);
+let espera;document.getElementById('fileiras').addEventListener('pointerover',e=>{const c=e.target.closest('.card');if(!c)return;parou=true;clearTimeout(espera);espera=setTimeout(()=>destaque(O[+c.dataset.i]),180)});
+document.getElementById('fileiras').addEventListener('focusin',e=>{const c=e.target.closest('.card');if(!c)return;parou=true;destaque(O[+c.dataset.i]);c.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'})});
+document.getElementById('fileiras').addEventListener('click',e=>{const c=e.target.closest('.card');if(c)abre(O[+c.dataset.i])});
+document.getElementById('hAbrir').onclick=()=>atual?abre(atual):document.querySelector('.card').focus();
+document.getElementById('hEstado').onclick=()=>{parou=true;destaque(null)};
+
+/* controle remoto: setas entre cards e fileiras */
+addEventListener('keydown',e=>{if(e.key==='Escape')return fecha();if(document.getElementById('ficha').classList.contains('on'))return;
+  const c=document.activeElement.closest?.('.card');if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();
+  if(!c){document.querySelector('.card').focus();return}
+  if(e.key==='ArrowLeft')c.previousElementSibling?.focus();if(e.key==='ArrowRight')c.nextElementSibling?.focus();
+  if(e.key==='ArrowUp'||e.key==='ArrowDown'){const fi=+c.dataset.f+(e.key==='ArrowDown'?1:-1),fila=document.querySelectorAll('.fila')[fi];if(!fila)return;
+    const x=c.getBoundingClientRect().left;let melhor=null,d=1e9;fila.querySelectorAll('.card').forEach(k=>{const dd=Math.abs(k.getBoundingClientRect().left-x);if(dd<d){d=dd;melhor=k}});melhor?.focus();fila.scrollIntoView({block:'nearest',behavior:'smooth'})}});
+
+/* ficha */
+let sel=[],comparando=false;
+function cartao(o){const p=o.pag/o.orc,c=o.emp/o.orc,mx=Math.max(1,...o.mes_pag);
+  return `<div class="cartao"><div class="topo"><div class="area">${o.area}${atrasado(o)?' · <span style="color:var(--coral)">atrasado</span>':''}</div><h3>${rot(o)}</h3><div class="nome">${o.nome}</div></div>
+  <dl><dt>Orçamento</dt><dd>${din(o.orc)}</dd><dt>Comprometido</dt><dd>${din(o.emp)} · ${br(c*100,0)}%</dd><dt>Pago</dt><dd>${din(o.pag)} · ${br(p*100,0)}%</dd><dt>Sem destino</dt><dd>${din(o.orc-o.emp)}</dd>
+  ${o.cargos?`<dt>Cargos de nomeação</dt><dd>${br(o.cargos.qtd)}</dd>`:''}${o.emendas?`<dt>Emendas 2019–26</dt><dd>${din(o.emendas.valor)}</dd>`:''}</dl>
+  <div class="meses">${o.mes_pag.map((v,k)=>`<div><i style="height:${v/mx*52}px"></i>${MES[k]}</div>`).join('')}</div>
+  <div class="acao">${sel.length<2?'<button data-c>Comparar com outro</button>':''}<button data-x>Fechar</button></div></div>`}
+function abre(o){if(comparando){sel.push(o);comparando=false}else sel=[o];const f=document.getElementById('ficha');f.innerHTML=sel.map(cartao).join('');f.classList.add('on');document.getElementById('veu').classList.add('on');f.querySelector('button').focus()}
+function fecha(){document.getElementById('ficha').classList.remove('on');document.getElementById('veu').classList.remove('on')}
+document.getElementById('ficha').addEventListener('click',e=>{if(e.target.matches('[data-x]'))fecha();if(e.target.matches('[data-c]')){comparando=true;fecha()}});
+document.getElementById('veu').onclick=fecha;
+</script>
+</body>
+</html>

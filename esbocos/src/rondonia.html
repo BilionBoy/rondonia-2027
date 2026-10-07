@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rondônia em 5 minutos</title>
+<style>
+/*__FONTES__*/
+:root{--papel:#f2efe8;--papel2:#e7e2d8;--tinta:#15171b;--cinza:#6b6f78;--linha:rgba(21,23,27,.12);--agua:#0d5c6b;--atraso:#c4451c;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--papel);color:var(--tinta);font-family:var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;mix-blend-mode:multiply;background-size:220px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+body.tres::after{display:none}
+canvas{position:fixed;inset:0;display:block;touch-action:none;transition:opacity 1.1s}
+canvas.apagado{opacity:0;pointer-events:none}
+.num{font-variant-numeric:tabular-nums}
+
+/* cabeçalho */
+.topo{position:fixed;left:clamp(16px,2.6vw,48px);top:clamp(26px,2.8vw,44px);z-index:3;pointer-events:none;max-width:68vw}
+.topo .ctx{font-size:clamp(.62rem,.78vw,.8rem);letter-spacing:.2em;text-transform:uppercase;color:var(--cinza)}
+.topo .mes{font-size:clamp(2.1rem,5.2vw,4.9rem);font-weight:800;letter-spacing:-.05em;line-height:.95;margin-top:6px}
+.topo .mes small{font-size:.36em;font-weight:600;color:var(--tinta);opacity:.72;letter-spacing:-.01em;vertical-align:.5em;margin-left:.35em}
+.placar{position:fixed;right:clamp(16px,2.6vw,48px);top:clamp(30px,3vw,48px);text-align:right;z-index:3;pointer-events:none;max-width:40vw}
+.placar .v{font-size:clamp(1.1rem,1.9vw,1.9rem);font-weight:700;letter-spacing:-.02em;line-height:1}
+.placar .r{font-size:clamp(.7rem,.9vw,.92rem);color:var(--cinza);margin-top:6px}
+
+/* frase e navegação */
+.legenda{position:fixed;inset:auto clamp(16px,2.6vw,48px) clamp(18px,3.2vh,40px) clamp(16px,2.6vw,48px);z-index:4;display:flex;align-items:flex-end;gap:24px;pointer-events:none}
+.frase{flex:1;font-size:clamp(1.3rem,2.35vw,2.45rem);font-weight:680;letter-spacing:-.025em;line-height:1.14;max-width:32ch;text-wrap:balance;transition:opacity .6s,transform .6s}
+.frase.sai{opacity:0;transform:translateY(10px)}
+.frase em{font-style:normal;font-weight:780;color:var(--agua);white-space:nowrap}
+.frase em.r{color:var(--atraso)}
+.ctrl{display:flex;gap:12px;align-items:center;pointer-events:auto;margin-left:auto;flex-shrink:0}
+.ctrl button{border:0;border-radius:999px;height:60px;padding:0 28px;font:inherit;font-size:1.06rem;font-weight:700;letter-spacing:-.01em;cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+  background:var(--tinta);color:#fff;box-shadow:0 10px 28px rgba(21,23,27,.22);transition:transform .15s,opacity .3s,box-shadow .2s}
+.ctrl button:hover{transform:translateY(-1px)}
+.ctrl button:active{transform:scale(.97)}
+.ctrl button svg{width:20px;height:20px;flex-shrink:0}
+.ctrl button.claro{background:#fff;color:var(--tinta);box-shadow:0 2px 10px rgba(21,23,27,.08),inset 0 0 0 1.5px rgba(21,23,27,.16)}
+.ctrl button:disabled{opacity:.3;cursor:default;transform:none}
+.ctrl .pos{font-size:.95rem;font-weight:650;color:var(--cinza);font-variant-numeric:tabular-nums;min-width:4.2em;text-align:center}
+.ctrl button.chama{animation:chama 2.2s ease-out infinite}
+@keyframes chama{0%{box-shadow:0 10px 28px rgba(21,23,27,.22),0 0 0 0 rgba(13,92,107,.45)}70%{box-shadow:0 10px 28px rgba(21,23,27,.22),0 0 0 16px rgba(13,92,107,0)}100%{box-shadow:0 10px 28px rgba(21,23,27,.22),0 0 0 0 rgba(13,92,107,0)}}
+.stories{position:fixed;left:clamp(16px,2.6vw,48px);right:clamp(16px,2.6vw,48px);top:12px;z-index:6;display:flex;gap:6px}
+.stories button{all:unset;flex:1;height:14px;cursor:pointer;display:flex;align-items:center}
+.stories button i{display:block;width:100%;height:3px;border-radius:2px;background:rgba(21,23,27,.13);overflow:hidden;position:relative}
+.stories button i b{position:absolute;inset:0;background:var(--tinta);transform-origin:left;transform:scaleX(0);transition:transform .6s cubic-bezier(.2,.7,.1,1)}
+.stories button.feito i b{transform:scaleX(1)}
+.stories button:hover i{background:rgba(21,23,27,.25)}
+.fonte{position:fixed;right:clamp(16px,2.6vw,48px);bottom:6px;font-size:.66rem;color:var(--cinza);z-index:3;pointer-events:none;text-align:right;max-width:70vw}
+
+/* rótulos do 3D */
+.rot{position:fixed;left:0;top:0;z-index:2;pointer-events:none;text-align:center;line-height:1.12;white-space:nowrap;color:var(--tinta);
+  background:rgba(250,248,243,.92);padding:3px 7px 4px;border-radius:6px;box-shadow:0 1px 5px rgba(21,23,27,.12);opacity:0;transition:opacity .35s;will-change:transform}
+.rot.on{opacity:1}
+.rot span{display:block;font-size:clamp(.6rem,.68vw,.72rem);font-weight:600;color:#3d4148}
+.rot b{display:block;font-size:clamp(.7rem,.8vw,.84rem);font-weight:780;color:var(--tinta);letter-spacing:-.01em}
+.rot.so b{display:none}
+.rot.so span{font-size:clamp(.62rem,.7vw,.74rem);color:var(--tinta)}
+.rot.sel{background:var(--tinta);z-index:3}
+.rot.mini{padding:1px 5px 2px;border-radius:4px}
+.rot.mini:not(.so) span{display:none}
+.rot.mini b{font-size:clamp(.6rem,.66vw,.7rem)}
+.rot.micro{padding:0 2px;line-height:1.05;border-radius:3px;box-shadow:0 1px 2px rgba(21,23,27,.1)}
+.rot.micro:not(.so) span{display:none}
+.rot.micro b{font-size:clamp(.54rem,.58vw,.62rem);font-weight:720}
+.rot.micro.so span{font-size:.52rem}
+.rot.mini.so span{font-size:clamp(.54rem,.6vw,.64rem)}
+.rot.sel span,.rot.sel b{color:#fff}
+
+.selo{display:none;align-items:center;gap:9px;background:var(--agua);color:#fff;font-size:clamp(.8rem,1.02vw,1.06rem);font-weight:750;letter-spacing:.05em;text-transform:uppercase;
+  padding:9px 16px 9px 13px;border-radius:999px;box-shadow:0 6px 18px rgba(13,92,107,.28);margin-bottom:8px}
+.selo i{width:10px;height:10px;border-radius:50%;background:#fff;opacity:.9}
+body.emendas .selo{display:inline-flex}
+body.emendas .ctx{display:none}
+.escala{position:fixed;right:clamp(16px,2.6vw,48px);top:clamp(118px,13.5vh,150px);z-index:3;width:min(270px,40vw);background:rgba(250,248,243,.94);border-radius:12px;padding:12px 14px;
+  box-shadow:0 4px 16px rgba(21,23,27,.1);pointer-events:none;opacity:0;transition:opacity .5s}
+body.emendas .escala{opacity:1;pointer-events:auto}
+.ver52{margin-top:10px;width:100%;border:0;border-radius:999px;background:var(--tinta);color:#fff;font:inherit;font-size:.86rem;font-weight:700;height:40px;cursor:pointer}
+.ver52:hover{background:#2a2e35}
+.escala .et{font-size:.86rem;font-weight:750;color:var(--tinta);margin-bottom:8px}
+.escala .eb{height:12px;border-radius:3px;background:linear-gradient(90deg,#c4cbc6,#0d5c6b)}
+.escala .el{display:flex;justify-content:space-between;font-size:.72rem;color:var(--cinza);margin-top:4px}
+.escala .en{font-size:.72rem;color:var(--atraso);font-weight:650;margin-top:6px}
+@media (max-width:700px){.escala{display:none}}
+
+/* régua do ano */
+.regua{position:fixed;left:clamp(16px,2.6vw,48px);right:max(clamp(16px,2.6vw,48px),36vw);top:calc(clamp(150px,21vh,236px) - 44px);height:40px;z-index:3;display:none;touch-action:none;cursor:pointer}
+.regua.on{display:block}
+.regua .tr{position:absolute;left:0;right:0;top:10px;height:3px;background:var(--linha);border-radius:2px}
+.regua .f{position:absolute;left:0;top:10px;height:3px;background:var(--tinta);border-radius:2px}
+.regua .b{position:absolute;top:3px;width:17px;height:17px;border-radius:50%;background:var(--tinta);transform:translateX(-50%);box-shadow:0 0 0 5px var(--papel)}
+.regua .m{position:absolute;top:22px;left:0;right:0;display:grid;grid-template-columns:repeat(12,1fr);font-size:.62rem;color:var(--cinza);text-transform:uppercase;letter-spacing:.06em}
+.leg2{position:fixed;right:clamp(16px,2.6vw,48px);top:calc(clamp(150px,21vh,236px) - 34px);z-index:3;display:flex;gap:18px;font-size:clamp(.66rem,.8vw,.86rem);color:var(--cinza);opacity:0;transition:opacity .5s;pointer-events:none}
+.leg2.on{opacity:1}
+.leg2 i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+.dica2{position:fixed;left:clamp(16px,2.6vw,48px);top:calc(clamp(150px,21vh,236px) - 4px);z-index:4;background:var(--tinta);color:var(--papel);border-radius:999px;padding:9px 16px;font-size:.82rem;pointer-events:none;opacity:0;transition:opacity .5s}
+.dica2.on{opacity:.92}
+
+/* o mosaico: cada card tem o nome em cima e um "copo" embaixo, onde a água sobe */
+.plano{position:fixed;left:clamp(16px,2.6vw,48px);right:clamp(16px,2.6vw,48px);top:clamp(150px,21vh,236px);bottom:clamp(140px,19.5vh,210px);z-index:2;
+  transition:opacity .9s,transform 1.5s cubic-bezier(.55,0,.2,1);transform-origin:50% 100%;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.plano.fora{opacity:0;transform:perspective(1500px) rotateX(64deg) scale(.62);pointer-events:none}
+.plano.escondido{opacity:0;pointer-events:none;transition:opacity .45s}
+.plano.troca2{opacity:0;transition:opacity .25s}
+.plano .t{position:absolute;border-radius:9px;overflow:hidden;background:var(--papel2);cursor:pointer;transition:filter .3s}
+.plano .t:hover{filter:brightness(1.035)}
+.plano .t .txt{position:absolute;left:10px;top:9px;right:8px;line-height:1.12}
+.plano .t .nm{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-weight:760;letter-spacing:-.01em;line-height:1.08}
+.plano .t .sb{display:block;color:var(--cinza);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.plano .t .sb b{color:var(--atraso);font-weight:750}
+.plano .t.grupo .nm::after{content:" →";color:var(--cinza)}
+.plano .tq{position:absolute;left:4px;right:4px;bottom:4px;border-radius:6px;overflow:hidden;background:rgba(21,23,27,.045)}
+.plano .tq .fill{position:absolute;inset:0;background:linear-gradient(180deg,#14707f,#0b5260 70%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22);transform-origin:50% 100%;transform:scaleY(0);will-change:transform;
+  transition:transform .9s cubic-bezier(.2,.7,.1,1)}
+.plano .tq .tempo{position:absolute;left:0;right:0;height:0;bottom:0;border-top:1.5px dashed rgba(21,23,27,.6)}
+.plano .tq .falta{position:absolute;left:0;right:0;height:0;background:repeating-linear-gradient(135deg,rgba(196,69,28,.9) 0 7px,rgba(196,69,28,.66) 7px 14px);transition:height .9s cubic-bezier(.2,.7,.1,1),bottom .9s cubic-bezier(.2,.7,.1,1)}
+.plano .tq .pc{position:absolute;left:8px;bottom:6px;font-weight:790;letter-spacing:-.045em;line-height:1;color:#fff}
+.plano.vivo .tq .fill,.plano.vivo .tq .falta{transition:none}
+
+/* ficha lateral */
+.painel{position:fixed;right:clamp(12px,2vw,32px);top:clamp(100px,14vh,150px);bottom:clamp(110px,15vh,160px);width:min(420px,92vw);z-index:5;background:#fff;border-radius:18px;
+  box-shadow:0 30px 80px rgba(21,23,27,.18);padding:22px 22px 18px;overflow:auto;transform:translateX(calc(100% + 40px));transition:transform .45s cubic-bezier(.2,.7,.1,1)}
+.painel.on{transform:none}
+.painel .x{position:absolute;right:14px;top:14px;border:1px solid var(--linha);background:#fff;border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:.9rem}
+.painel .tipo{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cinza)}
+.painel h3{margin:6px 40px 2px 0;font-size:1.8rem;letter-spacing:-.04em;line-height:1.02}
+.painel .sub{color:var(--cinza);font-size:.84rem;margin-bottom:12px}
+.painel .gde{font-size:2.2rem;font-weight:780;letter-spacing:-.04em}
+.painel h4{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cinza);margin:20px 0 8px}
+.painel dl{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:0;font-size:.92rem}
+.painel dt{color:var(--cinza)} .painel dd{margin:0;text-align:right;font-weight:650;font-variant-numeric:tabular-nums}
+.painel dd.r,.painel dt.r{color:var(--atraso)}
+.painel .linhas{display:grid;gap:6px}
+.painel .linha{display:grid;grid-template-columns:minmax(36px,auto) 1fr auto;gap:10px;align-items:center;font-size:.84rem}
+.painel .linha.larga{grid-template-columns:1fr auto}
+.painel .linha.larga .rt{white-space:normal;color:var(--tinta)}
+.painel .linha .rt{color:var(--cinza);white-space:nowrap}
+.painel .linha .rt button{all:unset;cursor:pointer;color:var(--tinta);font-weight:600;border-bottom:1px dashed var(--cinza)}
+.painel .linha .rt button:hover{color:var(--agua);border-color:var(--agua)}
+.painel .linha .br{height:10px;background:var(--papel2);border-radius:3px;overflow:hidden}
+.painel .linha.larga .br{grid-column:1/-1;height:5px;order:3}
+.painel .linha .br i{display:block;height:100%;background:var(--agua);border-radius:3px}
+.painel .linha .v{font-weight:680;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.painel .nota{font-size:.76rem;color:var(--cinza);margin-top:8px}
+@media (max-width:700px){.placar{display:none}.legenda{flex-direction:column;align-items:stretch;gap:12px}.ctrl{margin-left:0;justify-content:space-between}.ctrl button{height:52px;padding:0 20px}
+  .painel{top:auto;height:62svh;bottom:10px;right:4vw}.leg2{display:none}}
+</style>
+</head>
+<body>
+<nav class="stories" id="stories" aria-label="Etapas"></nav>
+<div class="topo"><div class="selo" id="selo"><i></i>Mapa das emendas parlamentares · 2019 a 2026</div><div class="ctx" id="ctx">Rondônia</div><div class="mes" id="mes"></div></div>
+<div class="placar" id="placar"><div class="v num" id="pv"></div><div class="r" id="pr"></div></div>
+<div class="regua" id="regua"><div class="tr"></div><div class="f" id="rf"></div><div class="b" id="rb"></div><div class="m" id="rm"></div></div>
+<div class="legenda">
+  <div class="frase" id="frase"></div>
+  <div class="ctrl">
+    <button class="claro" id="ant" aria-label="Voltar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Voltar</button>
+    <span class="pos" id="pos"></span>
+    <button id="prox" class="chama" aria-label="Próximo"><span id="proxT">Próximo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</div>
+<aside class="painel" id="painel" aria-live="polite"><button class="x" id="px" aria-label="Fechar">✕</button><div id="pc"></div></aside>
+<div class="escala" id="escala"><div class="et">Emendas parlamentares recebidas</div><div class="eb"></div><div class="el"><span>menos</span><span>mais</span></div><div class="en">não é o orçamento do Estado</div><button class="ver52" id="ver52">Ver os 52 municípios em lista</button></div>
+<div class="fonte" id="fonte"></div>
+<div id="rotulos"></div>
+<div class="plano escondido" id="plano" aria-label="Os órgãos do Estado, do tamanho do orçamento"></div>
+<div class="leg2" id="leg2"><span><i style="background:var(--agua)"></i>já tem destino</span><span><i style="border-top:1.5px dashed var(--tinta);height:0;width:16px;border-radius:0;vertical-align:3px"></i>onde o ano está</span><span id="leg2a" style="display:none"><i style="background:var(--atraso)"></i>abaixo do ritmo: o que falta até a linha do ano</span></div>
+<div class="dica2" id="dica2">Arraste para os lados para passar o ano</div>
+<script>(function(){try{const c=document.createElement('canvas');if(c.getContext('webgl2')||c.getContext('webgl'))return}catch(e){}location.replace('a-o-ano-passando.html')})()</script>
+<script>/*__THREE__*/</script>
+<script>
+const D=/*__DADOS__*/null;
+const M=D.mapa, O=D.orgaos.filter(o=>o.orc>0);
+{const NM={'?':'Sem deputado informado','Bancada':'Bancada (sem deputado)'};const fix=d=>{if(NM[d[0]])d[0]=NM[d[0]]};M.deps.forEach(fix);M.munis.forEach(m=>m.deps.forEach(fix))}
+const MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const FIM=9+7/31, TEMPO=280/365;
+const br=(v,c=0)=>v.toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
+const din=v=>{const a=Math.abs(v);return a>=1e9?'R$ '+br(v/1e9,2)+' bi':a>=1e6?'R$ '+br(v/1e6,1)+' mi':a>=1e3?'R$ '+br(v/1e3,0)+' mil':'R$ '+br(v)};
+const acum=(arr,t)=>{const i=Math.min(Math.floor(t),arr.length-1);let s=0;for(let k=0;k<i;k++)s+=arr[k]||0;const p=i===9?7/31:1;return s+Math.min(1,Math.max(0,t-i)/p)*(arr[i]||0)};
+const atrasado=o=>!o.grupo&&o.orc>=20e6&&o.emp/o.orc<=TEMPO-.10;
+const ease=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const $=s=>document.getElementById(s);
+const FOTO=location.search.includes('foto');if(FOTO)document.head.insertAdjacentHTML('beforeend','<style>*,*::before,*::after{transition:none!important;animation:none!important}</style>');
+
+/* ---------- os órgãos: nomes de gente, os 23 maiores e os pequenos num card só ---------- */
+const NOME={'SEDUC':'Educação','FES':'Saúde','FUNPRECAP':'Previdência (fundo)','SESDEC':'Segurança','TJ-RO':'Tribunal de Justiça','RECURSOS-SEFIN':'Encargos do Estado',
+  'MP-RO':'Ministério Público','DER':'Estradas','ALE-RO':'Assembleia','SEJUS':'Justiça','DETRAN':'Trânsito','FUJU':'Fundo do Judiciário','SEFIN':'Finanças',
+  'TCE-RO':'Tribunal de Contas','SEOSP':'Obras','FITHA':'Transporte e Habitação','CAERD':'Água e esgoto','SUGESP':'Gastos administrativos','IDARON':'Defesa agropecuária',
+  'SEAGRI':'Agricultura','DPE-RO':'Defensoria','EMATER':'Assistência rural','SEJUCEL':'Cultura e esporte','PGE':'Procuradoria','FIDER':'Fundo da indústria',
+  'SEAS':'Assistência social','SEPOG':'Planejamento','IPERON':'Previdência (instituto)',
+  'FUNESP':'Fundo da Segurança','FUNDAT':'Fundo da Receita','FECOEP':'Combate à pobreza','FEPRAM':'Proteção ambiental','FUNDIMPER':'Fundo do MP','IDEP':'Educação profissional',
+  'AGEVISA':'Vigilância em saúde','FEAS':'Fundo da Assistência','FESA':'Sanidade animal','FEC':'Fundo da Cultura','FUNDEP':'Fundo da Defensoria','FDI/TC':'Fundo do TCE'};
+const nomeDe=o=>o.grupo?o.nome:(NOME[o.sigla]||o.nome);
+const CORTE=120e6,GRANDES=O.filter(o=>o.orc>=CORTE),PEQ=O.filter(o=>o.orc<CORTE);
+const soma=(l,k)=>l.reduce((s,o)=>s+o[k],0),somaArr=(l,k)=>l[0][k].map((_,m)=>l.reduce((s,o)=>s+(o[k][m]||0),0));
+const GRUPO={sigla:'',nome:`Outros ${PEQ.length} órgãos`,grupo:true,membros:PEQ,orc:soma(PEQ,'orc'),emp:soma(PEQ,'emp'),pag:soma(PEQ,'pag'),mes_emp:somaArr(PEQ,'mes_emp'),mes_pag:somaArr(PEQ,'mes_pag')};
+const CARDS=[...GRANDES,GRUPO];
+const ATR=O.filter(atrasado).sort((a,b)=>b.orc-a.orc);
+const gapDe=o=>Math.max(0,TEMPO*o.orc-o.emp);
+const GAP=ATR.reduce((s,o)=>s+gapDe(o),0);
+
+function squarify(itens,x,y,w,h){const out=[];let fila=[];const tot=itens.reduce((s,i)=>s+i.v,0),k=w*h/tot;let rest=itens.map(i=>({...i,a:i.v*k}));
+  const pior=(f,l)=>{const s=f.reduce((a,b)=>a+b.a,0),mx=Math.max(...f.map(r=>r.a)),mn=Math.min(...f.map(r=>r.a));return Math.max(l*l*mx/(s*s),(s*s)/(l*l*mn))};
+  const assenta=f=>{const s=f.reduce((a,b)=>a+b.a,0);if(w>=h){const cw=s/h;let cy=y;f.forEach(r=>{const rh=r.a/cw;out.push({...r,x,y:cy,w:cw,h:rh});cy+=rh});x+=cw;w-=cw}else{const rh=s/w;let cx=x;f.forEach(r=>{const cw=r.a/rh;out.push({...r,x:cx,y,w:cw,h:rh});cx+=cw});y+=rh;h-=rh}};
+  while(rest.length){const l=Math.min(w,h),c=rest[0];if(!fila.length||pior(fila,l)>=pior([...fila,c],l)){fila.push(c);rest.shift()}else{assenta(fila);fila=[]}}if(fila.length)assenta(fila);return out}
+
+/* ---------- cena 3D (só desenha quando algo muda) ---------- */
+const C=THREE;C.ColorManagement.legacyMode=false;
+const ren=new C.WebGLRenderer({antialias:true,powerPreference:'high-performance'});ren.setPixelRatio(Math.min(devicePixelRatio||1,innerWidth>1500?1.25:1.5));ren.setSize(innerWidth,innerHeight);
+ren.shadowMap.enabled=true;ren.shadowMap.type=C.PCFShadowMap;ren.outputEncoding=C.sRGBEncoding;ren.toneMapping=C.NoToneMapping;
+document.body.prepend(ren.domElement);ren.domElement.classList.add('apagado');
+const cena=new C.Scene();cena.background=new C.Color('#f2efe8');cena.fog=new C.Fog('#f2efe8',200,420);
+const cam=new C.PerspectiveCamera(34,innerWidth/innerHeight,.5,900);
+cena.add(new C.HemisphereLight('#ffffff','#cfc6b5',.62));
+const sol=new C.DirectionalLight('#fffaf0',.92);sol.position.set(-70,130,60);sol.castShadow=true;sol.shadow.mapSize.set(1024,1024);
+Object.assign(sol.shadow.camera,{left:-70,right:70,top:70,bottom:-70,near:10,far:400});sol.shadow.bias=-.0004;cena.add(sol);
+const chao=new C.Mesh(new C.PlaneGeometry(1400,1400),new C.MeshStandardMaterial({color:'#f2efe8',roughness:1}));chao.rotation.x=-Math.PI/2;chao.position.y=-.02;chao.receiveShadow=true;cena.add(chao);
+let sujo=3;const acorda=(n=3)=>{sujo=Math.max(sujo,n)};
+
+/* ---------- municípios ---------- */
+const PAPEL=new C.Color('#d3cfc6'),AGUA=new C.Color('#0d5c6b'),SEL=new C.Color('#1d2228'),APAGADO=new C.Color('#e2ded5');
+const PVH=M.munis.findIndex(m=>m.nome==='Porto Velho');
+const maxM=Math.max(...M.munis.map(m=>m.total));
+const alturaM=m=>.35+Math.sqrt(m.total/maxM)*9;
+const linhaMat=new C.LineBasicMaterial({color:'#15171b',transparent:true,opacity:.5});
+const munis=M.munis.map((m,i)=>{const sh=new C.Shape(m.aneis[0].map(p=>new C.Vector2(p[0],-p[1])));
+  const g=new C.ExtrudeGeometry(sh,{depth:1,bevelEnabled:false,curveSegments:1});g.rotateX(-Math.PI/2);
+  const t=Math.sqrt(m.total/maxM),cor=PAPEL.clone().lerp(AGUA,.12+t*.75);
+  const mesh=new C.Mesh(g,new C.MeshStandardMaterial({color:PAPEL.clone(),roughness:.88}));mesh.castShadow=mesh.receiveShadow=true;mesh.scale.y=.35;mesh.userData={tipo:'mun',i};
+  const borda=new C.Line(new C.BufferGeometry().setFromPoints(m.aneis[0].map(p=>new C.Vector3(p[0],1.002,p[1]))),linhaMat);mesh.add(borda);
+  cena.add(mesh);return {m,mesh,alvo:.35,cor,corAlvo:PAPEL.clone()}});
+
+/* ---------- câmera ---------- */
+let cur={alvo:new C.Vector3(0,0,0),dist:160,az:0,el:55},camA=null,camB=null,camT=1,camDur=1;
+function vaiCam(c,dur=2.6){camB={alvo:c.alvo.clone(),dist:c.dist,az:c.az,el:c.el};camA={alvo:cur.alvo.clone(),dist:cur.dist,az:cur.az,el:cur.el};camT=0;camDur=dur;if(dur<.05){camT=1;cur={...camB,alvo:camB.alvo.clone()};camB=null}acorda()}
+function aplicaCam(){const el=C.MathUtils.degToRad(Math.max(12,Math.min(85,cur.el))),az=C.MathUtils.degToRad(cur.az);
+  cam.position.set(cur.alvo.x+cur.dist*Math.cos(el)*Math.sin(az),cur.alvo.y+cur.dist*Math.sin(el),cur.alvo.z+cur.dist*Math.cos(el)*Math.cos(az));cam.lookAt(cur.alvo)}
+
+/* ---------- rótulos: cada município com seu valor, sem se atropelar ---------- */
+const rotEl=$('rotulos');
+const mkRot=(cls,html)=>{const el=document.createElement('div');el.className='rot '+cls;el.innerHTML=html;rotEl.appendChild(el);return el};
+const rots=M.munis.map((m,i)=>{const el=mkRot('mun',`<span>${m.nome}</span><b class="num"></b>`);return {i,el,vEl:el.querySelector('b'),val:-1,f:null,m:null,u:null}});
+let mostraRot={mun:false},sel=-1,depSel=null;
+const valorMun=i=>depSel?(depSel.get(i)||0):M.munis[i].total;
+const v3=new C.Vector3();
+function rotulos(){const W=innerWidth,H=innerHeight,ocup=['escala','frase','topo','placar'].map(id=>{const e=id==='topo'?document.querySelector('.topo'):$(id);if(!e||(id==='escala'&&!document.body.classList.contains('emendas')))return null;const r=e.getBoundingClientRect();return {l:r.left,r:r.right,t:r.top,b:r.bottom}}).filter(Boolean),modo=mostraRot.mun,nomes=modo==='nomes';
+  const fixo=r=>r.i===sel||r.i===PVH;
+  const pri=r=>r.i===sel?1e16:r.i===PVH?1e15:nomes?M.munis[r.i].total+1:valorMun(r.i);
+  const bate=bx=>ocup.some(o=>o.l<bx.r&&o.r>bx.l&&o.t<bx.b&&o.b>bx.t);
+  const TIERS=['f','m','u'],CLS={f:'',m:'mini',u:'micro'};
+  const mede=(r,t)=>{if(!r[t]){r.el.classList.remove('mini','micro');if(CLS[t])r.el.classList.add(CLS[t]);r[t]={w:r.el.offsetWidth,h:r.el.offsetHeight}}return r[t]};
+  const lugares=(x,y,d,t)=>{const a={l:x-d.w/2,t:y-d.h-3};if(t==='f')return [a];const b=[a,{l:x-d.w/2,t:y+3},{l:x+5,t:y-d.h/2},{l:x-d.w-5,t:y-d.h/2}];if(t==='u')b.push({l:x+3,t:y-d.h-2},{l:x-d.w-3,t:y-d.h-2},{l:x+3,t:y+2},{l:x-d.w-3,t:y+2},{l:x-d.w/2,t:y-d.h-14},{l:x-d.w/2,t:y+14});return b};
+  let n=0;
+  rots.slice().sort((a,b)=>pri(b)-pri(a)).forEach(r=>{let vis=false;
+    if(modo){vis=nomes||valorMun(r.i)>0;
+      if(vis){if(r.el.classList.contains('so')!==nomes){r.el.classList.toggle('so',nomes);r.f=r.m=r.u=null}r.el.classList.toggle('sel',r.i===sel);
+        const val=valorMun(r.i);if(val!==r.val){r.val=val;r.vEl.textContent=din(val);r.f=r.m=r.u=null}
+        const c=r.i===PVH?M.assembleia:M.munis[r.i].c;v3.set(c[0],munis[r.i].mesh.scale.y+.3,c[1])}}
+    if(vis){v3.project(cam);if(v3.z>1||Math.abs(v3.x)>1.05||Math.abs(v3.y)>1.05)vis=false}
+    if(vis){const x=(v3.x+1)/2*W,y=(1-v3.y)/2*H;let ok=null;
+      busca:for(const t of fixo(r)?['f']:TIERS){const d=mede(r,t);for(const p of lugares(x,y,d,t)){const bx={l:p.l-1,r:p.l+d.w+1,t:p.t-1,b:p.t+d.h+1};if(fixo(r)||!bate(bx)){ok={t,p,bx};break busca}}}
+      if(!ok)vis=false;else{r.el.classList.remove('mini','micro');if(CLS[ok.t])r.el.classList.add(CLS[ok.t]);ocup.push(ok.bx);r.el.style.transform=`translate(${ok.p.l}px,${ok.p.t}px)`;n++}}
+    r.el.classList.toggle('on',vis)});
+  document.body.dataset.nrot=n}
+function escondeRotulos(){rots.forEach(r=>r.el.classList.remove('on'))}
+
+/* ---------- cores e seleção no mapa ---------- */
+let tintaAlvo=0;
+function pinta(){let dm=1;if(depSel)dm=Math.max(...depSel.values());
+  munis.forEach((u,i)=>{let c;if(depSel){const v=depSel.get(i)||0;c=v?PAPEL.clone().lerp(AGUA,.3+.7*Math.sqrt(v/dm)):APAGADO.clone()}
+    else{c=PAPEL.clone().lerp(u.cor,tintaAlvo);if(i===sel)c=SEL.clone()}u.corAlvo=c});acorda()}
+function relevo(on){munis.forEach((u,i)=>u.alvo=(on?alturaM(M.munis[i]):.35)+(i===sel?1.2:0));acorda()}
+let relevoOn=false;
+function selMun(i){sel=i;depSel=null;relevo(relevoOn);pinta()}
+function selDep(lista){sel=-1;depSel=new Map(lista.map(([i,v])=>[i,v]));relevo(relevoOn);pinta()}
+function limpaSel(){if(sel<0&&!depSel)return;sel=-1;depSel=null;relevo(relevoOn);pinta()}
+
+/* ---------- o mosaico 2D ---------- */
+const plano=$('plano');let tiles2=[],tDes=-1,layout='';
+function monta2d(qual){layout=qual;const W=plano.clientWidth,H=plano.clientHeight,G=4,lista=qual==='atr'?ATR:CARDS;plano.querySelectorAll('.t').forEach(e=>e.remove());
+  tiles2=squarify(lista.map((o,i)=>({v:o.orc,i})),0,0,W,H).map((r,k)=>{const o=lista[r.i],el=document.createElement('div'),w=r.w-G,h=r.h-G;el.className='t'+(o.grupo?' grupo':'');el.dataset.k=k;
+    el.style.cssText=`left:${r.x+G/2}px;top:${r.y+G/2}px;width:${Math.max(w,1)}px;height:${Math.max(h,1)}px`;
+    const nm=nomeDe(o),pl=Math.max(...nm.split(' ').map(x=>x.length)),fn=Math.max(9,Math.min(21,w/8.5,h/4.4,(w-18)/(pl*.6))),fs=Math.max(9,fn*.66);
+    const nome=w>40&&h>30,sub=nome&&w>80&&h>fn*2.4+fs*1.6+34;
+    const txtSub=qual==='atr'?`<b>${w>150?din(gapDe(o))+' abaixo do ritmo':'−'+din(gapDe(o))}</b>`:o.grupo?`${din(o.orc)} · toque para ver`:`${o.sigla} · ${din(o.orc)}`;
+    el.innerHTML=(nome?`<div class="txt"><b class="nm" style="font-size:${fn}px">${nm}</b>${sub?`<span class="sb" style="font-size:${fs}px">${txtSub}</span>`:''}</div>`:'')+
+      `<div class="tq"><div class="fill"></div><div class="falta"></div><div class="tempo"></div><div class="pc num"></div></div>`;
+    el.title=nm+' · '+din(o.orc);plano.appendChild(el);
+    const txt=el.querySelector('.txt'),tq=el.querySelector('.tq'),topo=txt?txt.offsetTop+txt.offsetHeight+6:4;tq.style.top=topo+'px';
+    const tH=Math.max(1,h-topo-4),fp=Math.max(11,Math.min(48,w/3.6,tH/2.2));
+    return {el,o,w,h,tH,fp,pcOk:w>fp*2.2&&tH>fp+10,fill:tq.querySelector('.fill'),falta:tq.querySelector('.falta'),tempo:tq.querySelector('.tempo'),pc:tq.querySelector('.pc')}});tDes=-1}
+function trocaLayout(qual,suave){if(layout===qual)return;if(!suave){monta2d(qual);return}
+  plano.classList.add('troca2');setTimeout(()=>{monta2d(qual);desenha2d(tAno);plano.classList.remove('troca2')},260)}
+const anoDe=t=>t>=FIM-1e-3?TEMPO:t/12;
+const atrEm=(o,t)=>{if(o.grupo)return false;const fa=anoDe(t),c=acum(o.mes_emp,t)/o.orc;return o.orc>=20e6&&c<=fa-.10&&t>2};
+function desenha2d(t){if(Math.abs(t-tDes)<1e-4)return;tDes=t;const fa=anoDe(t),foco=layout==='atr';
+  tiles2.forEach(x=>{const e=acum(x.o.mes_emp,t),c=Math.max(0,Math.min(1,e/x.o.orc));
+    x.fill.style.transform=`scaleY(${ato===0?0:c})`;x.tempo.style.display=ato===0?'none':'';x.tempo.style.bottom=(fa*100)+'%';
+    const atr=foco&&atrEm(x.o,t),faltaPx=atr?(fa-c)*x.tH:0;
+    x.falta.style.bottom=(c*100)+'%';x.falta.style.height=atr?Math.max(0,(fa-c)*100)+'%':'0';
+    if(!x.pcOk){x.pc.textContent='';return}
+    if(ato===0){const tx=din(x.o.orc),fz=Math.min(x.fp*.52,(x.w-18)/(tx.length*.6));if(fz<8.5){x.pc.textContent='';return}x.pc.textContent=tx.replace(/ /g,'\u00a0');x.pc.style.fontSize=fz+'px';x.pc.style.color='var(--tinta)';x.pc.style.bottom='6px';return}
+    const fpx=c*x.tH;x.pc.textContent=br(c*100,0)+'%';x.pc.style.textShadow='';x.pc.style.fontSize=x.fp+'px';
+    const cima=x.tH*(1-fa);
+    if(fpx>=x.fp+12){x.pc.style.color='#fff';x.pc.style.bottom='6px'}
+    else if(fpx-12>=14){x.pc.style.fontSize=(fpx-12)+'px';x.pc.style.color='#fff';x.pc.style.bottom='6px'}
+    else if(cima>=Math.min(x.fp,28)+8){const fz=Math.min(x.fp,cima-8);x.pc.style.fontSize=fz+'px';x.pc.style.color='var(--tinta)';x.pc.style.bottom=(fa*x.tH+4)+'px'}
+    else if(atr){x.pc.style.fontSize=Math.min(x.fp,Math.max(11,x.tH-8))+'px';x.pc.style.color='#fff';x.pc.style.textShadow='0 1px 3px rgba(0,0,0,.55)';x.pc.style.bottom='4px'}
+    else{x.pc.style.color='var(--tinta)';x.pc.style.bottom=Math.max(4,Math.min(fpx+5,x.tH-x.fp-3))+'px'}})}
+let ini2=null;
+plano.addEventListener('pointerdown',e=>{ini2={x:e.clientX,y:e.clientY,t:tAno,arr:false,alvo:e.target.closest('.t')}});
+plano.addEventListener('pointermove',e=>{if(!ini2||ato!==1)return;const dx=e.clientX-ini2.x;if(!ini2.arr&&Math.abs(dx)>10&&Math.abs(dx)>Math.abs(e.clientY-ini2.y)){ini2.arr=true;plano.classList.add('vivo');plano.setPointerCapture(e.pointerId);cancelAnimationFrame(anoAnim);$('dica2').classList.remove('on')}
+  if(ini2.arr)tAno=Math.max(0,Math.min(FIM,ini2.t+dx/plano.clientWidth*FIM*1.4))});
+plano.addEventListener('pointerup',()=>{plano.classList.remove('vivo');if(ini2&&!ini2.arr&&ini2.alvo){const o=tiles2[+ini2.alvo.dataset.k].o;o.grupo?painelGrupo(o):painelOrg(o)}ini2=null});
+let modo2d=true;
+const FONTE_ORC='Fonte: Portal da Transparência RO (COGES), posição 7/10/2026, compilado pelo painel Transparência Orçamentária · "abaixo do ritmo" é cálculo nosso sobre esses dados';
+const FONTE_MAPA='Fonte das emendas: OFIP (observatorioofip.com) e planilha "Emendas 2025–2026", compilados pelo painel Transparência Orçamentária · não é fonte oficial do governo · sem dados de 2022 · malha IBGE';
+function mostraPlano(on){modo2d=on;if(on)document.body.classList.remove('emendas');$('fonte').textContent=on?FONTE_ORC:'Malha municipal IBGE · população: Censo IBGE 2022';tDes=-1;document.body.classList.toggle('tres',!on);if(on){mostraRot={mun:false};escondeRotulos()}else{$('leg2').classList.remove('on');acorda(6)}
+  plano.classList.toggle('escondido',!on);plano.classList.remove('fora');ren.domElement.classList.toggle('apagado',on)}
+
+/* ---------- a narrativa ---------- */
+let tAno=0,anoAnim=null;
+function fraseNova(html){const f=$('frase');if(FOTO){f.innerHTML=html;return}f.classList.add('sai');setTimeout(()=>{f.innerHTML=html;f.classList.remove('sai')},350)}
+function placar(v,r){$('pv').textContent=v;$('pr').innerHTML=r}
+function grande(html){$('mes').innerHTML=html}
+function anoCorre(de,ate,ms){if(FOTO)ms=1;cancelAnimationFrame(anoAnim);plano.classList.add('vivo');const t0=performance.now();(function f(n){const p=Math.min(1,(n-t0)/ms);tAno=de+(ate-de)*ease(p);if(p<1)anoAnim=requestAnimationFrame(f);else plano.classList.remove('vivo')})(t0)}
+const totMun=M.munis.reduce((s,m)=>s+m.total,0);
+const v=(x,y,z)=>new C.Vector3(x,y,z);
+function mapa3d({relevo:r=false,tinta=0,rot={mun:false}}={}){mostraPlano(false);document.body.classList.toggle('emendas',tinta>0);if(tinta>0)$('fonte').textContent=FONTE_MAPA;cancelAnimationFrame(anoAnim);tAno=FIM;relevoOn=r;tintaAlvo=tinta;sel=-1;depSel=null;relevo(r);pinta();mostraRot=rot;acorda(6)}
+const ATOS=[
+  {f:'Cada quadrado é um órgão do Estado, do <em>tamanho do dinheiro</em> que tem para gastar em 2026.',
+   ent(){mostraPlano(true);cancelAnimationFrame(anoAnim);tAno=FIM;trocaLayout('todos');plano.classList.remove('foco-atr');
+     $('ctx').textContent='Rondônia · orçamento de 2026 · 81 órgãos';grande(`${din(D.despesa.orc)} <small>para gastar em 2026</small>`);placar('','');$('leg2').classList.remove('on')}},
+  {f:'O ano passou. Com <em>77% do tempo</em> corrido, o Estado deu destino a <em>67% do dinheiro</em>.',
+   ent(){mostraPlano(true);trocaLayout('todos');$('ctx').textContent='Rondônia · orçamento de 2026 · 81 órgãos';$('leg2').classList.add('on');$('leg2a').style.display='none';tCab=-1;
+     anoCorre(0,FIM,7000);setTimeout(()=>{if(ato===1)$('dica2').classList.add('on')},7400);setTimeout(()=>$('dica2').classList.remove('on'),11000)}},
+  {f:`Estes são os <em class="r">${ATR.length} órgãos</em> em que o gasto anda <em class="r">abaixo do ritmo do ano</em>.`,
+   ent(){mostraPlano(true);cancelAnimationFrame(anoAnim);tAno=FIM;trocaLayout('atr',true);$('ctx').textContent='Rondônia · orçamento de 2026 · abaixo do ritmo do ano';
+     $('leg2').classList.add('on');$('leg2a').style.display='';
+     grande(`<span style="color:var(--atraso)">${din(GAP)}</span> <small>abaixo do ritmo do ano</small>`);
+     placar(`${ATR.length} de ${O.length} órgãos`,'gasto 10 pontos ou mais aquém da linha do ano · uma régua de leitura, não uma regra legal')}},
+  {f:'Esse dinheiro é de um Estado inteiro: <em>52 municípios</em>, que o novo governo recebe em <em>6 de janeiro</em>.',ponte:true,cam:{alvo:v(-2,0,-1),dist:150,az:-6,el:56},
+   ent(){mapa3d({rot:{mun:'nomes'}});plano.classList.remove('escondido');plano.classList.add('fora');cur={alvo:v(-2,0,-1),dist:120,az:0,el:84};
+     grande('');$('ctx').textContent='Rondônia · 52 municípios · 1,58 milhão de pessoas';placar('','')}},
+  {f:`O mapa agora mostra só <em>emendas parlamentares</em>: ${din(totMun)} liberados aos municípios desde 2019.`,cam:{alvo:v(4,0,-7),dist:158,az:-12,el:50},
+   ent(){mapa3d({relevo:true,tinta:1,rot:{mun:true}});grande(`${din(totMun)} <small>em emendas parlamentares · 2019 a 2026</small>`);
+     $('ctx').textContent='Mapa das emendas parlamentares · não é o orçamento do Estado';
+     placar(`${M.munis.filter(m=>m.total>0).length} municípios`,`altura e cor = quanto cada um recebeu · fora do mapa: ${din(M.varios.total)} sem município definido`)}},
+  {f:'Em <em>84 dias</em>, o que muda é decisão do novo governo.',cam:{alvo:v(-2,0,-10),dist:170,az:-26,el:42},
+   ent(){mapa3d({relevo:true,tinta:1,rot:{mun:true}});grande('');$('ctx').textContent='Rondônia · transição de governo · no mapa, as emendas 2019–2026';placar('84 dias','da indicação da equipe (14/10) até a posse (6/1/2027)')}},
+  {f:'Agora é com você: toque num <em>município</em> para ver quais deputados mandaram emendas e quanto.',cam:{alvo:v(2,0,-6),dist:165,az:0,el:56},
+   ent(){mapa3d({relevo:true,tinta:1,rot:{mun:true}});grande(`${din(totMun)} <small>em emendas parlamentares · 2019 a 2026</small>`);
+     $('ctx').textContent='Explorar o mapa das emendas · arraste para girar · role ou pince para aproximar';
+     placar('','fora do mapa: '+din(M.varios.total)+' sem município definido')}},
+];
+let ato=-1,tocou=false;
+$('stories').innerHTML=ATOS.map((a,i)=>`<button aria-label="Etapa ${i+1}" data-a="${i}"><i><b></b></i></button>`).join('');
+$('stories').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(b)vaiAto(+b.dataset.a)});
+function vaiAto(n){const ant=ato;ato=Math.max(0,Math.min(ATOS.length-1,n));const a=ATOS[ato];fraseNova(a.f);$('regua').classList.toggle('on',ato===1);fechaPainel();
+  a.ent();if(a.cam)vaiCam(a.cam,a.ponte?3.2:(ant>=3?2.4:.01));
+  document.querySelectorAll('#stories button').forEach((b,i)=>b.classList.toggle('feito',i<=ato));
+  $('pos').textContent=`${ato+1} de ${ATOS.length}`;$('ant').disabled=ato===0;$('proxT').textContent=ato===ATOS.length-1?'Do início':'Próximo'}
+function avanca(d){if(!tocou){tocou=true;$('prox').classList.remove('chama')}vaiAto(d>0&&ato===ATOS.length-1?0:ato+d)}
+$('prox').onclick=()=>avanca(1);$('ant').onclick=()=>avanca(-1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','ArrowDown'].includes(e.key)){e.preventDefault();avanca(1)}if(['ArrowLeft','PageUp','ArrowUp'].includes(e.key)){e.preventDefault();if(ato>0)avanca(-1)}if(e.key==='Escape')fechaPainel()});
+
+/* ---------- régua do ano ---------- */
+$('rm').innerHTML=MESES.map(m=>`<span>${m.slice(0,3)}</span>`).join('');
+const regua=$('regua');regua.addEventListener('pointerdown',e=>{regua.setPointerCapture(e.pointerId);const f=ev=>{const r=regua.getBoundingClientRect();cancelAnimationFrame(anoAnim);tAno=Math.max(0,Math.min(FIM,(ev.clientX-r.left)/r.width*12))};f(e);
+  regua.onpointermove=f;regua.onpointerup=()=>{regua.onpointermove=null}});
+
+/* ---------- toque, arrastar, aproximar ---------- */
+const ray=new C.Raycaster(),ptr=new C.Vector2();const toques=new Map();let ini=null,pinca=0;
+ren.domElement.addEventListener('pointerdown',e=>{toques.set(e.pointerId,{x:e.clientX,y:e.clientY});ini={x:e.clientX,y:e.clientY,az:cur.az,el:cur.el,mov:false};
+  if(toques.size===2){const [a,b]=[...toques.values()];pinca=Math.hypot(a.x-b.x,a.y-b.y)}camB=null});
+ren.domElement.addEventListener('pointermove',e=>{if(!toques.has(e.pointerId))return;toques.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(toques.size===2){const [a,b]=[...toques.values()],d=Math.hypot(a.x-b.x,a.y-b.y);if(pinca)cur.dist=Math.max(18,Math.min(320,cur.dist*pinca/d));pinca=d;ini.mov=true;acorda();return}
+  const dx=e.clientX-ini.x,dy=e.clientY-ini.y;if(Math.hypot(dx,dy)>6)ini.mov=true;if(ini.mov){cur.az=ini.az-dx*.25;cur.el=Math.max(14,Math.min(85,ini.el+dy*.2));acorda()}});
+ren.domElement.addEventListener('pointerup',e=>{toques.delete(e.pointerId);if(toques.size<2)pinca=0;if(ini&&!ini.mov)toca(e.clientX,e.clientY);if(!toques.size)ini=null});
+ren.domElement.addEventListener('wheel',e=>{e.preventDefault();camB=null;cur.dist=Math.max(18,Math.min(320,cur.dist*(1+e.deltaY*.0012)));acorda()},{passive:false});
+function toca(x,y){if(modo2d)return;ptr.set(x/innerWidth*2-1,-(y/innerHeight)*2+1);ray.setFromCamera(ptr,cam);
+  const alvos=munis.map(m=>m.mesh);const h=ray.intersectObjects(alvos,false)[0];if(!h)return fechaPainel();
+  painelMun(h.object.userData.i)}
+
+/* ---------- fichas: todo número já à vista ---------- */
+function abrePainel(html){$('pc').innerHTML=html;$('painel').classList.add('on');$('painel').scrollTop=0}
+function fechaPainel(){$('painel').classList.remove('on');limpaSel()}
+$('px').onclick=fechaPainel;
+const linhas=(itens,mx,larga)=>`<div class="linhas">${itens.map(([rt,val,cor])=>`<div class="linha${larga?' larga':''}"><span class="rt">${rt}</span>${larga?'':`<span class="br"><i style="width:${Math.max(0,val)/mx*100}%;${cor?'background:'+cor:''}"></i></span>`}<span class="v">${din(val)}</span>${larga?`<span class="br"><i style="width:${Math.max(0,val)/mx*100}%;${cor?'background:'+cor:''}"></i></span>`:''}</div>`).join('')}</div>`;
+function painelMun(i){const m=M.munis[i],anos=[2019,2020,2021,2023,2024,2025,2026].map(a=>[String(a),m.anos[a]||0]);
+  abrePainel(`<div class="tipo">Município · <button data-lista style="all:unset;cursor:pointer;color:var(--agua);font-weight:700;letter-spacing:.1em">ver os 52</button></div><h3>${m.nome}</h3><div class="sub">Emendas parlamentares estaduais liberadas, 2019 a 2026</div><div class="gde num">${din(m.total)}</div><div class="sub">${br(m.n)} ofícios</div>
+  ${m.deps.length?`<h4>Deputados que mandaram · toque num nome</h4>${linhas(m.deps.slice(0,12).map(d=>[`<button data-dep="${d[0]}">${d[0]}</button>`,d[1]]),m.deps[0][1],true)}`:''}
+  <h4>Por ano</h4>${linhas(anos,Math.max(1,...anos.map(a=>a[1])))}<div class="nota">2022 não aparece porque a fonte (OFIP) não traz liberações desse ano. Não significa que foi zero.</div>
+  ${m.secs.length?`<h4>Órgãos que executaram</h4>${linhas(m.secs.slice(0,8).map(d=>[d[0],d[1]]),m.secs[0][1],true)}`:''}`);
+  selMun(i)}
+function painelDep(nome){const d=M.deps.find(x=>x[0]===nome);if(!d)return;const lista=d[2].slice().sort((a,b)=>b[1]-a[1]);
+  abrePainel(`<div class="tipo">Deputado</div><h3>${nome}</h3><div class="sub">Emendas parlamentares liberadas para municípios, 2019 a 2026</div><div class="gde num">${din(d[1])}</div><div class="sub">para ${lista.length} municípios · no mapa, só os que receberam</div>
+  <h4>Para onde foi</h4>${linhas(lista.slice(0,20).map(([i,v])=>[M.munis[i].nome,v]),lista[0][1],true)}`);
+  selDep(lista)}
+function painelLista(){const l=[...M.munis.keys()].sort((a,b)=>M.munis[b].total-M.munis[a].total);
+  abrePainel(`<div class="tipo">Emendas parlamentares · 2019 a 2026</div><h3>Os 52 municípios</h3><div class="sub">Do que mais recebeu ao que menos recebeu. Toque num nome para ver no mapa.</div><div class="gde num">${din(totMun)}</div>
+  ${linhas(l.map((i,k)=>[`<span style="color:var(--cinza);display:inline-block;min-width:1.8em">${k+1}</span><button data-mun="${i}">${M.munis[i].nome}</button>`,M.munis[i].total]),M.munis[l[0]].total,true)}
+  <div class="nota">Fora do mapa: ${din(M.varios.total)} liberados para "vários municípios", sem município definido. A fonte não traz liberações em 2022.</div>`)}
+$('ver52').onclick=painelLista;
+$('pc').addEventListener('click',e=>{if(e.target.closest('[data-lista]'))return painelLista();const mu=e.target.closest('[data-mun]');if(mu)painelMun(+mu.dataset.mun);const b=e.target.closest('[data-dep]');if(b)painelDep(b.dataset.dep);const o=e.target.closest('[data-org]');if(o)painelOrg(O[+o.dataset.org])});
+function painelOrg(o){const p=o.pag/o.orc,c=o.emp/o.orc,a=atrasado(o),meses=o.mes_emp.slice(0,10).map((x,k)=>[MESES[k].slice(0,3),x]);
+  abrePainel(`<div class="tipo">${a?'<span style="color:var(--atraso)">Abaixo do ritmo do ano</span>':'Órgão'}</div><h3>${nomeDe(o)}</h3><div class="sub">${o.nome} · ${o.sigla}</div><div class="gde num">${din(o.orc)}</div><div class="sub">para gastar em 2026 (orçamento atualizado)</div>
+  <dl><dt>Já tem destino</dt><dd>${din(o.emp)} · ${br(c*100,0)}%</dd><dt>Já pago</dt><dd>${din(o.pag)} · ${br(p*100,0)}%</dd><dt>Ainda sem destino</dt><dd>${din(o.orc-o.emp)}</dd>
+  ${a?`<dt class="r">Abaixo do ritmo</dt><dd class="r">${din(gapDe(o))}</dd>`:''}${o.cargos?`<dt>Cargos de nomeação</dt><dd>${br(o.cargos.qtd)}</dd>`:''}${o.emendas?`<dt>Emendas recebidas 2019–26</dt><dd>${din(o.emendas.valor)}</dd>`:''}</dl>
+  <h4>Destino dado, mês a mês</h4>${linhas(meses,Math.max(1,...meses.map(x=>x[1])))}
+  <div class="nota">Destino dado = empenhado. Valores negativos são cancelamentos no mês.</div>`)}
+function painelGrupo(g){const l=g.membros.slice().sort((a,b)=>b.orc-a.orc);
+  abrePainel(`<div class="tipo">Os órgãos menores</div><h3>${g.nome}</h3><div class="sub">Somados, ${din(g.orc)}. Cada um com quanto já tem destino. Toque num nome.</div>
+  ${linhas(l.map(o=>[`<button data-org="${O.indexOf(o)}" style="${atrasado(o)?'color:var(--atraso)':''}">${o.nome}</button> <span style="color:var(--cinza)">${br(o.emp/o.orc*100,0)}%</span>`,o.orc,atrasado(o)?'var(--atraso)':'']),l[0].orc,true)}`)}
+
+/* ---------- laço: no 2D não desenha 3D; no 3D só desenha quando algo se mexe ---------- */
+let ult=performance.now(),tCab=-1;
+const quando=t=>t>=FIM-.01?'7 de outubro':MESES[Math.min(11,Math.floor(t))];
+function cabeca2d(){if(ato!==1||Math.abs(tAno-tCab)<1e-4)return;tCab=tAno;let sc=0,sp=0;O.forEach(o=>{sc+=acum(o.mes_emp,tAno);sp+=acum(o.mes_pag,tAno)});
+  grande(`${din(sc)} <small>já com destino, de ${din(D.despesa.orc)}</small>`);placar(quando(tAno),`${br(tAno/12*100,0)}% do ano · pago ${din(sp)}`);
+  $('rf').style.width=(tAno/12*100)+'%';$('rb').style.left=(tAno/12*100)+'%'}
+function laco(agora){const dt=Math.min(.05,(agora-ult)/1000);ult=agora;requestAnimationFrame(laco);
+  if(modo2d){desenha2d(tAno);cabeca2d();return}
+  let mexeu=false;
+  if(camB){camT=Math.min(1,camT+dt/camDur);const e=ease(camT);cur.alvo.lerpVectors(camA.alvo,camB.alvo,e);cur.dist=camA.dist+(camB.dist-camA.dist)*e;cur.az=camA.az+(camB.az-camA.az)*e;cur.el=camA.el+(camB.el-camA.el)*e;if(camT>=1)camB=null;mexeu=true}
+  const k=Math.min(1,dt*2.2);
+  munis.forEach(u=>{const s=u.mesh.scale.y,dy=u.alvo-s;if(Math.abs(dy)>1e-3){u.mesh.scale.y=s+dy*Math.min(1,dt*2);mexeu=true}else if(dy){u.mesh.scale.y=u.alvo;mexeu=true}
+    const c=u.mesh.material.color,a=u.corAlvo,dc=Math.abs(c.r-a.r)+Math.abs(c.g-a.g)+Math.abs(c.b-a.b);if(dc>.002){c.lerp(a,Math.min(1,dt*3));mexeu=true}else if(dc){c.copy(a);mexeu=true}});
+  if(!mexeu&&sujo<=0)return;if(sujo>0)sujo--;
+  aplicaCam();rotulos();ren.render(cena,cam)}
+let rz2;addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();ren.setSize(innerWidth,innerHeight);rots.forEach(r=>{r.f=r.m=r.u=null});acorda();clearTimeout(rz2);rz2=setTimeout(()=>{monta2d(layout||'todos');desenha2d(tAno)},120)});
+(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{monta2d('todos');vaiAto((parseInt(location.hash.slice(1))||1)-1);requestAnimationFrame(laco);
+  if(FOTO){const q=new URLSearchParams(location.search);if(q.get('mun'))painelMun(+q.get('mun'));if(q.get('lista'))painelLista();if(q.get('org'))painelOrg(O.find(o=>o.sigla===q.get('org')))}});
+</script>
+</body>
+</html>

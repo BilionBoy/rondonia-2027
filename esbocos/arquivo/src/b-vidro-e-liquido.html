@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esboço B · Vidro e líquido</title>
+<style>
+:root{--noite:#05070c;--texto:#f5efe3;--apagado:#8a8f9c;--ambar:#ffb547;--coral:#ff8a6b;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--noite);color:var(--texto);font-family:var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+body{background:radial-gradient(120% 90% at 70% 110%,rgba(255,150,40,.10),transparent 60%),radial-gradient(80% 60% at 0% 0%,rgba(80,110,200,.08),transparent 60%),var(--noite)}
+canvas{position:fixed;inset:0;width:100vw;height:100svh;display:block;touch-action:manipulation}
+.sobre{position:fixed;left:clamp(16px,2.6vw,48px);top:clamp(14px,2.2vw,36px);pointer-events:none;z-index:2}
+.sobre .ctx{font-size:clamp(.62rem,.75vw,.78rem);letter-spacing:.22em;text-transform:uppercase;color:var(--apagado)}
+.sobre .v{font-size:clamp(2rem,4.6vw,4.4rem);font-weight:200;letter-spacing:-.04em;line-height:1;margin-top:8px;font-variant-numeric:tabular-nums}
+.sobre .v b{font-weight:650;color:var(--ambar)}
+.sobre .r{font-size:clamp(.72rem,.9vw,.92rem);color:var(--apagado);margin-top:8px;max-width:38ch}
+.rodape{position:fixed;left:clamp(16px,2.6vw,48px);bottom:clamp(10px,1.6vw,24px);font-size:clamp(.6rem,.72vw,.75rem);color:var(--apagado);z-index:2;pointer-events:none;letter-spacing:.04em}
+.troca{position:fixed;top:10px;right:12px;z-index:20;display:flex;gap:4px;font-family:var(--mono);font-size:.7rem}
+.troca a{color:var(--apagado);text-decoration:none;border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:3px 7px}
+.troca a.on{color:var(--noite);background:var(--texto)}
+.veu{position:fixed;inset:0;background:rgba(5,7,12,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .35s;z-index:10}
+.veu.on{opacity:1;pointer-events:auto}
+.ficha{position:fixed;z-index:11;left:50%;top:50%;transform:translate(-50%,-46%) scale(.97);opacity:0;pointer-events:none;transition:all .4s cubic-bezier(.2,.7,.1,1);display:flex;gap:20px;max-width:94vw}
+.ficha.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.cartao{width:min(470px,90vw);border-radius:22px;padding:clamp(18px,2.2vw,30px);background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);box-shadow:0 40px 120px rgba(0,0,0,.6);display:grid;grid-template-columns:auto 1fr;gap:22px}
+.copo{position:relative;width:clamp(76px,7vw,108px);height:clamp(220px,34vh,330px);border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);overflow:hidden}
+.copo .liq{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(#ffd27a,#ff9a2e 40%,#d8560c);transition:height 1.4s cubic-bezier(.2,.7,.1,1);box-shadow:0 0 40px rgba(255,160,50,.45)}
+.copo .liq svg{position:absolute;left:0;top:-9px;width:200%;height:10px;animation:onda 3.2s linear infinite}
+@keyframes onda{to{transform:translateX(-50%)}}
+.copo .marca{position:absolute;left:-1px;width:12px;border-top:1.5px solid var(--texto);opacity:.7}
+.copo .marca.d{left:auto;right:-1px}
+.cartao h3{margin:0;font-size:clamp(1.5rem,2.4vw,2.2rem);font-weight:650;letter-spacing:-.03em}
+.cartao .nome{color:var(--apagado);font-size:.85rem;margin:6px 0 18px;line-height:1.35}
+.cartao dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:9px 16px;font-size:.9rem}
+.cartao dt{color:var(--apagado)}.cartao dd{margin:0;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.cartao .acao{margin-top:18px;display:flex;gap:8px}
+.cartao button{border:1px solid rgba(255,255,255,.2);background:transparent;color:var(--texto);border-radius:999px;padding:8px 14px;font:inherit;font-size:.8rem;cursor:pointer}
+.estado{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ambar)}.estado.atr{color:var(--coral)}
+.aviso{position:fixed;left:50%;bottom:clamp(14px,3vh,40px);transform:translateX(-50%);z-index:3;font-size:.8rem;color:var(--texto);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:8px 16px;opacity:0;transition:opacity .6s;pointer-events:none}
+.aviso.on{opacity:1}
+@media (max-width:700px){.ficha{flex-direction:column;max-height:92svh;overflow:auto}}
+</style>
+</head>
+<body>
+<nav class="troca"><a href="a-o-ano-passando.html">A</a><a class="on" href="b-vidro-e-liquido.html">B</a><a href="c-netflix.html">C</a></nav>
+<canvas id="c" aria-label="Os 81 órgãos como vidros, com o dinheiro pago como líquido"></canvas>
+<div class="sobre">
+  <div class="ctx">Rondônia · orçamento de 2026</div>
+  <div class="v"><b id="pago">R$ 0</b> de <span id="orc"></span></div>
+  <div class="r">Cada vidro é um órgão, do tamanho do orçamento. O líquido é o que já foi pago. A marca nas bordas é onde o ano está (77%).</div>
+</div>
+<div class="rodape">Portal da Transparência RO · posição de 7/10/2026</div>
+<div class="aviso" id="aviso">Toque num órgão · mova o mouse ou incline o celular</div>
+<div class="veu" id="veu"></div>
+<div class="ficha" id="ficha" role="dialog" aria-modal="true"></div>
+<script>
+const D=/*__DADOS__*/null;
+const ROT={'FUNPRECAP':'IPERON · fundo','RECURSOS-SEFIN':'Encargos · SEFIN'};
+const TEMPO=280/365;
+const br=(v,c=0)=>v.toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
+const din=v=>{const a=Math.abs(v);return a>=1e9?'R$ '+br(v/1e9,2)+' bi':a>=1e6?'R$ '+br(v/1e6,1)+' mi':a>=1e3?'R$ '+br(v/1e3,0)+' mil':'R$ '+br(v)};
+const O=D.orgaos.filter(o=>o.orc>0);
+document.getElementById('orc').textContent=din(D.despesa.orc);
+
+function squarify(itens,x,y,w,h){const out=[];let fila=[];const tot=itens.reduce((s,i)=>s+i.v,0),k=w*h/tot;let rest=itens.map(i=>({...i,a:i.v*k}));
+  const pior=(f,l)=>{const s=f.reduce((a,b)=>a+b.a,0),mx=Math.max(...f.map(r=>r.a)),mn=Math.min(...f.map(r=>r.a));return Math.max(l*l*mx/(s*s),(s*s)/(l*l*mn))};
+  const assenta=f=>{const s=f.reduce((a,b)=>a+b.a,0);if(w>=h){const cw=s/h;let cy=y;f.forEach(r=>{const rh=r.a/cw;out.push({...r,x,y:cy,w:cw,h:rh});cy+=rh});x+=cw;w-=cw}else{const rh=s/w;let cx=x;f.forEach(r=>{const cw=r.a/rh;out.push({...r,x:cx,y,w:cw,h:rh});cx+=cw});y+=rh;h-=rh}};
+  while(rest.length){const l=Math.min(w,h),c=rest[0];if(!fila.length||pior(fila,l)>=pior([...fila,c],l)){fila.push(c);rest.shift()}else{assenta(fila);fila=[]}}if(fila.length)assenta(fila);return out}
+
+const cv=document.getElementById('c'),cx=cv.getContext('2d');let W,H,dpr,V=[];
+function monta(){dpr=Math.min(2,devicePixelRatio||1);W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);
+  const topo=Math.max(130,Math.min(H*.26,220)),lado=Math.max(14,W*.026),base=Math.max(34,H*.06);
+  const mob=W<700,y0=mob?Math.max(170,H*.28):topo;
+  V=squarify(O.map((o,i)=>({v:o.orc,i})),lado,y0,W-lado*2,H-y0-base).map((r,k)=>({...r,o:O[r.i],nivel:V[k]?.nivel||0,amp:0,fase:Math.random()*6.28,atraso:k*18}))}
+monta();
+let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(monta,100)});
+
+let incl=0,inclAlvo=0,hover=-1,t0=performance.now();
+addEventListener('pointermove',e=>{inclAlvo=(e.clientX/W-.5)*2;const i=acha(e.clientX,e.clientY);hover=i;cv.style.cursor=i>=0?'pointer':'default'});
+addEventListener('deviceorientation',e=>{if(e.gamma!=null)inclAlvo=Math.max(-1,Math.min(1,e.gamma/35))});
+function acha(x,y){return V.findIndex(r=>x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h)}
+function rr(x,y,w,h,r){r=Math.min(r,w/2,h/2);cx.beginPath();cx.moveTo(x+r,y);cx.arcTo(x+w,y,x+w,y+h,r);cx.arcTo(x+w,y+h,x,y+h,r);cx.arcTo(x,y+h,x,y,r);cx.arcTo(x,y,x+w,y,r);cx.closePath()}
+let somaPago=0;
+function quadro(agora){const t=(agora-t0)/1000;incl+=(inclAlvo-incl)*.06;cx.clearRect(0,0,W,H);let sp=0;
+  V.forEach((r,k)=>{const G=3,x=r.x+G/2,y=r.y+G/2,w=r.w-G,h=r.h-G;if(w<1||h<1)return;const o=r.o;
+    const alvo=o.pag/o.orc,ent=Math.max(0,Math.min(1,(t*1000-400-r.atraso)/2200)),e=1-Math.pow(1-ent,3);r.nivel=alvo*e;sp+=o.pag*e;
+    r.amp*=.965;const amp=Math.min(5,1+h*.012)+r.amp,rad=Math.min(8,w*.12);
+    // vidro
+    rr(x,y,w,h,rad);const gv=cx.createLinearGradient(0,y,0,y+h);gv.addColorStop(0,'rgba(255,255,255,.055)');gv.addColorStop(1,'rgba(255,255,255,.018)');cx.fillStyle=gv;cx.fill();
+    cx.save();rr(x,y,w,h,rad);cx.clip();
+    // comprometido: névoa clara
+    const yc=y+h-Math.min(1,o.emp/o.orc)*e*h;cx.fillStyle='rgba(255,190,90,.07)';cx.fillRect(x,yc,w,y+h-yc);
+    // líquido pago
+    const ys=y+h-r.nivel*h;cx.beginPath();cx.moveTo(x,y+h);const passo=Math.max(4,w/40);
+    for(let xx=x;xx<=x+w+passo;xx+=passo){const yy=ys+Math.sin(xx*.045+t*1.6+r.fase)*amp*.6+Math.sin(xx*.11-t*2.3+r.fase)*amp*.3+incl*(xx-(x+w/2))*.12*Math.min(1,r.nivel*4);cx.lineTo(Math.min(xx,x+w),yy)}
+    cx.lineTo(x+w,y+h);cx.closePath();const gl=cx.createLinearGradient(0,ys,0,y+h);gl.addColorStop(0,'rgba(255,214,130,.95)');gl.addColorStop(.35,'rgba(255,156,46,.92)');gl.addColorStop(1,'rgba(206,82,14,.9)');cx.fillStyle=gl;cx.fill();
+    cx.strokeStyle='rgba(255,244,214,.85)';cx.lineWidth=1.1;cx.beginPath();
+    for(let xx=x;xx<=x+w+passo;xx+=passo){const yy=ys+Math.sin(xx*.045+t*1.6+r.fase)*amp*.6+Math.sin(xx*.11-t*2.3+r.fase)*amp*.3+incl*(xx-(x+w/2))*.12*Math.min(1,r.nivel*4);xx===x?cx.moveTo(xx,yy):cx.lineTo(Math.min(xx,x+w),yy)}cx.stroke();
+    // reflexo do vidro
+    const gr=cx.createLinearGradient(x,y,x+w,y+h);gr.addColorStop(0,'rgba(255,255,255,.10)');gr.addColorStop(.3,'rgba(255,255,255,0)');cx.fillStyle=gr;cx.fillRect(x,y,w,h);
+    cx.restore();
+    // borda e marca do tempo
+    rr(x,y,w,h,rad);cx.strokeStyle=k===hover?'rgba(255,255,255,.55)':'rgba(255,255,255,.09)';cx.lineWidth=k===hover?1.5:1;cx.stroke();
+    const ym=y+h-TEMPO*h;cx.strokeStyle='rgba(245,239,227,.55)';cx.lineWidth=1.2;cx.beginPath();cx.moveTo(x,ym);cx.lineTo(x+Math.min(9,w*.2),ym);cx.moveTo(x+w,ym);cx.lineTo(x+w-Math.min(9,w*.2),ym);cx.stroke();
+    // rótulos
+    if(w>48&&h>30){const atr=o.orc>=20e6&&o.emp/o.orc<TEMPO-.10;const fs=Math.max(10,Math.min(17,w*.09,h*.18));
+      cx.font=`650 ${fs}px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif`;cx.fillStyle=atr?'#ff8a6b':'rgba(245,239,227,.95)';cx.fillText(ROT[o.sigla]||o.sigla,x+8,y+fs+5);
+      if(w>74&&h>62){cx.font=`300 ${Math.min(34,Math.max(13,w*.13,h*.12))}px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif`;cx.fillStyle='rgba(255,255,255,.92)';cx.fillText(br(o.pag/o.orc*100*e,0)+'%',x+8,y+h-10)}}
+  });
+  if(Math.abs(sp-somaPago)>1){somaPago=sp;document.getElementById('pago').textContent=din(sp)}
+  requestAnimationFrame(quadro)}
+requestAnimationFrame(quadro);
+
+/* toque: onda e ficha */
+let sel=[],comparando=false,pediuSensor=false;
+cv.addEventListener('click',e=>{if(!pediuSensor&&typeof DeviceOrientationEvent!=='undefined'&&DeviceOrientationEvent.requestPermission){pediuSensor=true;DeviceOrientationEvent.requestPermission().catch(()=>{})}
+  const i=acha(e.clientX,e.clientY);if(i<0)return;V[i].amp=9;V.forEach((r,k)=>{const d=Math.hypot(r.x+r.w/2-e.clientX,r.y+r.h/2-e.clientY);if(k!==i&&d<220)r.amp=Math.max(r.amp,4*(1-d/220))});
+  setTimeout(()=>abre(V[i].o),380)});
+function cartao(o){const p=o.pag/o.orc,c=o.emp/o.orc,atr=o.orc>=20e6&&c<TEMPO-.10;
+  return `<div class="cartao"><div class="copo"><div class="liq" style="height:0" data-h="${p*100}"><svg viewBox="0 0 200 10" preserveAspectRatio="none"><path d="M0 5 Q 25 0 50 5 T 100 5 T 150 5 T 200 5 V10 H0Z" fill="#ffd27a"/></svg></div><div class="marca" style="bottom:${TEMPO*100}%"></div><div class="marca d" style="bottom:${TEMPO*100}%"></div></div>
+  <div><div class="estado ${atr?'atr':''}">${atr?'atrasado':'no ritmo'} · ${br(c*100,0)}% comprometido</div><h3>${ROT[o.sigla]||o.sigla}</h3><div class="nome">${o.nome}</div>
+  <dl><dt>Orçamento</dt><dd>${din(o.orc)}</dd><dt>Comprometido</dt><dd>${din(o.emp)}</dd><dt>Pago</dt><dd>${din(o.pag)} · ${br(p*100,0)}%</dd><dt>Sem destino</dt><dd>${din(o.orc-o.emp)}</dd>
+  ${o.cargos?`<dt>Cargos de nomeação</dt><dd>${br(o.cargos.qtd)}</dd>`:''}${o.emendas?`<dt>Emendas 2019–26</dt><dd>${din(o.emendas.valor)}</dd>`:''}</dl>
+  <div class="acao">${sel.length<2?'<button data-c>Comparar com outro</button>':''}<button data-f>Fechar</button></div></div></div>`}
+function abre(o){if(comparando){sel.push(o);comparando=false}else sel=[o];aviso(false);const f=document.getElementById('ficha');f.innerHTML=sel.map(cartao).join('');f.classList.add('on');document.getElementById('veu').classList.add('on');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>f.querySelectorAll('.liq').forEach(l=>l.style.height=l.dataset.h+'%')))}
+function fecha(){document.getElementById('ficha').classList.remove('on');document.getElementById('veu').classList.remove('on')}
+document.getElementById('ficha').addEventListener('click',e=>{if(e.target.matches('[data-f]'))fecha();if(e.target.matches('[data-c]')){comparando=true;fecha();aviso(true,'Toque no segundo órgão para comparar')}});
+document.getElementById('veu').onclick=fecha;addEventListener('keydown',e=>{if(e.key==='Escape')fecha()});
+function aviso(on,txt){const a=document.getElementById('aviso');if(txt)a.textContent=txt;a.classList.toggle('on',on)}
+setTimeout(()=>aviso(true),3200);setTimeout(()=>aviso(false),8000);
+</script>
+</body>
+</html>

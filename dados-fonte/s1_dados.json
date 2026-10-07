@@ -1,0 +1,7644 @@
+{
+ "meta": {
+  "estado": "Rondônia",
+  "exercicio": 2026,
+  "lei": "LOA 2026 - Lei Orçamentária Anual",
+  "fonte_despesa": "COGES-RO / Portal da Transparência RO",
+  "fonte_emendas": "COGES-RO / Portal da Transparência RO",
+  "atualizacao_despesa": "2026-10-07",
+  "atualizacao_emendas": "2026-10-07",
+  "coletado_em": "2026-10-07",
+  "url_despesa": "https://transparencia.ro.gov.br/despesa/despesa-estadual",
+  "url_emendas": "https://transparencia.ro.gov.br/emenda",
+  "observacao": "Valores em reais (R$). Snapshot de referência usado como fallback quando os endpoints públicos não respondem."
+ },
+ "totais": {
+  "orcado_inicial": 18650943291.0,
+  "orcado_atualizado": 20466327497.58,
+  "empenhado": 13739346627.27,
+  "liquidado": 12402445703.4,
+  "pago": 12247752822.75
+ },
+ "orgaos": [
+  {
+   "orgao": "PROCURADORIA GERAL DO ESTADO",
+   "orcado_inicial": 135560548.0,
+   "orcado_atualizado": 135333570.99,
+   "empenhado": 93389743.54,
+   "liquidado": 91824256.81,
+   "pago": 90857500.13
+  },
+  {
+   "orgao": "FUNDO DE APERFEICOAMENTO DOS SERVICOS JUDICIARIOS",
+   "orcado_inicial": 311492090.0,
+   "orcado_atualizado": 350612307.99,
+   "empenhado": 262599363.04,
+   "liquidado": 149563481.16,
+   "pago": 140537441.08
+  },
+  {
+   "orgao": "AGENCIA ESTADUAL DE VIGILANCIA E SAUDE",
+   "orcado_inicial": 26600034.0,
+   "orcado_atualizado": 45670502.0,
+   "empenhado": 22577990.65,
+   "liquidado": 18575537.69,
+   "pago": 17924665.64
+  },
+  {
+   "orgao": "INSTITUTO DE PREVIDENCIA DOS SERVIDORES PUBLICOS DO ESTADO DE RONDONIA",
+   "orcado_inicial": 82537604.0,
+   "orcado_atualizado": 82537604.0,
+   "empenhado": 57642602.41,
+   "liquidado": 52484951.61,
+   "pago": 52417648.47
+  },
+  {
+   "orgao": "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA",
+   "orcado_inicial": 278120815.0,
+   "orcado_atualizado": 253349021.84,
+   "empenhado": 180063425.73,
+   "liquidado": 145255038.77,
+   "pago": 122768331.18
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DOS DIREITOS DA CRIANCA E DO ADOLESCENTE",
+   "orcado_inicial": 239886.0,
+   "orcado_atualizado": 1484234.92,
+   "empenhado": 304827.38,
+   "liquidado": 137532.9,
+   "pago": 137532.9
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DOS DIREITOS DA PESSOA IDOSA",
+   "orcado_inicial": 167117.0,
+   "orcado_atualizado": 167117.0,
+   "empenhado": 119507.2,
+   "liquidado": 101020.16,
+   "pago": 101020.16
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE DEFESA DO CONSUMIDOR",
+   "orcado_inicial": 1549782.0,
+   "orcado_atualizado": 2017507.14,
+   "empenhado": 297983.88,
+   "liquidado": 139254.96,
+   "pago": 139254.96
+  },
+  {
+   "orgao": "FUNDO ESPECIAL DE REGULARIZACAO FUNDIARIA URBANA E RURAL DO ESTADO DE RONDONIA",
+   "orcado_inicial": 6047418.0,
+   "orcado_atualizado": 6979464.15,
+   "empenhado": 121614.35,
+   "liquidado": 119616.0,
+   "pago": 95319.0
+  },
+  {
+   "orgao": "CONTROLADORIA GERAL DO ESTADO",
+   "orcado_inicial": 16920715.0,
+   "orcado_atualizado": 19794317.09,
+   "empenhado": 13499039.75,
+   "liquidado": 13205050.61,
+   "pago": 13042702.11
+  },
+  {
+   "orgao": "FUNDO DE INVESTIMENTO E DESENVOLVIMENTO INDUSTRIAL DO ESTADO DE RONDONIA",
+   "orcado_inicial": 73510501.0,
+   "orcado_atualizado": 108862197.43,
+   "empenhado": 38343991.47,
+   "liquidado": 32923032.03,
+   "pago": 31081752.4
+  },
+  {
+   "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDONIA",
+   "orcado_inicial": 13950292.0,
+   "orcado_atualizado": 16760292.0,
+   "empenhado": 12036502.48,
+   "liquidado": 11257078.54,
+   "pago": 11201296.78
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO AMBIENTAL",
+   "orcado_inicial": 71805961.0,
+   "orcado_atualizado": 65282266.14,
+   "empenhado": 44972475.12,
+   "liquidado": 41678677.11,
+   "pago": 41122395.8
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE DESENVOLVIMENTO DA CULTURA",
+   "orcado_inicial": 2961214.0,
+   "orcado_atualizado": 26873858.92,
+   "empenhado": 15217328.22,
+   "liquidado": 15217328.22,
+   "pago": 15217328.22
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DE PATRIMONIO E REGULARIZACAO FUNDIARIA",
+   "orcado_inicial": 21768951.0,
+   "orcado_atualizado": 21768951.0,
+   "empenhado": 14528600.28,
+   "liquidado": 13720635.38,
+   "pago": 13427693.12
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE COMBATE E ERRADICACAO DA POBREZA DE RONDONIA",
+   "orcado_inicial": 46621727.0,
+   "orcado_atualizado": 60600987.69,
+   "empenhado": 33994126.73,
+   "liquidado": 25505620.04,
+   "pago": 25446203.29
+  },
+  {
+   "orgao": "FUNDO DE DESENVOLVIMENTO DOS DESPORTOS",
+   "orcado_inicial": 48390.0,
+   "orcado_atualizado": 48390.0,
+   "empenhado": 0.0,
+   "liquidado": 0.0,
+   "pago": 0.0
+  },
+  {
+   "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+   "orcado_inicial": 499419707.0,
+   "orcado_atualizado": 550642212.9,
+   "empenhado": 403569994.85,
+   "liquidado": 279987674.6,
+   "pago": 260201382.01
+  },
+  {
+   "orgao": "CORPO DE BOMBEIROS MILITAR",
+   "orcado_inicial": 19037212.0,
+   "orcado_atualizado": 58749914.31,
+   "empenhado": 45272041.33,
+   "liquidado": 22986122.58,
+   "pago": 22620718.41
+  },
+  {
+   "orgao": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS MILITAR DO ESTADO DE RONDONIA",
+   "orcado_inicial": 25378123.0,
+   "orcado_atualizado": 38395477.18,
+   "empenhado": 36694298.1,
+   "liquidado": 13776061.77,
+   "pago": 13551682.07
+  },
+  {
+   "orgao": "INSTITUTO ESTADUAL DE EDUCACAO EM SAUDE PUBLICA DE RONDONIA",
+   "orcado_inicial": 7270501.0,
+   "orcado_atualizado": 8462965.71,
+   "empenhado": 5300719.95,
+   "liquidado": 4338551.66,
+   "pago": 4335371.94
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DA AGRICULTURA",
+   "orcado_inicial": 74472897.0,
+   "orcado_atualizado": 186787620.55,
+   "empenhado": 92333973.51,
+   "liquidado": 75574829.88,
+   "pago": 72910612.85
+  },
+  {
+   "orgao": "FUNDACAO RONDONIA DE AMPARO AO DESENV. DAS ACOES CIENT. E TECNOL. E A PESQ. DO EST DE RO",
+   "orcado_inicial": 7458888.0,
+   "orcado_atualizado": 12327808.72,
+   "empenhado": 6364148.94,
+   "liquidado": 5221427.51,
+   "pago": 5145403.63
+  },
+  {
+   "orgao": "TRIBUNAL DE JUSTICA DO ESTADO DE RONDONIA",
+   "orcado_inicial": 1616554200.0,
+   "orcado_atualizado": 1616554200.0,
+   "empenhado": 997398988.13,
+   "liquidado": 995573574.2,
+   "pago": 995195104.17
+  },
+  {
+   "orgao": "AGENCIA DE DEFESA SANITARIA AGROSILVOPASTORIL DO ESTADO DE RONDONIA",
+   "orcado_inicial": 199002170.0,
+   "orcado_atualizado": 199002170.0,
+   "empenhado": 143613996.62,
+   "liquidado": 138164512.52,
+   "pago": 136431480.7
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DA JUVENTUDE, CULTURA, ESPORTE E LAZER",
+   "orcado_inicial": 13457057.0,
+   "orcado_atualizado": 147931794.86,
+   "empenhado": 123194597.29,
+   "liquidado": 114602704.57,
+   "pago": 114249147.18
+  },
+  {
+   "orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNICA E EXTENSAO RURAL DO ESTADO DE RONDONIA",
+   "orcado_inicial": 129976181.0,
+   "orcado_atualizado": 160983218.59,
+   "empenhado": 110152784.03,
+   "liquidado": 101960676.01,
+   "pago": 101680207.93
+  },
+  {
+   "orgao": "FUNDO ESPECIAL DE PROTECAO AMBIENTAL",
+   "orcado_inicial": 28862714.0,
+   "orcado_atualizado": 57930945.85,
+   "empenhado": 24946786.45,
+   "liquidado": 13322237.67,
+   "pago": 12794744.74
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DE SEGURANCA, DEFESA E CIDADANIA",
+   "orcado_inicial": 1957389906.0,
+   "orcado_atualizado": 1938816280.81,
+   "empenhado": 1420853436.8,
+   "liquidado": 1410806824.65,
+   "pago": 1404707846.82
+  },
+  {
+   "orgao": "POLICIA MILITAR",
+   "orcado_inicial": 41671719.0,
+   "orcado_atualizado": 72824719.0,
+   "empenhado": 69082441.63,
+   "liquidado": 33534510.01,
+   "pago": 33033985.74
+  },
+  {
+   "orgao": "SUPERINTENDENCIA ESTADUAL DE TURISMO",
+   "orcado_inicial": 5481291.0,
+   "orcado_atualizado": 17950909.0,
+   "empenhado": 16528144.77,
+   "liquidado": 12865659.96,
+   "pago": 12828320.43
+  },
+  {
+   "orgao": "FUNDO ESPECIAL DE MODERNIZACAO E REAPARELHAMENTO DA POLICIA MILITAR",
+   "orcado_inicial": 1363875.0,
+   "orcado_atualizado": 1523875.0,
+   "empenhado": 163248.5,
+   "liquidado": 0.0,
+   "pago": 0.0
+  },
+  {
+   "orgao": "SUPERINTENDENCIA ESTADUAL DE COMPRAS E LICITACOES",
+   "orcado_inicial": 10746299.0,
+   "orcado_atualizado": 11163992.12,
+   "empenhado": 7303874.15,
+   "liquidado": 7216345.4,
+   "pago": 7118393.02
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DE JUSTICA",
+   "orcado_inicial": 561930123.0,
+   "orcado_atualizado": 580926233.27,
+   "empenhado": 436328007.34,
+   "liquidado": 425646920.71,
+   "pago": 420748595.17
+  },
+  {
+   "orgao": "INSTITUTO DE PESOS E MEDIDAS DO ESTADO DE RONDONIA",
+   "orcado_inicial": 9960295.0,
+   "orcado_atualizado": 10045050.84,
+   "empenhado": 5817129.16,
+   "liquidado": 5647806.66,
+   "pago": 5606811.72
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DE FINANCAS",
+   "orcado_inicial": 304105284.0,
+   "orcado_atualizado": 340432056.08,
+   "empenhado": 235220955.14,
+   "liquidado": 233724686.68,
+   "pago": 231156011.84
+  },
+  {
+   "orgao": "FUNDACAO ESTADUAL DE ATENDIMENTO SOCIOEDUCATIVO DO ESTADO DE RONDONIA - FEASE",
+   "orcado_inicial": 47634992.0,
+   "orcado_atualizado": 55037539.98,
+   "empenhado": 40985153.7,
+   "liquidado": 37227682.35,
+   "pago": 37118016.96
+  },
+  {
+   "orgao": "FUNDACAO CULTURAL DO ESTADO DE RONDONIA",
+   "orcado_inicial": 5365719.0,
+   "orcado_atualizado": 6376284.83,
+   "empenhado": 4132252.03,
+   "liquidado": 3831117.22,
+   "pago": 3795891.34
+  },
+  {
+   "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+   "orcado_inicial": 18086135.0,
+   "orcado_atualizado": 22016306.79,
+   "empenhado": 22919385.23,
+   "liquidado": 18757732.3,
+   "pago": 18333686.2
+  },
+  {
+   "orgao": "SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDONIA",
+   "orcado_inicial": 19011161.0,
+   "orcado_atualizado": 23011919.22,
+   "empenhado": 17292800.32,
+   "liquidado": 13823091.58,
+   "pago": 13513265.11
+  },
+  {
+   "orgao": "SUPERINTENDENCIA ESTADUAL DO INDIGENA",
+   "orcado_inicial": 2538090.0,
+   "orcado_atualizado": 4470877.0,
+   "empenhado": 3324448.1,
+   "liquidado": 3075075.52,
+   "pago": 3028064.67
+  },
+  {
+   "orgao": "TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA",
+   "orcado_inicial": 328482230.0,
+   "orcado_atualizado": 328482230.0,
+   "empenhado": 240842982.49,
+   "liquidado": 211686442.48,
+   "pago": 211203396.19
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVICOS PUBLICOS",
+   "orcado_inicial": 116155234.0,
+   "orcado_atualizado": 315605888.34,
+   "empenhado": 116832606.75,
+   "liquidado": 84222077.94,
+   "pago": 83856207.29
+  },
+  {
+   "orgao": "ASSEMBLEIA LEGISLATIVA DO ESTADO DE RONDONIA",
+   "orcado_inicial": 552509013.0,
+   "orcado_atualizado": 581823642.5,
+   "empenhado": 528626818.54,
+   "liquidado": 381726979.84,
+   "pago": 376938744.6
+  },
+  {
+   "orgao": "FUNDO PREVIDENCIARIO CAPITALIZADO DO IPERON",
+   "orcado_inicial": 1957883269.0,
+   "orcado_atualizado": 1957883269.0,
+   "empenhado": 867808992.18,
+   "liquidado": 867613414.9,
+   "pago": 867613414.9
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE SEGURANCA PUBLICA",
+   "orcado_inicial": 20670933.0,
+   "orcado_atualizado": 79159051.18,
+   "empenhado": 17516286.57,
+   "liquidado": 6691133.53,
+   "pago": 2941133.53
+  },
+  {
+   "orgao": "SUPERINTENDENCIA ESTADUAL DE GESTAO DE PESSOAS",
+   "orcado_inicial": 39630520.0,
+   "orcado_atualizado": 44316159.91,
+   "empenhado": 36102385.66,
+   "liquidado": 35512246.34,
+   "pago": 35169734.57
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DO PLANEJAMENTO, ORCAMENTO E GESTAO",
+   "orcado_inicial": 421656951.0,
+   "orcado_atualizado": 83812972.61,
+   "empenhado": 40544136.19,
+   "liquidado": 39176799.54,
+   "pago": 38759241.0
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE ASSISTENCIA SOCIAL",
+   "orcado_inicial": 32389393.0,
+   "orcado_atualizado": 34619981.12,
+   "empenhado": 20236169.16,
+   "liquidado": 18997294.19,
+   "pago": 18993313.5
+  },
+  {
+   "orgao": "FUNDO GARANTIDOR DE PARCERIAS PUBLICO-PRIVADA DO ESTADO DE RONDONIA",
+   "orcado_inicial": 11190267.0,
+   "orcado_atualizado": 11190267.0,
+   "empenhado": 0.0,
+   "liquidado": 0.0,
+   "pago": 0.0
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE RECURSOS HIDRICOS",
+   "orcado_inicial": 2246045.0,
+   "orcado_atualizado": 5067606.08,
+   "empenhado": 2827201.15,
+   "liquidado": 347143.03,
+   "pago": 344918.03
+  },
+  {
+   "orgao": "FUNDO ESTADUAL - FUN-HEURO",
+   "orcado_inicial": 231868169.0,
+   "orcado_atualizado": 302809.0,
+   "empenhado": 0.0,
+   "liquidado": 0.0,
+   "pago": 0.0
+  },
+  {
+   "orgao": "FUNDO ESPECIAL DA DEFENSORIA PUBLICA DO ESTADO DE RONDONIA",
+   "orcado_inicial": 13422522.0,
+   "orcado_atualizado": 22973493.86,
+   "empenhado": 11964114.55,
+   "liquidado": 7371199.02,
+   "pago": 7307750.73
+  },
+  {
+   "orgao": "DEFENSORIA PUBLICA DO ESTADO DE RONDONIA",
+   "orcado_inicial": 177219872.0,
+   "orcado_atualizado": 177733204.08,
+   "empenhado": 125361968.34,
+   "liquidado": 120685000.55,
+   "pago": 120369070.41
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DA MULHER, DA FAMILIA, DA ASSISTENCIA E DO DESENVOLVIMENTO SOCIAL",
+   "orcado_inicial": 74142237.0,
+   "orcado_atualizado": 97900995.13,
+   "empenhado": 60355788.73,
+   "liquidado": 51341406.29,
+   "pago": 49531653.88
+  },
+  {
+   "orgao": "SUPERINTENDENCIA ESTADUAL DE TECNOLOGIA DA INFORMACAO E COMUNICACAO",
+   "orcado_inicial": 31781641.0,
+   "orcado_atualizado": 31781641.0,
+   "empenhado": 21976313.7,
+   "liquidado": 20538342.28,
+   "pago": 20307666.4
+  },
+  {
+   "orgao": "FUNDO DE DESENVOLVIMENTO E APERFEICOAMENTO DA ADMINISTRACAO TRIBUTARIA",
+   "orcado_inicial": 32246099.0,
+   "orcado_atualizado": 64896211.74,
+   "empenhado": 21177540.07,
+   "liquidado": 12723173.97,
+   "pago": 12207816.9
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE PREVENCAO, FISCALIZACAO E REPRESSAO DE ENTORPECENTES",
+   "orcado_inicial": 767151.0,
+   "orcado_atualizado": 767151.0,
+   "empenhado": 515309.22,
+   "liquidado": 515309.22,
+   "pago": 515309.22
+  },
+  {
+   "orgao": "FUNDO DE RECONSTITUICAO DE BENS LESADOS",
+   "orcado_inicial": 1800000.0,
+   "orcado_atualizado": 19436635.84,
+   "empenhado": 80465.13,
+   "liquidado": 76843.53,
+   "pago": 76843.53
+  },
+  {
+   "orgao": "DEPARTAMENTO ESTADUAL DE ESTRADAS DE RODAGEM E TRANSPORTES",
+   "orcado_inicial": 181719820.0,
+   "orcado_atualizado": 613707104.9,
+   "empenhado": 264182788.99,
+   "liquidado": 241430301.28,
+   "pago": 238033034.19
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DA EDUCACAO",
+   "orcado_inicial": 3027629650.0,
+   "orcado_atualizado": 3086830799.58,
+   "empenhado": 2210440729.58,
+   "liquidado": 1967701110.98,
+   "pago": 1932953319.58
+  },
+  {
+   "orgao": "SUPERINTENDENCIA DE GESTAO DOS GASTOS PUBLICOS ADMINISTRATIVOS",
+   "orcado_inicial": 182144665.0,
+   "orcado_atualizado": 217258191.15,
+   "empenhado": 156273781.82,
+   "liquidado": 144531282.64,
+   "pago": 142475871.14
+  },
+  {
+   "orgao": "FUNDO DE INFRAESTRUTURA, TRANSPORTE E HABITACAO",
+   "orcado_inicial": 171200488.0,
+   "orcado_atualizado": 259169493.44,
+   "empenhado": 130739692.05,
+   "liquidado": 99238901.06,
+   "pago": 98485076.09
+  },
+  {
+   "orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONOMICO",
+   "orcado_inicial": 14850326.0,
+   "orcado_atualizado": 41047945.41,
+   "empenhado": 32845648.22,
+   "liquidado": 31874972.46,
+   "pago": 31656444.75
+  },
+  {
+   "orgao": "CONTABILIDADE GERAL DO ESTADO",
+   "orcado_inicial": 33912915.0,
+   "orcado_atualizado": 38401774.47,
+   "empenhado": 27761239.03,
+   "liquidado": 24421382.74,
+   "pago": 23872036.09
+  },
+  {
+   "orgao": "INSTITUTO ESTADUAL DE DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL",
+   "orcado_inicial": 26959894.0,
+   "orcado_atualizado": 52758062.35,
+   "empenhado": 23295160.67,
+   "liquidado": 17883449.29,
+   "pago": 17598049.39
+  },
+  {
+   "orgao": "MINISTERIO PUBLICO DO ESTADO DE RONDONIA",
+   "orcado_inicial": 652467899.0,
+   "orcado_atualizado": 674182447.11,
+   "empenhado": 521914098.93,
+   "liquidado": 390413741.86,
+   "pago": 386710942.84
+  },
+  {
+   "orgao": "FUNDO DE DESENVOLVIMENTO INSTITUCIONAL DO MINISTERIO PUBLICO DE RONDONIA",
+   "orcado_inicial": 29320000.0,
+   "orcado_atualizado": 55284189.0,
+   "empenhado": 23216651.0,
+   "liquidado": 14027169.84,
+   "pago": 13245712.39
+  },
+  {
+   "orgao": "FUNDACAO DE HEMATOLOGIA E HEMOTERAPIA DO ESTADO DE RONDONIA",
+   "orcado_inicial": 70102011.0,
+   "orcado_atualizado": 71902011.0,
+   "empenhado": 51632586.09,
+   "liquidado": 49778084.32,
+   "pago": 48809889.31
+  },
+  {
+   "orgao": "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS",
+   "orcado_inicial": 1235536331.0,
+   "orcado_atualizado": 1578342112.16,
+   "empenhado": 1156307497.78,
+   "liquidado": 1154893892.19,
+   "pago": 1154893892.19
+  },
+  {
+   "orgao": "FUNDO DE DESENVOLVIMENTO INSTITUCIONAL DO TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA",
+   "orcado_inicial": 5842000.0,
+   "orcado_atualizado": 22629000.0,
+   "empenhado": 3614660.44,
+   "liquidado": 1060603.49,
+   "pago": 1060603.49
+  },
+  {
+   "orgao": "FUNDO ESPECIAL DE REEQUIPAMENTO POLICIAL",
+   "orcado_inicial": 1475000.0,
+   "orcado_atualizado": 1942000.0,
+   "empenhado": 607152.38,
+   "liquidado": 297567.29,
+   "pago": 293274.89
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DOS DIREITOS DA MULHER",
+   "orcado_inicial": 116785.0,
+   "orcado_atualizado": 116785.0,
+   "empenhado": 98980.0,
+   "liquidado": 92265.12,
+   "pago": 92265.12
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DO TRABALHO, EMPREGO E RENDA DO ESTADO DE RONDONIA",
+   "orcado_inicial": 1000.0,
+   "orcado_atualizado": 1000.0,
+   "empenhado": 0.0,
+   "liquidado": 0.0,
+   "pago": 0.0
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE SANIDADE ANIMAL",
+   "orcado_inicial": 33104000.0,
+   "orcado_atualizado": 33104000.0,
+   "empenhado": 17722164.15,
+   "liquidado": 4286295.27,
+   "pago": 4286295.27
+  },
+  {
+   "orgao": "AGENCIA DE REGULACAO DE SERVICOS PUBLICOS DELEGADOS DO ESTADO DE RONDONIA",
+   "orcado_inicial": 8187161.0,
+   "orcado_atualizado": 11538808.09,
+   "empenhado": 8124847.16,
+   "liquidado": 6331294.81,
+   "pago": 6326299.67
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE SAUDE",
+   "orcado_inicial": 2205698113.0,
+   "orcado_atualizado": 2497391656.12,
+   "empenhado": 1916152477.16,
+   "liquidado": 1792545205.7,
+   "pago": 1776235986.17
+  },
+  {
+   "orgao": "SUPERINTENDENCIA DE POLICIA TECNICO-CIENTIFICA",
+   "orcado_inicial": 2527216.0,
+   "orcado_atualizado": 2527216.0,
+   "empenhado": 1915538.82,
+   "liquidado": 1385338.59,
+   "pago": 1367041.24
+  },
+  {
+   "orgao": "POLICIA CIVIL",
+   "orcado_inicial": 18946799.0,
+   "orcado_atualizado": 19670641.5,
+   "empenhado": 15249521.82,
+   "liquidado": 12988146.59,
+   "pago": 12972216.27
+  },
+  {
+   "orgao": "FUNDO ESPECIAL DE MODERNIZACAO DA PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+   "orcado_inicial": 6742088.0,
+   "orcado_atualizado": 9942088.0,
+   "empenhado": 5979604.45,
+   "liquidado": 4665953.23,
+   "pago": 4625528.1
+  },
+  {
+   "orgao": "FUNDO ESTADUAL DE GOVERNANCA CLIMATICA E SERVICOS AMBIENTAIS",
+   "orcado_inicial": 320000.0,
+   "orcado_atualizado": 320000.0,
+   "empenhado": 0.0,
+   "liquidado": 0.0,
+   "pago": 0.0
+  }
+ ],
+ "emendas": {
+  "exercicio": 2026,
+  "tipo": "Emendas Parlamentares Estaduais (Individuais)",
+  "quantidade": 320,
+  "parlamentares": 23,
+  "previsto": 125847466.53,
+  "empenhado": 8067123.4,
+  "liquidado": 7057885.3,
+  "pago": 6305882.8,
+  "por_parlamentar": [
+   {
+    "parlamentar": "Cirone Deiró",
+    "previsto": 12935529,
+    "pago": 0,
+    "qtd": 41
+   },
+   {
+    "parlamentar": "Edevaldo Neves",
+    "previsto": 11292805,
+    "pago": 0,
+    "qtd": 14
+   },
+   {
+    "parlamentar": "Nim Barroso",
+    "previsto": 9000000,
+    "pago": 0,
+    "qtd": 11
+   },
+   {
+    "parlamentar": "Marcelo Cruz",
+    "previsto": 8141100,
+    "pago": 0,
+    "qtd": 6
+   },
+   {
+    "parlamentar": "Ismael Crispin",
+    "previsto": 7473000,
+    "pago": 0,
+    "qtd": 23
+   },
+   {
+    "parlamentar": "Gislaine Lebrinha",
+    "previsto": 6894000,
+    "pago": 0,
+    "qtd": 38
+   },
+   {
+    "parlamentar": "Luizinho Goebel",
+    "previsto": 6652000,
+    "pago": 0,
+    "qtd": 35
+   },
+   {
+    "parlamentar": "Dr. Luis do Hospital",
+    "previsto": 6625528,
+    "pago": 4878,
+    "qtd": 19
+   },
+   {
+    "parlamentar": "Pedro Fernandes",
+    "previsto": 6480000,
+    "pago": 0,
+    "qtd": 9
+   },
+   {
+    "parlamentar": "Ieda Pacheco Chaves",
+    "previsto": 6290500,
+    "pago": 0,
+    "qtd": 18
+   },
+   {
+    "parlamentar": "Rosangela Donadon",
+    "previsto": 6152000,
+    "pago": 5922000,
+    "qtd": 3
+   },
+   {
+    "parlamentar": "Alan Queiroz",
+    "previsto": 5850000,
+    "pago": 0,
+    "qtd": 18
+   },
+   {
+    "parlamentar": "Ezequiel Neiva",
+    "previsto": 5490600,
+    "pago": 0,
+    "qtd": 3
+   },
+   {
+    "parlamentar": "Affonso Candido",
+    "previsto": 5049600,
+    "pago": 0,
+    "qtd": 5
+   },
+   {
+    "parlamentar": "Delegado Lucas Torres",
+    "previsto": 4140000,
+    "pago": 4005,
+    "qtd": 16
+   }
+  ],
+  "historico": {
+   "fonte": "Observatório de Orçamento e Finanças Públicas (OFIP) — observatorioofip.com, complementado pela planilha 'EMENDAS 2025 - 2026'",
+   "consolidado_em": "2026-10-03",
+   "total_valor": 1725719863.96,
+   "total_liberacoes": 8582,
+   "serie_anual": [
+    {
+     "ano": 2019,
+     "tipo": "individual",
+     "valor": 65588460.1,
+     "qtd": 711
+    },
+    {
+     "ano": 2020,
+     "tipo": "individual",
+     "valor": 91768778.69,
+     "qtd": 710
+    },
+    {
+     "ano": 2021,
+     "tipo": "individual",
+     "valor": 86428984.15,
+     "qtd": 551
+    },
+    {
+     "ano": 2023,
+     "tipo": "bancada",
+     "valor": 116272906.75,
+     "qtd": 457
+    },
+    {
+     "ano": 2023,
+     "tipo": "individual",
+     "valor": 140369585.2,
+     "qtd": 785
+    },
+    {
+     "ano": 2024,
+     "tipo": "bancada",
+     "valor": 124896426.77,
+     "qtd": 582
+    },
+    {
+     "ano": 2024,
+     "tipo": "individual",
+     "valor": 258771861.0,
+     "qtd": 1163
+    },
+    {
+     "ano": 2025,
+     "tipo": "bancada",
+     "valor": 166850498.4,
+     "qtd": 958
+    },
+    {
+     "ano": 2025,
+     "tipo": "individual",
+     "valor": 268555104.25,
+     "qtd": 1079
+    },
+    {
+     "ano": 2026,
+     "tipo": "comissões",
+     "valor": 136464565.48,
+     "qtd": 663
+    },
+    {
+     "ano": 2026,
+     "tipo": "individual",
+     "valor": 269752693.17,
+     "qtd": 923
+    }
+   ],
+   "top_municipios": [
+    {
+     "municipio": "PORTO VELHO",
+     "valor": 313764764.44
+    },
+    {
+     "municipio": "MUNICÍPIOS DE RONDÔNIA",
+     "valor": 223759498.33
+    },
+    {
+     "municipio": "JI-PARANÁ",
+     "valor": 70917654.97
+    },
+    {
+     "municipio": "CACOAL",
+     "valor": 56987529.64
+    },
+    {
+     "municipio": "ARIQUEMES",
+     "valor": 55739244.17
+    },
+    {
+     "municipio": "VILHENA",
+     "valor": 52502202.29
+    },
+    {
+     "municipio": "GUAJARÁ-MIRIM",
+     "valor": 47461199.19
+    },
+    {
+     "municipio": "PIMENTA BUENO",
+     "valor": 41449016.88
+    },
+    {
+     "municipio": "SÃO MIGUEL DO GUAPORÉ",
+     "valor": 38851823.43
+    },
+    {
+     "municipio": "JARU",
+     "valor": 38737112.14
+    },
+    {
+     "municipio": "ROLIM DE MOURA",
+     "valor": 37173323.18
+    },
+    {
+     "municipio": "NOVA MAMORÉ",
+     "valor": 36731011.76
+    },
+    {
+     "municipio": "CUJUBIM",
+     "valor": 33986411.97
+    },
+    {
+     "municipio": "MONTE NEGRO",
+     "valor": 31729488.15
+    },
+    {
+     "municipio": "BURITIS",
+     "valor": 30488676.4
+    }
+   ],
+   "top_deputados": [
+    {
+     "deputado": "Marcelo Cruz",
+     "valor": 61241735.01,
+     "qtd": 202,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Jean Oliveira",
+     "valor": 57953411.44,
+     "qtd": 186,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Luizinho Goebel",
+     "valor": 55928817.48,
+     "qtd": 255,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Alex Redano",
+     "valor": 55029326.0,
+     "qtd": 251,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Rosangela Donadon",
+     "valor": 51165894.79,
+     "qtd": 98,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Ezequiel Neiva",
+     "valor": 47912450.68,
+     "qtd": 184,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Alan Queiroz",
+     "valor": 46631574.35,
+     "qtd": 288,
+     "anos": [
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Ismael Crispin",
+     "valor": 45815672.9,
+     "qtd": 288,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Laerte Gomes",
+     "valor": 45216586.51,
+     "qtd": 298,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Pedro Fernandes",
+     "valor": 41735401.06,
+     "qtd": 167,
+     "anos": [
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Ieda Chaves",
+     "valor": 40303840.69,
+     "qtd": 167,
+     "anos": [
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Luis do Hospital",
+     "valor": 40199033.01,
+     "qtd": 145,
+     "anos": [
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Jean Mendonça",
+     "valor": 39271828.99,
+     "qtd": 202,
+     "anos": [
+      2021,
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Eyder Brasil",
+     "valor": 39062580.59,
+     "qtd": 153,
+     "anos": [
+      2019,
+      2020,
+      2021,
+      2025,
+      2026
+     ]
+    },
+    {
+     "deputado": "Gislaine Lebrinha",
+     "valor": 38573754.0,
+     "qtd": 240,
+     "anos": [
+      2023,
+      2024,
+      2025,
+      2026
+     ]
+    }
+   ],
+   "por_ano_detalhe": {
+    "2025": {
+     "total": 435405602.65,
+     "qtd": 2037,
+     "top_municipios": [
+      {
+       "municipio": "MUNICÍPIOS DE RONDÔNIA",
+       "valor": 81633667.12
+      },
+      {
+       "municipio": "PORTO VELHO",
+       "valor": 60475818.61
+      },
+      {
+       "municipio": "JI-PARANÁ",
+       "valor": 17864720.0
+      },
+      {
+       "municipio": "SÃO MIGUEL DO GUAPORÉ",
+       "valor": 17666865.76
+      },
+      {
+       "municipio": "GUAJARÁ-MIRIM",
+       "valor": 14859159.0
+      },
+      {
+       "municipio": "ROLIM DE MOURA",
+       "valor": 10782800.0
+      },
+      {
+       "municipio": "CUJUBIM",
+       "valor": 10477507.0
+      },
+      {
+       "municipio": "ARIQUEMES",
+       "valor": 10273470.25
+      },
+      {
+       "municipio": "VILHENA",
+       "valor": 10217930.0
+      },
+      {
+       "municipio": "COLORADO DO OESTE",
+       "valor": 10132607.0
+      }
+     ],
+     "top_deputados": [
+      {
+       "deputado": "Marcelo Cruz",
+       "valor": 26270112.0
+      },
+      {
+       "deputado": "Jean Oliveira",
+       "valor": 19719800.0
+      },
+      {
+       "deputado": "Eyder Brasil",
+       "valor": 16509256.0
+      },
+      {
+       "deputado": "Alan Queiroz",
+       "valor": 15155573.34
+      },
+      {
+       "deputado": "Pedro Fernandes",
+       "valor": 14442306.0
+      },
+      {
+       "deputado": "Ieda Chaves",
+       "valor": 13846440.15
+      },
+      {
+       "deputado": "Luizinho Goebel",
+       "valor": 12809276.25
+      },
+      {
+       "deputado": "Rosangela Donadon",
+       "valor": 12288065.0
+      },
+      {
+       "deputado": "Alex Redano",
+       "valor": 12002806.0
+      },
+      {
+       "deputado": "Luis do Hospital",
+       "valor": 11676164.0
+      }
+     ]
+    },
+    "2026": {
+     "total": 406217258.65,
+     "qtd": 1586,
+     "top_municipios": [
+      {
+       "municipio": "MUNICÍPIOS DE RONDÔNIA",
+       "valor": 73449910.0
+      },
+      {
+       "municipio": "PORTO VELHO",
+       "valor": 51210728.5
+      },
+      {
+       "municipio": "VILHENA",
+       "valor": 20478700.0
+      },
+      {
+       "municipio": "ARIQUEMES",
+       "valor": 16000000.0
+      },
+      {
+       "municipio": "JI-PARANÁ",
+       "valor": 15710470.0
+      },
+      {
+       "municipio": "GUAJARÁ-MIRIM",
+       "valor": 12680300.0
+      },
+      {
+       "municipio": "ROLIM DE MOURA",
+       "valor": 8936225.0
+      },
+      {
+       "municipio": "PIMENTA BUENO",
+       "valor": 8762842.88
+      },
+      {
+       "municipio": "ESPIGÃO DO OESTE",
+       "valor": 8388200.0
+      },
+      {
+       "municipio": "ALVORADA DO OESTE",
+       "valor": 8220265.0
+      }
+     ],
+     "top_deputados": [
+      {
+       "deputado": "Luizinho Goebel",
+       "valor": 16775390.0
+      },
+      {
+       "deputado": "Alex Redano",
+       "valor": 15697800.0
+      },
+      {
+       "deputado": "Nim Barroso",
+       "valor": 13663805.0
+      },
+      {
+       "deputado": "Edevaldo Neves",
+       "valor": 12262805.0
+      },
+      {
+       "deputado": "Gislaine Lebrinha",
+       "valor": 12221504.0
+      },
+      {
+       "deputado": "Luis do Hospital",
+       "valor": 12173528.0
+      },
+      {
+       "deputado": "Ezequiel Neiva",
+       "valor": 11984816.0
+      },
+      {
+       "deputado": "Del. Rodrigo Camargo",
+       "valor": 11977945.0
+      },
+      {
+       "deputado": "Cássio Gois",
+       "valor": 11941200.0
+      },
+      {
+       "deputado": "Rosangela Donadon",
+       "valor": 11844800.0
+      }
+     ]
+    },
+    "2019": {
+     "total": 65588460.1,
+     "qtd": 711,
+     "top_municipios": [
+      {
+       "municipio": "PORTO VELHO",
+       "valor": 14890450.94
+      },
+      {
+       "municipio": "CACOAL",
+       "valor": 4347081.0
+      },
+      {
+       "municipio": "JI-PARANÁ",
+       "valor": 3014746.0
+      },
+      {
+       "municipio": "RONDÔNIA",
+       "valor": 2853356.83
+      },
+      {
+       "municipio": "VILHENA",
+       "valor": 2419559.35
+      },
+      {
+       "municipio": "PIMENTA BUENO",
+       "valor": 2355424.0
+      },
+      {
+       "municipio": "THEOBROMA",
+       "valor": 1739700.0
+      },
+      {
+       "municipio": "ARIQUEMES",
+       "valor": 1653770.77
+      },
+      {
+       "municipio": "CUJUBIM",
+       "valor": 1545679.76
+      },
+      {
+       "municipio": "COLORADO DO OESTE",
+       "valor": 1450575.13
+      }
+     ],
+     "top_deputados": [
+      {
+       "deputado": "Cássia Muleta",
+       "valor": 2856726.0
+      },
+      {
+       "deputado": "Lazinho da Fetagro",
+       "valor": 2851670.15
+      },
+      {
+       "deputado": "Cirone Deiró",
+       "valor": 2792831.0
+      },
+      {
+       "deputado": "Ezequiel Neiva",
+       "valor": 2782621.14
+      },
+      {
+       "deputado": "Jhony Paixão",
+       "valor": 2772100.0
+      },
+      {
+       "deputado": "Ismael Crispin",
+       "valor": 2742101.0
+      },
+      {
+       "deputado": "Laerte Gomes",
+       "valor": 2742100.17
+      },
+      {
+       "deputado": "Neidson de Barros",
+       "valor": 2742100.17
+      },
+      {
+       "deputado": "Rosangela Donadon",
+       "valor": 2742100.17
+      },
+      {
+       "deputado": "Alex Silva",
+       "valor": 2742100.0
+      }
+     ]
+    },
+    "2020": {
+     "total": 91768778.69,
+     "qtd": 710,
+     "top_municipios": [
+      {
+       "municipio": "PORTO VELHO",
+       "valor": 24886547.07
+      },
+      {
+       "municipio": "CACOAL",
+       "valor": 6518146.94
+      },
+      {
+       "municipio": "MUNICÍPIOS DE RONDÔNIA",
+       "valor": 5687298.3
+      },
+      {
+       "municipio": "ARIQUEMES",
+       "valor": 4774708.3
+      },
+      {
+       "municipio": "CANDEIAS DO JAMARI",
+       "valor": 3854349.7
+      },
+      {
+       "municipio": "THEOBROMA",
+       "valor": 3771768.0
+      },
+      {
+       "municipio": "PIMENTA BUENO",
+       "valor": 2896946.0
+      },
+      {
+       "municipio": "CEREJEIRAS",
+       "valor": 1762742.77
+      },
+      {
+       "municipio": "GUAJARÁ-MIRIM",
+       "valor": 1758660.0
+      },
+      {
+       "municipio": "JI-PARANÁ",
+       "valor": 1739514.34
+      }
+     ],
+     "top_deputados": [
+      {
+       "deputado": "Chiquinho",
+       "valor": 7096630.0
+      },
+      {
+       "deputado": "Eyder Brasil",
+       "valor": 4071293.3
+      },
+      {
+       "deputado": "Jean Oliveira",
+       "valor": 4068000.0
+      },
+      {
+       "deputado": "Ezequiel Neiva",
+       "valor": 3897283.22
+      },
+      {
+       "deputado": "Rosangela Donadon",
+       "valor": 3768315.16
+      },
+      {
+       "deputado": "Aélcio da TV",
+       "valor": 3768315.0
+      },
+      {
+       "deputado": "Neidson de Barros",
+       "valor": 3768313.74
+      },
+      {
+       "deputado": "Geraldo da RO",
+       "valor": 3768000.0
+      },
+      {
+       "deputado": "Jair Montes",
+       "valor": 3768000.0
+      },
+      {
+       "deputado": "Adailton Fúria",
+       "valor": 3767360.01
+      }
+     ]
+    },
+    "2021": {
+     "total": 86428984.15,
+     "qtd": 551,
+     "top_municipios": [
+      {
+       "municipio": "PORTO VELHO",
+       "valor": 22614564.47
+      },
+      {
+       "municipio": "MUNICÍPIOS DE RONDÔNIA",
+       "valor": 10000640.08
+      },
+      {
+       "municipio": "JI-PARANÁ",
+       "valor": 5523003.54
+      },
+      {
+       "municipio": "PIMENTA BUENO",
+       "valor": 5475235.0
+      },
+      {
+       "municipio": "MACHADINHO DO OESTE",
+       "valor": 2343390.0
+      },
+      {
+       "municipio": "GUAJARÁ-MIRIM",
+       "valor": 2141000.0
+      },
+      {
+       "municipio": "CANDEIAS DO JAMARI",
+       "valor": 1942601.7
+      },
+      {
+       "municipio": "ARIQUEMES",
+       "valor": 1745500.0
+      },
+      {
+       "municipio": "NOVA BRASILÂNDIA",
+       "valor": 1577600.0
+      },
+      {
+       "municipio": "NOVA MAMORÉ",
+       "valor": 1332109.0
+      }
+     ],
+     "top_deputados": [
+      {
+       "deputado": "Lebrão",
+       "valor": 3985604.93
+      },
+      {
+       "deputado": "Jair Montes",
+       "valor": 3918105.0
+      },
+      {
+       "deputado": "Eyder Brasil",
+       "valor": 3918104.93
+      },
+      {
+       "deputado": "Ezequiel Neiva",
+       "valor": 3918093.69
+      },
+      {
+       "deputado": "Anderson Pereira",
+       "valor": 3917604.93
+      },
+      {
+       "deputado": "Neidson de Barros",
+       "valor": 3917419.8
+      },
+      {
+       "deputado": "Ismael Crispin",
+       "valor": 3915381.09
+      },
+      {
+       "deputado": "Alex Redano",
+       "valor": 3909820.0
+      },
+      {
+       "deputado": "Chiquinho",
+       "valor": 3894105.0
+      },
+      {
+       "deputado": "Cirone Deiró",
+       "valor": 3877457.83
+      }
+     ]
+    },
+    "2023": {
+     "total": 256642491.95,
+     "qtd": 1242,
+     "top_municipios": [
+      {
+       "municipio": "PORTO VELHO",
+       "valor": 67057727.82
+      },
+      {
+       "municipio": "MUNICÍPIOS DE RONDÔNIA",
+       "valor": 18170623.6
+      },
+      {
+       "municipio": "CACOAL",
+       "valor": 17893101.52
+      },
+      {
+       "municipio": "JI-PARANÁ",
+       "valor": 11518475.94
+      },
+      {
+       "municipio": "JARU",
+       "valor": 9526602.51
+      },
+      {
+       "municipio": "CUJUBIM",
+       "valor": 8161111.99
+      },
+      {
+       "municipio": "SERINGUEIRAS",
+       "valor": 7219765.0
+      },
+      {
+       "municipio": "ARIQUEMES",
+       "valor": 7013163.75
+      },
+      {
+       "municipio": "BURITIS",
+       "valor": 6547835.8
+      },
+      {
+       "municipio": "MONTE NEGRO",
+       "valor": 4957903.87
+      }
+     ],
+     "top_deputados": [
+      {
+       "deputado": "Ezequiel Neiva",
+       "valor": 6491427.99
+      },
+      {
+       "deputado": "Del. Lucas Torres",
+       "valor": 6069400.8
+      },
+      {
+       "deputado": "Del. Rodrigo Camargo",
+       "valor": 6024946.24
+      },
+      {
+       "deputado": "Cláudia de Jesus",
+       "valor": 5936302.0
+      },
+      {
+       "deputado": "Jean Mendonça",
+       "valor": 5888802.04
+      },
+      {
+       "deputado": "Taíssa Sousa",
+       "valor": 5871069.6
+      },
+      {
+       "deputado": "Nim Barroso",
+       "valor": 5863279.94
+      },
+      {
+       "deputado": "Cirone Deiró",
+       "valor": 5829969.12
+      },
+      {
+       "deputado": "Alan Queiroz",
+       "valor": 5825001.01
+      },
+      {
+       "deputado": "Laerte Gomes",
+       "valor": 5817325.72
+      }
+     ]
+    },
+    "2024": {
+     "total": 383668287.77,
+     "qtd": 1745,
+     "top_municipios": [
+      {
+       "municipio": "PORTO VELHO",
+       "valor": 72628927.03
+      },
+      {
+       "municipio": "MUNICÍPIOS DE RONDÔNIA",
+       "valor": 34817359.23
+      },
+      {
+       "municipio": "JI-PARANÁ",
+       "valor": 15546725.15
+      },
+      {
+       "municipio": "NOVA MAMORÉ",
+       "valor": 14922813.3
+      },
+      {
+       "municipio": "ARIQUEMES",
+       "valor": 14278631.1
+      },
+      {
+       "municipio": "CACOAL",
+       "valor": 13176613.0
+      },
+      {
+       "municipio": "MONTE NEGRO",
+       "valor": 12521000.0
+      },
+      {
+       "municipio": "VILHENA",
+       "valor": 12112939.39
+      },
+      {
+       "municipio": "GUAJARÁ-MIRIM",
+       "valor": 11885173.22
+      },
+      {
+       "municipio": "ROLIM DE MOURA",
+       "valor": 11590349.21
+      }
+     ],
+     "top_deputados": [
+      {
+       "deputado": "Marcelo Cruz",
+       "valor": 11812738.98
+      },
+      {
+       "deputado": "Ribeiro do SINPOL",
+       "valor": 11606236.88
+      },
+      {
+       "deputado": "Alex Redano",
+       "valor": 11114900.0
+      },
+      {
+       "deputado": "Del. Rodrigo Camargo",
+       "valor": 11066236.88
+      },
+      {
+       "deputado": "Taíssa Sousa",
+       "valor": 11057155.49
+      },
+      {
+       "deputado": "Rosangela Donadon",
+       "valor": 11031864.46
+      },
+      {
+       "deputado": "Nim Barroso",
+       "valor": 11016894.88
+      },
+      {
+       "deputado": "Pedro Fernandes",
+       "valor": 10981237.04
+      },
+      {
+       "deputado": "Alan Queiroz",
+       "valor": 10919000.0
+      },
+      {
+       "deputado": "Cirone Deiró",
+       "valor": 10852510.0
+      }
+     ]
+    }
+   }
+  }
+ },
+ "diario": {
+  "fonte": "Diário Oficial do Estado de Rondônia (DIOF)",
+  "url": "https://diof.ro.gov.br/",
+  "ultima_edicao": "06-10-2026",
+  "atualizado_em": "2026-10-07",
+  "metodo": "Varredura das edições 2026 (PDF → texto → regex de decretos/leis de crédito adicional)",
+  "observacao": "Todos os decretos e leis de crédito adicional publicados no DOE/RO em 2026, com valor, mecanismo e órgãos beneficiados extraídos dos anexos. (+1 atos novos nesta coleta)",
+  "agregados": {
+   "qtd": 359,
+   "valor_total": 4413306980.71,
+   "dinheiro_novo": 1767087931.4,
+   "remanejado": 2646219049.31,
+   "qtd_leis": 95,
+   "valor_leis": 1751169178.97,
+   "por_tipo": {
+    "anulação": 2646219049.31,
+    "superávit financeiro": 1320126030.42,
+    "operação de crédito": 383000000.0,
+    "excesso de arrecadação": 63961900.98
+   },
+   "por_mes": {
+    "2026-01": 5035770.36,
+    "2026-02": 127770447.08,
+    "2026-03": 335395227.16,
+    "2026-04": 408717914.87,
+    "2026-05": 1201084595.53,
+    "2026-06": 846803262.54,
+    "2026-07": 837993832.98,
+    "2026-08": 387518476.74,
+    "2026-09": 260270247.22,
+    "2026-10": 2717206.23
+   },
+   "top_orgaos": [
+    {
+     "sigla": "FES",
+     "orgao": "Fundo Estadual De Saúde",
+     "valor": 936487551.25
+    },
+    {
+     "sigla": "RS/SEFIN",
+     "orgao": "Secretaria De Finanças",
+     "valor": 630846385.42
+    },
+    {
+     "sigla": "SEDUC",
+     "orgao": "Secretaria De Estado Da Educação",
+     "valor": 611483336.89
+    },
+    {
+     "sigla": "DER/RO",
+     "orgao": "Infraestrutura E Serviços Públicos",
+     "valor": 475577519.4
+    },
+    {
+     "sigla": "SEFIN",
+     "orgao": "Secretaria De Estado De Finanças",
+     "valor": 445345064.87
+    },
+    {
+     "sigla": "SEPOG",
+     "orgao": "Planejamento, Orçamento E Gestão",
+     "valor": 220160707.71
+    },
+    {
+     "sigla": "SEOSP",
+     "orgao": "Serviços Públicos",
+     "valor": 214601431.61
+    },
+    {
+     "sigla": "SEJUCEL",
+     "orgao": "Cultura, Esporte E Lazer",
+     "valor": 180136854.22
+    },
+    {
+     "sigla": "DETRAN/RO",
+     "orgao": "Departamento Estadual De Trânsito",
+     "valor": 160259285.34
+    },
+    {
+     "sigla": "SEAGRI",
+     "orgao": "Secretaria De Estado Da Agricultura",
+     "valor": 159708206.21
+    },
+    {
+     "sigla": "SESDEC",
+     "orgao": "Defesa E Cidadania",
+     "valor": 155299724.45
+    },
+    {
+     "sigla": "FITHA",
+     "orgao": "Transporte E Habitação",
+     "valor": 111830478.36
+    },
+    {
+     "sigla": "IDARON",
+     "orgao": "Agrosilvopastoril Do Estado De Rondônia",
+     "valor": 103406000.0
+    },
+    {
+     "sigla": "FUNESP",
+     "orgao": "Fundo Estadual De Segurança Pública",
+     "valor": 69938777.11
+    },
+    {
+     "sigla": "MPRO",
+     "orgao": "Ministério Público Do Estado De Rondônia",
+     "valor": 64964548.11
+    }
+   ]
+  },
+  "decretos": [
+   {
+    "numero": "32.109",
+    "data": "05/10/2026",
+    "tipo": "Anulação",
+    "valor": 32139.0,
+    "orgaos": "Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.105",
+    "data": "05/10/2026",
+    "tipo": "Anulação",
+    "valor": 2145970.0,
+    "orgaos": "Departamento Estadual de Estradas de Rodagem e Transportes - DER/RO, Agência de Defesa Sanitária Agrosilvopastoril do Estado de Rondônia - Idaron, Superintendência Estadual do Indí"
+   },
+   {
+    "numero": "32.104",
+    "data": "05/10/2026",
+    "tipo": "Anulação",
+    "valor": 110000.0,
+    "orgaos": "Contabilidade Geral do Estado - Coges"
+   },
+   {
+    "numero": "32.103",
+    "data": "05/10/2026",
+    "tipo": "Anulação",
+    "valor": 214239.23,
+    "orgaos": "Fundo Estadual de Saúde - FES e Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.102",
+    "data": "05/10/2026",
+    "tipo": "Anulação",
+    "valor": 58053.0,
+    "orgaos": "Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.099",
+    "data": "01/10/2026",
+    "tipo": "Anulação",
+    "valor": 116805.0,
+    "orgaos": "Secretaria de Estado da Agricultura - Seagri e Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.098",
+    "data": "01/10/2026",
+    "tipo": "Anulação",
+    "valor": 40000.0,
+    "orgaos": "Fundo Estadual de Saúde - FES"
+   },
+   {
+    "numero": "32.096",
+    "data": "30/09/2026",
+    "tipo": "Anulação",
+    "valor": 6463966.25,
+    "orgaos": "Rondônia, Defesa E Cidadania, Secretaria De Estado Da Educação, Pública De Rondônia, Fundo Especial De Proteção Ambiental"
+   },
+   {
+    "numero": "32.090",
+    "data": "28/09/2026",
+    "tipo": "Anulação",
+    "valor": 8175719.17,
+    "orgaos": "Licitações, Públicos Administrativos, Defesa E Cidadania, Secretaria De Estado Da Educação, Fundação Cultural Do Estado De Rondônia"
+   },
+   {
+    "numero": "32.089",
+    "data": "28/09/2026",
+    "tipo": "Anulação",
+    "valor": 11100000.0,
+    "orgaos": "Secretaria de Estado da Segurança, Defesa e Cidadania - Sesdec e Agência de Defesa Sanitária Agrosilvopastoril do Estado de Rondônia - Idaron"
+   },
+   {
+    "numero": "32.084",
+    "data": "25/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 2538711.58,
+    "orgaos": "Fundo Penitenciário do Estado de Rondônia - Fupen"
+   },
+   {
+    "numero": "32.083",
+    "data": "25/09/2026",
+    "tipo": "Anulação",
+    "valor": 54501000.0,
+    "orgaos": "Tribunal de Justiça do Estado de Rondônia - TJRO"
+   },
+   {
+    "numero": "32.082",
+    "data": "25/09/2026",
+    "tipo": "Excesso de arrecadação",
+    "valor": 14232049.45,
+    "orgaos": "Assembleia Legislativa do Estado de Rondônia - Alero"
+   },
+   {
+    "numero": "32.081",
+    "data": "25/09/2026",
+    "tipo": "Excesso de arrecadação",
+    "valor": 85410.0,
+    "orgaos": "Fundação Estadual de Atendimento Socioeducativo - Fease"
+   },
+   {
+    "numero": "32.080",
+    "data": "25/09/2026",
+    "tipo": "Anulação",
+    "valor": 467000.0,
+    "orgaos": "Fundo Especial de Reequipamento Policial - Funrespol"
+   },
+   {
+    "numero": "32.078",
+    "data": "24/09/2026",
+    "tipo": "Anulação",
+    "valor": 433000.0,
+    "orgaos": "Secretaria de Estado da Agricultura - Seagri e Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.077",
+    "data": "24/09/2026",
+    "tipo": "Anulação",
+    "valor": 389798.75,
+    "orgaos": "Secretaria de Estado do Desenvolvimento Econômico - Sedec, Secretaria de Estado da Agricultura - Seagri, Secretaria de Estado da Mulher, da Família, da Assistência e do Desenvolvim"
+   },
+   {
+    "numero": "32.076",
+    "data": "24/09/2026",
+    "tipo": "Anulação",
+    "valor": 12003547.46,
+    "orgaos": "Rondônia, Superintendência Estadual Do Indígena, Rondônia, Estado De Rondônia, Fundo Estadual De Segurança Pública"
+   },
+   {
+    "numero": "32.075",
+    "data": "24/09/2026",
+    "tipo": "Anulação",
+    "valor": 1246385.49,
+    "orgaos": "Superintendência Estadual de Tecnologia da Informação e Comunicação - Setic e Companhia de Águas e Esgoto de Rondônia - Caerd"
+   },
+   {
+    "numero": "LEI 6.526",
+    "data": "23/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 2538711.58,
+    "orgaos": "Fundo Penitenciário do Estado de Rondônia - Fupen"
+   },
+   {
+    "numero": "LEI 6.525",
+    "data": "23/09/2026",
+    "tipo": "Excesso de arrecadação",
+    "valor": 85410.0,
+    "orgaos": "Fundação Estadual de Atendimento Socioeducativo - Fease"
+   },
+   {
+    "numero": "LEI 6.524",
+    "data": "23/09/2026",
+    "tipo": "Anulação",
+    "valor": 467000.0,
+    "orgaos": "Fundo Especial de Reequipamento Policial - Funrespol"
+   },
+   {
+    "numero": "LEI 6.523",
+    "data": "23/09/2026",
+    "tipo": "Excesso de arrecadação",
+    "valor": 14232049.45,
+    "orgaos": "Assembleia Legislativa do Estado de Rondônia - Alero"
+   },
+   {
+    "numero": "LEI 6.522",
+    "data": "23/09/2026",
+    "tipo": "Anulação",
+    "valor": 54501000.0,
+    "orgaos": "Tribunal de Justiça do Estado de Rondônia - TJRO"
+   },
+   {
+    "numero": "32.062",
+    "data": "18/09/2026",
+    "tipo": "Anulação",
+    "valor": 2247589.0,
+    "orgaos": "Secretaria de Estado da Educação - Seduc, Fundo Estadual de Saúde - FES, Secretaria de Estado da Agricultura - Seagri, Secretaria de Estado da Mulher, da Família, da Assistência e "
+   },
+   {
+    "numero": "32.061",
+    "data": "18/09/2026",
+    "tipo": "Anulação",
+    "valor": 1886135.88,
+    "orgaos": "Contabilidade Geral do Estado - Coges, Secretaria de Estado de Segurança, Defesa e Cidadania - Sesdec, Polícia Militar de Rondônia - PMRO e Secretaria de Estado da Educação - Seduc"
+   },
+   {
+    "numero": "32.053",
+    "data": "17/09/2026",
+    "tipo": "Anulação",
+    "valor": 450000.0,
+    "orgaos": "Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.045",
+    "data": "16/09/2026",
+    "tipo": "Anulação",
+    "valor": 6473530.72,
+    "orgaos": "Secretaria de Estado da Segurança, Defesa e Cidadania - Sesdec, Fundo Estadual de Segurança Pública - Funesp e Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.044",
+    "data": "16/09/2026",
+    "tipo": "Anulação",
+    "valor": 250000.0,
+    "orgaos": "Superintendência Estadual de Turismo - Setur e Secretaria de Estado da Juventude, Cultura, Esporte e Lazer - Sejucel"
+   },
+   {
+    "numero": "32.043",
+    "data": "16/09/2026",
+    "tipo": "Anulação",
+    "valor": 4384634.29,
+    "orgaos": "Procuradoria-Geral do Estado - PGE, Controladoria-Geral do Estado - CGE, Fundo Especial de Modernização da Procuradoria Geral do Estado de Rondônia - Fumorpge, Contabilidade Geral "
+   },
+   {
+    "numero": "32.041",
+    "data": "16/09/2026",
+    "tipo": "Anulação",
+    "valor": 27072.0,
+    "orgaos": "Superintendência Estadual de Compras e Licitações - Supel"
+   },
+   {
+    "numero": "32.036",
+    "data": "11/09/2026",
+    "tipo": "Anulação",
+    "valor": 2387313.89,
+    "orgaos": "Instituto de Pesos e Medidas do Estado de Rondônia - Ipem/RO, Fundo Especial do Corpo de Bombeiros Militar do Estado de Rondônia - Funesbom, Fundo Estadual de Saúde - FES, Secretar"
+   },
+   {
+    "numero": "32.035",
+    "data": "11/09/2026",
+    "tipo": "Anulação",
+    "valor": 1699000.0,
+    "orgaos": "Secretaria de Estado do Desenvolvimento Econômico - Sedec, Corpo de Bombeiros Militar de Rondônia - CBMRO, Fundo Estadual de Saúde - FES e Entidade Autárquica de Assistência Técnic"
+   },
+   {
+    "numero": "32.034",
+    "data": "11/09/2026",
+    "tipo": "Anulação",
+    "valor": 8861905.46,
+    "orgaos": "Departamento Estadual de Estradas de Rodagem e Transportes - DER/RO, Companhia de Águas e Esgoto de Rondônia - Caerd, Superintendência Estadual de Gestão de Pessoas - Segep, Fundo "
+   },
+   {
+    "numero": "32.033",
+    "data": "11/09/2026",
+    "tipo": "Anulação",
+    "valor": 1008000.0,
+    "orgaos": "pacientes oriundos de determinações judiciais, para atender as necessidades da Coordenadoria de Conciliação e Mandado Judiciais, através de Dispensa de Licitação, com fulcro no art"
+   },
+   {
+    "numero": "32.030",
+    "data": "10/09/2026",
+    "tipo": "Anulação",
+    "valor": 6429705.0,
+    "orgaos": "servidoras ADRIANA LARISSA DA SILVA MENDES NASCIMENTO, VIVIANE CRISTINA DO NASCIMENTO DE ALENCAR, LUCIANA PEREIRA DE SOUZA e LEIDIANE CARDOSO CAVALCANTE BARRETO, submeto à apreciaç"
+   },
+   {
+    "numero": "32.029",
+    "data": "10/09/2026",
+    "tipo": "Anulação",
+    "valor": 3892932.58,
+    "orgaos": "Polícia Militar de Rondônia - PMRO, Secretaria de Estado da Mulher, da Família, da Assistência e do Desenvolvimento Social - Seas, Fundo Estadual de Combate e Erradicação da Pobrez"
+   },
+   {
+    "numero": "32.028",
+    "data": "10/09/2026",
+    "tipo": "Anulação",
+    "valor": 900000.0,
+    "orgaos": "Junta Comercial do Estado de Rondônia - Jucer"
+   },
+   {
+    "numero": "32.025",
+    "data": "09/09/2026",
+    "tipo": "Anulação",
+    "valor": 1828382.91,
+    "orgaos": "Corpo de Bombeiros Militar de Rondônia - CBMRO, Fundo Especial de Proteção Ambiental - Fepram, Superintendência Estadual do Indígena - SI e Fundação Estadual de Atendimento Socioed"
+   },
+   {
+    "numero": "32.024",
+    "data": "09/09/2026",
+    "tipo": "Anulação",
+    "valor": 8866922.55,
+    "orgaos": "Controladoria-Geral do Estado - CGE, Secretaria de Estado da Educação - Seduc, Secretaria de Estado da Agricultura - Seagri e Secretaria de Estado da Juventude, Cultura, Esporte e "
+   },
+   {
+    "numero": "32.010",
+    "data": "04/09/2026",
+    "tipo": "Anulação",
+    "valor": 493875.0,
+    "orgaos": "Secretaria De Estado Da Educação, Secretaria De Estado Da Agricultura, E Extensão Rural Do Estado De Rondônia, Públicos, Esporte E Lazer"
+   },
+   {
+    "numero": "32.009",
+    "data": "04/09/2026",
+    "tipo": "Anulação",
+    "valor": 2188237.3,
+    "orgaos": "Secretaria de Estado da Mulher, da Família, da Assistência e do Desenvolvimento Social - Seas"
+   },
+   {
+    "numero": "32.008",
+    "data": "04/09/2026",
+    "tipo": "Anulação",
+    "valor": 1219923.0,
+    "orgaos": "Superintendência Estadual de Tecnologia da Informação e Comunicação - Setic, Secretaria de Estado da Segurança, Defesa e Cidadania - Sesdec e Fundo Estadual de Segurança Pública - "
+   },
+   {
+    "numero": "32.007",
+    "data": "02/09/2026",
+    "tipo": "Anulação",
+    "valor": 6680024.58,
+    "orgaos": "empresa ESAFI - ESCOLA DE ADMINISTRAÇÃO E TREINAMENTO LTDA, inscrita no CNPJ n.º 35.963.479/0001-46, no valor de até R$ 17.160,00 (dezessete mil cento e sessenta reais), com base n"
+   },
+   {
+    "numero": "32.006",
+    "data": "02/09/2026",
+    "tipo": "Anulação",
+    "valor": 2007699.0,
+    "orgaos": "Fundo Estadual de Saúde - FES, Secretaria de Estado da Agricultura - Seagri, Secretaria de Estado de Obras e Serviços Públicos - Seosp e Secretaria de Estado da Juventude, Cultura,"
+   },
+   {
+    "numero": "32.005",
+    "data": "02/09/2026",
+    "tipo": "Anulação",
+    "valor": 159000.0,
+    "orgaos": "Fundação de Hematologia e Hemoterapia de Rondônia - Fhemeron e Secretaria de Estado da Mulher, da Família, da Assistência e do Desenvolvimento Social - Seas"
+   },
+   {
+    "numero": "32.004",
+    "data": "02/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 376360.66,
+    "orgaos": "Entidade Autárquica de Assistência Técnica e Extensão Rural do Estado de Rondônia - Emater/RO"
+   },
+   {
+    "numero": "32.003",
+    "data": "02/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 1391460.21,
+    "orgaos": "Fundo Penitenciário do Estado de Rondônia - Fupen"
+   },
+   {
+    "numero": "32.002",
+    "data": "02/09/2026",
+    "tipo": "Anulação",
+    "valor": 500000.0,
+    "orgaos": "Departamento Estadual de Estradas de Rodagem e Transportes - DER/RO"
+   },
+   {
+    "numero": "32.001",
+    "data": "02/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 5000.0,
+    "orgaos": "Fundação de Amparo ao Quinta-feira, 3 de setembro de 2026 Autenticidade pode ser verificada em: https://ppe.sistemas.ro.gov.br/Diof/Pdf/31353 Diário assinado eletronicamente por ED"
+   },
+   {
+    "numero": "32.000",
+    "data": "02/09/2026",
+    "tipo": "Anulação",
+    "valor": 6000000.0,
+    "orgaos": "Procuradoria- Geral do Estado de Rondônia - PGE"
+   },
+   {
+    "numero": "31.999",
+    "data": "02/09/2026",
+    "tipo": "Anulação",
+    "valor": 50000.0,
+    "orgaos": "Recursos sob a Supervisão da Secretaria de Finanças - RS/Sefin"
+   },
+   {
+    "numero": "31.998",
+    "data": "01/09/2026",
+    "tipo": "Anulação",
+    "valor": 9459327.45,
+    "orgaos": "E Habitação, Corpo De Bombeiros Militar De Rondônia, Fundo Estadual De Segurança Pública, De Rondônia - Agevisa, Ambiental"
+   },
+   {
+    "numero": "31.997",
+    "data": "01/09/2026",
+    "tipo": "Anulação",
+    "valor": 1500000.0,
+    "orgaos": "Departamento Estadual de Estradas de Rodagem e Transportes - DER/RO"
+   },
+   {
+    "numero": "31.996",
+    "data": "01/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 120118.54,
+    "orgaos": "Fundo Especial de Regularização Fundiária Urbana e Rural do Estado de Rondônia - FRFUR"
+   },
+   {
+    "numero": "31.995",
+    "data": "01/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 1442168.35,
+    "orgaos": "Instituto Estadual de Desenvolvimento da Educação Profissional - Idep"
+   },
+   {
+    "numero": "31.994",
+    "data": "01/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 13979260.69,
+    "orgaos": "Fundo Estadual de Combate e Erradicação da Pobreza de Rondônia - Fecoep"
+   },
+   {
+    "numero": "31.993",
+    "data": "01/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 2940354.87,
+    "orgaos": "Secretaria de Estado de Obras e Serviços Públicos - Seosp"
+   },
+   {
+    "numero": "31.992",
+    "data": "01/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 2810000.0,
+    "orgaos": "Junta Comercial do Estado de Rondônia - Jucer"
+   },
+   {
+    "numero": "31.991",
+    "data": "01/09/2026",
+    "tipo": "Superávit financeiro",
+    "valor": 467725.14,
+    "orgaos": "Fundo Estadual de Defesa do Consumidor - Fundec"
+   }
+  ]
+ },
+ "renuncia": {
+  "fonte": "SEFIN-RO / SIDIEC — Renúncia de Receita Tributária, Acompanhamento Mensal (alcance Específico)",
+  "url": "https://sidiec.sefin.ro.gov.br/ords/f?p=157:20203",
+  "atualizado_ate": "2026-08-31",
+  "extraido_em": "2026-10-03",
+  "ano_corrente": 2026,
+  "meses_com_dado": 8,
+  "total_ano_corrente": 638506789.69,
+  "mesmo_periodo_anterior": 588577430.32,
+  "por_mes": [
+   69813603.1,
+   73395407.04,
+   88915729.35,
+   75532667.37,
+   81653622.13,
+   88835755.52,
+   84277858.23,
+   76082146.95,
+   0,
+   0,
+   0,
+   0
+  ],
+  "por_beneficio": {
+   "Crédito Presumido": 633274368.74,
+   "Redução de Base de Cálculo": 4664973.37,
+   "Isenção de IPVA": 559706.46,
+   "Isenção": 7741.12,
+   "": 0
+  },
+  "por_setor": {
+   "Programa de Incentivo Tributário": 595859808.96,
+   "Comércio de mercadorias (bens tangíveis, em gera": 34876837.88,
+   "Saúde humana e serviços sociais": 6713621.42,
+   "IPVA": 559706.46,
+   "Transportes, armazenagem e correio": 489073.85,
+   "Administração pública, defesa e seguridade socia": 7741.12,
+   "": 0
+  },
+  "serie_anual": [
+   {
+    "ano": 2017,
+    "valor": 390189788.31
+   },
+   {
+    "ano": 2018,
+    "valor": 396185894.72
+   },
+   {
+    "ano": 2019,
+    "valor": 535928154.93
+   },
+   {
+    "ano": 2020,
+    "valor": 652662065.71
+   },
+   {
+    "ano": 2021,
+    "valor": 654426022.28
+   },
+   {
+    "ano": 2022,
+    "valor": 715991046.92
+   },
+   {
+    "ano": 2023,
+    "valor": 691048491.54
+   },
+   {
+    "ano": 2024,
+    "valor": 759893810.06
+   },
+   {
+    "ano": 2025,
+    "valor": 912274809.74
+   },
+   {
+    "ano": 2026,
+    "valor": 638506789.69
+   }
+  ]
+ },
+ "emendas_exec": {
+  "fonte": "Portal da Transparência RO — módulo Despesa, por fonte de recurso de emenda (1500.007x)",
+  "dados_de": "2026-10-07",
+  "coletado_em": "2026-10-07",
+  "exercicio": 2026,
+  "totais": {
+   "orcado_inicial": 402750742.0,
+   "orcado_atualizado": 429451564.5,
+   "empenhado": 258262342.09,
+   "liquidado": 238335444.44,
+   "pago": 228096993.24
+  },
+  "por_tipo": {
+   "individual": {
+    "orcado_inicial": 284294640.0,
+    "orcado_atualizado": 284294640.0,
+    "empenhado": 174284228.19,
+    "liquidado": 165936780.12,
+    "pago": 157616128.92
+   },
+   "comissões": {
+    "orcado_inicial": 71073666.0,
+    "orcado_atualizado": 142147332.0,
+    "empenhado": 80968521.4,
+    "liquidado": 69389071.82,
+    "pago": 67471271.82
+   },
+   "bancada": {
+    "orcado_inicial": 47382436.0,
+    "orcado_atualizado": 3009592.5,
+    "empenhado": 3009592.5,
+    "liquidado": 3009592.5,
+    "pago": 3009592.5
+   }
+  },
+  "por_fonte": [
+   {
+    "fonte": "1500007401",
+    "tipo": "comissões",
+    "numero": "01",
+    "orcado_inicial": 4442105.0,
+    "orcado_atualizado": 142147332.0,
+    "empenhado": 80968521.4,
+    "liquidado": 69389071.82,
+    "pago": 67471271.82,
+    "nome": "Comissão nº 01"
+   },
+   {
+    "fonte": "1500007011",
+    "tipo": "individual",
+    "numero": "11",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 5705418.63,
+    "liquidado": 5638868.63,
+    "pago": 5637978.63,
+    "nome": "Laerte Gomes"
+   },
+   {
+    "fonte": "1500007010",
+    "tipo": "individual",
+    "numero": "10",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 5712291.99,
+    "liquidado": 5701636.68,
+    "pago": 5701636.68,
+    "nome": "Affonso Candido"
+   },
+   {
+    "fonte": "1500007013",
+    "tipo": "individual",
+    "numero": "13",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 1248744.0,
+    "liquidado": 1248744.0,
+    "pago": 1248744.0,
+    "nome": "Alex Redano"
+   },
+   {
+    "fonte": "1500007018",
+    "tipo": "individual",
+    "numero": "18",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 11354801.0,
+    "liquidado": 11341661.0,
+    "pago": 11341661.0,
+    "nome": "Pedro Fernandes"
+   },
+   {
+    "fonte": "1500007023",
+    "tipo": "individual",
+    "numero": "23",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 2486532.13,
+    "liquidado": 2187023.65,
+    "pago": 1725023.65,
+    "nome": "Dra. Taíssa Sousa"
+   },
+   {
+    "fonte": "1500007004",
+    "tipo": "individual",
+    "numero": "04",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 9212597.38,
+    "liquidado": 8632029.99,
+    "pago": 8382029.99,
+    "nome": "Dr. Luis do Hospital"
+   },
+   {
+    "fonte": "1500007001",
+    "tipo": "individual",
+    "numero": "01",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 7635383.6,
+    "liquidado": 7635383.6,
+    "pago": 7246152.4,
+    "nome": "Ieda Pacheco Chaves"
+   },
+   {
+    "fonte": "1500007021",
+    "tipo": "individual",
+    "numero": "21",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 4635150.0,
+    "liquidado": 4218450.0,
+    "pago": 4218450.0,
+    "nome": "Claudia de Jesus"
+   },
+   {
+    "fonte": "1500007003",
+    "tipo": "individual",
+    "numero": "03",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 4199819.0,
+    "liquidado": 3899524.0,
+    "pago": 1349524.0,
+    "nome": "Marcelo Cruz"
+   },
+   {
+    "fonte": "1500007005",
+    "tipo": "individual",
+    "numero": "05",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 10642703.57,
+    "liquidado": 9901273.57,
+    "pago": 9901273.57,
+    "nome": "Cassio Gois"
+   },
+   {
+    "fonte": "1500007020",
+    "tipo": "individual",
+    "numero": "20",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 8306388.24,
+    "liquidado": 7610945.74,
+    "pago": 7610055.74,
+    "nome": "Ribeiro do Sinpol"
+   },
+   {
+    "fonte": "1500007012",
+    "tipo": "individual",
+    "numero": "12",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 6429000.0,
+    "liquidado": 6329000.0,
+    "pago": 6159000.0,
+    "nome": "Jean Oliveira"
+   },
+   {
+    "fonte": "1500007017",
+    "tipo": "individual",
+    "numero": "17",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 2504671.24,
+    "liquidado": 1624440.44,
+    "pago": 1624440.44,
+    "nome": "Delegado Rodrigo Camargo"
+   },
+   {
+    "fonte": "1500007006",
+    "tipo": "individual",
+    "numero": "06",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 8150344.45,
+    "liquidado": 7580164.74,
+    "pago": 7080164.74,
+    "nome": "Alan Queiroz"
+   },
+   {
+    "fonte": "1500007024",
+    "tipo": "individual",
+    "numero": "24",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 9396491.92,
+    "liquidado": 9395379.34,
+    "pago": 9038379.34,
+    "nome": "Nim Barroso"
+   },
+   {
+    "fonte": "1500007002",
+    "tipo": "individual",
+    "numero": "02",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 7791514.27,
+    "liquidado": 7641514.27,
+    "pago": 7291514.27,
+    "nome": "Jean Mendonça"
+   },
+   {
+    "fonte": "1500007015",
+    "tipo": "individual",
+    "numero": "15",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 7058638.96,
+    "liquidado": 6316662.38,
+    "pago": 6066662.38,
+    "nome": "Luizinho Goebel"
+   },
+   {
+    "fonte": "1500007009",
+    "tipo": "individual",
+    "numero": "09",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 10520600.0,
+    "liquidado": 10420600.0,
+    "pago": 10420600.0,
+    "nome": "Ezequiel Neiva"
+   },
+   {
+    "fonte": "1500007022",
+    "tipo": "individual",
+    "numero": "22",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 9650617.47,
+    "liquidado": 9638251.72,
+    "pago": 9588251.72,
+    "nome": "Edevaldo Neves"
+   },
+   {
+    "fonte": "1500007008",
+    "tipo": "individual",
+    "numero": "08",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 7074733.7,
+    "liquidado": 5781733.7,
+    "pago": 4815893.7,
+    "nome": "Ismael Crispin"
+   },
+   {
+    "fonte": "1500007007",
+    "tipo": "individual",
+    "numero": "07",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 8463335.24,
+    "liquidado": 8194489.81,
+    "pago": 7274489.81,
+    "nome": "Delegado Lucas Torres"
+   },
+   {
+    "fonte": "1500007014",
+    "tipo": "individual",
+    "numero": "14",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 8507364.8,
+    "liquidado": 7547941.2,
+    "pago": 7547941.2,
+    "nome": "Gislaine Lebrinha"
+   },
+   {
+    "fonte": "1500007016",
+    "tipo": "individual",
+    "numero": "16",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 10252286.6,
+    "liquidado": 10236261.66,
+    "pago": 9984261.66,
+    "nome": "Cirone Deiró"
+   },
+   {
+    "fonte": "1500007019",
+    "tipo": "individual",
+    "numero": "19",
+    "orcado_inicial": 11845610.0,
+    "orcado_atualizado": 11845610.0,
+    "empenhado": 7344800.0,
+    "liquidado": 7214800.0,
+    "pago": 6362000.0,
+    "nome": "Rosangela Donadon"
+   },
+   {
+    "fonte": "1500007053",
+    "tipo": "bancada",
+    "numero": null,
+    "orcado_inicial": 17768418.0,
+    "orcado_atualizado": 1507342.5,
+    "empenhado": 1507342.5,
+    "liquidado": 1507342.5,
+    "pago": 1507342.5,
+    "nome": "Bancada SOCIAL DEMOCRATICO - PSD"
+   },
+   {
+    "fonte": "1500007051",
+    "tipo": "bancada",
+    "numero": null,
+    "orcado_inicial": 29614018.0,
+    "orcado_atualizado": 1502250.0,
+    "empenhado": 1502250.0,
+    "liquidado": 1502250.0,
+    "pago": 1502250.0,
+    "nome": "Bancada \"UNIAO BRASIL"
+   },
+   {
+    "fonte": "1500007411",
+    "tipo": "comissões",
+    "numero": "11",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 11"
+   },
+   {
+    "fonte": "1500007413",
+    "tipo": "comissões",
+    "numero": "13",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 13"
+   },
+   {
+    "fonte": "1500007404",
+    "tipo": "comissões",
+    "numero": "04",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 04"
+   },
+   {
+    "fonte": "1500007412",
+    "tipo": "comissões",
+    "numero": "12",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 12"
+   },
+   {
+    "fonte": "1500007414",
+    "tipo": "comissões",
+    "numero": "14",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 14"
+   },
+   {
+    "fonte": "1500007410",
+    "tipo": "comissões",
+    "numero": "10",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 10"
+   },
+   {
+    "fonte": "1500007416",
+    "tipo": "comissões",
+    "numero": "16",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 16"
+   },
+   {
+    "fonte": "1500007403",
+    "tipo": "comissões",
+    "numero": "03",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 03"
+   },
+   {
+    "fonte": "1500007405",
+    "tipo": "comissões",
+    "numero": "05",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 05"
+   },
+   {
+    "fonte": "1500007402",
+    "tipo": "comissões",
+    "numero": "02",
+    "orcado_inicial": 4442105.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 02"
+   },
+   {
+    "fonte": "1500007407",
+    "tipo": "comissões",
+    "numero": "07",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 07"
+   },
+   {
+    "fonte": "1500007406",
+    "tipo": "comissões",
+    "numero": "06",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 06"
+   },
+   {
+    "fonte": "1500007408",
+    "tipo": "comissões",
+    "numero": "08",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 08"
+   },
+   {
+    "fonte": "1500007415",
+    "tipo": "comissões",
+    "numero": "15",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 15"
+   },
+   {
+    "fonte": "1500007409",
+    "tipo": "comissões",
+    "numero": "09",
+    "orcado_inicial": 4442104.0,
+    "orcado_atualizado": 0.0,
+    "empenhado": 0.0,
+    "liquidado": 0.0,
+    "pago": 0.0,
+    "nome": "Comissão nº 09"
+   }
+  ]
+ },
+ "despesa_mensal": {
+  "dados_de": "2026-10-07",
+  "meses": [
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07",
+   "2026-08",
+   "2026-09",
+   "2026-10"
+  ],
+  "totais": {
+   "empenhado": [
+    2536094971,
+    1446020566,
+    1087697838,
+    1268798220,
+    1490496453,
+    1501036500,
+    1595039535,
+    1361283475,
+    1397338779,
+    55540289
+   ],
+   "liquidado": [
+    901501692,
+    1110115767,
+    1236701616,
+    1383411565,
+    1386643564,
+    1709038163,
+    1734585266,
+    1527240827,
+    1321470760,
+    91736483
+   ],
+   "pago": [
+    862352795,
+    1067461987,
+    1240312568,
+    1340007840,
+    1391749993,
+    1588046119,
+    1824924060,
+    1526223969,
+    1298935775,
+    107737716
+   ]
+  },
+  "orgaos": {
+   "SECRETARIA DE ESTADO DA EDUCACAO": {
+    "empenhado": [
+     289484491,
+     358534609,
+     194792759,
+     238492680,
+     228524759,
+     283350504,
+     213491447,
+     205968385,
+     175014940,
+     22786155
+    ],
+    "liquidado": [
+     126908430,
+     155988672,
+     214407974,
+     246569114,
+     239582512,
+     217659447,
+     273271695,
+     254205804,
+     202403322,
+     36704140
+    ],
+    "pago": [
+     126866780,
+     150565132,
+     213430918,
+     245812362,
+     242111359,
+     205060879,
+     285053377,
+     250829822,
+     163979767,
+     49242925
+    ]
+   },
+   "FUNDO ESTADUAL DE SAUDE": {
+    "empenhado": [
+     355480757,
+     253498398,
+     144096687,
+     220139253,
+     166943231,
+     126402472,
+     331749940,
+     202463285,
+     115326371,
+     52085
+    ],
+    "liquidado": [
+     71255221,
+     113371673,
+     151119398,
+     201725183,
+     204943433,
+     253998465,
+     345458878,
+     241047058,
+     195363184,
+     14262712
+    ],
+    "pago": [
+     64036855,
+     114303625,
+     144637089,
+     180554083,
+     215496470,
+     260561163,
+     327171450,
+     252613527,
+     203088944,
+     13772781
+    ]
+   },
+   "SECRETARIA DE ESTADO DE SEGURANCA, DEFESA E CIDADANIA": {
+    "empenhado": [
+     156789333,
+     144207564,
+     152234308,
+     141483942,
+     163029787,
+     224394204,
+     148191028,
+     146130319,
+     143173616,
+     1219337
+    ],
+    "liquidado": [
+     146731138,
+     145901756,
+     149305390,
+     149108237,
+     156477681,
+     223460464,
+     148771177,
+     146563668,
+     143556211,
+     931102
+    ],
+    "pago": [
+     141661206,
+     144050875,
+     151108474,
+     149077950,
+     155029257,
+     162408392,
+     210027528,
+     147556475,
+     143588164,
+     199527
+    ]
+   },
+   "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS": {
+    "empenhado": [
+     94517945,
+     152297462,
+     92446873,
+     91886969,
+     145918298,
+     198029578,
+     106512930,
+     179583781,
+     94819736,
+     293925
+    ],
+    "liquidado": [
+     94517945,
+     136494315,
+     108250020,
+     91886969,
+     127775995,
+     216171880,
+     106512930,
+     179583781,
+     93406131,
+     293925
+    ],
+    "pago": [
+     94197014,
+     127519621,
+     116737966,
+     92694648,
+     127775995,
+     215280923,
+     98839395,
+     185973539,
+     95580865,
+     293925
+    ]
+   },
+   "TRIBUNAL DE JUSTICA DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     617538259,
+     17235607,
+     18259312,
+     25592583,
+     15269137,
+     27503165,
+     92193911,
+     106500341,
+     76918935,
+     387739
+    ],
+    "liquidado": [
+     103269842,
+     114119809,
+     116453779,
+     117684025,
+     101170241,
+     127904503,
+     103794845,
+     106450090,
+     104345371,
+     381068
+    ],
+    "pago": [
+     102803978,
+     114433255,
+     116511062,
+     117765945,
+     101163397,
+     127798019,
+     103905640,
+     106100550,
+     104698919,
+     14341
+    ]
+   },
+   "FUNDO PREVIDENCIARIO CAPITALIZADO DO IPERON": {
+    "empenhado": [
+     88978250,
+     89722427,
+     89042008,
+     95577754,
+     91751404,
+     98727551,
+     128928644,
+     92714352,
+     92366602,
+     0
+    ],
+    "liquidado": [
+     88978250,
+     89305927,
+     89075005,
+     95581487,
+     91803296,
+     91146960,
+     136574850,
+     92671994,
+     92475645,
+     0
+    ],
+    "pago": [
+     88976774,
+     89307403,
+     89075005,
+     95581487,
+     91803296,
+     91112953,
+     136608857,
+     92638526,
+     92507596,
+     1518
+    ]
+   },
+   "ASSEMBLEIA LEGISLATIVA DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     184554463,
+     19140474,
+     6451023,
+     25650167,
+     121538896,
+     7368327,
+     7352627,
+     19193652,
+     133296699,
+     4080490
+    ],
+    "liquidado": [
+     28688273,
+     37315935,
+     38527127,
+     42677875,
+     44093937,
+     51908686,
+     45261911,
+     41411589,
+     50525238,
+     1316408
+    ],
+    "pago": [
+     24543203,
+     36167789,
+     38139088,
+     43139280,
+     43775143,
+     49091930,
+     48205536,
+     41358890,
+     52031834,
+     486052
+    ]
+   },
+   "MINISTERIO PUBLICO DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     155233510,
+     39577327,
+     2352394,
+     14892037,
+     116732834,
+     28797593,
+     2698677,
+     26193982,
+     133822292,
+     1613453
+    ],
+    "liquidado": [
+     30799879,
+     63179452,
+     33114771,
+     46772957,
+     33994005,
+     45747349,
+     37709458,
+     51408052,
+     46825519,
+     862300
+    ],
+    "pago": [
+     28911645,
+     59180833,
+     37729228,
+     44890708,
+     34893708,
+     45569346,
+     37731227,
+     49562748,
+     47356653,
+     884847
+    ]
+   },
+   "SECRETARIA DE ESTADO DE JUSTICA": {
+    "empenhado": [
+     50215763,
+     44587709,
+     60959661,
+     36190600,
+     41959142,
+     56648257,
+     58691278,
+     39221078,
+     47673621,
+     180899
+    ],
+    "liquidado": [
+     34551690,
+     38168082,
+     49957380,
+     44918562,
+     50370721,
+     62966568,
+     48462869,
+     49122290,
+     46555201,
+     573557
+    ],
+    "pago": [
+     30216164,
+     38454202,
+     48436890,
+     42127806,
+     52214219,
+     49708017,
+     63932362,
+     45261516,
+     47638895,
+     2758525
+    ]
+   },
+   "DEPARTAMENTO ESTADUAL DE TRANSITO": {
+    "empenhado": [
+     165669320,
+     19415303,
+     10943011,
+     23957685,
+     14999544,
+     21240624,
+     60885061,
+     29719623,
+     56908079,
+     -168256
+    ],
+    "liquidado": [
+     21687739,
+     21722803,
+     25650144,
+     35393058,
+     29472058,
+     28068261,
+     39550463,
+     30916299,
+     31323637,
+     16203213
+    ],
+    "pago": [
+     20552307,
+     18716353,
+     24495181,
+     33798798,
+     31126783,
+     25956417,
+     39497870,
+     31180800,
+     30903846,
+     3973026
+    ]
+   },
+   "DEPARTAMENTO ESTADUAL DE ESTRADAS DE RODAGEM E TRANSPORTES": {
+    "empenhado": [
+     11594540,
+     11613054,
+     15546785,
+     28360228,
+     38453779,
+     49119637,
+     74962269,
+     13681082,
+     19429645,
+     1421771
+    ],
+    "liquidado": [
+     9257935,
+     10470207,
+     13759143,
+     13105013,
+     22413766,
+     43052950,
+     92479752,
+     16849984,
+     19013491,
+     1028061
+    ],
+    "pago": [
+     8049566,
+     10435236,
+     13739926,
+     13910149,
+     21655393,
+     39226647,
+     95774989,
+     14363766,
+     18844212,
+     2033150
+    ]
+   },
+   "FUNDO DE APERFEICOAMENTO DOS SERVICOS JUDICIARIOS": {
+    "empenhado": [
+     129751154,
+     39907105,
+     21180804,
+     10276904,
+     8542023,
+     7824631,
+     16146791,
+     17622683,
+     10292040,
+     1055228
+    ],
+    "liquidado": [
+     1508959,
+     12881294,
+     12179512,
+     18649668,
+     15096141,
+     17563517,
+     19165475,
+     26621672,
+     21083856,
+     4813387
+    ],
+    "pago": [
+     1103141,
+     5918428,
+     16251052,
+     15105607,
+     15896049,
+     16586397,
+     20172037,
+     18365858,
+     28225626,
+     2913244
+    ]
+   },
+   "TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     40509522,
+     62651036,
+     21974094,
+     16710120,
+     16882588,
+     26255567,
+     18735065,
+     19247112,
+     17445471,
+     432406
+    ],
+    "liquidado": [
+     31135203,
+     18080227,
+     25669917,
+     20801992,
+     20846621,
+     28001093,
+     22303448,
+     22289545,
+     22245194,
+     313205
+    ],
+    "pago": [
+     30680504,
+     17480271,
+     24870225,
+     20276084,
+     22508176,
+     26827270,
+     23188826,
+     22060696,
+     20959571,
+     2351772
+    ]
+   },
+   "SECRETARIA DE ESTADO DE FINANCAS": {
+    "empenhado": [
+     24701600,
+     26675136,
+     25898888,
+     25512554,
+     25465167,
+     32360980,
+     24271370,
+     23954525,
+     26367229,
+     13507
+    ],
+    "liquidado": [
+     23557672,
+     24901774,
+     25185736,
+     27133511,
+     25302363,
+     32703108,
+     24188721,
+     24560287,
+     26115127,
+     76388
+    ],
+    "pago": [
+     21172572,
+     24370137,
+     25340555,
+     26574846,
+     25368185,
+     25137170,
+     30707243,
+     26035552,
+     25866283,
+     583468
+    ]
+   },
+   "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA": {
+    "empenhado": [
+     0,
+     6669853,
+     5932750,
+     52199601,
+     24101731,
+     19540393,
+     20871243,
+     27789623,
+     14779516,
+     8178716
+    ],
+    "liquidado": [
+     0,
+     6669853,
+     5496586,
+     48306980,
+     19309668,
+     15087658,
+     11423423,
+     25836074,
+     9601571,
+     3523225
+    ],
+    "pago": [
+     0,
+     3320923,
+     8769070,
+     35368903,
+     9664249,
+     15181809,
+     10014867,
+     19710629,
+     13118163,
+     7619719
+    ]
+   },
+   "SUPERINTENDENCIA DE GESTAO DOS GASTOS PUBLICOS ADMINISTRATIVOS": {
+    "empenhado": [
+     18889551,
+     17036622,
+     21035728,
+     13386421,
+     19001848,
+     20559415,
+     16455118,
+     14611113,
+     14264867,
+     1033099
+    ],
+    "liquidado": [
+     10028591,
+     14269158,
+     15603036,
+     14611347,
+     18152207,
+     21759803,
+     16521982,
+     19063012,
+     14326481,
+     195665
+    ],
+    "pago": [
+     8780346,
+     11258829,
+     17417380,
+     13546669,
+     16206806,
+     18063508,
+     22155976,
+     18454054,
+     16034946,
+     557358
+    ]
+   },
+   "AGENCIA DE DEFESA SANITARIA AGROSILVOPASTORIL DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     14496224,
+     15515355,
+     15712673,
+     15537863,
+     15597306,
+     15789306,
+     20935049,
+     15346979,
+     14480399,
+     202844
+    ],
+    "liquidado": [
+     12856933,
+     13242915,
+     14918184,
+     15024834,
+     16723725,
+     15947307,
+     19642161,
+     14419484,
+     15095101,
+     293868
+    ],
+    "pago": [
+     11374429,
+     14562972,
+     14441242,
+     14614509,
+     17495167,
+     16180525,
+     18980363,
+     14918040,
+     13521343,
+     342891
+    ]
+   },
+   "FUNDO DE INFRAESTRUTURA, TRANSPORTE E HABITACAO": {
+    "empenhado": [
+     8245215,
+     5671779,
+     18289938,
+     16108606,
+     20429170,
+     10761408,
+     13363641,
+     19707873,
+     16847991,
+     1314072
+    ],
+    "liquidado": [
+     0,
+     2822132,
+     9860715,
+     11652360,
+     14062906,
+     14826394,
+     12730610,
+     17039006,
+     15501875,
+     742902
+    ],
+    "pago": [
+     0,
+     378467,
+     10271106,
+     11306664,
+     14841815,
+     13614765,
+     15531788,
+     12024116,
+     16057993,
+     4458363
+    ]
+   },
+   "DEFENSORIA PUBLICA DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     22111310,
+     11786438,
+     16763481,
+     12695274,
+     10942987,
+     15509453,
+     11728472,
+     11902743,
+     11915706,
+     6106
+    ],
+    "liquidado": [
+     11762385,
+     12151953,
+     16583976,
+     13459592,
+     11732890,
+     16632033,
+     12667290,
+     12766074,
+     12883688,
+     45120
+    ],
+    "pago": [
+     10866219,
+     12111283,
+     16589268,
+     13472382,
+     11740076,
+     16545191,
+     12691867,
+     12643611,
+     12924195,
+     784978
+    ]
+   },
+   "SECRETARIA DE ESTADO DA JUVENTUDE, CULTURA, ESPORTE E LAZER": {
+    "empenhado": [
+     1110429,
+     1470788,
+     5691393,
+     13020876,
+     9515573,
+     35702557,
+     32735493,
+     12276798,
+     11250800,
+     419889
+    ],
+    "liquidado": [
+     462613,
+     929992,
+     3095458,
+     11263731,
+     10515630,
+     23491670,
+     37418683,
+     15299777,
+     11962947,
+     162203
+    ],
+    "pago": [
+     401102,
+     902236,
+     2570299,
+     10623605,
+     9799834,
+     21482190,
+     34593829,
+     21227806,
+     10991264,
+     1656982
+    ]
+   },
+   "SECRETARIA DE ESTADO DE OBRAS E SERVICOS PUBLICOS": {
+    "empenhado": [
+     4309588,
+     7795091,
+     11872722,
+     10429453,
+     7402876,
+     30127397,
+     35365007,
+     7578831,
+     1756719,
+     194923
+    ],
+    "liquidado": [
+     2423169,
+     3247214,
+     8004930,
+     4890919,
+     9445187,
+     7782331,
+     24412004,
+     14909677,
+     9096946,
+     9701
+    ],
+    "pago": [
+     2110178,
+     3219500,
+     6265621,
+     5485684,
+     8377218,
+     5708868,
+     25675891,
+     17217453,
+     8752906,
+     1042888
+    ]
+   },
+   "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNICA E EXTENSAO RURAL DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     9941954,
+     9669251,
+     10377960,
+     13830075,
+     12826705,
+     9056132,
+     19817850,
+     13485960,
+     10873259,
+     273638
+    ],
+    "liquidado": [
+     7676030,
+     8760375,
+     9777781,
+     14405758,
+     10537170,
+     11276935,
+     18245259,
+     10233275,
+     10947426,
+     100668
+    ],
+    "pago": [
+     6320602,
+     10048059,
+     4722396,
+     17917929,
+     10710819,
+     12511440,
+     18288354,
+     10355244,
+     10731652,
+     73714
+    ]
+   },
+   "PROCURADORIA GERAL DO ESTADO": {
+    "empenhado": [
+     8295275,
+     7979001,
+     12245285,
+     11483138,
+     11768310,
+     12918708,
+     8714114,
+     7907521,
+     11929806,
+     148586
+    ],
+    "liquidado": [
+     6992907,
+     7097101,
+     12268093,
+     12248495,
+     10856195,
+     13401316,
+     9655983,
+     8239614,
+     10939588,
+     124966
+    ],
+    "pago": [
+     6232690,
+     7045038,
+     10955923,
+     12052788,
+     10793384,
+     11780077,
+     12449889,
+     8443090,
+     10910528,
+     194092
+    ]
+   },
+   "SECRETARIA DE ESTADO DA AGRICULTURA": {
+    "empenhado": [
+     1387668,
+     1362424,
+     1512878,
+     27812540,
+     15635982,
+     15407914,
+     11961380,
+     11904976,
+     5206091,
+     142121
+    ],
+    "liquidado": [
+     908542,
+     1119843,
+     1443905,
+     1406134,
+     11231358,
+     15358145,
+     25309839,
+     5910138,
+     12209731,
+     677195
+    ],
+    "pago": [
+     779811,
+     1046842,
+     1512640,
+     1321502,
+     10491646,
+     13004205,
+     26211933,
+     6715614,
+     10310621,
+     1515797
+    ]
+   },
+   "POLICIA MILITAR": {
+    "empenhado": [
+     5182463,
+     2428603,
+     8113546,
+     2909263,
+     15060728,
+     20801922,
+     6129918,
+     1765465,
+     6661086,
+     29449
+    ],
+    "liquidado": [
+     0,
+     2832200,
+     1817199,
+     3805563,
+     3548854,
+     2801066,
+     6881078,
+     4576245,
+     6348884,
+     923421
+    ],
+    "pago": [
+     0,
+     1323574,
+     2985906,
+     3802849,
+     3729727,
+     2774168,
+     6581828,
+     4664507,
+     4561272,
+     2610155
+    ]
+   },
+   "SECRETARIA DE ESTADO DA MULHER, DA FAMILIA, DA ASSISTENCIA E DO DESENVOLVIMENTO SOCIAL": {
+    "empenhado": [
+     6195747,
+     6140973,
+     5843490,
+     5764761,
+     6059524,
+     6602308,
+     7058205,
+     5553857,
+     10373144,
+     763780
+    ],
+    "liquidado": [
+     3563672,
+     5827887,
+     5734222,
+     5850117,
+     5235571,
+     7115564,
+     5672090,
+     5014473,
+     6352086,
+     975723
+    ],
+    "pago": [
+     2855300,
+     5737056,
+     6120132,
+     5637754,
+     5477305,
+     5781146,
+     5626410,
+     6214047,
+     5841385,
+     241120
+    ]
+   },
+   "INSTITUTO DE PREVIDENCIA DOS SERVIDORES PUBLICOS DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     5408241,
+     5150507,
+     6283447,
+     5149416,
+     8246785,
+     5237806,
+     7980740,
+     7881646,
+     6163677,
+     140337
+    ],
+    "liquidado": [
+     3392831,
+     5321950,
+     4758973,
+     5492179,
+     6916676,
+     5290581,
+     7222070,
+     8362169,
+     5436713,
+     290809
+    ],
+    "pago": [
+     3368911,
+     5074208,
+     4809134,
+     5713681,
+     6673181,
+     5525120,
+     7227912,
+     8267690,
+     5511216,
+     246596
+    ]
+   },
+   "FUNDACAO DE HEMATOLOGIA E HEMOTERAPIA DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     2794412,
+     6104933,
+     9522769,
+     6089715,
+     5588175,
+     5934000,
+     6139902,
+     6053737,
+     3480721,
+     -75777
+    ],
+    "liquidado": [
+     2545010,
+     4628675,
+     6158074,
+     6184952,
+     7077746,
+     6402760,
+     5337217,
+     7469360,
+     3714221,
+     260069
+    ],
+    "pago": [
+     2472405,
+     4417257,
+     5835258,
+     4951038,
+     8130342,
+     5648610,
+     5741315,
+     7315451,
+     4110408,
+     187805
+    ]
+   },
+   "CORPO DE BOMBEIROS MILITAR": {
+    "empenhado": [
+     1602007,
+     343602,
+     3550473,
+     1372982,
+     19544499,
+     6569789,
+     5905895,
+     1509662,
+     4580517,
+     292615
+    ],
+    "liquidado": [
+     41931,
+     306640,
+     1095719,
+     1988515,
+     2035331,
+     2400027,
+     4161497,
+     5353178,
+     5009289,
+     593997
+    ],
+    "pago": [
+     37036,
+     300820,
+     908564,
+     1718359,
+     2435717,
+     2024905,
+     4510408,
+     2968924,
+     6795326,
+     920660
+    ]
+   },
+   "SECRETARIA DE ESTADO DE DESENVOLVIMENTO AMBIENTAL": {
+    "empenhado": [
+     3554668,
+     3357350,
+     7780678,
+     3843838,
+     5190480,
+     5144595,
+     5364065,
+     4516415,
+     5908158,
+     312229
+    ],
+    "liquidado": [
+     3214363,
+     3240207,
+     4456246,
+     5119990,
+     4330788,
+     7285699,
+     5159660,
+     4490603,
+     4156805,
+     224316
+    ],
+    "pago": [
+     2772905,
+     3279214,
+     4132975,
+     5069089,
+     4628118,
+     5176839,
+     7258941,
+     4110022,
+     4519247,
+     175044
+    ]
+   },
+   "FUNDACAO ESTADUAL DE ATENDIMENTO SOCIOEDUCATIVO DO ESTADO DE RONDONIA - FEASE": {
+    "empenhado": [
+     4144924,
+     3363738,
+     4366517,
+     7910111,
+     4483029,
+     4939291,
+     4546995,
+     3266934,
+     3952626,
+     10987
+    ],
+    "liquidado": [
+     3214880,
+     3625126,
+     3998501,
+     3818762,
+     5151392,
+     3552198,
+     5243182,
+     4376610,
+     3828921,
+     418110
+    ],
+    "pago": [
+     2880368,
+     3511377,
+     4044393,
+     3795761,
+     4265573,
+     4856024,
+     5184235,
+     4388902,
+     3602868,
+     588516
+    ]
+   },
+   "SECRETARIA DE ESTADO DO PLANEJAMENTO, ORCAMENTO E GESTAO": {
+    "empenhado": [
+     2883771,
+     2737353,
+     10248623,
+     5522073,
+     3473256,
+     4361494,
+     4612344,
+     4035932,
+     2666754,
+     2536
+    ],
+    "liquidado": [
+     2587747,
+     2644668,
+     10282565,
+     5652084,
+     2948858,
+     4531062,
+     4138498,
+     3550315,
+     2838466,
+     2536
+    ],
+    "pago": [
+     2310931,
+     2640817,
+     9183116,
+     6675568,
+     2852505,
+     3693147,
+     5148529,
+     3529770,
+     2721762,
+     3096
+    ]
+   },
+   "FUNDO DE INVESTIMENTO E DESENVOLVIMENTO INDUSTRIAL DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     3618364,
+     2104534,
+     6464794,
+     9428765,
+     7596628,
+     2536872,
+     1711621,
+     3546011,
+     1326573,
+     9830
+    ],
+    "liquidado": [
+     20586,
+     2102894,
+     2665975,
+     4573689,
+     5459617,
+     4364422,
+     5017565,
+     6577754,
+     1920533,
+     219998
+    ],
+    "pago": [
+     20586,
+     815087,
+     3953782,
+     3802984,
+     4859478,
+     5030155,
+     2661539,
+     7934108,
+     1940095,
+     63938
+    ]
+   },
+   "FUNDO ESPECIAL DO CORPO DE BOMBEIROS MILITAR DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     2582973,
+     998608,
+     2280561,
+     1155469,
+     14430893,
+     463285,
+     7527244,
+     2799269,
+     2117638,
+     2338359
+    ],
+    "liquidado": [
+     92376,
+     379397,
+     862180,
+     1668813,
+     1438639,
+     2150456,
+     2640635,
+     2450334,
+     1868413,
+     224819
+    ],
+    "pago": [
+     73324,
+     398449,
+     645371,
+     1631592,
+     1503018,
+     1890332,
+     2568267,
+     2745491,
+     1717958,
+     377881
+    ]
+   },
+   "SUPERINTENDENCIA ESTADUAL DE GESTAO DE PESSOAS": {
+    "empenhado": [
+     3370588,
+     3090295,
+     2922396,
+     2956182,
+     4454832,
+     6645004,
+     6100059,
+     2996220,
+     3362810,
+     204000
+    ],
+    "liquidado": [
+     3113355,
+     2899023,
+     3078429,
+     3060155,
+     4232161,
+     6652611,
+     5920072,
+     3249143,
+     3170316,
+     136980
+    ],
+    "pago": [
+     2916609,
+     2882205,
+     3063064,
+     3046721,
+     4267738,
+     5690312,
+     6879416,
+     3130991,
+     3220635,
+     72043
+    ]
+   },
+   "FUNDO ESTADUAL DE COMBATE E ERRADICACAO DA POBREZA DE RONDONIA": {
+    "empenhado": [
+     3647352,
+     3070800,
+     6781246,
+     2429520,
+     4937601,
+     2261054,
+     2365322,
+     44,
+     8501188,
+     0
+    ],
+    "liquidado": [
+     0,
+     2133788,
+     3252245,
+     2785822,
+     3803772,
+     3746867,
+     2848357,
+     3282963,
+     3592389,
+     59417
+    ],
+    "pago": [
+     0,
+     1671228,
+     3714805,
+     1967912,
+     4579626,
+     2572422,
+     3532388,
+     3212414,
+     3727368,
+     468038
+    ]
+   },
+   "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONOMICO": {
+    "empenhado": [
+     1329342,
+     8631439,
+     3397473,
+     3051805,
+     1742358,
+     7956948,
+     2978891,
+     2157350,
+     1485133,
+     114910
+    ],
+    "liquidado": [
+     809548,
+     1154783,
+     10107366,
+     3033325,
+     1267685,
+     9082380,
+     2481815,
+     2167453,
+     1680702,
+     89916
+    ],
+    "pago": [
+     809548,
+     1003851,
+     8627137,
+     4062838,
+     1713803,
+     7686900,
+     2464135,
+     3527508,
+     1748320,
+     12405
+    ]
+   },
+   "CONTABILIDADE GERAL DO ESTADO": {
+    "empenhado": [
+     2928723,
+     2240193,
+     3656419,
+     3637748,
+     2314278,
+     3658569,
+     2314598,
+     2262570,
+     3326920,
+     1421223
+    ],
+    "liquidado": [
+     2112348,
+     2124330,
+     3061717,
+     3068182,
+     2686471,
+     3439367,
+     2865958,
+     2150059,
+     2796085,
+     116867
+    ],
+    "pago": [
+     1842527,
+     2117048,
+     2648704,
+     3283508,
+     2576743,
+     2646242,
+     3428475,
+     2669575,
+     2659214,
+     0
+    ]
+   },
+   "FUNDO ESPECIAL DE PROTECAO AMBIENTAL": {
+    "empenhado": [
+     1597906,
+     971088,
+     2142148,
+     700190,
+     2451449,
+     1306359,
+     4187154,
+     6335032,
+     4872068,
+     383393
+    ],
+    "liquidado": [
+     60247,
+     468744,
+     1192771,
+     1324753,
+     1442450,
+     1629823,
+     1713413,
+     2490242,
+     2392537,
+     607257
+    ],
+    "pago": [
+     26296,
+     348615,
+     1014554,
+     1358183,
+     1366925,
+     1835460,
+     1271382,
+     2693378,
+     2461209,
+     418743
+    ]
+   },
+   "INSTITUTO ESTADUAL DE DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL": {
+    "empenhado": [
+     2761609,
+     1417434,
+     2059583,
+     2600676,
+     1681940,
+     2234715,
+     3375121,
+     4186198,
+     2806674,
+     171210
+    ],
+    "liquidado": [
+     1378993,
+     1479752,
+     2126970,
+     1992861,
+     1933566,
+     2236596,
+     1740491,
+     2229752,
+     2720314,
+     44154
+    ],
+    "pago": [
+     1111002,
+     1399844,
+     1958277,
+     2437569,
+     1480196,
+     1980106,
+     1900610,
+     2519494,
+     2504830,
+     306119
+    ]
+   },
+   "FUNDO DE DESENVOLVIMENTO INSTITUCIONAL DO MINISTERIO PUBLICO DE RONDONIA": {
+    "empenhado": [
+     2940049,
+     4301653,
+     727693,
+     4647173,
+     4504500,
+     412038,
+     110774,
+     1517310,
+     3843536,
+     211926
+    ],
+    "liquidado": [
+     151617,
+     584280,
+     801039,
+     1054780,
+     1922255,
+     4183210,
+     1004796,
+     1711523,
+     2081698,
+     531972
+    ],
+    "pago": [
+     144122,
+     533032,
+     625581,
+     1188350,
+     1228625,
+     4095951,
+     1819561,
+     1552312,
+     1078195,
+     979983
+    ]
+   },
+   "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     100219,
+     5834109,
+     1854060,
+     1734437,
+     2238737,
+     1654684,
+     2367465,
+     4195490,
+     2806174,
+     134009
+    ],
+    "liquidado": [
+     0,
+     2133509,
+     2171857,
+     2246703,
+     2287790,
+     2479520,
+     2299500,
+     2382181,
+     2322377,
+     434296
+    ],
+    "pago": [
+     0,
+     2118447,
+     2186919,
+     2246703,
+     2285343,
+     2479249,
+     2302219,
+     2381677,
+     2322881,
+     10249
+    ]
+   },
+   "AGENCIA ESTADUAL DE VIGILANCIA E SAUDE": {
+    "empenhado": [
+     2263279,
+     937327,
+     2860578,
+     1070699,
+     2582157,
+     2892657,
+     4820762,
+     2250613,
+     2753339,
+     146579
+    ],
+    "liquidado": [
+     1029644,
+     1142787,
+     1560954,
+     1710658,
+     2040565,
+     2241316,
+     3811882,
+     2409054,
+     2236794,
+     391883
+    ],
+    "pago": [
+     864740,
+     1044700,
+     1820201,
+     1413793,
+     2150960,
+     2159840,
+     3758007,
+     2492593,
+     2180808,
+     39022
+    ]
+   },
+   "SUPERINTENDENCIA ESTADUAL DE TECNOLOGIA DA INFORMACAO E COMUNICACAO": {
+    "empenhado": [
+     2688721,
+     2795236,
+     2383126,
+     1892648,
+     2194267,
+     3337602,
+     2155594,
+     1881664,
+     2647167,
+     289
+    ],
+    "liquidado": [
+     1821284,
+     2235605,
+     2050360,
+     2082550,
+     1902353,
+     2990014,
+     3039226,
+     2343298,
+     2073364,
+     289
+    ],
+    "pago": [
+     1570688,
+     2224049,
+     2019414,
+     2069301,
+     1975214,
+     2249824,
+     3756817,
+     2338934,
+     2083669,
+     19757
+    ]
+   },
+   "FUNDO DE DESENVOLVIMENTO E APERFEICOAMENTO DA ADMINISTRACAO TRIBUTARIA": {
+    "empenhado": [
+     2122686,
+     271600,
+     356638,
+     610982,
+     720378,
+     1993429,
+     6122021,
+     5022650,
+     3103422,
+     853733
+    ],
+    "liquidado": [
+     0,
+     79573,
+     254952,
+     1108418,
+     899909,
+     1236346,
+     4632221,
+     2667155,
+     1694601,
+     150000
+    ],
+    "pago": [
+     0,
+     46480,
+     97499,
+     565497,
+     1120247,
+     1525747,
+     4037929,
+     1569510,
+     2949208,
+     295700
+    ]
+   },
+   "FUNDO ESTADUAL DE ASSISTENCIA SOCIAL": {
+    "empenhado": [
+     901729,
+     1543665,
+     1222740,
+     174464,
+     7160729,
+     3524560,
+     1075384,
+     907019,
+     3725879,
+     0
+    ],
+    "liquidado": [
+     11197,
+     382053,
+     1393083,
+     835773,
+     5932833,
+     4856938,
+     788578,
+     710860,
+     3954967,
+     131011
+    ],
+    "pago": [
+     0,
+     358348,
+     1360348,
+     881711,
+     5862376,
+     4926830,
+     807263,
+     570825,
+     4064912,
+     160701
+    ]
+   },
+   "FUNDO ESTADUAL DE SANIDADE ANIMAL": {
+    "empenhado": [
+     746093,
+     401991,
+     1431719,
+     406408,
+     327437,
+     642781,
+     725235,
+     2418314,
+     10622187,
+     0
+    ],
+    "liquidado": [
+     21093,
+     358531,
+     545767,
+     569592,
+     594750,
+     367800,
+     921702,
+     462423,
+     444740,
+     -103
+    ],
+    "pago": [
+     0,
+     21093,
+     817324,
+     656565,
+     594750,
+     367800,
+     921702,
+     462423,
+     444740,
+     -103
+    ]
+   },
+   "FUNDO ESTADUAL DE SEGURANCA PUBLICA": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     450000,
+     5281285,
+     962685,
+     3230113,
+     7592204,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     12898,
+     44668,
+     2620436,
+     4013132,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     12898,
+     42825,
+     2483986,
+     335512,
+     65912
+    ]
+   },
+   "SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     1208710,
+     1273770,
+     1292313,
+     1809204,
+     2250198,
+     1584617,
+     2122510,
+     2720440,
+     2918174,
+     112865
+    ],
+    "liquidado": [
+     594559,
+     838304,
+     1122102,
+     2468908,
+     1699469,
+     1556145,
+     2231303,
+     1481545,
+     1613207,
+     217549
+    ],
+    "pago": [
+     583837,
+     781310,
+     1113626,
+     2482381,
+     1638365,
+     1444091,
+     2249213,
+     1374979,
+     1419019,
+     426444
+    ]
+   },
+   "SUPERINTENDENCIA ESTADUAL DE TURISMO": {
+    "empenhado": [
+     325761,
+     537020,
+     683660,
+     1920039,
+     1281846,
+     4254194,
+     1263598,
+     1142800,
+     4065890,
+     1053335
+    ],
+    "liquidado": [
+     136928,
+     324591,
+     764375,
+     1477143,
+     1524172,
+     4341362,
+     1023428,
+     586900,
+     2659117,
+     27644
+    ],
+    "pago": [
+     136928,
+     301342,
+     757889,
+     1468672,
+     1040035,
+     4767120,
+     1057946,
+     581900,
+     2704687,
+     11804
+    ]
+   },
+   "POLICIA CIVIL": {
+    "empenhado": [
+     2030885,
+     932156,
+     2964637,
+     660388,
+     2793142,
+     493599,
+     2868754,
+     360864,
+     2071665,
+     73433
+    ],
+    "liquidado": [
+     12860,
+     889825,
+     1847473,
+     1607481,
+     1728397,
+     1782470,
+     1739859,
+     1704356,
+     1546927,
+     128496
+    ],
+    "pago": [
+     0,
+     882310,
+     1831211,
+     1639241,
+     1599534,
+     1825281,
+     1828300,
+     1685528,
+     1560200,
+     120611
+    ]
+   },
+   "FUNDO ESTADUAL DE DESENVOLVIMENTO DA CULTURA": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     3060235,
+     1522014,
+     1015042,
+     9620037,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     3060235,
+     727014,
+     1810042,
+     9620037,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     3025235,
+     25000,
+     2547056,
+     9620037,
+     0
+    ]
+   },
+   "SECRETARIA DE ESTADO DE PATRIMONIO E REGULARIZACAO FUNDIARIA": {
+    "empenhado": [
+     1342466,
+     1466671,
+     1691082,
+     1617508,
+     1796644,
+     2034383,
+     1747287,
+     1206737,
+     1576857,
+     48965
+    ],
+    "liquidado": [
+     1060937,
+     1230342,
+     1702326,
+     1470643,
+     1439547,
+     1848394,
+     1693495,
+     1508258,
+     1612774,
+     153919
+    ],
+    "pago": [
+     900567,
+     1208332,
+     1710197,
+     1458018,
+     1411502,
+     1511873,
+     2028581,
+     1561250,
+     1599344,
+     38029
+    ]
+   },
+   "CONTROLADORIA GERAL DO ESTADO": {
+    "empenhado": [
+     1388780,
+     1353120,
+     1408590,
+     1641434,
+     1338249,
+     1940516,
+     1271528,
+     1574105,
+     1574716,
+     8000
+    ],
+    "liquidado": [
+     1295214,
+     1342657,
+     1410830,
+     1473348,
+     1365728,
+     2014329,
+     1265756,
+     1622508,
+     1410344,
+     4336
+    ],
+    "pago": [
+     1139897,
+     1345430,
+     1413230,
+     1464010,
+     1370311,
+     1446267,
+     1823870,
+     1617833,
+     1399942,
+     21911
+    ]
+   },
+   "JUNTA COMERCIAL DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     1094051,
+     1002436,
+     1200972,
+     1023407,
+     1777576,
+     1312191,
+     1559129,
+     947727,
+     2124078,
+     -5065
+    ],
+    "liquidado": [
+     814391,
+     962105,
+     1036517,
+     1216446,
+     1520541,
+     1344293,
+     1570895,
+     1043063,
+     1700855,
+     47973
+    ],
+    "pago": [
+     735940,
+     910048,
+     1087779,
+     1211244,
+     1504287,
+     1402919,
+     1532297,
+     1033803,
+     1687544,
+     95437
+    ]
+   },
+   "FUNDO ESPECIAL DA DEFENSORIA PUBLICA DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     5367056,
+     1332286,
+     849999,
+     427492,
+     846132,
+     440442,
+     587594,
+     1380803,
+     657941,
+     74371
+    ],
+    "liquidado": [
+     65362,
+     341273,
+     1045812,
+     495335,
+     1621239,
+     933472,
+     899134,
+     702514,
+     1185172,
+     81887
+    ],
+    "pago": [
+     60950,
+     339520,
+     1051976,
+     457918,
+     1630795,
+     895111,
+     888411,
+     727189,
+     1185667,
+     70213
+    ]
+   },
+   "AGENCIA DE REGULACAO DE SERVICOS PUBLICOS DELEGADOS DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     425964,
+     727182,
+     429778,
+     761377,
+     558307,
+     1731482,
+     1840927,
+     960896,
+     653633,
+     35303
+    ],
+    "liquidado": [
+     281196,
+     650813,
+     484699,
+     693886,
+     563808,
+     668906,
+     1242402,
+     1228053,
+     502892,
+     14640
+    ],
+    "pago": [
+     281196,
+     515354,
+     600079,
+     572104,
+     671864,
+     501741,
+     1362906,
+     1007988,
+     779563,
+     33505
+    ]
+   },
+   "SUPERINTENDENCIA ESTADUAL DE COMPRAS E LICITACOES": {
+    "empenhado": [
+     822707,
+     876270,
+     814376,
+     753500,
+     699534,
+     961484,
+     678984,
+     947419,
+     718978,
+     30624
+    ],
+    "liquidado": [
+     681722,
+     862931,
+     866959,
+     802960,
+     694188,
+     971424,
+     672820,
+     919036,
+     733834,
+     10472
+    ],
+    "pago": [
+     661588,
+     788697,
+     872284,
+     795796,
+     709334,
+     736408,
+     899985,
+     853850,
+     798702,
+     1750
+    ]
+   },
+   "FUNDACAO RONDONIA DE AMPARO AO DESENV. DAS ACOES CIENT. E TECNOL. E A PESQ. DO EST DE RO": {
+    "empenhado": [
+     563645,
+     263819,
+     2016913,
+     -721596,
+     1327315,
+     470078,
+     1242911,
+     164062,
+     1019403,
+     17600
+    ],
+    "liquidado": [
+     239264,
+     297648,
+     553181,
+     304255,
+     1065502,
+     427502,
+     445443,
+     943629,
+     833027,
+     111977
+    ],
+    "pago": [
+     178081,
+     312688,
+     482726,
+     377161,
+     1015452,
+     473288,
+     426134,
+     898561,
+     576893,
+     404420
+    ]
+   },
+   "FUNDO ESPECIAL DE MODERNIZACAO DA PROCURADORIA GERAL DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     451657,
+     367448,
+     387141,
+     213162,
+     2120482,
+     376073,
+     762405,
+     624888,
+     350444,
+     325904
+    ],
+    "liquidado": [
+     130328,
+     100176,
+     421762,
+     729483,
+     165791,
+     444531,
+     1189528,
+     476715,
+     929076,
+     78563
+    ],
+    "pago": [
+     21048,
+     183296,
+     441959,
+     735446,
+     147176,
+     463146,
+     1131052,
+     522079,
+     942188,
+     38138
+    ]
+   },
+   "INSTITUTO DE PESOS E MEDIDAS DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     524224,
+     740483,
+     477104,
+     777562,
+     546973,
+     811952,
+     624549,
+     579492,
+     688065,
+     46725
+    ],
+    "liquidado": [
+     417139,
+     631212,
+     614508,
+     660931,
+     576980,
+     721831,
+     696448,
+     613156,
+     661021,
+     54580
+    ],
+    "pago": [
+     415978,
+     614322,
+     627219,
+     666271,
+     576980,
+     693279,
+     720850,
+     586359,
+     691969,
+     13585
+    ]
+   },
+   "INSTITUTO ESTADUAL DE EDUCACAO EM SAUDE PUBLICA DE RONDONIA": {
+    "empenhado": [
+     322467,
+     659592,
+     442968,
+     488546,
+     629132,
+     387118,
+     1090253,
+     760289,
+     513424,
+     6932
+    ],
+    "liquidado": [
+     302830,
+     333653,
+     425840,
+     505248,
+     463738,
+     453164,
+     764478,
+     481219,
+     583484,
+     24897
+    ],
+    "pago": [
+     261256,
+     338060,
+     407919,
+     501830,
+     479659,
+     414650,
+     758456,
+     535982,
+     598442,
+     39118
+    ]
+   },
+   "FUNDACAO CULTURAL DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     100222,
+     591814,
+     219787,
+     488684,
+     672644,
+     309753,
+     744248,
+     363138,
+     530128,
+     111835
+    ],
+    "liquidado": [
+     54943,
+     337233,
+     394878,
+     497340,
+     477972,
+     489114,
+     453999,
+     592626,
+     502621,
+     30390
+    ],
+    "pago": [
+     54943,
+     334412,
+     385650,
+     509300,
+     475465,
+     458092,
+     487599,
+     532845,
+     506469,
+     51117
+    ]
+   },
+   "FUNDO DE DESENVOLVIMENTO INSTITUCIONAL DO TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     299071,
+     977625,
+     58620,
+     191722,
+     37789,
+     142715,
+     653438,
+     285375,
+     246809,
+     721496
+    ],
+    "liquidado": [
+     4316,
+     116736,
+     78869,
+     79420,
+     48558,
+     32359,
+     70251,
+     446533,
+     183562,
+     0
+    ],
+    "pago": [
+     4316,
+     116736,
+     78869,
+     49257,
+     78721,
+     32359,
+     70251,
+     134210,
+     445885,
+     50000
+    ]
+   },
+   "SUPERINTENDENCIA ESTADUAL DO INDIGENA": {
+    "empenhado": [
+     240597,
+     321171,
+     347960,
+     340953,
+     584067,
+     314044,
+     385043,
+     313693,
+     469577,
+     7342
+    ],
+    "liquidado": [
+     240597,
+     291182,
+     360136,
+     352490,
+     330259,
+     567212,
+     363043,
+     285095,
+     277719,
+     7342
+    ],
+    "pago": [
+     201883,
+     276919,
+     370479,
+     326576,
+     359295,
+     484699,
+     423284,
+     298186,
+     284194,
+     2548
+    ]
+   },
+   "FUNDO ESTADUAL DE RECURSOS HIDRICOS": {
+    "empenhado": [
+     50000,
+     40494,
+     122897,
+     35256,
+     61464,
+     23140,
+     206683,
+     35378,
+     2251890,
+     0
+    ],
+    "liquidado": [
+     0,
+     2225,
+     81072,
+     62237,
+     33229,
+     28035,
+     22455,
+     64036,
+     51630,
+     2225
+    ],
+    "pago": [
+     0,
+     2225,
+     78847,
+     59878,
+     21076,
+     42547,
+     22455,
+     64036,
+     35600,
+     18255
+    ]
+   },
+   "SUPERINTENDENCIA DE POLICIA TECNICO-CIENTIFICA": {
+    "empenhado": [
+     268316,
+     106555,
+     210450,
+     73213,
+     291804,
+     254006,
+     322996,
+     339498,
+     47601,
+     1100
+    ],
+    "liquidado": [
+     27039,
+     111286,
+     155534,
+     151210,
+     207237,
+     125062,
+     192553,
+     167857,
+     196157,
+     51405
+    ],
+    "pago": [
+     0,
+     109536,
+     159502,
+     166939,
+     154116,
+     183300,
+     165654,
+     195501,
+     199384,
+     33108
+    ]
+   },
+   "FUNDO ESPECIAL DE REEQUIPAMENTO POLICIAL": {
+    "empenhado": [
+     0,
+     24832,
+     179,
+     179,
+     24595,
+     206872,
+     18701,
+     323342,
+     6898,
+     1556
+    ],
+    "liquidado": [
+     0,
+     0,
+     179,
+     1511,
+     22060,
+     88000,
+     51527,
+     29102,
+     0,
+     105188
+    ],
+    "pago": [
+     0,
+     0,
+     179,
+     1511,
+     22060,
+     88000,
+     42959,
+     37670,
+     0,
+     100896
+    ]
+   },
+   "FUNDO ESTADUAL DE PREVENCAO, FISCALIZACAO E REPRESSAO DE ENTORPECENTES": {
+    "empenhado": [
+     0,
+     98980,
+     67430,
+     9546,
+     57672,
+     112676,
+     58787,
+     57632,
+     52586,
+     0
+    ],
+    "liquidado": [
+     0,
+     98980,
+     67010,
+     9966,
+     57672,
+     112676,
+     58787,
+     10742,
+     99475,
+     0
+    ],
+    "pago": [
+     0,
+     32020,
+     70048,
+     66573,
+     64988,
+     67305,
+     46384,
+     61200,
+     55219,
+     51573
+    ]
+   },
+   "FUNDO ESTADUAL DOS DIREITOS DA CRIANCA E DO ADOLESCENTE": {
+    "empenhado": [
+     0,
+     60000,
+     40000,
+     0,
+     0,
+     20114,
+     0,
+     121726,
+     62988,
+     0
+    ],
+    "liquidado": [
+     0,
+     5323,
+     75620,
+     0,
+     0,
+     19002,
+     0,
+     0,
+     37589,
+     0
+    ],
+    "pago": [
+     0,
+     5323,
+     75620,
+     0,
+     0,
+     19002,
+     0,
+     0,
+     37589,
+     0
+    ]
+   },
+   "FUNDO ESTADUAL DE DEFESA DO CONSUMIDOR": {
+    "empenhado": [
+     96407,
+     0,
+     42848,
+     0,
+     0,
+     0,
+     0,
+     0,
+     158729,
+     0
+    ],
+    "liquidado": [
+     0,
+     48407,
+     48407,
+     42441,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     96814,
+     0,
+     42441,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "FUNDO ESPECIAL DE MODERNIZACAO E REAPARELHAMENTO DA POLICIA MILITAR": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     47000,
+     116248,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "FUNDO ESPECIAL DE REGULARIZACAO FUNDIARIA URBANA E RURAL DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1998,
+     119616
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     119616
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     95319
+    ]
+   },
+   "FUNDO ESTADUAL DOS DIREITOS DA PESSOA IDOSA": {
+    "empenhado": [
+     0,
+     10000,
+     0,
+     0,
+     124151,
+     6000,
+     -35644,
+     15000,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     428,
+     0,
+     29726,
+     0,
+     70199,
+     0,
+     0,
+     668
+    ],
+    "pago": [
+     0,
+     0,
+     428,
+     0,
+     29726,
+     0,
+     70199,
+     0,
+     0,
+     668
+    ]
+   },
+   "FUNDO ESTADUAL DOS DIREITOS DA MULHER": {
+    "empenhado": [
+     0,
+     0,
+     64000,
+     0,
+     0,
+     0,
+     34980,
+     0,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     7976,
+     2848,
+     8010,
+     42282,
+     11570,
+     8010,
+     11570,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     7976,
+     0,
+     10858,
+     42282,
+     11570,
+     8010,
+     11570,
+     0
+    ]
+   },
+   "FUNDO DE RECONSTITUICAO DE BENS LESADOS": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     9000,
+     0,
+     71465,
+     0,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     9000,
+     0,
+     67844,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     7500,
+     1500,
+     67844,
+     0
+    ]
+   },
+   "FUNDO DE DESENVOLVIMENTO DOS DESPORTOS": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "FUNDO GARANTIDOR DE PARCERIAS PUBLICO-PRIVADA DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "FUNDO ESTADUAL - FUN-HEURO": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "FUNDO ESTADUAL DE GOVERNANCA CLIMATICA E SERVICOS AMBIENTAIS": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "FUNDO ESTADUAL DO TRABALHO, EMPREGO E RENDA DO ESTADO DE RONDONIA": {
+    "empenhado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "liquidado": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "pago": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  }
+ },
+ "despesa_funcao": [
+  {
+   "cod": "12",
+   "funcao": "EDUCACAO",
+   "orcado_inicial": 3054589544,
+   "orcado_atualizado": 3139588862,
+   "empenhado": 2265284545,
+   "liquidado": 1995064854,
+   "pago": 1960031663,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DA EDUCACAO",
+     "orcado_atualizado": 3086830800,
+     "empenhado": 2210440730,
+     "liquidado": 1967701111,
+     "pago": 1932953320
+    },
+    {
+     "orgao": "INSTITUTO ESTADUAL DE DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL",
+     "orcado_atualizado": 52758062,
+     "empenhado": 23295161,
+     "liquidado": 17883449,
+     "pago": 17598049
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS MILITAR DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 11748811,
+     "liquidado": 4790619,
+     "pago": 4790619
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 1089312,
+     "liquidado": 593151,
+     "pago": 593151
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVICOS PUBLICOS",
+     "orcado_atualizado": 0,
+     "empenhado": 14614008,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "SUPERINTENDENCIA ESTADUAL DE GESTAO DE PESSOAS",
+     "orcado_atualizado": 0,
+     "empenhado": 4096524,
+     "liquidado": 4096524,
+     "pago": 4096524
+    }
+   ]
+  },
+  {
+   "cod": "06",
+   "funcao": "SEGURANCA PUBLICA",
+   "orcado_inicial": 2563467307,
+   "orcado_atualizado": 2739582126,
+   "empenhado": 1975413740,
+   "liquidado": 1760626479,
+   "pago": 1730659187,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE SEGURANCA, DEFESA E CIDADANIA",
+     "orcado_atualizado": 1938816281,
+     "empenhado": 1420313437,
+     "liquidado": 1410785157,
+     "pago": 1404707847
+    },
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+     "orcado_atualizado": 541562213,
+     "empenhado": 396889480,
+     "liquidado": 274245438,
+     "pago": 255047442
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE SEGURANCA PUBLICA",
+     "orcado_atualizado": 79159051,
+     "empenhado": 17516287,
+     "liquidado": 6691134,
+     "pago": 2941134
+    },
+    {
+     "orgao": "POLICIA MILITAR",
+     "orcado_atualizado": 72824719,
+     "empenhado": 66777272,
+     "liquidado": 33534510,
+     "pago": 33033986
+    },
+    {
+     "orgao": "CORPO DE BOMBEIROS MILITAR",
+     "orcado_atualizado": 58749914,
+     "empenhado": 45272041,
+     "liquidado": 22986123,
+     "pago": 22620718
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS MILITAR DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 38320858,
+     "empenhado": 22043266,
+     "liquidado": 7527023,
+     "pago": 7504843
+    },
+    {
+     "orgao": "POLICIA CIVIL",
+     "orcado_atualizado": 4155998,
+     "empenhado": 3214097,
+     "liquidado": 2730876,
+     "pago": 2718933
+    },
+    {
+     "orgao": "SUPERINTENDENCIA DE POLICIA TECNICO-CIENTIFICA",
+     "orcado_atualizado": 2527216,
+     "empenhado": 1915539,
+     "liquidado": 1385339,
+     "pago": 1367041
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DE REEQUIPAMENTO POLICIAL",
+     "orcado_atualizado": 1942000,
+     "empenhado": 607152,
+     "liquidado": 297567,
+     "pago": 293275
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DE MODERNIZACAO E REAPARELHAMENTO DA POLICIA MILITAR",
+     "orcado_atualizado": 1523875,
+     "empenhado": 163248,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 483868,
+     "liquidado": 443313,
+     "pago": 423969
+    },
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE ESTRADAS DE RODAGEM E TRANSPORTES",
+     "orcado_atualizado": 0,
+     "empenhado": 218053,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "10",
+   "funcao": "SAUDE",
+   "orcado_inicial": 2542260828,
+   "orcado_atualizado": 2624451944,
+   "empenhado": 1999509585,
+   "liquidado": 1867271560,
+   "pago": 1849326894,
+   "orgaos": [
+    {
+     "orgao": "FUNDO ESTADUAL DE SAUDE",
+     "orcado_atualizado": 2497391656,
+     "empenhado": 1916152477,
+     "liquidado": 1792545206,
+     "pago": 1776235986
+    },
+    {
+     "orgao": "FUNDACAO DE HEMATOLOGIA E HEMOTERAPIA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 71802011,
+     "empenhado": 51602984,
+     "liquidado": 49748483,
+     "pago": 48780288
+    },
+    {
+     "orgao": "AGENCIA ESTADUAL DE VIGILANCIA E SAUDE",
+     "orcado_atualizado": 45670502,
+     "empenhado": 22577991,
+     "liquidado": 18575538,
+     "pago": 17924666
+    },
+    {
+     "orgao": "INSTITUTO ESTADUAL DE EDUCACAO EM SAUDE PUBLICA DE RONDONIA",
+     "orcado_atualizado": 8462966,
+     "empenhado": 5300720,
+     "liquidado": 4338552,
+     "pago": 4335372
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE JUSTICA",
+     "orcado_atualizado": 822000,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDO ESTADUAL - FUN-HEURO",
+     "orcado_atualizado": 302809,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 1313010,
+     "liquidado": 730044,
+     "pago": 730044
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS MILITAR DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 2404002,
+     "liquidado": 1214938,
+     "pago": 1214938
+    },
+    {
+     "orgao": "FUNDACAO RONDONIA DE AMPARO AO DESENV. DAS ACOES CIENT. E TECNOL. E A PESQ. DO EST DE RO",
+     "orcado_atualizado": 0,
+     "empenhado": 158400,
+     "liquidado": 118800,
+     "pago": 105600
+    }
+   ]
+  },
+  {
+   "cod": "09",
+   "funcao": "PREVIDENCIA SOCIAL",
+   "orcado_inicial": 1812965540,
+   "orcado_atualizado": 1811055508,
+   "empenhado": 1158810825,
+   "liquidado": 1141239697,
+   "pago": 1141172394,
+   "orgaos": [
+    {
+     "orgao": "FUNDO PREVIDENCIARIO CAPITALIZADO DO IPERON",
+     "orcado_atualizado": 1313660305,
+     "empenhado": 867721112,
+     "liquidado": 867525534,
+     "pago": 867525534
+    },
+    {
+     "orgao": "TRIBUNAL DE JUSTICA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 308833705,
+     "empenhado": 149817628,
+     "liquidado": 149675908,
+     "pago": 149675908
+    },
+    {
+     "orgao": "INSTITUTO DE PREVIDENCIA DOS SERVIDORES PUBLICOS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 79491250,
+     "empenhado": 55475428,
+     "liquidado": 50317777,
+     "pago": 50250474
+    },
+    {
+     "orgao": "MINISTERIO PUBLICO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 75634589,
+     "empenhado": 62449499,
+     "liquidado": 50373319,
+     "pago": 50373319
+    },
+    {
+     "orgao": "TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 33435659,
+     "empenhado": 23347160,
+     "liquidado": 23347160,
+     "pago": 23347160
+    }
+   ]
+  },
+  {
+   "cod": "28",
+   "funcao": "ENCARGOS ESPECIAIS",
+   "orcado_inicial": 1672773508,
+   "orcado_atualizado": 1658575597,
+   "empenhado": 1208253129,
+   "liquidado": 1205715343,
+   "pago": 1205125734,
+   "orgaos": [
+    {
+     "orgao": "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS",
+     "orcado_atualizado": 1578342112,
+     "empenhado": 1156307498,
+     "liquidado": 1154893892,
+     "pago": 1154893892
+    },
+    {
+     "orgao": "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA",
+     "orcado_atualizado": 20704187,
+     "empenhado": 20325369,
+     "liquidado": 20325369,
+     "pago": 20325369
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO PLANEJAMENTO, ORCAMENTO E GESTAO",
+     "orcado_atualizado": 16060236,
+     "empenhado": 7226890,
+     "liquidado": 7226890,
+     "pago": 7226890
+    },
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+     "orcado_atualizado": 9080000,
+     "empenhado": 6680515,
+     "liquidado": 5742237,
+     "pago": 5153940
+    },
+    {
+     "orgao": "FUNDO PREVIDENCIARIO CAPITALIZADO DO IPERON",
+     "orcado_atualizado": 8180000,
+     "empenhado": 87880,
+     "liquidado": 87880,
+     "pago": 87880
+    },
+    {
+     "orgao": "SUPERINTENDENCIA ESTADUAL DE GESTAO DE PESSOAS",
+     "orcado_atualizado": 7042466,
+     "empenhado": 5151793,
+     "liquidado": 5151793,
+     "pago": 5151793
+    },
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE ESTRADAS DE RODAGEM E TRANSPORTES",
+     "orcado_atualizado": 6113000,
+     "empenhado": 2198312,
+     "liquidado": 2198312,
+     "pago": 2198312
+    },
+    {
+     "orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNICA E EXTENSAO RURAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 4453542,
+     "empenhado": 4308975,
+     "liquidado": 4298000,
+     "pago": 4298000
+    },
+    {
+     "orgao": "SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 3120000,
+     "empenhado": 2489496,
+     "liquidado": 2447594,
+     "pago": 2446282
+    },
+    {
+     "orgao": "INSTITUTO DE PREVIDENCIA DOS SERVIDORES PUBLICOS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 3046354,
+     "empenhado": 2167175,
+     "liquidado": 2167175,
+     "pago": 2167175
+    },
+    {
+     "orgao": "AGENCIA DE DEFESA SANITARIA AGROSILVOPASTORIL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 2073700,
+     "empenhado": 1070048,
+     "liquidado": 1011965,
+     "pago": 1011965
+    },
+    {
+     "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 260000,
+     "empenhado": 209576,
+     "liquidado": 134634,
+     "pago": 134634
+    }
+   ]
+  },
+  {
+   "cod": "02",
+   "funcao": "JUDICIARIA",
+   "orcado_inicial": 1619212585,
+   "orcado_atualizado": 1658332803,
+   "empenhado": 1110720724,
+   "liquidado": 995482815,
+   "pago": 986056638,
+   "orgaos": [
+    {
+     "orgao": "TRIBUNAL DE JUSTICA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 1307720495,
+     "empenhado": 847581361,
+     "liquidado": 845897667,
+     "pago": 845519197
+    },
+    {
+     "orgao": "FUNDO DE APERFEICOAMENTO DOS SERVICOS JUDICIARIOS",
+     "orcado_atualizado": 350612308,
+     "empenhado": 262599363,
+     "liquidado": 149563481,
+     "pago": 140537441
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE SEGURANCA, DEFESA E CIDADANIA",
+     "orcado_atualizado": 0,
+     "empenhado": 540000,
+     "liquidado": 21667,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DE MODERNIZACAO E REAPARELHAMENTO DA POLICIA MILITAR",
+     "orcado_atualizado": 0,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "04",
+   "funcao": "ADMINISTRACAO",
+   "orcado_inicial": 1156130818,
+   "orcado_atualizado": 1282013138,
+   "empenhado": 862254562,
+   "liquidado": 791469525,
+   "pago": 760509820,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE FINANCAS",
+     "orcado_atualizado": 340432056,
+     "empenhado": 235220955,
+     "liquidado": 233724687,
+     "pago": 231156012
+    },
+    {
+     "orgao": "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA",
+     "orcado_atualizado": 227251533,
+     "empenhado": 157782368,
+     "liquidado": 124754427,
+     "pago": 102437166
+    },
+    {
+     "orgao": "SUPERINTENDENCIA DE GESTAO DOS GASTOS PUBLICOS ADMINISTRATIVOS",
+     "orcado_atualizado": 217258191,
+     "empenhado": 156116577,
+     "liquidado": 144471912,
+     "pago": 142424643
+    },
+    {
+     "orgao": "PROCURADORIA GERAL DO ESTADO",
+     "orcado_atualizado": 135333571,
+     "empenhado": 93389744,
+     "liquidado": 91824257,
+     "pago": 90857500
+    },
+    {
+     "orgao": "FUNDO DE DESENVOLVIMENTO E APERFEICOAMENTO DA ADMINISTRACAO TRIBUTARIA",
+     "orcado_atualizado": 64896212,
+     "empenhado": 21177540,
+     "liquidado": 12723174,
+     "pago": 12207817
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO PLANEJAMENTO, ORCAMENTO E GESTAO",
+     "orcado_atualizado": 46185556,
+     "empenhado": 33317246,
+     "liquidado": 31949910,
+     "pago": 31532351
+    },
+    {
+     "orgao": "CONTABILIDADE GERAL DO ESTADO",
+     "orcado_atualizado": 38401774,
+     "empenhado": 27761239,
+     "liquidado": 24421383,
+     "pago": 23872036
+    },
+    {
+     "orgao": "SUPERINTENDENCIA ESTADUAL DE GESTAO DE PESSOAS",
+     "orcado_atualizado": 37273694,
+     "empenhado": 26854069,
+     "liquidado": 26263930,
+     "pago": 25921418
+    },
+    {
+     "orgao": "SUPERINTENDENCIA ESTADUAL DE TECNOLOGIA DA INFORMACAO E COMUNICACAO",
+     "orcado_atualizado": 31781641,
+     "empenhado": 21976314,
+     "liquidado": 20538342,
+     "pago": 20307666
+    },
+    {
+     "orgao": "CONTROLADORIA GERAL DO ESTADO",
+     "orcado_atualizado": 19794317,
+     "empenhado": 13499040,
+     "liquidado": 13205051,
+     "pago": 13042702
+    },
+    {
+     "orgao": "SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 16214934,
+     "empenhado": 11967153,
+     "liquidado": 11123688,
+     "pago": 10816621
+    },
+    {
+     "orgao": "POLICIA CIVIL",
+     "orcado_atualizado": 15514643,
+     "empenhado": 12035425,
+     "liquidado": 10257270,
+     "pago": 10253283
+    }
+   ]
+  },
+  {
+   "cod": "01",
+   "funcao": "LEGISLATIVA",
+   "orcado_inicial": 853397584,
+   "orcado_atualizado": 899499214,
+   "empenhado": 749737302,
+   "liquidado": 571126866,
+   "pago": 565855585,
+   "orgaos": [
+    {
+     "orgao": "ASSEMBLEIA LEGISLATIVA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 581823642,
+     "empenhado": 528626819,
+     "liquidado": 381726980,
+     "pago": 376938745
+    },
+    {
+     "orgao": "TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 295046571,
+     "empenhado": 217495823,
+     "liquidado": 188339283,
+     "pago": 187856237
+    },
+    {
+     "orgao": "FUNDO DE DESENVOLVIMENTO INSTITUCIONAL DO TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 22629000,
+     "empenhado": 3614660,
+     "liquidado": 1060603,
+     "pago": 1060603
+    }
+   ]
+  },
+  {
+   "cod": "03",
+   "funcao": "ESSENCIAL A JUSTICA",
+   "orcado_inicial": 798596704,
+   "orcado_atualizado": 873976381,
+   "empenhado": 620232969,
+   "liquidado": 482200636,
+   "pago": 477337001,
+   "orgaos": [
+    {
+     "orgao": "MINISTERIO PUBLICO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 598547858,
+     "empenhado": 459464600,
+     "liquidado": 340040423,
+     "pago": 336337624
+    },
+    {
+     "orgao": "DEFENSORIA PUBLICA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 177733204,
+     "empenhado": 125361968,
+     "liquidado": 120685001,
+     "pago": 120369070
+    },
+    {
+     "orgao": "FUNDO DE DESENVOLVIMENTO INSTITUCIONAL DO MINISTERIO PUBLICO DE RONDONIA",
+     "orcado_atualizado": 55284189,
+     "empenhado": 23216651,
+     "liquidado": 14027170,
+     "pago": 13245712
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DA DEFENSORIA PUBLICA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 22973494,
+     "empenhado": 11964115,
+     "liquidado": 7371199,
+     "pago": 7307751
+    },
+    {
+     "orgao": "FUNDO DE RECONSTITUICAO DE BENS LESADOS",
+     "orcado_atualizado": 19436636,
+     "empenhado": 80465,
+     "liquidado": 76844,
+     "pago": 76844
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DE MODERNIZACAO DA PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 1000,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "POLICIA MILITAR",
+     "orcado_atualizado": 0,
+     "empenhado": 145170,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "26",
+   "funcao": "TRANSPORTE",
+   "orcado_inicial": 345832308,
+   "orcado_atualizado": 870440584,
+   "empenhado": 397178266,
+   "liquidado": 340046116,
+   "pago": 335893576,
+   "orgaos": [
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE ESTRADAS DE RODAGEM E TRANSPORTES",
+     "orcado_atualizado": 607594105,
+     "empenhado": 261742423,
+     "liquidado": 239218009,
+     "pago": 235820742
+    },
+    {
+     "orgao": "FUNDO DE INFRAESTRUTURA, TRANSPORTE E HABITACAO",
+     "orcado_atualizado": 259169493,
+     "empenhado": 130739692,
+     "liquidado": 99238901,
+     "pago": 98485076
+    },
+    {
+     "orgao": "SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 3676985,
+     "empenhado": 2836151,
+     "liquidado": 251809,
+     "pago": 250362
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 1860000,
+     "liquidado": 1337396,
+     "pago": 1337396
+    },
+    {
+     "orgao": "SUPERINTENDENCIA DE GESTAO DOS GASTOS PUBLICOS ADMINISTRATIVOS",
+     "orcado_atualizado": 0,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "99",
+   "funcao": "RESERVA DE CONTINGENCIA",
+   "orcado_inicial": 657610145,
+   "orcado_atualizado": 657610145,
+   "empenhado": 0,
+   "liquidado": 0,
+   "pago": 0,
+   "orgaos": [
+    {
+     "orgao": "FUNDO PREVIDENCIARIO CAPITALIZADO DO IPERON",
+     "orcado_atualizado": 636042964,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO PLANEJAMENTO, ORCAMENTO E GESTAO",
+     "orcado_atualizado": 21567181,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "14",
+   "funcao": "DIREITOS DA CIDADANIA",
+   "orcado_inicial": 582258213,
+   "orcado_atualizado": 606083710,
+   "empenhado": 450729637,
+   "liquidado": 438851062,
+   "pago": 433622099,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE JUSTICA",
+     "orcado_atualizado": 580104233,
+     "empenhado": 436328007,
+     "liquidado": 425646921,
+     "pago": 420748595
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 22016307,
+     "empenhado": 12497731,
+     "liquidado": 11549239,
+     "pago": 11218602
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE DEFESA DO CONSUMIDOR",
+     "orcado_atualizado": 2017507,
+     "empenhado": 297984,
+     "liquidado": 139255,
+     "pago": 139255
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE PREVENCAO, FISCALIZACAO E REPRESSAO DE ENTORPECENTES",
+     "orcado_atualizado": 767151,
+     "empenhado": 515309,
+     "liquidado": 515309,
+     "pago": 515309
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONOMICO",
+     "orcado_atualizado": 587022,
+     "empenhado": 506297,
+     "liquidado": 437697,
+     "pago": 437697
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DA JUVENTUDE, CULTURA, ESPORTE E LAZER",
+     "orcado_atualizado": 580000,
+     "empenhado": 572818,
+     "liquidado": 551151,
+     "pago": 551151
+    },
+    {
+     "orgao": "SUPERINTENDENCIA ESTADUAL DO INDIGENA",
+     "orcado_atualizado": 11490,
+     "empenhado": 11490,
+     "liquidado": 11490,
+     "pago": 11490
+    }
+   ]
+  },
+  {
+   "cod": "20",
+   "funcao": "AGRICULTURA",
+   "orcado_inicial": 430355712,
+   "orcado_atualizado": 573349767,
+   "empenhado": 358778998,
+   "liquidado": 314893348,
+   "pago": 310207489,
+   "orgaos": [
+    {
+     "orgao": "AGENCIA DE DEFESA SANITARIA AGROSILVOPASTORIL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 196928470,
+     "empenhado": 142543948,
+     "liquidado": 137152548,
+     "pago": 135419516
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DA AGRICULTURA",
+     "orcado_atualizado": 186787621,
+     "empenhado": 92333974,
+     "liquidado": 75574830,
+     "pago": 72910613
+    },
+    {
+     "orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNICA E EXTENSAO RURAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 156529677,
+     "empenhado": 105843809,
+     "liquidado": 97662676,
+     "pago": 97382208
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE SANIDADE ANIMAL",
+     "orcado_atualizado": 33104000,
+     "empenhado": 17722164,
+     "liquidado": 4286295,
+     "pago": 4286295
+    },
+    {
+     "orgao": "SUPERINTENDENCIA DE GESTAO DOS GASTOS PUBLICOS ADMINISTRATIVOS",
+     "orcado_atualizado": 0,
+     "empenhado": 157205,
+     "liquidado": 59370,
+     "pago": 51228
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 177898,
+     "liquidado": 157629,
+     "pago": 157629
+    }
+   ]
+  },
+  {
+   "cod": "08",
+   "funcao": "ASSISTENCIA SOCIAL",
+   "orcado_inicial": 203830227,
+   "orcado_atualizado": 254387028,
+   "empenhado": 162423031,
+   "liquidado": 136957297,
+   "pago": 134699613,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DA MULHER, DA FAMILIA, DA ASSISTENCIA E DO DESENVOLVIMENTO SOCIAL",
+     "orcado_atualizado": 97900995,
+     "empenhado": 60355789,
+     "liquidado": 51341406,
+     "pago": 49531654
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE COMBATE E ERRADICACAO DA POBREZA DE RONDONIA",
+     "orcado_atualizado": 60600988,
+     "empenhado": 33994127,
+     "liquidado": 25505620,
+     "pago": 25446203
+    },
+    {
+     "orgao": "FUNDACAO ESTADUAL DE ATENDIMENTO SOCIOEDUCATIVO DO ESTADO DE RONDONIA - FEASE",
+     "orcado_atualizado": 55037540,
+     "empenhado": 40985154,
+     "liquidado": 37227682,
+     "pago": 37118017
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE ASSISTENCIA SOCIAL",
+     "orcado_atualizado": 34619981,
+     "empenhado": 20236169,
+     "liquidado": 18997294,
+     "pago": 18993314
+    },
+    {
+     "orgao": "SUPERINTENDENCIA ESTADUAL DO INDIGENA",
+     "orcado_atualizado": 4459387,
+     "empenhado": 3312958,
+     "liquidado": 3063586,
+     "pago": 3016575
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DOS DIREITOS DA CRIANCA E DO ADOLESCENTE",
+     "orcado_atualizado": 1484235,
+     "empenhado": 304827,
+     "liquidado": 137533,
+     "pago": 137533
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DOS DIREITOS DA PESSOA IDOSA",
+     "orcado_atualizado": 167117,
+     "empenhado": 119507,
+     "liquidado": 101020,
+     "pago": 101020
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DOS DIREITOS DA MULHER",
+     "orcado_atualizado": 116785,
+     "empenhado": 98980,
+     "liquidado": 92265,
+     "pago": 92265
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DO CORPO DE BOMBEIROS MILITAR DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 429600,
+     "liquidado": 202200,
+     "pago": 0
+    },
+    {
+     "orgao": "POLICIA MILITAR",
+     "orcado_atualizado": 0,
+     "empenhado": 2160000,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 425920,
+     "liquidado": 288690,
+     "pago": 263032
+    },
+    {
+     "orgao": "INSTITUTO ESTADUAL DE DESENVOLVIMENTO DA EDUCACAO PROFISSIONAL",
+     "orcado_atualizado": 0,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "15",
+   "funcao": "URBANISMO",
+   "orcado_inicial": 70944941,
+   "orcado_atualizado": 253509749,
+   "empenhado": 74116591,
+   "liquidado": 57833697,
+   "pago": 57494095,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVICOS PUBLICOS",
+     "orcado_atualizado": 253509749,
+     "empenhado": 71216591,
+     "liquidado": 55889680,
+     "pago": 55550079
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 2900000,
+     "liquidado": 1944017,
+     "pago": 1944017
+    }
+   ]
+  },
+  {
+   "cod": "18",
+   "funcao": "GESTAO AMBIENTAL",
+   "orcado_inicial": 103234720,
+   "orcado_atualizado": 128600818,
+   "empenhado": 73541680,
+   "liquidado": 55730246,
+   "pago": 54644247,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO AMBIENTAL",
+     "orcado_atualizado": 65282266,
+     "empenhado": 44972475,
+     "liquidado": 41678677,
+     "pago": 41122396
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DE PROTECAO AMBIENTAL",
+     "orcado_atualizado": 57930946,
+     "empenhado": 24946786,
+     "liquidado": 13322238,
+     "pago": 12794745
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE RECURSOS HIDRICOS",
+     "orcado_atualizado": 5067606,
+     "empenhado": 2827201,
+     "liquidado": 347143,
+     "pago": 344918
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE GOVERNANCA CLIMATICA E SERVICOS AMBIENTAIS",
+     "orcado_atualizado": 320000,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDACAO RONDONIA DE AMPARO AO DESENV. DAS ACOES CIENT. E TECNOL. E A PESQ. DO EST DE RO",
+     "orcado_atualizado": 0,
+     "empenhado": 361600,
+     "liquidado": 192316,
+     "pago": 192316
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 433618,
+     "liquidado": 189873,
+     "pago": 189873
+    }
+   ]
+  },
+  {
+   "cod": "13",
+   "funcao": "CULTURA",
+   "orcado_inicial": 9526933,
+   "orcado_atualizado": 121297421,
+   "empenhado": 97702961,
+   "liquidado": 91957614,
+   "pago": 91837388,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DA JUVENTUDE, CULTURA, ESPORTE E LAZER",
+     "orcado_atualizado": 88047277,
+     "empenhado": 78202844,
+     "liquidado": 72811098,
+     "pago": 72726098
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE DESENVOLVIMENTO DA CULTURA",
+     "orcado_atualizado": 26873859,
+     "empenhado": 15217328,
+     "liquidado": 15217328,
+     "pago": 15217328
+    },
+    {
+     "orgao": "FUNDACAO CULTURAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 6376285,
+     "empenhado": 4132252,
+     "liquidado": 3831117,
+     "pago": 3795891
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 150537,
+     "liquidado": 98070,
+     "pago": 98070
+    }
+   ]
+  },
+  {
+   "cod": "23",
+   "funcao": "COMERCIO E SERVICOS",
+   "orcado_inicial": 49580051,
+   "orcado_atualizado": 107525753,
+   "empenhado": 70100989,
+   "liquidado": 60601760,
+   "pago": 59710536,
+   "orgaos": [
+    {
+     "orgao": "FUNDO DE INVESTIMENTO E DESENVOLVIMENTO INDUSTRIAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 51017973,
+     "empenhado": 21710133,
+     "liquidado": 16898495,
+     "pago": 16146012
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONOMICO",
+     "orcado_atualizado": 25165809,
+     "empenhado": 22094193,
+     "liquidado": 21588511,
+     "pago": 21524707
+    },
+    {
+     "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 16500292,
+     "empenhado": 11747985,
+     "liquidado": 11043504,
+     "pago": 10987722
+    },
+    {
+     "orgao": "SUPERINTENDENCIA ESTADUAL DE TURISMO",
+     "orcado_atualizado": 14841679,
+     "empenhado": 14548678,
+     "liquidado": 11071250,
+     "pago": 11052095
+    }
+   ]
+  },
+  {
+   "cod": "17",
+   "funcao": "SANEAMENTO",
+   "orcado_inicial": 52210293,
+   "orcado_atualizado": 67489442,
+   "empenhado": 32957697,
+   "liquidado": 28507640,
+   "pago": 28311925,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVICOS PUBLICOS",
+     "orcado_atualizado": 62096140,
+     "empenhado": 31002008,
+     "liquidado": 28332398,
+     "pago": 28306129
+    },
+    {
+     "orgao": "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA",
+     "orcado_atualizado": 5393303,
+     "empenhado": 1955689,
+     "liquidado": 175243,
+     "pago": 5797
+    }
+   ]
+  },
+  {
+   "cod": "27",
+   "funcao": "DESPORTO E LAZER",
+   "orcado_inicial": 1368390,
+   "orcado_atualizado": 46077447,
+   "empenhado": 34374024,
+   "liquidado": 32004073,
+   "pago": 31860724,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DA JUVENTUDE, CULTURA, ESPORTE E LAZER",
+     "orcado_atualizado": 46029057,
+     "empenhado": 34374024,
+     "liquidado": 32004073,
+     "pago": 31860724
+    },
+    {
+     "orgao": "FUNDO DE DESENVOLVIMENTO DOS DESPORTOS",
+     "orcado_atualizado": 48390,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "22",
+   "funcao": "INDUSTRIA",
+   "orcado_inicial": 13522016,
+   "orcado_atualizado": 30781050,
+   "empenhado": 9955100,
+   "liquidado": 9645844,
+   "pago": 9065687,
+   "orgaos": [
+    {
+     "orgao": "FUNDO DE INVESTIMENTO E DESENVOLVIMENTO INDUSTRIAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 30781050,
+     "empenhado": 9876159,
+     "liquidado": 9566903,
+     "pago": 8986746
+    },
+    {
+     "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 78941,
+     "liquidado": 78941,
+     "pago": 78941
+    }
+   ]
+  },
+  {
+   "cod": "19",
+   "funcao": "CIENCIA E TECNOLOGIA",
+   "orcado_inicial": 23284775,
+   "orcado_atualizado": 27298785,
+   "empenhado": 8709580,
+   "liquidado": 7559607,
+   "pago": 7370923,
+   "orgaos": [
+    {
+     "orgao": "FUNDO DE INVESTIMENTO E DESENVOLVIMENTO INDUSTRIAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 14950976,
+     "empenhado": 2828222,
+     "liquidado": 2622502,
+     "pago": 2496642
+    },
+    {
+     "orgao": "FUNDACAO RONDONIA DE AMPARO AO DESENV. DAS ACOES CIENT. E TECNOL. E A PESQ. DO EST DE RO",
+     "orcado_atualizado": 12327809,
+     "empenhado": 5844149,
+     "liquidado": 4910312,
+     "pago": 4847488
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONOMICO",
+     "orcado_atualizado": 20000,
+     "empenhado": 4789,
+     "liquidado": 4789,
+     "pago": 4789
+    },
+    {
+     "orgao": "FUNDO PENITENCIARIO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 0,
+     "empenhado": 32420,
+     "liquidado": 22004,
+     "pago": 22004
+    }
+   ]
+  },
+  {
+   "cod": "16",
+   "funcao": "HABITACAO",
+   "orcado_inicial": 20971951,
+   "orcado_atualizado": 22278854,
+   "empenhado": 14429372,
+   "liquidado": 13629411,
+   "pago": 13312172,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE PATRIMONIO E REGULARIZACAO FUNDIARIA",
+     "orcado_atualizado": 21466926,
+     "empenhado": 14307758,
+     "liquidado": 13509795,
+     "pago": 13216853
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DE REGULARIZACAO FUNDIARIA URBANA E RURAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 811928,
+     "empenhado": 121614,
+     "liquidado": 119616,
+     "pago": 95319
+    }
+   ]
+  },
+  {
+   "cod": "11",
+   "funcao": "TRABALHO",
+   "orcado_inicial": 12318198,
+   "orcado_atualizado": 12318198,
+   "empenhado": 3929477,
+   "liquidado": 3835131,
+   "pago": 3452352,
+   "orgaos": [
+    {
+     "orgao": "FUNDO DE INVESTIMENTO E DESENVOLVIMENTO INDUSTRIAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 12112198,
+     "empenhado": 3929477,
+     "liquidado": 3835131,
+     "pago": 3452352
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONOMICO",
+     "orcado_atualizado": 205000,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DO TRABALHO, EMPREGO E RENDA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 1000,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "21",
+   "funcao": "ORGANIZACAO AGRARIA",
+   "orcado_inicial": 700000,
+   "orcado_atualizado": 203174,
+   "empenhado": 201842,
+   "liquidado": 195081,
+   "pago": 195081,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DE PATRIMONIO E REGULARIZACAO FUNDIARIA",
+     "orcado_atualizado": 203174,
+     "empenhado": 201842,
+     "liquidado": 195081,
+     "pago": 195081
+    }
+   ]
+  }
+ ],
+ "despesa_grupo": [
+  {
+   "cod": "31000000",
+   "grupo": "PESSOAL E ENCARGOS SOCIAIS",
+   "orcado_inicial": 10391958045,
+   "orcado_atualizado": 10775672016,
+   "empenhado": 7658461937,
+   "liquidado": 7453763361,
+   "pago": 7395684066,
+   "orgaos": [
+    {
+     "orgao": "SECRETARIA DE ESTADO DA EDUCACAO",
+     "orcado_atualizado": 1854241720,
+     "empenhado": 1322456890,
+     "liquidado": 1317161821,
+     "pago": 1298637418
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE SEGURANCA, DEFESA E CIDADANIA",
+     "orcado_atualizado": 1798235797,
+     "empenhado": 1306945037,
+     "liquidado": 1306945037,
+     "pago": 1301596832
+    },
+    {
+     "orgao": "FUNDO PREVIDENCIARIO CAPITALIZADO DO IPERON",
+     "orcado_atualizado": 1319660305,
+     "empenhado": 867691095,
+     "liquidado": 867496222,
+     "pago": 867496222
+    },
+    {
+     "orgao": "TRIBUNAL DE JUSTICA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 1256160005,
+     "empenhado": 801315078,
+     "liquidado": 799489664,
+     "pago": 799220962
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE SAUDE",
+     "orcado_atualizado": 939926974,
+     "empenhado": 656961452,
+     "liquidado": 641055973,
+     "pago": 640931298
+    },
+    {
+     "orgao": "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS",
+     "orcado_atualizado": 432919688,
+     "empenhado": 344049645,
+     "liquidado": 342636039,
+     "pago": 342636039
+    },
+    {
+     "orgao": "MINISTERIO PUBLICO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 420486082,
+     "empenhado": 338231894,
+     "liquidado": 277017509,
+     "pago": 274180398
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE JUSTICA",
+     "orcado_atualizado": 413377783,
+     "empenhado": 296461147,
+     "liquidado": 296461147,
+     "pago": 293326585
+    },
+    {
+     "orgao": "ASSEMBLEIA LEGISLATIVA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 325077417,
+     "empenhado": 308978339,
+     "liquidado": 227649520,
+     "pago": 224711231
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE FINANCAS",
+     "orcado_atualizado": 313676953,
+     "empenhado": 213691831,
+     "liquidado": 213691831,
+     "pago": 211358799
+    },
+    {
+     "orgao": "TRIBUNAL DE CONTAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 191099075,
+     "empenhado": 136609728,
+     "liquidado": 136609728,
+     "pago": 136154011
+    },
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+     "orcado_atualizado": 167500800,
+     "empenhado": 137613096,
+     "liquidado": 107978676,
+     "pago": 107081140
+    }
+   ]
+  },
+  {
+   "cod": "33000000",
+   "grupo": "OUTRAS DESPESAS CORRENTES",
+   "orcado_inicial": 5775763383,
+   "orcado_atualizado": 6892778970,
+   "empenhado": 5245722952,
+   "liquidado": 4345122826,
+   "pago": 4275446982,
+   "orgaos": [
+    {
+     "orgao": "FUNDO ESTADUAL DE SAUDE",
+     "orcado_atualizado": 1461604752,
+     "empenhado": 1216001491,
+     "liquidado": 1115000757,
+     "pago": 1102601733
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DA EDUCACAO",
+     "orcado_atualizado": 1030034785,
+     "empenhado": 828282517,
+     "liquidado": 620276555,
+     "pago": 604053166
+    },
+    {
+     "orgao": "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS",
+     "orcado_atualizado": 820716364,
+     "empenhado": 609837864,
+     "liquidado": 609837864,
+     "pago": 609837864
+    },
+    {
+     "orgao": "TRIBUNAL DE JUSTICA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 360394195,
+     "empenhado": 196083910,
+     "liquidado": 196083910,
+     "pago": 195974142
+    },
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+     "orcado_atualizado": 307398050,
+     "empenhado": 218448549,
+     "liquidado": 148831923,
+     "pago": 143901774
+    },
+    {
+     "orgao": "FUNDO DE APERFEICOAMENTO DOS SERVICOS JUDICIARIOS",
+     "orcado_atualizado": 265626542,
+     "empenhado": 214842623,
+     "liquidado": 131014683,
+     "pago": 124082264
+    },
+    {
+     "orgao": "ASSEMBLEIA LEGISLATIVA DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 250689534,
+     "empenhado": 217966705,
+     "liquidado": 152805085,
+     "pago": 150955139
+    },
+    {
+     "orgao": "MINISTERIO PUBLICO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 214055945,
+     "empenhado": 160427135,
+     "liquidado": 109941317,
+     "pago": 109830073
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE JUSTICA",
+     "orcado_atualizado": 157906430,
+     "empenhado": 135278819,
+     "liquidado": 126438606,
+     "pago": 124674843
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE SEGURANCA, DEFESA E CIDADANIA",
+     "orcado_atualizado": 135689826,
+     "empenhado": 113908400,
+     "liquidado": 103861788,
+     "pago": 103111014
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DA JUVENTUDE, CULTURA, ESPORTE E LAZER",
+     "orcado_atualizado": 135329611,
+     "empenhado": 116590935,
+     "liquidado": 108239600,
+     "pago": 107948033
+    },
+    {
+     "orgao": "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA",
+     "orcado_atualizado": 134931997,
+     "empenhado": 92354134,
+     "liquidado": 64595476,
+     "pago": 55554682
+    }
+   ]
+  },
+  {
+   "cod": "44000000",
+   "grupo": "INVESTIMENTOS",
+   "orcado_inicial": 1280632591,
+   "orcado_atualizado": 1792114297,
+   "empenhado": 609926885,
+   "liquidado": 378366564,
+   "pago": 351430136,
+   "orgaos": [
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE ESTRADAS DE RODAGEM E TRANSPORTES",
+     "orcado_atualizado": 434580933,
+     "empenhado": 133420315,
+     "liquidado": 119659096,
+     "pago": 116870382
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVICOS PUBLICOS",
+     "orcado_atualizado": 248129501,
+     "empenhado": 57180947,
+     "liquidado": 44584953,
+     "pago": 44584953
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DA EDUCACAO",
+     "orcado_atualizado": 202554295,
+     "empenhado": 59701323,
+     "liquidado": 30262735,
+     "pago": 30262735
+    },
+    {
+     "orgao": "FUNDO DE INFRAESTRUTURA, TRANSPORTE E HABITACAO",
+     "orcado_atualizado": 153182863,
+     "empenhado": 43449443,
+     "liquidado": 31254522,
+     "pago": 30638939
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DA AGRICULTURA",
+     "orcado_atualizado": 113692821,
+     "empenhado": 36861350,
+     "liquidado": 25658460,
+     "pago": 23470820
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE SAUDE",
+     "orcado_atualizado": 95859930,
+     "empenhado": 43189534,
+     "liquidado": 36488476,
+     "pago": 32702956
+    },
+    {
+     "orgao": "FUNDO DE APERFEICOAMENTO DOS SERVICOS JUDICIARIOS",
+     "orcado_atualizado": 84985766,
+     "empenhado": 47756740,
+     "liquidado": 18548798,
+     "pago": 16455177
+    },
+    {
+     "orgao": "DEPARTAMENTO ESTADUAL DE TRANSITO",
+     "orcado_atualizado": 75743363,
+     "empenhado": 47508350,
+     "liquidado": 23177076,
+     "pago": 9218467
+    },
+    {
+     "orgao": "MINISTERIO PUBLICO DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 39640419,
+     "empenhado": 23255070,
+     "liquidado": 3454915,
+     "pago": 2700471
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE SEGURANCA PUBLICA",
+     "orcado_atualizado": 39471443,
+     "empenhado": 2841705,
+     "liquidado": 450000,
+     "pago": 450000
+    },
+    {
+     "orgao": "FUNDO ESTADUAL DE SANIDADE ANIMAL",
+     "orcado_atualizado": 21821562,
+     "empenhado": 13127823,
+     "liquidado": 958557,
+     "pago": 958557
+    },
+    {
+     "orgao": "FUNDO DE DESENVOLVIMENTO E APERFEICOAMENTO DA ADMINISTRACAO TRIBUTARIA",
+     "orcado_atualizado": 19468894,
+     "empenhado": 3121149,
+     "liquidado": 232310,
+     "pago": 214640
+    }
+   ]
+  },
+  {
+   "cod": "99000000",
+   "grupo": "RESERVA DE CONTINGENCIA",
+   "orcado_inicial": 657610145,
+   "orcado_atualizado": 657610145,
+   "empenhado": 0,
+   "liquidado": 0,
+   "pago": 0,
+   "orgaos": [
+    {
+     "orgao": "FUNDO PREVIDENCIARIO CAPITALIZADO DO IPERON",
+     "orcado_atualizado": 636042964,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "SECRETARIA DE ESTADO DO PLANEJAMENTO, ORCAMENTO E GESTAO",
+     "orcado_atualizado": 21567181,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  },
+  {
+   "cod": "46000000",
+   "grupo": "AMORTIZACAO DA DIVIDA",
+   "orcado_inicial": 172142943,
+   "orcado_atualizado": 186216500,
+   "empenhado": 114925910,
+   "liquidado": 114884014,
+   "pago": 114882702,
+   "orgaos": [
+    {
+     "orgao": "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS",
+     "orcado_atualizado": 164887267,
+     "empenhado": 94158284,
+     "liquidado": 94158284,
+     "pago": 94158284
+    },
+    {
+     "orgao": "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA",
+     "orcado_atualizado": 18651233,
+     "empenhado": 18651233,
+     "liquidado": 18651233,
+     "pago": 18651233
+    },
+    {
+     "orgao": "SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 2678000,
+     "empenhado": 2116394,
+     "liquidado": 2074497,
+     "pago": 2073185
+    }
+   ]
+  },
+  {
+   "cod": "32000000",
+   "grupo": "JUROS E ENCARGOS DA DIVIDA",
+   "orcado_inicial": 211271324,
+   "orcado_atualizado": 121575070,
+   "empenhado": 77089242,
+   "liquidado": 77089236,
+   "pago": 77089236,
+   "orgaos": [
+    {
+     "orgao": "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS",
+     "orcado_atualizado": 119458793,
+     "empenhado": 75042004,
+     "liquidado": 75042004,
+     "pago": 75042004
+    },
+    {
+     "orgao": "COMPANHIA DE AGUAS E ESGOTO DE RONDONIA",
+     "orcado_atualizado": 1674277,
+     "empenhado": 1674136,
+     "liquidado": 1674136,
+     "pago": 1674136
+    },
+    {
+     "orgao": "SOCIEDADE DE PORTOS E HIDROVIAS DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 442000,
+     "empenhado": 373102,
+     "liquidado": 373096,
+     "pago": 373096
+    }
+   ]
+  },
+  {
+   "cod": "45000000",
+   "grupo": "INVERSOES FINANCEIRAS",
+   "orcado_inicial": 161564860,
+   "orcado_atualizado": 40360500,
+   "empenhado": 33219701,
+   "liquidado": 33219701,
+   "pago": 33219701,
+   "orgaos": [
+    {
+     "orgao": "RECURSOS SOB A SUPERVISAO DA SECRETARIA DE FINANCAS",
+     "orcado_atualizado": 40360000,
+     "empenhado": 33219701,
+     "liquidado": 33219701,
+     "pago": 33219701
+    },
+    {
+     "orgao": "FUNDO ESPECIAL DE MODERNIZACAO DA PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+     "orcado_atualizado": 500,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    },
+    {
+     "orgao": "FUNDO ESTADUAL - FUN-HEURO",
+     "orcado_atualizado": 0,
+     "empenhado": 0,
+     "liquidado": 0,
+     "pago": 0
+    }
+   ]
+  }
+ ],
+ "emendas_mensal": {
+  "dados_de": "2026-10-07",
+  "meses": [
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07",
+   "2026-08",
+   "2026-09",
+   "2026-10"
+  ],
+  "empenhado": [
+   0,
+   7416240,
+   12015635,
+   18024069,
+   26297205,
+   51263080,
+   81355041,
+   28919482,
+   31144739,
+   1826852
+  ],
+  "liquidado": [
+   0,
+   0,
+   16472707,
+   14764207,
+   9912443,
+   52834765,
+   85943995,
+   23402053,
+   26580494,
+   8424780
+  ],
+  "pago": [
+   0,
+   0,
+   14512717,
+   15149513,
+   10271656,
+   45416647,
+   83014143,
+   27963991,
+   28241250,
+   3527075
+  ]
+ }
+}

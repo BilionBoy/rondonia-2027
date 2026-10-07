@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esboço A · O ano passando</title>
+<style>
+:root{
+  --papel:#f2efe8; --papel2:#e7e2d8; --tinta:#15171b; --cinza:#6b6f78; --linha:rgba(21,23,27,.12);
+  --agua:#0d5c6b; --agua2:rgba(13,92,107,.30); --atraso:#c4451c;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--papel);color:var(--tinta);font-family:var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased;
+  display:grid;grid-template-rows:auto 1fr auto;height:100svh;padding:clamp(14px,2.2vw,40px) clamp(14px,2.6vw,48px) clamp(10px,1.6vw,28px);gap:clamp(10px,1.4vw,22px)}
+.num{font-variant-numeric:tabular-nums}
+
+/* cabeçalho */
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+.quando .ctx{font-size:clamp(.66rem,.8vw,.82rem);letter-spacing:.18em;text-transform:uppercase;color:var(--cinza)}
+.quando .mes{font-size:clamp(2.4rem,6.4vw,6.2rem);font-weight:800;letter-spacing:-.045em;line-height:.9;margin-top:6px}
+.quando .mes small{font-size:.24em;font-weight:500;letter-spacing:0;color:var(--cinza);margin-left:.5em;vertical-align:.9em}
+.placar{text-align:right}
+.placar .v{font-size:clamp(1.8rem,4.2vw,4rem);font-weight:750;letter-spacing:-.04em;line-height:.95}
+.placar .r{font-size:clamp(.72rem,.95vw,.95rem);color:var(--cinza);margin-top:6px}
+.placar .r b{color:var(--tinta);font-weight:600}
+
+/* mosaico */
+.mosaico{position:relative;min-height:0;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}
+.mosaico.arrastando{cursor:ew-resize}
+.t{position:absolute;border-radius:5px;overflow:hidden;background:var(--papel2);transition:transform .25s,opacity .3s,filter .3s}
+.t .comp{position:absolute;left:0;right:0;bottom:0;background:var(--agua2)}
+.t .pago{position:absolute;left:0;right:0;bottom:0;background:var(--agua)}
+.t .pago::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(255,255,255,.35)}
+.t .tempo{position:absolute;left:0;right:0;height:0;border-top:1px dashed rgba(21,23,27,.45)}
+.t .rot{position:absolute;left:7px;top:6px;right:6px;font-size:clamp(.58rem,.85vw,.9rem);font-weight:700;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;mix-blend-mode:normal}
+.t .pc{position:absolute;left:7px;bottom:6px;font-size:clamp(.9rem,1.9vw,2rem);font-weight:750;letter-spacing:-.03em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.18)}
+.t .pc.vazio{color:var(--tinta);text-shadow:none}
+.t.atr .rot{color:var(--atraso)}
+.t:hover{transform:translateY(-2px);filter:brightness(1.03);z-index:2}
+.mosaico.foco .t{opacity:.35;filter:grayscale(.5)}
+
+/* tempo */
+footer{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(12px,1.6vw,24px);align-items:center}
+.play{width:clamp(38px,3.2vw,52px);height:clamp(38px,3.2vw,52px);border-radius:50%;border:0;background:var(--tinta);color:var(--papel);font-size:1rem;cursor:pointer;display:grid;place-items:center}
+.regua{position:relative;height:44px;cursor:pointer;touch-action:none}
+.regua .trilho{position:absolute;left:0;right:0;top:12px;height:3px;background:var(--linha);border-radius:2px}
+.regua .feito{position:absolute;left:0;top:12px;height:3px;background:var(--tinta);border-radius:2px;width:0}
+.regua .botao{position:absolute;top:5px;width:17px;height:17px;border-radius:50%;background:var(--tinta);transform:translateX(-50%);box-shadow:0 0 0 5px var(--papel)}
+.regua .meses{position:absolute;left:0;right:0;top:24px;display:grid;grid-template-columns:repeat(12,1fr);font-size:clamp(.6rem,.75vw,.78rem);color:var(--cinza);letter-spacing:.06em;text-transform:uppercase}
+.regua .meses span{text-align:left}
+.regua .meses span.fut{opacity:.4}
+.leg{display:flex;gap:14px;font-size:clamp(.62rem,.75vw,.78rem);color:var(--cinza);white-space:nowrap}
+.leg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.dica{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--tinta);color:var(--papel);border-radius:999px;padding:10px 18px;font-size:.85rem;pointer-events:none;opacity:0;transition:opacity .5s}
+.dica.on{opacity:.92}
+
+/* ficha */
+.veu{position:fixed;inset:0;background:rgba(242,239,232,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.veu.on{opacity:1;pointer-events:auto}
+.ficha{position:fixed;z-index:11;left:50%;top:50%;transform:translate(-50%,-46%) scale(.96);opacity:0;pointer-events:none;transition:all .35s cubic-bezier(.2,.7,.1,1);
+  display:flex;gap:clamp(14px,2vw,28px);max-width:min(1100px,94vw)}
+.ficha.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}
+.cartao{background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(21,23,27,.18);padding:clamp(18px,2.2vw,32px);width:min(480px,90vw);display:grid;grid-template-columns:auto 1fr;gap:clamp(14px,2vw,26px)}
+.copo{width:clamp(70px,7vw,110px);height:clamp(220px,34vh,340px);border-radius:10px;background:var(--papel2);position:relative;overflow:hidden}
+.copo .comp,.copo .pago{position:absolute;left:0;right:0;bottom:0;transition:height 1.2s cubic-bezier(.2,.7,.1,1)}
+.copo .comp{background:var(--agua2)} .copo .pago{background:var(--agua)}
+.copo .tempo{position:absolute;left:-4px;right:-4px;border-top:1.5px dashed var(--tinta)}
+.cartao h3{margin:0;font-size:clamp(1.4rem,2.4vw,2.2rem);letter-spacing:-.03em;line-height:1}
+.cartao .nome{color:var(--cinza);font-size:.85rem;margin:6px 0 16px;line-height:1.3}
+.cartao dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-size:.9rem}
+.cartao dt{color:var(--cinza)} .cartao dd{margin:0;text-align:right;font-weight:650;font-variant-numeric:tabular-nums}
+.cartao .acao{margin-top:16px;display:flex;gap:8px}
+.cartao button{border:1px solid var(--linha);background:transparent;border-radius:999px;padding:8px 14px;font:inherit;font-size:.8rem;cursor:pointer}
+.estado{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:10px}
+.estado.atr{background:rgba(196,69,28,.12);color:var(--atraso)} .estado.ok{background:rgba(13,92,107,.12);color:var(--agua)}
+.troca{position:fixed;top:10px;right:12px;z-index:20;display:flex;gap:4px;font-family:var(--mono);font-size:.7rem}
+.troca a{color:var(--cinza);text-decoration:none;border:1px solid var(--linha);border-radius:6px;padding:3px 7px;background:var(--papel)}
+.troca a.on{color:var(--papel);background:var(--tinta)}
+@media (max-width:700px){
+  header{flex-direction:column;align-items:flex-start;gap:8px}.placar{text-align:left}
+  footer{grid-template-columns:auto 1fr}.leg{grid-column:1/-1}
+  .ficha{flex-direction:column;align-items:center;max-height:92svh;overflow:auto}
+}
+</style>
+</head>
+<body>
+<nav class="troca"><a href="rondonia.html">Sequência</a><a class="on" href="a-o-ano-passando.html">Só o A (2D)</a></nav>
+<header>
+  <div class="quando">
+    <div class="ctx">Rondônia · orçamento de 2026 · 81 órgãos</div>
+    <div class="mes" id="mes">Janeiro</div>
+  </div>
+  <div class="placar">
+    <div class="v num" id="pago">R$ 0</div>
+    <div class="r">pagos de <b id="orc"></b> · comprometido <b id="comp"></b></div>
+  </div>
+</header>
+<div class="mosaico" id="mosaico" aria-label="Os 81 órgãos, do tamanho do orçamento"><div class="dica" id="dica">Arraste para os lados para passar o ano · toque num órgão</div></div>
+<footer>
+  <button class="play" id="play" aria-label="Passar o ano">▶</button>
+  <div class="regua" id="regua"><div class="trilho"></div><div class="feito" id="feito"></div><div class="botao" id="botao"></div><div class="meses" id="meses"></div></div>
+  <div class="leg"><span><i style="background:var(--agua)"></i>pago</span><span><i style="background:var(--agua2)"></i>comprometido</span><span><i style="border-top:1.5px dashed var(--tinta);height:0;width:14px;vertical-align:3px;border-radius:0"></i>onde o ano está</span></div>
+</footer>
+<div class="veu" id="veu"></div>
+<div class="ficha" id="ficha" role="dialog" aria-modal="true"></div>
+
+<script>
+const D=/*__DADOS__*/null;
+const MESES=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const ROT={'FUNPRECAP':'IPERON · fundo','RECURSOS-SEFIN':'Encargos · SEFIN'};
+const FIM=9+7/31; // dados até 7 de outubro
+const br=(v,c=0)=>v.toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
+const din=v=>{const a=Math.abs(v);return a>=1e9?'R$ '+br(v/1e9,2)+' bi':a>=1e6?'R$ '+br(v/1e6,1)+' mi':a>=1e3?'R$ '+br(v/1e3,0)+' mil':'R$ '+br(v)};
+const O=D.orgaos.filter(o=>o.orc>0);
+// acumulado até o tempo t (em meses): meses cheios + fração do mês corrente (outubro só tem 7 dias)
+function acum(arr,t){const i=Math.min(Math.floor(t),arr.length-1);let s=0;for(let k=0;k<i;k++)s+=arr[k]||0;const peso=i===9?7/31:1;return s+Math.min(1,(t-i)/peso)*(arr[i]||0)}
+const anoFrac=t=>t/12;
+
+/* mosaico */
+function squarify(itens,x,y,w,h){const out=[];let fila=[];const tot=itens.reduce((s,i)=>s+i.v,0),k=w*h/tot;let rest=itens.map(i=>({...i,a:i.v*k}));
+  const pior=(f,l)=>{const s=f.reduce((a,b)=>a+b.a,0),mx=Math.max(...f.map(r=>r.a)),mn=Math.min(...f.map(r=>r.a));return Math.max(l*l*mx/(s*s),(s*s)/(l*l*mn))};
+  const assenta=f=>{const s=f.reduce((a,b)=>a+b.a,0);if(w>=h){const cw=s/h;let cy=y;f.forEach(r=>{const rh=r.a/cw;out.push({...r,x,y:cy,w:cw,h:rh});cy+=rh});x+=cw;w-=cw}else{const rh=s/w;let cx=x;f.forEach(r=>{const cw=r.a/rh;out.push({...r,x:cx,y,w:cw,h:rh});cx+=cw});y+=rh;h-=rh}};
+  while(rest.length){const l=Math.min(w,h),c=rest[0];if(!fila.length||pior(fila,l)>=pior([...fila,c],l)){fila.push(c);rest.shift()}else{assenta(fila);fila=[]}}if(fila.length)assenta(fila);return out}
+const mos=document.getElementById('mosaico');let tiles=[];
+function monta(){const W=mos.clientWidth,H=mos.clientHeight,G=3;mos.querySelectorAll('.t').forEach(e=>e.remove());
+  tiles=squarify(O.map((o,i)=>({v:o.orc,i})),0,0,W,H).map(r=>{const o=O[r.i],el=document.createElement('div');el.className='t';el.tabIndex=0;el.dataset.i=r.i;
+    el.style.cssText=`left:${r.x+G/2}px;top:${r.y+G/2}px;width:${Math.max(r.w-G,1)}px;height:${Math.max(r.h-G,1)}px`;
+    const grande=r.w>46&&r.h>30,medio=r.w>70&&r.h>60;
+    el.innerHTML=`<div class="comp"></div><div class="pago"></div><div class="tempo"></div>${grande?`<div class="rot">${ROT[o.sigla]||o.sigla||o.nome}</div>`:''}${medio?'<div class="pc num"></div>':''}`;
+    el.title=o.nome;mos.appendChild(el);return {el,o,h:r.h-G,comp:el.querySelector('.comp'),pago:el.querySelector('.pago'),tempo:el.querySelector('.tempo'),pc:el.querySelector('.pc')}});
+  desenha(T)}
+
+/* estado do tempo */
+let T=0;
+function desenha(t){T=t;const fa=anoFrac(t);let sp=0,sc=0;
+  tiles.forEach(x=>{const p=acum(x.o.mes_pag,t)/x.o.orc,c=acum(x.o.mes_emp,t)/x.o.orc;sp+=acum(x.o.mes_pag,t);sc+=acum(x.o.mes_emp,t);
+    x.pago.style.height=Math.min(100,p*100)+'%';x.comp.style.height=Math.min(100,c*100)+'%';x.tempo.style.bottom=(fa*100)+'%';
+    x.el.classList.toggle('atr',x.o.orc>=20e6&&c<fa-.10&&t>2);
+    if(x.pc){x.pc.textContent=br(Math.min(999,c*100),0)+'%';x.pc.classList.toggle('vazio',p<.18)}});
+  const mi=Math.min(11,Math.floor(t));document.getElementById('mes').innerHTML=MESES[mi]+(t>=FIM-.001?' <small>até o dia 7</small>':'');
+  document.getElementById('pago').textContent=din(sp);document.getElementById('comp').textContent=din(sc);
+  const pct=t/12*100;document.getElementById('feito').style.width=pct+'%';document.getElementById('botao').style.left=pct+'%';
+  document.querySelectorAll('#meses span').forEach((s,k)=>s.classList.toggle('fut',k>FIM))}
+document.getElementById('orc').textContent=din(D.despesa.orc);
+document.getElementById('meses').innerHTML=MESES.map(m=>`<span>${m.slice(0,3)}</span>`).join('');
+
+/* animação do ano */
+let anim=null;
+function toca(de,ate,ms){cancelAnimationFrame(anim);const t0=performance.now();document.getElementById('play').textContent='❚❚';
+  (function f(n){const p=Math.min(1,(n-t0)/ms),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;desenha(de+(ate-de)*e);if(p<1)anim=requestAnimationFrame(f);else{anim=null;document.getElementById('play').textContent='▶'}})(t0)}
+document.getElementById('play').onclick=()=>{if(anim){cancelAnimationFrame(anim);anim=null;document.getElementById('play').textContent='▶'}else toca(T>=FIM-.01?0:T,FIM,6000*(1-(T>=FIM-.01?0:T)/FIM)+400)};
+
+/* arrastar o tempo: na régua ou em qualquer lugar do mosaico */
+function tempoDoX(x,el){const r=el.getBoundingClientRect();return Math.max(0,Math.min(FIM,(x-r.left)/r.width*12))}
+const regua=document.getElementById('regua');
+regua.addEventListener('pointerdown',e=>{regua.setPointerCapture(e.pointerId);cancelAnimationFrame(anim);anim=null;desenha(tempoDoX(e.clientX,regua));
+  const mv=ev=>desenha(tempoDoX(ev.clientX,regua)),up=()=>{regua.removeEventListener('pointermove',mv);regua.removeEventListener('pointerup',up)};regua.addEventListener('pointermove',mv);regua.addEventListener('pointerup',up)});
+let ini=null;
+mos.addEventListener('pointerdown',e=>{ini={x:e.clientX,y:e.clientY,t:T,arr:false,alvo:e.target.closest('.t')}});
+mos.addEventListener('pointermove',e=>{if(!ini)return;const dx=e.clientX-ini.x;if(!ini.arr&&Math.abs(dx)>10&&Math.abs(dx)>Math.abs(e.clientY-ini.y)){ini.arr=true;mos.classList.add('arrastando');mos.setPointerCapture(e.pointerId);cancelAnimationFrame(anim);anim=null;dica(false)}
+  if(ini.arr)desenha(Math.max(0,Math.min(FIM,ini.t+dx/mos.clientWidth*FIM*1.4)))});
+mos.addEventListener('pointerup',()=>{if(ini&&!ini.arr&&ini.alvo)abre(+ini.alvo.dataset.i);ini=null;mos.classList.remove('arrastando')});
+mos.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset.i)abre(+e.target.dataset.i)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')fecha();if(document.getElementById('ficha').classList.contains('on'))return;
+  if(e.key==='ArrowRight')desenha(Math.min(FIM,Math.floor(T)+1));if(e.key==='ArrowLeft')desenha(Math.max(0,Math.ceil(T)-1));if(e.key===' '){e.preventDefault();document.getElementById('play').click()}});
+const dica=on=>document.getElementById('dica').classList.toggle('on',on);
+
+/* ficha (e comparação) */
+let sel=[],comparando=false;
+function cartao(o){const p=o.pag/o.orc,c=o.emp/o.orc,fa=FIM/12,atr=o.orc>=20e6&&c<fa-.10;
+  return `<div class="cartao"><div class="copo"><div class="comp" style="height:${c*100}%"></div><div class="pago" style="height:${p*100}%"></div><div class="tempo" style="bottom:${fa*100}%"></div></div>
+  <div><span class="estado ${atr?'atr':'ok'}">${atr?'abaixo do ritmo':'no ritmo'}</span><h3>${ROT[o.sigla]||o.sigla}</h3><div class="nome">${o.nome}</div>
+  <dl><dt>Orçamento</dt><dd>${din(o.orc)}</dd><dt>Comprometido</dt><dd>${din(o.emp)} · ${br(c*100,0)}%</dd><dt>Pago</dt><dd>${din(o.pag)} · ${br(p*100,0)}%</dd><dt>Sem destino</dt><dd>${din(o.orc-o.emp)}</dd>
+  ${o.cargos?`<dt>Cargos de nomeação</dt><dd>${br(o.cargos.qtd)}</dd>`:''}${o.emendas?`<dt>Emendas 2019–26</dt><dd>${din(o.emendas.valor)}</dd>`:''}</dl>
+  <div class="acao">${sel.length<2?'<button data-c>Comparar com outro</button>':''}<button data-f>Fechar</button></div></div></div>`}
+function abre(i){if(comparando){sel.push(O[i]);comparando=false}else sel=[O[i]];dica(false);
+  const f=document.getElementById('ficha');f.innerHTML=sel.map(cartao).join('');f.classList.add('on');document.getElementById('veu').classList.add('on')}
+function fecha(){document.getElementById('ficha').classList.remove('on');document.getElementById('veu').classList.remove('on')}
+document.getElementById('ficha').addEventListener('click',e=>{if(e.target.matches('[data-f]'))fecha();if(e.target.matches('[data-c]')){comparando=true;fecha();dica(true);document.getElementById('dica').textContent='Toque no segundo órgão para comparar'}});
+document.getElementById('veu').onclick=fecha;
+
+monta();let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(monta,120)});
+setTimeout(()=>toca(0,FIM,6500),500);setTimeout(()=>{if(!sel.length)dica(true)},7300);setTimeout(()=>dica(false),12000);
+</script>
+</body>
+</html>

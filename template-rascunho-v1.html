@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rondônia em 5 minutos</title>
+<meta name="description" content="O Estado que o novo governo recebe: o dinheiro de 2026, a máquina e os 84 dias da transição, com dados públicos.">
+<style>
+:root{
+  --ink:#0a0e15; --ink2:#111723; --ink3:#182032; --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.16);
+  --text:#f4f0e6; --muted:#a3abb9; --dim:#6f788a;
+  --gold:#f2b705; --gold2:rgba(242,183,5,.55); --gold3:rgba(242,183,5,.22);
+  --green:#35c27a; --coral:#ff6a4d; --blue:#5b9cff;
+  --serif:"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --pad:clamp(16px,4.2vw,72px);
+}
+*{box-sizing:border-box}
+html{font-size:clamp(15px,0.55vw + 11px,26px);-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.45;overflow-x:hidden}
+button{font:inherit;color:inherit}
+a{color:var(--gold)}
+.num{font-variant-numeric:tabular-nums}
+
+/* topo */
+.topo{position:fixed;inset:0 0 auto 0;z-index:30;display:flex;align-items:center;gap:12px;padding:10px var(--pad);
+  background:linear-gradient(var(--ink) 30%,rgba(10,14,21,0));pointer-events:none}
+.topo>*{pointer-events:auto}
+.marca{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.marca b{color:var(--text)}
+.topo .esp{flex:1}
+.cap{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.1em}
+.btn-ind{border:1px solid var(--line2);background:rgba(255,255,255,.04);border-radius:999px;padding:6px 14px;font-size:.75rem;cursor:pointer}
+.btn-ind:hover,.btn-ind:focus-visible{border-color:var(--gold);outline:none}
+.prog{position:fixed;left:0;top:0;height:3px;background:var(--gold);width:0;z-index:31;transition:width .3s}
+
+/* cenas */
+main{scroll-snap-type:y proximity}
+.cena{position:relative;min-height:100svh;padding:calc(64px + 2vh) var(--pad) 72px;display:flex;flex-direction:column;justify-content:center;
+  scroll-snap-align:start;border-bottom:1px solid var(--line);overflow:hidden}
+.cena::before{content:"";position:absolute;inset:auto -20% -40% auto;width:70vmax;height:70vmax;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(242,183,5,.10),transparent 70%);pointer-events:none;opacity:0;transition:opacity 1.2s}
+.cena.viva::before{opacity:1}
+.cena.fria::before{background:radial-gradient(closest-side,rgba(91,156,255,.10),transparent 70%)}
+.cena.alerta::before{background:radial-gradient(closest-side,rgba(255,106,77,.10),transparent 70%)}
+.olho{font-family:var(--mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 .9rem}
+.olho span{color:var(--dim)}
+h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0 0 .6rem;text-wrap:balance}
+h1{font-size:clamp(2.4rem,7vw,6rem);line-height:1.02}
+h2{font-size:clamp(1.7rem,4.2vw,3.6rem);line-height:1.08;max-width:22ch}
+.lead{font-size:clamp(1rem,1.6vw,1.35rem);color:var(--muted);max-width:52ch;margin:0 0 1.2rem;text-wrap:pretty}
+.lead b{color:var(--text);font-weight:600}
+.grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,72px);align-items:center}
+@media (max-width:900px){.grade{grid-template-columns:1fr}}
+.gigante{white-space:nowrap;font-size:clamp(2.6rem,7vw,7rem);font-weight:700;letter-spacing:-.035em;line-height:.95;margin:.2rem 0 .4rem;font-variant-numeric:tabular-nums}
+.gigante small{font-size:.38em;font-weight:600;letter-spacing:0;color:var(--muted);margin-left:.2em}
+.gigante.coral{color:var(--coral)} .gigante.ouro{color:var(--gold)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:1.2rem 0}
+@media (max-width:640px){.trio{grid-template-columns:1fr}}
+.kpi{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:rgba(255,255,255,.025)}
+.kpi .v{white-space:nowrap;font-size:clamp(1.15rem,2vw,1.9rem);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi .r{font-size:.8rem;color:var(--muted);margin-top:2px}
+.fonte{position:absolute;left:var(--pad);right:var(--pad);bottom:18px;font-size:.68rem;color:var(--dim);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.fonte .esp{flex:1}
+.abrir{border:1px solid var(--gold2);background:rgba(242,183,5,.08);color:var(--text);border-radius:999px;padding:10px 18px;font-size:.85rem;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;margin-top:.6rem}
+.abrir:hover,.abrir:focus-visible{background:rgba(242,183,5,.18);outline:none}
+.abrir::after{content:"→";color:var(--gold)}
+.nota{font-size:.82rem;color:var(--muted);max-width:60ch}
+.tag{display:inline-block;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;border:1px solid var(--line2);border-radius:6px;padding:2px 7px;color:var(--muted)}
+
+/* barra do ano */
+.ano{margin:1.4rem 0 .4rem;position:relative}
+.ano .trilho{height:clamp(22px,3.4vh,40px);border-radius:10px;background:rgba(255,255,255,.05);border:1px solid var(--line);display:flex;overflow:hidden}
+.ano .trilho i{display:block;height:100%;width:0;transition:width 1.6s cubic-bezier(.2,.7,.1,1)}
+.ano .marco{position:absolute;top:-8px;bottom:-8px;width:2px;background:var(--text);opacity:0;transition:opacity .6s 1.2s}
+.ano .marco span{position:absolute;top:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:var(--mono);font-size:.66rem;color:var(--text)}
+.viva .ano .marco{opacity:.85}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.78rem;color:var(--muted);margin-top:.6rem}
+.legenda i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* barras horizontais */
+.barras{display:grid;gap:10px}
+.barra{display:grid;grid-template-columns:minmax(90px,30%) 1fr auto;gap:10px;align-items:center;font-size:.86rem}
+.barra .nm{color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.barra .tr{position:relative;height:16px;border-radius:5px;background:rgba(255,255,255,.05)}
+.barra .tr i{position:absolute;inset:0 auto 0 0;border-radius:5px;width:0;transition:width 1.2s cubic-bezier(.2,.7,.1,1)}
+.barra .tr i.o{background:var(--gold3)} .barra .tr i.e{background:var(--gold)}
+.barra .tr i.c{background:var(--coral)}
+.barra .vl{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.8rem;min-width:7ch;text-align:right}
+.barra .tr .tempo{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--text);opacity:.55}
+
+/* mapa */
+.mapa{position:relative;height:min(62vh,640px);min-height:340px;border-radius:14px;overflow:hidden;background:var(--ink2);border:1px solid var(--line)}
+.tile{position:absolute;border:2px solid var(--ink2);border-radius:6px;padding:6px 7px;cursor:pointer;overflow:hidden;transition:filter .2s,opacity .8s;opacity:0;
+  display:flex;flex-direction:column;justify-content:space-between}
+.viva .tile{opacity:1}
+.tile:hover,.tile:focus-visible{filter:brightness(1.25);outline:2px solid var(--text);outline-offset:-2px;z-index:2}
+.tile .s{font-weight:700;font-size:clamp(.6rem,1vw,.95rem);letter-spacing:.01em;color:var(--text);line-height:1.1}
+.tile .p{font-family:var(--mono);font-size:clamp(.55rem,.8vw,.78rem);color:var(--muted)}
+.tile.t-ok{background:rgba(53,194,122,.16);box-shadow:inset 0 3px 0 var(--green)} .tile.t-quase{background:rgba(242,183,5,.13);box-shadow:inset 0 3px 0 var(--gold)} .tile.t-atr{background:rgba(255,106,77,.2);box-shadow:inset 0 3px 0 var(--coral)}
+.mapa-leg .t-ok{background:var(--green)} .mapa-leg .t-quase{background:var(--gold)} .mapa-leg .t-atr{background:var(--coral)}
+.mapa-leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.78rem;color:var(--muted);margin:.7rem 0 0}
+.mapa-leg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-2px}
+
+/* lista de alerta */
+.lolli{display:grid;gap:8px}
+.lolli button{all:unset;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) 46% 4.5ch;gap:10px;align-items:center;font-size:.84rem;padding:3px 4px;border-radius:6px}
+.lolli button:hover,.lolli button:focus-visible{background:rgba(255,255,255,.05)}
+.lolli .tr{position:relative;height:2px;background:rgba(255,255,255,.12)}
+.lolli .tr i{position:absolute;left:0;top:-1px;height:4px;border-radius:2px;background:var(--coral);width:0;transition:width 1.1s cubic-bezier(.2,.7,.1,1)}
+.lolli .tr b{position:absolute;top:-6px;width:14px;height:14px;border-radius:50%;background:var(--coral);transform:translateX(-50%);left:0;transition:left 1.1s cubic-bezier(.2,.7,.1,1)}
+.lolli .tr .t{position:absolute;top:-9px;bottom:-9px;width:2px;background:var(--text);opacity:.6}
+.lolli .pc{font-family:var(--mono);color:var(--coral);text-align:right}
+
+/* svg genérico */
+svg text{font-family:var(--sans)}
+.grafico{width:100%;height:auto;display:block}
+
+/* linha do tempo */
+.tempo-l{display:grid;gap:10px;margin-top:1rem}
+.fase{display:grid;grid-template-columns:7.5rem 1fr;gap:14px;align-items:start;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+.fase .d{font-family:var(--mono);font-size:.74rem;color:var(--gold)}
+.fase b{display:block;margin-bottom:2px}
+.fase p{margin:0;font-size:.84rem;color:var(--muted)}
+@media (max-width:640px){.fase{grid-template-columns:1fr}}
+
+/* matriz de risco */
+.matriz{display:grid;grid-template-columns:auto repeat(3,1fr);gap:6px;font-size:.78rem}
+.matriz .ax{color:var(--dim);font-family:var(--mono);display:flex;align-items:center;justify-content:center;padding:4px}
+.matriz .cel{min-height:clamp(60px,9vh,110px);border-radius:10px;padding:8px;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start}
+.cel.h{background:rgba(255,106,77,.22);border:1px solid rgba(255,106,77,.5)} .cel.m{background:rgba(242,183,5,.12);border:1px solid rgba(242,183,5,.3)} .cel.l{background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.rk{border:1px solid var(--line2);background:var(--ink);border-radius:999px;padding:3px 9px;font-family:var(--mono);font-size:.72rem;cursor:pointer}
+.rk[aria-pressed=true]{background:var(--text);color:var(--ink)}
+.rk-det{margin-top:12px;border-left:3px solid var(--coral);padding:4px 0 4px 14px;font-size:.9rem}
+.rk-det .m{color:var(--muted);font-size:.8rem}
+
+/* calibrador (pessoal) */
+.calib{position:relative;height:16px;border-radius:8px;background:linear-gradient(90deg,rgba(53,194,122,.35) 0 80.2%,rgba(242,183,5,.45) 80.2% 84.6%,rgba(255,106,77,.45) 84.6% 89.1%,rgba(255,106,77,.8) 89.1%);margin:30px 0 26px}
+.calib .ag{position:absolute;top:-10px;bottom:-10px;width:3px;background:var(--text);left:0;transition:left 1.4s cubic-bezier(.2,.7,.1,1)}
+.calib .ag span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.72rem;white-space:nowrap}
+.calib .lm{position:absolute;bottom:-22px;font-family:var(--mono);font-size:.62rem;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
+
+/* painel de detalhe */
+.veu{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:40;opacity:0;pointer-events:none;transition:opacity .25s}
+.veu.on{opacity:1;pointer-events:auto}
+.painel{position:fixed;z-index:41;background:var(--ink2);border-left:1px solid var(--line2);top:0;right:0;bottom:0;width:min(720px,100vw);
+  transform:translateX(102%);transition:transform .32s cubic-bezier(.2,.7,.1,1);display:flex;flex-direction:column}
+.painel.on{transform:none}
+@media (max-width:700px){.painel{top:auto;left:0;width:100vw;height:88svh;border-left:0;border-top:1px solid var(--line2);border-radius:18px 18px 0 0;transform:translateY(102%)}}
+.painel header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.painel header h3{margin:0;font-family:var(--serif);font-weight:500;font-size:1.35rem;flex:1}
+.fechar{border:1px solid var(--line2);background:transparent;border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1.1rem}
+.painel .corpo{overflow:auto;padding:18px 20px 40px;-webkit-overflow-scrolling:touch}
+.corpo h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:22px 0 8px}
+.corpo h4:first-child{margin-top:0}
+.corpo p{color:var(--muted);font-size:.86rem;margin:.3rem 0 .6rem}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:.72rem;position:sticky;top:-18px;background:var(--ink2)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.clic{cursor:pointer} tr.clic:hover td{background:rgba(255,255,255,.04)}
+.busca{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line2);background:var(--ink);color:var(--text);font:inherit;font-size:.85rem;margin:4px 0 10px}
+.ficha-n{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pill{display:inline-block;border-radius:999px;padding:2px 9px;font-size:.72rem;font-weight:600}
+.pill.atr{background:rgba(255,106,77,.18);color:var(--coral)} .pill.ok{background:rgba(53,194,122,.16);color:var(--green)} .pill.quase{background:rgba(242,183,5,.16);color:var(--gold)}
+
+/* índice */
+.indice{position:fixed;z-index:42;inset:0;background:rgba(10,14,21,.97);display:none;padding:80px var(--pad) 40px;overflow:auto}
+.indice.on{display:block}
+.indice ol{list-style:none;padding:0;margin:0;display:grid;gap:4px;max-width:900px}
+.indice a{display:grid;grid-template-columns:3.5ch 1fr;gap:14px;padding:12px 10px;border-radius:10px;color:var(--text);text-decoration:none;font-family:var(--serif);font-size:clamp(1.1rem,2.2vw,1.8rem)}
+.indice a:hover,.indice a:focus-visible{background:rgba(255,255,255,.05);outline:none}
+.indice a span{font-family:var(--mono);color:var(--gold);font-size:.8em;padding-top:.2em}
+
+/* abertura */
+.abertura h1 em{font-style:normal;color:var(--gold)}
+.dica{font-family:var(--mono);font-size:.72rem;color:var(--dim);margin-top:2rem}
+.fecho li{margin:.5rem 0;font-size:clamp(1rem,1.7vw,1.4rem);max-width:60ch}
+.fecho li b{color:var(--gold)}
+.fontes-l{columns:2 320px;font-size:.78rem;color:var(--muted);padding-left:1.1rem}
+.fontes-l li{break-inside:avoid;margin:0 0 6px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* impressão = PDF de reserva */
+#anexo{display:none}
+@media print{
+  :root{--ink:#fff;--ink2:#fff;--text:#111;--muted:#444;--dim:#666;--line:#ddd;--line2:#bbb}
+  html{font-size:11px} body{background:#fff}
+  .topo,.prog,.abrir,.veu,.painel,.indice,.dica{display:none!important}
+  main{scroll-snap-type:none}
+  .cena{min-height:auto;page-break-after:always;break-after:page;padding:28px 32px 48px;border:0}
+  .cena::before{display:none}
+  .tile{opacity:1!important}
+  .fonte{position:static;margin-top:18px}
+  #anexo{display:block;padding:24px 32px}
+  #anexo section{break-before:page}
+  th{position:static}
+}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+<div class="topo">
+  <div class="marca"><b>Rondônia</b> em 5 minutos</div>
+  <div class="esp"></div>
+  <div class="cap num" id="cap">01 / 13</div>
+  <button class="btn-ind" id="btnInd" aria-haspopup="true">Índice</button>
+</div>
+
+<main id="trilho">
+
+<!-- 01 abertura -->
+<section class="cena abertura" data-t="O Estado em números">
+  <p class="olho">Briefing · dados públicos · posição de 7/10/2026</p>
+  <h1>O Estado que o novo governo <em>recebe</em>.</h1>
+  <p class="lead">O dinheiro de 2026, onde ele está parado, o que muda o orçamento sem aparecer, o que fica de herança, a máquina e os 84 dias da transição. <b>Cada número abre o detalhe e mostra de onde veio.</b></p>
+  <div class="trio">
+    <div class="kpi"><div class="v num" data-num="despesa.orc" data-f="bi">–</div><div class="r">orçamento de 2026, todos os Poderes</div></div>
+    <div class="kpi"><div class="v num">85 dias</div><div class="r">para fechar o ano, na posição dos dados</div></div>
+    <div class="kpi"><div class="v num" id="diasPosse">–</div><div class="r">para a posse, em 6/1/2027</div></div>
+  </div>
+  <p class="dica">Role, toque ou use ↓ → para avançar · Enter abre o detalhe · Esc fecha</p>
+  <div class="fonte"><span id="autoria"></span></div>
+</section>
+
+<!-- 02 dinheiro -->
+<section class="cena" data-t="O dinheiro de 2026" data-d="dinheiro">
+  <div class="grade">
+    <div>
+      <p class="olho">02 <span>· O dinheiro de 2026</span></p>
+      <h2>Faltando 85 dias, um terço do orçamento ainda não tem destino.</h2>
+      <div class="gigante ouro num" data-num="saldo" data-f="bi">–</div>
+      <p class="lead">ainda sem compromisso (<b data-num="saldoPct" data-f="pct">–</b> do orçamento). Para usar tudo até 31/12, o Estado teria de comprometer <b>1,61 vez mais rápido</b> do que vem fazendo: de R$ 1,49 bi para R$ 2,41 bi por mês.</p>
+      <button class="abrir" data-d="dinheiro">Ver os números do ano</button>
+    </div>
+    <div>
+      <div class="ano" id="anoBar">
+        <div class="trilho"><i style="background:var(--gold)"></i><i style="background:var(--gold2)"></i><i style="background:var(--gold3)"></i></div>
+        <div class="marco" style="left:76.7%"><span>77% do ano</span></div>
+      </div>
+      <div class="legenda">
+        <span><i style="background:var(--gold)"></i>Pago <b class="num" data-num="despesa.pag" data-f="bi"></b></span>
+        <span><i style="background:var(--gold2)"></i>Entregue, a pagar <b class="num" data-num="aPagar" data-f="mi"></b></span>
+        <span><i style="background:var(--gold3)"></i>Comprometido, sem entrega <b class="num" data-num="aLiquidar" data-f="bi"></b></span>
+        <span><i style="border:1px solid var(--line2)"></i>Sem compromisso</span>
+      </div>
+      <div class="trio" style="margin-top:1.6rem">
+        <div class="kpi"><div class="v num" data-num="despesa.orc" data-f="bi"></div><div class="r">orçamento atualizado (a lei aprovou <span data-num="despesa.ini" data-f="bi"></span>)</div></div>
+        <div class="kpi"><div class="v num" data-num="despesa.emp" data-f="bi"></div><div class="r">comprometido (empenhado), <span data-num="empPct" data-f="pct"></span></div></div>
+        <div class="kpi"><div class="v num" data-num="despesa.pag" data-f="bi"></div><div class="r">pago, <span data-num="pagPct" data-f="pct"></span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="fonte"><span>Fonte: Portal da Transparência RO (COGES), posição 7/10/2026, via painel Transparência Orçamentária de RO.</span></div>
+</section>
+
+<!-- 03 para onde vai -->
+<section class="cena" data-t="Para onde vai" data-d="funcoes">
+  <div class="grade">
+    <div>
+      <p class="olho">03 <span>· Para onde vai</span></p>
+      <h2>Educação, segurança e saúde levam 4 de cada 10 reais.</h2>
+      <p class="lead">Mais da metade de todo o orçamento é <b>folha de pessoal</b>: <b class="num" data-num="pessoalOrc" data-f="bi"></b> de <b class="num" data-num="despesa.orc" data-f="bi"></b>. O investimento é <b class="num" data-num="investOrc" data-f="bi"></b>, e só <b class="num" data-num="investPct" data-f="pct"></b> dele foi comprometido.</p>
+      <button class="abrir" data-d="funcoes">Ver as 25 áreas e os 7 tipos de gasto</button>
+    </div>
+    <div>
+      <div class="barras" id="barFunc"></div>
+      <div class="legenda"><span><i style="background:var(--gold3)"></i>orçamento</span><span><i style="background:var(--gold)"></i>comprometido</span><span><i style="background:var(--text);width:2px"></i>77% do ano</span></div>
+    </div>
+  </div>
+  <div class="fonte"><span>Fonte: Portal da Transparência RO, despesa por função e por grupo, posição 7/10/2026.</span></div>
+</section>
+
+<!-- 04 mapa -->
+<section class="cena" data-t="O mapa das secretarias" data-d="orgaos">
+  <p class="olho">04 <span>· O mapa das secretarias</span></p>
+  <h2 style="max-width:28ch">Os 81 órgãos do orçamento, do tamanho do dinheiro que têm.</h2>
+  <p class="lead">Toque num órgão para abrir a ficha dele: orçamento, quanto já comprometeu e pagou, o ritmo mês a mês, os cargos de nomeação e as emendas que recebeu.</p>
+  <div class="mapa" id="mapa" role="list" aria-label="Mapa dos órgãos"></div>
+  <div class="mapa-leg">
+    <span><i class="t-atr"></i>Atrasado: 10 pontos ou mais abaixo do ritmo do ano</span>
+    <span><i class="t-quase"></i>Um pouco abaixo</span>
+    <span><i class="t-ok"></i>No ritmo ou acima (77%)</span>
+    <button class="abrir" data-d="orgaos" style="margin:0">Lista dos 81</button>
+  </div>
+  <div class="fonte"><span>Fonte: Portal da Transparência RO (execução por órgão, 7/10/2026) e consulta de cargos do Plano de Transição (3/10/2026).</span></div>
+</section>
+
+<!-- 05 travado -->
+<section class="cena alerta" data-t="Onde está travado" data-d="travado">
+  <div class="grade">
+    <div>
+      <p class="olho">05 <span>· Onde está travado</span></p>
+      <h2><span class="num" id="nAtraso">21</span> órgãos com dinheiro e sem execução.</h2>
+      <div class="gigante coral num" data-num="travadoSaldo" data-f="bi">–</div>
+      <p class="lead">parados nesses órgãos, que têm orçamento de R$ 20 mi ou mais e comprometeram 10 pontos ou menos do que o tempo do ano pede. O maior é o <b>fundo de previdência do IPERON</b> (44%); depois vêm o <b>DER</b> (43%) e <b>Obras e Serviços Públicos</b> (37%).</p>
+      <button class="abrir" data-d="travado">Ver os 21, com o saldo de cada um</button>
+    </div>
+    <div class="lolli" id="lolli"></div>
+  </div>
+  <div class="fonte"><span>Regra de alerta do painel Transparência Orçamentária de RO. Fonte: Portal da Transparência RO, 7/10/2026.</span></div>
+</section>
+
+<!-- 06 sem aparecer -->
+<section class="cena fria" data-t="O que muda sem aparecer" data-d="creditos">
+  <div class="grade">
+    <div>
+      <p class="olho">06 <span>· O que muda o orçamento sem aparecer</span></p>
+      <h2>R$ 4,41 bi mudaram de lugar por decreto em 2026.</h2>
+      <p class="lead"><b data-num="creditos.qtd" data-f="int"></b> decretos no Diário Oficial: <b data-num="creditos.novo" data-f="bi"></b> de dinheiro novo (sobra de 2025, empréstimo e arrecadação acima do previsto) e <b data-num="creditos.remanejado" data-f="bi"></b> só trocados de lugar. O dinheiro novo equivale a 9,5% da lei aprovada.</p>
+      <div class="trio">
+        <div class="kpi"><div class="v num" data-num="renuncia.ano" data-f="mi"></div><div class="r">de imposto que o Estado deixou de cobrar até agosto (+8,5% sobre 2025)</div></div>
+        <div class="kpi"><div class="v num">99%</div><div class="r">disso é crédito presumido de ICMS, incentivo a empresas</div></div>
+        <div class="kpi"><div class="v num">+134%</div><div class="r">foi o crescimento da renúncia de 2017 a 2025</div></div>
+      </div>
+      <button class="abrir" data-d="creditos">Ver decretos e renúncia</button>
+    </div>
+    <div>
+      <svg class="grafico" id="gRenuncia" viewBox="0 0 560 300" role="img" aria-label="Renúncia fiscal por ano"></svg>
+      <p class="nota">Renúncia fiscal por ano, em R$ milhões. 2026 parcial, até agosto. Em 2025 foram R$ 912 mi, o maior valor da série.</p>
+    </div>
+  </div>
+  <div class="fonte"><span>Fontes: Diário Oficial do Estado, todas as edições de 2026 até 6/10, lidas pelo painel Transparência Orçamentária; SEFIN/SIDIEC, renúncia até 31/8/2026.</span></div>
+</section>
+
+<!-- 07 emendas -->
+<section class="cena" data-t="Emendas" data-d="emendas">
+  <div class="grade">
+    <div>
+      <p class="olho">07 <span>· Emendas dos deputados</span></p>
+      <h2>Metade das emendas de 2026 já chegou. A outra metade vira herança.</h2>
+      <div class="gigante ouro num" data-num="emPagas" data-f="pct0">–</div>
+      <p class="lead">pagos: <b data-num="emendas.tot.pago" data-f="mi"></b> de <b data-num="emendas.tot.orcado_atualizado" data-f="mi"></b>. Ainda sem compromisso: <b data-num="emNaoEmp" data-f="mi"></b>. <b>O que não for pago até 31/12 vira resto a pagar do novo governo.</b> Cada deputado tem a mesma cota (R$ 11,8 mi). Entre os 24, o mais baixo recebeu 11% e o mais alto, 96%.</p>
+      <button class="abrir" data-d="emendas">Ver deputado por deputado e 2019–2026</button>
+    </div>
+    <div>
+      <svg class="grafico" id="gEmendas" viewBox="0 0 560 300" role="img" aria-label="Pagamento de emendas mês a mês"></svg>
+      <p class="nota">Pagamentos de emendas por mês em 2026, em R$ milhões. A linha marca o defeso eleitoral (4/7). De 2019 a 2026 foram <b data-num="emendas.lib.n" data-f="int"></b> ofícios de liberação, somando <b data-num="emendas.lib.total" data-f="bi"></b>.</p>
+    </div>
+  </div>
+  <div class="fonte"><span>Fontes: Portal da Transparência RO, fontes de emenda 1500.007x (7/10/2026); Observatório OFIP e planilha de emendas, liberações 2019–2026 (3/10/2026).</span></div>
+</section>
+
+<!-- 08 vida real -->
+<section class="cena fria" data-t="O gasto e a vida real" data-d="vida">
+  <div class="grade">
+    <div>
+      <p class="olho">08 <span>· O gasto e a vida real</span></p>
+      <h2>Onde o indicador é pior, o dinheiro anda mais devagar.</h2>
+      <p class="lead">Rondônia é o <b>único estado com menos da metade das casas ligadas à rede de água</b> (47,4%), e só 27,3% das casas urbanas têm esgoto. Obras e Serviços Públicos executou <b>37%</b> do orçamento; a Caerd, 71%.</p>
+      <p class="lead">O desmatamento caiu 42,7% em 2025, mas o Fundo de Governança Climática está em <b>0%</b> e o de Proteção Ambiental em <b>43%</b>.</p>
+      <button class="abrir" data-d="vida">Ver os indicadores</button>
+    </div>
+    <div class="trio" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div class="kpi"><div class="v num">1.581.196</div><div class="r">habitantes (Censo 2022)</div></div>
+      <div class="kpi"><div class="v num">0,700</div><div class="r">IDH, acima da média do Norte</div></div>
+      <div class="kpi"><div class="v num">2,1%</div><div class="r">desemprego, o menor da série (3º tri/2024)</div></div>
+      <div class="kpi"><div class="v num">0,472</div><div class="r">Gini, 4º estado menos desigual</div></div>
+      <div class="kpi"><div class="v num" style="color:var(--coral)">47,4%</div><div class="r">casas com água de rede</div></div>
+      <div class="kpi"><div class="v num" style="color:var(--coral)">27,3%</div><div class="r">casas urbanas com esgoto</div></div>
+    </div>
+  </div>
+  <div class="fonte"><span>Fontes: IBGE (Censo 2022, PNAD), Atlas/PNUD, INPE/PRODES; leitura cruzada do painel Transparência Orçamentária ("correlações indicativas, não causais").</span></div>
+</section>
+
+<!-- 09 herança -->
+<section class="cena" data-t="O que fica de herança" data-d="heranca">
+  <div class="grade">
+    <div>
+      <p class="olho">09 <span>· O que fica de herança</span></p>
+      <h2>A dívida é de R$ 5,66 bi, mas o caixa é maior.</h2>
+      <p class="lead">A dívida líquida é <b>negativa em R$ 460 mi</b>. A folha do Executivo está em <b>37,9% da receita corrente líquida</b>, abaixo dos três limites da LRF. A folha custa cerca de <b>R$ 640 mi por mês</b>.</p>
+      <div class="calib" id="calib">
+        <div class="ag"><span>37,92%</span></div>
+        <div class="lm" style="left:80.2%">alerta 44,1%</div>
+        <div class="lm" style="left:84.6%;bottom:-36px">prud. 46,55%</div>
+        <div class="lm" style="left:89.1%">máx. 49%</div>
+      </div>
+      <button class="abrir" data-d="heranca">Ver a dívida e o calendário que já vem marcado</button>
+    </div>
+    <div>
+      <svg class="grafico" id="gDivida" viewBox="0 0 560 230" role="img" aria-label="Composição da dívida"></svg>
+      <div class="tempo-l" id="calHer"></div>
+    </div>
+  </div>
+  <div class="fonte"><span>Fontes: Siconfi, RGF do 2º quadrimestre de 2026 (Executivo), via Plano de Transição (pesquisa de 4/10/2026). Escala da RCL: R$ 17,36 bi em 12 meses.</span></div>
+</section>
+
+<!-- 10 máquina -->
+<section class="cena" data-t="A máquina" data-d="maquina">
+  <div class="grade">
+    <div>
+      <p class="olho">10 <span>· A máquina</span></p>
+      <h2>10.472 cargos de nomeação em 51 quadros.</h2>
+      <div class="gigante ouro num">R$ 38 mi<small>por mês</small></div>
+      <p class="lead">é quanto custariam se todos estivessem ocupados (referência; número de cargo na lei não é vaga ocupada). <b>Quem trabalhou na campanha não pode dirigir estatal por 36 meses</b> (Lei 13.303).</p>
+      <div class="trio">
+        <div class="kpi"><div class="v num">R$ 8,47 bi</div><div class="r">leilão do saneamento da CAERD: terminou sem propostas em 22/9/2026</div></div>
+        <div class="kpi"><div class="v num">R$ 1,52 bi</div><div class="r">dívida ativa da CAERD com a União; virou estatal dependente em 2026</div></div>
+        <div class="kpi"><div class="v num">72%</div><div class="r">das vagas efetivas da SOPH (porto) sem gente, segundo a CGE</div></div>
+      </div>
+      <button class="abrir" data-d="maquina">Ver os cargos por órgão e buscar qualquer cargo</button>
+    </div>
+    <div class="barras" id="barCargos"></div>
+  </div>
+  <div class="fonte"><span>Fonte: consulta de cargos do Plano de Transição (LC 965/2017 e decretos de estrutura, pesquisa até 3/10/2026).</span></div>
+</section>
+
+<!-- 11 84 dias -->
+<section class="cena" data-t="Os 84 dias" data-d="transicao">
+  <div class="grade">
+    <div>
+      <p class="olho">11 <span>· Os 84 dias</span></p>
+      <h2>Rondônia tem lei própria de transição. Só 5 pessoas veem os dados.</h2>
+      <p class="lead">A equipe pode ser indicada a partir de <b>14/10 (D+10)</b>. O limite de 5 pessoas com acesso está no <b>decreto</b>, não na lei, que garante "pleno acesso": dá para pedir a ampliação na reunião dos governadores. Todo pedido vai por escrito à Casa Civil, e toda reunião tem ata.</p>
+      <div class="trio">
+        <div class="kpi"><div class="v num">58</div><div class="r">pessoas: 48 do eleito e 10 do governo atual</div></div>
+        <div class="kpi"><div class="v num">8</div><div class="r">grupos técnicos, de Fazenda a Digital</div></div>
+        <div class="kpi"><div class="v num">7</div><div class="r">passos do protocolo, todos por escrito</div></div>
+      </div>
+      <button class="abrir" data-d="transicao">Ver as fases, a equipe e o protocolo</button>
+    </div>
+    <div class="tempo-l" id="fases"></div>
+  </div>
+  <div class="fonte"><span>Fontes: Lei 3.139/2013, Decreto 23.330/2018 e Decreto 23.336/2018, via Plano de Transição (pesquisa de 4/10/2026).</span></div>
+</section>
+
+<!-- 12 riscos -->
+<section class="cena alerta" data-t="Riscos e o que pedir" data-d="riscos">
+  <div class="grade">
+    <div>
+      <p class="olho">12 <span>· Riscos e o que pedir</span></p>
+      <h2>O risco mais provável é o Estado demorar a responder.</h2>
+      <p class="lead">Seis dos dez riscos estão na zona crítica (chance e impacto altos). Toque num risco para ver como evitar. E os <b>12 pedidos</b> que a lei permite fazer aos órgãos já estão listados: contratos que vencem até março, obras paradas, dívida e precatórios, o inventário de bens e frota…</p>
+      <button class="abrir" data-d="riscos">Ver os 10 riscos e os 12 pedidos</button>
+    </div>
+    <div>
+      <div class="matriz" id="matriz"></div>
+      <div class="rk-det" id="rkDet"></div>
+    </div>
+  </div>
+  <div class="fonte"><span>Fonte: Plano de Transição (pesquisa de 4/10/2026).</span></div>
+</section>
+
+<!-- 13 fecho -->
+<section class="cena fecho" data-t="Em uma página" data-d="fontes">
+  <p class="olho">13 <span>· Em uma página</span></p>
+  <h2>O que fica.</h2>
+  <ol id="resumo"></ol>
+  <button class="abrir" data-d="fontes" style="align-self:flex-start">Ver todas as fontes e datas</button>
+  <div class="fonte"><span id="autoria2"></span></div>
+</section>
+
+</main>
+
+<div class="veu" id="veu"></div>
+<aside class="painel" id="painel" role="dialog" aria-modal="true" aria-labelledby="pTit">
+  <header><h3 id="pTit">Detalhe</h3><button class="fechar" id="pFechar" aria-label="Fechar">✕</button></header>
+  <div class="corpo" id="pCorpo"></div>
+</aside>
+<nav class="indice" id="indice" aria-label="Índice"><ol id="indLista"></ol></nav>
+<div id="anexo"></div>
+
+<script>
+const D=/*__DADOS__*/null;
+const AUTORIA='Preparado pela Next com dados públicos oficiais e dos painéis "Transparência Orçamentária de RO" (Negócios Inteligentes) e "Plano de Transição" (ELO). Cada tela diz a fonte e a data.';
+const TEMPO=280/365*100;
+
+/* ---------- formatação ---------- */
+const br=(v,c=0)=>v==null?'—':v.toLocaleString('pt-BR',{minimumFractionDigits:c,maximumFractionDigits:c});
+const R=v=>'R$ '+br(v);
+const bi=v=>'R$ '+br(v/1e9,2)+' bi';
+const mi=v=>'R$ '+br(v/1e6,1)+' mi';
+const cur=v=>{const a=Math.abs(v);return a>=1e9?bi(v):a>=1e6?mi(v):a>=1e3?'R$ '+br(v/1e3,0)+' mil':R(v)};
+const pct=(a,b)=>b?br(a/b*100,1)+'%':'—';
+const FMT={bi,mi,cur,int:v=>br(v),pct:v=>br(v,1)+'%',pct0:v=>br(v,0)+'%'};
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const MES=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const mlab=m=>MES[+m.slice(5)-1];
+
+/* ---------- valores derivados ---------- */
+const dp=D.despesa;
+const V={
+  saldo:dp.orc-dp.emp, saldoPct:(dp.orc-dp.emp)/dp.orc*100, aPagar:dp.liq-dp.pag, aLiquidar:dp.emp-dp.liq,
+  empPct:dp.emp/dp.orc*100, pagPct:dp.pag/dp.orc*100,
+  pessoalOrc:dp.grupos.find(g=>/Pessoal/.test(g.nome)).orc,
+  investOrc:dp.grupos.find(g=>/Investimentos/.test(g.nome)).orc,
+  investPct:(()=>{const g=dp.grupos.find(g=>/Investimentos/.test(g.nome));return g.emp/g.orc*100})(),
+  emPagas:D.emendas.tot.pago/D.emendas.tot.orcado_atualizado*100,
+  emNaoEmp:D.emendas.tot.orcado_atualizado-D.emendas.tot.empenhado,
+};
+const sit=o=>{const p=o.orc?o.emp/o.orc*100:0;return p<=TEMPO-10?'atr':p<TEMPO?'quase':'ok'};
+const travados=D.orgaos.filter(o=>o.orc>=20e6&&o.emp/o.orc*100<=TEMPO-10).sort((a,b)=>(b.orc-b.emp)-(a.orc-a.emp));
+V.travadoSaldo=travados.reduce((s,o)=>s+o.orc-o.emp,0);
+const get=k=>k.split('.').reduce((o,p)=>o==null?o:o[p],{...D,...V});
+
+/* ---------- números animados ---------- */
+function animar(el){
+  const k=el.dataset.num,f=FMT[el.dataset.f]||cur,alvo=get(k);if(alvo==null)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||el.dataset.feito){el.textContent=f(alvo);return}
+  el.dataset.feito=1;const t0=performance.now(),dur=1100;setTimeout(()=>{el.textContent=f(alvo)},dur+150);
+  (function passo(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=f(alvo*e);if(p<1)requestAnimationFrame(passo);else el.textContent=f(alvo)})(t0);
+}
+$$('[data-num]').forEach(el=>{const v=get(el.dataset.num);if(v!=null)el.textContent=(FMT[el.dataset.f]||cur)(v)});
+
+/* ---------- autoria e contagem ---------- */
+$('#autoria').textContent=AUTORIA;$('#autoria2').textContent=AUTORIA;
+(function(){const h=new Date(),hoje=Date.UTC(h.getFullYear(),h.getMonth(),h.getDate()),d=Math.round((Date.UTC(2027,0,6)-hoje)/864e5);$('#diasPosse').textContent=d>0?d+' dias':'Posse feita'})();
+
+/* ---------- 02 barra do ano ---------- */
+function anoBar(){const i=$$('#anoBar i');const w=[dp.pag,dp.liq-dp.pag,dp.emp-dp.liq].map(v=>v/dp.orc*100);i.forEach((x,k)=>x.style.width=w[k]+'%')}
+
+/* ---------- 03 funções ---------- */
+function barrasHTML(lista,max,rot,tempo=true){return lista.map(x=>`<div class="barra"><span class="nm" title="${esc(x.nome)}">${esc(x.nome)}</span><span class="tr"><i class="o" data-w="${x.orc/max*100}"></i><i class="e" data-w="${x.emp/max*100}"></i>${tempo?`<span class="tempo" style="left:${x.orc/max*TEMPO}%"></span>`:''}</span><span class="vl">${rot(x)}</span></div>`).join('')}
+$('#barFunc').innerHTML=barrasHTML(dp.funcoes.slice(0,8),dp.funcoes[0].orc,x=>cur(x.orc));
+$('#barCargos').innerHTML=(()=>{const q=D.maquina.quadros.slice(0,10),m=q[0][2];return q.map(x=>`<div class="barra"><span class="nm">${esc(x[0])}</span><span class="tr"><i class="e" data-w="${x[2]/m*100}"></i></span><span class="vl">${br(x[1])} · ${cur(x[2])}/mês</span></div>`).join('')+`<p class="nota">Os 10 órgãos com o maior custo mensal de cargos de nomeação, se todos estivessem providos.</p>`})();
+
+/* ---------- 04 treemap ---------- */
+function squarify(itens,x,y,w,h){
+  const out=[];let fila=[];const total=itens.reduce((s,i)=>s+i.v,0);const esc2=w*h/total;
+  let rest=itens.map(i=>({...i,a:i.v*esc2}));
+  function pior(f,l){const s=f.reduce((a,b)=>a+b.a,0),mx=Math.max(...f.map(r=>r.a)),mn=Math.min(...f.map(r=>r.a));return Math.max(l*l*mx/(s*s),(s*s)/(l*l*mn))}
+  function assenta(f){const s=f.reduce((a,b)=>a+b.a,0);if(w>=h){const cw=s/h;let cy=y;f.forEach(r=>{const rh=r.a/cw;out.push({...r,x,y:cy,w:cw,h:rh});cy+=rh});x+=cw;w-=cw}else{const rh=s/w;let cx=x;f.forEach(r=>{const cw=r.a/rh;out.push({...r,x:cx,y,w:cw,h:rh});cx+=cw});y+=rh;h-=rh}}
+  while(rest.length){const l=Math.min(w,h),c=rest[0];if(!fila.length||pior(fila,l)>=pior([...fila,c],l)){fila.push(c);rest.shift()}else{assenta(fila);fila=[]}}
+  if(fila.length)assenta(fila);return out;
+}
+function desenhaMapa(){
+  const el=$('#mapa'),W=el.clientWidth,H=el.clientHeight;
+  const itens=D.orgaos.filter(o=>o.orc>0).map((o,i)=>({v:o.orc,i}));
+  el.innerHTML=squarify(itens,0,0,W,H).map(r=>{const o=D.orgaos[r.i],s=sit(o),grande=r.w>54&&r.h>34,p=br(o.emp/o.orc*100,0)+'%';
+    return `<div class="tile t-${s}" role="listitem" tabindex="0" data-o="${r.i}" style="left:${r.x}px;top:${r.y}px;width:${r.w}px;height:${r.h}px;transition-delay:${Math.min(r.i*12,700)}ms" title="${esc(o.nome)} · ${cur(o.orc)} · ${p} comprometido">${grande?`<span class="s">${esc(o.sigla||o.nome.slice(0,10))}</span><span class="p">${r.w>80&&r.h>50?cur(o.orc)+' · ':''}${p}</span>`:''}</div>`}).join('');
+}
+
+/* ---------- 05 travados ---------- */
+$('#nAtraso').textContent=travados.length;
+$('#lolli').innerHTML=travados.slice(0,12).map(o=>{const p=o.emp/o.orc*100;return `<button data-o="${D.orgaos.indexOf(o)}"><span class="nm" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(o.sigla||'')} <span style="color:var(--muted)">${esc(o.nome)}</span></span><span class="tr"><i data-w="${p}"></i><b data-l="${p}"></b><span class="t" style="left:${TEMPO}%"></span></span><span class="pc">${br(p,0)}%</span></button>`}).join('')+`<p class="nota">Os 12 com mais dinheiro parado. A linha branca é o tempo do ano (77%).</p>`;
+
+/* ---------- gráficos SVG ---------- */
+function colunas(id,valores,rotulos,{max,cor='var(--gold)',marca,marcaTxt,fmt=v=>br(v/1e6,0)}={}){
+  const W=560,H=+$('#'+id).getAttribute('viewBox').split(' ')[3],b=26,t=24,n=valores.length,bw=(W-20)/n,mx=max||Math.max(...valores);
+  let s='';[0,.5,1].forEach(k=>{const y=H-b-(H-b-t)*k;s+=`<line x1="10" x2="${W-10}" y1="${y}" y2="${y}" stroke="rgba(255,255,255,.08)"/>`});
+  valores.forEach((v,i)=>{const h=(H-b-t)*(v/mx),x=10+i*bw+bw*.18,w=bw*.64;
+    s+=`<rect class="col" x="${x}" y="${H-b}" width="${w}" height="0" data-y="${H-b-h}" data-h="${h}" rx="4" fill="${typeof cor==='function'?cor(i,v):cor}"/>`;
+    s+=`<text x="${x+w/2}" y="${H-8}" font-size="12" fill="#a3abb9" text-anchor="middle">${rotulos[i]}</text>`;
+    if(v)s+=`<text class="cv" x="${x+w/2}" y="${H-b-h-6}" font-size="11" fill="#f4f0e6" text-anchor="middle" opacity="0">${fmt(v)}</text>`});
+  if(marca!=null){const x=10+marca*bw;s+=`<line x1="${x}" x2="${x}" y1="${t-8}" y2="${H-b}" stroke="#ff6a4d" stroke-dasharray="4 4"/><text x="${x+5}" y="${t-10}" font-size="11" fill="#ff6a4d">${marcaTxt}</text>`}
+  $('#'+id).innerHTML=s;
+}
+colunas('gRenuncia',D.renuncia.serie.map(s=>s.valor),D.renuncia.serie.map(s=>String(s.ano).slice(2)),{cor:(i)=>i===D.renuncia.serie.length-1?'rgba(91,156,255,.55)':'#5b9cff'});
+colunas('gEmendas',D.emendas.mensal.pago,D.emendas.mensal.meses.map(mlab),{marca:6+3/31,marcaTxt:'defeso 4/7',fmt:v=>br(v/1e6,1)});
+(function(){const DB=[['Reestruturação Beron (Lei 9.496)',3.04,'#5b9cff'],['Precatórios vencidos',2.08,'#ff6a4d'],['Parcelamentos',.353,'#f2b705'],['Empréstimos',.182,'#35c27a']],T=DB.reduce((a,b)=>a+b[1],0);let x=0,s='';
+  DB.forEach(d=>{const w=d[1]/T*560;s+=`<rect x="${x}" y="0" width="${Math.max(w-3,2)}" height="44" rx="6" fill="${d[2]}"/>`;x+=w});
+  DB.forEach((d,i)=>{const y=78+i*36;s+=`<rect x="0" y="${y-12}" width="14" height="14" rx="3" fill="${d[2]}"/><text x="24" y="${y}" font-size="15" fill="#f4f0e6">${d[0]}</text><text x="560" y="${y}" font-size="15" fill="#f4f0e6" text-anchor="end">R$ ${br(d[1],2)} bi</text>`});
+  $('#gDivida').innerHTML=s})();
+
+/* ---------- herança e transição (dados do Plano de Transição) ---------- */
+const CAL=[['até 15/12/2026','Assembleia devolve a LOA 2027'],['31/12/2026','Teste do art. 42 da LRF: caixa × restos a pagar'],['30/1/2027','RGF e RREO finais de 2026'],['abr/2027','Contas de 2026 à Assembleia'],['15/4/2027','Envio da LDO 2028'],['15/9/2027','PPA 2028–2031 e LOA 2028']];
+$('#calHer').innerHTML=CAL.slice(0,4).map(c=>`<div class="fase"><span class="d">${c[0]}</span><div>${c[1]}</div></div>`).join('');
+const FASES=[['5/10 a 13/10','Preparação','Ofício de cortesia (D+1), reunião dos governadores, nomes e qualificações, diagnóstico com dados públicos.'],['14/10 a 27/11','Imersão técnica','Indicação no 10º dia, decreto de nomeação, pedidos à Casa Civil, relatórios dos grupos técnicos.'],['28/11 a 5/1','Desenho político','Diplomação, anúncio do secretariado, emendas à LOA 2027, minuta de reforma administrativa, relatório final.'],['6/1 a 16/4/2027','Instalação (100 dias)','Posse, decretos estruturantes, nomeações, revisão de contratos e agenda dos primeiros 100 dias.']];
+$('#fases').innerHTML=FASES.map(f=>`<div class="fase"><span class="d">${f[0]}</span><div><b>${f[1]}</b><p>${f[2]}</p></div></div>`).join('');
+const RK=[['R1','Decreto de nomeação atrasado ou acesso restrito a 5 pessoas',2,3,'Ofício de indicação pronto no D+10; pedido de ampliação do acesso na reunião dos governadores; cenário enxuto preparado.'],['R2','Respostas lentas ou incompletas',3,3,'Pedidos numerados à Casa Civil; reiteração citando a Lei 3.139, art. 2º, §2º; pedido pela LAI; comunicação ao TCE-RO e ao MPC-RO.'],['R3','Despesas sem caixa deixadas para 2027 (LRF, art. 42)',2,3,'Teste de caixa × restos a pagar em 31/12; ressalva nas contas de 2026.'],['R4','Atos de pessoal nos 180 dias finais (LRF, art. 21)',2,2,'Levantamento no Diário Oficial desde 10/7/2026; parecer da PGE no início do governo.'],['R5','LOA 2027 aprovada sem as prioridades do novo governo',3,2,'Emendas pela base na Assembleia até 15/12; remanejamentos previstos na LDO 2027.'],['R6','Vazamento ou uso político de dados',1,3,'Termo de sigilo; acesso só dos nomes do ofício; dados agregados para os grupos técnicos.'],['R7','Interrupção de serviços na virada do ano',2,3,'Lista de contratos que vencem de dezembro a março; prorrogações planejadas.'],['R8','Pressão de grupos de interesse sobre a equipe',2,2,'Agenda pública, reunião só com pedido formal e ata; nenhuma promessa (Lei 12.846/2013).'],['R9','Revogação apressada de atos que sustentam contratos',2,3,'Inventário dos atos e classificação por impacto antes de revogar; prazo de adaptação.'],['R10','Saída de servidores-chave e perda de memória dos sistemas',2,2,'Mapa de quem opera cada sistema (SIAFEM, folha, contratos); termo de passagem de cargo; pedido para que efetivos-chave permaneçam até 31/3/2027.']];
+const NV=['','baixa','média','alta'],zona=(c,i)=>c+i>=5?'h':c+i>=4?'m':'l';
+(function(){let h='';for(let i=3;i>=1;i--){h+=`<div class="ax">${NV[i]}</div>`;for(let c=1;c<=3;c++)h+=`<div class="cel ${zona(c,i)}">${RK.filter(r=>r[2]===c&&r[3]===i).map(r=>`<button class="rk" data-r="${r[0]}" aria-pressed="false" title="${esc(r[1])}">${r[0]}</button>`).join('')}</div>`}
+  h+=`<div class="ax"></div>`+[1,2,3].map(c=>`<div class="ax">${NV[c]}</div>`).join('');$('#matriz').innerHTML=h+`<div class="ax" style="grid-column:2/5;justify-content:flex-start">→ chance · ↑ impacto</div>`;
+  const mostra=id=>{const r=RK.find(x=>x[0]===id);$$('.rk').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r===id));$('#rkDet').innerHTML=`<b>${r[0]} · ${esc(r[1])}</b><div class="m">chance ${NV[r[2]]} · impacto ${NV[r[3]]}</div><div>${esc(r[4])}</div>`};
+  $('#matriz').addEventListener('click',e=>{const b=e.target.closest('.rk');if(b)mostra(b.dataset.r)});mostra('R2')})();
+const CK=['Programas realizados e em execução no mandato atual (art. 7º, I)','Agenda de compromissos dos primeiros 120 dias (art. 7º, II)','Projetos a implementar ou suspensos (art. 7º, III)','Glossário de projetos, termos e siglas (art. 7º, IV)','Contas públicas: caixa por fonte, restos a pagar, dívida e precatórios','Estrutura organizacional e cargos comissionados ocupados e vagos','Quadro de pessoal e atos publicados desde 10/7/2026','Contratos vigentes, aditivos e licitações; vencimentos até março','Convênios e transferências com prazos de prestação de contas','Obras: execução física e financeira e paralisações','Ações judiciais e determinações do TCE-RO, MPC, MP e TCU','Inventário de bens, frota, imóveis e sistemas de TI'];
+
+/* ---------- 13 resumo ---------- */
+$('#resumo').innerHTML=[
+  `<b>${bi(V.saldo)}</b> do orçamento de 2026 ainda sem compromisso, a 85 dias do fim do ano.`,
+  `<b>${travados.length} órgãos</b> atrasados, com <b>${bi(V.travadoSaldo)}</b> parados; IPERON, DER e Obras na frente.`,
+  `<b>R$ 4,41 bi</b> mudaram por decreto, e <b>R$ 638 mi</b> de imposto deixaram de ser cobrados até agosto.`,
+  `Emendas: <b>${br(V.emPagas,0)}% pagas</b>; o resto vira herança em 1/1.`,
+  `Dívida de <b>R$ 5,66 bi</b>, caixa maior, folha em <b>37,9% da RCL</b>.`,
+  `<b>10.472 cargos</b> para nomear, <b>CAERD</b> sem comprador para o saneamento.`,
+  `Equipe indicada a partir de <b>14/10</b>; só <b>5 pessoas</b> veem os dados, salvo acordo.`,
+].map(t=>`<li>${t}</li>`).join('');
+
+/* ---------- detalhe ---------- */
+const tab=(cab,linhas,cls='')=>`<table><thead><tr>${cab.map(c=>`<th class="${/^R\$|%|Qtd|Ofícios|Valor|Cargos|Custo|Orç|Comp|Pago|Saldo|Liq|Emp/.test(c)?'n':''}">${c}</th>`).join('')}</tr></thead><tbody>${linhas.map(l=>`<tr${l._o!=null?` class="clic" data-o="${l._o}"`:''}>${l.map(c=>`<td class="${typeof c==='string'&&/^(R\$|—|-?[\d.,]+%?$)/.test(c)?'n':''}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+const linhaO=o=>{const l=[`${esc(o.nome)}${o.sigla?` <span class="tag">${esc(o.sigla)}</span>`:''}`,cur(o.orc),cur(o.emp),cur(o.pag),pct(o.emp,o.orc),cur(o.orc-o.emp)];l._o=D.orgaos.indexOf(o);return l};
+const CAB_O=['Órgão','Orçamento','Comprometido','Pago','% comp.','Saldo'];
+const DET={
+  dinheiro:['O dinheiro de 2026',()=>`<h4>Os estágios do gasto</h4><p>Empenho é o compromisso; liquidação é a entrega conferida; pagamento é o dinheiro saindo.</p>`+tab(['Estágio','Valor','% do orçamento'],[
+      ['Orçamento aprovado na lei (LOA)',R(dp.ini),'—'],['Orçamento atualizado',R(dp.orc),'100%'],['Comprometido (empenhado)',R(dp.emp),pct(dp.emp,dp.orc)],['Entregue e conferido (liquidado)',R(dp.liq),pct(dp.liq,dp.orc)],['Pago',R(dp.pag),pct(dp.pag,dp.orc)],['Entregue, a pagar',R(dp.liq-dp.pag),pct(dp.liq-dp.pag,dp.orc)],['Comprometido, sem entrega',R(dp.emp-dp.liq),pct(dp.emp-dp.liq,dp.orc)],['Sem compromisso',R(dp.orc-dp.emp),pct(dp.orc-dp.emp,dp.orc)]])+
+    `<h4>Mês a mês, todos os órgãos</h4>`+tab(['Mês','Comprometido','Entregue','Pago'],dp.meses.map((m,i)=>[mlab(m)+'/26',R(dp.mensal.empenhado[i]),R(dp.mensal.liquidado[i]),R(dp.mensal.pago[i])]))+
+    `<h4>Ritmo</h4><p>Ritmo médio de empenho: R$ 1,49 bi por mês. Necessário para zerar o saldo até 31/12: R$ 2,41 bi por mês (1,61×). 280 de 365 dias decorridos.</p>`],
+  funcoes:['Para onde vai',()=>`<h4>As 25 áreas de governo</h4>`+tab(['Área','Orçamento','Comprometido','Pago','% comp.'],dp.funcoes.map(f=>[esc(f.nome),cur(f.orc),cur(f.emp),cur(f.pag),pct(f.emp,f.orc)]))+`<h4>Os 7 tipos de gasto</h4>`+tab(['Tipo','Orçamento','Comprometido','Pago','% comp.'],dp.grupos.map(f=>[esc(f.nome),cur(f.orc),cur(f.emp),cur(f.pag),pct(f.emp,f.orc)]))],
+  orgaos:['Os 81 órgãos',()=>`<input class="busca" id="bOrg" placeholder="Buscar órgão ou sigla" aria-label="Buscar órgão"><div id="tOrg">${tab(CAB_O,D.orgaos.map(linhaO))}</div><p>Toque numa linha para abrir a ficha.</p>`,()=>{$('#bOrg').addEventListener('input',e=>{const q=e.target.value.toLowerCase();$('#tOrg').innerHTML=tab(CAB_O,D.orgaos.filter(o=>(o.nome+' '+o.sigla).toLowerCase().includes(q)).map(linhaO))})}],
+  travado:['Onde está travado',()=>`<p>Regra: orçamento de R$ 20 mi ou mais e comprometido 10 pontos ou mais abaixo do tempo do ano (${br(TEMPO,1)}%).</p>`+tab(CAB_O,travados.map(linhaO))+`<p>Total parado nesses ${travados.length} órgãos: <b>${R(V.travadoSaldo)}</b>.</p>`],
+  creditos:['Decretos e renúncia',()=>{const c=D.creditos,r=D.renuncia;return `<h4>Créditos adicionais em 2026</h4>`+tab(['Item','Valor'],[['Total por decreto ('+c.qtd+' decretos)',R(c.total)],['Dinheiro novo',R(c.novo)],['Remanejado (anulação)',R(c.remanejado)],['Leis de crédito ('+c.leis+')',R(c.valor_leis)]])+
+    `<h4>De onde veio o dinheiro</h4><p>Anulação: tira de um lugar e põe em outro. Superávit: sobra de caixa de 2025. Excesso de arrecadação: arrecadou acima do previsto. Operação de crédito: empréstimo.</p>`+tab(['Mecanismo','Valor'],Object.entries(c.por_tipo).map(([k,v])=>[esc(k),R(v)]))+
+    `<h4>Por mês</h4>`+tab(['Mês','Valor'],Object.entries(c.por_mes).map(([k,v])=>[mlab(k)+'/26',R(v)]))+`<h4>Quem mais recebeu</h4>`+tab(['Unidade','Valor'],c.top.map(t=>[`${esc(t.orgao)} <span class="tag">${esc(t.sigla)}</span>`,R(t.valor)]))+
+    `<h4>Renúncia fiscal por ano</h4>`+tab(['Ano','Valor'],r.serie.map(s=>[String(s.ano)+(s.ano===2026?' (até ago.)':''),R(s.valor)]))+`<h4>2026 × 2025, mês a mês</h4>`+tab(['Mês','2026','2025'],MES.map((m,i)=>[m,r.mes26[i]?R(r.mes26[i]):'—',R(r.mes25[i])]))+
+    `<h4>Por benefício (2026)</h4>`+tab(['Benefício','Valor'],Object.entries(r.beneficio).filter(e=>e[1]).map(([k,v])=>[esc(k),R(v)]))+`<h4>Quem recebe (2026)</h4>`+tab(['Setor ou programa','Valor'],Object.entries(r.setor).filter(e=>e[1]).map(([k,v])=>[esc(k),R(v)]))}],
+  emendas:['Emendas',()=>{const e=D.emendas;return `<h4>2026, por tipo</h4>`+tab(['Tipo','Orçado','Comprometido','Pago','% pago'],Object.entries(e.por_tipo).map(([k,v])=>[k,R(v.orcado_atualizado),R(v.empenhado),R(v.pago),pct(v.pago,v.orcado_atualizado)]))+
+    `<h4>2026, cada deputado, comissão e bancada</h4>`+tab(['Autor','Cota','Comprometido','Pago','% pago'],e.autores.map(a=>[esc(a.nome)+(a.tipo!=='individual'?` <span class="tag">${a.tipo}</span>`:''),R(a.orc),R(a.emp),R(a.pag),pct(a.pag,a.orc)]))+
+    `<h4>2026, mês a mês</h4>`+tab(['Mês','Comprometido','Entregue','Pago'],e.mensal.meses.map((m,i)=>[mlab(m),R(e.mensal.empenhado[i]),R(e.mensal.liquidado[i]),R(e.mensal.pago[i])]))+
+    `<h4>Liberações 2019–2026 (ofícios dos deputados)</h4><p>${br(e.lib.n)} ofícios, ${R(e.lib.total)}. É o acompanhamento civil (Observatório OFIP), que pode diferir do empenho oficial. Não há 2022 na série.</p>`+tab(['Ano','Individuais','Bancada','Comissões'],Object.entries(e.lib.anos).map(([a,v])=>[a,cur(v.individual||0),cur(v.bancada||0),cur(v['comissões']||0)]))+
+    `<h4>Por deputado (individuais, 2019–2026)</h4>`+tab(['Deputado','Valor','Ofícios'],e.lib.deps.map(d=>[esc(d[0]),R(d[1]),br(d[2])]))+`<h4>Por município (todas)</h4>`+tab(['Município','Valor','Ofícios'],e.lib.muns.map(d=>[esc(d[0]),R(d[1]),br(d[2])]))}],
+  vida:['O gasto e a vida real',()=>tab(['Indicador','Valor','Nota','Fonte'],[['População','1.581.196','Censo 2022','IBGE'],['IDH','0,700','acima da média do Norte','Atlas/PNUD'],['Gini','0,472','4º menor do Brasil','IBGE'],['Desemprego','2,1%','menor da série (3º tri/2024)','PNAD/IBGE'],['Água por rede geral','47,4%','único estado abaixo de 50%','PNAD 2024'],['Esgoto por rede geral','27,3%','domicílios urbanos','PNAD 2022'],['Desmatamento 2025','−42,7%','216 km², PRODES 2025 × 2024','INPE'],['Desmatamento 2024','−52,1%','332,5 km² × 693,5 km² em 2023','INPE'],['Florestas públicas não destinadas','192,6 km²','58,2% do desmate','INPE'],['Amazônia Legal 2024','6.288 km²','−30,6% no bioma','INPE']])+
+    `<h4>A leitura do painel (correlações indicativas, não causais)</h4><p><b>Saúde e educação sustentam os bons indicadores:</b> FES 77% e Seduc 72% comprometidos, R$ 4,13 bi.</p><p><b>Saneamento:</b> água e esgoto entre os piores do país; Obras e Serviços Públicos em 37%, Caerd em 71%.</p><p><b>Meio ambiente:</b> o desmatamento caiu, mas o Fundo de Governança Climática está em 0%, o de Proteção Ambiental em 43% e a Sedam em 69%.</p>`],
+  heranca:['O que fica de herança',()=>`<h4>Dívida consolidada: R$ 5,66 bi</h4>`+tab(['Item','Valor'],[['Reestruturação Beron (Lei 9.496)','R$ 3,04 bi'],['Precatórios vencidos','R$ 2,08 bi'],['Parcelamentos','R$ 0,353 bi'],['Empréstimos','R$ 0,182 bi'],['Dívida líquida','−R$ 460 mi']])+
+    `<h4>Pessoal do Executivo</h4>`+tab(['Item','Valor'],[['Despesa com pessoal / RCL','37,92%'],['Limite de alerta','44,1%'],['Limite prudencial','46,55%'],['Limite máximo','49%'],['RCL em 12 meses','R$ 17,36 bi'],['Folha estimada','R$ 640 mi por mês']])+
+    `<h4>Calendário que já vem marcado</h4>`+tab(['Data','O quê'],CAL)+`<h4>Também herdado</h4><p>Emendas não pagas até 31/12 viram resto a pagar (hoje ${R(D.emendas.tot.orcado_atualizado-D.emendas.tot.pago)} ainda não pagos). O saldo do ano é ${bi(V.saldo)}.</p>`],
+  maquina:['A máquina',()=>{const m=D.maquina;return `<p>${br(m.cargos)} cargos previstos em ${m.quadros} quadros legais (1.899 linhas); ${m.orgaos} órgãos, entidades e fundos; ${m.ugs} unidades gestoras. Somando CAERD e SOPH, a consulta mostra ${br(m.busca_cargos)} cargos e ${R(m.busca_custo)} por mês se todos estivessem providos. Quantidade na lei não é ocupação nem vaga.</p>`+
+    `<h4>Cargos por órgão</h4>`+tab(['Órgão','Cargos','Custo/mês'],m.quadros.map(q=>[esc(q[0]),br(q[1]),R(q[2])]))+
+    `<h4>Buscar um cargo</h4><input class="busca" id="bCargo" placeholder="Ex.: secretário, CDS-15, SESAU" aria-label="Buscar cargo"><div id="tCargo"></div>`+
+    `<h4>Tabela CDS (valor mensal)</h4>`+tab(['Símbolo','Valor'],m.tabela.map(t=>[t[0],R(t[1])]))+
+    `<h4>Estatais e conselhos: quem o Governador nomeia</h4>`+m.estatais.map(e=>`<p><b style="color:var(--text)">${esc(e.n)}</b> · ${esc(e.tipo)}<br>${esc(e.nom)}<br><span style="color:var(--dim)">Jeton: ${esc(e.jeton)}</span></p>`).join('')+
+    `<h4>CAERD e SOPH</h4><p><b>CAERD:</b> R$ 278,1 mi na LOA 2026 (R$ 68,2 mi do Tesouro); estatal dependente desde 2026; leilão do saneamento (R$ 8,47 bi, 35 anos) sem propostas em 22/9/2026; dívida ativa com a União de R$ 1,52 bi e passivo a descoberto acima de R$ 1,5 bi; TAG com o TCE-RO.</p><p><b>SOPH:</b> receita de R$ 29,2 mi e lucro de R$ 2,57 mi em 2025; o Diretor-Presidente recebia R$ 36.336,10 em 2024, acima do subsídio de Secretário (R$ 32.462,22); déficit de 72% das vagas efetivas; novo estatuto vence perto de 6/1/2027.</p><p><b>Regra:</b> quem trabalhou na campanha de 2026 não pode ser indicado a conselho ou diretoria de estatal por 36 meses (Lei 13.303, art. 17).</p>`},
+    ()=>{const f=q=>{q=q.toLowerCase();const r=D.maquina.lista.filter(c=>(c[0]+' '+c[1]+' '+c[3]).toLowerCase().includes(q)).slice(0,80);$('#tCargo').innerHTML=tab(['Órgão','Cargo','Qtd.','Símbolo','R$/mês'],r.map(c=>[esc(c[0]),esc(c[1]),br(c[2]),esc(c[3]),c[4]==null?'não publicado':R(c[4])]))+(q?'':'<p>Mostrando os 80 primeiros. Digite para buscar entre as 1.950 linhas.</p>')};f('');$('#bCargo').addEventListener('input',e=>f(e.target.value))}],
+  transicao:['Os 84 dias',()=>`<h4>A lei</h4><p>Lei 3.139/2013: o eleito tem direito a uma equipe com pleno acesso a contas, programas e projetos; os órgãos são obrigados a fornecer dados e apoio; equipe indicada após 10 dias do turno decisivo; membros não remunerados. Decreto 23.330/2018: coordenação conjunta; equipe do governo com Casa Civil, Casa Militar, PGE, SEPOG e SEFIN; só 5 membros acessam informações; pedidos por escrito à Casa Civil; reuniões com ata; agenda dos primeiros 120 dias. Precedente: Decreto 23.336/2018 nomeou 43 pessoas, 10 dias depois da eleição.</p>`+
+    `<h4>Fases</h4>`+tab(['Período','Fase','O quê'],FASES)+
+    `<h4>Equipe: 58 pessoas</h4>`+tab(['Grupo','Pessoas','Quem'],[['Nomeados com acesso direto','5','Coordenação-geral e adjunta, Fazenda, Jurídico e Gestão'],['Nomeados sem acesso direto','10','Coordenadores dos GTs restantes, comunicação e apoio'],['Grupos técnicos','33','Fora do decreto, com dados agregados'],['Governo atual','10','Casa Civil, Casa Militar, PGE, SEPOG e SEFIN (2 cada)']])+
+    `<h4>Os 8 grupos técnicos</h4>`+tab(['GT','Tema','Órgãos','Membros'],[['1','Fazenda, Orçamento e Previdência','SEFIN, SEPOG, IPERON, dívida','6 · acesso'],['2','Gestão, Pessoas e Estrutura','SEGEP, folha, LC 965/2017','4 · acesso'],['3','Jurídico, Controle e Contratos','PGE, CGE, licitações, TCE-RO','4 · acesso'],['4','Saúde','SESAU, hospitais, OS, regulação','4'],['5','Educação','SEDUC, ano letivo 2027','4'],['6','Segurança Pública e Justiça','SESDEC, PM, PC, CBM, SEJUS','4'],['7','Infraestrutura e Desenvolvimento','SEOSP, DER, SEAGRI, SEDAM, Caerd','4'],['8','Digital, Comunicação e Articulação','TI, SECOM, Assembleia, municípios','3']])+
+    `<p>Comparação (indicados pelo eleito): proposta RO 2026, 48; federal, 50; RO 2018, 33; SP 2022, 105 nos grupos e 18 no decreto; GO 2018, 10. Faixas: enxuta 20, recomendada 48, ampliada 70.</p>`+
+    `<h4>Protocolo em 7 passos</h4>`+tab(['Quando','Passo','O quê'],[['5/10 (D+1)','Ofício de cortesia','Cumprimento e pedido de reunião'],['até 9/10 (D+5)','Reunião dos governadores','Coordenação conjunta, espaço, calendário, acesso de 5 para 13'],['14/10 (D+10)','Ofício de indicação','Nomes com qualificação civil e os 5 com acesso'],['14 a 16/10','Decreto de nomeação e sigilo','Ato como o 23.336/2018 e termo de cada membro'],['contínuo','Pedidos à Casa Civil','Numerados, com prazo de resposta'],['semanal','Reuniões com ata','Participantes, assuntos, pedidos e cronograma'],['até 5/1/2027','Agenda de 120 dias e relatório','Programas, compromissos, projetos e glossário']])+
+    `<h4>Se as informações não vierem</h4><p>Citar a Lei 3.139, art. 2º, §2º; pedido pela LAI (20 dias + 10); dados abertos (Transparência, Siconfi, Diário Oficial, Assembleia); comunicar ao TCE-RO e ao MPC-RO com atas e pedidos numerados.</p>`+
+    `<h4>Integridade</h4><p>Reunião com terceiros só por pedido formal e com ata; agenda pública semanal; nenhum brinde, viagem ou promessa de cargo ou contrato (Lei 12.846/2013); inventário dos atos que sustentam contratos antes de revogar qualquer um. A reforma da estrutura (LC 965/2017) depende da Assembleia, e a LOA 2027 tramita até dezembro.</p>`],
+  riscos:['Riscos e o que pedir',()=>`<h4>Os 10 riscos</h4>`+tab(['Risco','Chance','Impacto','Como evitar'],RK.map(r=>[`<b>${r[0]}</b> ${esc(r[1])}`,NV[r[2]],NV[r[3]],esc(r[4])]))+`<h4>Os 12 pedidos aos órgãos (art. 7º do Decreto 23.330)</h4><ol style="color:var(--muted);font-size:.86rem;padding-left:1.2rem">${CK.map(c=>`<li style="margin:4px 0">${esc(c)}</li>`).join('')}</ol>`],
+  fontes:['Fontes e datas',()=>tab(['Dado','Fonte','Posição'],[['Despesa estadual','Portal da Transparência RO (COGES)','7/10/2026'],['Emendas, execução','Portal da Transparência RO, fontes 1500.007x','7/10/2026'],['Emendas, liberações','Observatório OFIP e planilha "EMENDAS 2025 - 2026"','3/10/2026'],['Créditos adicionais','Diário Oficial do Estado, edições de 2026','6/10/2026'],['Renúncia fiscal','SEFIN/SIDIEC','até 31/8/2026'],['Indicadores','IBGE, PNAD, Atlas/PNUD, INPE/PRODES','vários'],['Fiscal (pessoal, dívida)','Siconfi, RGF 2º quadrimestre 2026','set/2026'],['Transição','Lei 3.139/2013, Decretos 23.330 e 23.336/2018, EC 111/2021, LRF','pesquisa de 4/10/2026'],['Cargos','LC 965/2017 compilada e decretos de estrutura','3/10/2026']])+
+    `<h4>Os painéis de origem</h4><p>Transparência Orçamentária de Rondônia, LOA 2026 (Negócios Inteligentes): transparencia.e-negociosinteligentes.com.br</p><p>Plano de Transição e Consulta de Cargos (ELO, Porto Velho): transicao-rondonia-2027.vercel.app</p><p>${esc(AUTORIA)}</p>`],
+};
+function ficha(i){const o=D.orgaos[i],s=sit(o),p=o.emp/o.orc*100,mx=Math.max(1,...o.mes_emp,...o.mes_pag);
+  const cols=o.mes_pag.map((v,k)=>`<div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px"><i style="display:block;width:70%;height:${v/mx*90}px;background:var(--gold);border-radius:3px"></i><span style="font-size:.62rem;color:var(--dim)">${MES[k]}</span></div>`).join('');
+  return [o.nome,`<p>${o.sigla?`<span class="tag">${esc(o.sigla)}</span> `:''}${o.nat?esc(o.nat)+' · ':''}${o.vinc&&o.vinc!==o.sigla?'vinculado a '+esc(o.vinc)+' · ':''}<span class="pill ${s}">${s==='atr'?'atrasado':s==='quase'?'um pouco abaixo':'no ritmo'}: ${br(p,0)}% comprometido, com 77% do ano</span></p>
+  <div class="ficha-n">${[['Orçamento atualizado',R(o.orc)],['Aprovado na lei',R(o.ini)],['Comprometido',R(o.emp)],['Pago',R(o.pag)],['Entregue, a pagar',R(o.liq-o.pag)],['Sem compromisso',R(o.orc-o.emp)]].map(k=>`<div class="kpi"><div class="v num" style="font-size:1.15rem">${k[1]}</div><div class="r">${k[0]}</div></div>`).join('')}</div>
+  <h4>Pago mês a mês em 2026</h4><div style="display:flex;gap:4px;height:110px;align-items:flex-end">${cols}</div>
+  ${tab(['Mês','Comprometido','Pago'],o.mes_emp.map((v,k)=>[MES[k],R(v),R(o.mes_pag[k])]))}
+  <h4>Cargos de nomeação</h4>${o.cargos?`<p>${br(o.cargos.qtd)} cargos em ${o.cargos.linhas} linhas do quadro; ${R(o.cargos.custo)} por mês se todos estivessem providos.</p>`:'<p>Sem quadro próprio de cargos na consulta (fundo ou unidade sem cargos de nomeação próprios).</p>'}
+  <h4>Emendas liberadas para este órgão (2019–2026)</h4>${o.emendas?`<p>${R(o.emendas.valor)} em ${br(o.emendas.n)} ofícios.</p>`:'<p>Nenhum ofício de emenda com esta sigla nas liberações.</p>'}`]}
+const painel=$('#painel'),veu=$('#veu');let ultimoFoco=null;
+function abrir(chave,idx){ultimoFoco=document.activeElement;let tit,html,depois;
+  if(chave==='ficha'){[tit,html]=ficha(idx)}else{const d=DET[chave];tit=d[0];html=d[1]();depois=d[2]}
+  $('#pTit').textContent=tit;$('#pCorpo').innerHTML=html;$('#pCorpo').scrollTop=0;painel.classList.add('on');veu.classList.add('on');depois&&depois();$('#pFechar').focus()}
+function fechar(){painel.classList.remove('on');veu.classList.remove('on');ultimoFoco&&ultimoFoco.focus()}
+document.addEventListener('click',e=>{const b=e.target.closest('.abrir');if(b){abrir(b.dataset.d);return}
+  const o=e.target.closest('[data-o]');if(o){abrir('ficha',+o.dataset.o);return}});
+$('#mapa').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset.o){abrir('ficha',+e.target.dataset.o)}});
+veu.addEventListener('click',fechar);$('#pFechar').addEventListener('click',fechar);
+
+/* ---------- navegação ---------- */
+const cenas=$$('.cena');let atual=0;
+$('#indLista').innerHTML=cenas.map((c,i)=>`<li><a href="#" data-i="${i}"><span>${String(i+1).padStart(2,'0')}</span>${esc(c.dataset.t)}</a></li>`).join('');
+const ind=$('#indice');$('#btnInd').addEventListener('click',()=>{ind.classList.toggle('on');if(ind.classList.contains('on'))ind.querySelector('a').focus()});
+ind.addEventListener('click',e=>{const a=e.target.closest('a');if(!a)return;e.preventDefault();ind.classList.remove('on');ir(+a.dataset.i)});
+function ir(i){i=Math.max(0,Math.min(cenas.length-1,i));cenas[i].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){if(painel.classList.contains('on'))fechar();else ind.classList.remove('on');return}
+  if(painel.classList.contains('on')||ind.classList.contains('on')||/INPUT|TEXTAREA/.test(e.target.tagName))return;
+  if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();ir(atual+1)}
+  else if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();ir(atual-1)}
+  else if(e.key==='Enter'&&!e.target.closest('button,a,[data-o]')){const d=cenas[atual].dataset.d;if(d)abrir(d)}
+  else if(e.key==='Home'){e.preventDefault();ir(0)}else if(e.key==='End'){e.preventDefault();ir(cenas.length-1)}});
+
+/* ---------- revelação ---------- */
+function viva(c){if(c.classList.contains('viva'))return;c.classList.add('viva');
+  c.querySelectorAll('[data-num]').forEach(animar);
+  c.querySelectorAll('[data-w]').forEach(i=>i.style.width=i.dataset.w+'%');c.querySelectorAll('[data-l]').forEach(i=>i.style.left=i.dataset.l+'%');
+  c.querySelectorAll('rect.col').forEach((r,k)=>{r.style.transition=`y 1s ${k*60}ms cubic-bezier(.2,.7,.1,1),height 1s ${k*60}ms cubic-bezier(.2,.7,.1,1)`;r.setAttribute('y',r.dataset.y);r.setAttribute('height',r.dataset.h)});
+  c.querySelectorAll('text.cv').forEach((t,k)=>setTimeout(()=>t.setAttribute('opacity',1),900+k*60));
+  if(c.querySelector('#anoBar'))anoBar();if(c.querySelector('#calib'))setTimeout(()=>c.querySelector('#calib .ag').style.left=(37.92/55*100)+'%',200)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){viva(e.target);const i=cenas.indexOf(e.target);atual=i;
+  $('#cap').textContent=String(i+1).padStart(2,'0')+' / '+cenas.length;$('#prog').style.width=((i+1)/cenas.length*100)+'%'}}),{threshold:.35});
+cenas.forEach(c=>io.observe(c));
+desenhaMapa();let rz;addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{desenhaMapa()},150)});
+
+/* ---------- impressão: tudo revelado e os detalhes em anexo ---------- */
+addEventListener('beforeprint',()=>{cenas.forEach(viva);$$('[data-num]').forEach(el=>el.textContent=(FMT[el.dataset.f]||cur)(get(el.dataset.num)));
+  if(!$('#anexo').innerHTML)$('#anexo').innerHTML='<h2>Anexo: todos os números</h2>'+Object.entries(DET).map(([k,d])=>`<section><h2 style="font-size:1.6rem">${esc(d[0])}</h2><div class="corpo">${d[1]()}</div></section>`).join('')});
+</script>
+</body>
+</html>
