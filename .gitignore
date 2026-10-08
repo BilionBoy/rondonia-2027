@@ -1,1 +1,8 @@
 .DS_Store
+
+# dado bruto da etapa "O que não aparece" (refazer com python3 coleta_s3.py)
+dados-fonte/s3_empenhos_*.json
+dados-fonte/s3_detalhes_*.json
+dados-fonte/s3_diarias_*.json
+dados-fonte/s3_msc_classe6.json
+__pycache__/

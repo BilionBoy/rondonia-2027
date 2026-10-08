@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convênios da SEAS</title>
+<style>
+/*__FONTES__*/
+/*__BASE_CSS__*/
+.topo-c{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--hair);padding:14px 28px;flex:none}
+.topo-c h1{margin:0;font-size:16px;font-weight:700}
+.topo-c .meta{margin-left:auto;font-size:13px;color:var(--mute);display:flex;gap:14px;align-items:center}
+.tag-tipo{display:inline-block;font-size:12px;font-weight:650;padding:1px 8px;border-radius:999px;border:1px solid currentColor;margin-left:6px}
+</style>
+</head>
+<body>
+<header class="topo-c"><h1>Convênios da SEAS</h1><span class="meta" id="meta"></span></header>
+<main class="tela" id="tela">
+  <section class="esq" id="esq"></section>
+  <aside class="dir">
+    <div class="dir-cab"><div class="topo-cab"><h3>As provas</h3><button class="btn-dados" id="btn-dados" type="button">▦ Ver os dados de origem</button></div><p id="provas-sub"></p><div class="aviso" id="aviso" hidden></div><div class="filtro" id="filtro"></div></div>
+    <div class="provas" id="provas"></div>
+  </aside>
+</main>
+<div class="cortina" id="cortina"></div>
+<aside class="painel" id="painel" aria-hidden="true">
+  <button class="painel-x" id="painel-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="painel-tit"></h3><input id="painel-busca" type="search" placeholder="Buscar município, entidade, objeto ou processo…" aria-label="Buscar"></div>
+  <div class="provas" id="painel-lista"></div>
+</aside>
+<aside class="painel dados" id="dados" aria-hidden="true">
+  <button class="painel-x" id="dados-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="dados-tit"></h3></div>
+  <div class="dados-abas" id="dados-abas"></div>
+  <div class="ficha-fonte" id="dados-ficha"></div>
+  <div class="dados-nota" id="dados-nota"></div>
+  <div class="dados-ferr"><input id="dados-busca" type="search" placeholder="Buscar em todas as colunas…" aria-label="Buscar nos dados"><span class="cont" id="dados-cont"></span><button class="btn-dados contorno" id="dados-csv" type="button">⤓ Baixar CSV</button></div>
+  <div class="dados-tab" id="dados-tab"></div>
+  <div class="dados-pag" id="dados-pag"></div>
+</aside>
+<div id="dica" role="tooltip"></div>
+
+<script>
+const D = /*__DADOS_CONV__*/null;
+/*__BASE_JS__*/
+
+// ---------- convênios da SEAS
+const REG = D.registros;
+const TIPO_COR = {"Convênio": "var(--azul)", "Termo de Fomento": "var(--cinza2)", "Termo de Cooperação/Colaboração": "var(--cinza)"};
+const TIPOS = Object.keys(TIPO_COR);
+const ehMun = r => /MUNIC/i.test(r.contratado);
+let quem = 0;                                  // 0 todos, 1 municípios, 2 entidades
+const QUEM = ["Todos", "Municípios", "Entidades (ONGs e associações)"];
+const filtraQuem = rs => quem === 1 ? rs.filter(ehMun) : quem === 2 ? rs.filter(r => !ehMun(r)) : rs;
+idsAtuais = ["convenios-seas"];
+$("#meta").innerHTML = `dado oficial de ${diaC.split("-").reverse().join("/")}${horaC ? " · " + horaC : ""}<button class="tema" id="tema" type="button" aria-label="Claro ou escuro">◐</button>`;
+
+const instrumento = r => ({credor: `${r.numero}`, valor: r.valor || 0,
+  l2: `${r.tipo} · assinado em ${r.assinatura || "—"}${r.tem_aditivo === "Sim" ? " · tem aditivo" : ""}${r.rescisao ? " · rescisão" : ""}`,
+  fonte: r.processo_sei ? "Processo SEI " + r.processo_sei : "", historico: r.objeto, link: L.portal});
+
+function desenha() {
+  const rs = filtraQuem(REG.filter(r => !r.rescisao));
+  const total = rs.reduce((a, r) => a + (r.valor || 0), 0) / 1e6;
+  const anos = [...new Set(REG.map(r => r.ano))].sort();
+  const vals = rs.map(r => (r.valor || 0) / 1e6).filter(v => v > 0);
+  const recebedores = new Set(rs.map(r => r.contratado));
+  const mun = REG.filter(r => !r.rescisao && ehMun(r)), ent = REG.filter(r => !r.rescisao && !ehMun(r));
+  const soma = xs => xs.reduce((a, r) => a + (r.valor || 0), 0) / 1e6;
+  const porAno = anos.map(a => rs.filter(r => r.ano === a));
+  const maiorAno = anos[porAno.reduce((bi, x, i, arr) => soma(x) > soma(arr[bi]) ? i : bi, 0)];
+  const nResc = REG.filter(r => r.rescisao).length, nAdit = REG.filter(r => r.tem_aditivo === "Sim").length;
+
+  $("#esq").innerHTML = `<div class="entra"><div class="kicker">SEAS · Secretaria de Estado da Assistência e do Desenvolvimento Social</div>
+    <h2 class="titulo">Quanto a SEAS repassou por convênio e termo de fomento, e para quem</h2>
+    <div class="numero"><span class="n">${fmt(total)}</span><span class="s">em <b>${br(rs.length)} instrumentos</b> assinados de ${anos[0]} a ${anos.at(-1)}<br><b>${br(recebedores.size)}</b> ${quem === 1 ? "municípios" : quem === 2 ? "entidades" : "municípios e entidades"} receberam</span></div>
+    <div class="estat">${[["Municípios", `${fmt(soma(mun))} · ${mun.length}`], ["Entidades", `${fmt(soma(ent))} · ${ent.length}`], ["Valor típico", `${fmt(quantil(vals, .5))} (mediana)`], ["Maior ano", `${maiorAno} · ${fmt(soma(porAno[anos.indexOf(maiorAno)]))}`]]
+      .map(([k, v]) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`).join("")}</div></div>
+    <div class="alterna"><span class="rot">Quem recebe:</span>${QUEM.map((q, i) => `<button type="button" class="${i === quem ? "on" : ""}">${q}</button>`).join("")}</div>
+    <div class="grafico" id="graf"></div>
+    <div class="dica-uso">Valor assinado por ano. Azul: convênio. Cinza escuro: termo de fomento. Cinza: cooperação. Clique num ano para ver os instrumentos dele. ${nResc} rescisões e ${nAdit} instrumentos com aditivo estão nos dados de origem.</div>
+    <div class="rodape"><div class="fonte">Fonte: Portal da Transparência RO · Convênios, Termos de Fomento e de Cooperação</div><button class="btn-dados contorno" type="button" data-dados="1">▦ Ver os dados de origem</button></div>`;
+  $("#esq").querySelectorAll(".alterna button").forEach((b, i) => b.onclick = () => { quem = i; desenha(); });
+
+  colunas($("#graf"), anos.map((a, i) => ({
+    rot: String(a), partes: TIPOS.map(t => ({v: soma(porAno[i].filter(r => r.tipo === t)), cor: TIPO_COR[t]})), topo: fmt(soma(porAno[i])), destaque: a === maiorAno,
+    dica: [`Assinados em ${a}`, [["Total", fmt(soma(porAno[i]))], ...TIPOS.map(t => [t, `${porAno[i].filter(r => r.tipo === t).length} · ${fmt(soma(porAno[i].filter(r => r.tipo === t)))}`])], "Clique para ver os instrumentos do ano"],
+    clique: (g, s) => {
+      foco(s, g);
+      const lista = [...porAno[i]].sort((x, y) => (y.valor || 0) - (x.valor || 0)).map(r => ({nome: r.contratado, sub: `${r.tipo} · ${r.assinatura} · ${r.objeto}`, valor: fmt((r.valor || 0) / 1e6), barra: (r.valor || 0) / ((porAno[i][0] && Math.max(...porAno[i].map(x => x.valor || 0))) || 1), notas: [instrumento(r)]}));
+      mostraProvas(`Instrumentos assinados em ${a}, do maior para o menor`, lista, {filtro: String(a), limpar: () => { foco(s, null); provasPadrao(rs); }, todas: lista, tituloTodas: `Convênios e termos da SEAS em ${a}`, limite: 6});
+    },
+  })));
+  provasPadrao(rs);
+  ligaDados();
+}
+function provasPadrao(rs) {
+  const por = new Map();
+  rs.forEach(r => { const k = r.contratado; if (!por.has(k)) por.set(k, []); por.get(k).push(r); });
+  const grupos = [...por.entries()].map(([nome, xs]) => ({nome, xs, total: xs.reduce((a, r) => a + (r.valor || 0), 0)})).sort((a, b) => b.total - a.total);
+  const max = grupos[0]?.total || 1;
+  const lista = grupos.map(g => ({nome: g.nome, sub: `${g.xs.length} instrumento${g.xs.length > 1 ? "s" : ""} · ${[...new Set(g.xs.map(r => r.ano))].sort().join(", ")}`, valor: fmt(g.total / 1e6), barra: g.total / max,
+    linhas: [["Valor assinado", "R$ " + br(g.total, 2)], ["Convênios", String(g.xs.filter(r => r.tipo === "Convênio").length)], ["Termos de fomento", String(g.xs.filter(r => r.tipo === "Termo de Fomento").length)], ["Com aditivo", String(g.xs.filter(r => r.tem_aditivo === "Sim").length)]],
+    notas: [...g.xs].sort((a, b) => (b.valor || 0) - (a.valor || 0)).map(instrumento), link: ["Abrir convênios no portal", L.portal]}));
+  mostraProvas(`Quem mais recebeu${quem === 1 ? " entre os municípios" : quem === 2 ? " entre as entidades" : ""}. Clique para ver cada convênio, o processo SEI e o objeto.`, lista, {todas: lista, tituloTodas: "Todos os recebedores da SEAS"});
+}
+function ligaDados() {
+  document.querySelectorAll("[data-dados]").forEach(b => b.onclick = () => abreDados(idsAtuais));
+  $("#btn-dados").onclick = () => abreDados(idsAtuais);
+}
+
+$("#tema")?.addEventListener("click", () => {
+  const r = document.documentElement, escuro = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme = escuro ? "light" : "dark";
+  try { localStorage.setItem("tema-na", r.dataset.theme); } catch (e) {}
+  desenha();
+});
+try { const t = localStorage.getItem("tema-na"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+addEventListener("keydown", e => { if (e.key === "Escape") { fechaPainel(); fechaDados(); } });
+let pend; addEventListener("resize", () => { clearTimeout(pend); pend = setTimeout(desenha, 150); });
+desenha();
+const pedidoDados = new URLSearchParams(location.search).get("dados");
+if (pedidoDados && TB[pedidoDados]) abreDados([pedidoDados]);
+</script>
+</body>
+</html>

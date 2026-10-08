@@ -1,13 +1,49 @@
 # Rondônia em números
 
-Apresentação de uma tela só, em 9 etapas, sobre o orçamento de 2026 e a transição de governo. Ela é feita para alguém sem tempo: números grandes, uma ideia por etapa, e tudo clicável para quem quiser se aprofundar.
+Painel sobre o orçamento de Rondônia e a transição de governo, em três abas. É feito para alguém sem tempo: números grandes, uma ideia por tela, e tudo clicável para quem quiser se aprofundar.
+
+| Aba | Arquivo no ar | O que mostra |
+|---|---|---|
+| Rondônia em números | `site/index.html` | o orçamento de 2026 em 9 etapas |
+| O que não aparece | `site/nao-aparece.html` | onde o dinheiro sai do retrato público, em 5 telas |
+| Convênios da SEAS | `site/convenios.html` | convênios e termos de fomento da SEAS, 2019–2026 |
+
+**O link para mandar é `/painel.html`**: ele junta as três abas. A raiz (`/`) abre só a primeira.
 
 - **No ar:** a pasta `site/`, publicada na Vercel com Root Directory = `site`. As páginas levam `noindex`.
+- **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py`.
+- **Para ver localmente:** `python3 -m http.server 8765 --bind 127.0.0.1` e abrir `http://127.0.0.1:8765/esbocos/painel.html`.
+
+## Primeira aba: as 9 etapas
+
 - **Para editar:** `esbocos/src/rondonia.html`.
 - **Para gerar:** `python3 build.py`. Ele injeta dados, fontes e three.js e gera `esbocos/*.html` e `site/`.
 - **Para testar localmente:** `python3 -m http.server 8765 --bind 127.0.0.1` e abrir `http://127.0.0.1:8765/esbocos/rondonia.html#N`, onde N é o número da etapa.
 
-## As 9 etapas
+## Segunda aba: "O que não aparece"
+
+Tela separada, com visual próprio, sobre onde o dinheiro sai do retrato público: empenho sem entrega, diárias fora do portal, dinheiro livre (fonte 1500) e emendas. Não mexe nas 9 etapas.
+
+- **Para editar:** `nao-aparece/src/nao-aparece.html`. O painel que junta as abas é `nao-aparece/src/painel.html`, gerado por este mesmo build.
+- **Para coletar:** `python3 coleta_s3.py` baixa do Portal da Transparência RO (notas de empenho, detalhe de cada nota a partir de R$ 200 mil, diárias) e do Siconfi (RREO Anexo 7, MSC). O bruto fica em `dados-fonte/s3_*` e não vai para o git.
+- **Para gerar:** `python3 nao-aparece/build_s3.py`. Grava `dados-fonte/s3_resumo.json`, `esbocos/` e `site/`.
+
+Todas as fontes, consultas, datas de coleta e regras de leitura estão em [FONTES.md](FONTES.md).
+
+Cuidados: as diárias do portal vêm com linhas repetidas (são removidas); o "pago" das notas de 2025 quase não aparece no portal; o Tesouro abre restos a pagar só por Poder, não por secretaria.
+
+## Terceira aba: "Convênios da SEAS"
+
+Uma tela com tudo o que a SEAS assinou: convênios, termos de fomento e de cooperação. Mostra o total por ano, filtra entre municípios e entidades, e lista quem mais recebeu, com número, processo SEI e objeto de cada instrumento. Os 496 registros abrem em tabela paginada, com busca e CSV.
+
+- **Para coletar:** `python3 coleta_convenios.py SEAS`. Serve para qualquer órgão; é só trocar a sigla. Grava `dados-fonte/s4_convenios_seas.json` e `.csv`.
+- **Para gerar:** `python3 convenios/build_convenios.py`. Grava `esbocos/convenios.html` e `site/convenios.html`.
+- **Para editar:** `convenios/src/convenios.html`. O visual (`convenios/src/_base.css` e `_base.js`) é uma cópia do da segunda aba, para uma aba não quebrar a outra.
+- **População (para a conta de R$ por habitante):** `dados-fonte/ibge/ro-populacao-censo2022.json`, do IBGE, Censo 2022.
+
+O portal não tem link por convênio; cada linha leva à página geral de convênios e traz o número do processo SEI.
+
+## Detalhe da primeira aba: as 9 etapas
 
 | # | Etapa | Fonte |
 |---|---|---|

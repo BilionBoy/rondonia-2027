@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel Rondônia</title>
+<style>
+/*__FONTES__*/
+:root{--fundo:#f5f3ee;--linha:#d6d2c8;--tinta:#15171c;--suave:#5d616b;--sinal:#b25d00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fundo:#0e1014;--linha:#2a2e37;--tinta:#ebe8e1;--suave:#8f939c;--sinal:#f0a540}}
+:root[data-theme="dark"]{--fundo:#0e1014;--linha:#2a2e37;--tinta:#ebe8e1;--suave:#8f939c;--sinal:#f0a540}
+html,body{margin:0;height:100%;background:var(--fundo);color:var(--tinta);font:15px/1.4 Inter,system-ui,sans-serif}
+header{height:48px;display:flex;align-items:center;gap:4px;padding:0 16px;border-bottom:1px solid var(--linha)}
+header strong{margin-right:16px;font-size:14px;letter-spacing:.02em}
+header a{text-decoration:none;color:var(--suave);padding:13px 12px;border-bottom:2px solid transparent;white-space:nowrap}
+header a.on{color:var(--tinta);border-bottom-color:var(--sinal);font-weight:600}
+iframe{display:block;width:100%;height:calc(100% - 49px);border:0}
+iframe[hidden]{display:none}
+@media (max-width:600px){header strong{display:none}header{padding:0 8px;overflow-x:auto}}
+</style>
+</head>
+<body>
+<header>
+  <strong>Rondônia</strong>
+  <a href="#numeros" data-aba="numeros">Rondônia em números</a>
+  <a href="#nao-aparece" data-aba="nao-aparece">O que não aparece</a>
+  <a href="#convenios" data-aba="convenios">Convênios da SEAS</a>
+</header>
+<iframe id="numeros" title="Rondônia em números" src="rondonia.html" hidden></iframe>
+<iframe id="nao-aparece" title="O que não aparece" src="nao-aparece.html" hidden></iframe>
+<iframe id="convenios" title="Convênios da SEAS" src="convenios.html" hidden></iframe>
+<script>
+function abrir() {
+  const aba = ["nao-aparece", "convenios"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "numeros";
+  document.querySelectorAll("iframe").forEach(f => f.hidden = f.id !== aba);
+  document.querySelectorAll("header a").forEach(a => a.classList.toggle("on", a.dataset.aba === aba));
+}
+addEventListener("hashchange", abrir);
+abrir();
+</script>
+</body>
+</html>
