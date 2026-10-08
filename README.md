@@ -1,13 +1,13 @@
 # Rondônia em números
 
-Apresentação de uma tela só, em 10 etapas, sobre o orçamento de 2026 e a transição de governo. Ela é feita para alguém sem tempo: números grandes, uma ideia por etapa, e tudo clicável para quem quiser se aprofundar.
+Apresentação de uma tela só, em 9 etapas, sobre o orçamento de 2026 e a transição de governo. Ela é feita para alguém sem tempo: números grandes, uma ideia por etapa, e tudo clicável para quem quiser se aprofundar.
 
 - **No ar:** a pasta `site/`, publicada na Vercel com Root Directory = `site`. As páginas levam `noindex`.
 - **Para editar:** `esbocos/src/rondonia.html`.
 - **Para gerar:** `python3 build.py`. Ele injeta dados, fontes e three.js e gera `esbocos/*.html` e `site/`.
 - **Para testar localmente:** `python3 -m http.server 8765 --bind 127.0.0.1` e abrir `http://127.0.0.1:8765/esbocos/rondonia.html#N`, onde N é o número da etapa.
 
-## As 10 etapas
+## As 9 etapas
 
 | # | Etapa | Fonte |
 |---|---|---|
@@ -17,10 +17,9 @@ Apresentação de uma tela só, em 10 etapas, sobre o orçamento de 2026 e a tra
 | 4 | Para onde vai: salário, custeio, obra (pago, a pagar, livre) | Portal, despesa por grupo de natureza |
 | 5 | O orçamento mexido: 359 atos, R$ 4,4 bi | Diário Oficial do Estado (créditos adicionais) |
 | 6 | A saúde do Estado: folha × limite, caixa × dívida, renúncia | RGF do Executivo, 2º quadrimestre 2026 (Siconfi/Tesouro) e SEFIN/SIDIEC |
-| 7 | O Estado no mapa e o saneamento | Malha IBGE, Censo 2022, indicadores do plano de transição |
-| 8 | Emendas por município e por deputado | OFIP + planilha "Emendas 2025–2026" (**não oficial, sem 2022**) |
-| 9 | A virada: o que passa de 2026 para 2027 | Portal (ponto de partida) + cenário com o ritmo médio de 2026; cargos: LC 965/2017 |
-| 10 | Explorar o mapa | igual à etapa 8 |
+| 7 | O Estado no mapa, com as emendas por município e deputado | Malha IBGE, Censo 2022; emendas: OFIP + planilha "Emendas 2025–2026" (**não oficial, sem 2022**) |
+| 8 | A virada: o que passa de 2026 para 2027 | Portal (ponto de partida) + cenário com o ritmo médio de 2026; cargos: LC 965/2017 |
+| 9 | Resumo: 5 números-chave e o dinheiro por área, tudo clicável | Portal, RGF, Diário Oficial |
 
 ## O que foi conferido na fonte oficial (7/10/2026)
 
