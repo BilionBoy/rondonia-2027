@@ -31,6 +31,7 @@ canvas.apagado{opacity:0;pointer-events:none}
 .legenda{position:fixed;inset:auto clamp(16px,2.6vw,48px) clamp(18px,3.2vh,40px) clamp(16px,2.6vw,48px);z-index:4;display:flex;align-items:flex-end;gap:24px;pointer-events:none}
 .frase{flex:1;font-size:clamp(1.3rem,2.35vw,2.45rem);font-weight:680;letter-spacing:-.025em;line-height:1.14;max-width:32ch;text-wrap:balance;transition:opacity .6s,transform .6s}
 .frase.sai{opacity:0;transform:translateY(10px)}
+.frase.discreta{font-size:clamp(1rem,1.55vw,1.6rem);font-weight:620;max-width:46ch}
 .frase em{font-style:normal;font-weight:780;color:var(--agua);white-space:nowrap}
 .frase em.r{color:var(--atraso)}
 .ctrl{display:flex;gap:12px;align-items:center;pointer-events:auto;margin-left:auto;flex-shrink:0}
@@ -112,6 +113,7 @@ body.emendas .escala{opacity:1;pointer-events:auto}
 .plano .t .nm{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-weight:760;letter-spacing:-.01em;line-height:1.08}
 .plano .t .sb{display:block;color:var(--cinza);margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .plano .t .sb b{color:var(--atraso);font-weight:750}
+.plano .t.destaque{box-shadow:inset 0 0 0 2.5px var(--atraso)}
 .plano .t.grupo .nm::after{content:" →";color:var(--cinza)}
 .plano .tq{position:absolute;left:4px;right:4px;bottom:4px;border-radius:6px;overflow:hidden;background:rgba(21,23,27,.045)}
 .plano .tq .fill{position:absolute;inset:0;background:linear-gradient(180deg,#14707f,#0b5260 70%);box-shadow:inset 0 1px 0 rgba(255,255,255,.22);transform-origin:50% 100%;transform:scaleY(0);will-change:transform;
@@ -121,10 +123,157 @@ body.emendas .escala{opacity:1;pointer-events:auto}
 .plano .tq .pc{position:absolute;left:8px;bottom:6px;font-weight:790;letter-spacing:-.045em;line-height:1;color:#fff}
 .plano.vivo .tq .fill,.plano.vivo .tq .falta{transition:none}
 
-/* ficha lateral */
+/* etapa 4: os tipos de gasto em ranking */
+.tipos{position:fixed;left:clamp(16px,2.6vw,48px);right:clamp(16px,2.6vw,48px);top:clamp(150px,21vh,236px);bottom:clamp(140px,19.5vh,210px);z-index:2;
+  display:grid;grid-template-rows:auto repeat(5,1fr);opacity:0;pointer-events:none;transition:opacity .5s}
+.tipos.on{opacity:1;pointer-events:auto}
+.tipos .tr.cab{font-size:clamp(.74rem,.86vw,.9rem);font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta);border-top:0;padding-bottom:10px;cursor:default;align-items:end}
+.tipos .tr.cab:hover{background:none}
+.tipos .tr.cab .dir{text-align:right}
+.tipos .cl{display:flex;flex-wrap:wrap;gap:6px 18px;letter-spacing:0;text-transform:none;font-size:clamp(.76rem,.88vw,.92rem);font-weight:650;color:var(--tinta)}
+.tipos .cl span{display:inline-flex;align-items:center;gap:6px}
+.tipos .cl i{display:inline-block;width:12px;height:12px;border-radius:3px}
+.tipos i.pg{background:var(--agua)} .tipos i.cp{background:#8fc0c8} .tipos i.lv{background:var(--papel2);box-shadow:inset 0 0 0 1px rgba(21,23,27,.18)} .tipos i.an{width:0!important;height:14px!important;border-radius:0!important;border-left:2px dashed rgba(21,23,27,.6)}
+.tipos .det{font-size:clamp(.74rem,.88vw,.92rem);color:#4a4e56;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tipos .det b{color:var(--tinta);font-weight:700}
+.tipos .na{font-size:clamp(.9rem,1.1vw,1.1rem);font-weight:650;color:var(--cinza);letter-spacing:0}
+.tipos .tr{display:grid;grid-template-columns:minmax(190px,19%) minmax(170px,15%) 1fr minmax(130px,10%);gap:clamp(14px,2vw,32px);align-items:center;border-top:1px solid var(--linha);cursor:default;padding:0 4px;border-radius:6px;transition:background .25s}
+.tipos .tr:last-child{border-bottom:1px solid var(--linha)}
+.tipos .tr:hover{background:rgba(21,23,27,.03)}
+.tipos .n b{display:block;font-size:clamp(1.05rem,1.45vw,1.5rem);font-weight:760;letter-spacing:-.02em;line-height:1.1}
+.tipos .n span{display:block;font-size:clamp(.76rem,.88vw,.92rem);color:#4a4e56;margin-top:3px}
+.tipos .v{font-size:clamp(1.5rem,2.5vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tipos .v small,.tipos .p small{display:block;font-size:clamp(.72rem,.84vw,.88rem);font-weight:600;letter-spacing:0;color:#4a4e56;margin-top:5px}
+.tipos .trilho{position:relative;height:clamp(26px,4.4vh,46px)}
+.tipos .barra{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--papel2);border-radius:7px;overflow:hidden;transition:width 1.1s cubic-bezier(.2,.7,.1,1)}
+.tipos .agua{position:absolute;left:0;top:0;bottom:0;width:0;background:#8fc0c8;transition:width 1.2s cubic-bezier(.2,.7,.1,1)}
+.tipos .pagoB{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,#0b5260,#14707f);transition:width 1.2s cubic-bezier(.2,.7,.1,1)}
+.tipos .ritmo{position:absolute;top:0;bottom:0;left:76.7%;border-left:2px dashed rgba(21,23,27,.55)}
+.tipos .p small{white-space:nowrap}
+.tipos .p{text-align:right;font-size:clamp(1.5rem,2.5vw,2.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.tipos .tr.alerta .p,.tipos .tr.alerta .n span{color:var(--atraso)}
+.tipos .tr.alerta .n span{font-weight:700}
+.tipos .tr.alerta .barra{box-shadow:inset 0 0 0 2px var(--atraso)}
+.tipos .tr.neutro .p{color:var(--cinza)}
+@media (max-width:700px){.tipos .tr{grid-template-columns:1fr auto;row-gap:6px;padding:6px 0}.tipos .trilho{grid-column:1/-1;order:3}.tipos .v{display:none}}
+
+/* etapa 7: a virada — arrastar o tempo de 2026 para 2027 */
+.virada{position:fixed;left:clamp(16px,2.6vw,48px);right:clamp(16px,2.6vw,48px);top:clamp(70px,9.5vh,104px);bottom:clamp(112px,14.5vh,140px);z-index:2;
+  display:grid;grid-template-columns:60fr 40fr;grid-template-rows:auto auto 1fr auto;opacity:0;pointer-events:none;transition:opacity .5s}
+.virada.on{opacity:1;pointer-events:auto}
+.virada .lado{padding-right:clamp(16px,2.6vw,44px)}
+.virada .novo{border-left:2px solid var(--tinta);padding-left:clamp(16px,2.6vw,44px);position:relative}
+.virada .rot2{font-size:clamp(.72rem,.84vw,.88rem);font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta)}
+.virada .rot2 span{color:var(--cinza);font-weight:600}
+.virada .quando{font-size:clamp(2.2rem,4.4vw,4.6rem);font-weight:800;letter-spacing:-.05em;line-height:.95;margin-top:6px;font-variant-numeric:tabular-nums}
+.virada .selo2{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:clamp(.7rem,.82vw,.86rem);font-weight:650;padding:5px 11px;border-radius:999px;background:rgba(21,23,27,.06);color:#3d4148}
+.virada .selo2.cen{background:#f6e3d9;color:#8a3413}
+.virada .relogio{font-size:clamp(1.6rem,2.8vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1;margin-top:8px;font-variant-numeric:tabular-nums}
+.virada .relogio small{font-size:.42em;font-weight:650;color:#3d4148;letter-spacing:0;margin-left:2px}
+.virada .meio{display:flex;flex-direction:column;justify-content:center}
+.virada .orc{font-size:clamp(.82rem,1vw,1.04rem);font-weight:650;color:#3d4148;margin:clamp(18px,3.4vh,36px) 0 12px}
+.virada .orc b{color:var(--tinta)}
+.virada .bar{position:relative;display:flex;height:clamp(54px,8vh,82px);border-radius:10px;overflow:hidden;background:var(--papel2)}
+.virada .bar > div{height:100%;position:relative;transition:opacity .6s,background .6s}
+.virada .s-pg{background:linear-gradient(90deg,#0b5260,#14707f)}
+.virada .s-ap{background:#8fc0c8;cursor:pointer}
+.virada .s-lv{background:var(--papel2)}
+.virada.fechou .s-ap{background:transparent;box-shadow:inset 0 0 0 2px rgba(21,23,27,.35);background-image:repeating-linear-gradient(135deg,rgba(21,23,27,.08) 0 6px,transparent 6px 12px)}
+.virada.fechou .s-lv{background-image:repeating-linear-gradient(135deg,rgba(21,23,27,.1) 0 6px,transparent 6px 12px);opacity:.75}
+.virada .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.virada .vals div{cursor:default}
+.virada .vals b{display:block;font-size:clamp(1.2rem,1.9vw,2rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.virada .vals span{display:flex;align-items:center;gap:7px;font-size:clamp(.74rem,.88vw,.92rem);font-weight:650;margin-top:6px;color:var(--tinta)}
+.virada .vals span i{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.virada .vals small{display:block;font-size:clamp(.7rem,.82vw,.86rem);color:#4a4e56;margin-top:2px}
+.virada .vals .v-ap{cursor:pointer}
+.virada .vals .v-ap b{text-decoration:underline dotted rgba(21,23,27,.35);text-underline-offset:6px}
+.virada .chega{grid-column:1;align-self:start;align-items:start;display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,40px);padding-right:clamp(16px,2.6vw,44px);margin-top:clamp(14px,3vh,34px)}
+.virada .novo.det{grid-column:2;grid-row:1 / span 4;overflow:hidden;display:flex;flex-direction:column}
+.virada .it.sel{background:rgba(13,92,107,.07);box-shadow:inset 3px 0 0 var(--agua)}
+.painel.inline{position:static;transform:none!important;width:auto;max-height:none;box-shadow:none;background:transparent;border-radius:0;padding:0 0 0 4px;overflow:auto;flex:1;transition:none}
+.painel.inline h3{margin-right:0}
+.virada .it{opacity:.22;transform:translateX(8px);transition:opacity .6s,transform .6s;cursor:pointer;border-radius:10px;padding:8px 10px;margin:-8px -10px}
+.virada .it:hover{background:rgba(21,23,27,.035)}
+.virada .it.on{opacity:1;transform:none}
+.virada .it small{display:block;font-size:clamp(.68rem,.8vw,.84rem);font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta)}
+.virada .it b{display:block;font-size:clamp(1.5rem,2.6vw,2.7rem);font-weight:800;letter-spacing:-.04em;line-height:1;margin:5px 0 4px;font-variant-numeric:tabular-nums}
+.virada .it p{margin:0;font-size:clamp(.76rem,.9vw,.94rem);color:#3d4148;line-height:1.35}
+.virada .it p em{font-style:normal;font-weight:700;color:#8a3413}
+.virada .it .mais{font-size:clamp(.7rem,.8vw,.84rem);font-weight:700;color:var(--agua);margin-top:4px;display:inline-block}
+.virada .tempo3{grid-column:1;padding-right:clamp(16px,2.6vw,44px);padding-top:clamp(14px,2.4vh,26px);display:flex;align-items:center;gap:16px}
+.virada .prog{flex:1;height:3px;background:rgba(21,23,27,.12);border-radius:2px;overflow:hidden}.virada .prog i{display:block;height:100%;width:0;background:var(--tinta)}
+.virada .rever{border:0;background:none;font:inherit;font-size:clamp(.74rem,.86vw,.9rem);font-weight:700;color:var(--tinta);cursor:pointer;padding:6px 4px}
+.virada .trilha{position:relative;height:66px;margin:0 9px;touch-action:none;cursor:pointer}
+.virada .trilha .tr0{position:absolute;left:0;right:0;top:20px;height:6px;border-radius:3px;background:rgba(21,23,27,.12)}
+.virada .trilha .tr1{position:absolute;left:0;top:20px;height:6px;border-radius:3px;background:var(--tinta)}
+.virada .trilha .bola{position:absolute;top:10px;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:var(--tinta);box-shadow:0 0 0 6px rgba(21,23,27,.1),0 4px 12px rgba(21,23,27,.25);cursor:grab}
+.virada .trilha .tk{position:absolute;top:0;font-size:clamp(.66rem,.76vw,.8rem);font-weight:700;color:var(--tinta);transform:translateX(-50%);white-space:nowrap}
+.virada .trilha .tk::after{content:"";position:absolute;left:50%;top:17px;height:12px;border-left:2px solid var(--tinta)}
+.virada .trilha .tk.baixo{top:40px}.virada .trilha .tk.baixo::after{top:-14px}
+.virada .trilha .tk.posse{font-size:clamp(.74rem,.86vw,.9rem)}
+.virada .trilha .tk.fim{transform:translateX(-100%)}.virada .trilha .tk.fim::after{left:100%}
+.virada .trilha .tk.ini{transform:none}.virada .trilha .tk.ini::after{left:0}
+.virada .ctl{display:flex;align-items:center;gap:14px;margin-top:6px;font-size:clamp(.7rem,.82vw,.86rem);color:#3d4148}
+.virada .ctl button{border:0;background:var(--tinta);color:#fff;border-radius:999px;height:34px;padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
+.virada .slab{position:absolute;z-index:5;background:#8fc0c8;border-radius:8px;pointer-events:none;transition:transform 1.1s cubic-bezier(.6,0,.2,1),opacity .4s;box-shadow:0 10px 30px rgba(13,92,107,.3)}
+@media (max-width:700px){.virada{grid-template-columns:1fr;grid-template-rows:auto auto auto auto}.virada .novo{border-left:0;border-top:2px solid var(--tinta);padding:12px 0 0}}
+
+/* etapas 5 e 6: o orçamento mexido e a saúde do Estado */
+.cena2{position:fixed;left:clamp(16px,2.6vw,48px);right:clamp(16px,2.6vw,48px);top:clamp(150px,21vh,236px);bottom:clamp(140px,19.5vh,210px);z-index:2;opacity:0;pointer-events:none;transition:opacity .5s}
+.cena2.on{opacity:1;pointer-events:auto}
+.cena2 .k{font-size:clamp(.72rem,.84vw,.88rem);font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta)}
+.cena2 .gn{font-size:clamp(2rem,3.8vw,4rem);font-weight:800;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums;margin:6px 0 6px}
+.cena2 .tx{font-size:clamp(.82rem,.98vw,1.02rem);color:#3d4148;line-height:1.4}
+.cena2 .tx b{color:var(--tinta)}
+#mexido{display:grid;grid-template-columns:38fr 62fr;gap:clamp(20px,3vw,56px)}
+#mexido .esq{display:flex;flex-direction:column;justify-content:center;gap:clamp(18px,3.4vh,36px)}
+#mexido .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+#mexido .chips span{font-size:clamp(.74rem,.86vw,.9rem);font-weight:650;background:rgba(13,92,107,.09);color:var(--tinta);padding:6px 11px;border-radius:999px}
+#mexido .chips span b{font-weight:800}
+#mexido .dir{display:grid;grid-template-rows:auto 1fr auto;min-height:0}
+#mexido .meses{display:flex;align-items:flex-end;gap:clamp(6px,1vw,16px);min-height:0;padding-top:28px;border-bottom:2px solid var(--tinta)}
+#mexido .mes{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+#mexido .mes i{display:block;width:100%;background:var(--agua);border-radius:6px 6px 0 0;height:0;transition:height .9s cubic-bezier(.2,.7,.1,1)}
+#mexido .mes b{font-size:clamp(.66rem,.8vw,.86rem);font-weight:750;margin-bottom:6px;white-space:nowrap;font-variant-numeric:tabular-nums}
+#mexido .rot3{display:flex;gap:clamp(6px,1vw,16px);margin-top:8px}
+#mexido .rot3 span{flex:1;text-align:center;font-size:clamp(.66rem,.78vw,.82rem);font-weight:700;color:var(--tinta);text-transform:uppercase;letter-spacing:.06em}
+#mexido .top{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:clamp(.74rem,.86vw,.9rem);color:#3d4148}
+#mexido .top b{color:var(--tinta)}
+#saude{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:clamp(20px,3vw,56px);align-items:center}
+#saude > div{min-width:0}
+#saude svg{width:100%;max-width:340px;display:block;overflow:visible}
+#saude .bal{display:grid;gap:14px;margin-top:12px}
+#saude .bal .l{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:center}
+#saude .bal .l span{font-size:clamp(.78rem,.92vw,.96rem);font-weight:700}
+#saude .bal .l em{font-style:normal;font-size:clamp(1.2rem,2vw,2rem);font-weight:800;letter-spacing:-.04em;text-align:right;font-variant-numeric:tabular-nums}
+#saude .bal .b{grid-column:1/-1;height:clamp(22px,3.4vh,34px);border-radius:6px;background:var(--papel2);position:relative;overflow:hidden}
+#saude .bal .b i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;width:0;transition:width 1s cubic-bezier(.2,.7,.1,1)}
+#saude .anos{display:flex;align-items:flex-end;gap:5px;height:clamp(90px,15vh,150px);margin-top:14px;border-bottom:2px solid var(--tinta)}
+#saude .anos div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+#saude .anos i{display:block;width:100%;background:#c9c3b6;border-radius:3px 3px 0 0;height:0;transition:height .9s}
+#saude .anos div.ult i{background:var(--atraso)}
+#saude .anos div.cmp i{background:#8b8578}
+#saude .anos div.cmp,#saude .anosr span:nth-last-child(2){margin-left:10px}
+#saude .anos b{font-size:.62rem;font-weight:700;margin-bottom:3px;white-space:nowrap}
+#saude .anosr{display:flex;gap:5px;margin-top:4px}#saude .anosr span{flex:1;text-align:center;font-size:.62rem;font-weight:700;color:#3d4148}
+@media (max-width:700px){#mexido,#saude{grid-template-columns:1fr;overflow:auto}}
+
+/* ficha lateral *//* ficha lateral */
 .painel{position:fixed;right:clamp(12px,2vw,32px);top:clamp(100px,14vh,150px);bottom:clamp(110px,15vh,160px);width:min(420px,92vw);z-index:5;background:#fff;border-radius:18px;
   box-shadow:0 30px 80px rgba(21,23,27,.18);padding:22px 22px 18px;overflow:auto;transform:translateX(calc(100% + 40px));transition:transform .45s cubic-bezier(.2,.7,.1,1)}
 .painel.on{transform:none}
+.painel{bottom:auto;max-height:calc(100svh - clamp(100px,14vh,150px) - clamp(110px,15vh,160px))}
+.etapas{margin:14px 0 6px}
+.etapas .eb3{display:flex;height:16px;border-radius:5px;background:var(--papel2);overflow:hidden}
+.etapas .eb3 i{display:block;height:100%}
+.etapas i.pg{background:#062f37} .etapas i.cp{background:var(--agua)} .etapas i.lv{background:var(--papel2);box-shadow:inset 0 0 0 1px rgba(21,23,27,.15)}
+.etapas .el3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.etapas .el3 b{display:block;font-size:1.02rem;font-weight:760;letter-spacing:-.02em}
+.etapas .el3 span{display:flex;align-items:center;gap:5px;font-size:.74rem;font-weight:650;margin-top:2px}
+.etapas .el3 span i{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.etapas .el3 small{display:block;font-size:.68rem;color:var(--cinza);margin-top:1px;line-height:1.25}
+.etapas .nota b{color:var(--tinta)}
 .painel .x{position:absolute;right:14px;top:14px;border:1px solid var(--linha);background:#fff;border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:.9rem}
 .painel .tipo{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cinza)}
 .painel h3{margin:6px 40px 2px 0;font-size:1.8rem;letter-spacing:-.04em;line-height:1.02}
@@ -167,8 +316,12 @@ body.emendas .escala{opacity:1;pointer-events:auto}
 <div class="escala" id="escala"><div class="et">Emendas parlamentares recebidas</div><div class="eb"></div><div class="el"><span>menos</span><span>mais</span></div><div class="en">não é o orçamento do Estado</div><button class="ver52" id="ver52">Ver os 52 municípios em lista</button></div>
 <div class="fonte" id="fonte"></div>
 <div id="rotulos"></div>
+<div class="cena2" id="mexido" aria-label="O orçamento mexido"></div>
+<div class="cena2" id="saude" aria-label="A saúde do Estado"></div>
+<div class="virada" id="virada" aria-label="A virada de 2026 para 2027"></div>
+<div class="tipos" id="tipos" aria-label="Os tipos de gasto do orçamento"></div>
 <div class="plano escondido" id="plano" aria-label="Os órgãos do Estado, do tamanho do orçamento"></div>
-<div class="leg2" id="leg2"><span><i style="background:var(--agua)"></i>já tem destino</span><span><i style="border-top:1.5px dashed var(--tinta);height:0;width:16px;border-radius:0;vertical-align:3px"></i>onde o ano está</span><span id="leg2a" style="display:none"><i style="background:var(--atraso)"></i>abaixo do ritmo: o que falta até a linha do ano</span></div>
+<div class="leg2" id="leg2"><span><i style="background:var(--agua)"></i>comprometido: contrato ou pedido assinado</span><span id="leg2p" style="display:none"><i style="background:#062f37"></i>pago: o dinheiro já saiu</span><span><i style="border-top:1.5px dashed var(--tinta);height:0;width:16px;border-radius:0;vertical-align:3px"></i>onde o ano está</span><span id="leg2a" style="display:none"><i style="background:var(--atraso)"></i>abaixo do ritmo: o que falta até a linha do ano</span></div>
 <div class="dica2" id="dica2">Arraste para os lados para passar o ano</div>
 <script>(function(){try{const c=document.createElement('canvas');if(c.getContext('webgl2')||c.getContext('webgl'))return}catch(e){}location.replace('a-o-ano-passando.html')})()</script>
 <script>/**
@@ -208,6 +361,22 @@ const CARDS=[...GRANDES,GRUPO];
 const ATR=O.filter(atrasado).sort((a,b)=>b.orc-a.orc);
 const gapDe=o=>Math.max(0,TEMPO*o.orc-o.emp);
 const GAP=ATR.reduce((s,o)=>s+gapDe(o),0);
+const CR=D.creditos;
+/* RGF do Executivo, 2º quadrimestre de 2026 (Siconfi/Tesouro; cópia em dados-fonte/rgf_executivo_2026_q2_siconfi.json) */
+const RGF={dtp:6578737963.06,pct:37.92,rcl:17357719794.32,dc:5655057076.63,caixa:6110482655.83,dcl:-459833342.4,prec:2083818044.25,alerta:44.1,prud:46.55,max:49};
+const REN=D.renuncia;
+
+const GR=n=>D.despesa.grupos.find(g=>g.nome===n)||{orc:0,emp:0,pag:0};
+const tipo=(nome,sub,partes,expl)=>{const orc=soma(partes,'orc'),emp=soma(partes,'emp'),pag=soma(partes,'pag'),m=new Array(12).fill(0);m[0]=emp;
+  return {tipo:true,sigla:'',nome,orc,emp,pag,mes_emp:m,subTxt:sub,expl,partes}};
+const TIPOS=[
+  tipo('Salários e encargos','folha de ativos, aposentados e encargos',[GR('Pessoal e Encargos Sociais')],'Folha de pagamento do Estado (servidores ativos, inativos e encargos). É o maior gasto e o mais rígido: não dá para cortar de um mês para o outro.'),
+  tipo('Custeio','manutenção, serviços, repasses',[GR('Outras Despesas Correntes')],'O dia a dia da máquina: contratos de serviço, manutenção, material, energia, repasses e transferências.'),
+  tipo('Obras e equipamentos','<b>só '+br(GR('Investimentos').emp/GR('Investimentos').orc*100,0)+'% comprometido</b>',[GR('Investimentos')],'Investimento: estradas, escolas, hospitais, equipamentos e veículos. É o grupo mais atrasado do orçamento.'),
+  tipo('Reserva de emergência','não se gasta direto',[GR('Reserva de Contingência')],'A reserva de contingência não é gasta diretamente: ela cobre imprevistos e serve de fonte para remanejar dinheiro para outros gastos ao longo do ano. Por isso fica em 0%.'),
+  tipo('Dívida e outros','juros, parcelas e inversões',[GR('Juros e Encargos da Dívida'),GR('Amortização da Dívida'),GR('Inversões Financeiras')],'Juros e parcelas da dívida do Estado, mais as inversões financeiras (compra de imóveis, participação em empresas, empréstimos concedidos).'),
+].sort((a,b)=>b.orc-a.orc);
+const OBRA=TIPOS.find(t=>t.nome==='Obras e equipamentos'),FOLHA=TIPOS.find(t=>t.nome==='Salários e encargos');
 
 function squarify(itens,x,y,w,h){const out=[];let fila=[];const tot=itens.reduce((s,i)=>s+i.v,0),k=w*h/tot;let rest=itens.map(i=>({...i,a:i.v*k}));
   const pior=(f,l)=>{const s=f.reduce((a,b)=>a+b.a,0),mx=Math.max(...f.map(r=>r.a)),mn=Math.min(...f.map(r=>r.a));return Math.max(l*l*mx/(s*s),(s*s)/(l*l*mn))};
@@ -253,7 +422,9 @@ const rots=M.munis.map((m,i)=>{const el=mkRot('mun',`<span>${m.nome}</span><b cl
 let mostraRot={mun:false},sel=-1,depSel=null;
 const valorMun=i=>depSel?(depSel.get(i)||0):M.munis[i].total;
 const v3=new C.Vector3();
-function rotulos(){const W=innerWidth,H=innerHeight,ocup=['escala','frase','topo','placar'].map(id=>{const e=id==='topo'?document.querySelector('.topo'):$(id);if(!e||(id==='escala'&&!document.body.classList.contains('emendas')))return null;const r=e.getBoundingClientRect();return {l:r.left,r:r.right,t:r.top,b:r.bottom}}).filter(Boolean),modo=mostraRot.mun,nomes=modo==='nomes';
+let ZONAS=[];
+function mede_zonas(){ZONAS=['escala','frase','topo','placar'].map(id=>{const e=id==='topo'?document.querySelector('.topo'):$(id);if(!e||(id==='escala'&&!document.body.classList.contains('emendas')))return null;const r=e.getBoundingClientRect();return r.width?{l:r.left,r:r.right,t:r.top,b:r.bottom}:null}).filter(Boolean);acorda()}
+function rotulos(){const W=innerWidth,H=innerHeight,ocup=ZONAS.slice(),modo=mostraRot.mun,nomes=modo==='nomes';
   const fixo=r=>r.i===sel||r.i===PVH;
   const pri=r=>r.i===sel?1e16:r.i===PVH?1e15:nomes?M.munis[r.i].total+1:valorMun(r.i);
   const bate=bx=>ocup.some(o=>o.l<bx.r&&o.r>bx.l&&o.t<bx.b&&o.b>bx.t);
@@ -287,12 +458,12 @@ function limpaSel(){if(sel<0&&!depSel)return;sel=-1;depSel=null;relevo(relevoOn)
 
 /* ---------- o mosaico 2D ---------- */
 const plano=$('plano');let tiles2=[],tDes=-1,layout='';
-function monta2d(qual){layout=qual;const W=plano.clientWidth,H=plano.clientHeight,G=4,lista=qual==='atr'?ATR:CARDS;plano.querySelectorAll('.t').forEach(e=>e.remove());
+function monta2d(qual){layout=qual;const W=plano.clientWidth,H=plano.clientHeight,G=4,lista=qual==='atr'?ATR:qual==='tipos'?TIPOS:CARDS;plano.querySelectorAll('.t').forEach(e=>e.remove());
   tiles2=squarify(lista.map((o,i)=>({v:o.orc,i})),0,0,W,H).map((r,k)=>{const o=lista[r.i],el=document.createElement('div'),w=r.w-G,h=r.h-G;el.className='t'+(o.grupo?' grupo':'');el.dataset.k=k;
     el.style.cssText=`left:${r.x+G/2}px;top:${r.y+G/2}px;width:${Math.max(w,1)}px;height:${Math.max(h,1)}px`;
     const nm=nomeDe(o),pl=Math.max(...nm.split(' ').map(x=>x.length)),fn=Math.max(9,Math.min(21,w/8.5,h/4.4,(w-18)/(pl*.6))),fs=Math.max(9,fn*.66);
     const nome=w>40&&h>30,sub=nome&&w>80&&h>fn*2.4+fs*1.6+34;
-    const txtSub=qual==='atr'?`<b>${w>150?din(gapDe(o))+' abaixo do ritmo':'−'+din(gapDe(o))}</b>`:o.grupo?`${din(o.orc)} · toque para ver`:`${o.sigla} · ${din(o.orc)}`;
+    const txtSub=o.subTxt?o.subTxt:qual==='atr'?`<b>${w>150?din(gapDe(o))+' abaixo do ritmo':'−'+din(gapDe(o))}</b>`:o.grupo?`${din(o.orc)} · toque para ver`:`${o.sigla} · ${din(o.orc)}`;
     el.innerHTML=(nome?`<div class="txt"><b class="nm" style="font-size:${fn}px">${nm}</b>${sub?`<span class="sb" style="font-size:${fs}px">${txtSub}</span>`:''}</div>`:'')+
       `<div class="tq"><div class="fill"></div><div class="falta"></div><div class="tempo"></div><div class="pc num"></div></div>`;
     el.title=nm+' · '+din(o.orc);plano.appendChild(el);
@@ -321,7 +492,7 @@ let ini2=null;
 plano.addEventListener('pointerdown',e=>{ini2={x:e.clientX,y:e.clientY,t:tAno,arr:false,alvo:e.target.closest('.t')}});
 plano.addEventListener('pointermove',e=>{if(!ini2||ato!==1)return;const dx=e.clientX-ini2.x;if(!ini2.arr&&Math.abs(dx)>10&&Math.abs(dx)>Math.abs(e.clientY-ini2.y)){ini2.arr=true;plano.classList.add('vivo');plano.setPointerCapture(e.pointerId);cancelAnimationFrame(anoAnim);$('dica2').classList.remove('on')}
   if(ini2.arr)tAno=Math.max(0,Math.min(FIM,ini2.t+dx/plano.clientWidth*FIM*1.4))});
-plano.addEventListener('pointerup',()=>{plano.classList.remove('vivo');if(ini2&&!ini2.arr&&ini2.alvo){const o=tiles2[+ini2.alvo.dataset.k].o;o.grupo?painelGrupo(o):painelOrg(o)}ini2=null});
+plano.addEventListener('pointerup',()=>{plano.classList.remove('vivo');if(ini2&&!ini2.arr&&ini2.alvo){const o=tiles2[+ini2.alvo.dataset.k].o;o.tipo?painelTipo(o):o.grupo?painelGrupo(o):painelOrg(o)}ini2=null});
 let modo2d=true;
 const FONTE_ORC='Fonte: Portal da Transparência RO (COGES), posição 7/10/2026, compilado pelo painel Transparência Orçamentária · "abaixo do ritmo" é cálculo nosso sobre esses dados';
 const FONTE_MAPA='Fonte das emendas: OFIP (observatorioofip.com) e planilha "Emendas 2025–2026", compilados pelo painel Transparência Orçamentária · não é fonte oficial do governo · sem dados de 2022 · malha IBGE';
@@ -330,7 +501,7 @@ function mostraPlano(on){modo2d=on;if(on)document.body.classList.remove('emendas
 
 /* ---------- a narrativa ---------- */
 let tAno=0,anoAnim=null;
-function fraseNova(html){const f=$('frase');if(FOTO){f.innerHTML=html;return}f.classList.add('sai');setTimeout(()=>{f.innerHTML=html;f.classList.remove('sai')},350)}
+function fraseNova(html,espera=0){const f=$('frase');if(FOTO){f.innerHTML=html;return}f.classList.add('sai');clearTimeout(fraseNova.t);fraseNova.t=setTimeout(()=>{f.innerHTML=html;f.classList.remove('sai')},350+espera)}
 function placar(v,r){$('pv').textContent=v;$('pr').innerHTML=r}
 function grande(html){$('mes').innerHTML=html}
 function anoCorre(de,ate,ms){if(FOTO)ms=1;cancelAnimationFrame(anoAnim);plano.classList.add('vivo');const t0=performance.now();(function f(n){const p=Math.min(1,(n-t0)/ms);tAno=de+(ate-de)*ease(p);if(p<1)anoAnim=requestAnimationFrame(f);else plano.classList.remove('vivo')})(t0)}
@@ -341,7 +512,7 @@ const ATOS=[
   {f:'Cada quadrado é um órgão do Estado, do <em>tamanho do dinheiro</em> que tem para gastar em 2026.',
    ent(){mostraPlano(true);cancelAnimationFrame(anoAnim);tAno=FIM;trocaLayout('todos');plano.classList.remove('foco-atr');
      $('ctx').textContent='Rondônia · orçamento de 2026 · 81 órgãos';grande(`${din(D.despesa.orc)} <small>para gastar em 2026</small>`);placar('','');$('leg2').classList.remove('on')}},
-  {f:'O ano passou. Com <em>77% do tempo</em> corrido, o Estado deu destino a <em>67% do dinheiro</em>.',
+  {f:'O ano passou. Com <em>77% do tempo</em> corrido, o Estado já <em>comprometeu 67% do dinheiro</em> em contratos e pedidos.',
    ent(){mostraPlano(true);trocaLayout('todos');$('ctx').textContent='Rondônia · orçamento de 2026 · 81 órgãos';$('leg2').classList.add('on');$('leg2a').style.display='none';tCab=-1;
      anoCorre(0,FIM,7000);setTimeout(()=>{if(ato===1)$('dica2').classList.add('on')},7400);setTimeout(()=>$('dica2').classList.remove('on'),11000)}},
   {f:`Estes são os <em class="r">${ATR.length} órgãos</em> em que o gasto anda <em class="r">abaixo do ritmo do ano</em>.`,
@@ -349,15 +520,30 @@ const ATOS=[
      $('leg2').classList.add('on');$('leg2a').style.display='';
      grande(`<span style="color:var(--atraso)">${din(GAP)}</span> <small>abaixo do ritmo do ano</small>`);
      placar(`${ATR.length} de ${O.length} órgãos`,'gasto 10 pontos ou mais aquém da linha do ano · uma régua de leitura, não uma regra legal')}},
-  {f:'Esse dinheiro é de um Estado inteiro: <em>52 municípios</em>, que o novo governo recebe em <em>6 de janeiro</em>.',ponte:true,cam:{alvo:v(-2,0,-1),dist:150,az:-6,el:56},
-   ent(){mapa3d({rot:{mun:'nomes'}});plano.classList.remove('escondido');plano.classList.add('fora');cur={alvo:v(-2,0,-1),dist:120,az:0,el:84};
-     grande('');$('ctx').textContent='Rondônia · 52 municípios · 1,58 milhão de pessoas';placar('','')}},
-  {f:`O mapa agora mostra só <em>emendas parlamentares</em>: ${din(totMun)} liberados aos municípios desde 2019.`,cam:{alvo:v(4,0,-7),dist:158,az:-12,el:50},
-   ent(){mapa3d({relevo:true,tinta:1,rot:{mun:true}});grande(`${din(totMun)} <small>em emendas parlamentares · 2019 a 2026</small>`);
-     $('ctx').textContent='Mapa das emendas parlamentares · não é o orçamento do Estado';
-     placar(`${M.munis.filter(m=>m.total>0).length} municípios`,`altura e cor = quanto cada um recebeu · fora do mapa: ${din(M.varios.total)} sem município definido`)}},
-  {f:'Em <em>84 dias</em>, o que muda é decisão do novo governo.',cam:{alvo:v(-2,0,-10),dist:170,az:-26,el:42},
-   ent(){mapa3d({relevo:true,tinta:1,rot:{mun:true}});grande('');$('ctx').textContent='Rondônia · transição de governo · no mapa, as emendas 2019–2026';placar('84 dias','da indicação da equipe (14/10) até a posse (6/1/2027)')}},
+  {discreta:true,espera:2200,f:`Metade do dinheiro é <em>salário</em>. Para <em>obras e equipamentos</em> são <span style="white-space:nowrap">${din(OBRA.orc)}</span>, e só <em class="r">${br(OBRA.emp/OBRA.orc*100,0)}%</em> saiu do papel.`,
+   ent(){mostraPlano(true);plano.classList.add('escondido');cancelAnimationFrame(anoAnim);tAno=FIM;requestAnimationFrame(()=>mostraTipos(true));$('ctx').textContent='Rondônia · orçamento de 2026 · por tipo de gasto';
+     $('leg2').classList.remove('on');
+     grande(`${br(FOLHA.orc/D.despesa.orc*100,0)}% <small>do orçamento é salário: ${din(FOLHA.orc)} de ${din(D.despesa.orc)}</small>`);
+     placar(`Obras: ${br(OBRA.emp/OBRA.orc*100,0)}%`,`comprometido, contra ${br(D.despesa.emp/D.despesa.orc*100,0)}% do orçamento todo · pago ${din(OBRA.pag)} de ${din(OBRA.orc)}`)}},
+  {f:`O orçamento aprovado mudou no caminho: <em>${br(CR.qtd)} atos</em> no Diário Oficial mexeram em <em>${din(CR.total)}</em> em 2026.`,
+   ent(){mostraPlano(true);plano.classList.add('escondido');cancelAnimationFrame(anoAnim);$('leg2').classList.remove('on');requestAnimationFrame(()=>mostraMexido(true));
+     $('ctx').textContent='Rondônia · orçamento de 2026 · o que mudou depois de aprovado';grande(`${din(D.despesa.orc)} <small>era ${din(D.despesa.ini)} na lei aprovada</small>`);
+     placar(`${br(CR.qtd)} atos`,`decretos e leis de crédito publicados em 2026`);
+     $('fonte').textContent='Créditos adicionais: Diário Oficial do Estado (DIOF), 2026, compilados pelo painel Transparência Orçamentária · orçamento: Portal da Transparência RO, 7/10/2026'}},
+  {f:'Pelos números oficiais, o caixa cobre a dívida e a folha está longe do limite. O peso está nos <em class="r">R$ 2,1 bi de precatórios</em> vencidos.',
+   ent(){mostraPlano(true);plano.classList.add('escondido');cancelAnimationFrame(anoAnim);$('leg2').classList.remove('on');requestAnimationFrame(()=>mostraSaude(true));
+     $('ctx').textContent='Rondônia · a saúde do Estado';grande(`${din(RGF.caixa)} <small>em caixa, para ${din(RGF.dc)} de dívida</small>`);
+     placar(`${br(RGF.pct,1)}% da receita`,`vai para salários do Executivo · o limite da lei é 49%`);
+     $('fonte').textContent='RGF do Poder Executivo, 2º quadrimestre de 2026, Siconfi/Tesouro Nacional (consultado em 7/10/2026) · renúncia: SEFIN-RO/SIDIEC, até 31/8/2026'}},
+  {f:`Esse dinheiro é de um Estado inteiro, de <em>52 municípios</em>. No mapa, só as <em>emendas parlamentares</em>: ${din(totMun)} desde 2019.`,ponte:true,cam:{alvo:v(4,0,-7),dist:158,az:-12,el:50},
+   ent(){mapa3d({relevo:true,tinta:1,rot:{mun:true}});plano.classList.remove('escondido');plano.classList.add('fora');cur={alvo:v(-2,0,-1),dist:120,az:0,el:84};
+     grande(`${din(totMun)} <small>em emendas parlamentares · 2019 a 2026</small>`);
+     placar('1,58 milhão de pessoas',`52 municípios · 47% das casas com água de rede, 27% das urbanas com esgoto`);
+     $('fonte').textContent=FONTE_MAPA+' · população: Censo IBGE 2022 · saneamento: indicadores do plano de transição'}},
+  {f:'',virada:true,
+   ent(){mostraPlano(true);plano.classList.add('escondido');cancelAnimationFrame(anoAnim);$('leg2').classList.remove('on');requestAnimationFrame(()=>mostraVirada(true));
+     $('ctx').textContent='';grande('');placar('','');
+     $('fonte').textContent='Ponto de partida: Portal da Transparência RO, 7/10/2026 · depois de hoje: cenário com o ritmo médio de 2026 · prazos: Lei estadual 3.139 e plano de transição · cargos: LC 965/2017'}},
   {f:'Agora é com você: toque num <em>município</em> para ver quais deputados mandaram emendas e quanto.',cam:{alvo:v(2,0,-6),dist:165,az:0,el:56},
    ent(){mapa3d({relevo:true,tinta:1,rot:{mun:true}});grande(`${din(totMun)} <small>em emendas parlamentares · 2019 a 2026</small>`);
      $('ctx').textContent='Explorar o mapa das emendas · arraste para girar · role ou pince para aproximar';
@@ -366,8 +552,8 @@ const ATOS=[
 let ato=-1,tocou=false;
 $('stories').innerHTML=ATOS.map((a,i)=>`<button aria-label="Etapa ${i+1}" data-a="${i}"><i><b></b></i></button>`).join('');
 $('stories').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(b)vaiAto(+b.dataset.a)});
-function vaiAto(n){const ant=ato;ato=Math.max(0,Math.min(ATOS.length-1,n));const a=ATOS[ato];fraseNova(a.f);$('regua').classList.toggle('on',ato===1);fechaPainel();
-  a.ent();if(a.cam)vaiCam(a.cam,a.ponte?3.2:(ant>=3?2.4:.01));
+function vaiAto(n){const ant=ato;clearTimeout(vaiAto.z);vaiAto.z=setTimeout(mede_zonas,900);mostraTipos(false);mostraVirada(false);mostraMexido(false);mostraSaude(false);$('leg2p').style.display='none';ato=Math.max(0,Math.min(ATOS.length-1,n));const a=ATOS[ato];$('frase').classList.toggle('discreta',!!a.discreta);fraseNova(a.f,a.espera||0);$('regua').classList.toggle('on',ato===1);fechaPainel();
+  a.ent();if(a.cam)vaiCam(a.cam,a.ponte?3.2:(ant>=0&&ATOS[ant]&&ATOS[ant].cam?2.4:.01));
   document.querySelectorAll('#stories button').forEach((b,i)=>b.classList.toggle('feito',i<=ato));
   $('pos').textContent=`${ato+1} de ${ATOS.length}`;$('ant').disabled=ato===0;$('proxT').textContent=ato===ATOS.length-1?'Do início':'Próximo'}
 function avanca(d){if(!tocou){tocou=true;$('prox').classList.remove('chama')}vaiAto(d>0&&ato===ATOS.length-1?0:ato+d)}
@@ -396,7 +582,7 @@ function toca(x,y){if(modo2d)return;ptr.set(x/innerWidth*2-1,-(y/innerHeight)*2+
 function abrePainel(html){$('pc').innerHTML=html;$('painel').classList.add('on');$('painel').scrollTop=0}
 function fechaPainel(){$('painel').classList.remove('on');limpaSel()}
 $('px').onclick=fechaPainel;
-const linhas=(itens,mx,larga)=>`<div class="linhas">${itens.map(([rt,val,cor])=>`<div class="linha${larga?' larga':''}"><span class="rt">${rt}</span>${larga?'':`<span class="br"><i style="width:${Math.max(0,val)/mx*100}%;${cor?'background:'+cor:''}"></i></span>`}<span class="v">${din(val)}</span>${larga?`<span class="br"><i style="width:${Math.max(0,val)/mx*100}%;${cor?'background:'+cor:''}"></i></span>`:''}</div>`).join('')}</div>`;
+const linhas=(itens,mx,larga,fmt=din)=>`<div class="linhas">${itens.map(([rt,val,cor])=>`<div class="linha${larga?' larga':''}"><span class="rt">${rt}</span>${larga?'':`<span class="br"><i style="width:${Math.max(0,val)/mx*100}%;${cor?'background:'+cor:''}"></i></span>`}<span class="v">${fmt(val)}</span>${larga?`<span class="br"><i style="width:${Math.max(0,val)/mx*100}%;${cor?'background:'+cor:''}"></i></span>`:''}</div>`).join('')}</div>`;
 function painelMun(i){const m=M.munis[i],anos=[2019,2020,2021,2023,2024,2025,2026].map(a=>[String(a),m.anos[a]||0]);
   abrePainel(`<div class="tipo">Município · <button data-lista style="all:unset;cursor:pointer;color:var(--agua);font-weight:700;letter-spacing:.1em">ver os 52</button></div><h3>${m.nome}</h3><div class="sub">Emendas parlamentares estaduais liberadas, 2019 a 2026</div><div class="gde num">${din(m.total)}</div><div class="sub">${br(m.n)} ofícios</div>
   ${m.deps.length?`<h4>Deputados que mandaram · toque num nome</h4>${linhas(m.deps.slice(0,12).map(d=>[`<button data-dep="${d[0]}">${d[0]}</button>`,d[1]]),m.deps[0][1],true)}`:''}
@@ -415,19 +601,128 @@ $('ver52').onclick=painelLista;
 $('pc').addEventListener('click',e=>{if(e.target.closest('[data-lista]'))return painelLista();const mu=e.target.closest('[data-mun]');if(mu)painelMun(+mu.dataset.mun);const b=e.target.closest('[data-dep]');if(b)painelDep(b.dataset.dep);const o=e.target.closest('[data-org]');if(o)painelOrg(O[+o.dataset.org])});
 function painelOrg(o){const p=o.pag/o.orc,c=o.emp/o.orc,a=atrasado(o),meses=o.mes_emp.slice(0,10).map((x,k)=>[MESES[k].slice(0,3),x]);
   abrePainel(`<div class="tipo">${a?'<span style="color:var(--atraso)">Abaixo do ritmo do ano</span>':'Órgão'}</div><h3>${nomeDe(o)}</h3><div class="sub">${o.nome} · ${o.sigla}</div><div class="gde num">${din(o.orc)}</div><div class="sub">para gastar em 2026 (orçamento atualizado)</div>
-  <dl><dt>Já tem destino</dt><dd>${din(o.emp)} · ${br(c*100,0)}%</dd><dt>Já pago</dt><dd>${din(o.pag)} · ${br(p*100,0)}%</dd><dt>Ainda sem destino</dt><dd>${din(o.orc-o.emp)}</dd>
+  ${tresEtapas(o.orc,o.emp,o.pag)}<dl>
   ${a?`<dt class="r">Abaixo do ritmo</dt><dd class="r">${din(gapDe(o))}</dd>`:''}${o.cargos?`<dt>Cargos de nomeação</dt><dd>${br(o.cargos.qtd)}</dd>`:''}${o.emendas?`<dt>Emendas recebidas 2019–26</dt><dd>${din(o.emendas.valor)}</dd>`:''}</dl>
-  <h4>Destino dado, mês a mês</h4>${linhas(meses,Math.max(1,...meses.map(x=>x[1])))}
-  <div class="nota">Destino dado = empenhado. Valores negativos são cancelamentos no mês.</div>`)}
+  <h4>Comprometido, mês a mês</h4>${linhas(meses,Math.max(1,...meses.map(x=>x[1])))}
+  <div class="nota">Comprometido = empenhado: contrato ou pedido assinado. Valores negativos são cancelamentos no mês.</div>`)}
+function montaTipos(){const mx=TIPOS[0].orc;
+  const cab=`<div class="tr cab"><div>Tipo de gasto</div><div>Orçamento 2026</div>
+    <div class="cl"><span><i class="pg"></i>pago</span><span><i class="cp"></i>comprometido, a pagar</span><span><i class="lv"></i>livre, sem contrato</span><span><i class="an"></i>onde o ano está (77%)</span></div><div class="dir">Comprometido</div></div>`;
+  $('tipos').innerHTML=cab+TIPOS.map((t,i)=>{const c=t.emp/t.orc,res=t.nome.startsWith('Reserva'),al=t===OBRA;
+    const sub=al?`${din(t.orc-t.emp)} ainda no papel`:t.subTxt.replace(/<[^>]+>/g,'');
+    const det=res?'não é gasta diretamente: cobre imprevistos e serve para remanejar':
+      `<b>${din(t.pag)}</b> pago · <b>${din(t.emp-t.pag)}</b> a pagar · <b>${din(t.orc-t.emp)}</b> livre`;
+    return `<div class="tr${al?' alerta':''}${res?' neutro':''}"><div class="n"><b>${t.nome}</b><span>${sub}</span></div>
+      <div class="v">${din(t.orc)}<small>${br(t.orc/D.despesa.orc*100,0)}% do orçamento</small></div>
+      <div class="col"><div class="trilho"><div class="barra" data-w="${t.orc/mx*100}" style="transition-delay:${i*.12}s"><div class="agua" data-w="${c*100}" style="transition-delay:${.6+i*.12}s"></div><div class="pagoB" data-w="${t.pag/t.orc*100}" style="transition-delay:${.9+i*.12}s"></div><div class="ritmo"></div></div></div><div class="det num">${det}</div></div>
+      <div class="p">${res?'<span class="na">não se aplica</span>':br(c*100,0)+'%'}${res?'':`<small>${br(t.pag/t.orc*100,0)}% já pago</small>`}</div></div>`}).join('')}
+/* etapa 5: o orçamento mexido (créditos adicionais no Diário Oficial) */
+function montaMexido(){const pm=Object.entries(CR.por_mes),mx=Math.max(...pm.map(x=>x[1])),pt=CR.por_tipo;
+  $('mexido').innerHTML=`<div class="esq">
+    <div><div class="k">Dinheiro novo</div><div class="gn">${din(CR.novo)}</div><div class="tx">que não estava na lei aprovada, somando os atos do Diário Oficial</div>
+      <div class="chips"><span>sobra de 2025 <b>${din(pt['superávit financeiro']||0)}</b></span><span>empréstimo <b>${din(pt['operação de crédito']||0)}</b></span><span>arrecadação acima do previsto <b>${din(pt['excesso de arrecadação']||0)}</b></span></div></div>
+    <div><div class="k">Remanejado</div><div class="gn">${din(CR.remanejado)}</div><div class="tx">tirados de uma despesa e postos em outra, sem dinheiro novo</div></div></div>
+  <div class="dir"><div class="k">Quanto foi mexido a cada mês</div>
+    <div class="meses">${pm.map(([m,v],i)=>`<div class="mes"><b>${v>=1e9?br(v/1e9,2)+' bi':br(v/1e6,0)+' mi'}</b><i data-h="${v/mx*100}" style="transition-delay:${i*.06}s"></i></div>`).join('')}</div>
+    <div><div class="rot3">${pm.map(([m])=>`<span>${MESES[+m.slice(5)-1].slice(0,3)}</span>`).join('')}</div>
+      <div class="top"><b>Quem mais recebeu:</b>${CR.top.slice(0,5).map(t=>`<span>${({'RS/SEFIN':'Encargos do Estado','DER/RO':'Estradas'})[t.sigla]||NOME[t.sigla]||t.orgao} <b>${din(t.valor)}</b></span>`).join('')}</div></div></div>`}
+function mostraMexido(on){const el=$('mexido');el.classList.toggle('on',on);el.querySelectorAll('[data-h]').forEach(i=>i.style.height=on?i.dataset.h+'%':'0')}
+
+/* etapa 6: a saúde do Estado (RGF do Executivo, 2º quadrimestre de 2026, Siconfi) */
+function montaSaude(){const cx=150,cy=150,R=118,S=55,pol=(p,r=R)=>{const a=Math.PI*(1-p/S);return [cx+r*Math.cos(a),cy-r*Math.sin(a)]};
+  const arco=(a,b,cor,w=22)=>{const [x0,y0]=pol(a),[x1,y1]=pol(b);return `<path d="M${x0} ${y0} A${R} ${R} 0 0 1 ${x1} ${y1}" stroke="${cor}" stroke-width="${w}" fill="none"/>`};
+  const tk=(p,t)=>{const [x,y]=pol(p,R+20);return `<text x="${x}" y="${y}" font-size="11" font-weight="700" text-anchor="middle" fill="#15171b">${t}</text>`};
+  const [nx,ny]=pol(RGF.pct,R-30),folga=(RGF.alerta-RGF.pct)/100*RGF.rcl,mxA=Math.max(RGF.caixa,RGF.dc);
+  const ser=REN.serie.filter(x=>x.ano<2026),ult=[...ser.map(x=>[String(x.ano),x.valor,'']),['25*',REN.anterior,'cmp'],['26*',REN.ano,'ult']],mxR=Math.max(...ult.map(x=>x[1]));
+  $('saude').innerHTML=`<div><div class="k">Salários do Executivo</div>
+    <svg viewBox="0 0 300 175">${arco(0,RGF.alerta,'#cfe3e6')}${arco(RGF.alerta,RGF.prud,'#f0d48a')}${arco(RGF.prud,RGF.max,'#e8a06f')}${arco(RGF.max,S,'#c4451c')}
+      ${tk(RGF.alerta,'44%')}${tk(RGF.max,'49%')}<line x1="${cx}" y1="${cy}" x2="${nx}" y2="${ny}" stroke="#15171b" stroke-width="5" stroke-linecap="round"/><circle cx="${cx}" cy="${cy}" r="9" fill="#15171b"/>
+      <text x="${cx}" y="${cy-34}" font-size="34" font-weight="800" text-anchor="middle" fill="#15171b" letter-spacing="-1.5">${br(RGF.pct,1)}%</text></svg>
+    <div class="tx">da receita corrente líquida vai para a folha. O alerta da lei começa em <b>44%</b> e o limite é <b>49%</b>: há folga de <b>${din(folga)} por ano</b>.</div></div>
+  <div><div class="k">Caixa × dívida</div><div class="bal">
+    <div class="l"><span>Em caixa</span><em>${din(RGF.caixa)}</em><div class="b"><i data-w="${RGF.caixa/mxA*100}" style="background:var(--agua)"></i></div></div>
+    <div class="l"><span>Dívida</span><em>${din(RGF.dc)}</em><div class="b"><i data-w="${RGF.dc/mxA*100}" style="background:#15171b"></i><i data-w="${RGF.prec/mxA*100}" style="background:var(--atraso);transition-delay:.4s"></i></div></div></div>
+    <div class="tx" style="margin-top:12px">Dívida líquida: <b>${din(RGF.dcl)}</b>, o caixa cobre a dívida. Dentro dela, em vermelho, <b style="color:var(--atraso)">${din(RGF.prec)} de precatórios vencidos</b>. Boa parte do caixa é carimbada (previdência, saúde, educação).</div></div>
+  <div><div class="k">Imposto que deixou de entrar</div><div class="gn">${din(REN.ano)}</div><div class="tx">de ICMS em incentivos a empresas, até agosto: <b>+${br((REN.ano/REN.anterior-1)*100,1)}%</b> sobre o mesmo período de 2025.</div>
+    <div class="anos">${ult.map(([a,v,c])=>`<div class="${c}"><b>${br(v/1e6,0)}</b><i data-h="${v/mxR*100}"></i></div>`).join('')}</div>
+    <div class="anosr">${ult.map(([a])=>`<span>${a.replace('20','')}</span>`).join('')}</div><div class="tx" style="font-size:.72rem;margin-top:4px">R$ milhões por ano inteiro · <b>*25 e 26: só de janeiro a agosto</b>, para comparar igual</div></div>`}
+function mostraSaude(on){const el=$('saude');el.classList.toggle('on',on);el.querySelectorAll('[data-w]').forEach(i=>i.style.width=on?i.dataset.w+'%':'0');el.querySelectorAll('[data-h]').forEach(i=>i.style.height=on?i.dataset.h+'%':'0')}
+
+/* a virada: o tempo vai de 7/10 (dado oficial) a 6/1; depois de hoje é cenário com o ritmo médio de 2026 */
+const VD={ini:new Date(2026,9,7),posse:new Date(2027,0,6),dias:91,fim:85,loa:69,equipe:7,
+  orc:D.despesa.orc,emp0:D.despesa.emp,pag0:D.despesa.pag,ep:D.despesa.emp/280,pp:D.despesa.pag/280};
+let vT=0,vAnim=null,vRel=null,vCruzou=false;
+const vEstado=t=>{const tt=Math.min(t,VD.fim),emp=Math.min(VD.orc,VD.emp0+VD.ep*tt),pag=Math.min(emp,VD.pag0+VD.pp*tt);return {emp,pag,ap:emp-pag,lv:VD.orc-emp}};
+const vData=t=>{const d=new Date(VD.ini.getTime()+Math.round(t)*864e5);return d.getDate()+' de '+MESES[d.getMonth()].toLowerCase()};
+const VF=vEstado(VD.fim);
+function montaVirada(){
+  $('virada').innerHTML=`
+  <div class="lado"><div class="rot2" id="vFalta"></div><div class="quando" id="vQuando">7 de outubro</div><div class="selo2" id="vSelo"></div></div>
+  <div class="novo det"><div class="painel inline" id="vDet"></div></div>
+  <div class="lado meio"><div class="orc">Orçamento de 2026: <b>${din(VD.orc)}</b></div>
+    <div class="bar" id="vBar"><div class="s-pg" id="vPg"></div><div class="s-ap" id="vAp"></div><div class="s-lv" id="vLv"></div></div>
+    <div class="vals"><div><b id="vVpg"></b><span><i style="background:#0f6474"></i>pago</span></div>
+      <div class="v-ap"><b id="vVap"></b><span><i style="background:#8fc0c8"></i>a pagar</span></div>
+      <div><b id="vVlv"></b><span><i style="background:var(--papel2);box-shadow:inset 0 0 0 1px rgba(21,23,27,.2)"></i>livre</span></div></div></div>
+  <div class="chega">
+    <div class="it" id="vRes"><small>Contas que passam para 2027</small><b id="vResV">${din(VF.ap)}</b><p>no cenário, em 31/12. Hoje são <em>${din(VD.emp0-VD.pag0)}</em> (dado oficial).</p><span class="mais">de quais órgãos →</span></div>
+    <div class="it on" id="vCar"><small>A equipe que ele nomeia</small><b>${br(D.maquina.cargos)} cargos</b><p>de R$ 1.320 a R$ 32.462 por mês, conforme o nível.</p><span class="mais">quanto ganha cada nível →</span></div></div>
+  <div class="tempo3"><div class="prog"><i id="vProg"></i></div><button class="rever" id="vPlay">↺ rever</button></div>`;
+  $('vPlay').onclick=()=>vToca(0);$('vRes').onclick=painelRestos;$('vCar').onclick=painelCargos}
+function setVT(t){vT=t;const e=vEstado(t),o=VD.orc,fechou=t>=VD.fim;
+  $('vQuando').textContent=t>=VD.dias-.01?'6 de janeiro':vData(t);
+  const sl=$('vSelo');sl.className='selo2'+(t>.01?' cen':'');sl.textContent=t<.01?'hoje · dado oficial':fechou?'31/12 · o ano fecha · cenário':'cenário: se o ritmo de 2026 continuar';
+  $('vPg').style.width=e.pag/o*100+'%';$('vAp').style.width=e.ap/o*100+'%';$('vLv').style.width=e.lv/o*100+'%';
+  $('vVpg').textContent=din(e.pag);$('vVap').textContent=din(e.ap);$('vVlv').textContent=fechou?'expira':din(e.lv);
+  $('virada').classList.toggle('fechou',fechou);
+  if(fechou&&!vCruzou){vCruzou=true;vCruza()}else if(!fechou&&vCruzou){vCruzou=false;$('vRes').classList.remove('on')}
+  $('vProg').style.width=t/VD.dias*100+'%'}
+function vCruza(){const res=$('vRes');if(FOTO){res.classList.add('on');return}
+  const v=$('virada').getBoundingClientRect(),a=$('vAp').getBoundingClientRect(),b=$('vResV').getBoundingClientRect();
+  const sl=document.createElement('div');sl.className='slab';Object.assign(sl.style,{left:a.left-v.left+'px',top:a.top-v.top+'px',width:Math.max(24,a.width)+'px',height:a.height+'px'});$('virada').appendChild(sl);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{sl.style.transform=`translate(${b.left-a.left}px,${b.top-a.top}px) scale(${Math.max(.3,b.width/Math.max(24,a.width))},${Math.max(.3,b.height/a.height)})`}));
+  setTimeout(()=>{res.classList.add('on');sl.style.opacity=0},1000);setTimeout(()=>sl.remove(),1500)}
+function vToca(de){cancelAnimationFrame(vAnim);if(FOTO){setVT(VD.dias);return}const t0=performance.now(),seg=[[de,VD.fim,2200],[VD.fim,VD.fim,1300],[VD.fim,VD.dias,500]].filter(s=>s[1]>=de);
+  let k=0,ts=t0;(function f(n){const [a,b,ms]=seg[k];const p=Math.min(1,(n-ts)/ms);setVT(a+(b-a)*ease(p));if(p>=1){k++;ts=n;if(k>=seg.length)return}vAnim=requestAnimationFrame(f)})(t0)}
+function relogio(){const d=Math.max(0,Math.ceil((VD.posse-Date.now())/864e5));$('vFalta').textContent=d+' dias até a posse'}
+function mostraVirada(on){$('virada').classList.toggle('on',on);clearInterval(vRel);cancelAnimationFrame(vAnim);
+  if(on){relogio();vRel=setInterval(relogio,60000);painelRestos();vCruzou=false;$('vRes').classList.remove('on');setVT(0);if(FOTO)setVT(VD.dias);else setTimeout(()=>{if(ATOS[ato]&&ATOS[ato].virada)vToca(0)},600)}}
+function detalhe(html,qual){if($('virada').classList.contains('on')){$('vDet').innerHTML=html;$('vDet').scrollTop=0;['vRes','vCar'].forEach(id=>$(id).classList.toggle('sel',id===qual))}else abrePainel(html)}
+function painelRestos(){const l=O.map(o=>[o,o.emp-o.pag]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  detalhe(`<div class="tipo">Contas que passam de ano</div><h3>Quem tem contas a pagar</h3><div class="sub">Comprometido e ainda não pago, por órgão, em 7/10 (dado oficial). O que sobrar em 31/12 vira restos a pagar de 2027, e a lei exige caixa para cobrir (LRF, art. 42).</div><div class="gde num">${din(VD.emp0-VD.pag0)}</div><div class="sub">hoje · no cenário, ${din(VF.ap)} em 31/12</div>
+  ${linhas(l.slice(0,15).map(([o,v])=>[`<button data-org="${O.indexOf(o)}">${nomeDe(o)}</button>`,v]),l[0][1],true)}`,'vRes')}
+function painelCargos(){const cnt={},val={};D.maquina.lista.forEach(r=>{cnt[r[3]]=(cnt[r[3]]||0)+r[2];if(!(r[3] in val))val[r[3]]=r[4]});
+  const niveis=[...new Set(['SUBSÍDIO II',...D.maquina.tabela.map(t=>t[0]).reverse()])].filter(k=>cnt[k]).map(k=>[k,val[k],cnt[k]]);
+  const mx=Math.max(...niveis.map(n=>n[2])),rs=v=>'R$ '+br(v,2);
+  detalhe(`<div class="tipo">A equipe que ele nomeia</div><h3>Quanto ganha cada nível</h3><div class="sub">${br(D.maquina.cargos)} cargos de nomeação previstos em lei (LC 965/2017). O valor é o de cada nível na tabela CDS; secretários recebem subsídio. Quantidade prevista não é quantos estão ocupados.</div>
+  <div class="linhas">${niveis.map(([k,v,n])=>`<div class="linha larga"><span class="rt"><b>${k==='SUBSÍDIO II'?'Secretário (subsídio)':k}</b> · ${rs(v)} por mês</span><span class="v">${br(n)} cargos</span><span class="br"><i style="width:${n/mx*100}%"></i></span></div>`).join('')}</div>
+  <div class="nota">Custo de referência se todos os cargos estivessem ocupados: ${din(D.maquina.custo_ref)} por mês. Tabela CDS: LC 965/2017, Anexo I, redação da LC 1.180/2023. Fonte: consulta de cargos do plano de transição, até 3/10/2026; a contagem por nível inclui CAERD e SOPH.</div>`,'vCar')}
+function painelLOA(){abrePainel(`<div class="tipo">15 de dezembro</div><h3>O orçamento de 2027</h3><div class="sub">A lei do orçamento do primeiro ano do novo governo (LOA 2027) é feita pelo governo atual e votada pela Assembleia até 15/12, antes da posse.</div>
+  <h4>O que isso quer dizer</h4><div class="sub">O novo governo começa executando um orçamento que não escreveu. As prioridades dele só entram por dois caminhos:</div>
+  <dl><dt>Antes de 15/12</dt><dd>emendas pela base na Assembleia</dd><dt>Depois da posse</dt><dd>remanejamentos e créditos</dd></dl>
+  <div class="nota">Fonte: calendário e matriz de riscos do plano de transição (risco R5: "LOA 2027 aprovada sem as prioridades do novo governo").</div>`)}
+function mostraTipos(on){const el=$('tipos');el.classList.toggle('on',on);
+  el.querySelectorAll('[data-w]').forEach(b=>{b.style.width=on?b.dataset.w+'%':'0'})}
+
+function tresEtapas(orc,emp,pag){const P=Math.max(0,pag/orc),E=Math.max(0,emp/orc);
+  return `<div class="etapas"><div class="eb3"><i class="pg" style="width:${P*100}%"></i><i class="cp" style="width:${Math.max(0,E-P)*100}%"></i></div>
+  <div class="el3"><div><b class="num">${din(pag)}</b><span><i class="pg"></i>Pago · ${br(P*100,0)}%</span><small>o dinheiro já saiu</small></div>
+  <div><b class="num">${din(emp-pag)}</b><span><i class="cp"></i>Comprometido, a pagar</span><small>contrato assinado, falta pagar</small></div>
+  <div><b class="num">${din(orc-emp)}</b><span><i class="lv"></i>Livre · ${br((1-E)*100,0)}%</span><small>sem contrato ainda</small></div></div>
+  <div class="nota">Comprometido no total (pago + a pagar): <b>${din(emp)} · ${br(E*100,0)}%</b>. O ano já correu 77%.</div></div>`}
+function painelTipo(t){const c=t.emp/t.orc,p=t.pag/t.orc;
+  abrePainel(`<div class="tipo">Tipo de gasto · 2026</div><h3>${t.nome}</h3><div class="sub">${t.expl}</div><div class="gde num">${din(t.orc)}</div><div class="sub">${br(t.orc/D.despesa.orc*100,1)}% do orçamento do Estado</div>
+  ${tresEtapas(t.orc,t.emp,t.pag)}
+  <div class="nota">Fonte: Portal da Transparência RO, despesa por grupo de natureza, posição 7/10/2026. Ritmo do ano: 77%.</div>`)}
 function painelGrupo(g){const l=g.membros.slice().sort((a,b)=>b.orc-a.orc);
-  abrePainel(`<div class="tipo">Os órgãos menores</div><h3>${g.nome}</h3><div class="sub">Somados, ${din(g.orc)}. Cada um com quanto já tem destino. Toque num nome.</div>
+  abrePainel(`<div class="tipo">Os órgãos menores</div><h3>${g.nome}</h3><div class="sub">Somados, ${din(g.orc)}. Cada um com quanto já está comprometido. Toque num nome.</div>
   ${linhas(l.map(o=>[`<button data-org="${O.indexOf(o)}" style="${atrasado(o)?'color:var(--atraso)':''}">${o.nome}</button> <span style="color:var(--cinza)">${br(o.emp/o.orc*100,0)}%</span>`,o.orc,atrasado(o)?'var(--atraso)':'']),l[0].orc,true)}`)}
 
 /* ---------- laço: no 2D não desenha 3D; no 3D só desenha quando algo se mexe ---------- */
 let ult=performance.now(),tCab=-1;
 const quando=t=>t>=FIM-.01?'7 de outubro':MESES[Math.min(11,Math.floor(t))];
 function cabeca2d(){if(ato!==1||Math.abs(tAno-tCab)<1e-4)return;tCab=tAno;let sc=0,sp=0;O.forEach(o=>{sc+=acum(o.mes_emp,tAno);sp+=acum(o.mes_pag,tAno)});
-  grande(`${din(sc)} <small>já com destino, de ${din(D.despesa.orc)}</small>`);placar(quando(tAno),`${br(tAno/12*100,0)}% do ano · pago ${din(sp)}`);
+  grande(`${din(sc)} <small>comprometidos em contratos, de ${din(D.despesa.orc)}</small>`);placar(quando(tAno),`${br(tAno/12*100,0)}% do ano · pago ${din(sp)}`);
   $('rf').style.width=(tAno/12*100)+'%';$('rb').style.left=(tAno/12*100)+'%'}
 function laco(agora){const dt=Math.min(.05,(agora-ult)/1000);ult=agora;requestAnimationFrame(laco);
   if(modo2d){desenha2d(tAno);cabeca2d();return}
@@ -438,9 +733,9 @@ function laco(agora){const dt=Math.min(.05,(agora-ult)/1000);ult=agora;requestAn
     const c=u.mesh.material.color,a=u.corAlvo,dc=Math.abs(c.r-a.r)+Math.abs(c.g-a.g)+Math.abs(c.b-a.b);if(dc>.002){c.lerp(a,Math.min(1,dt*3));mexeu=true}else if(dc){c.copy(a);mexeu=true}});
   if(!mexeu&&sujo<=0)return;if(sujo>0)sujo--;
   aplicaCam();rotulos();ren.render(cena,cam)}
-let rz2;addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();ren.setSize(innerWidth,innerHeight);rots.forEach(r=>{r.f=r.m=r.u=null});acorda();clearTimeout(rz2);rz2=setTimeout(()=>{monta2d(layout||'todos');desenha2d(tAno)},120)});
-(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{monta2d('todos');vaiAto((parseInt(location.hash.slice(1))||1)-1);requestAnimationFrame(laco);
-  if(FOTO){const q=new URLSearchParams(location.search);if(q.get('mun'))painelMun(+q.get('mun'));if(q.get('lista'))painelLista();if(q.get('org'))painelOrg(O.find(o=>o.sigla===q.get('org')))}});
+let rz2;addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();ren.setSize(innerWidth,innerHeight);rots.forEach(r=>{r.f=r.m=r.u=null});acorda();setTimeout(mede_zonas,150);clearTimeout(rz2);rz2=setTimeout(()=>{monta2d(layout||'todos');desenha2d(tAno)},120)});
+(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{montaTipos();montaVirada();montaMexido();montaSaude();monta2d('todos');vaiAto((parseInt(location.hash.slice(1))||1)-1);requestAnimationFrame(laco);
+  if(FOTO){const q=new URLSearchParams(location.search);if(q.get('mun'))painelMun(+q.get('mun'));if(q.get('lista'))painelLista();if(q.get('tipo'))painelTipo(TIPOS[+q.get('tipo')]);if(q.get('restos'))painelRestos();if(q.get('cargos'))painelCargos();if(q.get('org'))painelOrg(O.find(o=>o.sigla===q.get('org')))}});
 </script>
 </body>
 </html>
