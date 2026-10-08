@@ -268,11 +268,11 @@ if os.path.isdir(src):
 site = os.path.join(AQUI, "site")
 os.makedirs(site, exist_ok=True)
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
-for origem, destino in [("rondonia.html", "index.html"), ("a-o-ano-passando.html", "a-o-ano-passando.html")]:
+for origem, destino in [("rondonia.html", "numeros.html"), ("a-o-ano-passando.html", "a-o-ano-passando.html")]:
     with open(os.path.join(AQUI, "esbocos", origem), encoding="utf-8") as f:
         h = f.read()
     h = h.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + NOINDEX, 1)
-    h = h.replace("href=\"rondonia.html\"", "href=\"index.html\"")
+    h = h.replace("href=\"rondonia.html\"", "href=\"numeros.html\"")
     with open(os.path.join(site, destino), "w", encoding="utf-8") as f:
         f.write(h)
     print("site/" + destino, round(len(h) / 1024), "KB")

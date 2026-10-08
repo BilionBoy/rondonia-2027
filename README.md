@@ -4,11 +4,11 @@ Painel sobre o orçamento de Rondônia e a transição de governo, em três abas
 
 | Aba | Arquivo no ar | O que mostra |
 |---|---|---|
-| Rondônia em números | `site/index.html` | o orçamento de 2026 em 9 etapas |
+| Rondônia em números | `site/numeros.html` | o orçamento de 2026 em 9 etapas |
 | O que não aparece | `site/nao-aparece.html` | onde o dinheiro sai do retrato público, em 5 telas |
 | Convênios da SEAS | `site/convenios.html` | convênios e termos de fomento da SEAS, 2019–2026 |
 
-**O link para mandar é `/painel.html`**: ele junta as três abas. A raiz (`/`) abre só a primeira.
+**A raiz do site (`/`) abre o painel com as três abas.** `site/index.html` e `site/painel.html` são o mesmo arquivo.
 
 - **No ar:** a pasta `site/`, publicada na Vercel com Root Directory = `site`. As páginas levam `noindex`.
 - **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py`.

@@ -560,8 +560,10 @@ def main():
         h = h.replace("/*__DADOS_S3__*/null", payload).replace("/*__FONTES__*/", css)
         (RAIZ / "esbocos" / nome).write_text(h, encoding="utf-8")
         site = h.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + NOINDEX, 1)
-        site = site.replace('src="rondonia.html"', 'src="index.html"').replace('href="rondonia.html"', 'href="index.html"')
+        site = site.replace('src="rondonia.html"', 'src="numeros.html"').replace('href="rondonia.html"', 'href="numeros.html"')
         (RAIZ / "site" / nome).write_text(site, encoding="utf-8")
+        if nome == "painel.html":  # a raiz do site abre o painel com as três abas
+            (RAIZ / "site" / "index.html").write_text(site, encoding="utf-8")
         print("esbocos/ e site/" + nome, round(len(h) / 1024), "KB")
 
 
