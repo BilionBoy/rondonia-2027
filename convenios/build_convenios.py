@@ -22,16 +22,17 @@ def main():
     for r in bruto["dados"]:
         regs.append({"tipo": r["tipo"], "ano": r["ano_consulta"], "numero": r["numero"], "processo_sei": r["processo_sei"],
                      "assinatura": r["assinatura"], "contratado": r["contratado"], "valor": r["valor"], "tem_aditivo": r["tem_aditivo"],
-                     "objeto": r["objeto"], "rescisao": bool(re.search(r"RESCIS", r["numero"], re.I))})
+                     "objeto": r["objeto"], "rescisao": bool(re.search(r"RESCIS", r["numero"], re.I)),
+                     "link": (r.get("sei_docs") or [{}])[0].get("url") or r.get("detalhe") or PORTAL, "cnpj": r.get("cnpj", "")})
     linhas = [[r["ano"], r["tipo"], r["numero"], r["processo_sei"], r["assinatura"], r["contratado"], r["valor"] or 0,
-               r["tem_aditivo"], r["objeto"], PORTAL] for r in sorted(regs, key=lambda x: (-x["ano"], -(x["valor"] or 0)))]
+               r["tem_aditivo"], r["objeto"], r["link"]] for r in sorted(regs, key=lambda x: (-x["ano"], -(x["valor"] or 0)))]
     tabela = {"id": "convenios-seas", "titulo": "Convênios, termos de fomento e de cooperação da SEAS", "curto": "SEAS",
               "fonte": "Portal da Transparência de Rondônia (CGE-RO)",
               "consulta": "Convênios: órgão SEAS, tipos Convênio, Termo de Fomento e Termo de Cooperação/Colaboração, ano a ano de 2015 a 2026",
-              "url": PORTAL, "nota": "Rescisões aparecem como linhas próprias e não entram nos totais da tela.",
+              "url": PORTAL, "nota": "Rescisões aparecem como linhas próprias e não entram nos totais da tela. O link de cada linha abre o documento assinado no SEI (acesso externo público) ou, quando não houver, a ficha do instrumento no portal.",
               "coletado_em": bruto["meta"]["coletado_em"],
               "colunas": [["Ano", "n"], ["Tipo", "t"], ["Número", "t"], ["Processo SEI", "t"], ["Assinatura", "d"], ["Quem recebe", "t"],
-                          ["Valor global", "r"], ["Aditivo", "t"], ["Objeto", "t"], ["Fonte", "u"]],
+                          ["Valor global", "r"], ["Aditivo", "t"], ["Objeto", "t"], ["Documento", "u"]],
               "linhas": linhas}
     dados = {"coletado_em": bruto["meta"]["coletado_em"], "registros": regs, "links": {"portal": PORTAL, "detalhe": ""},
              "tabelas": {"convenios-seas": tabela}, "nomes": {}}

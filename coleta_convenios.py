@@ -2,6 +2,7 @@
 
 Uso: python3 coleta_convenios.py [SIGLA]   (padrão: SEAS)
 Grava dados-fonte/s4_convenios_{sigla}.json e .csv, de 2015 até o ano atual.
+Para cada instrumento, abre também a ficha de detalhe do portal: CNPJ, fiscal, vigência e os documentos no SEI (acesso externo público).
 """
 import csv
 import html
@@ -56,19 +57,43 @@ def main(sigla):
                 if len(tds) < len(COLUNAS):
                     continue
                 r = dict(zip(COLUNAS, tds))
+                m = re.search(r"data-parameter='(/Convenios/Detalhes\?[^']+)'", tr)
+                r["detalhe"] = PORTAL + html.unescape(m[1]) if m else ""
                 metade = r["numero"].split(" ")
                 r["numero"] = " ".join(metade[: len(metade) // 2]) if metade[: len(metade) // 2] == metade[len(metade) // 2:] else r["numero"]
                 r.update(tipo=nome_tipo, ano_consulta=int(ano), valor=valor(r["valor_global"]))
                 linhas.append(r)
                 n += 1
             print(f"  {nome_tipo} {ano}: {n}")
+    print("detalhes:", len(linhas))
+    for i, r in enumerate(linhas):
+        r.update(cnpj="", fiscal="", sei_docs=[])
+        if not r["detalhe"]:
+            continue
+        for tentativa in range(3):
+            try:
+                d = op.open(r["detalhe"], timeout=60).read().decode()
+                break
+            except Exception as e:
+                print("  retry detalhe", e)
+                time.sleep(3)
+        else:
+            continue
+        cn = re.search(r"CNPJ/CPF\s*</[^>]+>\s*<[^>]+>\s*([^<]+)", d)
+        fi = re.search(r"Fiscal\s*</[^>]+>\s*<[^>]+>\s*([^<]+)", d)
+        r["cnpj"] = texto(cn[1]) if cn else ""
+        r["fiscal"] = "" if not fi or "Sem Informa" in texto(fi[1]) else texto(fi[1])
+        r["sei_docs"] = [{"rotulo": texto(t), "url": html.unescape(u)} for u, t in re.findall(r"<a href='(https://sei\.[^']+)'[^>]*>(.*?)</a>", d, re.S)]
+        if i % 50 == 0:
+            print(f"  {i}/{len(linhas)}")
+        time.sleep(.12)
     meta = {"fonte": PORTAL + "/convenios", "orgao": sigla, "codigo_ug": ug, "coletado_em": time.strftime("%Y-%m-%d %H:%M"),
             "consulta": "POST /convenios/ConsultaConvenios (CodigoUnidadeGestora, TipoDocumento, Ano)"}
     (OUT / f"s4_convenios_{sigla.lower()}.json").write_text(json.dumps({"meta": meta, "dados": linhas}, ensure_ascii=False, indent=1), encoding="utf-8")
     with open(OUT / f"s4_convenios_{sigla.lower()}.csv", "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=["tipo", "ano_consulta"] + COLUNAS + ["valor"], delimiter=";")
+        w = csv.DictWriter(f, fieldnames=["tipo", "ano_consulta"] + COLUNAS + ["valor", "cnpj", "fiscal", "detalhe", "documento_sei"], delimiter=";", extrasaction="ignore")
         w.writeheader()
-        w.writerows(linhas)
+        w.writerows([{**r, "documento_sei": " | ".join(x["url"] for x in r["sei_docs"])} for r in linhas])
     print("gravado", len(linhas), "linhas")
 
 

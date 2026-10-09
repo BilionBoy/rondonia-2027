@@ -192,3 +192,6 @@ svg .apagado rect.b{opacity:.28}
   .numero .s{border-left:0;padding-left:0}
 }
 @media (prefers-reduced-motion:reduce){.entra{animation:none}.painel,.cortina{transition:none}}
+
+.botoes{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+a.btn-dados{text-decoration:none}

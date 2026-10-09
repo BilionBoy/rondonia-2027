@@ -43,6 +43,17 @@ Uma tela com tudo o que a SEAS assinou: convênios, termos de fomento e de coope
 
 O portal não tem link por convênio; cada linha leva à página geral de convênios e traz o número do processo SEI.
 
+**Relatório em PDF da SEAS** (botão "Baixar relatório em PDF" na aba): `python3 convenios/build_relatorio.py` gera `esbocos/relatorio-seas.html`, `esbocos/relatorio-seas.pdf` e `site/relatorio-seas.pdf`, usando o Chrome para imprimir. São 7 seções:
+1. resumo;
+2. orçamento de 2026 da SEAS e dos fundos da área;
+3. convênios ano a ano;
+4. os 30 que mais receberam;
+5. todos os instrumentos em ordem de assinatura;
+6. emendas executadas pela SEAS (OFIP, não oficial);
+7. fontes e método.
+
+Rode o build de novo sempre que coletar convênios.
+
 ## Detalhe da primeira aba: as 9 etapas
 
 | # | Etapa | Fonte |

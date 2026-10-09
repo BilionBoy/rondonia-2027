@@ -202,6 +202,9 @@ svg .apagado rect.b{opacity:.28}
 }
 @media (prefers-reduced-motion:reduce){.entra{animation:none}.painel,.cortina{transition:none}}
 
+.botoes{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+a.btn-dados{text-decoration:none}
+
 .topo-c{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--hair);padding:14px 28px;flex:none}
 .topo-c h1{margin:0;font-size:16px;font-weight:700}
 .topo-c .meta{margin-left:auto;font-size:13px;color:var(--mute);display:flex;gap:14px;align-items:center}
@@ -213,7 +216,7 @@ svg .apagado rect.b{opacity:.28}
 <main class="tela" id="tela">
   <section class="esq" id="esq"></section>
   <aside class="dir">
-    <div class="dir-cab"><div class="topo-cab"><h3>As provas</h3><button class="btn-dados" id="btn-dados" type="button">▦ Ver os dados de origem</button></div><p id="provas-sub"></p><div class="aviso" id="aviso" hidden></div><div class="filtro" id="filtro"></div></div>
+    <div class="dir-cab"><div class="topo-cab"><h3>As provas</h3><span class="botoes"><a class="btn-dados contorno" href="relatorio-seas.pdf" download="Relatorio-SEAS-Rondonia.pdf">⤓ Baixar relatório em PDF</a><button class="btn-dados" id="btn-dados" type="button">▦ Ver os dados de origem</button></span></div><p id="provas-sub"></p><div class="aviso" id="aviso" hidden></div><div class="filtro" id="filtro"></div></div>
     <div class="provas" id="provas"></div>
   </aside>
 </main>
