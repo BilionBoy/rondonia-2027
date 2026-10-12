@@ -1,0 +1,184 @@
+[
+ {
+  "id": "CNT Nº 769/2026/PGE-FEASE|0065.000840/2026-65",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Equipamentos de auditório; itens não especificados"
+ },
+ {
+  "id": "CNT Nº 794/2026/PGE-SESDEC|0037.002793/2026-21",
+  "categoria": "sistemas",
+  "funcao": "seguranca-publica",
+  "produto": "",
+  "nota": "Solução de inteligência em fontes abertas (OSINT), 24 meses"
+ },
+ {
+  "id": "CNT Nº 292054/2026|0020.002468/2026-48",
+  "categoria": "sistemas",
+  "funcao": "tributario-arrecadacao",
+  "produto": "AvisaBR",
+  "nota": "SERPRO; notificação multicanal da dívida ativa"
+ },
+ {
+  "id": "RESCISAO AO CNT Nº 77/2026|0030.011094/2025-51",
+  "categoria": "sistemas",
+  "funcao": "outra",
+  "produto": "SERPRO",
+  "nota": "Rescisão valor 0 do CNT 77/2026 SEFIN-SERPRO"
+ },
+ {
+  "id": "CNT Nº 639/2026/PGE-SESDEC|0004.000473/2026-14",
+  "categoria": "conectividade",
+  "funcao": "radio",
+  "produto": "Motorola P25",
+  "nota": "Rádios HT digitais; mesmo padrão P25 de outras forças"
+ },
+ {
+  "id": "CNT Nº 673/2026/PGE-PA|0020.006247/2026-49",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "Minha Biblioteca",
+  "nota": "Biblioteca digital por assinatura (streaming de livros)"
+ },
+ {
+  "id": "CNT Nº 618/2026/PGE-SESAU|0036.013409/2026-26",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende a vários órgãos (SESAU, PGE, SESDEC, POLITEC)"
+ },
+ {
+  "id": "CNT Nº 520/2026/PGE-SETIC|0070.000354/2026-78",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "SETIC; manutenção da rede de fibra óptica, R$ 4,45 mi"
+ },
+ {
+  "id": "CNT Nº 594/2026/PGE-SEDUC|0029.031250/2026-11",
+  "categoria": "equipamentos",
+  "funcao": "tecnologia-assistiva",
+  "produto": "",
+  "nota": "R$ 16 mi; salas de recursos multifuncionais"
+ },
+ {
+  "id": "CNT Nº 546/2026/PGE-DERADM|0009.001343/2026-59",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "Cartões PVC para impressora de crachá"
+ },
+ {
+  "id": "CNT Nº 525/2026/PGE-SEDUC|0029.019036/2026-96",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "",
+  "nota": "Produção e streaming de aulas, 4 estúdios; R$ 14 mi; avaliar"
+ },
+ {
+  "id": "CNT Nº 287/2026/PGE-AGERO|0001.000886/2025-48",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "Vigilância eletrônica monitorada 24h"
+ },
+ {
+  "id": "CNT Nº 233/2026/PGE-SESDEC|0004.001037/2026-62",
+  "categoria": "equipamentos",
+  "funcao": "telefonia-movel",
+  "produto": "",
+  "nota": "Aparelhos celulares"
+ },
+ {
+  "id": "CNT Nº 117/2026/PGE-SESDEC|0019.013697/2024-65",
+  "categoria": "seguranca",
+  "funcao": "firewall",
+  "produto": "",
+  "nota": "WAF para aplicações web/API da Polícia Civil"
+ },
+ {
+  "id": "RESCISÃO AO CNT Nº 349/PGE-2020|0088.067740/2022-27",
+  "categoria": "sistemas",
+  "funcao": "tributario-arrecadacao",
+  "produto": "Indra",
+  "nota": "Rescisão valor 0; substituído por novo contrato (PE 90052/2025)"
+ },
+ {
+  "id": "CNT Nº 300/2026/PGE-SEPAT|0064.003078/2025-06",
+  "categoria": "equipamentos",
+  "funcao": "ponto-eletronico",
+  "produto": "",
+  "nota": "Relógio de ponto"
+ },
+ {
+  "id": "CNT Nº 272/2026/PGE-PA|0020.001157/2026-61",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende a vários órgãos (SESAU, PGE, SESDEC, POLITEC)"
+ },
+ {
+  "id": "CNT Nº 276319/2026|0019.030663/2025-16",
+  "categoria": "sistemas",
+  "funcao": "outra",
+  "produto": "SERPRO",
+  "nota": "Objeto genérico; serviços SERPRO à Polícia Civil"
+ },
+ {
+  "id": "CNT Nº 268/2026/PGE-DERADM|0009.003735/2024-91",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "Impressora de crachás PVC"
+ },
+ {
+  "id": "CNT Nº 164/2026/PGE-SESDEC|0037.002317/2025-20",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende a vários órgãos (SESAU, PGE, SESDEC, POLITEC)"
+ },
+ {
+  "id": "CNT Nº 6/2026/PGE-SESDEC|0037.008815/2025-86",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Projetor multimídia"
+ },
+ {
+  "id": "CNT Nº 77/2026|0030.011094/2025-51",
+  "categoria": "sistemas",
+  "funcao": "outra",
+  "produto": "SERPRO",
+  "nota": "Objeto genérico; distratado no mesmo ano"
+ },
+ {
+  "id": "CNT Nº /2025/EMATER-SOER|0011.005710/2025-63",
+  "categoria": "licencas",
+  "funcao": "outra",
+  "produto": "SISDEA",
+  "nota": "Software de avaliação de imóveis, licença permanente"
+ },
+ {
+  "id": "CNT Nº 7/2026/SEFIN-ASTEC|0030.010737/2025-40",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 1491/2025/PGE-SEDUC|0029.080623/2022-53",
+  "categoria": "equipamentos",
+  "funcao": "tecnologia-assistiva",
+  "produto": "",
+  "nota": "Impressoras Braille, R$ 5,3 mi; valor alto"
+ },
+ {
+  "id": "CNT Nº 1305/2025/PGE-SESDEC|0022.001978/2025-05",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende a vários órgãos (SESAU, PGE, SESDEC, POLITEC)"
+ }
+]

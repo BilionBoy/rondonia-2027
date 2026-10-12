@@ -1,0 +1,247 @@
+[
+ {
+  "id": "CNT Nº 203/2024/PGE-SEDEC|0041.000269/2024-95",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "Objeto genérico e misto (permanente, informática, serviço); parte pode não ser TI"
+ },
+ {
+  "id": "CNT Nº 202/2024/PGE-SEDEC|0041.000269/2024-95",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "Objeto genérico e misto (permanente, informática, serviço); parte pode não ser TI"
+ },
+ {
+  "id": "CNT Nº 201/2024/PGE-SEDEC|0041.000269/2024-95",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "Objeto genérico e misto (permanente, informática, serviço); parte pode não ser TI"
+ },
+ {
+  "id": "CNT Nº 199/2024/PGE-SEDEC|0041.000269/2024-95",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "Objeto genérico e misto (permanente, informática, serviço); parte pode não ser TI; fornecedor vende ar-condicionado"
+ },
+ {
+  "id": "CNT Nº 078/PGE-2021|0021.503822/2020-51",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "Nobreaks"
+ },
+ {
+  "id": "CNT Nº 29/2024/PGE-SESDEC|0019.040724/2023-91",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "Monitores para parque tecnológico da Polícia Civil"
+ },
+ {
+  "id": "CNT/1025/SEOSP/PGE/2023|0069.001696/2023-00",
+  "categoria": "suporte",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": "Manutenção corretiva de plotter"
+ },
+ {
+  "id": "CNT/1195/SESDEC/PGE/2023|0037.007765/2023-58",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "Monitores curvos; R$ 2 mi, valor alto para monitores"
+ },
+ {
+  "id": "CNT/1177/SEOSP/PGE/2023|0069.003015/2023-30",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 263865/2025|0030.010249/2025-32",
+  "categoria": "sistemas",
+  "funcao": "outra",
+  "produto": "SERPRO",
+  "nota": "Serviço técnico SERPRO não especificado; provável consulta a bases"
+ },
+ {
+  "id": "CNT Nº 1402/2025/PGE-SEJUS|0033.019817/2025-31",
+  "categoria": "equipamentos",
+  "funcao": "ponto-eletronico",
+  "produto": "",
+  "nota": "Relógios de ponto; mesmo fornecedor da SI (MG Controle de Acesso)"
+ },
+ {
+  "id": "CNT Nº 799/2025/PGE-SESDEC|0004.009720/2023-03",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Painéis de LED"
+ },
+ {
+  "id": "CNT Nº 1385/2025/PGE-SEDEC|0041.003365/2025-76",
+  "categoria": "conectividade",
+  "funcao": "satelite",
+  "produto": "",
+  "nota": "Fornecedor é autopeças (Motomaxx); verificar"
+ },
+ {
+  "id": "CNT Nº 1329/2025/PGE-SEDUC|0029.037505/2025-78",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Objeto genérico; itens audiovisuais não especificados"
+ },
+ {
+  "id": "CNT Nº 1250/2025/PGE-SEDUC|0029.031211/2025-32",
+  "categoria": "sistemas",
+  "funcao": "avaliacao-educacional",
+  "produto": "CAEd/UFJF",
+  "nota": "Serviço de avaliação (fluência leitora); tecnologia pode ser secundária"
+ },
+ {
+  "id": "CNT Nº 1222/2025/PGE-PA|0020.008931/2025-84",
+  "categoria": "licencas",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Licenças de sistemas digitais não especificados da PGE"
+ },
+ {
+  "id": "CNT Nº 1220/2025/PGE-PA|0020.008931/2025-84",
+  "categoria": "licencas",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Licenças de sistemas digitais não especificados da PGE; mesmo processo do 1222"
+ },
+ {
+  "id": "CNT Nº 808/2025/PGE-SESDEC|0037.003378/2025-12",
+  "categoria": "sistemas",
+  "funcao": "seguranca-publica",
+  "produto": "",
+  "nota": "Investigação em Dark Web; fornecedor Apura"
+ },
+ {
+  "id": "CNT Nº 24/2025/SI-NULCON|0091.000753/2025-18",
+  "categoria": "conectividade",
+  "funcao": "radio",
+  "produto": "",
+  "nota": "Rádios comunicadores portáteis"
+ },
+ {
+  "id": "CNT Nº 1015/2025/PGE-PA|0030.003131/2024-77",
+  "categoria": "sistemas",
+  "funcao": "fabrica-software",
+  "produto": "Natural (Software AG)",
+  "nota": "Sustentação de sistemas legados em Natural/Adabas; R$ 8,4 mi"
+ },
+ {
+  "id": "CNT Nº 1067/2025/PGE-SEDUC|0029.045753/2025-92",
+  "categoria": "conectividade",
+  "funcao": "radio",
+  "produto": "",
+  "nota": "Rádio comunicador portátil"
+ },
+ {
+  "id": "CNT Nº 963/2025/PGE-SEDUC|0029.037278/2025-81",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Objeto genérico; itens audiovisuais não especificados"
+ },
+ {
+  "id": "CNT Nº 962/2025/PGE-SEDUC|0029.037278/2025-81",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Objeto genérico; itens audiovisuais não especificados"
+ },
+ {
+  "id": "CNT Nº 961/2025/PGE-SEDUC|0029.037278/2025-81",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Objeto genérico; itens audiovisuais não especificados"
+ },
+ {
+  "id": "CNT Nº 853/2025/PGE-SEDUC|0029.037278/2025-81",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Objeto genérico; itens audiovisuais não especificados"
+ },
+ {
+  "id": "CNT Nº 851/2025/PGE-SEDUC|0029.037278/2025-81",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Objeto genérico; itens audiovisuais não especificados"
+ },
+ {
+  "id": "CNT Nº 968/2025/PGE-SEJUCEL|0032.002654/2025-67",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "Mesma ferramenta assinada pela SETIC; possível contratação centralizada"
+ },
+ {
+  "id": "CNT Nº 965/2025/PGE-SEJUS|0033.025578/2025-58",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "Monitores"
+ },
+ {
+  "id": "TERMO DE ADESAO AO CONTRATO PADRAO DO NIC.BR|0070.000852/2025-30",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "NIC.br",
+  "nota": "Termo de adesão sem custo"
+ },
+ {
+  "id": "CNT Nº 743/2025/PGE-SETIC|0070.000467/2025-92",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "Mesma ferramenta assinada pela SEJUCEL"
+ },
+ {
+  "id": "RESCISAO AO CNT Nº 064/PGE-2021|0024.487629/2020-36",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "Oi",
+  "nota": "Rescisão do contrato 064/2021; serviço presumido, valor zero"
+ },
+ {
+  "id": "CNT Nº 707/2025/PGE-PA|0055.000101/2024-21",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "Minha Biblioteca",
+  "nota": "Biblioteca virtual de livros eletrônicos"
+ },
+ {
+  "id": "CNT Nº 14/2025/SI-GCOMP|0091.000562/2025-48",
+  "categoria": "operacional",
+  "funcao": "drones",
+  "produto": "",
+  "nota": "Drones (VANT) da Superintendência do Indígena"
+ },
+ {
+  "id": "CNT Nº 10/2025/SI-GCOMP|0091.000112/2025-55",
+  "categoria": "equipamentos",
+  "funcao": "ponto-eletronico",
+  "produto": "",
+  "nota": "Relógio de ponto biométrico; mesmo fornecedor da SEJUS"
+ },
+ {
+  "id": "CNT Nº 706/2025/PGE-SEDUC|0029.034633/2025-60",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Objeto genérico; itens audiovisuais não especificados"
+ }
+]

@@ -25,13 +25,15 @@ iframe[hidden]{display:none}
   <a href="#numeros" data-aba="numeros">Rondônia em números</a>
   <a href="#nao-aparece" data-aba="nao-aparece">O que não aparece</a>
   <a href="#convenios" data-aba="convenios">Convênios da SEAS</a>
+  <a href="#tecnologia" data-aba="tecnologia">Tecnologia no Estado</a>
 </header>
 <iframe id="numeros" title="Rondônia em números" src="rondonia.html" hidden></iframe>
 <iframe id="nao-aparece" title="O que não aparece" src="nao-aparece.html" hidden></iframe>
 <iframe id="convenios" title="Convênios da SEAS" src="convenios.html" hidden></iframe>
+<iframe id="tecnologia" title="Tecnologia no Estado" src="tecnologia.html" hidden></iframe>
 <script>
 function abrir() {
-  const aba = ["nao-aparece", "convenios"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "numeros";
+  const aba = ["nao-aparece", "convenios", "tecnologia"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "numeros";
   document.querySelectorAll("iframe").forEach(f => f.hidden = f.id !== aba);
   document.querySelectorAll("header a").forEach(a => a.classList.toggle("on", a.dataset.aba === aba));
 }

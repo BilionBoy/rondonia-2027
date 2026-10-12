@@ -1,0 +1,1532 @@
+[
+{
+"id": "CNT/0032/SEAS/PGE/2023|0026.067978/2022-87",
+"ano": 2023,
+"orgao": "SECRETARIA DE ASSISTÊNCIA E DESENVOLVIME",
+"valor": 4200.0,
+"contratado": "INTERNET 5.8 LTDA",
+"objeto": "Prestação de serviço de link de internet banda larga, forma pós-pago, para 01 regional.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT/0031/SEAS/PGE/2023|0026.067978/2022-87",
+"ano": 2023,
+"orgao": "SECRETARIA DE ASSISTÊNCIA E DESENVOLVIME",
+"valor": 31920.0,
+"contratado": "FACHINELI COMUNICACAO LTDA",
+"objeto": "Prestação de serviço de link de internet banda larga, forma pós-pago, para 07 regionais.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT/0945/SESDEC/PGE/2022|0037.073413/2022-18",
+"ano": 2023,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 266775.0,
+"contratado": "POSITIVO TECNOLOGIA S.A.",
+"objeto": "Aquisição de notebooks.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT/0080/SETIC/PGE/2023|0070.068783/2022-19",
+"ano": 2023,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 153780.0,
+"contratado": "APPROACH TECNOLOGIA LTDA",
+"objeto": "Aquisição de solução de proteção ENDPOINT (EPP) com solução e detecção e respostas estendidas (XDR).",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT/0979/SESDEC/PGE/2022|0037.072485/2022-30",
+"ano": 2023,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 14897520.0,
+"contratado": "HELPER TECNOLOGIA DE SEGURANCA S/A",
+"objeto": "Implantação de sistema interativo de segurança por videomonitoramento, constituído de módulos eletrônicos de segurança, abrangendo o fornecimento, a instalação, o gerenciamento, a operação e a manutenção preventiva e corretiva de todo o sistema, em regime de locação.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT/0019/PM-RO/PGE/2023|0021.137630/2022-12",
+"ano": 2023,
+"orgao": "POLÍCIA MILITAR DO ESTADO DE RONDÔNIA",
+"valor": 175835.52,
+"contratado": "HORUS SERVIÇOS DE TECNOLOGIA LTDA",
+"objeto": "Aquisição de equipamentos de informática (microcomputador, monitor, notebook e nobreak).",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT/0020/PM-RO/PGE/2023|0021.137630/2022-12",
+"ano": 2023,
+"orgao": "POLÍCIA MILITAR DO ESTADO DE RONDÔNIA",
+"valor": 90991.49,
+"contratado": "PORTO TECNOLOGIA COMERCIO E SERVIÇOS LTDA.",
+"objeto": "Aquisição de equipamentos de informática (microcomputador, monitor, notebook e nobreak).",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT/0025/PGE/2023|0020.085640/2022-67",
+"ano": 2023,
+"orgao": "PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+"valor": 375516.0,
+"contratado": "SAFETEC INFORMÁTICA LTDA",
+"objeto": "Aquisição de licenças de solução integrada de colaboração e comunicação corporativa em nuvem - Google Workspace Enterprise Starter, incluindo os serviços de instalação, integração, migração e treinamento.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT/1021/SETIC/PGE/2022|0070.068686/2022-26",
+"ano": 2023,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 1202584.36,
+"contratado": "TERACOM TELEMÁTICA S.A.",
+"objeto": "Aquisição de componentes para manutenção da rede INFOVIA.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT/1006/SETIC/PGE/2022|0070.068146/2022-42",
+"ano": 2023,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 889058.0,
+"contratado": "IT PROTECT SERVIÇOS DE CONSULTORIA EM INFORMÁTICA EIRELI",
+"objeto": "Fornecimento de Solução de Gestão e Análise de Vulnerabilidade em ativos e sistemas de tecnologia da informação e comunicação.",
+"categoria_regra": "suporte"
+},
+{
+"id": "CNT/0015/SEJUS/PGE/2023|0033.091945/2022-69",
+"ano": 2023,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 35996.0,
+"contratado": "EXITTUS COMERCIO E SERVIÇOS LTDA",
+"objeto": "Aquisição de Switch 24 portas não gerenciável para atender as demandas das Unidades Prisionais e Unidade Administrativa Sede PRM.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT/1018/SEJUS/PGE/2022|0033.084753/2022-04",
+"ano": 2023,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 10101.0,
+"contratado": "MAPDATA TECNOLOGIA, INFORMÁTICA E COMÉRCIO LTDA",
+"objeto": "Fornecimento, pela Contratada de Licença de uso do pacote Adobe Creative Cloud for individual subscrição para o período de 12 meses ou superior. Aplicativos incluídos: Acrobat Pro Photoshop Illustrator InDesign Premiere Pro AfterEffects Lightroom XD Animate LIghtroom Classic Dreamweaver Dimension Audition InCopy CharacterAnimator Capture Fresco Bridge Adobe Spark Premiere Rush Photoshop Express Ph",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT/1010/PM-RO/PGE/2022|0021.134684/2022-18",
+"ano": 2023,
+"orgao": "POLÍCIA MILITAR DO ESTADO DE RONDÔNIA",
+"valor": 665663.04,
+"contratado": "HORUS SERVIÇOS DE TECNOLOGIA LTDA",
+"objeto": "Aquisição de equipamentos de informática (microcomputador, monitor, notebook e nobreak).",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT/0014/SEDUC/PGE/2023|0029.128001/2022-13",
+"ano": 2023,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 12871389.18,
+"contratado": "CENTRO DE FORMAÇÃO E CAPACITAÇÃO DE PROFISSIONAIS EM EDUCAÇÃO LTDA",
+"objeto": "Aquisição de material paradidático de tecnologia educacional com projetos integradores - composto de: livro paradidático por ano de ensino: 6°, 7°, 8° e 9º anos no formato físico (impresso) com senha de acesso à plataforma digital; Compatível com um Sistema Operacional (Windows e/ou Linux) em atendimento aos estudantes matriculados da rede estadual regular, urbana, rurais, indígenas e quilombolas ",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT/1017/SEDUC/PGE/2022|0029.343394/2021-11",
+"ano": 2023,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 193250.0,
+"contratado": "SANTIAGO & CINTRA IMPORTAÇÃO E EXPORTAÇÃO LTDA",
+"objeto": "Aquisição de Material Permanente – Equipamento de Tecnologia (DRONE E SOFTWARE).",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT/0989/CBMRO/PGE/2022|0004.071421/2022-07",
+"ano": 2023,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 60121.2,
+"contratado": "DESKGRAPHICS REALIZE TECNOLOGIA LTDA",
+"objeto": "Aquisição de licença de software Projetos Autodesk - Architecture Engineering Construction Collection IC Commercial New Single-user ELD 3-Yerars Subscription Win.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT/1011/PM-RO/PGE/2022|0021.134684/2022-18",
+"ano": 2023,
+"orgao": "POLÍCIA MILITAR DO ESTADO DE RONDÔNIA",
+"valor": 484896.3,
+"contratado": "PORTO TECNOLOGIA COMERCIO E SERVIÇOS LTDA.",
+"objeto": "Aquisição de equipamentos de informática (microcomputador, monitor, notebook e nobreak).",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1564/2024/PGE-SESDEC|0019.037774/2024-72",
+"ano": 2024,
+"orgao": "POLÍCIA MILITAR DO ESTADO DE RONDÔNIA",
+"valor": 348693.8,
+"contratado": "INFO 16 COMERCIO E SERVICOS DE INFORMATICA LTDA",
+"objeto": "Aquisição de equipamentos de informática para atender a ampliação/renovação do parque tecnológico da Polícia Civil.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1557/2024/PGE-SESDEC|0019.037775/2024-17",
+"ano": 2024,
+"orgao": "POLICIA CIVIL DO ESTADO DE RONDONIA",
+"valor": 125547.52,
+"contratado": "3D PROJETOS E ASSESSORIA EM INFORMATICA LTDA",
+"objeto": "Aquisição de equipamentos de informática para atender a ampliação/renovação do parque tecnológico da Polícia Civil.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1569/2024/PGE-SEJUS|0033.036625/2024-16",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 406890.0,
+"contratado": "IRMÃOS RIGO COMERCIO E ASSISTENCIA EM INFORMÁTICA LTDA",
+"objeto": "Aquisição de material permanente (notebooks, computadores, monitores, etc) para atender as necessidades da Gerência de Inteligência Penitenciária da Secretaria do Estado de Justiça de Rondônia.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 5/2024/SEFIN-ASTEC|0030.006257/2024-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 83850.0,
+"contratado": "MCR SISTEMAS E CONSULTORIA LTDA",
+"objeto": "Contratação de direito de uso do software Adobe Creative Cloud, com atualização e suporte.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1600/2024/PGE-EMATER|0011.004742/2024-61",
+"ano": 2024,
+"orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNI",
+"valor": 27564.0,
+"contratado": "START BLUE COMERCIO E SERVICOS LTDA",
+"objeto": "Prestação de serviços de monitoramento remoto por meio de sistemas eletrônicos (Central de Alarme auxiliada por sensores de presença e Circuito Fechado de TV), na forma de comodato, incluindo assistência técnica e manutenção preventiva e corretiva dos equipamentos com apoio para o evento de ocorrências, para atender às necessidades de segurança do imóvel onde funciona o Escritório Local da EMATER-",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 1570/2024/PGE-SEJUS|0033.036625/2024-16",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 42000.0,
+"contratado": "ORBE SOLUCOES LTDA",
+"objeto": "Aquisição de material permanente (notebooks, computadores, monitores, etc) para atender as necessidades da Gerência de Inteligência Penitenciária da Secretaria do Estado de Justiça de Rondônia.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1590/2024/PGE-SEDUC|0029.038881/2024-07",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 3428600.0,
+"contratado": "GARTNER DO BRASIL SERVIÇOS DE PESQUISAS LTDA",
+"objeto": "Serviços técnicos especializados de pesquisa e aconselhamento imparcial em tecnologia da informação e comunicações, envolvendo apoio e aconselhamento a executivos e líderes de TIC, incluindo acesso a bases de conhecimentos sobre TIC e sobre o relacionamento entre TIC e negócio, bem como prognósticos (análises) e mentoring (aconselhamento) na área de Tecnologia da Informação e Comunicações destinad",
+"categoria_regra": "suporte"
+},
+{
+"id": "CNT Nº 2/2024/SI-GCOMP|0091.000440/2024-71",
+"ano": 2024,
+"orgao": "SUPERINTENDENCIA ESTADUAL DO INDIGENA -S",
+"valor": 38430.0,
+"contratado": "C DO VALE LOPES",
+"objeto": "Aquisição de materiais permanentes (computadores).",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1518/2024/PGE-PA|0030.001258/2024-51",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 3631641.05,
+"contratado": "TELTEC SOLUTIONS LTDA",
+"objeto": "Fornecimento de licenças e serviços da ferramenta Microsoft Office, com migração do e-mail zimbra, com repasse de conhecimento, treinamento e workshop de adoção para usuário final.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1567/2024/PGE-PA|0028.022049/2024-91",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 7972000.0,
+"contratado": "MIL TEC TECNOLOGIA DA INFORMAÇÃO LTDA",
+"objeto": "Contratação de empresa especializada para desenvolvimento de sistema para integração de dados de usuários de recursos hídricos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1516/2024/PGE-PA|0030.007190/2024-14",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 440.0,
+"contratado": "49.951.018 RUAN DE LIMA COSTA",
+"objeto": "Fornecimento de licença de solução de software de design gráfico, áudio e vídeos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1515/2024/PGE-PA|0030.007190/2024-14",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 2990.0,
+"contratado": "50.810.527 LILIAN ARRUDA DA SILVA",
+"objeto": "Fornecimento de licença de solução de software de design gráfico, áudio e vídeos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1558/2024/PGE-SEAS|0026.006164/2024-38",
+"ano": 2024,
+"orgao": "SECRETARIA DE ASSISTÊNCIA E DESENVOLVIME",
+"valor": 281435.0,
+"contratado": "ATHENAS AUTOMACAO LTDA",
+"objeto": "Aquisição de Workstations de alto desempenho para atender às demandas de modernização e atualização do parque tecnológico, bem como garantir disponibilidade de equipamentos para expansão das áreas de infraestrutura de TIC (Tecnologia de Informação e Comunicação), engenharia, desenvolvimento de sistemas e produção de mídias.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1534/2024/PGE-PA|0020.014528/2024-11",
+"ano": 2024,
+"orgao": "PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+"valor": 350110.0,
+"contratado": "VIRTUS TECNOLOGIA LTDA",
+"objeto": "Aquisição de 10 Switch de 48 portas POE com suporte a 4 SFP+ de 10G.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1545/2024/PGE-IPERON|0016.002442/2024-05",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 22724.0,
+"contratado": "NP TECNOLOGIA E GESTÃO DE DADOS LTDA",
+"objeto": "Aquisição de licenças para uso da ferramenta de pesquisas, consolidações e comparação de preços praticados pela Administração Pública e mercado em geral, denominada Banco de Preços, que consiste num sistema de pesquisas baseado em resultados de licitações adjudicadas e homologadas, visando facilitar a pesquisa de mercado.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1532/2024/PGE-SUGESP|0042.004004/2024-56",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA DE GESTÃO DOS GASTOS PÚ",
+"valor": 703289.6,
+"contratado": "GPBR PARTICIPACOES LTDA",
+"objeto": "Serviço de plataforma digital integrada de atividade física e bem-estar, de forma digital para a totalidade de servidores(as), sem contrapartida para o usuário(a), que dá acesso livre a aulas de ginástica laboral, treinos personalizados; programa de nutrição e orientações para a melhoria da qualidade de vida.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1517/2024/PGE-SEPOG|0035.006651/2024-91",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PLANEJAMENTO, OR",
+"valor": 84.0,
+"contratado": "GLOBALSEC TECNOLOGIA DA INFORMACAO LTDA",
+"objeto": "Contratação de empresa especializada na emissão de certificado digital e token criptográfico.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 1250/2024/PGE-EMATER|0011.003894/2024-46",
+"ano": 2024,
+"orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNI",
+"valor": 30564.0,
+"contratado": "M. DA S. VASCONCELOS LTDA",
+"objeto": "Monitoramento remoto por meio de sistemas eletrônicos (Central de Alarme auxiliada por sensores de presença e Circuito Fechado de TV), na forma de comodato, incluindo assistência técnica e manutenção preventiva e corretiva dos equipamentos com apoio para o evento de ocorrências, para atender às necessidades de segurança dos imóveis onde funcionam os Escritórios Locais da EMATER-RO de Porto Velho, ",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 1438/2024/PGE-SEPOG|0035.006036/2024-85",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PLANEJAMENTO, OR",
+"valor": 138200.0,
+"contratado": "TECNETWORKING SERVICOS E SOLUCOES EM TI LTDA",
+"objeto": "Aquisição de licenciamento de microsoft Office 365.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1501/2024/PGE-PA|0030.012314/2023-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 157890.0,
+"contratado": "CONTRATOSGOV SISTEMAS LTDA",
+"objeto": "Contratação de empresa especializada em Software de Gestão e Fiscalização de Contratos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1480/2024/PGE-DETRAN|0010.131423/2022-75",
+"ano": 2024,
+"orgao": "DEPARTAMENTO ESTADUAL DE TRÂNSITO",
+"valor": 1397900.0,
+"contratado": "SMARTSPACE SOLUÇOES DE COMUNICAÇÃO LTDA",
+"objeto": "Fornecimento de plataforma contemplando o ambiente de Contact Center com Gestão de Mensageria Multicanal e estrutura de Comunicações Unificadas através de Telefonia Fixa Comutada IP (incluindo configuração e suporte técnico), para os usuários administrativos, devendo ser estruturado sob plataforma única (all-in-one) 100% Web PABX IP em Nuvem, para realização de ligações gratuitas entre as unidades",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1507/2024/PGE-PA|0020.014646/2024-11",
+"ano": 2024,
+"orgao": "PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+"valor": 188782.6,
+"contratado": "MICROTÉCNICA INFORMÁTICA LTDA",
+"objeto": "Aquisição de nobreaks para a Procuradoria Geral de Estado de Rondônia.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1218/2024/PGE-SEGEP|0031.005130/2024-57",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE GESTÃO DE P",
+"valor": 13917.6,
+"contratado": "CONNECT TELECOM LTDA",
+"objeto": "Fornecimento de Serviço de Internet, para atender os Núcleos de Perícia Médica de Ji-Paraná e Vilhena do Estado de Rondônia.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1478/2024/PGE-SEPOG|0035.006386/2024-41",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PLANEJAMENTO, OR",
+"valor": 58097.4,
+"contratado": "TELEFÔNICA BRASIL S.A.",
+"objeto": "Prestação de serviços de telefonia móvel (Serviço Móvel Pessoal - SMP) e comunicação de dados móvel (Internet), a serem executados de forma contínua, com a disponibilização de aparelhos eletrônicos (smartphones e modens) em regime de comodato.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1615/2024/PGE-PA|0030.007190/2024-14",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 24504.68,
+"contratado": "M2Z SOLUÇÕES INTEGRADAS LTDA",
+"objeto": "Fornecimento de licença de solução de software de design gráfico, áudio e vídeos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1451/2024/PGE-SEAGRI|0025.003540/2024-42",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA AGRICULTURA - SE",
+"valor": 368.22,
+"contratado": "GLOBALSEC TECNOLOGIA DA INFORMACAO LTDA",
+"objeto": "Fornecimento de 03 certificados digitais do tipo A1 (pessoa jurídica) para atender às demandas de assinatura digital de documentos, envio de obrigações fiscais e previdenciárias, e análise de relatórios.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 2/2024/SEFIN-ASTEC|0030.011396/2024-49",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 241000.0,
+"contratado": "MD SERVICOS DE TECNOLOGIA DA INFORMACAO LTDA",
+"objeto": "Prestação de serviços técnicos especializados nas plataformas e tecnologias Oracle.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1488/2024/PGE-PA|0030.008650/2024-21",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 1029504.0,
+"contratado": "NBS SERVIÇOS DE COMUNICAÇÕES LTDA",
+"objeto": "Prestação de serviços PABX, comunicação unificada e contact center de voz em nuvem, baseado em protocolo SIP, incluindo entroncamento SIP com integração ao STFC para tráfego ilimitado para ligações locais e nacionais, fixo-fixo e fixo-móvel, com fornecimento de equipamentos, materiais necessários e prefixo de numeração de telefonia nos municípios de atuação da Secretaria de Estado de Finanças - SE",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1495/2024/PGE-PA|0020.004214/2024-01",
+"ano": 2024,
+"orgao": "PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+"valor": 56925.0,
+"contratado": "ALLSEC SERVIÇOS EM TECNOLOGIA DA INFORMAÇÃO LTDA",
+"objeto": "Aquisição de licenças de software antivírus, para fins de proteção de todo o parque tecnológico da PGE, através da prevenção e detecção de ameaças nas estações de trabalho e equipamentos institucionais.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 1443/2024/PGE-SESDEC|0019.038231/2024-72",
+"ano": 2024,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 69890.0,
+"contratado": "CONTRATOSGOV SISTEMAS LTDA",
+"objeto": "Contratação de Serviço Contínuo de Empresa Especializada na Locação de Software (SaaS) de Gestão e Fiscalização de Contratos para atender as necessidades da Polícia Civil do Estado de Rondônia.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 19/2024/CBM-CPOF|0004.010534/2024-90",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 59000.0,
+"contratado": "INSTITUTO NEGOCIOS PUBLICOS DO BRASIL - ESTUDOS E PESQUISAS NA ADMNIISTRACAO PUBLICA - INP - LTDA",
+"objeto": "Contratação de empresa especializada, para realizar um curso in company que capacite os servidores do Corpo de Bombeiros Militar do Estado de Rondônia (CBMRO) na Fase de Planejamento das contratações, em conformidade com a Lei nº 14.133/21, e integre o uso de inteligência artificial para otimizar e inovar os processos licitatórios.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1390/2024/PGE-SESDEC|0019.026826/2024-85",
+"ano": 2024,
+"orgao": "POLICIA CIVIL DO ESTADO DE RONDONIA",
+"valor": 573495.0,
+"contratado": "TELEFÔNICA BRASIL S.A.",
+"objeto": "Prestação de serviços de telefonia móvel (Serviço Móvel Pessoal - SMP) e comunicação de dados móvel (Internet), a serem executados de forma contínua, com a disponibilização de aparelhos eletrônicos (smartphones e modens) em regime de comodato.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1425/2024/PGE-SEDUC|0029.073378/2023-17",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 39530.0,
+"contratado": "TECHX INFORMATICA LTDA",
+"objeto": "Aquisição de Licenças Power Bi Pro a fim de atender as necessidades apresentadas pela Gerência de Desenvolvimento e Manutenção de Sistemas - GDMS.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1240/2024/PGE-SESDEC|0019.091018/2022-27",
+"ano": 2024,
+"orgao": "POLICIA CIVIL DO ESTADO DE RONDONIA",
+"valor": 3996.0,
+"contratado": "3F LTDA",
+"objeto": "Contratação de Licença de Uso de Softwares de Engenharia e Arquitetura para o Núcleo de Engenharia e Arquitetura da Polícia Civil de Rondônia..",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1235/2024/PGE-SESDEC|0019.091018/2022-27",
+"ano": 2024,
+"orgao": "POLICIA CIVIL DO ESTADO DE RONDONIA",
+"valor": 77616.0,
+"contratado": "MN TECNOLOGIA E TREINAMENTO LTDA",
+"objeto": "Contratação de Licença de Uso de Softwares de Engenharia e Arquitetura - Softwares Alto QI - para o Núcleo de Engenharia e Arquitetura da Polícia Civil de Rondônia.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 01/2024/FUNCER-DAF|0013.000473/2024-43",
+"ano": 2024,
+"orgao": "FUNDACAO CULTURAL DO ESTADO DE RONDONIA",
+"valor": 3142.44,
+"contratado": "SOLIS SOLUÇÕES LIVRES LTDA",
+"objeto": "Contratação de serviço de implementação, treinamento e suporte do sistema de gestão de bibliotecas - GNUTECA 3, para atender as necessidades da unidade da Biblioteca Dr. José Pontes Pinto-BPE.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1452/2024/PGE-SEAS|0026.002851/2024-84",
+"ano": 2024,
+"orgao": "SECRETARIA DE ASSISTÊNCIA E DESENVOLVIME",
+"valor": 99360.0,
+"contratado": "TELEFÔNICA BRASIL S.A.",
+"objeto": "Prestação de serviços de telefonia móvel (Serviço Móvel Pessoal - SMP) e comunicação de dados móvel (Internet), a serem executados de forma contínua, com a disponibilização de aparelhos eletrônicos (smartphones e modens) em regime de comodato.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1391/2024/PGE-PA|0020.013292/2024-98",
+"ano": 2024,
+"orgao": "PROCURADORIA GERAL DO ESTADO DE RONDONIA",
+"valor": 5750.4,
+"contratado": "TELEFÔNICA BRASIL S.A.",
+"objeto": "Serviço de telefonia móvel e comunicação de dados móvel (internet).",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1449/2024/PGE-PA|0028.494551/2020-76",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 2090449.89,
+"contratado": "JCTM COMERCIO E TECNOLOGIA LTDA",
+"objeto": "Aquisição de 10 plataformas automáticas de coleta de dados meteorológicos (PCD’s), para coleta de dados meteorológicos com seus sensores e acessórios com capacidade de transmissão de dados através de telemetria; a instalação desses equipamentos com o cercado de proteção; e treinamento sobre uso e sobre manutenção dessas PCD’s.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1405/2024/PGE-CGE|0007.001555/2024-94",
+"ano": 2024,
+"orgao": "CONTROLADORIA GERAL DO ESTADO DE RONDÔNI",
+"valor": 5328.0,
+"contratado": "ACRONET CORPORATIVO COMÉRCIO E SERVIÇOS LTDA",
+"objeto": "Locação de impressora multifuncionais monocromáticas novas, de primeiro uso, incluindo software de gerenciamento, serviços de manutenção preventiva e corretiva com a substituição de peças e componentes, fornecimento de suprimentos de impressão, com exceção do papel (A4): HP COLOR LASER JET 4103 FDW, duas unidades; Impressão e cópias monocromáticas em Papel A4, com exceção do fornecimento de papel ",
+"categoria_regra": "impressao"
+},
+{
+"id": "CNT Nº 1422/2024/PGE-SUGESP|0042.003522/2024-52",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA DE GESTÃO DOS GASTOS PÚ",
+"valor": 21598.8,
+"contratado": "BRASIL DIGITAL SERVIÇOS DE INFORMATICA E COMERCIO EIRELI",
+"objeto": "Contratação de empresa especializada na prestação de serviço de link de internet banda larga simétrico com velocidade mínima de 500 Mbps, incluso a instalação, equipamentos, configuração, manutenção e solução de rede sem fio (WI-FI) em comodato para utilização na Residência Oficial do Governador do Estado de Rondônia.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1446/2024/PGE-IPERON|0016.004955/2024-42",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 522800.0,
+"contratado": "NBS SERVIÇOS DE COMUNICAÇÕES LTDA",
+"objeto": "Fornecimento de solução de comunicação de dados (links Primários), controle de perímetro e segurança, gerenciamento de appliances e gerenciamento de logs.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1459/2024/PGE-IPERON|0016.004988/2024-92",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 176497.98,
+"contratado": "FACHINELI COMUNICACAO LTDA",
+"objeto": "Fornecimento de solução de comunicação de dados de contingência (links secundários).",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1439/2024/PGE-PA|0012.000382/2024-18",
+"ano": 2024,
+"orgao": "FUNDAÇÃO DE AMPARO AO DESENVOLVIMENTO DA",
+"valor": 9180.0,
+"contratado": "INVIOLAVEL SERVICOS LTDA",
+"objeto": "Serviços continuados de monitoramento remoto por meio de sistemas eletrônicos (Central de Alarme auxiliada por sensores de presença e cerca elétrica, e Circuito Fechado de TV) com apoio de equipe de ronda motorizada para o evento de ocorrências.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 1371/2024/PGE-PA|0038.000651/2024-58",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TURISMO",
+"valor": 349974.0,
+"contratado": "M. P. ALVES ARTES E OFICIOS LTDA",
+"objeto": "Contratação de Artista para elaboração de arte customizada de 22 mapas turísticos ilustrados das cidades com potencial turístico, bem como 5 mapas ilustrados com os setores econômicos em destaque do estado de Rondônia, em alta resolução no formato digital (63X45) em PDF e CORELDRAW, contendo elementos históricos e culturais regionais, com finalidade de atender a promoção turística.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1393/2024/PGE-EMATER|0011.003651/2024-16",
+"ano": 2024,
+"orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNI",
+"valor": 1040375.4,
+"contratado": "SIGMA SISTEMAS DE INFORMÁTICA LTDA",
+"objeto": "Serviços de licença de uso do software, manutenção e suporte informatizado SIGATER, fornecido e patenteado pela SIGMA Sistema de Informática LTDA.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 54/2024/IPERON-GAD|0016.005386/2024-52",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 19200.0,
+"contratado": "ONE CURSOS - TREINAMENTO, DESENVOLVIMENTO E CAPACITAÇÃO LTDA",
+"objeto": "Contratação de 6 inscrições para participação no curso \"Lei Geral de Proteção de Dados Pessoais (LGPD) - Legislação e Implementação Prática na Administração Pública\", que acontecerá no período de 12 a 14 de novembro de 2024, na cidade do Rio de Janeiro/RJ.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 1378/2024/PGE-SEJUS|0033.022877/2024-50",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 88099.7,
+"contratado": "CCDM TELEINFORMATICA LTDA",
+"objeto": "Aquisição de Equipamentos do tipo monitor (equipamentos de TI de consumo e/ou permanentes).",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1377/2024/PGE-SEJUS|0033.022877/2024-50",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 232635.72,
+"contratado": "REPREMIG REPRESENTAÇÃO E COMÉRCIO DE MINAS GERAIS LTDA",
+"objeto": "Aquisição de Equipamentos do tipo monitor (equipamentos de TI de consumo e/ou permanentes).",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1243/2024/PGE-SUGESP|0042.004332/2023-71",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA DE GESTÃO DOS GASTOS PÚ",
+"valor": 303600.0,
+"contratado": "TELEFÔNICA BRASIL S.A.",
+"objeto": "Serviços de telefonia móvel (Serviço Móvel Pessoal - SMP) e comunicação de dados móvel (Internet).",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1335/2024/PGE-SEDEC|0041.002470/2024-15",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 780000.0,
+"contratado": "IMAGEM GEOSISTEMAS E COMÉRCIO LTDA",
+"objeto": "Aquisição das licenças do software ArcGIS e de contratação de serviços especializados vinculados à ferramenta.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1212/2024/PGE-SEOSP|0069.002440/2024-92",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 16410.0,
+"contratado": "BUYSOFT DO BRASIL LTDA",
+"objeto": "Prestação de serviço de licença de softwares visando fotografias, vídeos, animações gráficas, ilustrações vetoriais, cartazes e outras peças gráficas.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1314/2024/PGE-PA|0043.000349/2024-21",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE COMPRAS E L",
+"valor": 5977.4,
+"contratado": "GLOBALSEC TECNOLOGIA DA INFORMACAO LTDA",
+"objeto": "Empresa especializada na emissão de certificado digital e token criptográfico.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 963/2024/PGE-SESDEC|0019.005643/2023-45",
+"ano": 2024,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 263520.0,
+"contratado": "VMI SISTEMAS DE SEGURANÇA LTDA",
+"objeto": "Contratação de empresa para manutenção preventiva e corretiva em aparelho para diagnóstico por imagens em cadáveres humanos, através de inspeção por Raio-X (SCANNER CORPORAL-Flatscan DF-80 - DV), com fornecimento de peças.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 947/2024/PGE-SESDEC|0004.007260/2024-51",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 310950.0,
+"contratado": "SYSTECH SISTEMAS E TECNOLOGIA EM INFORMATICA LTDA",
+"objeto": "Aquisição de STORAGE DE BACKUP com instalação e suporte técnico com 48 meses de garantia e suporte.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1258/2024/PGE-FEASE|0065.312807/2021-71",
+"ano": 2024,
+"orgao": "FUNDAÇÃO ESTADUAL DE ATENDIMENTO SOCIOED",
+"valor": 139053.93,
+"contratado": "J. F. ALVES DE MORAIS LTDA",
+"objeto": "Aquisição e serviço de instalação de equipamentos de monitoramento eletrônico e vigilância nas dependências do centro de atendimento socioeducativo do município de Ji-Paraná.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 1209/2024/PGE-PA|0030.007512/2024-25",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 517800.0,
+"contratado": "DELFIA S/A",
+"objeto": "Aquisição de Licenças Gitlab Ultimate de Desenvolvimento de software e programa.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1246/2024/PGE-SEDUC|0029.057318/2024-20",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 12635470.6,
+"contratado": "SISTEMATECH DESENVOLVIMENTO DE SOFTWARE LTDA",
+"objeto": "Contratação de empresa especializada em prestar serviços, com o fornecimento de Plataforma de Integração de Processos de Aprendizagem, licenciamento de uso de sistemas aplicativos, implantação, integração com sistemas legados e a um software de modelagem, automação e gestão integrada de processos de negócios, em plataforma criptografada de comunicação, via desktop e dispositivos moveis (APP’s e Mo",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1250/2024/PGE-IDARON|0015.006058/2023-01",
+"ano": 2024,
+"orgao": "AGÊNCIA DE DEFESA SANITÁRIA AGROSILVOPAS",
+"valor": 582863.4,
+"contratado": "TSM TECNOLOGIA E SISTEMAS DE MONITORAMENTO LTDA",
+"objeto": "Prestação de serviços de solução tecnológica através de comunicação via satélite, em tempo real e ininterrupto com cobertura nacional, para rastreamento e monitoramento de 277 veículos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1222/2024/PGE-SEPOG|0035.005560/2024-39",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PLANEJAMENTO, OR",
+"valor": 30030.0,
+"contratado": "MCR SISTEMAS E CONSULTORIA LTDA",
+"objeto": "Aquisição de Licença de uso para o Software Adobe Creative Cloud para Equipes (todos os aplicativos).",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1206/2024/PGE-SESDEC|0004.010075/2024-44",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 256000.0,
+"contratado": "SUNGRID INDUSTRIA COMERCIO DISTRIBUIDORA E SERVICOS LTDA'",
+"objeto": "Aquisição de Drone com sensor térmico para atividade de combate a incêndio florestal.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 1228/2024/PGE-SEDUC|0029.056497/2024-88",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 2753000.0,
+"contratado": "ALLTECH - SOLUÇÕES EM TECNOLOGIA LTDA-ME",
+"objeto": "Fornecimento de Solução Unificada de Segurança para proteção de e-mail, proteção de endpoint e proteção contra-ataques avançados, contemplando os serviços de instalação e configuração, transferência de conhecimento e suporte técnico.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 202397/2024|0016.000153/2024-63",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 2195075.52,
+"contratado": "SERVIÇO FEDERAL DE PROCESSAMENTO DE DADOS (SERPRO)",
+"objeto": "Contratação de serviço integrador de nuvem (cloud broker), com recursos de Infraestrutura como Serviço (IaaS), Plataforma como Serviço (PaaS) e marketplace em nuvem pública, sob demanda, incluindo serviços de avaliação de ambiente, definição de arquiteturas, gestão de topologias, manutenção e suporte técnico.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1187/2024/PGE-SEDUC|0029.052691/2024-94",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 46320.0,
+"contratado": "NP TECNOLOGIA E GESTÃO DE DADOS LTDA",
+"objeto": "Fornecimento de assinatura de ferramenta de pesquisa e comparação de preços praticados pela administração pública, através de um sistema de busca baseado em resultados de licitações adjudicadas e/ou homologadas, nos termos da legislação vigente.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1167/2024/PGE-DERADM|0009.001164/2024-50",
+"ano": 2024,
+"orgao": "DEPARTAMENTO DE ESTRADAS, RODAGENS, INFR",
+"valor": 296654.0,
+"contratado": "LIDER NOTEBOOKS COMÉRCIO E SERVIÇOS LTDA",
+"objeto": "Aquisição de 46 MICROCOMPUTADORES INTERMEDIÁRIO COMPLETO COM MONITOR COM WEBCAM.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 46/2024/IPERON-GAD|0016.002425/2024-60",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 9600.0,
+"contratado": "IOC CAPACITACAO LTDA",
+"objeto": "Contratação de 3 inscrições no curso presencial \"Contratação de Bens e Serviços de Tecnologia da Informação (TIC) e Comunicação de acordo com a nova IN SGD/ME nº 94/2022 e a nova Resolução nº 468/2022 do CNJ e os ditames da Nova Lei de Licitações e Contratos nº 14.133/2021\", que acontecerá no período de 30 de setembro a 02 de outubro do corrente ano, na cidade de Brasília/DF.",
+"categoria_regra": "suporte"
+},
+{
+"id": "CNT Nº 1060/2024/PGE-IPERON|0016.001519/2024-11",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 115746.94,
+"contratado": "COMPWIRE INFORMATICA LTDA",
+"objeto": "Aquisição de switches.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1118/2024/PGE-SETIC|0070.000955/2024-19",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 228000.0,
+"contratado": "TELTEC SOLUTIONS LTDA",
+"objeto": "Prestação de serviço de Suporte e Garantia para Switches CISCO NEXUS N9K-C93240YC-FX2 e Banco de Horas Especializado - fabricante Cisco, a fim de atender as necessidades do Governo do Estado de Rondônia, visando manter o contínuo processo de manutenção dos equipamentos centrais da infraestrutura da INFOVIA.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 1081/2024/PGE-SEPOG|0035.005156/2024-65",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PLANEJAMENTO, OR",
+"valor": 1359000.0,
+"contratado": "APPROACH TECNOLOGIA LTDA",
+"objeto": "Aquisição de servidor de hiperconvergência com garantia e assistência técnica por 36 meses e serviços de instalação.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 1125/2024/PGE-SEDUC|0029.019979/2024-57",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 4756012.07,
+"contratado": "UNIVERSIDADE FEDERAL DE JUIZ DE FORA",
+"objeto": "Serviços relativos à Avaliação Educacional em Larga Escala, utilizando a Teoria da Resposta ao Item (TRI) para subsidiar o Sistema de Avaliação Educacional de Rondônia - SAERO/2024 para atender as redes estadual e municipal.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 957/2024/PGE-PA|0043.000999/2024-76",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE COMPRAS E L",
+"valor": 43737.84,
+"contratado": "EMPRESA DE TECNOLOGIA DA INFORMACAO DO CEARA - ETICE",
+"objeto": "Aquisição de licenças de software e contas de e-mails corporativos.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1090/2024/PGE-EMATER|0011.004551/2024-07",
+"ano": 2024,
+"orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNI",
+"valor": 8148.0,
+"contratado": "START BLUE COMERCIO E SERVICOS LTDA",
+"objeto": "Serviços de monitoramento remoto por meio de sistemas eletrônicos (Central de Alarme auxiliada por sensores de presença e Circuito Fechado de TV), na forma de comodato, incluindo assistência técnica e manutenção preventiva e corretiva dos equipamentos com apoio para o evento de ocorrências, para atender às necessidades de segurança do imóvel onde funciona o Escritório Local da EMATER-RO em Nova Br",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 1089/2024/PGE-EMATER|0011.004464/2024-41",
+"ano": 2024,
+"orgao": "ENTIDADE AUTARQUICA DE ASSISTENCIA TECNI",
+"valor": 8220.0,
+"contratado": "START BLUE COMERCIO E SERVICOS LTDA",
+"objeto": "Serviços de monitoramento remoto por meio de sistemas eletrônicos (Central de Alarme auxiliada por sensores de presença e Circuito Fechado de TV), na forma de comodato, incluindo assistência técnica e manutenção preventiva e corretiva dos equipamentos com apoio para o evento de ocorrências, para atender às necessidades de segurança do imóvel onde funcionam os Escritórios Regional e Local da EMATER",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 966/2024/PGE-SESDEC|0004.007812/2024-21",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 94890.0,
+"contratado": "CONTRATOSGOV SISTEMAS LTDA",
+"objeto": "Contratação de Serviço de Licenciamento de Software de Gestão e Fiscalização de Contratos.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 1068/2024/PGE-IPERON|0016.000166/2024-32",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 69890.0,
+"contratado": "CONTRATOSGOV SISTEMAS LTDA",
+"objeto": "Software de gestão e fiscalização contratual.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 988/2024/PGE-JUCER|0018.001049/2024-76",
+"ano": 2024,
+"orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA",
+"valor": 17500.24,
+"contratado": "CESTA DE PRECOS - SOLUCOES TECNOLOGICAS E CAPACITACOES LTDA",
+"objeto": "Prestação de serviços de cessão de uso de software para auxílio na formação e elaboração de cestas de preços das compras públicas e ferramenta de planejamento eletrônico para elaboração de estudos técnicos preliminares, documentos de formalização de demanda e plano de contratação anual da Junta Comercial do Estado de Rondônia - JUCER.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "988/2024/PGE-JUCER|0018.001049/2024-76",
+"ano": 2024,
+"orgao": "JUCER - JUNTA COMERCIAL DO ESTADO DE RON",
+"valor": 13170.91,
+"contratado": "CESTA DE PRECOS - SOLUCOES TECNOLOGICAS E CAPACITACOES LTDA",
+"objeto": "Contratação de empresa do ramo de tecnologia da informação para prestação de serviços de cessão de uso de software para auxílio na formação e elaboração de cestas de preços das compras públicas e ferramenta de planejamento eletrônico para elaboração de ETPs, DODs e PCAs.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 953/2024/PGE-SEOSP|0069.002142/2024-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 56964.0,
+"contratado": "I9 SOLUÇÕES DO BRASIL LTDA",
+"objeto": "Aquisição de 03 Notebooks.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 952/2024/PGE-SEOSP|0069.002142/2024-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 49900.0,
+"contratado": "ULALA MAGAZINE DISTRIBUIDORA LTDA",
+"objeto": "Aquisição de Tablet - 10,5.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 16/2024/CBM-CPOF|0004.008888/2024-74",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 19530.0,
+"contratado": "PUBLIC THINKER TREINAMENTOS E CAPACITAÇÕES LTDA",
+"objeto": "Realização dos Cursos: sendo 7 inscrições para capacitação de servidores na Fase de Planejamento das contratações com o uso de Inteligência Artificial.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 951/2024/PGE-SEOSP|0069.002142/2024-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 14000.0,
+"contratado": "PEKE SOLUCOES LTDA",
+"objeto": "Aquisição de terminal de vídeo conferência \"all-in one\", com microfone e câmeras embutidos adicional.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 948/2024/PGE-SEOSP|0069.002142/2024-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 64999.98,
+"contratado": "GLOBAL DISTRIBUIÇÃO DE BENS DE CONSUMO LTDA",
+"objeto": "Aquisição de 06 notebooks.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 1038/2024/PGE-COGES|0088.000351/2024-83",
+"ano": 2024,
+"orgao": "CONTABILIDADE GERAL DO ESTADO",
+"valor": 29800.0,
+"contratado": "J E B F & CIA LTDA",
+"objeto": "Curso de \"Introdução ao Sistema de Informações de Custos no Setor Público\", no formato presencial, na cidade de Porto Velho/RO.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 619/2024/PGE-SESDEC|0037.008852/2023-22",
+"ano": 2024,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 826045.2,
+"contratado": "DÍGITRO TECNOLOGIA S.A.",
+"objeto": "Serviço de Suporte Técnico com Manutenção Preventiva e Corretiva e Serviço de Atualização de Software da Plataforma de Comutação Digital Dígitro e treinamento.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 1006/2024/PGE-SEJUCEL|0032.001669/2024-27",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA JUVENTUDE, CULTU",
+"valor": 50000.0,
+"contratado": "ACRONET CORPORATIVO COMÉRCIO E SERVIÇOS LTDA",
+"objeto": "Prestação de serviço de fornecimento de máquina multifuncional monocromática a laser (impressora), com função de copiadora, impressora e digitalizadora, de primeiro uso e de propriedade da contratada, incluindo cobertura de assistência técnica, manutenção preventiva e corretiva, fornecimento de todas as peças, partes, componentes corretivos, insumos de impressão como toner ou cartucho de toner.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 979/2024/PGE-SEDUC|0029.032727/2024-13",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 5917200.0,
+"contratado": "NBS SERVIÇOS DE COMUNICAÇÕES LTDA",
+"objeto": "Prestação de serviços continuados de comunicação multimídia para transporte de dados e interconexão, através de cabeamento terrestre de fibra óptica para formação de Rede WAN da SEDUC-RO baseada em MPLS/L2L e Link Dedicado de acesso à Internet, contemplando serviço de implementação, operação, manutenção e suporte proativo, interligando todas as unidades e escolas do Estado de Rondônia à unidade se",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 971/2024/PGE-SEDUC|0029.042809/2024-76",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+"valor": 56357.5,
+"contratado": "GOVPLAN SISTEMAS INTELIGENTES LTDA",
+"objeto": "Aquisição de LICENÇA de uso anual ao GOVPLAN, PLANO PLUS, para 10 (dez) usuários simultâneos, com treinamento ilimitado para todos os usuários; suporte ilimitado realizado via WhatsApp, chat online, telefone, e-mail e videoconferência de segunda-feira a quinta-feira das 8h30 às 17h30 e sexta-feira das 8h30 às 14h30 (horário Brasília), durante a vigência do contrato.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 964/2024/PGE-PA|0030.002807/2024-13",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 11868.0,
+"contratado": "PEPLY TECNOLOGIA EM RECURSOS HUMANOS LTDA",
+"objeto": "Contratação de Sistema de Recrutamento e Seleção, a fim de centralizar e dar celeridade aos processos seletivos, bem como melhores precisões nas seleções dos candidatos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 965/2024/PGE-SESAU|0036.025091/2024-64",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA SAÚDE",
+"valor": 69890.0,
+"contratado": "CONTRATOSGOV SISTEMAS LTDA",
+"objeto": "Fornecimento de licença de Software de gestão e fiscalização contratual, com, no mínimo, as seguintes funcionalidades: mapa de contratos, controle de vigência contratual, de informações financeiras (Nota de Empenhos, elemento de despesa, fonte e P/A), de realização de aditivos contratuais; módulo de fiscalização; emissão de relatórios, dentre outros.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 5/2024/PC-NCP|0019.021560/2024-84",
+"ano": 2024,
+"orgao": "POLICIA CIVIL DO ESTADO DE RONDONIA",
+"valor": 48000.0,
+"contratado": "ROSATELI SOLÇÕES TECNOLÓGICAS LTDA",
+"objeto": "Fornecimento de Certificado Digital com Token, validade 03 anos.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 927/2024/PGE-SEJUS|0033.019895/2024-54",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 300.0,
+"contratado": "GLOBALSEC TECNOLOGIA DA INFORMACAO LTDA",
+"objeto": "Aquisição de Token com Certificado Digital e-CNPJ .",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 828/2024/PGE-DETRAN|0010.027133/2024-90",
+"ano": 2024,
+"orgao": "DEPARTAMENTO ESTADUAL DE TRÂNSITO",
+"valor": 2847520.0,
+"contratado": "LIDER NOTEBOOKS COMÉRCIO E SERVIÇOS LTDA",
+"objeto": "Aquisição de materiais permanentes de TI – Microcomputador Desktop com Multimídia e monitores.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 902/2024/PGE-PA|0030.005004/2024-11",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 1303493.64,
+"contratado": "ORACLE DO BRASIL SISTEMAS LTDA",
+"objeto": "Contratação de empresa especializada nos serviços de suporte técnico prioritário (incluindo serviços suplementares) para produtos ORACLE.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 660/2024/PGE-SEDEC|0041.000967/2024-91",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 73530.0,
+"contratado": "DELL COMPUTADORES DO BRASIL LTDA",
+"objeto": "Aquisição de equipamentos permanentes de Computadores Desktops para atender a Coordenadoria de Atração de Investimento - INVEST Rondônia.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 849/2024/PGE-SEOSP|0069.001048/2024-26",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 48990.0,
+"contratado": "CONTRATOSGOV SISTEMAS LTDA",
+"objeto": "Curso de capacitação de \"Software de Gestão e Fiscalização Contratual\".",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 825/2024/PGE-SUGESP|0042.002402/2023-57",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA DE GESTÃO DOS GASTOS PÚ",
+"valor": 105906.0,
+"contratado": "ACRONET CORPORATIVO COMÉRCIO E SERVIÇOS LTDA",
+"objeto": "Prestação dos serviços comum de outsourcing de impressão e locação de impressoras - exceto papel A4, lotes: 01, 02, 03, 05 e 07\".",
+"categoria_regra": "impressao"
+},
+{
+"id": "CNT Nº 12/2024/CBM-CPOF|0004.003719/2024-48",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 27000.0,
+"contratado": "DESKGRAPHICS REALIZE TECNOLOGIA LTDA",
+"objeto": "Contratação de empresa especializada para realização dos cursos: sendo 1 inscrição no curso \"AUTODESK REVIT – TREINAMENTO - 40 HORAS\" e 2 inscrições no curso \"AUTODESK ADVANCE STEEL -TREINAMENTO 20 HORAS\", totalizando 3 (três) inscrições para servidores do Corpo de Bombeiros Militar de Rondônia.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 746/2024/PGE-SESDEC|0037.003413/2024-12",
+"ano": 2024,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 828498.0,
+"contratado": "B B COMERCIO E INSTALACAO DE EQUIPAMENTOS ELETRICOS LTDA",
+"objeto": "Aquisição de suporte Body Cam para fixação no Colete Balístico e Software de Gerenciamento, Custódia e Pesquisa de Evidências Digitais.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 844/2024/PGE-SUGESP|0042.002402/2023-57",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA DE GESTÃO DOS GASTOS PÚ",
+"valor": 8688.0,
+"contratado": "TUNATOR COMERCIO ATACADISTA LTDA",
+"objeto": "Prestação dos serviços comum de outsourcing de impressão e locação de impressoras - exceto papel A4, lotes: 04 e 06.",
+"categoria_regra": "impressao"
+},
+{
+"id": "CNT Nº 638/2024/PGE-PA|0030.008473/2023-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 49200.0,
+"contratado": "GETUP PLATAFORMA E COMPUTACAO EM NUVEM S.A",
+"objeto": "Serviços de TI (sustentação de sistemas).",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 743/2024/PGE-SESDEC|0037.003413/2024-12",
+"ano": 2024,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 2284839.68,
+"contratado": "L8 GROUP SA",
+"objeto": "Aquisição de Body Cam (câmera policial operacional portáteis) e Dock Station (estação).",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT N° 802/2024/PGE-DERADM|0009.007627/2024-97",
+"ano": 2024,
+"orgao": "DEPARTAMENTO DE ESTRADAS, RODAGENS, INFR",
+"valor": 348.8,
+"contratado": "GLOBALSEC TECNOLOGIA DA INFORMACAO LTDA",
+"objeto": "Contratação de empresa especializada na emissão de certificado digital e token criptográfico.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 769/2024/PGE-PA|0030.074924/2022-17",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 194000.0,
+"contratado": "COMP9 - CONSULTORIA EMPRESARIAL E TREINAMENTO LTDA",
+"objeto": "Consultoria para realizar a adequação da SEFIN à Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/18), contemplando diagnósticos, definição de modelo, mapeamento e inventário de dados pessoais e mapeamento de processos que envolvem tratamento de dados pessoais, avaliação de riscos, elaboração de relatórios, adequação de políticas, procedimentos e normas internas, implementação de rotinas, mo",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 764/2024/PGE-SEOSP|0069.001510/2024-95",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 23920.0,
+"contratado": "NP TECNOLOGIA E GESTÃO DE DADOS LTDA",
+"objeto": "Prestação de serviço de assinatura on-line da ferramenta Banco de Preços, que se constitui em banco de dados desenvolvido para auxiliar todas as fases da contratação pública, ou seja, da fase interna (pesquisa de preço, especificação de bem/serviço) até a fase externa (julgamento das propostas).",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 742/2024/PGE-SESAU|0036.028384/2024-01",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA SAÚDE",
+"valor": 2895826.05,
+"contratado": "R. & A. TREINAMENTO E CONSULTORIA EMPRESARIAL LTDA",
+"objeto": "Prestação de serviços de gestão de acervo documental com guarda de documentos, tratamento técnico, Organização e Indexação, de forma contínua, assim como digitalização de documentos com fornecimento de Sistema Informatizado de Gestão Arquivística de Documentos - SIGAD, especificamente para os Lotes 01, 03, 04, 10, 11, 12 e 13.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 814/2024/PGE-DETRAN|0010.036576/2023-91",
+"ano": 2024,
+"orgao": "DEPARTAMENTO ESTADUAL DE TRÂNSITO",
+"valor": 1685300.0,
+"contratado": "RL2 SERVICOS DE INFORMATICA LTDA",
+"objeto": "Aquisição de 1.900 (um mil e novecentas) Licenças de Solução de Gestão de Vulnerabilidades RAPID7 para atender a Coordenadoria de Tecnologia da Informação/CTI deste DETRAN/RO.",
+"categoria_regra": "suporte"
+},
+{
+"id": "CNT Nº 753/2024/PGE-SESAU|0062.000167/2024-21",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA SAÚDE",
+"valor": 256200.0,
+"contratado": "EBD BIOTECH IMPORTACAO E COMERCIO DE PRODUTOS MEDICOS HOSPITALARES LTDA",
+"objeto": "Fornecimento de sistema de automação laboratorial (equipamentos) e todo os materiais, reagentes e acessórios necessários à realização de testes tipo \"point of care\".",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 782/2024/PGE-SEOSP|0069.001234/2024-65",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 391920.0,
+"contratado": "DELL COMPUTADORES DO BRASIL LTDA",
+"objeto": "Aquisição de 60 computadores completos.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 11/2024/CBM-CPOF|0004.007507/2024-30",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 21204.0,
+"contratado": "PUBLIC THINKER TREINAMENTOS E CAPACITAÇÕES LTDA",
+"objeto": "Capacitação em Contratação Direta e Sistema de Registro de Preços, visando a participação de 08 servidores do Corpo de Bombeiros Militar de Rondônia.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 734/2024/PGE-PA|0028.013702/2023-40",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 531906.42,
+"contratado": "GHF TECNOLOGIA E COMUNICACAO LTDA",
+"objeto": "Aquisição de switches.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 737/2024/PGE-PA|0028.013702/2023-40",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 29998.8,
+"contratado": "MICROBUSINESS TECNOLOGIA LTDA",
+"objeto": "Aquisição de switches.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 738/2024/PGE-PA|0028.013702/2023-40",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 3699.8,
+"contratado": "TELLYCOM BRASIL LTDA.",
+"objeto": "Aquisição de switches.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 752/2024/PGE-PA|0043.000308/2024-34",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE COMPRAS E L",
+"valor": 1100.0,
+"contratado": "ALEX MELLO DE AVEIRO ***948948**",
+"objeto": "Aquisição de câmeras de segurança para monitoramento.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 680/2024/PGE-SEAGRI|0025.000752/2024-78",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA AGRICULTURA - SE",
+"valor": 326800.0,
+"contratado": "E.R. SOLUCOES INFORMATICA LTDA",
+"objeto": "Aquisição de 50 microcomputadores.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 480/2024/PGE-SESAU|0036.048857/2023-06",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA SAÚDE",
+"valor": 766240.0,
+"contratado": "CANON MEDICAL SYSTEMS DO BRASIL LTDA",
+"objeto": "Manutenção continuada de um aparelho de tomografia computadorizada da marca CANON, modelo AQUILON LIGHTNING, em atendimento ao Hospital de e Pronto de Socorro João Paulo II.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 620/2024/PGE-IPERON|0016.002600/2024-19",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 1023049.97,
+"contratado": "SOMA TECNOLOGIA E SERVICOS LTDA",
+"objeto": "Fornecimento de licenças de software, contando com serviços de instalação, configuração, suporte técnico e atualização de versões, suporte especializado e treinamento.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 370/2024/PGE-SESDEC|0021.006457/2023-84",
+"ano": 2024,
+"orgao": "POLÍCIA MILITAR DO ESTADO DE RONDÔNIA",
+"valor": 2938526.14,
+"contratado": "DÍGITRO TECNOLOGIA S.A.",
+"objeto": "Aquisição de licenças de uso de softwares.",
+"categoria_regra": "licencas"
+},
+{
+"id": "CNT Nº 385/2024/PGE-JUCER|0018.068343/2022-04",
+"ano": 2024,
+"orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA",
+"valor": 86500.0,
+"contratado": "NBS SERVIÇOS DE COMUNICAÇÕES LTDA",
+"objeto": "Prestação de serviços de transporte de dados/interconexão, através da Solução de proteção de rede com características de Next Generation Firewall (NGFW) para segurança de informação perimetral que inclui Filtro de pacote, Controle de aplicação, Administração de largura de banda (QoS), VPN IPSec e SSL, IPS, Prevenção contra ameaças de vírus, spywares e malwares “Zero Day”, Filtro de URL, como contr",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 614/2024/PGE-PA|0030.000351/2024-49",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 597664.0,
+"contratado": "MN TECNOLOGIA E TREINAMENTO LTDA",
+"objeto": "Aquisição de Software/ferramenta BIM (Building Information Modelling) e Cursos de Engenharia Complementar.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 616/2024/PGE-SETIC|0070.000564/2024-02",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 122487.0,
+"contratado": "I9ATECH TECNOLOGIA & COMUNICACAO LTDA",
+"objeto": "Aquisição de licença do software GLPI Network.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 486/2024/PGE-IDEP|0048.000209/2024-11",
+"ano": 2024,
+"orgao": "INSTITUTO ESTADUAL DE EDUCACAO PROFISSIO",
+"valor": 50389.0,
+"contratado": "ELITE MONITORAMENTO 24HS E SEGURANCA ELETRONICA LTDA",
+"objeto": "Prestação de serviços quanto ao monitoramento por câmeras de Segurança, para atender o Centro Técnico Estadual de EDUCAÇÃO Rural ABAITARÁ, localizado na Rodovia RO 010, KM 32, Setor ABAITARÁ, zona rural do Município de Pimenta Bueno/RO.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 572/2024/PGE-PA|0043.000446/2024-13",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE COMPRAS E L",
+"valor": 39434.78,
+"contratado": "MICROTÉCNICA INFORMÁTICA LTDA",
+"objeto": "Aquisição de Nobreaks.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 562/2024/PGE-JUCER|0018.000133/2024-72",
+"ano": 2024,
+"orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA",
+"valor": 2298.0,
+"contratado": "DIGITALNET BRASIL SISTEMAS DE COLABORACAO LTDA",
+"objeto": "Fornecimento de licença/software avançado para sistema de videoconferência em nuvem.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "562/2024/PGE-JUCER|0018.000133/2024-72",
+"ano": 2024,
+"orgao": "JUCER - JUNTA COMERCIAL DO ESTADO DE RON",
+"valor": 2538.0,
+"contratado": "DIGITALNET BRASIL SISTEMAS DE COLABORACAO LTDA",
+"objeto": "Fornecimento de licença/software avançado para sistema de videoconferência em nuvem.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 427/2024/PGE-JUCER|0018.000136/2024-14",
+"ano": 2024,
+"orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA",
+"valor": 17478.0,
+"contratado": "CGK SISTEMAS DE INFORMACAO LTDA",
+"objeto": "Fornecimento de licenças/softwares de Editor Avançado de PDF, para atender demandas e reforçar a segurança dos dados presentes nos documentos da JUCER.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 545/2024/PGE-PA|0030.004707/2024-13",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 3150.0,
+"contratado": "TREINAR DESENVOLVIMENTO EMPRESARIAL LTDA",
+"objeto": "Curso de capacitação em auditoria tributária no seguimento \"Telecomunicações\".",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 541/2024/PGE-SEOSP|0069.001157/2024-43",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 4980.0,
+"contratado": "M. K. CURSOS E GESTÃO PÚBLICA LTDA",
+"objeto": "Curso de capacitação, consistente na inscrição de 02 servidores no curso \"Sistema de Custos Aplicado na Administração Pública\".",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 394/2024/PGE-PA|0030.007174/2023-41",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 29634.0,
+"contratado": "TIM S A",
+"objeto": "Fornecimento de serviço de Telefonia Móvel, de forma contínua para a prestação de serviço móvel pessoal (SMP - dados móveis e voz), compreendendo internet móvel, SIMCard, nas modalidades Local e Longa Distância Nacional (LDN), com roaming.",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 507/2024/PGE-SEDEC|0041.003484/2023-67",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 42000.0,
+"contratado": "NBS SERVIÇOS DE COMUNICAÇÕES LTDA",
+"objeto": "Fornecimento de Link Dedicado de Internet de 2Gbps com Solução de Rede sem Fio (Wi-Fi) tipo \"outsourcing\", contendo no mínimo 05 (Cinco) e máximo 08 (Oito) Pontos de Acesso, sendo os mesmos de uso Indoor, com implementação, serviço de instalação, configuração, manutenção, prestação de suporte técnico especializado durante todo o período do Evento, 11ª Rondônia Rural Show do Governo do Estado de Ro",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 488/2024/PGE-PA|0028.023110/2023-36",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ",
+"valor": 431700.0,
+"contratado": "FSBR - FABRICA DE SOFTWARE DO BRASIL LTDA",
+"objeto": "Contratação de empresa especializada em desenvolvimento e manutenção de sistemas.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 401/2024/PGE-SETIC|0070.000335/2024-80",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 20000.0,
+"contratado": "M FERRARI",
+"objeto": "Aquisição de Câmeras e Sistema de Monitoramento CFTV com armazenamento.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 400/2024/PGE-SETIC|0070.000335/2024-80",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 40202.51,
+"contratado": "ACRONET CORPORATIVO COMÉRCIO E SERVIÇOS LTDA",
+"objeto": "Aquisição de Câmeras e Sistema de Monitoramento CFTV com armazenamento e material para organização de cabos.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 471/2024/PGE-PA|0001.002128/2023-01",
+"ano": 2024,
+"orgao": "AGENCIA DE REGULACAO DOS SERVICOS PUBLIC",
+"valor": 48000.0,
+"contratado": "ACRONET CORPORATIVO COMÉRCIO E SERVIÇOS LTDA",
+"objeto": "Contratação de empresa especializada para locação de impressoras.",
+"categoria_regra": "impressao"
+},
+{
+"id": "CNT Nº 254/2024/PGE-SESDEC|0037.008602/2023-92",
+"ano": 2024,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 589050.0,
+"contratado": "OI S.A – EM RECUPERAÇÃO JUDICIAL",
+"objeto": "Prestação de serviços de Telefonia Fixa Comutada, na modalidade Local, Serviço Telefônico Comutado de Longa Distância Nacional – LDN e Longa Distância Internacional – LDI (tecnologia E1), originários de terminais fixos, para atender a demanda da Secretaria de Estado da Segurança, Defesa e Cidadania - SESDEC e suas unidades subordinadas, Policia Militar de Rondônia (PM) e Corpo de Bombeiros Militar",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 373/2024/PGE-SETIC|0070.000245/2024-99",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 97400.0,
+"contratado": "AILLEZ SOLUCOES LTDA",
+"objeto": "Manutenção preventiva/corretiva de Nobreak de 10kVA, no sentido de manter os circuitos de alimentação do datacenter 100% do tempo energizados visando a continuidade dos serviços, já que todos os ativos da infovia encontram-se instalados nesse local.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 386/2024/PGE-SETIC|0070.000373/2024-32",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA ",
+"valor": 1887610.24,
+"contratado": "GREEN4T SOLUCOES TI SA",
+"objeto": "Contratação de suporte técnico, manutenção preventiva e manutenção corretiva de hardwares, softwares e prestação de serviços de monitoramento para estrutura de Contêiner Data Center, modalidade on site.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 264/2024/PGE-SESDEC|0004.012665/2023-21",
+"ano": 2024,
+"orgao": "CORPO DE BOMBEIROS MILITAR DE RONDONIA",
+"valor": 154996.67,
+"contratado": "M. DA S. VASCONCELOS LTDA",
+"objeto": "Fornecimento e instalação de câmeras internas nas aeronaves Caravan C 208 e Helicóptero Esquilo B, visando a captação e armazenamento de imagens por câmeras digitais, contemplando projeto de engenharia, instalação e certificação junto às Agências Regularas responsáveis.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 428/2024/PGE-SEGEP|0031.002081/2024-09",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE GESTÃO DE P",
+"valor": 3450.0,
+"contratado": "TRAINNER CURSOS E TREINAMENTOS LTDA ME",
+"objeto": "Realização de qualificação profissional, para ministração do: CURSO DE CAPACITAÇÃO E APERFEIÇOAMENTO EM PROJETO BÁSICO, TERMO DE REFERÊNCIA, COMPOSIÇÃO DE PREÇOS, EDITAL, SISTEMA DE REGISTRO DE PREÇOS E CONTRATAÇÃO DIRETA, a ser realizado nos dias 24 a 26 de abril, do corrente exercício, sob a modalidade presencial na cidade de Porto Velho/Rondônia.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 426/2024/PGE-PA|0030.002482/2024-61",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 6900.0,
+"contratado": "TRAINNER CURSOS E TREINAMENTOS LTDA ME",
+"objeto": "Contratação de empresa especializada no conteúdo abordado na Nova Lei de Licitações e Contratos Administrativos (NLLCA) com o \"Seminário sobre Projeto Básico, Termo de Referência, Composição de Preços, Edital, Sistema de Registro de Preços e Contratação Direta\".",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 421/2024/PGE-SEOSP|0069.000856/2024-76",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE OBRAS E SERVIÇOS",
+"valor": 31050.0,
+"contratado": "TRAINNER CURSOS E TREINAMENTOS LTDA ME",
+"objeto": "Aquisição de 09 inscrições para participação de servidores no curso \"Projeto Básico, Termo de Referência, Composição de Preços, Edital, Sistema de Registro de Preços e Contratação Direta\".",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 406/2024/PGE-SESDEC|0037.002144/2024-69",
+"ano": 2024,
+"orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADA",
+"valor": 103500.0,
+"contratado": "TRAINNER CURSOS E TREINAMENTOS LTDA ME",
+"objeto": "Contratação de Serviços para ministração do Curso de Capacitação & Aperfeiçoamento na modalidade presencial nos dias 24 a 26 de abril sobre Projeto Básico, Termo de Referência, Composição de Preços, Edital, Sistema de Registro de Preços e Contratação Direta aplicando a Lei de Licitações e Contratos Administrativos n.º 14.133/2021.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 16/2024/IPERON-GAD|0016.001145/2024-34",
+"ano": 2024,
+"orgao": "INSTITUTO DE PREVIDÊNCIA DOS SERVIDORES ",
+"valor": 34500.0,
+"contratado": "TRAINNER CURSOS E TREINAMENTOS LTDA ME",
+"objeto": "Contratação de 10 inscrições para o Seminário de \"Projeto Básico, Termo de Referência, Composição de Preços, Edital, Sistema de Registro de Preços e Contratação Direta\", que ocorrerá nos dias 24 a 26 de abril de 2024, no auditório do Golden Plaza Hotel, na cidade de Porto Velho - RO.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 330/2024/PGE-PA|0064.002318/2023-85",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PATRIMONIO E REG",
+"valor": 13200.0,
+"contratado": "LIRA & CAMPOSANO COMERCIO E SERVICOS DE TI LTDA",
+"objeto": "Serviços de impressão e locação de impressoras Policromáticas.",
+"categoria_regra": "impressao"
+},
+{
+"id": "CNT Nº 329/2024/PGE-PA|0064.002318/2023-85",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PATRIMONIO E REG",
+"valor": 29230.8,
+"contratado": "G3 COMERCIO E SERVIÇOS LTDA - EPP",
+"objeto": "Serviços de impressão e locação de impressoras Monocromáticas.",
+"categoria_regra": "impressao"
+},
+{
+"id": "CNT Nº 404/2024/PGE-SEGEP|0031.004321/2023-11",
+"ano": 2024,
+"orgao": "SUPERINTENDÊNCIA ESTADUAL DE GESTÃO DE P",
+"valor": 391920.0,
+"contratado": "DELL COMPUTADORES DO BRASIL LTDA",
+"objeto": "Aquisição de 60 computadores completos.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 94/2024/PGE-SEJUS|0033.024783/2023-34",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 11271430.8,
+"contratado": "UE BRASIL TECNOLOGIA LTDA",
+"objeto": "Prestação de serviço de monitoramento eletrônico com cobertura em todo território do Estado de Rondônia, com fornecimento de: 3.990 unidades de dispositivo com peça única de rastreamento/ monitoramento continuado de pessoas, ou tornozeleira com rastreador e cinta, com lacre e carregador (hardware/softwares /firmware), homologada pela ANATEL (Agência Nacional de Telecomunicações), prestação de serv",
+"categoria_regra": "conectividade"
+},
+{
+"id": "CNT Nº 383/2024/PGE-DETRAN|0010.127447/2022-20",
+"ano": 2024,
+"orgao": "DEPARTAMENTO ESTADUAL DE TRÂNSITO",
+"valor": 936000.0,
+"contratado": "ECS COMERCIO DE VEICULOS E EQUIPAMENTOS LTDA",
+"objeto": "Aquisição de 04 veículos zero quilômetro, tipo Crossover, equipado com sinalização acústica luminosa OCR.",
+"categoria_regra": "operacional"
+},
+{
+"id": "CNT Nº 337/2024/PGE-SEPOG|0035.000683/2024-83",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE PLANEJAMENTO, OR",
+"valor": 2462800.0,
+"contratado": "APPROACH TECNOLOGIA LTDA",
+"objeto": "Aquisição de Servidor de hiperconvergência, switch TOR redundante e serviços de instalação.",
+"categoria_regra": "datacenter"
+},
+{
+"id": "CNT Nº 354/2024/PGE-PA|0030.002980/2024-11",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE FINANÇAS",
+"valor": 80069.5,
+"contratado": "GLOBALSEC TECNOLOGIA DA INFORMACAO LTDA",
+"objeto": "Emissão de certificado digital e token criptográfico.",
+"categoria_regra": "seguranca"
+},
+{
+"id": "CNT Nº 366/2024/PGE-SEJUS|0033.034129/2023-39",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 1155000.0,
+"contratado": "NUCTECH DO BRASIL LTDA",
+"objeto": "Aquisição e instalação de Scanner por Raios X com túnel de varredura 100cm X 100, para atender as Unidades Prisionais do Estado de Rondônia.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 365/2024/PGE-AGEVISA|0002.004646/2023-41",
+"ano": 2024,
+"orgao": "AGÊNCIA ESTADUAL DE VIGILÂNCIA EM SAÚDE ",
+"valor": 949740.0,
+"contratado": "FSBR - FABRICA DE SOFTWARE DO BRASIL LTDA",
+"objeto": "Serviços especializados de consultoria, transferência de conhecimento, desenvolvimento, construção, implantação, documentação, suporte e manutenção de software, baseada nas ideias e práticas do movimento “Ágil” e do “Software Craftmanship”.",
+"categoria_regra": "sistemas"
+},
+{
+"id": "CNT Nº 363/2024/PGE-SEJUS|0033.033365/2023-38",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DE JUSTIÇA - SEJUS",
+"valor": 1151731.2,
+"contratado": "AEROTECH DO BRASIL SOLUCOES EM TECNOLOGIA LTDA.",
+"objeto": "Prestação de serviços continuados de manutenção preventiva e corretiva, com a previsão, quando necessário, de fornecimento de peças ou componentes exclusivos para o equipamento de INSPEÇÃO CORPORAL - BODY SCANNER, marca: SMITHS HEIMANN, modelo: BS 16HR-FB.",
+"categoria_regra": "equipamentos"
+},
+{
+"id": "CNT Nº 356/2024/PGE-SESAU|0036.055190/2023-90",
+"ano": 2024,
+"orgao": "SECRETARIA DE ESTADO DA SAÚDE",
+"valor": 2244840.0,
+"contratado": "FSBR - FABRICA DE SOFTWARE DO BRASIL LTDA",
+"objeto": "Serviços especializados de consultoria, transferência de conhecimento, desenvolvimento, construção, implantação, documentação, suporte e manutenção de software, seguindo a metodologia da SETIC, baseada nas ideias e práticas do movimento “Ágil” e do “Software Craftmanship”.",
+"categoria_regra": "sistemas"
+}
+]

@@ -1,0 +1,310 @@
+[
+ {
+  "id": "CNT/1304/SETIC/PGE/2023|0070.001589/2023-34",
+  "categoria": "licencas",
+  "funcao": "microsoft",
+  "produto": "",
+  "nota": "licenças do parque do Tribunal de Justiça, não do Executivo; via SETIC"
+ },
+ {
+  "id": "CNT/1176/SEOSP/PGE/2023|0069.003015/2023-30",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1284/SEDAM/PGE/2023|0028.018587/2023-08",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "mesmo Banco de Preços (NP Tecnologia) contratado por vários órgãos"
+ },
+ {
+  "id": "CNT/1255/SEDEC/PGE/2023|0041.003280/2023-26",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "workstations para engenharia"
+ },
+ {
+  "id": "CNT/1221/SEDAM/PGE/2023|0028.014689/2023-46",
+  "categoria": "datacenter",
+  "funcao": "datacenter-servidores",
+  "produto": "",
+  "nota": "orquestração de containers com horas técnicas e suporte"
+ },
+ {
+  "id": "CNT/1223/DETRAN/PGE/2023|0010.130326/2022-65",
+  "categoria": "conectividade",
+  "funcao": "radio",
+  "produto": "Motorola",
+  "nota": "rádios digitais; PM também compra Motorola"
+ },
+ {
+  "id": "CNT/1149/SEOSP/PGE/2023|0069.003067/2023-14",
+  "categoria": "equipamentos",
+  "funcao": "ponto-eletronico",
+  "produto": "",
+  "nota": "relógios de ponto biométrico"
+ },
+ {
+  "id": "014|0040.000297/2023-31",
+  "categoria": "sistemas",
+  "funcao": "juridico",
+  "produto": "Advise",
+  "nota": "clipping de diários oficiais; SOPH"
+ },
+ {
+  "id": "CNT/1153/SEFIN/PGE/2023|0030.007531/2023-71",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "Udemy for Government",
+  "nota": "mesma plataforma contratada pela IDARON"
+ },
+ {
+  "id": "CNT/1075/SUGESP/PGE/2023|0042.002872/2023-11",
+  "categoria": "operacional",
+  "funcao": "controle-acesso",
+  "produto": "",
+  "nota": "fechaduras eletrônicas no Palácio Rio Madeira"
+ },
+ {
+  "id": "RESCISÃO AO CNT Nº 004/2016/JUCER|0018.330130/2018-12",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "Oi",
+  "nota": "rescisão de contrato de 2016; valor zero"
+ },
+ {
+  "id": "CNT/1051/SEJUS/PGE/2023|0033.024869/2023-67",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/1050/SEJUS/PGE/2023|0033.024869/2023-67",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/1049/SEJUS/PGE/2023|0033.024869/2023-67",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/1041/SEFIN/PGE/2023|0030.068243/2022-10",
+  "categoria": "sistemas",
+  "funcao": "protocolo-atendimento",
+  "produto": "",
+  "nota": "plataforma multicanal de atendimento ao contribuinte com consultoria"
+ },
+ {
+  "id": "CNT/0986/DETRAN/PGE/2023|0010.476315/2021-48",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "impressoras térmicas portáteis e cabos"
+ },
+ {
+  "id": "CNT/1045/SESDEC/PGE/2023|0037.008036/2023-19",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "SERPRO e-CNPJ A1",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0981/SESAU/PGE/2023|0036.004711/2023-41",
+  "categoria": "suporte",
+  "funcao": "protocolo-atendimento",
+  "produto": "",
+  "nota": "call center; confirmar escopo de TI"
+ },
+ {
+  "id": "CNT/1018/SEFIN/PGE/2023|0030.081217/2022-79",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "Minha Biblioteca",
+  "nota": "biblioteca virtual de livros eletrônicos"
+ },
+ {
+  "id": "CNT/0911/PM-RO/PGE/2023|0021.053610/2023-62",
+  "categoria": "conectividade",
+  "funcao": "radio",
+  "produto": "Motorola",
+  "nota": "rádios digitais; DETRAN também compra Motorola"
+ },
+ {
+  "id": "CNT/0988/DETRAN/PGE/2023|0010.476315/2021-48",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "inclui bocal de etilômetro (não TI)"
+ },
+ {
+  "id": "CNT/0985/DETRAN/PGE/2023|0010.476315/2021-48",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "bobinas e fitas de impressora"
+ },
+ {
+  "id": "CNT/0907/IDARON/PGE/2023|0015.008618/2023-53",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "Udemy for Government",
+  "nota": "mesma plataforma contratada pela SEFIN"
+ },
+ {
+  "id": "CNT/0843/COGES/PGE/2023|0088.000709/2023-97",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "mesmo Banco de Preços (NP Tecnologia) contratado por vários órgãos"
+ },
+ {
+  "id": "CNT/0824/SEPAT/PGE/2023|0064.001866/2023-98",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0740/SEJUS/PGE/2023|0033.107631/2021-12",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "itens não especificados; fornecedor de informática"
+ },
+ {
+  "id": "CNT/0739/SEJUS/PGE/2023|0033.107631/2021-12",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "itens não especificados; fornecedor de informática"
+ },
+ {
+  "id": "CNT/0765/SEPAT/PGE/2023|0064.001720/2023-42",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "mesmo Banco de Preços (NP Tecnologia) contratado por vários órgãos"
+ },
+ {
+  "id": "CNT/0715/SETUR/PGE/2023|0038.000248/2023-48",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "compra de impressoras"
+ },
+ {
+  "id": "CNT/0644/SEFIN/PGE/2023|0030.006300/2023-40",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "mesmo Banco de Preços (NP Tecnologia) contratado por vários órgãos"
+ },
+ {
+  "id": "CNT/0642/SEOSP/PGE/2023|0069.001869/2023-81",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": "smartphones"
+ },
+ {
+  "id": "CNT/0623/PM-RO/PGE/2023|0021.046710/2023-32",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "monitores curvos"
+ },
+ {
+  "id": "CNT/0443/SEJUS/PGE/2023|0033.002730/2023-62",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0453/SEJUS/PGE/2023|0033.098136/2022-88",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0441/SEJUS/PGE/2023|0033.002730/2023-62",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0440/SEJUS/PGE/2023|0033.002730/2023-62",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0455/SEJUS/PGE/2023|0033.098136/2022-88",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0454/SEJUS/PGE/2023|0033.098136/2022-88",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0452/SEJUS/PGE/2023|0033.098136/2022-88",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0568/SEDAM/PGE/2023|0028.001449/2023-81",
+  "categoria": "equipamentos",
+  "funcao": "ponto-eletronico",
+  "produto": "",
+  "nota": "ponto eletrônico biométrico"
+ },
+ {
+  "id": "CNT/0442/SEJUS/PGE/2023|0033.002730/2023-62",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0471/SEJUS/PGE/2023|0033.421535/2020-95",
+  "categoria": "operacional",
+  "funcao": "prisional-monitoramento",
+  "produto": "",
+  "nota": "manutenção de detectores de metal e scanners de raio X"
+ },
+ {
+  "id": "CNT/0439/SEJUS/PGE/2023|0033.002730/2023-62",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "SEJUS: vários contratos de videoconferência prisional na mesma ata"
+ },
+ {
+  "id": "CNT/0402/FEASE/PGE/2023|0065.001090/2023-04",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "workstations para engenharia"
+ }
+]

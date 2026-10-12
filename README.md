@@ -1,17 +1,18 @@
 # Rondônia em números
 
-Painel sobre o orçamento de Rondônia e a transição de governo, em três abas. É feito para alguém sem tempo: números grandes, uma ideia por tela, e tudo clicável para quem quiser se aprofundar.
+Painel sobre o orçamento de Rondônia e a transição de governo, em quatro abas. É feito para alguém sem tempo: números grandes, uma ideia por tela, e tudo clicável para quem quiser se aprofundar.
 
 | Aba | Arquivo no ar | O que mostra |
 |---|---|---|
 | Rondônia em números | `site/numeros.html` | o orçamento de 2026 em 9 etapas |
 | O que não aparece | `site/nao-aparece.html` | onde o dinheiro sai do retrato público, em 5 telas |
 | Convênios da SEAS | `site/convenios.html` | convênios e termos de fomento da SEAS, 2019–2026 |
+| Tecnologia no Estado | `site/tecnologia.html` | todos os contratos de tecnologia do Estado, 2023–2026: por órgão, tipo, função repetida, vencimento e empresa |
 
-**A raiz do site (`/`) abre o painel com as três abas.** `site/index.html` e `site/painel.html` são o mesmo arquivo.
+**A raiz do site (`/`) abre o painel com as quatro abas.** `site/index.html` e `site/painel.html` são o mesmo arquivo.
 
 - **No ar:** a pasta `site/`, publicada na Vercel com Root Directory = `site`. As páginas levam `noindex`.
-- **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py`.
+- **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py && python3 tecnologia/build_tecnologia.py`.
 - **Para ver localmente:** `python3 -m http.server 8765 --bind 127.0.0.1` e abrir `http://127.0.0.1:8765/esbocos/painel.html`.
 
 ## Moldes de documento (propostas e planos em PDF)
@@ -67,6 +68,32 @@ O build para se faltar algum PDF da lista.
 7. fontes e método.
 
 Rode o build de novo sempre que coletar convênios.
+
+## Quarta aba: "Tecnologia no Estado"
+
+Tudo o que o Governo de Rondônia contrata em tecnologia, de todos os órgãos: quanto, com quem, para quê e quando vence. Abre no Estado todo ou num órgão só (seletor no alto). As visões são:
+- **por tipo:** sistemas, licenças, datacenter, links, segurança etc.;
+- **por órgão;**
+- **repetidos:** a mesma função contratada separadamente por vários órgãos, candidata a uma contratação única;
+- **vencimentos:** calendário dos vigentes, que mostra a janela para consolidar;
+- **empresas;**
+- **ano a ano.**
+
+No mesmo quadro aparecem o empenhado em TIC (elemento 40) do Executivo, o bloco de frota e abastecimento (à parte) e os itens de TI dos PCAs 2026.
+
+- **Para coletar:**
+  - `python3 coleta_contratos.py` (todos os contratos);
+  - `python3 tecnologia/coleta_empenhos.py` (elemento 40 com detalhe);
+  - `python3 tecnologia/coleta_empresas.py` (cadastro dos CNPJs).
+- **Para classificar:**
+  - `python3 tecnologia/classificar.py` faz a triagem por regra;
+  - a decisão final é a revisão contrato a contrato em `tecnologia/revisao/R_*.json`;
+  - correções pontuais vão em `VALOR_A_CONFERIR` e `PREFIXO_FIXO`, no `build_tecnologia.py`.
+- **Para gerar:** `python3 tecnologia/build_tecnologia.py`. Grava `dados-fonte/s5_tecnologia.json`, `tecnologia/contratos_tecnologia.csv`, `esbocos/tecnologia.html` e `site/tecnologia.html`.
+- **Para editar:** `tecnologia/src/tecnologia.html`. O visual reaproveita `convenios/src/_base.css` e `_base.js`.
+- **Endereços diretos:** `?org=SEDUC`, `?ver=repetidos|vencimentos|empresas|anos|orgao` e `?dados=tec-contratos`.
+
+Fontes e regras de leitura: [FONTES.md](FONTES.md), seção 2c.
 
 ## Detalhe da primeira aba: as 9 etapas
 

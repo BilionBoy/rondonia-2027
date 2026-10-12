@@ -1,0 +1,1192 @@
+[
+ {
+  "id": "CNT Nº 930/PGE-2021|0030.504424/2021-24",
+  "categoria": "suporte",
+  "funcao": "consultoria-ti",
+  "produto": "Gartner",
+  "nota": "Assinatura de pesquisa e aconselhamento em TI; contrato de 2021"
+ },
+ {
+  "id": "CNT/1260/SETIC/PGE/2023|0070.001581/2023-78",
+  "categoria": "equipamentos",
+  "funcao": "datacenter-servidores",
+  "produto": "",
+  "nota": "Baterias de nobreaks de 65 kVA do datacenter"
+ },
+ {
+  "id": "CNT/1202/PC-RO/PGE/2023|0019.040717/2023-90",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": "Compra de multifuncionais, não outsourcing"
+ },
+ {
+  "id": "CNT/1299/SEDUC/PGE/2023|0029.063646/2023-84",
+  "categoria": "seguranca",
+  "funcao": "antivirus",
+  "produto": "",
+  "nota": "Proteção de e-mail e endpoint; valor alto (R$8,9 mi)"
+ },
+ {
+  "id": "CNT/1283/SEPOG/PGE/2023|0035.002878/2023-87",
+  "categoria": "seguranca",
+  "funcao": "firewall",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0399/SUGESP/PGE/2023|0042.069934/2022-93",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1298/SEFIN/PGE/2023|0030.077975/2022-92",
+  "categoria": "datacenter",
+  "funcao": "banco-de-dados",
+  "produto": "Oracle",
+  "nota": "Banco Oracle em nuvem on-premises (Cloud@Customer)"
+ },
+ {
+  "id": "CNT/1277/SETIC/PGE/2023|0070.001598/2023-25",
+  "categoria": "datacenter",
+  "funcao": "datacenter-servidores",
+  "produto": "Nutanix; Arista",
+  "nota": "Renovação de garantia e suporte"
+ },
+ {
+  "id": "CNT/1289/SUPEL/PGE/2023|0043.069204/2022-82",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1288/SUPEL/PGE/2023|0043.069204/2022-82",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1269/SESAU/PGE/2023|0036.059144/2023-60",
+  "categoria": "suporte",
+  "funcao": "digitalizacao",
+  "produto": "SIGAD",
+  "nota": "Guarda física, digitalização e SIGAD; objeto idêntico ao CNT/1270/SESAU"
+ },
+ {
+  "id": "CNT/1217/SEDUC/PGE/2023|0029.060325/2023-28",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "Rede WAN MPLS das escolas; NBS também atende SEFIN e SEOSP"
+ },
+ {
+  "id": "CNT/1244/SEDUC/PGE/2023|0029.067350/2023-32",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "Positivo",
+  "nota": "Tablets SEDUC; há vários contratos Positivo no mesmo ano"
+ },
+ {
+  "id": "CNT/1270/SESAU/PGE/2023|0036.059143/2023-15",
+  "categoria": "suporte",
+  "funcao": "digitalizacao",
+  "produto": "SIGAD",
+  "nota": "Guarda física, digitalização e SIGAD; objeto idêntico ao CNT/1269/SESAU"
+ },
+ {
+  "id": "CNT/1252/SEDEC/PGE/2023|0041.003355/2023-79",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1251/SEDEC/PGE/2023|0041.003355/2023-79",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1253/SEDEC/PGE/2023|0041.003280/2023-26",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1201/SEFIN/PGE/2023|0030.012577/2023-10",
+  "categoria": "sistemas",
+  "funcao": "bi-dados",
+  "produto": "Qlik Sense",
+  "nota": "Contratada é a MTI, estatal de TI de Mato Grosso"
+ },
+ {
+  "id": "CNT/1208/PGE/2023|0020.017131/2023-92",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1240/SEDUC/PGE/2023|0029.067386/2023-16",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "Chips de dados móveis para alunos; Dry Company tem 3 contratos SEDUC"
+ },
+ {
+  "id": "CNT/1222/SEDEC/PGE/2023|0041.002756/2023-10",
+  "categoria": "sistemas",
+  "funcao": "gestao-projetos",
+  "produto": "Monday.com",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1174/SEJUS/PGE/2023|0033.034393/2023-72",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1057/SESDEC/PGE/2023|0037.074316/2022-34",
+  "categoria": "licencas",
+  "funcao": "seguranca-publica",
+  "produto": "",
+  "nota": "Extração forense de celulares e desbloqueio de Android/iOS"
+ },
+ {
+  "id": "CNT/1164/PM-RO/PGE/2023|0021.076527/2023-61",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1163/PM-RO/PGE/2023|0021.076527/2023-61",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1204/PM-RO/PGE/2023|0021.081859/2023-68",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "018|0040.000324/2023-76",
+  "categoria": "sistemas",
+  "funcao": "ponto-eletronico",
+  "produto": "",
+  "nota": "Órgão vazio; processo 0040 é da SOPH"
+ },
+ {
+  "id": "CNT/1187/AGERO/PGE/2023|0001.001581/2023-91",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "Alarme e vigilância eletrônica predial"
+ },
+ {
+  "id": "CNT/1196/SESDEC/PGE/2023|0037.073618/2022-95",
+  "categoria": "licencas",
+  "funcao": "suite-escritorio",
+  "produto": "",
+  "nota": "IPNET revende Google Workspace; confirmar produto"
+ },
+ {
+  "id": "CNT/1185/SEOSP/PGE/2023|0069.002250/2023-94",
+  "categoria": "sistemas",
+  "funcao": "gestao-obras",
+  "produto": "Relatório Diário de Obra",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1118/SEPOG/PGE/2023|0035.002125/2023-71",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "",
+  "nota": "Cursos de TI para servidores (Alura); limítrofe com treinamento"
+ },
+ {
+  "id": "CNT/1197/DETRAN/PGE/2023|0010.012712/2023-57",
+  "categoria": "licencas",
+  "funcao": "datacenter-servidores",
+  "produto": "Red Hat",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1198/DETRAN/PGE/2023|0010.093838/2022-33",
+  "categoria": "licencas",
+  "funcao": "monitoramento-rede",
+  "produto": "WhatsUp Gold",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1150/IPERON/PGE/2023|0020.071883/2022-18",
+  "categoria": "sistemas",
+  "funcao": "previdencia",
+  "produto": "SICAP WEB",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1173/SEAGRI/PGE/2023|0025.003751/2023-02",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1170/FHEMERON/PGE/2023|0052.002886/2023-15",
+  "categoria": "rede",
+  "funcao": "rede-wifi",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1139/SEGEP/PGE/2023|0031.005033/2023-83",
+  "categoria": "sistemas",
+  "funcao": "rh-folha",
+  "produto": "e-Estado; Governa",
+  "nota": "Integração entre os sistemas de RH e-Estado e Governa"
+ },
+ {
+  "id": "CNT/1168/SESAU/PGE/2023|0057.164914/2021-85",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "Manutenção de CFTV e telefonia fixa do HICD"
+ },
+ {
+  "id": "CNT/1156/SEFIN/PGE/2023|0030.011495/2023-40",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "",
+  "nota": "VoIP, videoconferência e suíte; mesmo objeto do CNT/0408/SEFIN"
+ },
+ {
+  "id": "013|0040.256513/2021-30",
+  "categoria": "licencas",
+  "funcao": "cad-bim",
+  "produto": "",
+  "nota": "Órgão vazio; processo 0040 é da SOPH"
+ },
+ {
+  "id": "CNT/0612/SESDEC/PGE/2023|0037.001086/2023-75",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Arma de choque (menor potencial ofensivo), não é TI"
+ },
+ {
+  "id": "CNT/1146/SUGESP/PGE/2023|0042.005416/2023-22",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1142/SUGESP/PGE/2023|0042.000821/2023-54",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 06/2023/IPEM/RO|0017.000484/2023-11",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1111/EMATER/PGE/2023|0011.008394/2023-10",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "015|0040.364199/2020-87",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": "Órgão vazio; processo 0040 é da SOPH"
+ },
+ {
+  "id": "CNT/1124/SEDUC/PGE/2023|0029.061026/2023-19",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "Chips de dados móveis para alunos; Dry Company tem 3 contratos SEDUC"
+ },
+ {
+  "id": "CNT/1056/SEDUC/PGE/2023|0029.059847/2023-87",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "Positivo",
+  "nota": "Tablets SEDUC (R$9,6 mi)"
+ },
+ {
+  "id": "CNT/1127/SEJUS/PGE/2023|0033.027691/2023-14",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "Videomonitoramento em unidades prisionais, por locação"
+ },
+ {
+  "id": "CNT/1060/SEDUC/PGE/2023|0029.061024/2023-11",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "Positivo",
+  "nota": ""
+ },
+ {
+  "id": "CNT/1104/SEDUC/PGE/2023|0029.059848/2023-21",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "Chips de dados móveis para alunos; Dry Company tem 3 contratos SEDUC"
+ },
+ {
+  "id": "CNT/1067/SEPOG/PGE/2023|0035.002385/2023-47",
+  "categoria": "seguranca",
+  "funcao": "lgpd",
+  "produto": "",
+  "nota": "Mesma contratada (Formato) das licenças de auditoria AD da SEFIN"
+ },
+ {
+  "id": "CNT/1052/DETRAN/PGE/2023|0010.105861/2022-88",
+  "categoria": "conectividade",
+  "funcao": "telefonia-movel",
+  "produto": "",
+  "nota": "Inclui MDM e aparelhos em comodato; mesma ata da EMATER"
+ },
+ {
+  "id": "CNT/0984/SEDUC/PGE/2023|0029.051632/2023-18",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "Positivo",
+  "nota": "Valor muito baixo; provavelmente uma unidade ou aditivo"
+ },
+ {
+  "id": "CNT/0818/SEOSP/PGE/2023|0069.002059/2023-42",
+  "categoria": "sistemas",
+  "funcao": "outra",
+  "produto": "Target GEDWeb",
+  "nota": "Acervo de normas ABNT; é mais conteúdo que sistema"
+ },
+ {
+  "id": "CNT/0936/SEPAT/PGE/2023|0064.002052/2023-71",
+  "categoria": "licencas",
+  "funcao": "geo-mapas",
+  "produto": "Métrica Topo",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0878/PM-RO/PGE/2023|0021.061359/2023-18",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0877/PM-RO/PGE/2023|0021.061359/2023-18",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0844/PM-RO/PGE/2023|0021.057753/2023-43",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0837/PM-RO/PGE/2023|0021.057753/2023-43",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0918/IPERON/PGE/2023|0016.002230/2023-39",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0864/SEPOG/PGE/2023|0035.068299/2022-16",
+  "categoria": "sistemas",
+  "funcao": "videoconferencia",
+  "produto": "",
+  "nota": "Webconferência e streaming em nuvem; categoria da regra corrigida"
+ },
+ {
+  "id": "CNT/0608/PM-RO/PGE/2023|0021.043610/2023-54",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0802/SETIC/PGE/2023|0070.001049/2023-51",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0813/SEDUC/PGE/2023|0029.033127/2023-91",
+  "categoria": "sistemas",
+  "funcao": "avaliacao-educacional",
+  "produto": "SAERO",
+  "nota": "Serviço de avaliação do CAEd/UFJF, não só software"
+ },
+ {
+  "id": "CNT/0881/SUGESP/PGE/2023|0042.001194/2023-79",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0810/PGE/2023|0020.007076/2023-22",
+  "categoria": "seguranca",
+  "funcao": "consultoria-ti",
+  "produto": "",
+  "nota": "Plano Diretor de Segurança Cibernética (Falconi)"
+ },
+ {
+  "id": "CNT/0842/SEGEP/PGE/2023|0031.004546/2023-77",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0856/SEDEC/PGE/2023|0041.002047/2023-26",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0839/SETIC/PGE/2023|0070.001111/2023-12",
+  "categoria": "datacenter",
+  "funcao": "datacenter-servidores",
+  "produto": "",
+  "nota": "Hiperconvergência CLM também em SETIC, SEFIN e SEDUC (~R$18,5 mi)"
+ },
+ {
+  "id": "CNT/0833/PM-RO/PGE/2023|0021.049647/2023-96",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0827/CBMRO/PGE/2023|0004.006094/2023-95",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 589/PGE-2018|0033.284577/2018-14",
+  "categoria": "operacional",
+  "funcao": "prisional-monitoramento",
+  "produto": "",
+  "nota": "Locação de body scanner; contrato de 2018"
+ },
+ {
+  "id": "CNT/0801/SEFIN/PGE/2023|0030.078082/2022-64",
+  "categoria": "datacenter",
+  "funcao": "datacenter-servidores",
+  "produto": "",
+  "nota": "Hiperconvergência CLM também em SETIC, SEFIN e SEDUC (~R$18,5 mi)"
+ },
+ {
+  "id": "CNT Nº 0697/COGES/PGE/2023|0088.000347/2023-34",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "Alura",
+  "nota": "Mesma plataforma (Alura/AOVS) contratada pela SEPOG"
+ },
+ {
+  "id": "CNT Nº 14/EMATER/PGE/2023|0011.003010/2023-72",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 0606/COGES/PGE/2023|0088.000475/2023-88",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Oficina de contagem de métricas (treinamento)"
+ },
+ {
+  "id": "CNT/0466/JUCER/PGE/2023|0018.068828/2022-90",
+  "categoria": "conectividade",
+  "funcao": "telefonia-movel",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "0466/JUCER/PGE/2023|0018.068828/2022-90",
+  "categoria": "conectividade",
+  "funcao": "telefonia-movel",
+  "produto": "",
+  "nota": "Duplicata do CNT/0466/JUCER com valor diferente"
+ },
+ {
+  "id": "CNT/0666/SESDEC/PGE/2023|0037.071102/2022-14",
+  "categoria": "sistemas",
+  "funcao": "seguranca-publica",
+  "produto": "",
+  "nota": "Identificação civil e carteira de identidade; maior valor do lote (R$112,7 mi)"
+ },
+ {
+  "id": "CNT/0525/SEOSP/PGE/2023|0035.068555/2022-75",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Abastecimento de água (Água para Todos); a regra marcou frota"
+ },
+ {
+  "id": "CNT/0766/SEJUCEL/PGE/2023|0032.002040/2023-13",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia também atende a FHEMERON"
+ },
+ {
+  "id": "CNT/0758/SESDEC/PGE/2023|0037.576049/2021-54",
+  "categoria": "conectividade",
+  "funcao": "radio",
+  "produto": "Motorola APCO 25",
+  "nota": "Manutenção da rede de rádio digital da segurança"
+ },
+ {
+  "id": "CNT/0759/SESAU/PGE/2023|0036.025690/2023-05",
+  "categoria": "licencas",
+  "funcao": "banco-de-dados",
+  "produto": "OpenBase",
+  "nota": "SGBD legado da SESAU"
+ },
+ {
+  "id": "CNT/0762/SEFIN/PGE/2023|0030.006454/2023-31",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "",
+  "nota": "Mesmo objeto e valor do CNT/0115/SEFIN; possível renovação"
+ },
+ {
+  "id": "CNT/0714/SUGESP/PGE/2023|0042.067877/2022-16",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Kit de videoconferência para eventos"
+ },
+ {
+  "id": "CNT/0478/JUCER/PGE/2023|0018.470202/2021-69",
+  "categoria": "sistemas",
+  "funcao": "registro-empresarial",
+  "produto": "SIARCO",
+  "nota": "Migração para o SIARCO recebido em doação"
+ },
+ {
+  "id": "CNT/0723/SEJUS/PGE/2023|0033.008835/2023-25",
+  "categoria": "operacional",
+  "funcao": "prisional-monitoramento",
+  "produto": "VMI Spectrum Bodyscan",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0692/CGE-RO/PGE/2023|0007.000919/2023-38",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Câmera fotográfica profissional, não é TI"
+ },
+ {
+  "id": "CNT/0716/IPERON/PGE/2023|0016.003039/2023-12",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0695/SEOSP/PGE/2023|0069.002212/2023-31",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0690/SEDAM/PGE/2023|0028.009462/2023-89",
+  "categoria": "operacional",
+  "funcao": "rastreamento-veicular",
+  "produto": "",
+  "nota": "Mesma contratada (TSM) do rastreamento do DER"
+ },
+ {
+  "id": "CNT/0595/SEDAM/PGE/2023|0028.500553/2021-92",
+  "categoria": "sistemas",
+  "funcao": "bi-dados",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0651/SEPAT/PGE/2023|0064.001384/2023-38",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Pagamento de RRT ao CAU, não é contratação de TI"
+ },
+ {
+  "id": "CNT/0632/SESDEC/PGE/2023|0037.003311/2023-16",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "",
+  "nota": "PABX em nuvem e telefonia IP"
+ },
+ {
+  "id": "CNT/0575/PGE/2023|0020.009218/2023-96",
+  "categoria": "licencas",
+  "funcao": "cad-bim",
+  "produto": "Autodesk AEC Collection",
+  "nota": "Autodesk também em SEOSP e licenças BIM na SOPH"
+ },
+ {
+  "id": "CNT/0555/PM-RO/PGE/2023|0021.043136/2023-61",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0554/PM-RO/PGE/2023|0021.043136/2023-61",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0628/SEPAT/PGE/2023|0064.001508/2023-85",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0626/SEPAT/PGE/2023|0064.001592/2023-37",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0593/SEDUC/PGE/2023|0029.001688/2023-21",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0592/SEDUC/PGE/2023|0029.001688/2023-21",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0379/IPERON/PGE/2023|0016.001084/2023-24",
+  "categoria": "licencas",
+  "funcao": "financeiro-contabil",
+  "produto": "Nelogica",
+  "nota": "Acompanhamento de investimentos do RPPS"
+ },
+ {
+  "id": "CNT/0601/SEDUC/PGE/2023|0029.069438/2022-16",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0600/SEDUC/PGE/2023|0029.069438/2022-16",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0480/SEJUS/PGE-2023|0033.226637/2021-80",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0571/SEFIN/PGE/2023|0030.007189/2023-17",
+  "categoria": "sistemas",
+  "funcao": "tributario-arrecadacao",
+  "produto": "SITAFE",
+  "nota": "Sustentação do SITAFE legado (Natural/ADABAS/Oracle)"
+ },
+ {
+  "id": "CNT/0567/PM-RO/PGE/2023|0021.044371/2023-50",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0566/PM-RO/PGE/2023|0021.044371/2023-50",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0476/SEOSP/PGE/2023|0069.001502/2023-68",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0524/PM-RO/PGE-2023|0021.016594/2023-27",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0523/PM-RO/PGE-2023|0021.016594/2023-27",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0557/SESAU/PGE/2023|0036.018728/2023-85",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": "R$4,1 mi em computadores"
+ },
+ {
+  "id": "CNT/0530/SEPAT/PGE/2023|0064.001269/2023-63",
+  "categoria": "fora",
+  "funcao": "geo-mapas",
+  "produto": "",
+  "nota": "Receptores GNSS topográficos; instrumento de engenharia"
+ },
+ {
+  "id": "CNT/0515/SEDEC/PGE/2023|0041.001485/2023-77",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0504/SEDEC/PGE/2023|0041.070533/2022-96",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0486/SEDUC/PGE/2023|0029.118544/2022-22",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0427/IPERON/PGE/2023|0016.001506/2023-61",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Terminal de notícias e conteúdo, não sistema"
+ },
+ {
+  "id": "CNT/0462/IDARON/PGE/2023|0015.076396/2022-11",
+  "categoria": "seguranca",
+  "funcao": "antivirus",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0481/SEDUC/PGE/2023|0029.012364/2023-19",
+  "categoria": "datacenter",
+  "funcao": "datacenter-servidores",
+  "produto": "",
+  "nota": "Hiperconvergência CLM também em SETIC, SEFIN e SEDUC (~R$18,5 mi)"
+ },
+ {
+  "id": "CNT/0433/SEPAT/PGE/2023|0064.000642/2023-69",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "Dell",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0484/SEJUS/PGE/2023|0033.542806/2021-26",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "Manutenção de CFTV das unidades prisionais"
+ },
+ {
+  "id": "CNT/0468/SEDUC/PGE/2023|0029.118544/2022-22",
+  "categoria": "equipamentos",
+  "funcao": "notebooks-tablets",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0550/IPERON/PGE/2023|0016.002010/2023-13",
+  "categoria": "sistemas",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Votação online para eleição de conselhos do IPERON"
+ },
+ {
+  "id": "CNT/0434/SEPAT/PGE/2023|0064.000642/2023-69",
+  "categoria": "equipamentos",
+  "funcao": "rede-wifi",
+  "produto": "",
+  "nota": "Switches"
+ },
+ {
+  "id": "CNT/0408/SEFIN/PGE/2023|0030.005435/2023-98",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "",
+  "nota": "VoIP, videoconferência e suíte; mesmo objeto do CNT/1156/SEFIN"
+ },
+ {
+  "id": "CNT Nº 08/EMATER/PGE/2023|0011.002713/2023-83",
+  "categoria": "conectividade",
+  "funcao": "telefonia-movel",
+  "produto": "",
+  "nota": "Inclui MDM; mesma solução do DETRAN"
+ },
+ {
+  "id": "CNT/0389/PM-RO/PGE/2023|0021.032606/2023-61",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0388/PM-RO/PGE/2023|0021.032606/2023-61",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0406/SEOSP/PGE/2023|0069.001160/2023-86",
+  "categoria": "licencas",
+  "funcao": "design-midia",
+  "produto": "",
+  "nota": "Mesma contratada da SEDEC para licenças de edição"
+ },
+ {
+  "id": "CNT/0392/SEJUS/PGE/2023|0033.073389/2022-49",
+  "categoria": "datacenter",
+  "funcao": "nuvem",
+  "produto": "",
+  "nota": "IPNET revende Google Cloud"
+ },
+ {
+  "id": "CNT/0386/FEASE/PGE/2023|0065.002055/2023-02",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": "Compra de multifuncionais"
+ },
+ {
+  "id": "CNT/0385/SEJUCEL/PGE/2023|0032.000571/2023-71",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Evento Rondônia Rural Show"
+ },
+ {
+  "id": "CNT/0380/JUCER/PGE/2023|0018.069182/2022-68",
+  "categoria": "seguranca",
+  "funcao": "antivirus",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0368/SEFIN/PGE/2023|0030.005239/2023-13",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "WAN SEFIN com DDoS e firewall; NBS também atende SEDUC e SEOSP"
+ },
+ {
+  "id": "CNT/0362/FHEMERON/PGE/2023|0052.001181/2023-81",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "Mesma ferramenta contratada pela SEJUCEL"
+ },
+ {
+  "id": "CNT/0337/CBMRO/PGE/2023|0004.001948/2023-47",
+  "categoria": "seguranca",
+  "funcao": "firewall",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0352/SESDEC/PGE/2023|0037.003107/2023-97",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0351/SESDEC/PGE/2023|0037.003107/2023-97",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 06/EMATER/PGE/2023|0011.028974/2022-42",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "Alarme monitorado 24h"
+ },
+ {
+  "id": "CNT Nº CUSD/DESC/CRCE/GA/22/2023|0016.001908/2023-66",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Contrato de uso da rede elétrica (Energisa), não é TI"
+ },
+ {
+  "id": "CNT/0292/SEDEC/PGE/2023|0041.000387/2023-12",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "Link e wi-fi temporários para a Rondônia Rural Show"
+ },
+ {
+  "id": "CNT/0258/SEPOG/PGE/2023|0035.068117/2022-15",
+  "categoria": "licencas",
+  "funcao": "videoconferencia",
+  "produto": "StreamYard",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0246/SEDEC/PGE/2023|0041.000125/2023-58",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0245/SEDEC/PGE/2023|0041.000125/2023-58",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0269/SEDEC/PGE/2023|0041.000538/2023-32",
+  "categoria": "licencas",
+  "funcao": "design-midia",
+  "produto": "",
+  "nota": "Edição de imagem e vídeo; mesma contratada da SEOSP"
+ },
+ {
+  "id": "CNT/0243/SEDEC/PGE/2023|0041.000125/2023-58",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0195/SEJUS/PGE/2023|0033.003097/2023-20",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0158/SEAS/PGE/2023|0026.001269/2023-10",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 03/EMATER/PGE/2023|0011.000516/2023-20",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0257/SEFIN/PGE/2023|0030.486557/2020-21",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "Leitura de placas (OCR) para fiscalização tributária"
+ },
+ {
+  "id": "CNT/0239/CGE-RO/PGE/2023|0007.000287/2023-11",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0240/CGE-RO/PGE/2023|0007.000291/2023-71",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0194/AGEVISA/PGE/2023|0002.455131/2021-43",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0196/PC-RO/PGE/2023|0019.006091/2023-92",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Locação de imóvel, não é TI"
+ },
+ {
+  "id": "CNT/0160/SEAS/PGE/2023|0026.001268/2023-75",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT Nº 4/2023/PGE-DER|0009.001813/2023-31",
+  "categoria": "operacional",
+  "funcao": "rastreamento-veicular",
+  "produto": "",
+  "nota": "Mesma contratada (TSM) do rastreamento da SEDAM"
+ },
+ {
+  "id": "CNT/0164/SEDUC/PGE/2023|0029.130652/2022-73",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Mobiliário escolar, não é TI"
+ },
+ {
+  "id": "CNT/0163/SEDUC/PGE/2023|0029.130652/2022-73",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Mobiliário escolar, não é TI"
+ },
+ {
+  "id": "CNT/0168/SEOSP/PGE/2023|0069.000303/2023-32",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": "MPLS da NBS, como na SEDUC e na SEFIN"
+ },
+ {
+  "id": "CNT/0122/SEFIN/PGE/2023|0030.078894/2022-18",
+  "categoria": "sistemas",
+  "funcao": "fabrica-software",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0159/SEAS/PGE/2023|0026.001270/2023-44",
+  "categoria": "equipamentos",
+  "funcao": "computadores",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0123/JUCER/PGE/2023|0018.068833/2022-01",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Contrato de uso da rede elétrica (Energisa), não é TI"
+ },
+ {
+  "id": "CNT Nº CUSD/DESC/CRCE/GA/11/2023|0033.009705/2023-18",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Contrato de uso da rede elétrica (Energisa), não é TI"
+ },
+ {
+  "id": "CNT Nº CUSD/DESC/CRCE/GA/10/2022|0033.009705/2023-18",
+  "categoria": "fora",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "Contrato de uso da rede elétrica (Energisa), não é TI"
+ },
+ {
+  "id": "CNT/0104/SEFIN/PGE/2023|0030.000753/2023-62",
+  "categoria": "licencas",
+  "funcao": "auditoria-ti",
+  "produto": "",
+  "nota": "Auditoria de AD e File Server Microsoft; contratada é a Formato"
+ },
+ {
+  "id": "CNT/0109/SEOSP/PGE/2023|0069.070868/2022-04",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0112/SEDUC/PGE/2023|0029.426454/2021-21",
+  "categoria": "seguranca",
+  "funcao": "firewall",
+  "produto": "Blockbit",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0090/SEOSP/PGE/2023|0069.000333/2023-49",
+  "categoria": "licencas",
+  "funcao": "cad-bim",
+  "produto": "Autodesk AEC Collection",
+  "nota": "Inclui nuvem BIM 360; Autodesk também na PGE"
+ },
+ {
+  "id": "CNT/0115/SEFIN/PGE/2023|0030.000114/2023-05",
+  "categoria": "conectividade",
+  "funcao": "telefonia-fixa",
+  "produto": "",
+  "nota": "Mesmo objeto e valor do CNT/0762/SEFIN; possível renovação"
+ }
+]

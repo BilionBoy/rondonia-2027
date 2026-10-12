@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tecnologia no Estado</title>
+<style>
+/*__FONTES__*/
+/*__BASE_CSS__*/
+.topo-c{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--hair);padding:14px 28px;flex:none}
+.topo-c h1{margin:0;font-size:16px;font-weight:700}
+.topo-c .meta{margin-left:auto;font-size:13px;color:var(--mute);display:flex;gap:14px;align-items:center}
+.seletor{display:flex;align-items:center;gap:10px;margin:2px 0 14px;flex-wrap:wrap}
+.seletor label{font-size:13px;color:var(--mute);font-weight:600}
+.seletor select{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:var(--bg);border:1px solid var(--hair);border-radius:8px;padding:6px 10px;max-width:100%}
+.seletor button{font:inherit;font-size:13px;border:0;background:none;color:var(--azul);cursor:pointer;padding:0}
+.selo{display:inline-block;font-size:11.5px;font-weight:650;padding:1px 8px;border-radius:999px;border:1px solid var(--hair);color:var(--mute);margin-left:6px;vertical-align:1px}
+.selo.alerta{border-color:#b45309;color:#b45309}
+.regras{font-size:12px;color:var(--mute);line-height:1.5;margin-top:8px}
+.regras b{color:var(--ink);font-weight:650}
+.esq{overflow-y:auto}
+.grafico.alto{flex:none}
+</style>
+</head>
+<body>
+<header class="topo-c"><h1>Tecnologia no Estado</h1><span class="meta" id="meta"></span></header>
+<main class="tela" id="tela">
+  <section class="esq" id="esq"></section>
+  <aside class="dir">
+    <div class="dir-cab"><div class="topo-cab"><h3>As provas</h3><span class="botoes"><button class="btn-dados" id="btn-dados" type="button">▦ Ver os dados de origem</button></span></div><p id="provas-sub"></p><div class="aviso" id="aviso" hidden></div><div class="filtro" id="filtro"></div></div>
+    <div class="provas" id="provas"></div>
+  </aside>
+</main>
+<div class="cortina" id="cortina"></div>
+<aside class="painel" id="painel" aria-hidden="true">
+  <button class="painel-x" id="painel-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="painel-tit"></h3><input id="painel-busca" type="search" placeholder="Buscar empresa, CNPJ, objeto, órgão ou processo…" aria-label="Buscar"></div>
+  <div class="provas" id="painel-lista"></div>
+</aside>
+<aside class="painel dados" id="dados" aria-hidden="true">
+  <button class="painel-x" id="dados-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="dados-tit"></h3></div>
+  <div class="dados-abas" id="dados-abas"></div>
+  <div class="ficha-fonte" id="dados-ficha"></div>
+  <div class="dados-nota" id="dados-nota"></div>
+  <div class="dados-ferr"><input id="dados-busca" type="search" placeholder="Buscar em todas as colunas…" aria-label="Buscar nos dados"><span class="cont" id="dados-cont"></span><button class="btn-dados contorno" id="dados-csv" type="button">⤓ Baixar CSV</button></div>
+  <div class="dados-tab" id="dados-tab"></div>
+  <div class="dados-pag" id="dados-pag"></div>
+</aside>
+<div id="dica" role="tooltip"></div>
+
+<script>
+const D = /*__DADOS_TEC__*/null;
+/*__BASE_JS__*/
+
+// ---------- tecnologia no Estado
+const CAT = Object.fromEntries(D.categorias);
+const CURTO = {sistemas: "Sistemas e software", licencas: "Licenças de software", datacenter: "Datacenter e nuvem", conectividade: "Links e telecom", seguranca: "Segurança da informação",
+  suporte: "Suporte e serviços de TI", impressao: "Impressão", equipamentos: "Equipamentos", rede: "Rede lógica", operacional: "Câmeras e monitoramento", frota: "Frota (com combustível)"};
+const FUN = f => D.funcoes[f] || f;
+const NOME = s => D.nomes[s] || s;
+const TODOS = D.registros;
+const conta = r => !r.rescisao && !r.conferir;                 // entra nas somas
+const ehTI = r => r.cat !== "frota";
+const soma = xs => xs.reduce((a, r) => a + (r.valor || 0), 0) / 1e6;
+const GENERICAS = new Set(["computadores", "notebooks-tablets", "perifericos-suprimentos", "audiovisual-interativo", "outra", "", "rede-wifi", "robotica-maker", "nobreak-energia", "drones", "radio", "satelite"]);
+const VISOES = [["tipo", "Por tipo"], ["orgao", "Por órgão"], ["repetidos", "Repetidos"], ["vencimentos", "Vencimentos"], ["empresas", "Empresas"], ["anos", "Ano a ano"]];
+let visao = "tipo", orgao = "";
+idsAtuais = Object.keys(TB);
+$("#meta").innerHTML = `dado oficial de ${diaC.split("-").reverse().join("/")}${horaC ? " · " + horaC : ""}<button class="tema" id="tema" type="button" aria-label="Claro ou escuro">◐</button>`;
+
+const doOrgao = xs => orgao ? xs.filter(r => r.sigla === orgao) : xs;
+const empOrg = () => D.empenhos.filter(e => !orgao || e[1] === orgao);
+const contrato = r => ({credor: r.contratado, valor: (r.valor || 0) / 1e6,
+  l2: `${r.sigla} · ${FUN(r.funcao)} · assinado ${r.assinatura || "—"} · vigência ${r.vigencia || "—"} (${r.situacao})${r.aditivo === "Sim" ? " · tem aditivo" : ""}${r.rescisao ? " · rescisão" : ""}${r.conferir ? " · valor a conferir" : ""}`,
+  cnpj: r.cnpj, fonte: r.processo ? "Processo SEI " + r.processo + " · " + r.numero : r.numero, modalidade: r.origem,
+  historico: r.objeto + (r.produto ? ` [${r.produto}]` : "") + (r.conferir ? ` — ${r.conferir}` : ""), link: r.link});
+const porValor = xs => [...xs].sort((a, b) => (!!a.conferir - !!b.conferir) || (b.valor || 0) - (a.valor || 0));
+function grupos(xs, chave) {
+  const m = new Map();
+  xs.forEach(r => { const k = chave(r); if (!m.has(k)) m.set(k, []); m.get(k).push(r); });
+  return [...m.entries()].map(([k, ys]) => ({k, xs: ys, v: soma(ys.filter(conta))})).sort((a, b) => b.v - a.v);
+}
+function provaDeGrupo(g, nome, sub, linhas) {
+  return {nome, sub, valor: fmt(g.v), barra: null, linhas, notas: porValor(g.xs).map(contrato), link: ["Abrir contratos no portal", L.portal]};
+}
+const comBarra = lista => { const max = Math.max(...lista.map(p => p._v || 0), 1e-9); lista.forEach(p => p.barra = (p._v || 0) / max); return lista; };
+const corta = (t, n) => t.length > n ? t.slice(0, n - 1).trimEnd() + "…" : t;
+function altura(n, por = 30, min = 240) { const g = $("#graf"); g.classList.add("alto"); g.style.height = Math.max(min, n * por) + "px"; }
+function trimestre(iso) { const a = +iso.slice(0, 4), m = +iso.slice(5, 7); return a >= 2029 ? "2029+" : a === 2028 ? "2028" : `${a} T${Math.ceil(m / 3)}`; }
+
+function desenha() {
+  const base = doOrgao(TODOS), ti = base.filter(ehTI), frota = base.filter(r => !ehTI(r));
+  const tiC = ti.filter(conta), total = soma(tiC);
+  const vig = tiC.filter(r => r.situacao === "vigente");
+  const empresas = new Set(tiC.map(r => r.cnpj || r.contratado));
+  const orgs = new Set(tiC.map(r => r.sigla));
+  const E = empOrg(), emp25 = E.filter(e => e[0] === 2025).reduce((a, e) => a + e[4], 0) / 1e6, emp26 = E.filter(e => e[0] === 2026).reduce((a, e) => a + e[4], 0) / 1e6;
+  const P = D.pca.filter(i => !orgao || i.sigla === orgao), pcaV = P.reduce((a, i) => a + (i.valor_estimado || 0), 0) / 1e6;
+  const listaOrg = grupos(TODOS.filter(ehTI), r => r.sigla);
+  const quem = orgao ? `${orgao} · ${NOME(orgao)}` : "Governo de Rondônia · todos os órgãos";
+
+  $("#esq").innerHTML = `<div class="entra"><div class="kicker">${esc(quem)}</div>
+    <h2 class="titulo">${orgao ? `Quanto ${esc(orgao)} contrata em tecnologia, com quem e para quê` : "Quanto o Estado contrata em tecnologia, com quem e para quê"}</h2>
+    <div class="seletor"><label for="sel-org">Órgão:</label><select id="sel-org"><option value="">O Estado todo (${listaOrg.length} órgãos)</option>${listaOrg.map(g => `<option value="${esc(g.k)}" ${g.k === orgao ? "selected" : ""}>${esc(g.k)} · ${esc(NOME(g.k))} · ${fmt(g.v)}</option>`).join("")}</select>${orgao ? `<button type="button" id="limpa-org">✕ ver o Estado todo</button>` : ""}</div>
+    <div class="numero"><span class="n">${fmt(total)}</span><span class="s">em <b>${br(tiC.length)} contratos de tecnologia</b> cadastrados de ${D.ano_foco} a 2026 ou ainda vigentes<br>${orgao ? "" : `<b>${br(orgs.size)} órgãos</b> · `}<b>${br(empresas.size)} empresas</b> · <b>${br(vig.length)}</b> vigentes hoje (${fmt(soma(vig))})</span></div>
+    <div class="estat">${[["Empenhado em TIC 2025", E.length ? fmt(emp25) : "—"], ["Empenhado em TIC 2026", E.length ? fmt(emp26) + " até agora" : "—"], ["Frota e abastecimento", frota.length ? `${fmt(soma(frota.filter(conta)))} · ${frota.filter(conta).length} contratos` : "nenhum"], ["Planejado no PCA 2026", P.length ? `${fmt(pcaV)} · ${P.length} itens` : "sem PCA lido"]]
+      .map(([k, v]) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`).join("")}</div></div>
+    <div class="alterna"><span class="rot">Ver:</span>${VISOES.filter(([v]) => !(orgao && v === "orgao")).map(([v, n]) => `<button type="button" data-v="${v}" class="${v === visao ? "on" : ""}">${n}</button>`).join("")}</div>
+    <div class="grafico" id="graf"></div>
+    <div class="dica-uso" id="uso"></div>
+    <div class="rodape"><div class="fonte">Fonte: Portal da Transparência RO · Contratos (todos os órgãos) e Despesas por empenho (elemento 40, TIC)</div><button class="btn-dados contorno" type="button" data-dados="1">▦ Ver os dados de origem</button></div>
+    <div class="regras"><b>Como ler.</b> Valor = valor global do contrato informado no portal (o total previsto para toda a vigência, sem aditivos), somado pelo ano de cadastro. Tecnologia = classificação deste painel, revisada contrato a contrato. Frota e abastecimento ficam à parte porque o valor inclui o combustível e as peças. ${D.resumo.rescisoes} rescisões e ${D.resumo.a_conferir} contrato com valor implausível ficam na lista, fora das somas. Empenhado = notas do elemento 40 (TIC); equipamento de informática não tem elemento próprio. Contratos de 2015 a 2022 já vencidos estão guardados nos dados brutos e fora das contas.</div>`;
+  $("#sel-org").onchange = e => { orgao = e.target.value; if (orgao && visao === "orgao") visao = "tipo"; desenha(); };
+  $("#limpa-org")?.addEventListener("click", () => { orgao = ""; desenha(); });
+  $("#esq").querySelectorAll(".alterna button").forEach(b => b.onclick = () => { visao = b.dataset.v; desenha(); });
+  ({tipo: vTipo, orgao: vOrgao, repetidos: vRepetidos, vencimentos: vVenc, empresas: vEmpresas, anos: vAnos})[visao](ti, frota);
+  ligaDados();
+}
+
+// por tipo: categorias; clique abre as funções da categoria
+function vTipo(ti, frota) {
+  const gs = grupos(ti.concat(frota), r => r.cat);
+  altura(gs.length, 34, 220);
+  barras($("#graf"), gs.map(g => ({rot: CURTO[g.k], partes: [{v: g.v, cor: g.k === "frota" ? "var(--cinza)" : "var(--azul)"}], dir: `${fmt(g.v)} · ${g.xs.length}`,
+    dica: [CAT[g.k], [["Valor", fmt(g.v)], ["Contratos", br(g.xs.length)], ["Vigentes", br(g.xs.filter(r => r.situacao === "vigente").length)], ["Empresas", br(new Set(g.xs.map(r => r.cnpj || r.contratado)).size)]], g.k === "frota" ? "Inclui o combustível e as peças: fora do total de tecnologia" : "Clique para ver o que tem dentro"],
+    clique: (gg, s) => { foco(s, gg); funcoesDe(g.xs, `${CAT[g.k]}: o que tem dentro, por função`, () => { foco(s, null); padrao(ti); }, CAT[g.k]); }})));
+  $("#uso").textContent = "Valor contratado por tipo de tecnologia. O número ao lado é a quantidade de contratos. Clique numa barra para abrir as funções e os contratos.";
+  padrao(ti);
+}
+function funcoesDe(xs, sub, limpar, filtro) {
+  const gs = grupos(xs, r => r.funcao);
+  const lista = comBarra(gs.map(g => ({...provaDeGrupo(g, FUN(g.k), `${g.xs.length} contrato${g.xs.length > 1 ? "s" : ""} · ${[...new Set(g.xs.map(r => r.sigla))].join(", ")}`,
+    [["Valor contratado", "R$ " + br(g.v * 1e6, 2)], ["Órgãos", String(new Set(g.xs.map(r => r.sigla)).size)], ["Empresas", String(new Set(g.xs.map(r => r.cnpj || r.contratado)).size)], ["Vigentes", String(g.xs.filter(r => r.situacao === "vigente").length)]]), _v: g.v})));
+  mostraProvas(sub, lista, {filtro, limpar, todas: lista, tituloTodas: sub, limite: 6});
+}
+function padrao(ti) {
+  const lista = comBarra(porValor(ti).map(r => ({nome: r.contratado, sub: `${r.sigla} · ${FUN(r.funcao)} · ${r.ano}${r.situacao === "vigente" ? " · vigente" : ""}${r.conferir ? " · valor a conferir" : ""}${r.rescisao ? " · rescisão" : ""}`, valor: r.conferir ? "a conferir" : fmt((r.valor || 0) / 1e6), _v: conta(r) ? r.valor : 0, notas: [contrato(r)]})));
+  mostraProvas(`Os maiores contratos de tecnologia${orgao ? " de " + orgao : " do Estado"}. Clique para ver objeto, processo SEI, vigência e CNPJ.`, lista, {todas: lista, tituloTodas: `Todos os contratos de tecnologia${orgao ? " de " + orgao : ""}`, limite: 6});
+}
+
+// por órgão: ranking; clique seleciona o órgão
+function vOrgao(ti) {
+  const gs = grupos(ti, r => r.sigla).slice(0, 22);
+  altura(gs.length, 30, 240);
+  barras($("#graf"), gs.map(g => ({rot: g.k, partes: [{v: g.v, cor: "var(--azul)"}], dir: `${fmt(g.v)} · ${g.xs.length}`,
+    dica: [NOME(g.k), [["Valor", fmt(g.v)], ["Contratos", br(g.xs.length)], ["Empresas", br(new Set(g.xs.map(r => r.cnpj || r.contratado)).size)], ["Funções diferentes", br(new Set(g.xs.map(r => r.funcao)).size)]], "Clique para abrir este órgão"],
+    clique: () => { orgao = g.k; visao = "tipo"; desenha(); }})));
+  $("#uso").textContent = "Os 22 órgãos que mais contratam tecnologia. Clique num órgão para ver tudo dele: tipos, repetições, vencimentos e empresas.";
+  const lista = comBarra(grupos(ti, r => r.sigla).map(g => ({...provaDeGrupo(g, `${g.k} · ${NOME(g.k)}`, `${g.xs.length} contratos · ${new Set(g.xs.map(r => r.cnpj || r.contratado)).size} empresas`,
+    [["Valor contratado", "R$ " + br(g.v * 1e6, 2)], ...D.categorias.map(([c, n]) => [n, fmt(soma(g.xs.filter(r => r.cat === c && conta(r))))]).filter(([, v]) => v !== "R$ 0")]), _v: g.v})));
+  mostraProvas("Todos os órgãos, do que mais contrata para o que menos. Abra para ver cada contrato.", lista, {todas: lista, tituloTodas: "Contratos de tecnologia por órgão", limite: 8});
+}
+
+// repetidos: a mesma função em vários órgãos (Estado) ou várias empresas para a mesma função (órgão)
+function vRepetidos(ti) {
+  const todosTI = TODOS.filter(r => ehTI(r) && conta(r) && !GENERICAS.has(r.funcao));
+  let gs;
+  if (!orgao) {
+    gs = grupos(todosTI, r => r.funcao).map(g => ({...g, orgs: [...new Set(g.xs.map(r => r.sigla))]})).filter(g => g.orgs.length >= 2).sort((a, b) => b.orgs.length - a.orgs.length || b.v - a.v);
+  } else {
+    const meus = new Set(ti.filter(r => !GENERICAS.has(r.funcao)).map(r => r.funcao));
+    gs = grupos(todosTI.filter(r => meus.has(r.funcao)), r => r.funcao).map(g => ({...g, orgs: [...new Set(g.xs.map(r => r.sigla))]}))
+      .filter(g => g.orgs.length >= 2 || new Set(g.xs.filter(r => r.sigla === orgao).map(r => r.cnpj || r.contratado)).size >= 2).sort((a, b) => b.orgs.length - a.orgs.length || b.v - a.v);
+  }
+  const vis = gs.slice(0, 20);
+  altura(vis.length, 30, 240);
+  barras($("#graf"), vis.map(g => ({rot: corta(FUN(g.k).replace(/ \(.*\)/, ""), 27), partes: [{v: g.orgs.length, cor: "var(--azul)"}], dir: `${g.orgs.length} órgãos · ${fmt(g.v)}`,
+    dica: [FUN(g.k), [["Órgãos", g.orgs.join(", ")], ["Empresas", br(new Set(g.xs.map(r => r.cnpj || r.contratado)).size)], ["Contratos", br(g.xs.length)], ["Valor somado", fmt(g.v)]], "Clique para ver quem contrata o quê"],
+    clique: (gg, s) => { foco(s, gg); detalheRepetido(g, () => { foco(s, null); listaRepetidos(gs); }); }})));
+  $("#uso").textContent = orgao
+    ? `Funções que ${orgao} contrata e que outros órgãos também contratam à parte (ou que o próprio ${orgao} contrata de mais de uma empresa). Barra = número de órgãos.`
+    : "A mesma função contratada separadamente por vários órgãos: candidatas a uma contratação única do Estado. Barra = número de órgãos. Compra de equipamentos não entra aqui.";
+  listaRepetidos(gs);
+}
+function detalheRepetido(g, limpar) {
+  const lista = comBarra(grupos(g.xs, r => r.sigla).map(o => ({...provaDeGrupo(o, `${o.k} · ${NOME(o.k)}`, [...new Set(o.xs.map(r => r.contratado))].join(" · "),
+    [["Valor", "R$ " + br(o.v * 1e6, 2)], ["Contratos", String(o.xs.length)]]), _v: o.v})));
+  mostraProvas(`${FUN(g.k)}: ${g.orgs.length} órgãos contratam separadamente`, lista, {filtro: FUN(g.k), limpar, todas: lista, tituloTodas: FUN(g.k), limite: 8, abrir: 0});
+}
+function listaRepetidos(gs) {
+  const lista = comBarra(gs.map(g => ({...provaDeGrupo(g, FUN(g.k), `${g.orgs.length} órgãos: ${g.orgs.join(", ")}`,
+    [["Valor somado", "R$ " + br(g.v * 1e6, 2)], ["Empresas diferentes", String(new Set(g.xs.map(r => r.cnpj || r.contratado)).size)], ["Contratos", String(g.xs.length)]]), _v: g.orgs.length})));
+  mostraProvas(`${gs.length} funções contratadas por mais de um órgão${orgao ? " (entre as de " + orgao + ")" : ""}. Abra para ver órgão, empresa e contrato.`, lista, {todas: lista, tituloTodas: "Funções repetidas entre órgãos", limite: 6});
+}
+
+// vencimentos: contratos vigentes pelo fim da vigência
+function vVenc(ti) {
+  const vig = ti.filter(r => conta(r) && r.situacao === "vigente" && r.vigencia_iso);
+  const ordem = ["2026 T4", "2027 T1", "2027 T2", "2027 T3", "2027 T4", "2028", "2029+"];
+  const gs = ordem.map(k => ({k, xs: vig.filter(r => trimestre(r.vigencia_iso) === k)})).map(g => ({...g, v: soma(g.xs)}));
+  $("#graf").classList.remove("alto"); $("#graf").style.height = "";
+  colunas($("#graf"), gs.map(g => ({rot: g.k, partes: [{v: g.v, cor: g.k.startsWith("2027") ? "var(--azul)" : "var(--cinza2)"}], topo: fmt(g.v),
+    dica: [`Vencem em ${g.k}`, [["Contratos", br(g.xs.length)], ["Valor", fmt(g.v)]], "Clique para ver quais"],
+    clique: (gg, s) => { foco(s, gg); const lista = comBarra(porValor(g.xs).map(r => ({nome: r.contratado, sub: `${r.sigla} · ${FUN(r.funcao)} · vence ${r.vigencia}`, valor: fmt(r.valor / 1e6), _v: r.valor, notas: [contrato(r)]})));
+      mostraProvas(`Contratos que vencem em ${g.k}: cada um é uma janela para juntar com outros órgãos`, lista, {filtro: g.k, limpar: () => { foco(s, null); vencPadrao(vig); }, todas: lista, tituloTodas: `Vencem em ${g.k}`, limite: 6}); }})));
+  $("#uso").textContent = `Contratos de tecnologia vigentes em ${D.data_corte.split("-").reverse().join("/")}, pela data em que vencem. Azul: vencem em 2027, o primeiro ano do novo governo. Contrato vigente não se rompe sem motivo; o vencimento é a hora de consolidar.`;
+  vencPadrao(vig);
+}
+function vencPadrao(vig) {
+  const lista = comBarra([...vig].sort((a, b) => a.vigencia_iso.localeCompare(b.vigencia_iso)).map(r => ({nome: r.contratado, sub: `${r.sigla} · ${FUN(r.funcao)} · vence ${r.vigencia}`, valor: fmt(r.valor / 1e6), _v: r.valor, notas: [contrato(r)]})));
+  mostraProvas("Calendário: os próximos a vencer primeiro.", lista, {todas: lista, tituloTodas: "Contratos vigentes por data de vencimento", limite: 6});
+}
+
+// empresas: quem mais recebe e em quantos órgãos
+function vEmpresas(ti) {
+  const gs = grupos(ti.filter(conta), r => r.cnpj || r.contratado).map(g => ({...g, nome: g.xs[0].contratado, orgs: [...new Set(g.xs.map(r => r.sigla))]}));
+  const vis = gs.slice(0, 18);
+  altura(vis.length, 30, 240);
+  barras($("#graf"), vis.map(g => ({rot: g.nome.replace(/ (LTDA|S\/?A|EIRELI|ME|EPP)\.?$/i, "").slice(0, 26), partes: [{v: g.v, cor: g.orgs.length > 1 ? "var(--azul)" : "var(--cinza2)"}], dir: `${fmt(g.v)} · ${g.orgs.length} órgão${g.orgs.length > 1 ? "s" : ""}`,
+    dica: [g.nome, [["CNPJ", g.xs[0].cnpj || "—"], ["Órgãos", g.orgs.join(", ")], ["Contratos", br(g.xs.length)], ["Valor", fmt(g.v)]], "Clique para ver os contratos"],
+    clique: (gg, s) => { foco(s, gg); const lista = porValor(g.xs).map(r => ({nome: `${r.sigla} · ${FUN(r.funcao)}`, sub: `${r.ano} · ${r.situacao}`, valor: fmt(r.valor / 1e6), notas: [contrato(r)]}));
+      mostraProvas(`${g.nome}: todos os contratos`, lista, {filtro: g.nome.slice(0, 40), limpar: () => { foco(s, null); empresasPadrao(gs); }, todas: lista, tituloTodas: g.nome, limite: 8}); }})));
+  $("#uso").textContent = "As empresas que mais recebem em contratos de tecnologia. Azul: a mesma empresa atende mais de um órgão, cada um com o seu contrato.";
+  empresasPadrao(gs);
+}
+function empresasPadrao(gs) {
+  const lista = comBarra(gs.map(g => ({...provaDeGrupo(g, g.nome, `${g.orgs.length} órgão${g.orgs.length > 1 ? "s" : ""}: ${g.orgs.join(", ")} · CNPJ ${g.xs[0].cnpj || "—"}`,
+    [["Valor contratado", "R$ " + br(g.v * 1e6, 2)], ["Contratos", String(g.xs.length)], ["Funções", [...new Set(g.xs.map(r => FUN(r.funcao)))].join(", ")]]), _v: g.v})));
+  mostraProvas(`${gs.length} empresas. Abra para ver cada contrato.`, lista, {todas: lista, tituloTodas: "Empresas contratadas em tecnologia", limite: 6});
+}
+
+// ano a ano: contratado (por cadastro) e empenhado (elemento 40)
+function vAnos(ti) {
+  const anos = [2023, 2024, 2025, 2026], E = empOrg();
+  const gs = anos.map(a => ({a, xs: ti.filter(r => r.ano === a && conta(r)), emp: E.filter(e => e[0] === a).reduce((s, e) => s + e[4], 0) / 1e6, pago: E.filter(e => e[0] === a).reduce((s, e) => s + e[5], 0) / 1e6}));
+  $("#graf").classList.remove("alto"); $("#graf").style.height = "";
+  colunas($("#graf"), gs.map(g => ({rot: String(g.a), partes: [{v: soma(g.xs), cor: "var(--azul)"}], topo: fmt(soma(g.xs)),
+    dica: [`${g.a}`, [["Contratado (valor global)", fmt(soma(g.xs))], ["Contratos", br(g.xs.length)], ["Empenhado em TIC (elemento 40)", E.length ? fmt(g.emp) : "—"], ["Pago em TIC", E.length ? fmt(g.pago) : "—"]], "Clique para ver os contratos do ano"],
+    clique: (gg, s) => { foco(s, gg); funcoesDe(g.xs, `Contratos de tecnologia cadastrados em ${g.a}, por função`, () => { foco(s, null); padrao(ti); }, String(g.a)); }})));
+  $("#uso").textContent = `Valor global dos contratos de tecnologia pelo ano de cadastro no portal. ${E.length ? "Passe o mouse para ver também o empenhado e o pago no elemento 40 (TIC)." : ""} 2026 vai até ${D.data_corte.split("-").reverse().join("/")}.`;
+  padrao(ti);
+}
+
+function ligaDados() {
+  document.querySelectorAll("[data-dados]").forEach(b => b.onclick = () => abreDados(idsAtuais));
+  $("#btn-dados").onclick = () => abreDados(idsAtuais);
+}
+$("#tema")?.addEventListener("click", () => {
+  const r = document.documentElement, escuro = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme = escuro ? "light" : "dark";
+  try { localStorage.setItem("tema-na", r.dataset.theme); } catch (e) {}
+  desenha();
+});
+try { const t = localStorage.getItem("tema-na"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+addEventListener("keydown", e => { if (e.key === "Escape") { fechaPainel(); fechaDados(); } });
+let pend; addEventListener("resize", () => { clearTimeout(pend); pend = setTimeout(desenha, 150); });
+const q = new URLSearchParams(location.search);
+if (q.get("org") && D.registros.some(r => r.sigla === q.get("org"))) orgao = q.get("org");
+if (q.get("ver") && VISOES.some(([v]) => v === q.get("ver"))) visao = q.get("ver");
+desenha();
+if (q.get("dados") && TB[q.get("dados")]) abreDados([q.get("dados")]);
+</script>
+</body>
+</html>

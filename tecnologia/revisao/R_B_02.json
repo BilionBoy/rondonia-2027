@@ -1,0 +1,184 @@
+[
+ {
+  "id": "CNT Nº 007/EMATER/PGE/2023|0011.002659/2023-76",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende Banco de Preços a vários órgãos"
+ },
+ {
+  "id": "CNT/0340/SESDEC/PGE/2023|0037.000363/2023-22",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "videowall SESDEC; mesmo fornecedor (Seal) da PM"
+ },
+ {
+  "id": "CNT/0350/CBMRO/PGE/2023|0004.003477/2023-10",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende Banco de Preços a vários órgãos"
+ },
+ {
+  "id": "CNT/0328/SEPOG/PGE/2023|0035.068829/2022-26",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende Banco de Preços a vários órgãos"
+ },
+ {
+  "id": "CNT/0347/IPERON/PGE/2023|0016.000980/2023-76",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "",
+  "nota": "outro fornecedor (Promáxima) para mesma função do Banco de Preços"
+ },
+ {
+  "id": "CNT/0309/PM-RO/PGE/2023|0021.019355/2023-29",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "videowall e servidores PM; mesmo fornecedor (Seal) da SESDEC"
+ },
+ {
+  "id": "CNT/0287/SEGEP/PGE/2023|0031.002306/2023-38",
+  "categoria": "impressao",
+  "funcao": "impressao",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0284/SEDUC/PGE/2023|0029.116484/2022-11",
+  "categoria": "equipamentos",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "itens 'equipamentos tecnológicos' não especificados; conferir ata PE 55/2022"
+ },
+ {
+  "id": "CNT/0272/FAPERO/PGE/2023|0012.000045/2023-40",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "monitoramento remoto de alarme e CFTV"
+ },
+ {
+  "id": "CNT/0285/SEDUC/PGE/2023|0029.116484/2022-11",
+  "categoria": "equipamentos",
+  "funcao": "outra",
+  "produto": "",
+  "nota": "itens 'equipamentos tecnológicos' não especificados; conferir ata PE 55/2022"
+ },
+ {
+  "id": "CNT/0190/SEJUS/PGE/2023|0033.093576/2022-49",
+  "categoria": "equipamentos",
+  "funcao": "telefonia-fixa",
+  "produto": "",
+  "nota": "aparelhos telefônicos rurais e fixos"
+ },
+ {
+  "id": "CNT/0175/SEJUS/PGE/2023|0033.088245/2022-97",
+  "categoria": "operacional",
+  "funcao": "prisional-monitoramento",
+  "produto": "",
+  "nota": "manutenção de raio-X de inspeção nas unidades prisionais"
+ },
+ {
+  "id": "CNT/0149/SEDUC/PGE/2023|0029.013782/2023-23",
+  "categoria": "operacional",
+  "funcao": "videomonitoramento",
+  "produto": "",
+  "nota": "centro de comando de monitoramento das CREs da SEDUC"
+ },
+ {
+  "id": "CNT/002/EMATER/PGE/2023|0011.076123/2022-14",
+  "categoria": "conectividade",
+  "funcao": "internet-link",
+  "produto": "",
+  "nota": ""
+ },
+ {
+  "id": "CNT/0004/SEDUC/PGE/2023|0029.099671/2022-15",
+  "categoria": "equipamentos",
+  "funcao": "outra",
+  "produto": "OrCam MyEye 2",
+  "nota": "tecnologia assistiva; mesma compra repetida em outro contrato"
+ },
+ {
+  "id": "CNT/1025/SESAU/PGE/2022|0036.248778/2021-23",
+  "categoria": "sistemas",
+  "funcao": "gestao-hospitalar",
+  "produto": "Epimed",
+  "nota": "monitoramento de leitos UTI e indicadores clínicos"
+ },
+ {
+  "id": "CNT Nº 6/2024/SEPAT-ASTEC|0064.001188/2024-44",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "",
+  "nota": "tokens de assinatura"
+ },
+ {
+  "id": "CNT Nº 1538/2024/PGE-SEDUC|0029.030669/2024-93",
+  "categoria": "equipamentos",
+  "funcao": "outra",
+  "produto": "OrCam MyEye 2",
+  "nota": "tecnologia assistiva; mesma compra repetida em outro contrato"
+ },
+ {
+  "id": "CNT Nº 1463/2024/PGE-SESAU|0036.031114/2024-70",
+  "categoria": "suporte",
+  "funcao": "digitalizacao",
+  "produto": "",
+  "nota": "gestão de acervo com guarda física; parte pode não ser TI"
+ },
+ {
+  "id": "CNT Nº 1462/2024/PGE-SEAS|0026.005534/2024-10",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia vende Banco de Preços a vários órgãos"
+ },
+ {
+  "id": "CNT Nº 1215/2024/PGE-SUGESP|0042.002415/2024-15",
+  "categoria": "operacional",
+  "funcao": "alarme-intrusao",
+  "produto": "YORKIE PRO",
+  "nota": "detectores de intrusão sem fio"
+ },
+ {
+  "id": "CNT Nº 1230/2024/PGE-SETIC|0070.001065/2024-24",
+  "categoria": "seguranca",
+  "funcao": "antispam-email",
+  "produto": "",
+  "nota": "appliance anti-spam do e-mail da SETIC"
+ },
+ {
+  "id": "CNT Nº 1251/2024/PGE-SEDUC|0029.041000/2024-27",
+  "categoria": "sistemas",
+  "funcao": "avaliacao-educacional",
+  "produto": "",
+  "nota": "CAEd/UFJF, testes de fluência; limítrofe, serviço de avaliação"
+ },
+ {
+  "id": "CNT Nº 672/2024/PGE-SESDEC|0037.003067/2024-64",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "",
+  "nota": "impressora etiquetadora para patrimônio"
+ },
+ {
+  "id": "CNT Nº 894/2024/PGE-SESDEC|0019.016168/2024-13",
+  "categoria": "sistemas",
+  "funcao": "plataforma-educacional",
+  "produto": "",
+  "nota": "AOVS é a empresa da Alura; capacitação de servidores"
+ },
+ {
+  "id": "CNT Nº 1165/2024/PGE-SEDUC|0029.022841/2023-54",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "televisores para Mediação Tecnológica"
+ }
+]

@@ -1,0 +1,128 @@
+[
+ {
+  "id": "CNT Nº 623/2025/PGE-COGES|0088.001162/2024-28",
+  "categoria": "sistemas",
+  "funcao": "bi-dados",
+  "produto": "NetDiver",
+  "nota": "Licenças, migração e treinamento"
+ },
+ {
+  "id": "RESCISAO AO CNT Nº 957/2024/PGE-PA|0043.000999/2024-76",
+  "categoria": "sistemas",
+  "funcao": "compras-licitacao",
+  "produto": "",
+  "nota": "Rescisão valor 0; contrato original com ETICE (TI do Ceará)"
+ },
+ {
+  "id": "CNT Nº 665/2025/PGE-DERADM|0009.001554/2025-19",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia contrata com vários órgãos (DER, IDEP, IEES, SOPH, PM)"
+ },
+ {
+  "id": "CNT Nº 16/2025/IDEP-GAAC|0048.000546/2025-81",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia contrata com vários órgãos (DER, IDEP, IEES, SOPH, PM)"
+ },
+ {
+  "id": "CNT Nº 13/2025/IDEP-GAAC|0048.000458/2025-89",
+  "categoria": "equipamentos",
+  "funcao": "robotica-maker",
+  "produto": "Arduino",
+  "nota": "Positivo; inclui capacitação e assessoria técnica"
+ },
+ {
+  "id": "CNT Nº 551/2025/PGE-DERADM|0009.083141/2022-93",
+  "categoria": "frota",
+  "funcao": "frota-abastecimento",
+  "produto": "Prime",
+  "nota": "Valor alto: R$ 45,8 mi só no DER"
+ },
+ {
+  "id": "CNT Nº 535/2025/PGE-DETRAN|0010.012726/2025-32",
+  "categoria": "sistemas",
+  "funcao": "compras-licitacao",
+  "produto": "",
+  "nota": "Ferramenta de PCA da GovPlan"
+ },
+ {
+  "id": "CNT Nº 521/2025/PGE-IPERON|0016.003330/2025-44",
+  "categoria": "equipamentos",
+  "funcao": "perifericos-suprimentos",
+  "produto": "QCY H3 Lite ANC",
+  "nota": "Fones de ouvido sem fio"
+ },
+ {
+  "id": "002|º 0040.000033/2024-69",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "SOPH; NP Tecnologia contrata com vários órgãos (DER, IDEP, IEES, SOPH, PM)"
+ },
+ {
+  "id": "CNT Nº 456/2025/PGE-PA|0055.000129/2025-49",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia contrata com vários órgãos (DER, IDEP, IEES, SOPH, PM)"
+ },
+ {
+  "id": "CNT Nº 148/2025/PGE-SUGESP|0042.007031/2024-81",
+  "categoria": "suporte",
+  "funcao": "impressao",
+  "produto": "HP DesignJet T650",
+  "nota": "Manutenção de plotter"
+ },
+ {
+  "id": "CNT Nº 147/2025/PGE-SESDEC|0004.008705/2023-30",
+  "categoria": "equipamentos",
+  "funcao": "audiovisual-interativo",
+  "produto": "",
+  "nota": "Smart TVs"
+ },
+ {
+  "id": "CNT Nº 2/2024/COGES-GCONT|0088.000107/2024-11",
+  "categoria": "seguranca",
+  "funcao": "certificado-digital",
+  "produto": "SSL Wildcard",
+  "nota": ""
+ },
+ {
+  "id": "1551/2024/PGE-SUGESP|0018.000370/2025-14",
+  "categoria": "frota",
+  "funcao": "frota-abastecimento",
+  "produto": "UzziPay",
+  "nota": "Outro fornecedor de abastecimento que Prime/DER"
+ },
+ {
+  "id": "CNT Nº 70/2025/PGE-SEDUC|0029.073577/2024-06",
+  "categoria": "sistemas",
+  "funcao": "gestao-escolar",
+  "produto": "",
+  "nota": "R$ 6,1 mi; solução via consórcio; checar sobreposição com sistema escolar da SEDUC"
+ },
+ {
+  "id": "CNT Nº 57/2025/PGE-PA|0028.025793/2024-47",
+  "categoria": "operacional",
+  "funcao": "meio-ambiente",
+  "produto": "",
+  "nota": "Drone com licença e treinamento; R$ 2 mi"
+ },
+ {
+  "id": "CNT Nº 973/2026/PGE-SESDEC|0021.042715/2026-39",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "NP Tecnologia contrata com vários órgãos (DER, IDEP, IEES, SOPH, PM)"
+ },
+ {
+  "id": "CNT Nº 887/2026/PGE-IDEP|0048.000474/2026-52",
+  "categoria": "sistemas",
+  "funcao": "banco-de-precos",
+  "produto": "Banco de Preços",
+  "nota": "Renovação do IDEP (2026); NP Tecnologia contrata com vários órgãos (DER, IDEP, IEES, SOPH, PM)"
+ }
+]

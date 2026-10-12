@@ -68,6 +68,33 @@ Consulta manual feita em 08/10/2026 e registrada no `nao-aparece/build_s3.py` (c
 
 Coleta: `python3 coleta_convenios.py SEAS` (serve para qualquer órgão: troque a sigla). Build: `python3 convenios/build_convenios.py`. O portal não dá link por convênio, só a página geral (https://transparencia.ro.gov.br/convenios); o número do processo SEI vem em cada linha.
 
+## 2c. Tecnologia no Estado (quarta aba), coleta de 12/10/2026
+
+| Arquivo | O que é | Endereço | Registros |
+|---|---|---|---|
+| `dados-fonte/s5_contratos.json` e `.csv` | **Todos os contratos** de todos os órgãos, 2015–2026 (ano = ano de cadastro no portal) | POST `/contratos/consultacontratos` (`TipoDocumento=1`, `Ano`; sem filtro de órgão) | 9.611 |
+| `tecnologia/revisao/R_*.json` | Revisão contrato a contrato do que é tecnologia (categoria, função, produto, nota), feita por 10 revisores sobre 2.062 contratos de 2023–2026 ou vigentes; regra em `tecnologia/revisao/_BRIEFING.md` | — | 751 de tecnologia |
+| `dados-fonte/s5_empenhos_tic.json` | Notas de empenho do elemento de despesa 40 (TIC), 2023–2026, todos os Poderes, com a ficha de detalhe de cada nota | POST `/Despesa/FiltrarEmpenhos` (`CodElementoDespesa` = 33904000 e 44904000) + `/Despesa/notas-de-empenho/detalhes` | 3.445 |
+| `dados-fonte/pca/2026/*.pdf` e `pca_2026_ti.json` | Planos de Contratações Anuais 2026 (portarias no DOE) e os itens de TI extraídos | GET `/Licitacoes/FiltrarAnexosPac?filtroId=` (página `/licitacoes/planoanualdecontratacoes`) | 38 PDFs |
+| `dados-fonte/s5_empresas.json` | Cadastro público de cada CNPJ (atividade, abertura, porte, município, situação). Sem nomes de sócios | BrasilAPI `/api/cnpj/v1/{cnpj}` (dados da Receita Federal) | — |
+| `dados-fonte/s5_tecnologia.json` | Base consolidada da aba (gerada pelo build) | — | — |
+
+Ordem: `python3 coleta_contratos.py` → `python3 tecnologia/classificar.py` (triagem por regra) → revisão (`tecnologia/revisao/`) → `python3 tecnologia/coleta_empenhos.py` → `python3 tecnologia/build_tecnologia.py` → `python3 tecnologia/coleta_empresas.py` → build de novo.
+
+**Regras de leitura da aba**
+- **Foco:** contratos cadastrados de 2023 a 2026, mais os anteriores ainda vigentes em 12/10/2026. Os de 2015 a 2022 ficam guardados em `s5_contratos.json`, fora das contas.
+- **Valor:** é o "valor global" do portal, o total previsto para toda a vigência, sem aditivos, somado pelo ano de cadastro. Não é gasto anual.
+- **Frota e abastecimento** (sistema e cartão) ficam em bloco separado, porque o valor inclui o combustível e as peças.
+- **Fora das somas:**
+  - 10 rescisões;
+  - 1 contrato com valor implausível: o ERP da SOPH, de R$ 135,2 mi, marcado em `VALOR_A_CONFERIR`.
+- **Órgão vazio no portal:** é deduzido pelo prefixo do processo SEI (ex.: 0040 = SOPH).
+- **Empenho:**
+  - o fundo aparece pelo órgão gestor (FES = SESAU, FUNESP = SESDEC, FUNDAT = SEFIN);
+  - TJ, ALE, TCE, MP e DPE (e seus fundos) ficam fora das somas do Executivo.
+- **Equipamento de informática** (4.4.90.52) não tem elemento próprio. Por isso só aparece pelos contratos.
+- **"Repetidos":** a mesma função contratada separadamente por 2 ou mais órgãos. A compra de bens (computadores, periféricos etc.) não entra.
+
 ## 3. Dados das 9 etapas (coleta de 07/10/2026)
 
 | Arquivo | Fonte |
