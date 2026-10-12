@@ -1,0 +1,323 @@
+# SISPAC-RO: plano para a SEAS. É o exemplo de referência do molde "Proposta".
+# Gerar: python3 moldes/gerar.py moldes/exemplos/sispac-ro/conteudo.yaml
+# Correção em relação ao PDF original de 09/10: 2021 tem 21 termos de fomento com entidades, não 20
+# (a APAE "do Município de Santa Luzia D'Oeste" tinha sido contada como prefeitura).
+
+documento:
+  produto: SISPAC-RO
+  slogan: Rondônia conectada pelo cuidado
+  arquivo: SEAS-SISPAC-PLANO-DE-GOVERNO
+  titulo_pdf: SISPAC-RO · plano
+  autoria: NextTech Ecosystem
+
+capa:
+  topo: [Estado de Rondônia, Proposta com dados públicos]
+  kicker: PROPOSTA PARA A SEAS · OUTUBRO DE 2026
+  titulo: SISPAC-RO
+  subtitulo: Sistema Integrado de Parcerias e Assistência Comunitária de Rondônia
+  slogan: Rondônia conectada pelo cuidado
+  texto: Um sistema para ajudar as entidades e associações a fazer plano de trabalho, cotações, relatórios e prestação de contas, e para a SEAS acompanhar cada parceria.
+  pe: Secretaria de Estado da Mulher, da Família, da Assistência e do Desenvolvimento Social
+  # autoria_capa: "NextTech\nEcosystem"   (opcional; padrão = documento.autoria)
+
+paginas:
+  - kicker: A proposta
+    titulo: A ideia em uma frase
+    blocos:
+      - espaco: 12
+      - frase: As entidades fazem o trabalho social. O **SISPAC-RO** ajuda a fazer o papel. Ele cuida do plano de trabalho, das cotações, dos relatórios e da prestação de contas, e a SEAS acompanha cada etapa.
+      - espaco: 6
+      - destaques:
+          - [Menos burocracia, para quem ajuda]
+          - [Mais clareza, para quem administra]
+          - [Mais acesso, para quem precisa]
+
+  - kicker: Sumário
+    titulo: O que este plano apresenta
+    blocos:
+      - sumario:
+          nota: "Todos os números vêm de fontes públicas: Portal da Transparência de Rondônia, Ministério do Desenvolvimento e Assistência Social (MDS) e IBGE. A lista completa está na última página."
+
+  - secao: O problema das entidades
+    titulo: As parcerias cresceram mais rápido que o apoio a elas
+    fonte: "Fonte: Portal da Transparência de Rondônia, convênios da SEAS (2019–2026) e despesa por órgão (posição 07/10/2026). Valor típico = mediana do valor celebrado."
+    blocos:
+      - colunas:
+          titulo: Termos de fomento da SEAS com entidades, por ano de assinatura
+          itens: [[2019, 3], [2020, 0], [2021, 21], [2022, 33], [2023, 18], [2024, 61], [2025, 99], [2026, 10]]
+          destaque: 2025
+          nota: "2026: até 8 de outubro."
+      - kpis:
+          - ["18 → 99", "termos de fomento por ano, de 2023 para 2025"]
+          - [85 de 139, entidades fizeram uma única parceria com a SEAS]
+          - [R$ 100 mil, é o valor típico de uma parceria com entidade]
+      - conclusao: São associações pequenas, muitas vezes na primeira parceria com o Estado, sem equipe para cuidar da papelada.
+
+  - secao: O problema das entidades
+    titulo: O que uma entidade precisa produzir numa parceria
+    fonte: Exigências da Lei 13.019/2014 (Marco Regulatório das Organizações da Sociedade Civil) e dos modelos adotados pela SEAS.
+    blocos:
+      - grupos:
+          - titulo: Antes de assinar
+            itens: [Cadastro e documentos da entidade, Orçamento e cotações de preço, Certidões em dia, Declarações exigidas, Plano de trabalho com metas e indicadores]
+          - titulo: Durante a execução
+            itens: [Registro das despesas e notas fiscais, Ofícios e pedidos de ajuste, Fotos e listas que comprovam as metas, "Relatórios parciais, quando pedidos"]
+          - titulo: Ao final
+            itens: [Relatório de execução do objeto, Prestação de contas completa, Relatório de execução financeira, Respostas a diligências]
+      - conclusao: Para uma associação pequena, isso é um segundo trabalho, feito por voluntários e muitas vezes sem orientação.
+
+  - secao: O problema das entidades
+    titulo: Onde a parceria costuma travar
+    fonte: "Fonte: Portal da Transparência de Rondônia, convênios da SEAS (2019–2026) e despesa por órgão (posição 07/10/2026)."
+    blocos:
+      - cartoes:
+          - [Conhecimento técnico, null, Plano de trabalho e prestação de contas pedem linguagem e formato que a entidade não domina.]
+          - [Retrabalho, null, "Documentos voltam para correção, às vezes mais de uma vez, e a parceria atrasa."]
+          - [Prazos, null, "Vigência, certidões e prestação vencem sem aviso, e a entidade fica irregular."]
+          - [Comprovantes soltos, null, "Notas, fotos e listas se perdem ao longo da execução e faltam na hora de prestar contas."]
+      - conclusao: Nos registros da SEAS de 2019 a 2026 aparecem **12 rescisões** e **24 aditivos**. Cada parceria que trava é recurso que demora a chegar.
+
+  - secao: O problema das entidades
+    titulo: O recurso social é pequeno e precisa render
+    fonte: "Fonte: Portal da Transparência de Rondônia, convênios da SEAS (2019–2026) e despesa por órgão (posição 07/10/2026). Comprometido = empenhado."
+    blocos:
+      - numero: {valor: R$ 193 mi, rotulo: "para a área social em 2026: 0,9% do orçamento do Estado"}
+      - espaco: 2
+      - barras:
+          titulo: Orçamento atualizado de 2026
+          itens:
+            - [SEAS, 97.9, "R$ 97,9 mi"]
+            - [FECOEP · combate à pobreza, 60.6, "R$ 60,6 mi"]
+            - [FEAS · assistência social, 34.6, "R$ 34,6 mi"]
+            - [FEDM · direitos da mulher, 0.1, "R$ 0,1 mi"]
+          nota: Até 7 de outubro, com 77% do ano corrido, **59%** estava comprometido e **49%** pago.
+
+  - secao: O SISPAC-RO
+    titulo: Um software para as duas pontas da parceria
+    blocos:
+      - espaco: 4
+      - caixa: {titulo: SISPAC-RO, subtitulo: Sistema Integrado de Parcerias e Assistência Comunitária de Rondônia, texto: "Um sistema na internet, no celular ou no computador, usado pela entidade e pela SEAS."}
+      - secoes:
+          - [Para a entidade, Faz a papelada com ela, "Perguntas simples viram plano de trabalho, cotações, relatórios e prestação de contas, no modelo que a SEAS exige."]
+          - [Para a SEAS, Mostra cada parceria, "Em que etapa está cada entidade, o que falta, que prazo vence e o que já foi comprovado."]
+
+  - secao: O SISPAC-RO
+    titulo: O que o SISPAC-RO ajuda a gerar
+    fonte: Modelos ajustados às exigências da SEAS e da Lei 13.019/2014. A entidade revisa e assina; a SEAS analisa e aprova.
+    blocos:
+      - imagem: {arquivo: img/09-o-que-gera.jpg, altura: 86}
+      - itens:
+          - [Plano de trabalho, "realidade a atender, metas, indicadores e forma de execução"]
+          - [Cronogramas, de execução das metas e de desembolso]
+          - [Orçamento e cotações, planilha de custos e cotações de preço organizadas]
+          - [Ofícios e declarações, "os documentos pedidos em cada fase, já preenchidos"]
+          - [Checklists, "o que falta antes de enviar, item por item"]
+          - [Relatórios de execução, "do objeto e financeiro, a partir do que foi registrado"]
+          - [Prestação de contas, "reunida a partir da execução, sem refazer nada"]
+          - ["Notas, evidências e anexos", "fotos, notas e listas organizadas por meta"]
+
+  - secao: O SISPAC-RO
+    titulo: A jornada da entidade na parceria
+    blocos:
+      - imagem: {arquivo: img/10-jornada.jpg, legenda: "Da oportunidade à prestação de contas: a entidade cadastra seus dados, responde perguntas simples, executa, anexa as evidências, e a SEAS acompanha cada etapa."}
+
+  - secao: O SISPAC-RO
+    titulo: Passo a passo, com o sistema
+    fonte: Plano de trabalho e prestação de contas conforme a Lei 13.019/2014 (arts. 22 e 66) e os modelos adotados pela SEAS.
+    blocos:
+      - cartoes:
+          linha: azul
+          itens:
+            - [Cadastro, null, "Dados da entidade, estatuto, ata e certidões, com aviso antes de vencer."]
+            - [Plano de trabalho, null, "Realidade a atender, metas, indicadores, cronograma e custos, montados a partir de perguntas simples."]
+            - [Orçamento, null, Planilha de custos e cotações organizadas no formato pedido.]
+            - [Análise, null, Checklist da SEAS e pedidos de ajuste no ponto exato do documento.]
+            - [Termo, null, Termo e cronograma de desembolso prontos para assinatura no SEI.]
+            - [Execução, null, "Despesas, notas, fotos e metas registradas ao longo do caminho."]
+            - [Prestação de contas, null, Relatório de execução do objeto e relatório financeiro gerados a partir do que já foi registrado.]
+      - conclusao: "Cada passo gera o seu documento. Na prestação de contas, nada precisa ser refeito: o sistema reúne o que foi registrado durante a execução."
+
+  - secao: O SISPAC-RO
+    titulo: Os princípios do SISPAC-RO
+    blocos:
+      - cartoes:
+          - ["Não substitui, soma", null, Funciona junto com o SEI e os sistemas do Estado.]
+          - [Dado pessoal protegido, null, "Só o necessário, com acesso por perfil e registro de quem consultou (LGPD)."]
+          - [Feito para quem está na ponta, null, "Funciona no celular e com internet fraca, em linguagem simples."]
+          - [Acessível, null, Segue o padrão de acessibilidade do governo federal.]
+          - [Decisão é sempre humana, null, O assistente ajuda a escrever e a conferir. Quem aprova é a equipe da SEAS.]
+          - [O dado é do Estado, null, As informações ficam com o Governo de Rondônia.]
+
+  - secao: A SEAS com o SISPAC-RO
+    titulo: Como o SISPAC-RO integra a gestão das parcerias
+    blocos:
+      - imagem: {arquivo: img/13-integracao.jpg, altura: 86}
+      - itens:
+          - [Parcerias em andamento, "todas numa visão só, por município, entidade e etapa"]
+          - [Documentos pendentes, "o que falta em cada parceria, antes de virar problema"]
+          - [Prazos, "vigências, metas, certidões e prestações que estão chegando"]
+          - [Execução, "metas cumpridas, evidências anexadas e recursos aplicados"]
+          - [Orientação, "pedido de ajuste no ponto exato, com histórico da conversa"]
+          - [Padronização, os mesmos modelos e critérios para todas as entidades]
+      - conclusao: A SEAS deixa de correr atrás de papel e passa a orientar quem precisa de apoio.
+
+  - secao: A SEAS com o SISPAC-RO
+    titulo: Quem participa da parceria
+    blocos:
+      - imagem: {arquivo: img/14-ecossistema.jpg, legenda: "A SEAS no centro, ligada aos municípios, aos CRAS e CREAS, às entidades, aos órgãos de controle e às famílias. O SISPAC-RO dá a todos o mesmo retrato de cada parceria."}
+
+  - secao: A SEAS com o SISPAC-RO
+    titulo: Do recurso ao resultado social
+    fonte: "O repasse segue os caminhos legais: convênio com prefeituras e termo de fomento ou de colaboração com entidades (Lei 13.019/2014)."
+    blocos:
+      - imagem: img/15-recurso-resultado.jpg
+      - citacao: "**O SISPAC-RO acompanha os três caminhos.** Gera os documentos, confere o que falta, avisa os prazos e guarda o registro de cada etapa. O dinheiro não passa por ele."
+
+  - secao: A SEAS com o SISPAC-RO
+    titulo: Comunicação e acessibilidade
+    fonte: Seis compromissos de comunicação propostos para a SEAS. Detalhes e prioridades a definir com a equipe da secretaria.
+    blocos:
+      - cartoes:
+          - [Um só ponto de contato, null, "Um canal da SEAS para entidades e municípios, com resposta registrada e prazo conhecido."]
+          - [Linguagem simples, null, "Orientações em frases curtas, com exemplos, áudio e vídeo, para quem não é especialista."]
+          - [Acessível de verdade, null, "Leitura por tela, Libras, contraste e letra grande, seguindo o padrão de acessibilidade do governo federal."]
+          - [Para todos os povos, null, Apoio às entidades que atendem as 2.695 famílias indígenas e 279 quilombolas do Bolsa Família.]
+          - [A SEAS mais perto, null, "Encontros regionais nas 6 regiões do Estado, com atenção aos 32 municípios sem CREAS próprio."]
+          - [Resultado à vista, null, "Painel aberto mostrando, por município, o que foi feito com o recurso."]
+
+  - secao: Implantação
+    titulo: Começar pequeno, medir e crescer
+    fonte: Prazos estimados, a ajustar com a SEAS. Proposta sujeita aos procedimentos institucionais e de contratação aplicáveis.
+    blocos:
+      - cartoes:
+          linha: azul
+          itens:
+            - [Preparar, cerca de 1 mês, "Definir com a SEAS os modelos de documento, as regras e o grupo do piloto."]
+            - [Piloto, cerca de 3 meses, "Um grupo de associações usando o SISPAC-RO, com oficinas e suporte."]
+            - [Avaliar, cerca de 1 mês, "Medir tempo, devoluções e prazos, ouvir quem usou e ajustar."]
+            - [Expandir, a partir dos resultados, "Região a região, nas 6 regiões do Estado."]
+      - itens:
+          - [Quem conduz, "Um comitê coordenado pela SEAS, com a equipe técnica, representantes das entidades e a NextTech como parceira de tecnologia."]
+          - [Como as pessoas aprendem, "Oficinas regionais, vídeos curtos e atendimento de suporte. Ninguém precisa de treinamento longo para usar."]
+      - nota: "Regiões do IBGE, com o número de municípios: Cacoal (14) · Ji-Paraná (13) · Ariquemes (8) · Vilhena (7) · Porto Velho (5) · Jaru (5)."
+
+  - secao: Implantação
+    titulo: O que já construímos
+    blocos:
+      - cartoes:
+          numerado: false
+          itens:
+            - [Painel “Rondônia em números”, null, "O orçamento do Estado, as despesas que não aparecem no retrato público e os convênios da SEAS, com fonte e link em cada número."]
+            - [Relatório da SEAS, null, "79 páginas com os 496 instrumentos assinados de 2019 a 2026, quem recebeu e as emendas executadas."]
+            - [Este retrato social, null, "CadÚnico, Bolsa Família, BPC e rede SUAS dos 52 municípios, cruzados com os repasses da SEAS."]
+            - [Experiência com associações, null, Plano de trabalho de R$ 190 mil e prestação de contas de R$ 120 mil elaborados com associações.]
+      - conclusao: Tudo com dados públicos, sem acesso a sistemas internos do Estado.
+
+  - secao: Resultados que podem ser medidos
+    titulo: Como saber se deu certo
+    fonte: As metas de cada indicador são definidas com a SEAS no início do piloto.
+    blocos:
+      - tabela:
+          colunas: [Indicador, Ponto de partida, Onde se mede]
+          larguras: [44, 34, 22]
+          linhas:
+            - [Parcerias com entidades por ano, 99 termos de fomento em 2025, Portal e SISPAC-RO]
+            - [Entidades na primeira parceria, 85 de 139 desde 2019, SISPAC-RO]
+            - [Tempo para fazer um plano de trabalho, a medir no piloto, SISPAC-RO]
+            - [Planos devolvidos para correção, a medir no piloto, SISPAC-RO]
+            - [Prestações de contas entregues no prazo, a medir no piloto, SISPAC-RO]
+            - [Rescisões de parcerias, 12 de 2019 a 2026, Portal e SISPAC-RO]
+            - [Famílias atendidas pelas parcerias, a registrar na execução, SISPAC-RO]
+
+  - secao: Resultados que podem ser medidos
+    titulo: Como a integração gera eficiência para o Estado
+    blocos:
+      - imagem: {arquivo: img/20-eficiencia.jpg, legenda: "Com documentos organizados e acompanhamento num só lugar, a equipe da SEAS gasta menos tempo corrigindo e mais tempo orientando."}
+
+  - secao: O impacto na sociedade
+    titulo: Do papel em dia ao atendimento
+    blocos:
+      - texto: "O efeito nas famílias é indireto, mas real:"
+      - passos:
+          - [Plano bem feito, a parceria é aprovada mais rápido]
+          - [Execução registrada, cada meta tem comprovante]
+          - [Contas em dia, a entidade continua regular]
+          - [Entidade apta, pode receber novos fomentos]
+          - [Mais fomento, mais atendimento chega às famílias]
+      - conclusao: Entidade que consegue prestar contas continua de pé. E entidade de pé é atendimento que não para.
+
+  - secao: O impacto na sociedade
+    titulo: Quando a entidade é fortalecida, o cuidado chega mais longe
+    blocos:
+      - imagem: {arquivo: img/22-fortalecer.jpg, legenda: "O SISPAC-RO começa simplificando documentos e fortalecendo parcerias. Seu propósito maior é permitir que associações e entidades dediquem mais capacidade à execução dos projetos e ao atendimento da população."}
+
+  - secao: O impacto na sociedade
+    titulo: Quem as entidades atendem
+    fonte: "Fonte: MDS, CadÚnico e CadSUAS (08/2026); IBGE, população estimada."
+    blocos:
+      - numero: {valor: 882 mil, rotulo: "pessoas inscritas no Cadastro Único, 50% da população estimada do Estado"}
+      - regua: true
+      - numeros:
+          - [115 mil, famílias pobres ou extremamente pobres]
+          - [127 mil, famílias no Bolsa Família]
+          - [62 mil, pessoas recebem o BPC, 42 mil com deficiência]
+
+  - secao: O impacto na sociedade
+    titulo: A necessidade está em todo o Estado
+    blocos:
+      # Com os percentuais por município em mãos, troque a imagem pelo bloco "mapa" (ver moldes/README.md).
+      - imagem: {arquivo: img/24-mapa-cadunico.png, altura: 132}
+      - kpis:
+          - [38, dos 52 municípios têm metade ou mais da população no Cadastro Único]
+          - [20, passam de 60%]
+      - texto: "A demanda está no interior inteiro, inclusive em municípios pequenos, onde a entidade local muitas vezes é quem chega primeiro."
+
+  - secao: O impacto na sociedade
+    titulo: A rede que atende essas famílias
+    fonte: "Fonte: MDS, CadÚnico e CadSUAS (08/2026); IBGE, população estimada. Entidades: Portal da Transparência de Rondônia, convênios da SEAS."
+    blocos:
+      - cartoes:
+          numerado: false
+          estilo: numero
+          itens:
+            - [52, municípios, cada um com sua secretaria de assistência]
+            - [63, CRAS, a porta de entrada da assistência]
+            - [22, CREAS, atendimento a quem teve direitos violados]
+            - [71, unidades de acolhimento, null]
+            - ["3.792", profissionais cadastrados na rede, null]
+            - [139, entidades parceiras da SEAS, com termo de fomento ou convênio desde 2019]
+      - conclusao: As entidades completam essa rede. Fortalecer as entidades é fortalecer o atendimento.
+
+  - secao: O impacto na sociedade
+    titulo: Quem ganha
+    blocos:
+      - cartoes:
+          numerado: false
+          itens:
+            - [Associações, null, plano de trabalho e prestação de contas com orientação passo a passo]
+            - [SEAS, null, todas as parcerias numa visão só]
+            - [Municípios, null, modelos padronizados e um canal direto com o Estado]
+            - [Profissionais, null, "menos preenchimento, mais tempo para atender"]
+            - [Famílias, null, entidades mais fortes e atendimento que não para]
+            - [Sociedade, null, "recursos e resultados abertos, por município"]
+      - frase: "Uma assistência social que não termina no repasse do recurso, mas acompanha sua transformação em atendimento, resultado e dignidade."
+
+  - kicker: Fontes e método
+    titulo: De onde vêm os números
+    fonte: Documento elaborado a partir de dados públicos, sem acesso a sistemas internos do Estado.
+    blocos:
+      - tabela:
+          colunas: [Dado, Fonte, Endereço]
+          larguras: [24, 33, 43]
+          linhas:
+            - [Convênios e termos de fomento da SEAS, "Portal da Transparência de Rondônia (CGE-RO), coleta de 08/10/2026", transparencia.ro.gov.br/convenios]
+            - [Orçamento de 2026, "Portal da Transparência de Rondônia, despesa por órgão, posição 07/10/2026", transparencia.ro.gov.br]
+            - ["Cadastro Único, Bolsa Família, BPC e rede SUAS", "MDS / SAGI, MI Social, por município, referência 08/2026", aplicacoes.mds.gov.br/sagi]
+            - [População estimada e malha municipal, IBGE, ibge.gov.br]
+      - itens:
+          rotulo: Termos usados
+          itens:
+            - [Orçamento, o valor autorizado na lei e nos créditos do ano]
+            - [Comprometido, "o valor empenhado: contrato ou parceria assinados"]
+            - [Valor celebrado, "o valor global de um convênio ou termo na assinatura, não o que já foi pago"]
+            - [Termo de fomento, "a parceria com uma organização da sociedade civil, pela Lei 13.019/2014"]

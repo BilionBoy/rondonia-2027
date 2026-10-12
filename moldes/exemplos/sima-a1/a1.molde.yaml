@@ -1,0 +1,38 @@
+# SIMA · Programa de Modernização 2027–2030 — volume de concepção (Pacote A), versão 3.0.
+# Texto: sima/api/docs/produto/0-raiz/entendimento/SIMA_A1_PROGRAMA_MODERNIZACAO_2027_2030_V3.md, montado por montar_v3.py
+# a partir dos módulos reescritos em fonte/a1-v3/ (segundo a diretriz V3). Imagens em assets/; diagramas vetoriais em diagramas.py.
+# Gerar: python3 moldes/exemplos/sima-a1/montar_v3.py && python3 moldes/gerar_documento.py moldes/exemplos/sima-a1/a1.molde.yaml --site
+
+fonte: fonte/SIMA_A1_PROGRAMA_MODERNIZACAO_2027_2030_V3.md
+
+arquivo: SIMA_Programa_Modernizacao_2027-2030_v3.0
+titulo_pdf: SIMA · Programa de Modernização 2027–2030 · Modernização Integrada da Gestão de Materiais, Almoxarifado e Patrimônio
+cabecalho: SIMA · Programa de Modernização 2027–2030 · Gestão de Materiais e Patrimônio
+rodape: Projeto estruturante · versão 3.0 · outubro de 2026
+autoria: NextTech Ecosystem
+
+capa:
+  fundo: assets/a1-f01-capa.png
+  topo: Estado de Rondônia
+  topo2: ""
+  kicker: Sistema Integrado de Materiais e Almoxarifados
+  titulo: SIMA
+  subtitulo: Modernização Integrada da Gestão de Materiais, Almoxarifado e Patrimônio da Educação Estadual de Rondônia
+  slogan: Programa de Modernização 2027–2030
+  pe: Projeto estruturante de organização, controle, responsabilidade pública e inteligência administrativa
+  autoria: NextTech Ecosystem
+
+ignorar_figuras: [A1-F01]
+fonte_figuras: Elaboração técnica, com base em levantamento institucional da SEDUC/RO.
+grafias: {estado: Estado, plano: Plano, trabalho: Trabalho, governo: Governo, sima: SIMA, seduc: SEDUC}
+
+# rede de segurança: nada de nomes de volume no texto publicado
+substituir:
+  - ['\b([Oo]) A2\b', '\1 Plano de Trabalho']
+  - ['\b(do|no|ao|pelo) A2\b', '\1 Plano de Trabalho']
+  - ['\bA2\b', 'Plano de Trabalho']
+  - ['\b([Oo]) A3\b', '\1 Caderno da Solução']
+  - ['\bA3\b', 'Caderno da Solução']
+  - ['\bA1\b(?!-)', 'plano']
+
+pastas_imagens: [assets]

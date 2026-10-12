@@ -1,0 +1,171 @@
+/* Molde "Documento": texto corrido em A4 (projeto institucional, plano de trabalho). Mesma família visual do molde Proposta. */
+:root {
+  --tinta: #15171c; --apoio: #2a2e35; --nota: #4a505a; --linha: #d3d8e0; --linha2: #e6e9ef;
+  --azul: #1a56b8; --azul-claro: #c9d7ee; --naval: #0f2c66; --fundo-azul: #f1f4fa;
+  --ro-azul: #0c2f6b; --ro-amarelo: #e5c800; --ro-verde: #1d8a3e;
+  --ok: #1d6b3a; --ok-fundo: #e6f3ea; --inf: #7a4e00; --inf-fundo: #fbf1dc; --abr: #9b2c14; --abr-fundo: #fbe9e4;
+}
+/* Medidas iguais às do molde Proposta (SISPAC): texto a 24 mm da esquerda e 18,4 mm da direita; cabeçalho a 13,4 mm do topo;
+   corpo a partir de 34 mm; rodapé com linha fina. A faixa da bandeira ocupa os 5 mm da borda esquerda. */
+@page {
+  size: A4; margin: 34mm 23mm 24mm 28mm;
+  @top-left { content: "__CABECALHO__"; font: 500 8.2pt "Inter", sans-serif; color: #2a2e35; vertical-align: top; padding-top: 13.4mm }
+  @top-right { content: counter(page) " / " counter(pages); font: 700 8.2pt "Inter", sans-serif; color: #15171c; vertical-align: top; padding-top: 13.4mm }
+  @top-left-corner { content: ""; background: linear-gradient(#0c2f6b, #0c2f6b) left top / 5mm 100% no-repeat }
+  @left-middle { content: ""; height: 239mm;
+    background: linear-gradient(#0c2f6b 0 121.3mm, #e5c800 121.3mm 191.7mm, #1d8a3e 191.7mm) left top / 5mm 100% no-repeat }
+  @bottom-left-corner { content: ""; background: linear-gradient(#1d8a3e, #1d8a3e) left top / 5mm 100% no-repeat }
+  @bottom-left { content: "__RODAPE_ESQ__"; font: 400 7pt "Inter", sans-serif; color: #2a2e35; vertical-align: top;
+    margin-top: 9.6mm; padding-top: 3.4mm; border-top: .5pt solid #d3d8e0 }
+  @bottom-center { content: ""; margin-top: 9.6mm; border-top: .5pt solid #d3d8e0 }
+  @bottom-right { content: "__RODAPE__"; font: 700 7.2pt "Inter", sans-serif; color: #15171c; vertical-align: top;
+    margin-top: 9.6mm; padding-top: 3.4mm; border-top: .5pt solid #d3d8e0 }
+}
+@page :first { margin: 0; @top-left { content: none } @top-right { content: none } @bottom-left { content: none } @bottom-center { content: none }
+  @bottom-right { content: none } @top-left-corner { content: none } @left-middle { content: none } @bottom-left-corner { content: none } }
+* { box-sizing: border-box; margin: 0; padding: 0 }
+html, body { background: #fff }
+body { font-family: "Inter", system-ui, sans-serif; color: var(--apoio); font-size: 9.8pt; line-height: 1.58;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; font-variant-numeric: tabular-nums; hyphens: auto }
+
+/* capa: a mesma do molde Proposta */
+.capa { position: relative; width: 210mm; height: 297mm; background: #0e2e6b; color: #fff; break-after: page; overflow: hidden }
+.capa.com-fundo { background-size: cover; background-position: center }
+.capa .sombra { display: none }
+.capa.com-fundo .sombra { display: block; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,24,60,.10) 0%, rgba(8,24,60,0) 35%, rgba(8,24,60,0) 62%, rgba(6,18,46,.72) 100%) }
+.capa.com-fundo .capa-meio { top: 52mm; right: 68mm }
+.capa.com-fundo .capa-x { font-size: 12pt }
+.capa-topo, .capa-meio, .capa-pe { z-index: 2 }
+.capa .faixa { position: absolute; left: 0; top: 0; bottom: 0; width: 5mm;
+  background: linear-gradient(var(--ro-azul) 0 52.3%, var(--ro-amarelo) 52.3% 76%, var(--ro-verde) 76% 100%) }
+.capa-topo { position: absolute; top: 22mm; left: 24mm; display: flex; align-items: center; gap: 5mm }
+.capa-topo img { height: 20mm }
+.capa-topo b { display: block; font-size: 11.5pt; font-weight: 700 }
+.capa-topo span { font-size: 8.4pt; color: #d6def0 }
+.capa-meio { position: absolute; top: 104mm; left: 24mm; right: 34mm }
+.capa-k { font-size: 9.2pt; font-weight: 700; letter-spacing: .09em; color: #c9d6ee; text-transform: uppercase }
+.capa h1 { font-size: 64pt; font-weight: 850; letter-spacing: -.045em; line-height: 1; margin-top: 7mm; color: #fff }
+.capa-sub { font-size: 13.5pt; font-weight: 700; line-height: 1.35; margin-top: 6mm }
+.capa-slogan { font-size: 11.6pt; font-weight: 700; color: var(--ro-amarelo); margin-top: 6mm }
+.capa-x { font-size: 12.8pt; line-height: 1.5; color: #eef2fa; margin-top: 7mm }
+.capa-meta { margin-top: 10mm; display: grid; grid-template-columns: auto 1fr; gap: 1.6mm 8mm; font-size: 9.4pt; max-width: 140mm }
+.capa-meta div { display: contents }
+.capa-meta span { color: #c9d6ee }
+.capa-meta b { font-weight: 650 }
+.capa-pe { position: absolute; left: 24mm; right: 20mm; bottom: 22mm; border-top: .6pt solid rgba(255,255,255,.35); padding-top: 5mm;
+  display: flex; justify-content: space-between; gap: 20mm; font-size: 8.6pt; color: #e3e9f5 }
+.capa-pe b { font-size: 10.6pt; font-weight: 700; color: #fff; max-width: 32mm }
+
+/* rótulo azul acima dos títulos (como "1 · O PROBLEMA DAS ENTIDADES" no SISPAC) */
+.kick, .abre-k { font-size: 8.4pt; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--azul) }
+
+/* sumário: cabe numa página (módulos em linhas de uma altura só; anexos menores) */
+.sumario { break-after: page }
+.sum-h { font-size: 26pt; font-weight: 800; letter-spacing: -.035em; line-height: 1.12; color: var(--tinta); margin: 1.6mm 0 8mm }
+.sum-l { display: grid; grid-template-columns: 10mm 1fr 12mm; align-items: baseline; padding: 2.3mm 0; border-bottom: .5pt solid var(--linha);
+  color: var(--tinta); text-decoration: none; break-inside: avoid; line-height: 1.3 }
+.sum-n { font-size: 10pt; font-weight: 800; color: var(--azul) }
+.sum-t { font-size: 11pt; font-weight: 650 }
+.sum-p { font-size: 10pt; font-weight: 700; text-align: right; color: var(--apoio) }
+.sum-l.anexo { grid-template-columns: 20mm 1fr 12mm; padding: 1.7mm 0 }
+.sum-l.anexo .sum-n { font-size: 8pt; letter-spacing: .05em; text-transform: uppercase }
+.sum-l.anexo .sum-t { font-size: 9.8pt; font-weight: 600; color: var(--apoio) }
+.sum-l.anexo:first-of-type, .sum-l.modulo + .sum-l.anexo { margin-top: 4mm; border-top: 1.2pt solid var(--tinta) }
+.sum-l.secao .sum-t { font-size: 9.8pt; font-weight: 600; color: var(--apoio) }
+.sum-l.fig { grid-template-columns: 22mm 1fr 12mm; padding: 2.4mm 0 }
+.sum-l.fig .sum-t { font-size: 10pt; font-weight: 600 }
+.sum-l.fig .sum-n { font-size: 8.4pt }
+.sum-cont { font-size: 11pt; font-weight: 600; color: var(--nota); margin-left: 3mm; letter-spacing: 0 }
+
+/* abertura de módulo: rótulo azul + título forte, como cada página do SISPAC */
+.abre { break-before: auto; break-inside: avoid; break-after: avoid; margin: 9mm 0 6mm; padding-top: 5mm; border-top: 1.6pt solid var(--tinta) }
+main > .abre:first-child, .abre.secao:first-of-type { margin-top: 0 }
+.abre h1 { font-size: 19pt; font-weight: 800; letter-spacing: -.025em; line-height: 1.15; color: var(--tinta); margin-top: 1.2mm }
+.abre + p { font-size: 10.6pt; line-height: 1.55; color: var(--tinta) }
+
+/* texto */
+main .hn { color: var(--azul); margin-right: 1.2mm; font-variant-numeric: tabular-nums }
+main h2 { border-top: .5pt solid var(--linha); padding-top: 3.5mm; margin-top: 7mm !important;
+  font-size: 12.6pt; font-weight: 780; letter-spacing: -.02em; line-height: 1.25; color: var(--tinta); margin: 9mm 0 3mm; break-after: avoid }
+main h3 { font-size: 10.8pt; font-weight: 750; color: var(--naval); margin: 6mm 0 2mm; break-after: avoid }
+main h4 { font-size: 10.4pt; font-weight: 750; letter-spacing: .04em; text-transform: uppercase; color: var(--azul); margin: 5mm 0 1.5mm; break-after: avoid }
+main p { margin: 0 0 2.6mm; orphans: 3; widows: 3; text-align: justify; text-justify: inter-word; hyphens: auto }
+main li { text-align: justify; hyphens: auto }
+main strong, main b { color: var(--tinta); font-weight: 700 }
+main a { color: var(--azul) }
+main ul, main ol { margin: 0 0 3.5mm 6mm }
+main li { margin: 0 0 1.4mm; padding-left: 1mm }
+main li::marker { color: var(--azul); font-weight: 700 }
+main hr { border: 0; border-top: .6pt solid var(--linha); margin: 6mm 0 }
+main code { font-family: ui-monospace, "DejaVu Sans Mono", monospace; font-size: 9pt; background: var(--fundo-azul); padding: 0 1mm; border-radius: .8mm }
+main pre { background: var(--fundo-azul); border-radius: 1.5mm; padding: 4mm 5mm; margin: 0 0 4mm; white-space: pre-wrap; break-inside: avoid; font-size: 8.6pt; line-height: 1.45 }
+main pre code { background: none; padding: 0 }
+
+/* destaque: > texto */
+/* destaque no padrão dos documentos de governo: recuo com fio fino, sem fundo colorido */
+main blockquote { border-left: 1.2pt solid var(--naval); padding: .5mm 0 .5mm 6mm; margin: 3mm 0 5mm 4mm; break-inside: avoid; color: var(--tinta) }
+main blockquote p:last-child { margin-bottom: 0 }
+
+/* tabelas */
+.tab { width: 100%; border-collapse: collapse; margin: 2mm 0 4.5mm; font-size: 8.6pt; line-height: 1.42; table-layout: fixed }
+.tab th, .tab td { overflow-wrap: anywhere; hyphens: auto }
+.tab.larga { font-size: 7.8pt }
+.tab.larga th { font-size: 6.6pt; letter-spacing: .03em }
+main { overflow-wrap: break-word }
+main code { overflow-wrap: anywhere }
+.tab thead { display: table-row-group }
+.tab th { text-align: left; font-size: 6.9pt; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta);
+  padding: 0 2.6mm 2mm 0; border-bottom: 1.2pt solid var(--tinta); vertical-align: bottom }
+.tab td { padding: 2mm 2.6mm 2mm 0; border-bottom: .5pt solid var(--linha); vertical-align: top }
+.tab tr { break-inside: avoid }
+.tab td:first-child { font-weight: 650; color: var(--tinta) }
+
+/* selos [DECIDIDO] [A CONFIRMAR] */
+.selo { display: inline-block; font-size: 6.8pt; font-weight: 750; letter-spacing: .05em; padding: .3mm 1.4mm; border-radius: .8mm; vertical-align: .3mm; white-space: nowrap }
+.selo.ok { color: var(--ok); background: var(--ok-fundo) }
+.selo.inf { color: var(--inf); background: var(--inf-fundo) }
+.selo.abr { color: var(--abr); background: var(--abr-fundo) }
+.selo.int { color: #17457f; background: #e4ecf8 }
+.selo.con { color: #5b2a86; background: #efe6f7 }
+.selo + .selo { margin-left: .8mm }
+.selo-x { font-size: 7.4pt; color: var(--nota); margin: 0 1mm 0 .8mm }
+
+/* visuais */
+.vis { margin: 3mm 0 5mm; break-inside: avoid; text-align: center }
+.vis .arte { display: block; width: 100%; height: auto; max-height: 205mm; object-fit: contain; margin: 0 auto }
+.vis img.arte { border: .5pt solid var(--linha); border-radius: 1.2mm }
+.fig-marca { position: absolute; top: 0; left: 0; font-size: 2pt; line-height: 1; color: #fff; white-space: nowrap }
+.vis { position: relative; break-inside: avoid; margin: 4mm 0 6mm }
+/* arte larga: página deitada só para ela */
+@page deitada {
+  size: A4 landscape; margin: 22mm 18mm 20mm 24mm;
+  @left-middle { content: ""; height: 168mm; background: linear-gradient(#0c2f6b 0 52.3%, #e5c800 52.3% 76%, #1d8a3e 76% 100%) left top / 5mm 100% no-repeat }
+  @top-left { content: "__CABECALHO__"; font: 500 8.2pt "Inter", sans-serif; color: #2a2e35; vertical-align: top; padding-top: 9mm }
+  @top-right { content: counter(page) " / " counter(pages); font: 700 8.2pt "Inter", sans-serif; color: #15171c; vertical-align: top; padding-top: 9mm }
+}
+.vis.paisagem { page: deitada; margin: 0 }
+.vis.paisagem .arte { max-height: 150mm }
+.vis figcaption { font-size: 8pt; color: var(--nota); margin-top: 2.2mm; line-height: 1.45; text-align: left }
+
+.vis figcaption b { color: var(--tinta) }
+.fig-fonte { display: block; margin-top: .6mm }
+.vaga-x { font-size: 9.2pt; color: var(--apoio); line-height: 1.45 }
+.vis.falta .vaga { border: 1.2pt dashed #9fb3d8; background: var(--fundo-azul); border-radius: 2mm; height: 72mm; padding: 7mm 9mm;
+  display: flex; flex-direction: column; justify-content: center; gap: 2mm }
+.vaga span { font-size: 8.4pt; font-weight: 800; letter-spacing: .1em; color: var(--azul) }
+.vaga p { font-size: 11pt; font-weight: 650; color: var(--naval); margin: 0; line-height: 1.4 }
+.vaga small { font-size: 7.6pt; color: var(--nota) }
+
+/* a primeira seção logo depois da abertura do módulo não leva a linha fina */
+.abre + h2, .abre + p + h2 { border-top: 0; padding-top: 0; margin-top: 0 !important }
+main blockquote p, .tab td, .tab th { text-align: left }
+
+/* nada de página vazia: o "---" do .md antes de um módulo não vira linha sozinha numa página */
+main hr:has(+ .abre), main hr:last-child { display: none }
+/* tabela curta não se divide entre páginas; título fica junto do que vem depois */
+.tab.curta { break-inside: avoid }
+main h2, main h3, main h4 { break-after: avoid; break-inside: avoid }
+main h2 + p, main h3 + p { break-before: avoid }
+.lista-fig .sum-h { margin-bottom: 4mm } .lista-fig .sum-l.fig { padding: 1mm 0 } .lista-fig .sum-l.fig .sum-t { font-size: 9pt } .lista-fig .sum-l.fig .sum-n, .lista-fig .sum-p { font-size: 8.4pt }
+main blockquote { break-inside: auto; orphans: 3; widows: 3 }

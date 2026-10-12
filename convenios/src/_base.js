@@ -243,3 +243,6 @@ $("#dados-x").onclick = fechaDados;
 $("#cortina").addEventListener("click", fechaDados);
 $("#btn-dados").onclick = () => abreDados(idsAtuais);
 
+
+document.addEventListener("click", (ev) => document.querySelectorAll("details.docs[open]").forEach((d) => { if (!d.contains(ev.target)) d.removeAttribute("open"); }));
+document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") document.querySelectorAll("details.docs[open]").forEach((d) => d.removeAttribute("open")); });

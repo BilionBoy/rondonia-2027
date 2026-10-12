@@ -6,3 +6,4 @@ dados-fonte/s3_detalhes_*.json
 dados-fonte/s3_diarias_*.json
 dados-fonte/s3_msc_classe6.json
 __pycache__/
+

@@ -1,0 +1,167 @@
+/* Molde "Proposta" (SISPAC-RO). A4, uma ideia por página. Medidas em mm/pt para a impressão sair igual em qualquer máquina. */
+:root {
+  --tinta: #15171c; --apoio: #2a2e35; --nota: #4a505a; --linha: #d3d8e0;
+  --azul: #1a56b8; --azul-claro: #c9d7ee; --naval: #0f2c66; --fundo-azul: #f1f4fa; --trilho: #eef2f8;
+  --ro-azul: #0c2f6b; --ro-amarelo: #e5c800; --ro-verde: #1d8a3e;
+}
+@page { size: A4; margin: 0 }
+* { box-sizing: border-box; margin: 0; padding: 0 }
+html, body { background: #fff }
+body { font-family: "Inter", system-ui, sans-serif; color: var(--tinta); font-size: 11pt; line-height: 1.45;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; font-variant-numeric: tabular-nums }
+b, strong { font-weight: 700 }
+
+.pg { width: 210mm; height: 297mm; position: relative; overflow: hidden; break-after: page; background: #fff }
+.faixa { position: absolute; left: 0; top: 0; bottom: 0; width: 5mm;
+  background: linear-gradient(var(--ro-azul) 0 52.3%, var(--ro-amarelo) 52.3% 76%, var(--ro-verde) 76% 100%) }
+
+/* cabeçalho e rodapé */
+.cab { position: absolute; top: 13.4mm; left: 24mm; right: 18.4mm; display: flex; justify-content: space-between;
+  font-size: 8.2pt; font-weight: 500; color: var(--apoio) }
+.cab b { font-weight: 700; color: var(--tinta) }
+.rod { position: absolute; bottom: 7mm; left: 24mm; right: 18.4mm; border-top: .5pt solid var(--linha); padding-top: 3.4mm;
+  display: flex; justify-content: space-between; gap: 10mm; font-size: 7.2pt; line-height: 1.4; color: var(--apoio) }
+.rod b { font-weight: 700; color: var(--tinta); white-space: nowrap; align-self: flex-start }
+
+/* corpo da página */
+.corpo { position: absolute; top: 34mm; left: 24mm; right: 18.4mm; bottom: 23.5mm; display: flex; flex-direction: column }
+.kicker { font-size: 9.2pt; font-weight: 700; letter-spacing: .09em; color: var(--azul) }
+h2 { font-size: 28.4pt; font-weight: 800; letter-spacing: -.035em; line-height: 1.12; margin-top: 1.6mm }
+.conteudo { margin-top: 15mm; display: flex; flex-direction: column; gap: 7mm }
+.corpo.centro .conteudo { flex: 1; justify-content: center; margin-top: 0 }
+
+/* capa */
+.capa { background: #0e2e6b; color: #fff }
+.capa-topo { position: absolute; top: 22mm; left: 24mm; display: flex; align-items: center; gap: 5mm }
+.capa-topo img { height: 20mm }
+.capa-topo b { display: block; font-size: 11.5pt; font-weight: 700 }
+.capa-topo span { font-size: 8.4pt; color: #d6def0 }
+.capa-meio { position: absolute; top: 104mm; left: 24mm; right: 34mm }
+.capa-k { font-size: 9.2pt; font-weight: 700; letter-spacing: .09em; color: #c9d6ee }
+.capa h1 { font-size: 64pt; font-weight: 850; letter-spacing: -.045em; line-height: 1; margin-top: 7mm }
+.capa-sub { font-size: 13.5pt; font-weight: 700; line-height: 1.35; margin-top: 6mm }
+.capa-slogan { font-size: 11.6pt; font-weight: 700; color: var(--ro-amarelo); margin-top: 6mm }
+.capa-x { font-size: 12.8pt; line-height: 1.5; color: #eef2fa; margin-top: 7mm }
+.capa-pe { position: absolute; left: 24mm; right: 20mm; bottom: 22mm; border-top: .6pt solid rgba(255,255,255,.35); padding-top: 5mm;
+  display: flex; justify-content: space-between; gap: 20mm; font-size: 8.6pt; color: #e3e9f5 }
+.capa-pe b { font-size: 10.6pt; font-weight: 700; color: #fff; max-width: 32mm }
+
+/* blocos de texto */
+.texto { font-size: 12.4pt; line-height: 1.55; color: var(--apoio) }
+.nota-bloco { font-size: 9.6pt; color: var(--nota) }
+.frase { font-size: 22.6pt; font-weight: 780; line-height: 1.38; letter-spacing: -.012em; color: var(--naval) }
+.frase b { color: var(--azul); font-weight: 800 }
+.conclusao { font-size: 15.2pt; font-weight: 700; line-height: 1.4; color: var(--naval) }
+.citacao { border-left: 1mm solid var(--naval); padding: 1mm 0 1mm 6mm; font-size: 13.4pt; line-height: 1.6; color: var(--apoio) }
+.citacao b { color: var(--tinta) }
+.regua { border: 0; border-top: 1.4pt solid var(--tinta) }
+.graf-t { font-size: 12.4pt; color: var(--apoio); margin-bottom: 3mm }
+.rotulo-cx { font-size: 9.4pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 3mm }
+
+/* destaques (p. 2) */
+.dest + .dest { margin-top: 6mm }
+.b-destaques .regua { margin-bottom: 9mm }
+.dest-t { font-size: 19.6pt; font-weight: 750; letter-spacing: -.02em; color: var(--azul) }
+.dest-x { font-size: 12.4pt; margin-top: .5mm }
+
+/* sumário */
+.sum-l { display: flex; align-items: baseline; gap: 9mm; padding: 6.2mm 0; border-bottom: .6pt solid var(--linha);
+  font-size: 17pt; font-weight: 700 }
+.sum-n { width: 4mm; font-size: 12.5pt; font-weight: 800; color: var(--azul) }
+
+/* colunas por ano */
+.colunas { display: flex; align-items: flex-end; gap: 4mm; border-bottom: .9pt solid var(--tinta); position: relative; padding-top: 8mm }
+.col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100% }
+.col-v { font-size: 14pt; font-weight: 700; color: var(--apoio); margin-bottom: 1.6mm }
+.col-v.dest { font-size: 15pt; color: var(--tinta) }
+.col-b { width: 72%; background: var(--azul-claro); border-radius: .6mm .6mm 0 0 }
+.col-b.dest { background: var(--azul) }
+.col-r { position: absolute; bottom: -7.5mm; font-size: 13pt; font-weight: 600; color: var(--apoio); transform: translateX(0) }
+.col { position: relative }
+.b-colunas .nota-bloco { margin-top: 11mm }
+
+/* KPIs */
+.kpis { display: grid; gap: 7mm; border-top: 1.4pt solid var(--tinta); padding-top: 6mm }
+.kpi-v { font-size: 29pt; font-weight: 850; letter-spacing: -.035em; line-height: 1.05; color: var(--naval); white-space: nowrap }
+.kpi-r { font-size: 10.9pt; font-weight: 600; line-height: 1.4; margin-top: 2mm }
+
+/* números empilhados (p. 23) */
+.num-p + .num-p { margin-top: 6mm }
+.num-pv { font-size: 36pt; font-weight: 850; letter-spacing: -.04em; line-height: 1.05; color: var(--naval) }
+.num-pr { font-size: 12pt; font-weight: 650; margin-top: 1mm; max-width: 80mm }
+.num-pa { font-size: 10pt; color: var(--nota); margin-top: .5mm }
+
+/* número grande (p. 7, 23) */
+.numero-v { font-size: 71pt; font-weight: 850; letter-spacing: -.05em; line-height: 1; color: var(--naval) }
+.numero-r { font-size: 14.8pt; font-weight: 650; line-height: 1.45; margin-top: 4mm; max-width: 150mm }
+
+/* grupos numerados (p. 5) */
+.grupo { border-top: 1.6pt solid var(--azul); padding-top: 4mm }
+.grupo-n { font-size: 10pt; font-weight: 800; color: var(--azul) }
+.grupo-t { font-size: 16.6pt; font-weight: 750; letter-spacing: -.015em; margin-top: 1mm }
+.grupo-i { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 10mm; margin-top: 3mm; font-size: 12pt }
+.b-grupos { display: flex; flex-direction: column; gap: 7mm }
+
+/* cartões (p. 6, 11, 12, 16, 17, 25, 26) */
+.cartoes { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm 12mm }
+.cartao { border-top: 1.4pt solid var(--tinta); padding-top: 5mm }
+.cartao.azul { border-top-color: var(--azul) }
+.cartao-n { font-size: 10pt; font-weight: 800; color: var(--azul); margin-bottom: 1.5mm }
+.cartao-t { font-size: 17.2pt; font-weight: 750; letter-spacing: -.02em; line-height: 1.25 }
+.cartao-t:has(+ .cartao-s) { margin-bottom: .5mm }
+.cartao-s { font-size: 10.2pt; font-weight: 700; color: var(--azul); margin-bottom: 2.5mm }
+.cartao-x { font-size: 12pt; line-height: 1.5; color: var(--apoio); margin-top: 2mm }
+.cartao-s + .cartao-x { margin-top: 0 }
+
+.cartoes.numero .cartao { padding-top: 4mm }
+.cartoes.numero .cartao-t { font-size: 33pt; font-weight: 850; letter-spacing: -.045em; line-height: 1.1; color: var(--naval) }
+.cartoes.numero .cartao-s { font-size: 12pt; color: var(--tinta); margin: 1.5mm 0 .5mm }
+.cartoes.numero .cartao-x { font-size: 10.8pt; color: var(--nota); margin-top: 0 }
+
+/* blocos com rótulo (p. 8) */
+.secao-b { border-top: 1.4pt solid var(--azul); padding-top: 6mm }
+.secao-r { font-size: 11pt; font-weight: 700; color: var(--azul) }
+.secao-t { font-size: 22.4pt; font-weight: 750; letter-spacing: -.02em; margin-top: 2mm }
+.secao-x { font-size: 12.8pt; line-height: 1.55; color: var(--apoio); margin-top: 4mm }
+.b-secoes { display: flex; flex-direction: column; gap: 10mm }
+
+/* caixa (p. 8) */
+.caixa { background: var(--fundo-azul); border-left: 1mm solid var(--azul); padding: 6mm 7mm }
+.caixa-t { font-size: 21.6pt; font-weight: 850; letter-spacing: -.03em; color: var(--naval) }
+.caixa-s { font-size: 11.8pt; font-weight: 700; margin-top: 1.5mm }
+.caixa-x { font-size: 11.8pt; color: var(--nota); margin-top: 1.5mm }
+
+/* lista em duas colunas (p. 9, 13, 27) */
+.itens { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12mm }
+.item { border-bottom: .6pt solid var(--linha); padding: 2.8mm 0 }
+.item-t { font-size: 13pt; font-weight: 700 }
+.item-x { font-size: 11.8pt; line-height: 1.45; color: var(--apoio); margin-top: .8mm }
+
+/* passos (p. 21) */
+.passo { display: grid; grid-template-columns: 10mm 64mm 1fr; align-items: baseline; padding: 5.2mm 0; border-bottom: .6pt solid var(--linha) }
+.passo-n { font-size: 10pt; font-weight: 800; color: var(--azul) }
+.passo-t { font-size: 18pt; font-weight: 750; letter-spacing: -.02em; color: var(--naval) }
+.passo-x { font-size: 12.4pt; color: var(--apoio) }
+
+/* barras horizontais (p. 7) */
+.barra-l { display: grid; grid-template-columns: 58mm 1fr 34mm; align-items: center; gap: 4mm; padding: 1.8mm 0 }
+.barra-r { font-size: 12.2pt; line-height: 1.3 }
+.barra-tr { height: 7mm; background: var(--trilho); border-radius: 1.2mm; overflow: hidden }
+.barra-b { height: 100%; background: #a3b8e3; border-radius: 1.2mm }
+.barra-b.dest { background: var(--azul) }
+.barra-v { font-size: 13.4pt; font-weight: 700; text-align: right; white-space: nowrap }
+.b-barras .nota-bloco { margin-top: 2.5mm; font-size: 10.4pt }
+
+/* tabela (p. 19, 27) */
+.tab { width: 100%; border-collapse: collapse; table-layout: fixed }
+.tab th { text-align: left; font-size: 8.8pt; font-weight: 750; letter-spacing: .07em; text-transform: uppercase;
+  padding: 0 3mm 3mm 0; border-bottom: 1.4pt solid var(--tinta) }
+.tab td { font-size: 12pt; line-height: 1.45; padding: 3.4mm 3mm 3.4mm 0; border-bottom: .6pt solid var(--linha); vertical-align: middle; color: var(--apoio) }
+.tab td.pri { font-weight: 700; color: var(--tinta) }
+
+/* imagem e mapa */
+.imagem { width: 100%; border-radius: 1.6mm; display: block; object-fit: contain }
+.mapa { width: 100%; display: block }
+.legenda { display: flex; flex-wrap: wrap; gap: 2mm 6mm; font-size: 9.4pt; color: var(--apoio); margin-top: 3mm; justify-content: center }
+.leg i { display: inline-block; width: 3.6mm; height: 3.6mm; border-radius: .6mm; margin-right: 1.6mm; vertical-align: -.5mm }
+.b-mapa .nota-bloco { text-align: center }

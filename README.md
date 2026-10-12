@@ -14,6 +14,13 @@ Painel sobre o orçamento de Rondônia e a transição de governo, em três abas
 - **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py`.
 - **Para ver localmente:** `python3 -m http.server 8765 --bind 127.0.0.1` e abrir `http://127.0.0.1:8765/esbocos/painel.html`.
 
+## Moldes de documento (propostas e planos em PDF)
+
+Para fazer um documento novo no padrão do plano SISPAC-RO, escreve-se só um `conteudo.yaml`, sem HTML nem CSS.
+- **Para gerar:** `python3 moldes/gerar.py moldes/exemplos/<nome>/conteudo.yaml`.
+- **Manual e catálogo de blocos:** [moldes/README.md](moldes/README.md).
+- **Exemplo de referência:** `moldes/exemplos/sispac-ro/`.
+
 ## Primeira aba: as 9 etapas
 
 - **Para editar:** `esbocos/src/rondonia.html`.
@@ -43,7 +50,14 @@ Uma tela com tudo o que a SEAS assinou: convênios, termos de fomento e de coope
 
 O portal não tem link por convênio; cada linha leva à página geral de convênios e traz o número do processo SEI.
 
-**Relatório em PDF da SEAS** (botão "Baixar relatório em PDF" na aba): `python3 convenios/build_relatorio.py` gera `esbocos/relatorio-seas.html`, `esbocos/relatorio-seas.pdf` e `site/relatorio-seas.pdf`, usando o Chrome para imprimir. São 7 seções:
+**Botão "Documentos em PDF"** (na aba): abre um menu com os PDFs da lista `DOCUMENTOS` de `convenios/build_convenios.py`. Hoje são o Relatório da SEAS e o Plano SISPAC-RO. Para incluir um documento:
+1. ponha o PDF em `site/` (o molde copia com `--site`);
+2. acrescente uma linha na lista `DOCUMENTOS`;
+3. rode `python3 convenios/build_convenios.py`.
+
+O build para se faltar algum PDF da lista.
+
+**Relatório em PDF da SEAS**: `python3 convenios/build_relatorio.py` gera `esbocos/relatorio-seas.html`, `esbocos/relatorio-seas.pdf` e `site/relatorio-seas.pdf`, usando o Chrome para imprimir. São 7 seções:
 1. resumo;
 2. orçamento de 2026 da SEAS e dos fundos da área;
 3. convênios ano a ano;

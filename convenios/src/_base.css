@@ -195,3 +195,14 @@ svg .apagado rect.b{opacity:.28}
 
 .botoes{display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 a.btn-dados{text-decoration:none}
+
+/* menu "Documentos em PDF" */
+.docs{position:relative;display:inline-block}
+.docs>summary{list-style:none}
+.docs>summary::-webkit-details-marker{display:none}
+.docs-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:30;min-width:300px;background:var(--pop);border:1px solid var(--hair);border-radius:12px;box-shadow:var(--sombra);padding:6px}
+.docs-menu a{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:8px;color:var(--ink);text-decoration:none}
+.docs-menu a:hover,.docs-menu a:focus-visible{background:var(--azul-fundo);outline:none}
+.docs-menu b{font-size:15px;font-weight:700}
+.docs-menu span{font-size:13px;color:var(--mute)}
+@media (max-width:600px){.docs-menu{min-width:0;width:min(300px,calc(100vw - 32px))}}
