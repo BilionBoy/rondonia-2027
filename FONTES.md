@@ -95,6 +95,32 @@ Ordem: `python3 coleta_contratos.py` → `python3 tecnologia/classificar.py` (tr
 - **Equipamento de informática** (4.4.90.52) não tem elemento próprio. Por isso só aparece pelos contratos.
 - **"Repetidos":** a mesma função contratada separadamente por 2 ou mais órgãos. A compra de bens (computadores, periféricos etc.) não entra.
 
+## 2d. Quem vende ao Estado (quinta aba) e ampliações da quarta aba, 12/10/2026
+
+| Arquivo | O que é | Registros |
+|---|---|---|
+| `dados-fonte/s3_empenhos_2021..2026.json` | Todas as notas de empenho (lista) | 59 a 65 mil por ano |
+| `dados-fonte/s5_elemento_por_nota.json` | Elemento de cada nota (lista filtrada por `CodElementoDespesa`) | — |
+| `dados-fonte/s5_varredura.json` | Detalhe das notas dos elementos 39, 30, 52, 37, 35… a partir de R$ 5 mil, credores não claramente de outra área | 31.595 |
+| `dados-fonte/s5_detalhes_tudo.json` | Detalhe de todas as notas a empresas a partir de R$ 20 mil | 37.708 |
+| `dados-fonte/s5_convenios.json` | Todos os convênios, termos de fomento e de cooperação (sem filtro de órgão) | 9.115 |
+| `dados-fonte/s5_acordos_sem_repasse.json` | Acordos sem repasse financeiro (`/convenios/filtrartransferenciassemrepasses`) | 391 |
+| `dados-fonte/s5_parceria_ufmg_brtec.json` | Empenhos à Fundação Christiano Ottoni e à BR TEC, 2021–2026 | 27 |
+| `dados-fonte/pncp/` e `s5_pncp_estado.json` | Contratações do Estado no PNCP, todas as modalidades, 2023– (em coleta) | — |
+
+**Regras:**
+- **Credor** classificado em empresa, órgão público, folha/consignação, dívida ou pessoa física. Pessoa física = CPF mascarado no detalhe.
+- **Tecnologia** é nota por nota:
+  - elemento 40;
+  - ou histórico de TI;
+  - ou CNAE de TI sem histórico de outra coisa;
+  - ou parceria (FCO/BR TEC);
+  - nas notas avulsas da varredura geral, régua mais rígida;
+  - suprimentos de fundos de servidores de TI (COTIC, CTI, GTI…) entram agrupados.
+- **Frota** é nota por nota: gestora de cartão ou locadora pelo credor; abastecimento, combustível, locação, manutenção de veículo, pneus ou aquisição de veículo pelo histórico. Saem transporte escolar, fretamento, passagens e obras de abastecimento de água.
+- **Modalidade:** a do detalhe da nota.
+- **Sem detalhe:** notas abaixo de R$ 20 mil (fora dos elementos de TI) aparecem como "nota não aberta".
+
 ## 3. Dados das 9 etapas (coleta de 07/10/2026)
 
 | Arquivo | Fonte |

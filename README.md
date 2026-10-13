@@ -1,15 +1,16 @@
 # Rondônia em números
 
-Painel sobre o orçamento de Rondônia e a transição de governo, em quatro abas. É feito para alguém sem tempo: números grandes, uma ideia por tela, e tudo clicável para quem quiser se aprofundar.
+Painel sobre o orçamento de Rondônia e a transição de governo, em cinco abas. É feito para alguém sem tempo: números grandes, uma ideia por tela, e tudo clicável para quem quiser se aprofundar.
 
 | Aba | Arquivo no ar | O que mostra |
 |---|---|---|
 | Rondônia em números | `site/numeros.html` | o orçamento de 2026 em 9 etapas |
 | O que não aparece | `site/nao-aparece.html` | onde o dinheiro sai do retrato público, em 5 telas |
 | Convênios da SEAS | `site/convenios.html` | convênios e termos de fomento da SEAS, 2019–2026 |
+| Quem vende ao Estado | `site/empresas.html` | todas as empresas que receberam empenho em 2023–2026, por ano, órgão, modalidade e tema (tecnologia, frota) |
 | Tecnologia no Estado | `site/tecnologia.html` | todos os contratos de tecnologia do Estado, 2023–2026: por órgão, tipo, função repetida, vencimento e empresa |
 
-**A raiz do site (`/`) abre o painel com as quatro abas.** `site/index.html` e `site/painel.html` são o mesmo arquivo.
+**A raiz do site (`/`) abre o painel com as cinco abas.** `site/index.html` e `site/painel.html` são o mesmo arquivo.
 
 - **No ar:** a pasta `site/`, publicada na Vercel com Root Directory = `site`. As páginas levam `noindex`.
 - **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py && python3 tecnologia/build_tecnologia.py`.
@@ -94,6 +95,26 @@ No mesmo quadro aparecem o empenhado em TIC (elemento 40) do Executivo, o bloco 
 - **Endereços diretos:** `?org=SEDUC`, `?ver=repetidos|vencimentos|empresas|anos|orgao` e `?dados=tec-contratos`.
 
 Fontes e regras de leitura: [FONTES.md](FONTES.md), seção 2c.
+
+## Quinta aba: "Quem vende ao Estado"
+
+Todas as empresas e entidades privadas que receberam empenho do Estado em 2023–2026 (278.633 notas, R$ 56,6 bi; R$ 13,7 bi a empresas), com:
+- **filtros:** Ano · Órgão · Modalidade · Poder · **Tema (Tudo / Tecnologia / Frota)** · busca por empresa ou CNPJ;
+- **visões:** Quem recebe · Como compra · Quem compra · Ano a ano;
+- **ficha de cada empresa:** por órgão, por modalidade, por ano, contratos e convênios no portal, atividade na Receita e maiores notas com histórico.
+
+**Comandos:**
+- **Para coletar:**
+  - `python3 tecnologia/coleta_tudo.py`: detalhe de todas as notas a empresas a partir de R$ 20 mil;
+  - `tecnologia/coleta_varredura.py`;
+  - `coleta_contratos.py` e `coleta_contratos.py convenios`.
+- **Para gerar:** `python3 tecnologia/build_tecnologia.py && python3 empresas/build_empresas.py`. Grava:
+  - `dados-fonte/s6_empresas_estado.json`;
+  - `empresas/empresas_estado.csv` (lista completa);
+  - `esbocos/` e `site/empresas.html`.
+- **Endereços diretos:** `?ano=2025`, `?org=SEDUC`, `?mod=Dispensa`, `?tema=frota|ti`, `?q=UZZIPAY`, `?poderes=1`.
+
+As abas pesadas (Tecnologia e Empresas) só carregam quando abertas. Regras em [FONTES.md](FONTES.md), seção 2d.
 
 ## Detalhe da primeira aba: as 9 etapas
 

@@ -20,7 +20,7 @@ CAMPOS = ["razao_social", "nome_fantasia", "cnae_fiscal", "cnae_fiscal_descricao
 
 def main():
     d = json.loads((FONTE / "s5_tecnologia.json").read_text(encoding="utf-8"))
-    cnpjs = {re.sub(r"\D", "", r["cnpj"]) for r in d["registros"]} | {re.sub(r"\D", "", e[3]) for e in d["empenhos"]}
+    cnpjs = {re.sub(r"\D", "", r["cnpj"]) for r in d["registros"]} | {re.sub(r"\D", "", e[3]) for e in d["empenhos"]} | {re.sub(r"\D", "", f[3]) for f in d.get("fornecedores", [])}
     cnpjs = sorted(c for c in cnpjs if len(c) == 14)
     feito = json.loads(ARQ.read_text(encoding="utf-8")) if ARQ.exists() else {}
     falta = [c for c in cnpjs if c not in feito]

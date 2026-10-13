@@ -1,0 +1,220 @@
+{
+ "AGERO": {
+  "arquivos": [
+   "AGERO_88e2541f.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "AGEVISA": {
+  "arquivos": [
+   "AGEVISA_58b61cb7.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "CAERD": {
+  "arquivos": [
+   "CAERD_300221e8.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "CBMRO": {
+  "arquivos": [
+   "CBMRO_5d03b64f.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "CGE-RO": {
+  "arquivos": [
+   "CGE-RO_5dab5736.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "COGES": {
+  "arquivos": [
+   "COGES_e244c9df.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "DER": {
+  "arquivos": [
+   "DER_c321b1c9.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "DETRAN": {
+  "arquivos": [
+   "DETRAN_5c45849c.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "itens_tic": 15,
+  "valor_tic": 14621688.0,
+  "pct_tic": "3,44"
+ },
+ "EMATER": {
+  "arquivos": [
+   "EMATER_57852c11.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "FAPERO": {
+  "arquivos": [
+   "FAPERO_a270b52e.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "FEASE": {
+  "arquivos": [
+   "FEASE_8bd9dd27.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "valor_total_pca": 13513346.236
+ },
+ "FHEMERON": {
+  "arquivos": [
+   "FHEMERON_f664d556.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "IDARON": {
+  "arquivos": [
+   "IDARON_7884f7f0.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "IESPRO": {
+  "arquivos": [
+   "IESPRO_657d3041.pdf",
+   "IESPRO_9864449d.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "valor_total_pca": 3245352.34
+ },
+ "IPEM": {
+  "arquivos": [
+   "IPEM_55f9aff7.pdf",
+   "IPEM_b6164591.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "IPERON": {
+  "arquivos": [
+   "IPERON_a144315a.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "valor_total_pca": 4047535.5
+ },
+ "JUCER": {
+  "arquivos": [
+   "JUCER_e58ed6fa.pdf"
+  ],
+  "formato": "relatório PNCP"
+ },
+ "PC-RO": {
+  "arquivos": [
+   "PC-RO_cb6f3d7f.pdf",
+   "PC-RO_f460a228.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "PGE-RO": {
+  "arquivos": [
+   "PGE-RO_6ac698af.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "PM-RO": {
+  "arquivos": [
+   "PM-RO_cae2972c.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "POLITEC": {
+  "arquivos": [
+   "POLITEC_73dc43a5.pdf",
+   "POLITEC_a28cddae.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SEAS": {
+  "arquivos": [
+   "SEAS_1364230d.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "valor_total_pca": 166214422.7141
+ },
+ "SEDAM": {
+  "arquivos": [
+   "SEDAM_c6afa041.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SEDEC": {
+  "arquivos": [
+   "SEDEC_06eabf42.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SEFIN": {
+  "arquivos": [
+   "SEFIN_ed3ce8fb.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "valor_total_pca": 72597433.12
+ },
+ "SI": {
+  "arquivos": [
+   "SEM_071bd975.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SEOSP": {
+  "arquivos": [
+   "SEOSP_b39df563.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SEPAT": {
+  "arquivos": [
+   "SEPAT_77cafa8b.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SEPOG": {
+  "arquivos": [
+   "SEPOG_b5bf40f9.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SESDEC": {
+  "arquivos": [
+   "SESDEC_77e7f5cc.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SETIC": {
+  "arquivos": [
+   "SETIC_5deee994.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SETUR": {
+  "arquivos": [
+   "SETUR_0cbda948.pdf"
+  ],
+  "formato": "próprio do órgão (não lido automaticamente)"
+ },
+ "SUGESP": {
+  "arquivos": [
+   "SUGESP_b7a406fd.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "valor_total_pca": 110554386.0462
+ },
+ "SUPEL": {
+  "arquivos": [
+   "SUPEL_bae9bdbe.pdf"
+  ],
+  "formato": "relatório PNCP",
+  "valor_total_pca": 1327915.72
+ }
+}

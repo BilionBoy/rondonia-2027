@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quem vende ao Estado</title>
+<style>
+/*__FONTES__*/
+/*__BASE_CSS__*/
+.topo-c{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--hair);padding:14px 28px;flex:none}
+.topo-c h1{margin:0;font-size:16px;font-weight:700}
+.topo-c .meta{margin-left:auto;font-size:13px;color:var(--mute);display:flex;gap:14px;align-items:center}
+.seletor{display:flex;align-items:center;gap:10px;margin:2px 0 14px;flex-wrap:wrap}
+.seletor label{font-size:13px;color:var(--mute);font-weight:600}
+.seletor select,.seletor input{font:inherit;font-size:14px;font-weight:600;color:var(--ink);background:var(--bg);border:1px solid var(--hair);border-radius:8px;padding:6px 10px;max-width:100%}
+.seletor input[type=search]{font-weight:500;min-width:240px}
+.seletor input[type=checkbox]{width:auto;padding:0;margin-right:4px}
+.seletor button{font:inherit;font-size:13px;border:0;background:none;color:var(--azul);cursor:pointer;padding:0}
+.regras{font-size:12px;color:var(--mute);line-height:1.5;margin-top:8px}
+.regras b{color:var(--ink);font-weight:650}
+.esq{overflow-y:auto}
+.regras summary{cursor:pointer;color:var(--azul);font-weight:600;font-size:13px;margin-top:6px}
+.regras p{margin:6px 0 8px}
+.chk{font-size:13px;color:var(--mute);display:flex;align-items:center;gap:4px}
+.alterna{flex-wrap:wrap;gap:6px}
+.grafico.alto{flex:none}
+.seletor select{max-width:240px}
+.seletor{gap:8px}
+</style>
+</head>
+<body>
+<header class="topo-c"><h1>Quem vende ao Estado</h1><span class="meta" id="meta"></span></header>
+<main class="tela" id="tela">
+  <section class="esq" id="esq"></section>
+  <aside class="dir">
+    <div class="dir-cab"><div class="topo-cab"><h3>As provas</h3><span class="botoes"></span></div><p id="provas-sub"></p><div class="aviso" id="aviso" hidden></div><div class="filtro" id="filtro"></div></div>
+    <div class="provas" id="provas"></div>
+  </aside>
+</main>
+<div class="cortina" id="cortina"></div>
+<aside class="painel" id="painel" aria-hidden="true">
+  <button class="painel-x" id="painel-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="painel-tit"></h3><input id="painel-busca" type="search" placeholder="Buscar empresa, CNPJ, órgão, objeto…" aria-label="Buscar"></div>
+  <div class="provas" id="painel-lista"></div>
+</aside>
+<aside class="painel dados" id="dados" aria-hidden="true">
+  <button class="painel-x" id="dados-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="dados-tit"></h3></div>
+  <div class="dados-abas" id="dados-abas"></div><div class="ficha-fonte" id="dados-ficha"></div><div class="dados-nota" id="dados-nota"></div>
+  <div class="dados-ferr"><input id="dados-busca" type="search" aria-label="Buscar"><span class="cont" id="dados-cont"></span><button class="btn-dados contorno" id="dados-csv" type="button">⤓ CSV</button></div>
+  <div class="dados-tab" id="dados-tab"></div><div class="dados-pag" id="dados-pag"></div>
+</aside>
+<button id="btn-dados" hidden></button>
+<div id="dica" role="tooltip"></div>
+
+<script>
+const D = /*__DADOS_EMP__*/null;
+/*__BASE_JS__*/
+
+const E = D.empresas, M = D.meta, ORG = M.ORG, MOD = M.MOD;
+const NOME = s => (D.nomes && D.nomes[s]) || s;
+const VISOES = [["empresas", "Quem recebe"], ["modalidades", "Como compra"], ["orgaos", "Quem compra"], ["anos", "Ano a ano"]];
+const OUTROS = new Set(["TJ", "ALE", "TCE", "MP", "DPE"]);
+const SEM_LICIT = new Set(["Dispensa", "Inexigibilidade", "Não aplicável (parceria, convênio, termo)", "Adesão a ata"]);
+let visao = "empresas", ano = "", orgao = "", modal = "", tema = "", busca = "", soExec = true;
+const corta = (t, n) => t.length > n ? t.slice(0, n - 1).trimEnd() + "…" : t;
+// célula do cubo: [ano-2023, órgão, modalidade, ti(0 não, 1 tecnologia, 2 frota), valor]
+const passa = (c, sem = "") => (sem === "ano" || !ano || c[0] === +ano - 2023) && (sem === "orgao" || !orgao || ORG[c[1]] === orgao)
+  && (!soExec || !OUTROS.has(ORG[c[1]])) && (sem === "modal" || !modal || MOD[c[2]] === modal) && (!tema || (tema === "ti" ? c[3] === 1 : c[3] === 2));
+const valorDe = (e, sem) => { let v = 0; for (const c of e.c) if (passa(c, sem)) v += c[4]; return v; };
+const agrupa = (e, i, sem, nomes) => { const m = {}; for (const c of e.c) if (passa(c, sem)) { const k = nomes ? nomes[c[i]] : c[i] + 2023; m[k] = (m[k] || 0) + c[4]; } return Object.entries(m).sort((a, b) => b[1] - a[1]); };
+const ehTI = e => e.c.some(c => c[3] === 1);
+const ehFrota = e => e.c.some(c => c[3] === 2);
+function filtradas() {
+  const q = semAcento(busca.trim());
+  return E.map(e => ({e, v: valorDe(e)})).filter(x => x.v > 0 && (!q || semAcento(x.e.nome + " " + x.e.cnpj).includes(q))).sort((a, b) => b.v - a.v);
+}
+function altura(n, por = 30, min = 240) { const g = $("#graf"); g.classList.add("alto"); g.style.height = Math.max(min, n * por) + "px"; }
+$("#meta").innerHTML = `dado oficial de ${diaC.split("-").reverse().join("/")}${horaC ? " · " + horaC : ""}<button class="tema" id="tema" type="button" aria-label="Claro ou escuro">◐</button>`;
+
+const passaNota = x => (!ano || x[2] === +ano) && (!orgao || x[3] === orgao) && (!soExec || !OUTROS.has(x[3])) && (!modal || MOD[x[8]] === modal) && (!tema || (tema === "ti" ? x[9] === 1 : x[9] === 2));
+const notaE = x => ({credor: `${x[3]} · ${x[2]} · ${x[4]}`, valor: x[0] / 1e6, l2: `empenhado ${fmt(x[0] / 1e6)} · pago ${fmt(x[1] / 1e6)}${x[6] ? " · " + x[6] : ""}`, historico: x[5], link: L.detalhe + x[7]});
+const instE = i => ({credor: `${i[0]} · ${i[1]}`, valor: (i[2] || 0) / 1e6, l2: `${i[3]} · vigência ${i[5] || "—"}${i[6] ? " · " + i[6] : ""}`, fonte: i[4] ? "Processo SEI " + i[4] : "", historico: i[7], link: i[0] === "Contrato" ? "https://transparencia.ro.gov.br/contratos" : "https://transparencia.ro.gov.br/convenios"});
+function provaEmpresa(x) {
+  const e = x.e, orgs = agrupa(e, 1, "orgao", ORG), mods = agrupa(e, 2, "modal", MOD), anos = agrupa(e, 0, "ano").sort();
+  return {nome: e.nome, sub: `${e.cnpj ? "CNPJ " + e.cnpj + " · " : ""}${orgs.length} órgão${orgs.length > 1 ? "s" : ""}: ${orgs.slice(0, 6).map(([o]) => o).join(", ")}${orgs.length > 6 ? "…" : ""}${ehTI(e) ? " · tecnologia" : ""}${ehFrota(e) ? " · frota" : ""}`,
+    valor: fmt(x.v / 1e6), _v: x.v,
+    linhas: [["Por órgão", orgs.slice(0, 12).map(([o, v]) => `${o} ${fmt(v / 1e6)}`).join(" · ")], ["Por modalidade", mods.map(([m, v]) => `${m} ${fmt(v / 1e6)}`).join(" · ")],
+      ["Por ano", anos.map(([a, v]) => `${a} ${fmt(v / 1e6)}`).join(" · ")], ["Pago (todo o período)", "R$ " + br(e.pago, 2)], ["Notas de empenho", br(e.notas)],
+      ["Contratos / convênios no portal", `${e.contratos} / ${e.convenios}${e.valor_instrumentos ? " · " + fmt(e.valor_instrumentos / 1e6) : ""}`],
+      ...(e.cnae ? [["Atividade (Receita)", e.cnae]] : []), ...(e.municipio ? [["Sede", e.municipio]] : []), ...(e.abertura ? [["Aberta em", e.abertura.split("-").reverse().join("/")]] : [])],
+    notas: [...e.instrumentos.map(instE), ...e.top.filter(passaNota).map(notaE)]};
+}
+const comBarra = l => { const m = Math.max(...l.map(p => p._v || 0), 1e-9); l.forEach(p => p.barra = (p._v || 0) / m); return l; };
+
+function desenha() {
+  const fs = filtradas(), tot = fs.reduce((a, x) => a + x.v, 0) / 1e6;
+  const orgsTot = {}; E.forEach(e => e.c.forEach(c => { if (passa(c, "orgao")) orgsTot[ORG[c[1]]] = (orgsTot[ORG[c[1]]] || 0) + c[4]; }));
+  const lo = Object.entries(orgsTot).sort((a, b) => b[1] - a[1]);
+  const modsTot = {}; E.forEach(e => e.c.forEach(c => { if (passa(c, "modal")) modsTot[MOD[c[2]]] = (modsTot[MOD[c[2]]] || 0) + c[4]; }));
+  const pt = M.por_tipo;
+  $("#esq").innerHTML = `<div class="entra">
+    <div class="seletor">
+      <select id="sel-ano" aria-label="Ano"><option value="">2023–2026</option>${[2023, 2024, 2025, 2026].map(a => `<option ${String(a) === ano ? "selected" : ""}>${a}</option>`).join("")}</select>
+      <select id="sel-org" aria-label="Órgão"><option value="">Todos os órgãos</option>${lo.map(([o]) => `<option value="${esc(o)}" ${o === orgao ? "selected" : ""}>${esc(o)}${OUTROS.has(o) ? " (outro Poder)" : ""}</option>`).join("")}${orgao && !orgsTot[orgao] ? `<option selected>${esc(orgao)}</option>` : ""}</select>
+      <select id="sel-mod" aria-label="Modalidade"><option value="">Todas as modalidades</option>${Object.keys(modsTot).sort().map(m => `<option ${m === modal ? "selected" : ""}>${esc(m)}</option>`).join("")}</select>
+      <select id="sel-poder" aria-label="Poder"><option value="1" ${soExec ? "selected" : ""}>Só o Executivo</option><option value="0" ${soExec ? "" : "selected"}>Todos os Poderes</option></select>
+      <input type="search" id="busca" placeholder="Buscar empresa ou CNPJ" value="${esc(busca)}">
+      <select id="sel-tema" aria-label="Tema"><option value="">Tudo</option><option value="ti" ${tema === "ti" ? "selected" : ""}>Tecnologia</option><option value="frota" ${tema === "frota" ? "selected" : ""}>Frota (cartão, combustível, locação, manutenção, veículos)</option></select>
+      ${ano || orgao || modal || tema || busca || !soExec ? `<button type="button" id="limpa">✕ limpar filtros</button>` : ""}</div>
+    <div class="numero"><span class="n">${fmt(tot)}</span><span class="s">pagos ${orgao ? "pela " + esc(orgao) : soExec ? "pelo Executivo" : "por todos os Poderes"} a <b>${br(fs.length)} empresas</b>${modal ? " · " + esc(modal) : ""}<br>${tema === "ti" ? "só tecnologia · " : tema === "frota" ? "só frota · " : ""}${ano || "2023 a 2026"}</span></div></div>
+    <div class="alterna">${VISOES.filter(([v]) => !(orgao && v === "orgaos") && !(ano && v === "anos")).map(([v, n]) => `<button type="button" data-v="${v}" class="${v === visao ? "on" : ""}">${n}</button>`).join("")}</div>
+    <div class="grafico" id="graf"></div><div class="dica-uso" id="uso"></div>
+    <details class="regras"><summary>ⓘ Como ler</summary><p>Todas as ${br(M.notas)} notas de empenho do Estado de 2023 a 2026, de todos os órgãos e Poderes (Portal da Transparência). Só empresas e entidades privadas; órgãos públicos (${fmt((pt.publico || 0) / 1e6)}), folha e consignações (${fmt((pt.folha || 0) / 1e6)}), pessoas físicas com CPF, como servidores com suprimento de fundos (${fmt((pt.pessoa || 0) / 1e6)}) e dívida (${fmt((pt.divida || 0) / 1e6)}) ficam fora. Empresa juntada pelo CNPJ quando a nota foi aberta, senão pelo nome. Modalidade = a da nota (${br(M.notas_abertas)} notas abertas). Aparecem as ${br(M.empresas_na_pagina)} empresas com R$ 50 mil ou mais no período; a lista completa está no CSV. Tema "Tecnologia" = a mesma classificação nota por nota da aba Tecnologia (sem as gestoras de frota). Tema "Frota" = gestoras de cartão, combustível, locação, manutenção e peças e compra de veículos, pelo credor e pelo histórico de cada nota.</p></details>`;
+  $("#sel-ano").onchange = ev => { ano = ev.target.value; if (ano && visao === "anos") visao = "empresas"; desenha(); };
+  $("#sel-org").onchange = ev => { orgao = ev.target.value; if (orgao && visao === "orgaos") visao = "empresas"; desenha(); };
+  $("#sel-mod").onchange = ev => { modal = ev.target.value; desenha(); };
+  $("#sel-poder").onchange = ev => { soExec = ev.target.value === "1"; desenha(); };
+  $("#sel-tema").onchange = ev => { tema = ev.target.value; desenha(); };
+  let t; $("#busca").oninput = ev => { clearTimeout(t); t = setTimeout(() => { busca = ev.target.value; desenha(); const b = $("#busca"); b.focus(); b.setSelectionRange(b.value.length, b.value.length); }, 350); };
+  $("#limpa")?.addEventListener("click", () => { ano = orgao = modal = busca = tema = ""; soExec = true; desenha(); });
+  $("#esq").querySelectorAll(".alterna button").forEach(b => b.onclick = () => { visao = b.dataset.v; desenha(); });
+  ({empresas: vEmpresas, orgaos: vOrgaos, modalidades: vModal, anos: vAnos})[visao](fs);
+}
+const subEmp = fs => `${br(fs.length)} empresas, da que mais recebeu para a que menos. Clique numa para abrir, ou em "Ver todas" para buscar.`;
+function listaEmpresas(fs) { const l = comBarra(fs.map(provaEmpresa)); mostraProvas(subEmp(fs), l, {todas: l, tituloTodas: "Todas as empresas", limite: 8}); }
+function vEmpresas(fs) {
+  const vis = fs.slice(0, 20); altura(vis.length);
+  barras($("#graf"), vis.map(x => ({rot: corta(x.e.nome.replace(/ (LTDA|S\/?A|EIRELI|ME|EPP)\.?$/i, ""), 22), partes: [{v: x.v, cor: ehTI(x.e) ? "var(--azul)" : ehFrota(x.e) ? "#b45309" : "var(--cinza2)"}], dir: `${fmt(x.v / 1e6)} · ${agrupa(x.e, 1, "orgao", ORG).length} órgãos`,
+    dica: [x.e.nome, [["CNPJ", x.e.cnpj || "—"], ["Valor", fmt(x.v / 1e6)]], "Clique para abrir"],
+    clique: (g, s) => { foco(s, g); mostraProvas(x.e.nome, [provaEmpresa(x)], {filtro: corta(x.e.nome, 40), limpar: () => { foco(s, null); listaEmpresas(fs); }, abrir: 0}); }})));
+  $("#uso").textContent = "Azul: tecnologia. Laranja: frota. Clique numa empresa para abrir tudo dela.";
+  listaEmpresas(fs);
+}
+function vOrgaos(fs) {
+  const m = new Map(); fs.forEach(x => agrupa(x.e, 1, "orgao", ORG).forEach(([o, v]) => { if (!m.has(o)) m.set(o, {v: 0, n: 0}); m.get(o).v += v; m.get(o).n++; }));
+  const gs = [...m.entries()].sort((a, b) => b[1].v - a[1].v).slice(0, 30); altura(gs.length, 26);
+  barras($("#graf"), gs.map(([o, x]) => ({rot: o + (OUTROS.has(o) ? " *" : ""), partes: [{v: x.v / 1e6, cor: OUTROS.has(o) ? "var(--cinza)" : "var(--azul)"}], dir: `${fmt(x.v / 1e6)} · ${br(x.n)} empresas`,
+    dica: [NOME(o), [["Valor", fmt(x.v / 1e6)], ["Empresas", br(x.n)]], "Clique para abrir o órgão"], clique: () => { orgao = o; visao = "empresas"; desenha(); }})));
+  $("#uso").textContent = "Clique num órgão para abrir. * = outro Poder.";
+  listaEmpresas(fs);
+}
+function vModal(fs) {
+  const m = new Map(); fs.forEach(x => agrupa(x.e, 2, "", MOD).forEach(([k, v]) => { if (!m.has(k)) m.set(k, {v: 0, es: []}); m.get(k).v += v; m.get(k).es.push([x, v]); }));
+  const gs = [...m.entries()].sort((a, b) => b[1].v - a[1].v); altura(gs.length, 34, 220);
+  barras($("#graf"), gs.map(([k, y]) => ({rot: corta(k, 30), partes: [{v: y.v / 1e6, cor: SEM_LICIT.has(k) ? "var(--azul)" : "var(--cinza2)"}], dir: `${fmt(y.v / 1e6)} · ${br(y.es.length)} empresas`,
+    dica: [k, [["Valor", fmt(y.v / 1e6)], ["Empresas", br(y.es.length)]], "Clique para filtrar por esta modalidade"],
+    clique: () => { modal = k; visao = "empresas"; desenha(); }})));
+  $("#uso").textContent = "Azul: compra sem licitação competitiva. Clique numa modalidade para ver só ela.";
+  listaEmpresas(fs);
+}
+function vAnos(fs) {
+  const t = [0, 0, 0, 0]; fs.forEach(x => x.e.c.forEach(c => { if (passa(c, "ano")) t[c[0]] += c[4]; }));
+  $("#graf").classList.remove("alto"); $("#graf").style.height = "";
+  colunas($("#graf"), t.map((v, i) => ({rot: String(2023 + i), partes: [{v: v / 1e6, cor: "var(--azul)"}], topo: fmt(v / 1e6), dica: [String(2023 + i), [["Valor", fmt(v / 1e6)]], "Clique para ver só este ano"],
+    clique: () => { ano = String(2023 + i); visao = "empresas"; desenha(); }})));
+  $("#uso").textContent = "Clique num ano para ver só ele. 2026 vai até a data da coleta.";
+  listaEmpresas(fs);
+}
+$("#tema")?.addEventListener("click", () => { const r = document.documentElement, escuro = r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; r.dataset.theme = escuro ? "light" : "dark"; try { localStorage.setItem("tema-na", r.dataset.theme); } catch (e) {} desenha(); });
+try { const t = localStorage.getItem("tema-na"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+addEventListener("keydown", e => { if (e.key === "Escape") { fechaPainel(); fechaDados(); } });
+let pend; addEventListener("resize", () => { clearTimeout(pend); pend = setTimeout(desenha, 150); });
+const q = new URLSearchParams(location.search);
+if (q.get("org")) orgao = q.get("org");
+if (q.get("ano")) ano = q.get("ano");
+if (q.get("mod")) modal = q.get("mod");
+if (q.get("ver") && VISOES.some(([v]) => v === q.get("ver"))) visao = q.get("ver");
+if (q.get("q")) busca = q.get("q");
+if (q.get("ti")) tema = "ti";
+if (q.get("tema")) tema = q.get("tema");
+if (q.get("poderes")) soExec = false;
+desenha();
+</script>
+</body>
+</html>

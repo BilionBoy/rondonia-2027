@@ -1,0 +1,167 @@
+[
+ {
+  "ano": 2026,
+  "orgao": "CONTROLADORIA GERAL DO ESTADO DE RONDÔNIA - CGE-RO",
+  "participe": "JUNTA COMERCIAL DO ESTADO DE RONDONIA - JUCER",
+  "instrumento": "ACCOOP Nº 7/2026/PGE-JUCER",
+  "objeto": "Fornecimento de um ambiente de disponibilização de VIEW de banco de dados com informações relativas aos registros públicos de empresas.",
+  "inicio": "28/07/2026",
+  "fim": "28/07/2031",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2026,
+  "orgao": "SECRETARIA DE ESTADO DA SAÚDE - SESAU",
+  "participe": "TRIBUNAL REGIONAL DO TRABALHO DA 14ª REGIÃO",
+  "instrumento": "ACCOOP Nº 11/2026/PGE-GAB",
+  "objeto": "Cooperação Técnica consistente na doação, pelo SEGUNDO PARTÍCIPE ao PRIMEIRO PARTÍCIPE, de equipamentos de informática, compreendendo 40 microcomputadores, 40 monitores e 5 notebooks, a serem identificados em Plano de Trabalho previamente acordado entre as partes; e na manutenção, pelo PRIMEIRO PARTÍCIPE, da disponibilização da profissional de saúde Dra. Hialli Cristine Oliveira Chaves para realização de atendimentos médicos, perícias médicas e participação em Projetos Institucionais e da política de saúde do TRT junto à Coordenadoria de Assistência à Saúde do SEGUNDO PARTÍCIPE, em regime de 20 horas semanais, em 4 dias por semana, sem ônus para o SEGUNDO PARTÍCIPE.",
+  "inicio": "17/09/2026",
+  "fim": "",
+  "valor": 0,
+  "tipo": "cooperação"
+ },
+ {
+  "ano": 2025,
+  "orgao": "AGÊNCIA DE DEFESA SANITÁRIA AGROSILVOPASTORIL DE RONDÔNIA - IDARON",
+  "participe": "POLÍCIA CIVIL DO ESTADO DE RONDÔNIA",
+  "instrumento": "ACCOOP Nº 45/2025/PGE-IDARON",
+  "objeto": "Propiciar o compartilhamento de dados e informações, por meio de acesso controlado e restrito ao banco de dados e ao sistema informatizado da IDARON, exclusivamente para fins de suporte às atividades desenvolvidas no âmbito da Polícia Civil do Estado de Rondônia, sendo vedada a divulgação para quaisquer outros fins. Também visa à troca de experiências, conhecimentos e à realização de ações em parceria, com a finalidade de promover o desempenho eficiente das atribuições constitucionais e legais dos cooperantes.",
+  "inicio": "11/12/2025",
+  "fim": "11/12/2030",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2025,
+  "orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADANIA - SESDEC",
+  "participe": "ASSOCIAÇÃO COMERCIAL E INDUSTRIAL DE JI-PARANÁ – ACIJIP",
+  "instrumento": "ACCOOP Nº 47/2025/PGE-SESDEC",
+  "objeto": "Formalização da parceria entre a SESDEC e a ACIJIP com a finalidade de ampliar a capacidade de videomonitoramento urbano por meio da cessão de acesso em tempo real às imagens captadas pelas câmeras de segurança operadas pela ACIJIP, instaladas em pontos estratégicos do município de Ji-Paraná, possibilitando sua integração ao Centro Integrado de Operações Policiais – CIOP.",
+  "inicio": "24/11/2025",
+  "fim": "",
+  "valor": 0,
+  "tipo": "cooperação"
+ },
+ {
+  "ano": 2025,
+  "orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO - SETIC - SETIC",
+  "participe": "SECRETARIA DE ESTADO DE JUSTICA - SEJUS",
+  "instrumento": "ACCOOP Nº 39/2025/PGE-SETIC",
+  "objeto": "Interligação da rede de transmissão de dados de alta disponibilidade e velocidade do Governo do Estado de Rondônia, denominada INFOVIA, por meio de fibras ópticas, de modo a conectar o Tribunal de Justiça do Estado de Rondônia (TJRO) às Casas de Detenção e demais estabelecimentos prisionais localizados na cidade e Comarca de Porto Velho/RO, especialmente para suporte às atividades de mutirões carcerários e videoconferências.",
+  "inicio": "29/12/2025",
+  "fim": "29/12/2030",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2025,
+  "orgao": "SUPERINTENDÊNCIA ESTADUAL DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO - SETIC - SETIC",
+  "participe": "SECRETARIA ESPECIAL DE GOVERNO DE SERGIPE - SEGOV-SE",
+  "instrumento": "ACCOOP Nº 41/2025/PGE-SETIC",
+  "objeto": "Cessão do código-fonte e documentação técnica respectiva do Software LegisOn, cuja titularidade dos direitos de propriedade intelectual pertencem à PGE-SE e a SEGOV-SE, para que a SETIC-RO, a Casa Civil e a PGE-RO procedam às adequações para uso próprio, buscando a evolução contínua do sistema, de modo a atender às necessidades dos acordantes em suas atividades.",
+  "inicio": "26/02/2026",
+  "fim": "26/02/2027",
+  "valor": 0,
+  "tipo": "código-fonte"
+ },
+ {
+  "ano": 2024,
+  "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA - JUCER",
+  "participe": "DEPARTAMENTO ESTADUAL DE TRANSITO - DETRAN/RO",
+  "instrumento": "1º TAACOOP Nº 11/2024/PGE-JUCER",
+  "objeto": "Fica alterada a cláusula 9.1 do Acordo de Cooperação que passa a vigorar com nova Redação.",
+  "inicio": "25/03/2025",
+  "fim": "19/05/2029",
+  "valor": 0,
+  "tipo": "cooperação"
+ },
+ {
+  "ano": 2024,
+  "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA - JUCER",
+  "participe": "DEPARTAMENTO ESTADUAL DE TRANSITO - DETRAN/RO",
+  "instrumento": "ACOOP Nº 11/2024/PGE-JUCER",
+  "objeto": "Permitir a consulta online pelo DETRAN/RO, aos arquivos informatizados e digitalizados dos Atos de Registros Público Mercantil das empresas do Estado de Rondônia constante no banco de dados da JUCER, para a obtenção de informações bem como a respectiva impressão dos instrumentos tais como: atos constitutivos, alterações sociais e distratos, e todos os demais dados cadastrais, de maneira a que se identifique, com clareza, os responsáveis legais, no decorrer do tempo, pelas empresas, em funcionamento ou já extintas, limitando-se o seu acesso às situações necessárias ao deslinde dos feitos que tramitem perante o DETRAN/RO.",
+  "inicio": "15/05/2024",
+  "fim": "19/05/2029",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2024,
+  "orgao": "SECRETARIA DE SEGURANÇA, DEFESA E CIDADANIA - SESDEC",
+  "participe": "CONDOMINIO EDILICIO DO COMPLEXO DO PORTO VELHO SHOPPING",
+  "instrumento": "ACCOOP Nº 2/2024/PGE-SESDEC",
+  "objeto": "Cooperação entre os entes partícipes, por meio da disponibilização de imagens, visando o fortalecimento da segurança pública na região compreendida no entorno do Porto Velho Shopping, incluindo o estacionamento e ruas adjacentes, a fim de promover a intensificação de ações policiais de fiscalização, vigilância e controle, e ainda, com o fornecimento gratuito de tecnologias e sistemas de monitoramento do Porto Velho Shopping ao CIOP, com ênfase no acesso remoto, visando melhorar a capacidade de resposta aos crimes violentos e demais crimes correlatos de responsabilidade do Estado.",
+  "inicio": "15/04/2024",
+  "fim": "14/04/2029",
+  "valor": 0,
+  "tipo": "cooperação"
+ },
+ {
+  "ano": 2023,
+  "orgao": "DEPARTAMENTO ESTADUAL DE TRÂNSITO - DETRAN",
+  "participe": "PAGPLAN SERVICOS DE TECNOLOGIA EM PAGAMENTOS LTDA",
+  "instrumento": "ACCOOPTEC/010/DETRAN/PGE/2023",
+  "objeto": "Instalação de um canal de comunicação informático (webservice) entre os sistemas do PERMITENTE e da PERMISSIONÁRIA, em caráter precário e gratuito, através do qual a PERMISSIONÁRIA coletará em tempo real os valores devidos e vinculados aos veículos de propriedade dos interessados em quitar tais débitos de forma parcelada, mediante uso de cartão de crédito pessoal ou empresarial, com senha.",
+  "inicio": "08/12/2023",
+  "fim": "27/06/2027",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2023,
+  "orgao": "DEPARTAMENTO ESTADUAL DE TRÂNSITO - DETRAN",
+  "participe": "SUPERINTENDÊNCIA DA POLÍCIA RODOVIÁRIA FEDERAL EM RONDÔNIA - SPRF-RO",
+  "instrumento": "ACCOOPTEC/008/DETRAN/PGE/2023/A",
+  "objeto": "Compartilhamento de informações e bases informatizadas de dados entre o DEPARTAMENTO ESTADUAL DE TRÂNSITO – DETRAN/RO e a SUPERINTENDÊNCIA DA POLÍCIA RODOVIÁRIA FEDERAL EM RONDÔNIA – SPRF/RO, por intermédio do “Sistema DETRANNET” e \"Central de Serviços\", exclusivamente operados na base local, a fim otimizar as ações de fiscalização de trânsito nas rodovias federais do território do Estado de Rondônia, subsidiando consultas para a verificação da situação de condutores habilitados e dos veículos registrados neste Estado, além de fornecer dados por meio de compartilhamento de sistemas entre os órgãos. 5-VIGÊNCIA: 5 anos, contados a partir da publicação.",
+  "inicio": "10/11/2023",
+  "fim": "",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2023,
+  "orgao": "DEPARTAMENTO ESTADUAL DE TRÂNSITO - DETRAN",
+  "participe": "ZAPAY INSTITUICAO DE PAGAMENTO S.A.",
+  "instrumento": "ACCOOPTEC/008/DETRAN/PGE/2023",
+  "objeto": "Instalação de um canal de comunicação informático (webservice) entre os sistemas do PERMITENTE e da PERMISSIONÁRIA, em caráter precário e gratuito.",
+  "inicio": "19/10/2023",
+  "fim": "29/01/2028",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2023,
+  "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA - JUCER",
+  "participe": "SUPERINTENDÊNCIA ESTADUAL DE COMPRAS E LICITAÇÕES – SUPEL",
+  "instrumento": "RESCISÃO AO ACCOOPTEC Nº 005/JUCER/PGE/2023",
+  "objeto": "Fica rescindido de comum acordo o Termo de Cooperação Técnica nº 005/2023/PGE-JUCER na conformidade da legislação vigente, a partir do dia 04/10/2024, desobrigando as partes cooperantes das obrigações decorrentes do referido ajuste.",
+  "inicio": "04/11/2024",
+  "fim": "",
+  "valor": 0,
+  "tipo": "cooperação"
+ },
+ {
+  "ano": 2023,
+  "orgao": "JUNTA COMERCIAL DO ESTADO DE RONDÔNIA - JUCER",
+  "participe": "SUPERINTENDÊNCIA ESTADUAL DE COMPRAS E LICITAÇÕES – SUPEL",
+  "instrumento": "ACCOOPTEC Nº 005/JUCER/PGE/2023",
+  "objeto": "Permitir a consulta on line pela SUPEL/RO, aos arquivos informatizados e digitalizados dos Atos de Registros Público Mercantil das empresas do Estado de Rondônia constante no banco de dados da JUCER/RO, para a obtenção de informações bem como a respectiva impressão dos instrumentos tais como: atos constitutivos, alterações sociais e distratos, e todos os demais dados cadastrais, de maneira a que se identifique, com clareza, os responsáveis legais, no decorrer do tempo, pelas empresas, em funcionamento ou já extintas, limitando-se o seu acesso às situações necessárias ao deslinde dos feitos que tramitem perante essa SUPEL/RO.",
+  "inicio": "05/09/2023",
+  "fim": "",
+  "valor": 0,
+  "tipo": "integração de dados"
+ },
+ {
+  "ano": 2023,
+  "orgao": "SECRETARIA DE ESTADO DO DESENVOLVIMENTO ECONÔMICO - SEDEC - SEDEC",
+  "participe": "NUCLEO REG. DO INSTITUTO EUVALDO LODI",
+  "instrumento": "ACCOOP Nº 001/SEDEC/PGE/2023",
+  "objeto": "Integrar as vagas de estágio disponibilizadas pelo IEL ao sistema de geração emprego, permitindo assim maior divulgação, maior acessibilidade e assertividade no processo de busca de mão-de-obra na condição de estágio no âmbito do Estado de Rondônia.",
+  "inicio": "17/01/2023",
+  "fim": "18/01/2024",
+  "valor": 0,
+  "tipo": "cooperação"
+ }
+]

@@ -1,6 +1,7 @@
 """Todos os contratos do Estado no Portal da Transparência RO, de todos os órgãos, de 2015 até o ano atual.
 
 Uso: python3 coleta_contratos.py            (lista de contratos, ano a ano)
+     python3 coleta_contratos.py convenios  (convênios, termos de fomento e de cooperação/colaboração de todos os órgãos)
      python3 coleta_contratos.py detalhes   (abre a ficha dos contratos de tecnologia: documentos no SEI)
 Grava dados-fonte/s5_contratos.json e .csv. A ficha de detalhe só é aberta para os contratos que
 tecnologia/classificar.py marcou como tecnologia (dados-fonte/s5_contratos_ti.json), para não abrir 10 mil páginas.
@@ -43,13 +44,13 @@ def data_iso(s):
     return f"{m[3]}-{m[2]}-{m[1]}" if m else ""
 
 
-def consulta(op, tok, ano):
-    corpo = urllib.parse.urlencode({"__RequestVerificationToken": tok, "TipoDocumento": "1", "Ano": ano, "Mes": "", "NumeroDocumento": "",
+def consulta(op, tok, ano, tipo="1", rota="/contratos/consultacontratos"):
+    corpo = urllib.parse.urlencode({"__RequestVerificationToken": tok, "TipoDocumento": tipo, "Ano": ano, "Mes": "", "NumeroDocumento": "",
                                     "IdProcedimentoLicitatorio": " ", "CodigoUnidadeGestora": "", "Cnpj": "", "RazaoSocial": "",
                                     "Objeto": "", "Aditivo": ""}).encode()
     for tentativa in range(4):
         try:
-            req = urllib.request.Request(PORTAL + "/contratos/consultacontratos", data=corpo, headers={"X-Requested-With": "XMLHttpRequest"})
+            req = urllib.request.Request(PORTAL + rota, data=corpo, headers={"X-Requested-With": "XMLHttpRequest"})
             return op.open(req, timeout=300).read().decode("utf-8", "replace")
         except Exception as e:
             print("  retry", ano, e)
@@ -131,5 +132,34 @@ def detalhes():
     print("fichas abertas:", feitos)
 
 
+TIPOS_CONVENIO = {"2": "Convênio", "11": "Termo de Fomento", "13": "Termo de Cooperação/Colaboração"}
+
+
+def convenios():
+    """Mesma tabela, rota /convenios/ConsultaConvenios, sem filtro de órgão. Inclui universidades, fundações e acordos de cooperação."""
+    op = sessao()
+    pagina = op.open(PORTAL + "/convenios", timeout=60).read().decode()
+    anos = re.findall(r'<option value="(\d{4})"', pagina[pagina.find('name="Ano"'):][:2000])
+    tok = token(op, "/convenios")
+    linhas = []
+    for tipo, nome in TIPOS_CONVENIO.items():
+        for ano in sorted(anos):
+            n = linhas_da_tabela(consulta(op, tok, ano, tipo, "/convenios/ConsultaConvenios"), ano)
+            for r in n:
+                r["tipo"] = nome
+            print(f"  {nome} {ano}: {len(n)}")
+            linhas += n
+    meta = {"fonte": PORTAL + "/convenios", "coletado_em": time.strftime("%Y-%m-%d %H:%M"), "anos": sorted(anos),
+            "consulta": "POST /convenios/ConsultaConvenios (TipoDocumento = 2 convênio, 11 fomento, 13 cooperação; Ano; sem filtro de órgão)"}
+    (OUT / "s5_convenios.json").write_text(json.dumps({"meta": meta, "dados": linhas}, ensure_ascii=False, indent=1), encoding="utf-8")
+    with open(OUT / "s5_convenios.csv", "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.DictWriter(f, fieldnames=["tipo", "ano_consulta", "orgao", "numero", "processo_sei", "assinatura", "vigencia", "contratado", "cnpj",
+                                          "valor", "origem", "tem_aditivo", "objeto", "detalhe"], delimiter=";", extrasaction="ignore")
+        w.writeheader()
+        w.writerows(linhas)
+    print("gravado", len(linhas), "instrumentos em dados-fonte/s5_convenios.json")
+
+
 if __name__ == "__main__":
-    detalhes() if sys.argv[1:] == ["detalhes"] else coletar()
+    arg = sys.argv[1:]
+    detalhes() if arg == ["detalhes"] else convenios() if arg == ["convenios"] else coletar()
