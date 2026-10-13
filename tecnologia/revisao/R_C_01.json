@@ -1,0 +1,8 @@
+[
+ {"id": "CNT Nº 81/2026/PGE-SEDUC|0029.073585/2024-44", "categoria": "sistemas", "funcao": "avaliacao-educacional", "produto": "CAEd/UFJF", "nota": "Revisão de 13/10/2026: contrato de 2026 da mesma série UFJF já no mapa; o objeto não tinha palavra de TI e escapou do filtro"},
+ {"id": "CNT/0289/CBMRO/PGE/2023|0004.077907/2022-41", "categoria": "equipamentos", "funcao": "perifericos-suprimentos", "produto": "", "nota": "Revisão de 13/10/2026: monitores (o filtro só pegava 'monitor de vídeo/LED/LCD')"},
+ {"id": "CNT Nº 1581/2024/PGE-PA|0020.021306/2024-47", "categoria": "equipamentos", "funcao": "perifericos-suprimentos", "produto": "", "nota": "Revisão de 13/10/2026: 180 monitores auxiliares"},
+ {"id": "CNT/0403/FEASE/PGE/2023|0065.001090/2023-04", "categoria": "equipamentos", "funcao": "perifericos-suprimentos", "produto": "", "nota": "Revisão de 13/10/2026: monitores"},
+ {"id": "CNT Nº 524/2025/PGE-IPERON|0016.003338/2025-19", "categoria": "equipamentos", "funcao": "perifericos-suprimentos", "produto": "JBL Free WFH", "nota": "Revisão de 13/10/2026: 312 headsets para estações de trabalho"},
+ {"id": "CNT/0334/SETIC/PGE/2023|0070.000581/2023-51", "categoria": "equipamentos", "funcao": "notebooks-tablets", "produto": "iPhone", "nota": "Revisão de 13/10/2026: iPhones para desenvolvimento mobile (SETIC)"}
+]

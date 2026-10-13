@@ -1,0 +1,444 @@
+{
+ "coleta": "2026-10-12",
+ "empenhado_ti": 216167933.7799998,
+ "pago_ti": 131874040.29000002,
+ "n_empresas": 246,
+ "n_orgaos_com_gasto": 42,
+ "n_orgaos_fichas": 43,
+ "contratos_ativos": [
+  369,
+  565472695.65
+ ],
+ "assinados_2026": [
+  135,
+  263958025.07999998
+ ],
+ "vigentes_na_coleta": [
+  218,
+  441696196.53
+ ],
+ "vencem_2027": [
+  107,
+  221957086.09
+ ],
+ "sem_pregao": [
+  46905309.33,
+  21.698550987556185
+ ],
+ "modalidades": {
+  "Outros (o portal não detalha)": 107108476.28000003,
+  "Pregão": 62085898.170000024,
+  "Inexigibilidade": 25123634.81,
+  "Dispensa": 12978010.19,
+  "Não aplicável (parceria, convênio, termo)": 8803664.33,
+  "Suprimento de fundos": 68250.0
+ },
+ "top_orgaos_empenhado": [
+  [
+   "SEDUC",
+   "Secretaria de Estado da Educação",
+   94923365.08000004,
+   58,
+   206305117.62
+  ],
+  [
+   "DETRAN",
+   "Departamento Estadual de Trânsito",
+   46071180.6,
+   18,
+   105595163.61
+  ],
+  [
+   "SESAU",
+   "Secretaria de Estado da Saúde",
+   23755064.06000001,
+   3,
+   5274213.12
+  ],
+  [
+   "SESDEC",
+   "Secretaria de Segurança, Defesa e Cidadania",
+   14609845.940000001,
+   38,
+   145200246.37
+  ],
+  [
+   "SEFIN",
+   "Secretaria de Estado de Finanças",
+   6536092.21,
+   20,
+   14765618.32
+  ],
+  [
+   "SEJUS",
+   "Secretaria de Estado de Justiça",
+   4304243.800000001,
+   15,
+   3665302.27
+  ],
+  [
+   "IDARON",
+   "Agência de Defesa Sanitária Agrosilvopastoril",
+   3163375.1,
+   1,
+   270350.13
+  ],
+  [
+   "SEDEC",
+   "Secretaria de Estado do Desenvolvimento Econômico",
+   3002596.8799999994,
+   4,
+   156804.0
+  ],
+  [
+   "IPERON",
+   "Instituto de Previdência dos Servidores Públicos",
+   2675316.1,
+   19,
+   5407668.01
+  ],
+  [
+   "SETIC",
+   "Superintendência Estadual de Tecnologia da Informação e Comunicação",
+   2234408.0,
+   17,
+   16556483.81
+  ]
+ ],
+ "top_empresas": [
+  [
+   "APLIDIGITAL COMERCIO E SERVIÇOS DE TECNOLOGIA LTDA",
+   "05.552.901/0001-00",
+   2,
+   33175240.0
+  ],
+  [
+   "ALLTECH",
+   "21.547.011/0001-66",
+   4,
+   27511111.560000002
+  ],
+  [
+   "TECASSISTIVA",
+   "08.804.180/0001-76",
+   1,
+   19872324.740000002
+  ],
+  [
+   "RURALWEB TELECOMUNICACOES LTDA.",
+   "05.857.540/0001-00",
+   1,
+   16018881.09
+  ],
+  [
+   "IIN TECNOLOGIAS LTDA",
+   "03.211.236/0001-65",
+   1,
+   12597219.950000001
+  ],
+  [
+   "HELPER TECNOLOGIA DE SEGURANÇA S/A",
+   "13.644.990/0001-42",
+   3,
+   12059003.379999999
+  ],
+  [
+   "NBS SERVICOS DE COMUNICACOES LTDA",
+   "26.824.572/0001-89",
+   18,
+   8923496.92
+  ],
+  [
+   "UNIVERSIDADE FEDERAL DE JUIZ DE FORA UF JF",
+   "21.195.755/0001-69",
+   1,
+   7742620.67
+  ],
+  [
+   "EF EDUCAÇÃO ESPECIALIZADA E VIAGENS AO EXTERIOR LTDA",
+   "19.609.588/0001-03",
+   1,
+   4606195.0
+  ],
+  [
+   "ARVVO TECNOLOGIA, CONSULT. E SERV. LTDA",
+   "25.359.140/0001-81",
+   1,
+   4503615.18
+  ]
+ ],
+ "categorias_contratos": [
+  [
+   "Sistemas e software de gestão",
+   64,
+   316840260.40000004
+  ],
+  [
+   "Licenças de software de mercado",
+   62,
+   63192227.44999998
+  ],
+  [
+   "Equipamentos de informática",
+   101,
+   57216914.41000001
+  ],
+  [
+   "Segurança da informação",
+   26,
+   47359539.339999996
+  ],
+  [
+   "Links, internet e telecomunicações",
+   48,
+   33326600.45
+  ],
+  [
+   "Suporte técnico e serviços de TI",
+   12,
+   19649312.75
+  ],
+  [
+   "Datacenter, nuvem e hospedagem",
+   14,
+   15132678.44
+  ],
+  [
+   "Tecnologia operacional: monitoramento, rastreamento e câmeras",
+   26,
+   10344521.139999999
+  ],
+  [
+   "Impressão e reprografia",
+   15,
+   2241891.27
+  ],
+  [
+   "Rede lógica e cabeamento",
+   1,
+   168750.0
+  ]
+ ],
+ "mes_a_mes": {
+  "jan": 56446989.230000034,
+  "fev": 14153372.019999998,
+  "mar": 5881960.8500000015,
+  "abr": 10531310.52,
+  "mai": 28558682.080000002,
+  "jun": 29189213.940000005,
+  "jul": 29865830.740000002,
+  "ago": 21699645.56,
+  "set": 16423723.940000001,
+  "out": 3417204.9
+ },
+ "vencimentos": {
+  "Até dez/2026": [
+   44,
+   10006971.959999999
+  ],
+  "2027 · 1º tri": [
+   32,
+   39909973.43
+  ],
+  "2027 · 2º tri": [
+   38,
+   49642968.89999999
+  ],
+  "2027 · 3º tri": [
+   32,
+   128182588.75999999
+  ],
+  "2027 · 4º tri": [
+   5,
+   4221555.0
+  ],
+  "2028": [
+   21,
+   28370545.200000007
+  ],
+  "2029 ou depois": [
+   46,
+   181361593.27999997
+  ]
+ },
+ "repete_top": [
+  [
+   "Impressão (outsourcing e locação)",
+   [
+    "CGE",
+    "DER",
+    "DETRAN",
+    "FHEMERON",
+    "IPEM",
+    "IPERON",
+    "PC",
+    "PM",
+    "SEAGRI",
+    "SEFIN",
+    "SEGEP",
+    "SEJUS",
+    "SESDEC",
+    "SI",
+    "SOPH",
+    "SUGESP"
+   ],
+   21,
+   2669036.8699999996
+  ],
+  [
+   "Banco de preços (pesquisa de preços)",
+   [
+    "CBM",
+    "DER",
+    "FUNCER",
+    "IDEP",
+    "IESPRO",
+    "IPERON",
+    "PGE",
+    "PM",
+    "POLITEC",
+    "SEJUCEL",
+    "SESAU",
+    "SESDEC",
+    "SETIC",
+    "SETUR",
+    "SUPEL"
+   ],
+   19,
+   772565.12
+  ],
+  [
+   "Internet e links de dados",
+   [
+    "AGERO",
+    "EMATER",
+    "FHEMERON",
+    "IDEP",
+    "IPERON",
+    "PC",
+    "PGE",
+    "SEDEC",
+    "SEDUC",
+    "SESAU",
+    "SETIC",
+    "SUGESP"
+   ],
+   26,
+   19421505.37
+  ],
+  [
+   "Computadores",
+   [
+    "AGERO",
+    "CGE",
+    "DER",
+    "PC",
+    "PGE",
+    "SEAS",
+    "SEDUC",
+    "SEJUS",
+    "SEPOG",
+    "SESAU",
+    "SESDEC"
+   ],
+   35,
+   21175174.97
+  ],
+  [
+   "Projeto e CAD/BIM de engenharia",
+   [
+    "CBM",
+    "DER",
+    "DETRAN",
+    "EMATER",
+    "PC",
+    "PGE",
+    "SEAS",
+    "SEDUC",
+    "SEFIN",
+    "SEOSP",
+    "SOPH"
+   ],
+   20,
+   7340746.68
+  ],
+  [
+   "Videomonitoramento e câmeras",
+   [
+    "AGERO",
+    "DER",
+    "EMATER",
+    "IPEM",
+    "IPERON",
+    "SEDEC",
+    "SEDUC",
+    "SEJUS",
+    "SESDEC",
+    "SETUR"
+   ],
+   13,
+   2294900.94
+  ],
+  [
+   "Telefonia móvel e chips de dados",
+   [
+    "DETRAN",
+    "EMATER",
+    "FEASE",
+    "PC",
+    "SEAS",
+    "SEDUC",
+    "SEPOG",
+    "SESDEC",
+    "SUGESP"
+   ],
+   12,
+   3212505.6
+  ],
+  [
+   "Certificado digital",
+   [
+    "CBM",
+    "COGES",
+    "PGE",
+    "PM",
+    "SEAGRI",
+    "SEFIN",
+    "SEOSP",
+    "SEPAT",
+    "SUPEL"
+   ],
+   12,
+   68579.81999999999
+  ],
+  [
+   "Notebooks e tablets",
+   [
+    "CBM",
+    "IPERON",
+    "PGE",
+    "POLITEC",
+    "SEPAT",
+    "SEPOG",
+    "SESDEC",
+    "SI"
+   ],
+   13,
+   1327455.0899999999
+  ],
+  [
+   "Design gráfico e mídia (Adobe e similares)",
+   [
+    "CBM",
+    "DER",
+    "PC",
+    "PGE",
+    "SEDUC",
+    "SEFIN",
+    "SEPOG"
+   ],
+   13,
+   28576152.480000004
+  ]
+ ]
+}

@@ -48,6 +48,15 @@ No `.molde.yaml`:
 - `capa.fundo: assets/x.png` põe a imagem como fundo da capa. Com fundo, não use `texto` na capa.
 - `ignorar_figuras: [A1-F01]` evita repetir no corpo a figura que já está na capa.
 - `rotulos: {"^TÍTULO": Rótulo}` define o rótulo azul das seções sem número.
+- `nova_pagina: true` faz cada seção de nível 1 (`# Título`) abrir página; com uma lista de regex (`[^SESAU, ^Anexo]`), só as que casam. Use em relatórios com fichas (uma por órgão, por empresa).
+
+**Quebras de página (todas as tabelas, automático):**
+- o cabeçalho da tabela se repete no alto de cada página;
+- ficam ao menos 3 linhas junto do cabeçalho no pé da página e ao menos 3 no alto da página seguinte;
+- título (`##`, `###`) nunca fica sozinho no fim da página;
+- ao final, o gerador lê o PDF e avisa `aviso: página N termina com título ou cabeçalho sem conteúdo` se sobrar algum caso.
+
+Em tabela HTML escrita por script, `class="num"` no `<th>`/`<td>` alinha valores à direita, e `<small>` dentro de `###` vira complemento discreto do título.
 
 **Paginação automática (molde Documento):**
 - Figura grande nunca vira miniatura; todas ficam na página em pé, na largura do texto (nada de página deitada); SVG entra como vetor.

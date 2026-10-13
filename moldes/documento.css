@@ -114,7 +114,10 @@ main blockquote p:last-child { margin-bottom: 0 }
 .tab.larga th { font-size: 6.6pt; letter-spacing: .03em }
 main { overflow-wrap: break-word }
 main code { overflow-wrap: anywhere }
-.tab thead { display: table-row-group }
+.tab thead { display: table-header-group }  /* cabeçalho repete no alto da página quando a tabela continua */
+.tab thead tr { break-after: avoid; break-inside: avoid }
+/* órfãs e viúvas de tabela: ao menos 3 linhas com o cabeçalho no pé da página e ao menos 3 no alto da seguinte */
+.tab tbody tr:nth-child(-n+3), .tab tbody tr:nth-last-child(-n+2) { break-before: avoid }
 .tab th { text-align: left; font-size: 6.9pt; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta);
   padding: 0 2.6mm 2mm 0; border-bottom: 1.2pt solid var(--tinta); vertical-align: bottom }
 .tab td { padding: 2mm 2.6mm 2mm 0; border-bottom: .5pt solid var(--linha); vertical-align: top }
@@ -169,3 +172,18 @@ main h2, main h3, main h4 { break-after: avoid; break-inside: avoid }
 main h2 + p, main h3 + p { break-before: avoid }
 .lista-fig .sum-h { margin-bottom: 4mm } .lista-fig .sum-l.fig { padding: 1mm 0 } .lista-fig .sum-l.fig .sum-t { font-size: 9pt } .lista-fig .sum-l.fig .sum-n, .lista-fig .sum-p { font-size: 8.4pt }
 main blockquote { break-inside: auto; orphans: 3; widows: 3 }
+
+/* seção que sempre abre página (opção nova_pagina do .molde.yaml): fichas, partes do relatório */
+.abre.nova { break-before: page; margin-top: 0 }
+main > hr:has(+ .abre.nova) { display: none }
+/* complemento discreto ao lado do título: "10 maiores empresas", "o valor abre a nota" */
+main h2 small, main h3 small { font-size: 8.2pt; font-weight: 500; color: var(--nota); letter-spacing: 0; margin-left: 1.6mm }
+/* números à direita nas tabelas */
+.tab th.num, .tab td.num { text-align: right; padding-right: 0; padding-left: 2.6mm }
+.tab td.num { white-space: nowrap; font-variant-numeric: tabular-nums }
+.tab th { hyphens: none; overflow-wrap: normal }
+.tab td small { font-size: 7.2pt; color: var(--nota); font-weight: 500 }
+/* gráfico vetorial do .md (sem moldura de figura): título fica junto */
+.grafico-orgao { margin: 1mm 0 4mm; break-inside: avoid }
+/* título quebrado à força pela revisão de quebras */
+.quebra-antes { break-before: page !important; margin-top: 0 !important; border-top: 0 !important; padding-top: 0 !important }

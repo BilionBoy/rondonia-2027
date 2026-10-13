@@ -1,0 +1,24 @@
+# PDF A · Raio-X da Tecnologia do Estado — 2026, por órgão. Só tecnologia da informação: contratos, convênios, parcerias e notas de TI.
+# Texto e gráficos gerados dos dados por gerar_md.py (mesma base da aba Tecnologia; nenhum número digitado à mão). Imagens em assets/.
+# Gerar: python3 moldes/exemplos/raio-x-2026-orgaos/gerar_md.py && python3 moldes/gerar_documento.py moldes/exemplos/raio-x-2026-orgaos/raio-x-2026-orgaos.molde.yaml
+fonte: raio-x-2026-orgaos.md
+arquivo: Raio-X-Tecnologia-2026
+titulo_pdf: Raio-X da Tecnologia do Estado — 2026 · Contratos e gastos de TI por órgão
+cabecalho: Raio-X da Tecnologia do Estado · 2026 · Contratos e gastos de TI por órgão
+rodape: Dados públicos do Portal da Transparência RO · coleta de outubro de 2026
+autoria: NextTech Ecosystem
+capa:
+  fundo: assets/capa.png
+  topo: Estado de Rondônia
+  topo2: ""
+  kicker: Raio-X da Tecnologia do Estado
+  titulo: Tecnologia por órgão
+  subtitulo: Contratos, convênios, parcerias e gastos de tecnologia da informação de cada órgão do Poder Executivo em 2026
+  slogan: Exercício de 2026
+  pe: Leitura de dados públicos para o plano diretor de tecnologia do Estado
+  autoria: NextTech Ecosystem
+ignorar_figuras: [A-F01]
+fonte_figuras: "Elaboração própria com dados do Portal da Transparência de Rondônia (coleta de outubro de 2026)."
+rotulos: {"^[A-Z/]{2,10} ·": "Ficha do órgão"}
+pastas_imagens: [assets]
+nova_pagina: true   # cada parte e cada ficha de órgão abre página

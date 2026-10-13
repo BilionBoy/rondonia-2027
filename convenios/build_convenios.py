@@ -21,6 +21,8 @@ DOCUMENTOS = [
     ("SEAS-SISPAC-PLANO-DE-GOVERNO.pdf", "SEAS-SISPAC-PLANO-DE-GOVERNO.pdf", "Plano SISPAC-RO", "27 páginas · proposta de sistema de parcerias para a SEAS"),
     ("SIMA_Programa_Modernizacao_2027-2030_v3.0.pdf", "SIMA_Programa_Modernizacao_2027-2030_v3.0.pdf",
      "SIMA · Programa de Modernização 2027–2030", "gestão de materiais, almoxarifado e patrimônio da educação"),
+    ("Raio-X-Tecnologia-2026.pdf", "Raio-X-Tecnologia-2026.pdf",
+ "Raio-X da Tecnologia 2026 · Por órgão", "160 páginas · contratos, convênios, parcerias e gastos de TI de cada órgão, com quem, como e até quando"),
 ]
 
 

@@ -106,7 +106,8 @@ Ordem: `python3 coleta_contratos.py` → `python3 tecnologia/classificar.py` (tr
 | `dados-fonte/s5_convenios.json` | Todos os convênios, termos de fomento e de cooperação (sem filtro de órgão) | 9.115 |
 | `dados-fonte/s5_acordos_sem_repasse.json` | Acordos sem repasse financeiro (`/convenios/filtrartransferenciassemrepasses`) | 391 |
 | `dados-fonte/s5_parceria_ufmg_brtec.json` | Empenhos à Fundação Christiano Ottoni e à BR TEC, 2021–2026 | 27 |
-| `dados-fonte/pncp/` e `s5_pncp_estado.json` | Contratações do Estado no PNCP, todas as modalidades, 2023– (em coleta) | — |
+| `dados-fonte/pncp/` e `s5_pncp_estado.json` | Contratações do Estado no PNCP, todas as modalidades, 2023–2026 (9.128) | 13/10/2026 |
+| `s5_pncp_ti.json` (`tecnologia/cruza_pncp.py`) | Processos de compra de TI do Executivo no PNCP (405), cruzados com os contratos pelo processo SEI; aba Tecnologia, visão "Processos de compra" | 13/10/2026 |
 
 **Regras:**
 - **Credor** classificado em empresa, órgão público, folha/consignação, dívida ou pessoa física. Pessoa física = CPF mascarado no detalhe.

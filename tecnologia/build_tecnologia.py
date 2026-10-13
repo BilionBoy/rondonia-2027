@@ -79,6 +79,8 @@ UG_EMPENHO = {"PC-RO": "PC", "PCIVIL": "PC", "PM-RO": "PM", "PMILIT": "PM", "CBO
               # fundos do Executivo -> órgão gestor
               "FUNESP": "SESDEC", "FESPREN": "SESDEC", "FUNRESPOL": "PC", "FUNDAT": "SEFIN", "FES": "SESAU", "FIDER": "SEDEC", "FEPRAM": "SEDAM",
               "FERHRO": "SEDAM", "FESA": "IDARON", "FUMORPGE": "PGE", "FUREFUR": "SEPAT", "FRFUR": "SEPAT", "FUNESBOM": "CBM",
+              "Idaron": "IDARON", "FUMRESPOM": "PM", "FITHA": "DER", "FUPEN": "SEJUS", "FUNDEC": "SEJUS", "FRBL": "SEDAM", "FEDEC": "SEJUCEL",
+              "FEAS": "SEAS", "FECOEP": "SEAS", "FUNEDCA": "SEAS", "FEDIPI": "SEAS", "FUNEDM": "SEAS", "FUNPRECAP": "IPERON",
               # outros Poderes e órgãos autônomos (fora das contas do Executivo)
               "FUJU": "TJ", "FDI/TC": "TCE", "FUNDIMPER": "MP", "FUNDEP": "DPE"}
 OUTROS_PODERES = {"TJ": "Tribunal de Justiça", "ALE": "Assembleia Legislativa", "TCE": "Tribunal de Contas", "MP": "Ministério Público", "DPE": "Defensoria Pública"}
@@ -205,6 +207,16 @@ NAO_TI_NOTA = re.compile(r"FOLHA DE PAGAMENTO|ENERGIA ELETRICA|FORNECIMENTO DE E
                          r"|TOMOGRAF|RADIODIAGN|DIAGNOSE|RESSONANC|IMAGEM|AUTOMACAO LABORATORIAL|REAGENTE|CROMATOGRAF|ESPECTROMETR|LABORATORI"
                          r"|VIATURA|VEICULO|CONDICIONADORES|CLIMATIZ|CIRURGIA|PISO NACIONAL|ENFERMAGEM|EVENTO|MATERIAL ELETRIC|SISTEMA DE DEFESA AGROPEC"
                          r"|HOSPITAL|PACIENTE|EXAME|CONSULTA MEDICA|UTI\b|LEITO|ODONTO", re.I)
+# eletrodomésticos, móveis, cursos e viagens vendidos por empresas com CNAE de informática (revisão de 13/10/2026).
+# Só valem quando a nota não cita equipamento claramente de TI (ex.: "tablets para distribuição gratuita" continua TI).
+NAO_TI_NOTA2 = re.compile(r"ARES[- ]?CONDICIONADOS?|CONDICIONADOR|CENTRA(L|IS) DE AR|SPLIT|FRIGOBAR|BEBEDOURO|GELADEIRA|REFRIGERADOR|MICRO-?ONDAS|FOGAO|ARMARIO|MOBILIARIO|MOBILIA\b|CADEIRA|MESAS?\b|MAQUINA DE LAVAR|LAVADORA"
+                         r"|CAFETEIRA|ELETRODOMEST|UMIDIFICADOR|ESTERILIZADOR|PURIFICADOR|VENTILADOR|DISTRIBUICAO GRATUITA|TELEVISOR|SMART ?TV|\bTV\b"
+                         r"|\bCURSOS?\b|INSCRIC|MASTERCLASS|CAPACITACAO|ESTAGI|RECURSOS HUMANOS|PASSAGE(M|NS) AERE|PASSAGEM|AGENCIAMENTO", re.I)
+TI_FORTE = re.compile(r"TABLETS?|TABLETES|NOTEBOOK|COMPUTADOR|MONITOR(ES)?\b|SOFTWARE|ROBOTICA|VIDEO ?WALL|SERVIDOR(ES)? (DE REDE|RACK)|SWITCH|IMPRESSORA|TONER|CHROMEBOOK|LICENC")
+
+
+def nao_ti_nota(h):
+    return bool(NAO_TI_NOTA.search(h) or (NAO_TI_NOTA2.search(h) and not TI_FORTE.search(h)))
 CREDOR_NAO_EMPRESA = re.compile(r"CREDORES NACIONAIS|DEPARTAMENTO ESTADUAL|SECRETARIA|FUNDO |PREFEITURA|MUNICIPIO|SEM CPF|PESSOA FISICA/JURIDICA", re.I)
 
 
@@ -213,11 +225,15 @@ def nota_ti(hist, cnae, parceria):
     h = sem_acento(hist)
     if parceria:
         return True
-    if NAO_TI_NOTA.search(h):
+    if nao_ti_nota(h):
         return False
     cat, regra = classificar(hist)
     if cat and cat != "frota":
         return True
+    # só pelo CNAE da empresa: o histórico não pode ser compra genérica de material (empresas de informática também vendem eletrodomésticos e móveis)
+    if re.search(r"MATERIA(L|IS) (PERMANENTES?|DE CONSUMO|DE EXPEDIENTE)|BENS PERMANENTES|ITENS PERMANENTES", h) and not re.search(
+            r"TECNOLOGI|INFORMATI|TABLET|\bABLET|LENOVO|DELL\b|COMPUTA|NOTEBOOK|SOFTWARE|DIGITAL|ELETRONIC|ASSISTIVA|TOKEN|PERIFERIC|IMPRESSOR|TONER|MONITOR|VIDEO ?WALL|ROBOTICA", h):
+        return False
     return bool(CNAE_TI.match(str(cnae or ""))) and not NAO_TI.search(h)
 
 
@@ -258,15 +274,45 @@ GERAL_CREDOR_NAO = re.compile(r"CONSELHO|ESCOLA|MINISTERIO|SECRET|CONSORCIO|CONS
 
 def nota_ti_geral(credor, hist):
     h, c = sem_acento(hist), sem_acento(credor)
-    if GERAL_NAO.search(h) or GERAL_CREDOR_NAO.search(c) or NAO_TI_NOTA.search(h):
+    if GERAL_NAO.search(h) or GERAL_CREDOR_NAO.search(c) or nao_ti_nota(h):
         return False
     cat, _ = classificar(hist)
     return cat in ("sistemas", "licencas", "datacenter", "conectividade", "seguranca", "impressao", "equipamentos", "rede", "suporte")
 
 
+def tira_reempenhos(out):
+    """Reempenho: o portal mantém a nota original com o valor cheio e cria outra para o mesmo gasto (ex.: ALE × ESYWORLD 2026,
+    R$ 10,66 mi empenhados em 11/08 e reempenhados em 08/09). Quando há reempenho, a nota original passa a contar só o que foi pago dela.
+    Original = a nota citada no histórico (AAAANE000000) ou, sem número, a nota não paga do mesmo órgão e credor com o mesmo texto."""
+    numero = {}
+    for ano in (2021, 2022, 2023, 2024, 2025, 2026):
+        p = FONTE / f"s3_empenhos_{ano}.json"
+        if p.exists():
+            for n in json.loads(p.read_text(encoding="utf-8"))["dados"]:
+                numero[n["linkDetalhes"]] = (UG_EMPENHO.get(n["unidadeGestora"], n["unidadeGestora"]), n["numeroEmpenho"])
+    por_num = {numero[x[9]]: x for x in out if x[9] in numero}
+    ajustadas = []
+    for x in out:
+        if not re.match(r"\s*RE-?EMPENHO", x[7], re.I):
+            continue
+        citadas = [por_num.get((x[1], ne)) for ne in re.findall(r"\d{4}NE\d{6}", x[7].upper())]
+        originais = [y for y in citadas if y and y is not x]
+        if not originais:
+            corpo = sem_acento(re.sub(r"^\s*RE-?EMPENHO\s*(PARA|DE|DA|DO)?\s*", "", x[7], flags=re.I))[:40]
+            originais = [y for y in out if y is not x and y[1] == x[1] and (y[3] or y[2]) == (x[3] or x[2]) and y[5] == 0 and y[4] > 0
+                         and not re.match(r"\s*RE-?EMPENHO", y[7], re.I) and corpo and corpo in sem_acento(y[7])]
+        for y in originais:
+            if y[4] > y[5]:
+                ajustadas.append((y[1], y[2], y[4] - y[5]))
+                y[4] = y[5]
+                y[7] = "[reempenhada: conta só o pago] " + y[7]
+    return ajustadas
+
+
 def fornecedores(regs):
     """Notas pagas a fornecedores de tecnologia: elemento 40 + qualquer outro elemento (s5_empenhos_fornecedores.json).
-    Executivo apenas; empresas de frota (sistema + cartão, valor com combustível) ficam de fora."""
+    Todos os Poderes, com a mesma regra (a tela soma só o Executivo, a menos que se marque "incluir outros Poderes");
+    empresas de frota (sistema + cartão, valor com combustível) ficam de fora."""
     so = lambda x: re.sub(r"\D", "", x or "")
     frota = {so(r["cnpj"]) for r in regs if r["cat"] == "frota"} - {so(r["cnpj"]) for r in regs if r["cat"] != "frota"}
     linhas = []
@@ -332,7 +378,7 @@ def fornecedores(regs):
                         valor(n["valorEmpenhado"]), valor(n["valorPago"]), "suprimento de fundos", f'{n["credor"].strip()} (servidor): ' + d.get("Histórico", ""),
                         n["dataDocumentoFormatada"], n["linkDetalhes"], "", d.get("Modalidade licitatória", ""), "Suprimento de fundos"])
             continue
-        if ug in OUTROS_PODERES or (c in frota and origem != "frota (sistema e cartão)"):
+        if c in frota and origem != "frota (sistema e cartão)":
             continue
         if origem not in ("elemento 40 (TIC)", "frota (sistema e cartão)") and CREDOR_NAO_EMPRESA.search(sem_acento(n["credor"])):
             continue
@@ -345,6 +391,9 @@ def fornecedores(regs):
             parceria = PARCEIROS_CNPJ[c]
         out.append([n["ano"], ug, n["credor"], c, valor(n["valorEmpenhado"]), valor(n["valorPago"]), origem, d.get("Histórico", ""),
                     n["dataDocumentoFormatada"], n["linkDetalhes"], parceria, d.get("Modalidade licitatória", ""), modalidade(d.get("Modalidade licitatória", ""))])
+    aj = tira_reempenhos(out)
+    if aj:
+        print(f"reempenhos: {len(aj)} notas originais passam a contar só o pago (−R$ {sum(v for *_, v in aj) / 1e6:.2f} mi)", aj[:6])
     return out
 
 
@@ -417,11 +466,12 @@ def main():
               "empenhado": {a: sum(e["emp"] for e in emps if e["ano"] == a and e["executivo"]) for a in (2023, 2024, 2025, 2026)},
               "pago": {a: sum(e["pago"] for e in emps if e["ano"] == a and e["executivo"]) for a in (2023, 2024, 2025, 2026)},
               "empenhado_outros_poderes": {a: sum(e["emp"] for e in emps if e["ano"] == a and not e["executivo"]) for a in (2023, 2024, 2025, 2026)},
-              "pago_fornecedores": {a: sum(x[4] for x in forn if x[0] == a and not x[6].startswith("frota")) for a in (2023, 2024, 2025, 2026)},
+              "pago_fornecedores": {a: sum(x[4] for x in forn if x[0] == a and not x[6].startswith("frota") and x[1] not in OUTROS_PODERES) for a in (2023, 2024, 2025, 2026)},
+              "pago_fornecedores_outros_poderes": {a: {p: sum(x[4] for x in forn if x[0] == a and x[1] == p and not x[6].startswith("frota")) for p in OUTROS_PODERES} for a in (2023, 2024, 2025, 2026)},
               "pago_frota": {a: sum(x[4] for x in forn if x[0] == a and x[6].startswith("frota")) for a in (2023, 2024, 2025, 2026)},
-              "pago_fornecedores_fora40": {a: sum(x[4] for x in forn if x[0] == a and x[6].startswith("outro")) for a in (2023, 2024, 2025, 2026)},
-              "fornecedores_pagos": len({x[3] or x[2] for x in forn}),
-              "por_modalidade": {m: sum(x[4] for x in forn if x[12] == m) for m in sorted({x[12] for x in forn})},
+              "pago_fornecedores_fora40": {a: sum(x[4] for x in forn if x[0] == a and x[6].startswith("outro") and x[1] not in OUTROS_PODERES) for a in (2023, 2024, 2025, 2026)},
+              "fornecedores_pagos": len({x[3] or x[2] for x in forn if x[1] not in OUTROS_PODERES}),
+              "por_modalidade": {m: sum(x[4] for x in forn if x[12] == m and x[1] not in OUTROS_PODERES) for m in sorted({x[12] for x in forn})},
               "pca_itens": len(itens_pca), "pca_valor": sum(i.get("valor_estimado") or 0 for i in itens_pca)}
     dados = {"coletado_em": meta_c["coletado_em"], "data_corte": DATA_CORTE, "ano_foco": ANO_FOCO,
              "links": {"portal": PORTAL + "/contratos", "detalhe": PORTAL + "/Despesa/notas-de-empenho/detalhes"},
@@ -431,6 +481,12 @@ def main():
              "outros_poderes": OUTROS_PODERES,
              "pca": itens_pca, "meta_empenhos": meta_e, "fornecedores": forn}
     (FONTE / "s5_tecnologia.json").write_text(json.dumps(dados, ensure_ascii=False, indent=1), encoding="utf-8")
+    # processos de compra de TI publicados no PNCP, cruzados com os contratos (precisa do s5_tecnologia.json recém-gravado)
+    pncp = []
+    if (FONTE / "s5_pncp_estado.json").exists():
+        import cruza_pncp
+        cruza_pncp.main()
+        pncp = json.loads((FONTE / "s5_pncp_ti.json").read_text(encoding="utf-8"))["dados"]
 
     # tabelas dos "dados de origem"
     contr = sorted(regs, key=lambda r: (r["sigla"], -r["valor"]))
@@ -452,7 +508,7 @@ def main():
                                    "colunas": [["Ano", "n"], ["Poder", "t"], ["Órgão", "t"], ["Credor", "t"], ["CNPJ", "t"], ["Empenhado", "r"], ["Pago", "r"], ["Elemento", "t"], ["Item de despesa", "t"], ["Data", "d"], ["Histórico", "t"], ["Nota", "l"]],
                                    "linhas": [[e["ano"], "Executivo" if e["executivo"] else OUTROS_PODERES[e["ug"]], e["ug"], e["credor"], e["cnpj"], e["emp"], e["pago"], e["elemento"], e["item"], e["data"], e["historico"], e["link"]] for e in emps]}
     if forn:
-        tabelas["tec-pagamentos"] = {"id": "tec-pagamentos", "curto": "Pago às empresas", "titulo": "Empenhos a fornecedores de tecnologia, em qualquer elemento (Executivo, 2023–2026)",
+        tabelas["tec-pagamentos"] = {"id": "tec-pagamentos", "curto": "Pago às empresas", "titulo": "Empenhos a fornecedores de tecnologia, em qualquer elemento (todos os Poderes, 2023–2026)",
                                      "fonte": "Portal da Transparência de Rondônia (CGE-RO) · Despesas por empenho e detalhe da nota", "url": PORTAL + "/despesa/despesa-estadual",
                                      "coletado_em": meta_e.get("coletado_em", ""), "consulta": "Notas do elemento 40 + notas de outros elementos (a partir de R$ 10 mil) cujo CNPJ é de fornecedor de tecnologia (contrato revisado, elemento 40 ou acordo de parceria)",
                                      "nota": "Inclui pagamentos que não aparecem como contrato ou convênio, como o Acordo de Parceria SEDUC × UFMG (Fundação Christiano Ottoni e BR TEC). Empresas só de frota ficam fora. Notas de outros elementos abaixo de R$ 10 mil não foram abertas.",
@@ -474,10 +530,24 @@ def main():
                               "colunas": [["Órgão", "t"], ["Categoria", "t"], ["Descrição", "t"], ["Quantidade", "n"], ["Unidade", "t"], ["Natureza", "t"], ["Valor estimado", "r"], ["Previsão", "t"], ["Página", "n"]],
                               "linhas": [[i["sigla"], NOME_CAT.get(i.get("categoria"), i.get("categoria", "")), i.get("descricao", ""), i.get("quantidade") or "", i.get("unidade", ""),
                                           i.get("natureza", ""), i.get("valor_estimado") or 0, i.get("previsao", ""), i.get("pagina") or ""] for i in itens_pca]}
+    if pncp:
+        tabelas["tec-pncp"] = {"id": "tec-pncp", "curto": "Processos no PNCP", "titulo": "Processos de compra de tecnologia publicados no PNCP pelo Poder Executivo (2023–2026)",
+                               "fonte": "Portal Nacional de Contratações Públicas (PNCP) · API de consulta de contratações", "url": "https://pncp.gov.br/app/editais?q=&uf=RO",
+                               "coletado_em": json.loads((FONTE / "s5_pncp_ti.json").read_text(encoding="utf-8"))["coletado_em"],
+                               "consulta": "Contratações da esfera estadual de RO, modalidades dispensa, inexigibilidade, pregão, concorrência e credenciamento; Executivo sem Defensoria; objeto de TI pela mesma regra dos contratos, revisado (cursos, saúde e frota fora)",
+                               "nota": "Valor homologado; quando ainda não há, o estimado (teto do registro de preços). É o processo de compra, não o contrato: não se soma aos contratos nem às notas. \"No mapa\" = o mesmo processo SEI já tem contrato ou convênio publicado no Portal da Transparência.",
+                               "colunas": [["Órgão", "t"], ["Ano", "n"], ["Modalidade", "t"], ["Registro de preços", "t"], ["Categoria", "t"], ["Objeto", "t"], ["Valor", "r"], ["Tipo de valor", "t"],
+                                           ["Situação", "t"], ["Processo SEI", "t"], ["Número", "t"], ["Amparo legal", "t"], ["Publicação", "d"], ["No mapa", "t"], ["PNCP", "u"]],
+                               "linhas": [[r["sigla"], r["ano"], r["modalidade"], "sim" if r["srp"] else "não", NOME_CAT.get(r["cat"], r["cat"]), r["objeto"], r["valor"], r["valor_tipo"],
+                                           r["situacao"], r["processo"], r["numero"], r["amparo"], r["data"], r["contrato_mapa"] or "não", r["link"]] for r in pncp]}
     dados_pag = {k: dados[k] for k in ("coletado_em", "data_corte", "ano_foco", "links", "categorias", "nomes", "funcoes", "resumo", "registros", "sobreposicoes", "pca")}
     dados_pag["empenhos"] = dados["empenhos"]
     dados_pag["fornecedores"] = forn
+    dados_pag["outros_poderes"] = OUTROS_PODERES
     dados_pag["tabelas"] = tabelas
+    # [órgão, ano, modalidade, registro de preços, valor, tipo de valor, situação, categoria, objeto, processo, número, link, contrato no mapa, amparo, data]
+    dados_pag["pncp"] = [[r["sigla"], r["ano"], r["modalidade"], 1 if r["srp"] else 0, r["valor"], r["valor_tipo"], r["situacao"], r["cat"], r["objeto"], r["processo"],
+                          r["numero"], r["link"], r["contrato_mapa"], r["amparo"], r["data"]] for r in pncp]
     payload = json.dumps(dados_pag, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
     with open(AQUI / "contratos_tecnologia.csv", "w", newline="", encoding="utf-8-sig") as f:

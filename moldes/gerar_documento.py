@@ -304,7 +304,9 @@ def preparar(corpo, base, cfg):
             secoes.append((ident, tipo, num, nome))
             rotulos = cfg.get("rotulos", {})
             rotulo = {"modulo": f"Módulo {num}", "anexo": num}.get(tipo) or next((v for k, v in rotulos.items() if re.search(k, titulo, re.I)), "")
-            linhas += ["", f'<section class="abre {tipo}" id="{ident}">' + (f'<div class="abre-k">{e(rotulo)}</div>' if rotulo else "")
+            nova = cfg.get("nova_pagina")
+            nova = " nova" if nova is True or (isinstance(nova, list) and any(re.search(k, titulo, re.I) for k in nova)) else ""
+            linhas += ["", f'<section class="abre {tipo}{nova}" id="{ident}">' + (f'<div class="abre-k">{e(rotulo)}</div>' if rotulo else "")
                            + f'<h1>{e(nome)}</h1></section>', ""]
             continue
         if pulando:
@@ -443,6 +445,33 @@ def localizar(pdf_path, secoes, figuras, pular):
     return pg, len(txt) - 1
 
 
+def orfaos(pdf_path, html_path):
+    """Título ou cabeçalho de tabela que ficou como última linha do corpo de uma página (o conteúdo dele foi para a seguinte).
+    Lê as linhas do PDF com posição (pdftotext -bbox-layout) e compara com os títulos e cabeçalhos do HTML."""
+    import html as H
+    doc = html_path.read_text(encoding="utf-8")
+    limpa = lambda t: re.sub(r"[^0-9a-zà-ÿ]+", "", H.unescape(re.sub(r"<[^>]+>", " ", t)).lower())
+    titulos = {limpa(t) for t in re.findall(r"<h[1-4][^>]*>(.*?)</h[1-4]>", doc, re.S)}
+    titulos |= {limpa(t) for t in re.findall(r'<div class="abre-k">(.*?)</div>', doc)}
+    cabecalhos = {limpa(" ".join(re.findall(r"<th[^>]*>(.*?)</th>", t, re.S))) for t in re.findall(r"<thead>(.*?)</thead>", doc, re.S)}
+    xml = subprocess.run(["pdftotext", "-bbox-layout", str(pdf_path), "-"], capture_output=True, text=True, check=True).stdout
+    out = []
+    for n, pag in enumerate(re.findall(r"<page [^>]*>(.*?)</page>", xml, re.S), 1):
+        linhas = []
+        for y, corpo in re.findall(r'<line xMin="[\d.]+" yMin="([\d.]+)"[^>]*>(.*?)</line>', pag, re.S):
+            if 100 < float(y) < 765:  # só o corpo: sem cabeçalho e rodapé
+                linhas.append((float(y), " ".join(re.findall(r">([^<]*)</word>", corpo))))
+        if not linhas:
+            continue
+        linhas.sort()
+        # junta as linhas da mesma altura (colunas de tabela) e olha a última faixa
+        ult_y = linhas[-1][0]
+        ultima = limpa(" ".join(t for y, t in linhas if abs(y - ult_y) < 3))
+        if len(ultima) >= 4 and (ultima in titulos or ultima in cabecalhos):
+            out.append((n, ultima[:60]))
+    return out
+
+
 def ocupacao(pdf_path):
     """Fração da área do texto ocupada em cada página (0 a 1), medida numa imagem pequena de cada página."""
     import tempfile
@@ -546,6 +575,8 @@ def main():
         out_html.write_text(montar(c, corpo_html, secoes, figuras, pg2), encoding="utf-8")
         imprimir(ch, out_html, out_pdf)
         pg = pg2
+    for n, t in orfaos(out_pdf, out_html):
+        print(f"aviso: página {n} termina com título ou cabeçalho sem conteúdo: {t}")
     if "--site" in sys.argv:
         shutil.copy(out_pdf, RAIZ / "site" / out_pdf.name)
     print(f"{out_pdf} · {total} páginas · {len(secoes)} seções · {round(out_pdf.stat().st_size / 1024)} KB")

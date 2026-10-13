@@ -7,3 +7,7 @@ dados-fonte/s3_diarias_*.json
 dados-fonte/s3_msc_classe6.json
 __pycache__/
 
+
+# respostas brutas da API do PNCP (consolidadas em dados-fonte/s5_pncp_*.json; refazer com tecnologia/coleta_pncp*.py)
+dados-fonte/pncp/
+dados-fonte/pncp_contratos/

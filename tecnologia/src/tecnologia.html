@@ -73,14 +73,16 @@ const ehTI = r => r.cat !== "frota";
 const soma = xs => xs.reduce((a, r) => a + (r.valor || 0), 0) / 1e6;
 const GENERICAS = new Set(["computadores", "notebooks-tablets", "perifericos-suprimentos", "audiovisual-interativo", "outra", "", "rede-wifi", "robotica-maker", "nobreak-energia", "drones", "radio", "satelite"]);
 // visões: nomes que dizem o que a pessoa vai ver
-const VISOES = [["tipo", "O que compra"], ["pagos", "Quem vende"], ["modalidade", "Como compra"], ["repetidos", "Onde se repete"], ["vencimentos", "Quando vence"], ["orgao", "Quem compra"]];
+const VISOES = [["tipo", "O que compra"], ["pagos", "Quem vende"], ["modalidade", "Como compra"], ["compras", "Processos de compra"], ["repetidos", "Onde se repete"], ["vencimentos", "Quando vence"], ["orgao", "Quem compra"]];
+const PN = D.pncp || [];   // [órgão, ano, modalidade, registro de preços, valor, tipo de valor, situação, categoria, objeto, processo, número, link, contrato no mapa, amparo, data]
 const F = D.fornecedores || [];   // [ano, órgão, credor, cnpj, empenhado, pago, origem, histórico, data, link, parceria, modalidade]
-let visao = "tipo", orgao = "", modal = "", busca = "", comFrota = false, ano = "";
+let visao = "tipo", orgao = "", modal = "", busca = "", comFrota = false, ano = "", comOP = false;
+const OP = new Set(Object.keys(D.outros_poderes || {}));   // TJ, ALE, TCE, MP, DPE: fora das somas, a menos que se marque
 const MODAL_R = [[/DISPENS/, "Dispensa"], [/INEXIG/, "Inexigibilidade"], [/ADES|CARONA|ATA DE REGISTRO|\bARP\b/, "Adesão a ata"], [/PREG/, "Pregão"], [/CONCORR/, "Concorrência"], [/CREDENC|CHAMAMENTO/, "Credenciamento ou chamamento"], [/NAO APLIC|N.O APLIC/, "Não aplicável (parceria, convênio, termo)"], [/CONVITE|TOMADA/, "Convite ou tomada de preços"]];
 const modalDe = t => { const u = semAcento(t); for (const [rx, n] of MODAL_R) if (rx.test(u)) return n; return u.trim() ? "Outros (o portal não detalha)" : "Não informada"; };
 const casaQ = (...xs) => !busca || semAcento(xs.join(" ")).includes(semAcento(busca));
 const filtraReg = xs => xs.filter(r => (!ano || r.ano === +ano) && (!orgao || r.sigla === orgao) && (comFrota || r.cat !== "frota") && (!modal || modalDe(r.origem || (r.instrumento !== "Contrato" ? "não aplicável" : "")) === modal) && casaQ(r.contratado, r.cnpj, r.objeto, r.produto));
-const FO = () => F.filter(x => (!ano || x[0] === +ano) && (!orgao || x[1] === orgao) && (comFrota || !x[6].startsWith("frota")) && (!modal || x[12] === modal) && casaQ(x[2], x[3]));
+const FO = () => F.filter(x => (comOP || !OP.has(x[1])) && (!ano || x[0] === +ano) && (!orgao || x[1] === orgao) && (comFrota || !x[6].startsWith("frota")) && (!modal || x[12] === modal) && casaQ(x[2], x[3]));
 idsAtuais = Object.keys(TB);
 $("#meta").innerHTML = `dado oficial de ${diaC.split("-").reverse().join("/")}${horaC ? " · " + horaC : ""}<button class="tema" id="tema" type="button" aria-label="Claro ou escuro">◐</button>`;
 
@@ -120,24 +122,26 @@ function desenha() {
   $("#esq").innerHTML = `<div class="entra">
     <div class="seletor">
       <select id="sel-ano" aria-label="Ano"><option value="">2023–2026</option>${[2023, 2024, 2025, 2026].map(a => `<option ${String(a) === ano ? "selected" : ""}>${a}</option>`).join("")}</select>
-      <select id="sel-org" aria-label="Órgão"><option value="">Todos os órgãos</option>${listaOrg.map(g => `<option value="${esc(g.k)}" ${g.k === orgao ? "selected" : ""}>${esc(g.k)} · ${esc(NOME(g.k))}</option>`).join("")}</select>
+      <select id="sel-org" aria-label="Órgão"><option value="">Todos os órgãos</option>${listaOrg.map(g => `<option value="${esc(g.k)}" ${g.k === orgao ? "selected" : ""}>${esc(g.k)} · ${esc(NOME(g.k))}</option>`).join("")}${comOP ? [...OP].map(k => `<option value="${k}" ${k === orgao ? "selected" : ""}>${k} · ${esc(NOME(k))}</option>`).join("") : ""}</select>
       <select id="sel-mod" aria-label="Modalidade"><option value="">Todas as modalidades</option>${modais.map(m => `<option ${m === modal ? "selected" : ""}>${esc(m)}</option>`).join("")}</select>
       <input type="search" id="busca" placeholder="Buscar empresa ou CNPJ" value="${esc(busca)}">
       <label class="chk"><input type="checkbox" id="com-frota" ${comFrota ? "checked" : ""}> incluir gestoras de frota</label>
-      ${ano || orgao || modal || busca || comFrota ? `<button type="button" id="limpa">✕ limpar filtros</button>` : ""}</div>
-    <div class="numero"><span class="n">${fmt(pagoForn)}</span><span class="s">pagos a <b>${br(new Set(fo.map(x => x[3] || x[2])).size)} empresas</b> de tecnologia${comFrota ? " e gestoras de frota" : ""}${orgao ? " pela " + esc(orgao) : ""}${modal ? " · " + esc(modal) : ""}, ${ano || "2023–2026"}<br><b>${br(tiC.length + frota.filter(conta).length)}</b> contratos e convênios publicados</span></div></div>
+      <label class="chk"><input type="checkbox" id="com-op" ${comOP ? "checked" : ""}> incluir TJ, ALE, TCE, MP e DPE</label>
+      ${ano || orgao || modal || busca || comFrota || comOP ? `<button type="button" id="limpa">✕ limpar filtros</button>` : ""}</div>
+    <div class="numero"><span class="n">${fmt(pagoForn)}</span><span class="s">empenhados com <b>${br(new Set(fo.map(x => x[3] || x[2])).size)} empresas</b> de tecnologia${comFrota ? " e gestoras de frota" : ""}${orgao ? " pela " + esc(orgao) : comOP ? " pelo Estado (todos os Poderes)" : " pelo Executivo"}${modal ? " · " + esc(modal) : ""}, ${ano || "2023–2026"}<br><b>${br(tiC.length + frota.filter(conta).length)}</b> contratos e convênios publicados · <b>${br(PNf().length)}</b> processos de compra no PNCP</span></div></div>
     <div class="alterna">${VISOES.filter(([v]) => !(orgao && v === "orgao")).map(([v, n]) => `<button type="button" data-v="${v}" class="${v === visao ? "on" : ""}">${n}</button>`).join("")}</div>
     <div class="grafico" id="graf"></div>
     <div class="dica-uso" id="uso"></div>
-    <details class="regras"><summary>ⓘ Como ler</summary><p>Gasto = notas de empenho pagas a empresas de tecnologia (qualquer elemento de despesa), conferidas pelo CNPJ. Contratos e convênios = os publicados no portal desde 2023 ou ainda vigentes; valor = valor global, sem aditivos. Frota e abastecimento ficam fora (o valor inclui combustível). ${D.resumo.rescisoes} rescisões e ${D.resumo.a_conferir} valor implausível ficam fora das somas. Fonte: Portal da Transparência RO.</p><button class="btn-dados contorno" type="button" data-dados="1">▦ Dados de origem</button></details>`;
+    <details class="regras"><summary>ⓘ Como ler</summary><p>Gasto = notas de empenho (valor comprometido) a empresas de tecnologia (qualquer elemento de despesa), conferidas pelo CNPJ. Contratos e convênios = os publicados no portal desde 2023 ou ainda vigentes; valor = valor global, sem aditivos. Frota e abastecimento ficam fora (o valor inclui combustível). Só o Poder Executivo, a menos que se marque "incluir TJ, ALE, TCE, MP e DPE": os outros Poderes passam pela mesma regra nota a nota, mas não têm contratos nem processos de compra nesta aba. ${D.resumo.rescisoes} rescisões e ${D.resumo.a_conferir} valor implausível ficam fora das somas. Fonte: Portal da Transparência RO.</p><button class="btn-dados contorno" type="button" data-dados="1">▦ Dados de origem</button></details>`;
   $("#sel-org").onchange = e => { orgao = e.target.value; if (orgao && visao === "orgao") visao = "tipo"; desenha(); };
   $("#sel-mod").onchange = e => { modal = e.target.value; desenha(); };
   $("#sel-ano").onchange = e => { ano = e.target.value; desenha(); };
   $("#com-frota").onchange = e => { comFrota = e.target.checked; desenha(); };
+  $("#com-op").onchange = e => { comOP = e.target.checked; if (!comOP && OP.has(orgao)) orgao = ""; desenha(); };
   let tq; $("#busca").oninput = e => { clearTimeout(tq); tq = setTimeout(() => { busca = e.target.value; desenha(); const b = $("#busca"); b.focus(); b.setSelectionRange(b.value.length, b.value.length); }, 350); };
-  $("#limpa")?.addEventListener("click", () => { orgao = modal = busca = ano = ""; comFrota = false; desenha(); });
+  $("#limpa")?.addEventListener("click", () => { orgao = modal = busca = ano = ""; comFrota = comOP = false; desenha(); });
   $("#esq").querySelectorAll(".alterna button").forEach(b => b.onclick = () => { visao = b.dataset.v; desenha(); });
-  ({tipo: vTipo, orgao: vOrgao, repetidos: vRepetidos, vencimentos: vVenc, empresas: vEmpresas, pagos: vPagos, modalidade: vModalidade, anos: vAnos})[visao](ti, frota);
+  ({tipo: vTipo, orgao: vOrgao, repetidos: vRepetidos, vencimentos: vVenc, empresas: vEmpresas, pagos: vPagos, modalidade: vModalidade, anos: vAnos, compras: vCompras})[visao](ti, frota);
   ligaDados();
 }
 
@@ -284,6 +288,32 @@ function vModalidade() {
   mostraProvas(`${pct(100 * semV / (tot || 1))} do empenhado em tecnologia${orgao ? " de " + orgao : ""} foi sem licitação competitiva.`, lista, {limite: 10});
 }
 
+// processos de compra publicados no PNCP: dispensa, inexigibilidade, pregão (com ou sem ata de registro de preços)
+const tipoCompra = x => x[3] && x[2] === "Pregão" ? "Pregão com ata (registro de preços)" : x[2];
+const PNf = () => PN.filter(x => (!ano || x[1] === +ano) && (!orgao || x[0] === orgao) && (!modal || x[2] === modal) && casaQ(x[8], x[9], x[10], CAT[x[7]] || ""));
+const procPg = x => ({credor: `${x[0]} · ${tipoCompra(x)} ${x[10]}`, valor: x[4] / 1e6,
+  l2: `${x[5] === "estimado" ? "valor estimado (teto)" : "valor homologado"} · ${x[6]} · publicado ${x[14].split("-").reverse().join("/")}${x[12] ? " · no mapa: " + x[12] : " · sem contrato no portal"}`,
+  fonte: x[9] ? "Processo SEI " + x[9] : "", modalidade: `${x[2]}${x[13] ? " · " + x[13] : ""}`, historico: `[${CAT[x[7]] || x[7]}] ${x[8]}`, link: x[11]});
+function vCompras() {
+  const xs = PNf(), ativos = xs.filter(x => !/Anulada|Revogada/.test(x[6]));
+  const m = new Map();
+  ativos.forEach(x => { const k = tipoCompra(x); if (!m.has(k)) m.set(k, []); m.get(k).push(x); });
+  const gs = [...m.entries()].map(([k, ys]) => ({k, xs: ys, v: ys.reduce((a, x) => a + x[4], 0) / 1e6})).sort((a, b) => b.v - a.v);
+  const sem = ["Dispensa", "Inexigibilidade"];
+  altura(Math.max(gs.length, 3), 40, 200);
+  barras($("#graf"), gs.map(g => ({rot: corta(g.k, 34), partes: [{v: g.v, cor: sem.includes(g.k) ? "var(--azul)" : "var(--cinza2)"}], dir: `${fmt(g.v)} · ${g.xs.length}`,
+    dica: [g.k, [["Valor dos processos", fmt(g.v)], ["Processos", br(g.xs.length)], ["Já com contrato no portal", br(g.xs.filter(x => x[12]).length)], ["Órgãos", br(new Set(g.xs.map(x => x[0])).size)]], "Clique para ver os processos"],
+    clique: (gg, s) => { foco(s, gg); listaCompras(g.xs, `${g.k}: processos de compra de tecnologia`, () => { foco(s, null); vCompras(); }, g.k); }})));
+  const novos = ativos.filter(x => !x[12]);
+  $("#uso").textContent = `Processos de compra de tecnologia publicados no PNCP (${br(ativos.length)}, ${fmt(ativos.reduce((a, x) => a + x[4], 0) / 1e6)}). ${br(novos.length)} ainda não têm contrato no Portal da Transparência: muitos são atas de registro de preços, que viram contrato ou nota quando o órgão compra. Valor do processo, não se soma aos contratos.`;
+  listaCompras(ativos, `Processos de compra de tecnologia${orgao ? " de " + orgao : " do Estado"} no PNCP, do maior para o menor`);
+}
+function listaCompras(xs, titulo, limpar, filtro) {
+  const lista = comBarra([...xs].sort((a, b) => b[4] - a[4]).map(x => ({nome: corta(x[8], 90), sub: `${x[0]} · ${tipoCompra(x)} · ${x[1]} · ${x[12] ? "no mapa" : "sem contrato no portal"}${x[5] === "estimado" ? " · estimado" : ""}${/Suspensa/.test(x[6]) ? " · suspensa" : ""}`,
+    valor: fmt(x[4] / 1e6), _v: x[4], notas: [procPg(x)]})));
+  mostraProvas(titulo, lista, {filtro, limpar, todas: lista, tituloTodas: titulo, limite: 8});
+}
+
 // ano a ano: contratado (por cadastro) e empenhado (elemento 40)
 function vAnos(ti) {
   const anos = [2023, 2024, 2025, 2026], E = empOrg();
@@ -316,6 +346,8 @@ if (q.get("q")) busca = q.get("q");
 if (q.get("mod")) modal = q.get("mod");
 if (q.get("ano")) ano = q.get("ano");
 if (q.get("frota")) comFrota = true;
+if (q.get("op")) comOP = true;
+if (q.get("org") && OP.has(q.get("org"))) { orgao = q.get("org"); comOP = true; }
 desenha();
 if (q.get("dados") && TB[q.get("dados")]) abreDados([q.get("dados")]);
 </script>
