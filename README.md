@@ -16,6 +16,8 @@ Painel sobre o orçamento de Rondônia e a transição de governo, em cinco abas
 - **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py && python3 tecnologia/build_tecnologia.py`.
 - **Para ver localmente:** `python3 -m http.server 8765 --bind 127.0.0.1` e abrir `http://127.0.0.1:8765/esbocos/painel.html`.
 
+**Nenhum link abre JSON ou API.** Quem lê é o governador. Todo dado abre o painel de dados de origem, com busca, fonte, data da coleta e CSV. Links para a API do Tesouro (`apidatalake.tesouro.gov.br`) viram botão que abre a tabela correspondente no painel, já filtrada pelo ano quando o link é de um ano. O "Conferir na fonte" dessas tabelas leva ao Siconfi, não à API; o endereço da API aparece só como texto em "Consulta usada" (regra de 15/10/2026).
+
 ## Moldes de documento (propostas e planos em PDF)
 
 Para fazer um documento novo no padrão do plano SISPAC-RO, escreve-se só um `conteudo.yaml`, sem HTML nem CSS.

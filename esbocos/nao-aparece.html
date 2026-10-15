@@ -104,6 +104,8 @@ button{font:inherit;color:inherit}
 .ver-todas{all:unset;cursor:pointer;display:block;margin:6px 4px 0;font-size:14px;color:var(--azul);font-weight:650}
 .ver-todas:hover{color:var(--azul-hover)}
 .link-fonte{display:inline-block;margin:6px 14px 8px;font-size:13px;font-weight:600}
+button.link-fonte{all:unset;display:inline-block;margin:6px 14px 8px;font-size:13px;font-weight:600;color:var(--azul);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+button.link-fonte:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
 
 /* tabela completa (painel lateral) */
 .cortina{position:fixed;inset:0;background:rgba(10,20,40,.28);opacity:0;pointer-events:none;transition:opacity .25s;z-index:20}
@@ -357,10 +359,17 @@ function provaHtml(p, i) {
     ${p.barra != null ? `<div class="pv-barra"><i style="width:${Math.max(1, 100 * p.barra)}%"></i></div>` : ""}
     <div class="pv-det">${(p.linhas || []).map(([k, v]) => `<div class="linha"><span>${esc(k)}</span><b>${esc(v)}</b></div>`).join("")}
       ${(p.notas || []).map(notaHtml).join("")}
-      ${p.link ? `<a class="link-fonte" href="${p.link[1]}" target="_blank" rel="noopener">${esc(p.link[0])} ↗</a>` : ""}</div></div>`;
+      ${p.link ? (ehApi(p.link[1]) ? `<button class="link-fonte" type="button" data-api="${esc(p.link[1])}">▦ ${esc(p.link[0])}</button>` : `<a class="link-fonte" href="${p.link[1]}" target="_blank" rel="noopener">${esc(p.link[0])} ↗</a>`) : ""}</div></div>`;
+}
+// A API do Tesouro devolve JSON: quem lê nunca vai para lá; o link abre a tabela no painel de dados.
+const ehApi = u => /apidatalake\.tesouro\.gov\.br/.test(String(u || ""));
+function abreApi(u) {
+  if (/\/rreo\?/.test(u)) return abreDados(["rreo"], 0, (u.match(/an_exercicio=(\d{4})/) || [])[1] || "");
+  return abreDados(["diarias-msc", "diarias-portal"]);
 }
 function ligaProvas(cont) {
   cont.querySelectorAll(".pv-cab").forEach(b => b.onclick = () => b.parentElement.classList.toggle("aberta"));
+  cont.querySelectorAll("[data-api]").forEach(b => b.onclick = () => abreApi(b.dataset.api));
   cont.querySelectorAll(".nota").forEach(n => n.onclick = e => { if (!e.target.closest("a")) n.classList.toggle("aberta"); });
 }
 function mostraProvas(sub, lista, opc = {}) {
@@ -409,16 +418,16 @@ function celula(v, tipo) {
   if (tipo === "u") return String(v).startsWith("http") ? `<a href="${v}" target="_blank" rel="noopener">abrir ↗</a>` : esc(v);
   return esc(v);
 }
-function abreDados(ids, qual = 0) {
+function abreDados(ids, qual = 0, buscaInicial = "") {
   const T = ids.map(i => TB[i]).filter(Boolean); if (!T.length) return;
-  let t = T[qual], pag = 0, ord = -1, asc = false, q = "";
+  let t = T[qual], pag = 0, ord = -1, asc = false, q = semAcento(buscaInicial);
   const POR = 25, tab = $("#dados-tab");
   const soAnos = T.every(x => /^\d{4}$/.test(x.curto || ""));
   $("#dados-abas").innerHTML = T.length > 1 ? `<div class="alterna" style="margin:0"><span class="rot">${soAnos ? "Escolha o ano:" : "Escolha a tabela:"}</span>${T.map((x, i) => `<button type="button" class="${i === qual ? "on" : ""}">${esc(x.curto || x.titulo)}</button>`).join("")}</div>` : "";
   $("#dados-abas").querySelectorAll("button").forEach((b, i) => b.onclick = () => abreDados(ids, i));
   $("#dados-tit").textContent = t.titulo;
   const [dc, hc] = String(t.coletado_em || "").split(" ");
-  $("#dados-ficha").innerHTML = [["Quem publica", t.fonte], ["Registros", br(t.linhas.length)], ["Coletado em", (dc || "").split("-").reverse().join("/") + (hc ? " às " + hc : "")], ["Conferir na fonte", `<a href="${t.url}" target="_blank" rel="noopener">abrir o endereço original ↗</a>`]]
+  $("#dados-ficha").innerHTML = [["Quem publica", t.fonte], ["Registros", br(t.linhas.length)], ["Coletado em", (dc || "").split("-").reverse().join("/") + (hc ? " às " + hc : "")], ["Conferir na fonte", ehApi(t.url) ? `<a href="${L.rreo}" target="_blank" rel="noopener">abrir o Siconfi, do Tesouro Nacional ↗</a>` : `<a href="${t.url}" target="_blank" rel="noopener">abrir o endereço original ↗</a>`]]
     .map(([k, v]) => `<div><div class="k">${k}</div><div class="v">${k === "Conferir na fonte" ? v : esc(v)}</div></div>`).join("")
     + `<div class="larga" style="grid-column:1/-1"><div class="k">Consulta usada</div><div class="v">${esc(t.consulta)}</div><div style="margin-top:4px"><code>${esc(t.url)}</code></div></div>`;
   $("#dados-nota").textContent = t.nota || "";
@@ -439,15 +448,15 @@ function abreDados(ids, qual = 0) {
     const alvo = li < 0 ? -1 : [t.colunas.findIndex(c => c[0] === "Nota"), t.colunas.findIndex(c => c[0] === "Órgão"), 0].find(x => x >= 0);
     const ia = t.colunas.findIndex(c => c[0] === "Ação de governo"), ifo = t.colunas.findIndex(c => c[0] === "Fonte do recurso");
     const cols = t.colunas.map((c, i) => i).filter(i => i !== li && i !== ia && t.colunas[i][1] !== "h");
-    const hrefDe = r => { const v = r[li]; if (!v) return ""; if (t.colunas[li][1] === "l") return L.detalhe + v; return String(v).startsWith("http") ? v : ""; };
+    const hrefDe = r => { const v = r[li]; if (!v) return ""; if (t.colunas[li][1] === "l") return L.detalhe + v; return String(v).startsWith("http") && !ehApi(v) ? v : ""; };
     const cel = (r, i) => {
-      if (i === alvo) { const hr = hrefDe(r); return hr ? `<a href="${hr}" target="_blank" rel="noopener" title="Abrir na fonte oficial">${esc(r[i])} ↗</a>` : `${esc(r[i])}${li >= 0 && r[li] ? `<small style="display:block;color:var(--mute)">${esc(r[li])}</small>` : ""}`; }
+      if (i === alvo) { const hr = hrefDe(r); return hr ? `<a href="${hr}" target="_blank" rel="noopener" title="Abrir na fonte oficial">${esc(r[i])} ↗</a>` : `${esc(r[i])}${li >= 0 && r[li] && !ehApi(r[li]) ? `<small style="display:block;color:var(--mute)">${esc(r[li])}</small>` : ""}`; }
       const nome = t.colunas[i][0];
       if (nome === "Ano") return String(r[i]);
       if (nome === "Mês" && typeof r[i] === "number") return MESES[r[i] - 1] || String(r[i]);
       return celula(r[i], t.colunas[i][1]);
     };
-    tab.innerHTML = `<table><thead><tr>${cols.map(i => { const [n, tp] = t.colunas[i]; return `<th class="${tp === "r" || tp === "n" ? "r " : ""}${i === ord ? "ord" + (asc ? " asc" : "") : ""}" data-i="${i}">${esc(n)}${i === alvo ? " ↗" : ""}</th>`; }).join("")}</tr></thead>
+    tab.innerHTML = `<table><thead><tr>${cols.map(i => { const [n, tp] = t.colunas[i]; return `<th class="${tp === "r" || tp === "n" ? "r " : ""}${i === ord ? "ord" + (asc ? " asc" : "") : ""}" data-i="${i}">${esc(n)}${i === alvo && vis.some(r => hrefDe(r)) ? " ↗" : ""}</th>`; }).join("")}</tr></thead>
       <tbody>${vis.map(r => `<tr>${cols.map(i => `<td class="${t.colunas[i][1] === "r" || t.colunas[i][1] === "n" ? "r" : longos[i] ? "longo" : ""}"${longos[i] ? ` title="${esc(r[i])}${i === ifo && ia >= 0 ? " · Ação: " + esc(r[ia]) : ""}"` : ""}>${cel(r, i)}</td>`).join("")}</tr>`).join("") || `<tr><td colspan="${cols.length}">Nada encontrado.</td></tr>`}</tbody></table>`;
     tab.querySelectorAll("th").forEach(th => th.onclick = () => { const i = +th.dataset.i; asc = i === ord ? !asc : false; ord = i; pag = 0; desenha(); });
     $("#dados-cont").textContent = `${br(ls.length)} registros${q ? " encontrados" : ""}`;
@@ -458,7 +467,7 @@ function abreDados(ids, qual = 0) {
     $("#dados-pag").innerHTML = html;
     $("#dados-pag").querySelectorAll("button[data-p]").forEach(b => b.onclick = () => { pag = +b.dataset.p; desenha(); tab.scrollTop = 0; });
   };
-  const busca = $("#dados-busca"); busca.value = "";
+  const busca = $("#dados-busca"); busca.value = buscaInicial;
   busca.oninput = () => { q = semAcento(busca.value.trim()); pag = 0; desenha(); };
   $("#dados-csv").onclick = () => {
     const ls = linhasF(), sep = ";", cel = v => `"${String(v ?? "").replace(/"/g, '""')}"`;
@@ -551,7 +560,7 @@ function tela2() {
     + rodape([["Tesouro Nacional, RREO Anexo 7", L.rreo_api]]);
   const lista = [...R.serie].reverse().map(x => ({nome: String(x.ano), sub: `${pct(100 * x.cancelado / x.inscrito)} do que foi levado de ${x.ano - 1}`, valor: fmt(x.cancelado), barra: x.cancelado / maior.cancelado,
     linhas: [["Levado para o ano sem entrega", fmt(x.inscrito)], ["Pago depois", fmt(x.pago)], ["Cancelado", exato(x.cancelado)], ["Ainda em aberto", fmt(Math.max(x.inscrito - x.pago - x.cancelado, 0))]],
-    link: [`RREO ${x.ano} no Tesouro Nacional`, x.link]}));
+    link: [`Ver os restos a pagar de ${x.ano}`, x.link]}));
   colunas($("#graf"), R.serie.map(x => ({
     rot: String(x.ano), partes: [{v: x.cancelado, cor: "var(--azul)"}, {v: Math.max(x.inscrito - x.cancelado, 0), cor: "var(--cinza)"}], topo: fmt(x.cancelado), destaque: x === maior,
     dica: [`Restos a pagar executados em ${x.ano}`, [["Levado sem entrega", fmt(x.inscrito)], ["Cancelado", fmt(x.cancelado)], ["% cancelado", pct(100 * x.cancelado / x.inscrito)]], "Clique para ver o ano e o link do Tesouro"],
@@ -599,7 +608,7 @@ function tela4diarias(abas) {
   const lista = [
     {nome: "Contabilidade × portal, 2025", sub: "diárias civis e militares do Executivo", valor: fmt(DI.fora), barra: DI.fora / DI.contabilidade,
       linhas: [["Pago segundo a contabilidade", fmt(DI.contabilidade)], ["Aparece no portal", fmt(DI.portal)], ["Civis: contabilidade × portal", `${fmt(DI.civil[0])} × ${fmt(DI.civil[1])}`], ["Militares: contabilidade × portal", `${fmt(DI.militar[0])} × ${fmt(DI.militar[1])}`]],
-      link: ["Contabilidade de dezembro de 2025 no Tesouro", DI.link_contab]},
+      link: ["Ver os dados das diárias", DI.link_contab]},
     {nome: "Julho e agosto de 2026", sub: "o pagamento continuou, a publicação parou", valor: fmt(jul.civil + jul.militar + ago.civil + ago.militar), barra: 1,
       linhas: [["Julho: pago × portal", `${fmt(jul.civil + jul.militar)} × ${fmt(jul.portal)}`], ["Agosto: pago × portal", `${fmt(ago.civil + ago.militar)} × ${fmt(ago.portal)}`]],
       link: ["Portal de diárias filtrado em julho de 2026", jul.link_portal]},
@@ -683,8 +692,8 @@ function tela5() {
     {nome: "Notas de empenho lidas", sub: "2025 e 2026, Portal da Transparência RO", valor: br(lidas), link: ["Portal, despesas por empenho", L.empenho]},
     {nome: "Notas abertas uma a uma", sub: "a partir de R$ 200 mil, com credor, fonte, ação e histórico", valor: br(abertas), link: ["Portal, despesas por empenho", L.empenho]},
     {nome: "Diárias conferidas", sub: "2025 e 2026, sem as linhas repetidas que o portal devolve", valor: br(dias), link: ["Portal de diárias", L.diarias]},
-    {nome: "Restos a pagar no Tesouro", sub: "RREO Anexo 7, Poder Executivo", valor: `${R.serie.length} anos`, link: ["Dado bruto no Tesouro", L.rreo_api]},
-    {nome: "Contabilidade por fonte e natureza", sub: "Matriz de Saldos Contábeis (MSC), mês a mês", valor: "MSC", link: ["Dado bruto no Tesouro", L.msc_api]},
+    {nome: "Restos a pagar no Tesouro", sub: "RREO Anexo 7, Poder Executivo", valor: `${R.serie.length} anos`, link: ["Ver os restos a pagar, 2019 a 2025", L.rreo_api.replace(/an_exercicio=\d{4}&?/, "")]},
+    {nome: "Contabilidade por fonte e natureza", sub: "Matriz de Saldos Contábeis (MSC), mês a mês", valor: "MSC", link: ["Ver as diárias na contabilidade", L.msc_api]},
     {nome: "Cuidados de leitura", sub: "nada aqui afirma irregularidade", valor: "", linhas: [["Empenho global e estimativo", "são legais (Lei 4.320, art. 60)"], ["O termo certo", "orçamento opaco, não secreto"], ["Diárias", "contabilidade conta pelo pagamento; portal, pela viagem"]]},
   ], {limite: 6});
 }
