@@ -384,7 +384,7 @@ def tabelas(coletado):
     t.append(tabela("rreo", "Restos a pagar do Poder Executivo, 2019 a 2025", "Tesouro Nacional · Siconfi",
                     "RREO Anexo 7, 6º bimestre, Rondônia (id_ente 11), linhas do Poder Executivo", link_rreo(2025),
                     [["Ano", "n"], ["Tipo", "t"], ["Situação", "t"], ["Coluna do anexo", "t"], ["Valor", "r"], ["Código da conta", "h"], ["Fonte", "u"]], linhas,
-                    "Não processados = empenhados e não entregues. A coluna Cancelados é a que soma R$ 1,21 bi."))
+                    "Não processados = empenhados e não entregues. Os R$ 1,21 bi da tela são a coluna Cancelados (j), dos não processados: busque “Cancelados (j)”. Saldos e inscritos são a posição no fim de cada ano e não se somam entre anos."))
     # parados 2026: todas as notas
     linhas = []
     for n in ler("s3_empenhos_2026.json")["dados"]:

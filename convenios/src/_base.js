@@ -1,5 +1,12 @@
 
 const $ = s => document.querySelector(s);
+// Telas grandes (TV, 4K): a página cresce na proporção da tela, como o zoom do navegador.
+// Referência 1920 × 1080 (Full HD); abaixo disso nada muda. --z é usado no CSS (zoom e larguras em vw).
+(function () {
+  const ajusta = () => document.documentElement.style.setProperty("--z", Math.max(1, Math.min(2.4, innerWidth / 1920, innerHeight / 1080)).toFixed(3));
+  ajusta(); addEventListener("resize", ajusta);
+})();
+const zoomAtual = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--z")) || 1;
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
 const br = (x, d = 0) => x.toLocaleString("pt-BR", {minimumFractionDigits: d, maximumFractionDigits: d});
 const fmt = mi => {
@@ -177,10 +184,35 @@ function celula(v, tipo) {
   if (tipo === "u") return String(v).startsWith("http") ? `<a href="${v}" target="_blank" rel="noopener">abrir ↗</a>` : esc(v);
   return esc(v);
 }
+// Soma das colunas de valor sobre os registros filtrados. Tabelas cujas linhas não se somam
+// (saldo acumulado por mês, colunas diferentes do mesmo anexo, valor estimado × homologado)
+// só somam quando a busca deixa um único valor na coluna que separa as linhas.
+const SOMA_POR = [["Valor acumulado", "Mês"], ["Coluna do anexo", "Situação", ["Pagos", "Cancelados", "Liquidados"]], ["Tipo de valor", "Tipo de valor"]];
+function somaDados(t, ls) {
+  const rs = t.colunas.map((c, i) => c[1] === "r" ? i : -1).filter(i => i >= 0);
+  if (!rs.length || !ls.length) return "";
+  const regra = SOMA_POR.find(([marca]) => t.colunas.some(c => c[0] === marca));
+  if (regra) {
+    const k = t.colunas.findIndex(c => c[0] === regra[1]), vals = [...new Set(ls.map(r => r[k]))];
+    if (vals.length > 1) return `Para somar, busque um único valor de <b>${esc(regra[1])}</b>, por exemplo ${vals.slice(0, 2).map(v => `“${esc(v)}”`).join(" ou ")}.`;
+    // Fora dos fluxos (pagos, cancelados, liquidados), o valor é a posição no fim do ano: não se soma entre anos.
+    const ia = t.colunas.findIndex(c => c[0] === "Ano");
+    if (regra[2] && !regra[2].includes(vals[0]) && ia >= 0 && new Set(ls.map(r => r[ia])).size > 1)
+      return `<b>${esc(vals[0])}</b> é a posição no fim de cada ano e não se soma entre anos. Veja o valor de cada ano na tabela.`;
+  }
+  const todos = ls.length === t.linhas.length;
+  return `<span class="rot">Soma ${todos ? "de todos os" : "dos"} ${br(ls.length)} registros${todos ? "" : " encontrados"}</span>`
+    + rs.map(i => `<span class="item"><span>${esc(t.colunas[i][0])}</span><b>R$ ${br(ls.reduce((a, r) => a + (typeof r[i] === "number" ? r[i] : 0), 0), 2)}</b></span>`).join("");
+}
+function mostraSoma(t, ls) {
+  let el = document.getElementById("dados-soma");
+  if (!el) { el = document.createElement("div"); el.id = "dados-soma"; el.className = "dados-soma"; document.querySelector(".dados-ferr").after(el); }
+  const h = somaDados(t, ls); el.innerHTML = h; el.hidden = !h;
+}
 function abreDados(ids, qual = 0) {
   const T = ids.map(i => TB[i]).filter(Boolean); if (!T.length) return;
   let t = T[qual], pag = 0, ord = -1, asc = false, q = "";
-  const POR = 25, tab = $("#dados-tab");
+  let POR = 25; const tab = $("#dados-tab");
   const soAnos = T.every(x => /^\d{4}$/.test(x.curto || ""));
   $("#dados-abas").innerHTML = T.length > 1 ? `<div class="alterna" style="margin:0"><span class="rot">${soAnos ? "Escolha o ano:" : "Escolha a tabela:"}</span>${T.map((x, i) => `<button type="button" class="${i === qual ? "on" : ""}">${esc(x.curto || x.titulo)}</button>`).join("")}</div>` : "";
   $("#dados-abas").querySelectorAll("button").forEach((b, i) => b.onclick = () => abreDados(ids, i));
@@ -188,7 +220,7 @@ function abreDados(ids, qual = 0) {
   const [dc, hc] = String(t.coletado_em || "").split(" ");
   $("#dados-ficha").innerHTML = [["Quem publica", t.fonte], ["Registros", br(t.linhas.length)], ["Coletado em", (dc || "").split("-").reverse().join("/") + (hc ? " às " + hc : "")], ["Conferir na fonte", `<a href="${t.url}" target="_blank" rel="noopener">abrir o endereço original ↗</a>`]]
     .map(([k, v]) => `<div><div class="k">${k}</div><div class="v">${k === "Conferir na fonte" ? v : esc(v)}</div></div>`).join("")
-    + `<div class="larga" style="grid-column:1/-1"><div class="k">Consulta usada</div><div class="v">${esc(t.consulta)}</div><div style="margin-top:4px"><code>${esc(t.url)}</code></div></div>`;
+    + `<details class="larga consulta" style="grid-column:1/-1"><summary><span class="k">Consulta usada</span> <span class="v">${esc(t.consulta)}</span></summary><code>${esc(t.url)}</code></details>`;
   $("#dados-nota").textContent = t.nota || "";
   $("#dados-nota").style.display = t.nota ? "block" : "none";
   const linhasF = () => {
@@ -206,7 +238,10 @@ function abreDados(ids, qual = 0) {
     const li = t.colunas.findIndex(c => c[1] === "l" || c[1] === "u");
     const alvo = li < 0 ? -1 : [t.colunas.findIndex(c => c[0] === "Nota" || c[0] === "Número"), t.colunas.findIndex(c => c[0] === "Órgão"), 0].find(x => x >= 0);
     const ia = t.colunas.findIndex(c => c[0] === "Ação de governo"), ifo = t.colunas.findIndex(c => c[0] === "Fonte do recurso");
-    const cols = t.colunas.map((c, i) => i).filter(i => i !== li && i !== ia && t.colunas[i][1] !== "h");
+    // Em tela larga (TV, monitor grande) a ação de governo ganha coluna própria.
+    const base = t.colunas.filter((c, i) => i !== li && i !== ia && c[1] !== "h").length;
+    const largo = innerWidth / zoomAtual() >= 1800 && base <= 10; $("#dados").classList.toggle("largo", largo);
+    const cols = t.colunas.map((c, i) => i).filter(i => i !== li && (i !== ia || largo) && t.colunas[i][1] !== "h");
     const hrefDe = r => { const v = r[li]; if (!v) return ""; if (t.colunas[li][1] === "l") return L.detalhe + v; return String(v).startsWith("http") ? v : ""; };
     const cel = (r, i) => {
       if (i === alvo) { const hr = hrefDe(r); return hr ? `<a href="${hr}" target="_blank" rel="noopener" title="Abrir na fonte oficial">${esc(r[i])} ↗</a>` : `${esc(r[i])}${li >= 0 && r[li] ? `<small style="display:block;color:var(--mute)">${esc(r[li])}</small>` : ""}`; }
@@ -219,6 +254,7 @@ function abreDados(ids, qual = 0) {
       <tbody>${vis.map(r => `<tr>${cols.map(i => `<td class="${t.colunas[i][1] === "r" || t.colunas[i][1] === "n" ? "r" : longos[i] ? "longo" : ""}"${longos[i] ? ` title="${esc(r[i])}${i === ifo && ia >= 0 ? " · Ação: " + esc(r[ia]) : ""}"` : ""}>${cel(r, i)}</td>`).join("")}</tr>`).join("") || `<tr><td colspan="${cols.length}">Nada encontrado.</td></tr>`}</tbody></table>`;
     tab.querySelectorAll("th").forEach(th => th.onclick = () => { const i = +th.dataset.i; asc = i === ord ? !asc : false; ord = i; pag = 0; desenha(); });
     $("#dados-cont").textContent = `${br(ls.length)} registros${q ? " encontrados" : ""}`;
+    mostraSoma(t, ls);
     const nums = [...new Set([0, 1, pag - 1, pag, pag + 1, np - 2, np - 1].filter(x => x >= 0 && x < np))].sort((a, b) => a - b);
     let html = `<button type="button" data-p="${pag - 1}" ${pag === 0 ? "disabled" : ""}>←</button>`, ant = -1;
     nums.forEach(x => { if (x - ant > 1) html += `<span>…</span>`; html += `<button type="button" data-p="${x}" class="${x === pag ? "on" : ""}">${x + 1}</button>`; ant = x; });
@@ -236,7 +272,10 @@ function abreDados(ids, qual = 0) {
     a.download = t.id + ".csv"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   };
   desenha();
-  $("#dados").classList.add("on"); $("#cortina").classList.add("on"); $("#dados").setAttribute("aria-hidden", "false");
+  $("#dados").classList.add("on");
+  // A página mostra quantas linhas couberem na tela (nunca menos de 25): em TV, a tabela ocupa a altura toda.
+  requestAnimationFrame(() => { const tr = tab.querySelector("tbody tr"), th = tab.querySelector("thead");
+    if (tr && th) { const cabe = Math.floor((tab.clientHeight - th.offsetHeight) / tr.offsetHeight); if (cabe > POR) { POR = cabe; desenha(); } } }); $("#cortina").classList.add("on"); $("#dados").setAttribute("aria-hidden", "false");
 }
 function fechaDados() { $("#dados").classList.remove("on"); $("#dados").setAttribute("aria-hidden", "true"); if (!$("#painel").classList.contains("on")) $("#cortina").classList.remove("on"); }
 $("#dados-x").onclick = fechaDados;

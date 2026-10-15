@@ -14,10 +14,14 @@ header{height:48px;display:flex;align-items:center;gap:4px;padding:0 16px;border
 header strong{margin-right:16px;font-size:14px;letter-spacing:.02em}
 header a{text-decoration:none;color:var(--suave);padding:13px 12px;border-bottom:2px solid transparent;white-space:nowrap}
 header a.on{color:var(--tinta);border-bottom-color:var(--sinal);font-weight:600}
-iframe{display:block;width:100%;height:calc(100% - 49px);border:0}
+iframe{display:block;width:100%;height:calc(100% - 49px * var(--z));border:0}
+/* TV e 4K: só o cabeçalho cresce aqui; cada aba aplica a própria escala dentro do iframe. */
+:root{--z:1}
+header{zoom:var(--z)}
 iframe[hidden]{display:none}
 @media (max-width:600px){header strong{display:none}header{padding:0 8px;overflow-x:auto}}
 </style>
+<script>(function(){const a=()=>document.documentElement.style.setProperty("--z",Math.max(1,Math.min(2.4,innerWidth/1920,innerHeight/1080)).toFixed(3));a();addEventListener("resize",a)})();</script>
 </head>
 <body>
 <header>

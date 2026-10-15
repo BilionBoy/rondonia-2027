@@ -1,3 +1,5 @@
+:root{--z:1}
+html{zoom:var(--z)}
 
 /*__FONTES__*/
 :root{
@@ -135,7 +137,7 @@ svg .apagado rect.b{opacity:.28}
 .btn-dados.contorno{background:var(--bg);color:var(--azul);border:2px solid var(--azul);padding:7px 14px}
 .btn-dados.contorno:hover{background:var(--azul-fundo)}
 .dir-cab .topo-cab{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.dados{width:calc(100vw - 40px)}
+.dados{width:calc(100vw / var(--z) - 40px)}
 .ficha-fonte{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 24px;padding:18px 24px;border-bottom:1px solid var(--hair);font-size:14px}
 .ficha-fonte .k{font-size:13px;color:var(--mute)}
 .ficha-fonte .v{font-weight:600;word-break:break-word}
@@ -145,6 +147,17 @@ svg .apagado rect.b{opacity:.28}
 .dados-ferr{display:flex;gap:12px;align-items:center;padding:14px 24px;border-bottom:1px solid var(--hair);flex-wrap:wrap}
 .dados-ferr input{flex:1;min-width:200px;padding:10px 12px;border:1px solid var(--hair);border-radius:8px;font:inherit;background:var(--bg);color:var(--ink)}
 .dados-ferr input:focus{outline:2px solid var(--azul);outline-offset:1px}
+.dados-soma{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px;padding:12px 24px;border-bottom:1px solid var(--hair);background:var(--azul-fundo);font-size:14px}
+.dados-soma .rot{color:var(--mute)}
+.dados-soma .item{display:inline-flex;gap:8px;align-items:baseline}
+.dados-soma .item span{color:var(--mute)}
+.dados-soma b{font-size:16px;font-variant-numeric:tabular-nums}
+.ficha-fonte .consulta summary{cursor:pointer;list-style:none;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.ficha-fonte .consulta summary::-webkit-details-marker{display:none}
+.ficha-fonte .consulta summary::after{content:"▾ ver o endereço";font-size:12px;color:var(--azul)}
+.ficha-fonte .consulta[open] summary::after{content:"▴"}
+.ficha-fonte .consulta code{display:inline-block;margin-top:6px}
+.dados.largo .dados-tab td.longo{max-width:290px}
 .dados-ferr .cont{font-size:14px;color:var(--mute)}
 .dados-tab{flex:1;overflow:auto}
 .dados-tab table{width:100%;border-collapse:collapse;font-size:13.5px}
