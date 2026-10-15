@@ -52,7 +52,7 @@ Uma tela com tudo o que a SEAS assinou: convênios, termos de fomento e de coope
 
 O portal não tem link por convênio; cada linha leva à página geral de convênios e traz o número do processo SEI.
 
-**Botão "Documentos em PDF"** (na aba): abre um menu com os PDFs da lista `DOCUMENTOS` de `convenios/build_convenios.py`. Hoje são o Relatório da SEAS e o Plano SISPAC-RO. Para incluir um documento:
+**Botão "Documentos em PDF"** (na aba): abre um menu com os PDFs da lista `DOCUMENTOS` de `convenios/build_convenios.py`. Hoje são o Relatório da SEAS e o Raio-X da Tecnologia 2026. O Plano SISPAC-RO e o programa SIMA saíram do menu e de `site/` em 15/10/2026, a pedido do Dhiogo; os moldes continuam em `moldes/exemplos/`. Para incluir um documento:
 1. ponha o PDF em `site/` (o molde copia com `--site`);
 2. acrescente uma linha na lista `DOCUMENTOS`;
 3. rode `python3 convenios/build_convenios.py`.
