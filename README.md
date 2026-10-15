@@ -38,6 +38,7 @@ Tela separada, com visual próprio, sobre onde o dinheiro sai do retrato públic
 - **Para editar:** `nao-aparece/src/nao-aparece.html`. O painel que junta as abas é `nao-aparece/src/painel.html`, gerado por este mesmo build.
 - **Para coletar:** `python3 coleta_s3.py` baixa do Portal da Transparência RO (notas de empenho, detalhe de cada nota a partir de R$ 200 mil, diárias) e do Siconfi (RREO Anexo 7, MSC). O bruto fica em `dados-fonte/s3_*` e não vai para o git.
 - **Para gerar:** `python3 nao-aparece/build_s3.py`. Grava `dados-fonte/s3_resumo.json`, `esbocos/` e `site/`.
+- **Tela 6, "Fica para 2027":** o que o Executivo empenhou em 2026 e ainda não pagou (MSC de setembro de 2026: R$ 1,08 bi, sendo R$ 151 mi já entregues) e os restos de anos anteriores ainda em aberto (RREO 2026, 4º bimestre: entrou com R$ 1,87 bi, R$ 480 mi em aberto em agosto). As fontes ficam em `dados-fonte/s3_msc_a_pagar_2026_09.json`, `s3_rreo_2026_b4.json` e `s3_empenhos_2026.json`. **Para gerar só esta tela:** `cd nao-aparece && python3 build_a_pagar.py` (acrescenta ao `s3_resumo.json` e regera as páginas; o `build_s3.py` completo também a inclui). A lista de órgãos tira os que não são do Executivo (ALE, TJ, FUJU, MP, FUNDIMPER, FRBL, TCE, FDI/TC, DPE, FUNDEP). Ao sair o RREO do 6º bimestre (janeiro de 2027), trocar a MSC de setembro pelo valor inscrito em restos a pagar.
 
 Todas as fontes, consultas, datas de coleta e regras de leitura estão em [FONTES.md](FONTES.md).
 

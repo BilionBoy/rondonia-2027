@@ -546,6 +546,7 @@ const TELAS = [
   {curto: "Em 2026, continua", desenha: tela3},
   {curto: "Some do portal", desenha: tela4},
   {curto: "O que pedir", desenha: tela5},
+  {curto: "Fica para 2027", desenha: tela6},
 ];
 let atual = 0, sub4 = 0;
 function cabecalho(i, titulo, n, s, est) {
@@ -559,7 +560,7 @@ function rodape(fonte) {
 }
 function ligaDados() {
   const curtos = idsAtuais.map(i => TB[i]?.curto).filter(Boolean);
-  const rot = "▦ Ver os dados de origem" + (curtos.length > 1 && curtos.length < 4 ? " · " + curtos.join(" e ") : "");
+  const rot = "▦ Ver os dados de origem" + (curtos.length > 1 && curtos.length < 4 ? " · " + (curtos.length > 2 ? curtos.slice(0, -1).join(", ") + " e " + curtos.at(-1) : curtos.join(" e ")) : "");
   document.querySelectorAll("[data-dados]").forEach(b => { b.onclick = () => abreDados(idsAtuais); b.textContent = rot; });
   $("#btn-dados").textContent = rot; $("#btn-dados").hidden = !idsAtuais.length;
   const aviso = $("#aviso"), anos = curtos.filter(c => /^\d{4}$/.test(c));
@@ -725,6 +726,32 @@ function tela4viagens(abas) {
 }
 
 // 5 · o que pedir
+// 6 · o que fica para 2027: empenho de 2026 não pago (MSC) e restos antigos em aberto (RREO)
+function tela6() {
+  const AP = D.a_pagar, M = AP.msc, R6 = AP.rreo, PO = AP.portal;
+  idsAtuais = ["a-pagar-2026", "msc-a-pagar-2026", "rreo-2026"];
+  $("#esq").innerHTML = cabecalho(5, "O que fica para pagar em 2027", fmt(M.total),
+    `empenhados pelo Executivo em 2026 e ainda não pagos até ${M.mes_extenso}<br>o que não for pago até 31 de dezembro passa para a próxima gestão`,
+    [["Entregue, falta pagar", fmt(M.liquidado)], ["Empenhado, sem entrega", fmt(M.a_liquidar)], ["Restos antigos em aberto", fmt(R6.aberto)], ["2025 deixou para 2026", fmt(R6.inscrito_2025)]])
+    + `<div class="grafico" id="graf"></div><div class="dica-uso">Poder Executivo. As quatro primeiras barras são os restos a pagar com que o Estado entrou em 2026 e o que aconteceu com eles até ${R6.ate} (RREO). A última é o que 2026 já empenhou e não pagou até ${M.mes_extenso} (contabilidade): em azul escuro, o que já foi entregue. Esse valor ainda muda até dezembro; o número que passa para 2027 sai no RREO do 6º bimestre, em janeiro de 2027.</div>`
+    + rodape([["Tesouro Nacional (MSC e RREO de 2026)", L.rreo], ["Portal da Transparência RO", L.empenho]]);
+  barras($("#graf"), [
+    {rot: "Entrou em 2026", partes: [{v: R6.entrou, cor: "var(--cinza)"}], dir: fmt(R6.entrou),
+      dica: ["Restos a pagar com que o Executivo entrou em 2026", [["Deixados por 2025", exato(R6.inscrito_2025)], ["De anos anteriores", exato(R6.entrou - R6.inscrito_2025)]], "RREO 2026, Anexo 7"]},
+    {rot: "Pago até agosto", partes: [{v: R6.pago, cor: "var(--cinza2)"}], dir: fmt(R6.pago), dica: ["Restos pagos em 2026, até agosto", [["Valor", exato(R6.pago)]], "RREO 2026, Anexo 7"]},
+    {rot: "Cancelado", partes: [{v: R6.cancelado, cor: "var(--cinza2)"}], dir: fmt(R6.cancelado), dica: ["Restos cancelados em 2026, até agosto", [["Valor", exato(R6.cancelado)]], "RREO 2026, Anexo 7"]},
+    {rot: "Ainda em aberto", partes: [{v: R6.aberto, cor: "var(--azul)"}], dir: fmt(R6.aberto), destaque: true, dica: ["Restos de anos anteriores ainda em aberto em agosto", [["Valor", exato(R6.aberto)]], "RREO 2026, Anexo 7"]},
+    {rot: "Empenho de 2026 a pagar", partes: [{v: M.liquidado, cor: "var(--azul)"}, {v: M.a_liquidar, cor: "#7fa6e6"}], dir: fmt(M.total), destaque: true,
+      dica: [`Empenhado em 2026 e não pago até ${M.mes_extenso}`, [["Entregue, falta pagar", exato(M.liquidado)], ["Empenhado, sem entrega", exato(M.a_liquidar)], ["Total", exato(M.total)]], "Tesouro Nacional, MSC"]},
+  ]);
+  const max = PO.ugs[0].a_pagar;
+  const prova = u => ({nome: u.ug, sub: nomeDe(u.ug), valor: fmt(u.a_pagar), barra: u.a_pagar / max, linhas: [["Notas com saldo a pagar", br(u.qtd)], ["Valor exato", exato(u.a_pagar)]],
+    notas: u.notas.map(x => ({credor: x[2], valor: x[3], l2: `${x[0]} · emitida em ${x[1]} · pago ${fmt(x[4])}`, link: L.detalhe + x[5]}))});
+  const todas = PO.ugs.map(prova);
+  mostraProvas(`Órgãos do Executivo com mais empenho de 2026 não pago no Portal (${br(PO.qtd)} notas, coleta de ${PO.coletado_em.slice(8, 10)}/${PO.coletado_em.slice(5, 7)}). Clique para ver as notas.`,
+    todas, {todas, tituloTodas: "Todos os órgãos · empenho de 2026 a pagar"});
+}
+
 function tela5() {
   idsAtuais = Object.keys(TB);
   const PED = [

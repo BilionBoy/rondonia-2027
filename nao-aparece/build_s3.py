@@ -548,9 +548,17 @@ def main():
         "links": {"rreo": SICONFI_RREO, "rreo_api": link_rreo(2025), "msc_api": link_msc(2026, 8), "empenho": PORTAL_EMPENHO, "diarias": PORTAL_DIARIAS, "detalhe": PORTAL_DETALHE,
                   "msc": "https://apidatalake.tesouro.gov.br/docs/siconfi/"},
     }
+    from build_a_pagar import a_pagar
+    resumo["a_pagar"], tab_a_pagar = a_pagar()
+    resumo["tabelas"].update(tab_a_pagar)
     siglas = {u["ug"] for k in ("secretarias_2025", "secretarias_2026") if resumo[k] for u in resumo[k]["ugs"]}
-    resumo["nomes"] = nomes(siglas | {u["ug"] for u in resumo["parados_2026"]["ugs"]})
+    resumo["nomes"] = nomes(siglas | {u["ug"] for u in resumo["parados_2026"]["ugs"]} | {u["ug"] for u in resumo["a_pagar"]["portal"]["ugs"]})
     (FONTE / "s3_resumo.json").write_text(json.dumps(resumo, ensure_ascii=False, indent=1), encoding="utf-8")
+    renderiza(resumo)
+
+
+def renderiza(resumo):
+    """Grava esbocos/ e site/ a partir de src/ com os dados do resumo."""
     payload = json.dumps(resumo, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     print("s3_resumo.json", round(len(payload) / 1024), "KB")
 
