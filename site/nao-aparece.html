@@ -68,6 +68,7 @@ button{font:inherit;color:inherit}
 .rodape{display:flex;align-items:center;gap:16px;font-size:14px;color:var(--mute);padding-top:12px;border-top:1px solid var(--hair);margin-top:10px}
 .rodape .fonte{flex:1;min-width:0}
 .nav{display:flex;gap:8px;flex:none}
+@media (max-width:700px){.rodape{flex-wrap:wrap;gap:10px 12px}.rodape .fonte{flex-basis:100%}}
 .nav button{all:unset;cursor:pointer;width:36px;height:36px;border-radius:50%;border:1px solid var(--hair);display:grid;place-items:center;font-size:16px;color:var(--ink);background:var(--bg)}
 .nav button:hover{border-color:var(--azul);color:var(--azul)}
 .nav button:disabled{opacity:.3;cursor:default}
@@ -215,6 +216,7 @@ svg .apagado rect.b{opacity:.28}
   .numero .s{border-left:0;padding-left:0}
 }
 @media (prefers-reduced-motion:reduce){.entra{animation:none}.painel,.cortina{transition:none}}
+@media (max-width:700px){.btn-dados{white-space:normal;max-width:100%;box-sizing:border-box}}
 </style>
 </head>
 <body>

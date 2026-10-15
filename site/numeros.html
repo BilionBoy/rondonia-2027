@@ -257,7 +257,7 @@ body.emendas .escala{opacity:1;pointer-events:auto}
 #saude .anos div.cmp,#saude .anosr span:nth-last-child(2){margin-left:10px}
 #saude .anos b{font-size:.62rem;font-weight:700;margin-bottom:3px;white-space:nowrap}
 #saude .anosr{display:flex;gap:5px;margin-top:4px}#saude .anosr span{flex:1;text-align:center;font-size:.62rem;font-weight:700;color:#3d4148}
-@media (max-width:700px){#mexido,#saude{grid-template-columns:1fr;overflow:auto}}
+@media (max-width:700px){#mexido,#saude{grid-template-columns:minmax(0,1fr);overflow:auto}}
 
 /* etapa 9: o resumo, em painel */
 #resumo{top:clamp(132px,18vh,200px);display:grid;grid-template-rows:auto 1fr;gap:clamp(18px,3.4vh,40px)}
