@@ -16,6 +16,8 @@ Painel sobre o orçamento de Rondônia e a transição de governo, em cinco abas
 - **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py && python3 tecnologia/build_tecnologia.py`.
 - **Para ver localmente:** `python3 -m http.server 8765 --bind 127.0.0.1` e abrir `http://127.0.0.1:8765/esbocos/painel.html`.
 
+**Links das notas de 2026 mudam.** O Portal recarrega o ano corrente e, ao recarregar, troca o endereço (`?id=`) de todas as notas de 2026; os de anos fechados não mudam. Em 15/10/2026 todos os links de 2026 abriam outra nota e foram trocados pelos novos (165 mil ocorrências em `dados-fonte/`, `esbocos/` e `site/`), casando número da nota e órgão, sem mudar valor nenhum. Antes de apresentar, confira uma nota de 2026 no Portal; se abrir outra, refaça a coleta de 2026 (`coleta_s3.py`, que consulta mês a mês) e troque os endereços da mesma forma.
+
 **Nenhum link abre JSON ou API.** Quem lê é o governador. Todo dado abre o painel de dados de origem, com busca, fonte, data da coleta e CSV. Links para a API do Tesouro (`apidatalake.tesouro.gov.br`) viram botão que abre a tabela correspondente no painel, já filtrada pelo ano quando o link é de um ano. O "Conferir na fonte" dessas tabelas leva ao Siconfi, não à API; o endereço da API aparece só como texto em "Consulta usada" (regra de 15/10/2026).
 
 ## Moldes de documento (propostas e planos em PDF)

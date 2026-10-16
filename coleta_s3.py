@@ -55,11 +55,17 @@ def post_paginado(op, path, tok, campos, lote=10000):
 
 
 def empenhos(ano):
+    """Notas do ano, consultadas mês a mês. Com o ano inteiro, a paginação do Portal repete e
+    pula notas (em 15/10/2026: 1.078 repetidas e outras tantas faltando); um mês cabe numa página."""
     op = sessao()
     op.open(PORTAL + "/despesa/despesa-estadual", timeout=60).read()
     tok = token(op, "/Despesa/FormConsultaEmpenho")
-    campos = {"AnoAvancado": ano, "MesInicialAvancado": 1, "MesFinalAvancado": 12}
-    return post_paginado(op, "/Despesa/FiltrarEmpenhos", tok, campos)
+    notas = {}
+    for mes in range(1, 13):
+        campos = {"AnoAvancado": ano, "MesInicialAvancado": mes, "MesFinalAvancado": mes}
+        for n in post_paginado(op, "/Despesa/FiltrarEmpenhos", tok, campos, lote=20000):
+            notas[n["linkDetalhes"]] = n
+    return list(notas.values())
 
 
 def diarias(ano):
