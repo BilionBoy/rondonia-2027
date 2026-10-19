@@ -16,6 +16,8 @@ PORTAL = "https://transparencia.ro.gov.br/convenios"
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 # Documentos em PDF do botão "Documentos em PDF": (arquivo em site/, nome ao baixar, título, linha de apoio).
 # Documento novo = uma linha aqui + o PDF em site/ (o molde copia com --site).
+# Oculto desde 19/10/2026: o botão sai da aba; os PDFs continuam em site/. Para voltar, True.
+MOSTRAR_DOCUMENTOS = False
 DOCUMENTOS = [
     ("relatorio-seas.pdf", "Relatorio-SEAS-Rondonia.pdf", "Relatório da SEAS", "79 páginas · convênios, termos de fomento e emendas, 2019–2026"),
     ("Raio-X-Tecnologia-2026.pdf", "Raio-X-Tecnologia-2026.pdf",
@@ -25,6 +27,8 @@ DOCUMENTOS = [
 
 def menu_documentos():
     import html
+    if not MOSTRAR_DOCUMENTOS:
+        return ""
     falta = [a for a, *_ in DOCUMENTOS if not (RAIZ / "site" / a).exists()]
     if falta:
         raise SystemExit(f"PDF listado em DOCUMENTOS e ausente em site/: {', '.join(falta)}")
