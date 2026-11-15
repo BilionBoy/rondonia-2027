@@ -1,0 +1,2352 @@
+{
+ "meta": {
+  "fonte": "Execução das Secretarias Executivas Regionais 2026, v04 de 13/11/2026 (SIGEF, UG 110009 SUGESP, posição 12/11/2026; listas de pessoal e de veículos das regionais)",
+  "base_legal": "LC nº 965/2017, arts. 87, II, e 90, parágrafo único (LC nº 1.215/2023); Decreto nº 31.814/2026; Lei nº 1.808/2007",
+  "ipca": {
+   "2027": 0.0522,
+   "2028": 0.049,
+   "2029": 0.04,
+   "2030": 0.04
+  },
+  "premissas": [
+   [
+    "Execução das Secretarias Executivas Regionais - 2026 e projeção 2027-2030"
+   ],
+   [
+    "Item",
+    "Descrição"
+   ],
+   [
+    "Objeto",
+    "Custo de cada Secretaria Executiva Regional (SER I a X) e da Coordenadoria-Geral (COOREG), mês a mês, com empenhos, credores, ordens bancárias e projeção até dezembro de 2026."
+   ],
+   [
+    "Base única",
+    "SIGEF: Extrato de empenho por subelemento e Pagamentos do exercício (histórico), ambos com posição de 12/11/2026; lista de servidores e lista de veículos das regionais (PDFs encaminhados); valores de CDS da tabela Transicao_CDS_por_Unidade_v05."
+   ],
+   [
+    "Unidade executora",
+    "As regionais não têm unidade orçamentária própria: o custeio é empenhado pela SUGESP (UG 110009), ação 4546 (Fomentar o desenvolvimento nos 10 polos regionais) e ação 2087; os ressarcimentos de cedidos, na ação 2234."
+   ],
+   [
+    "Estágio",
+    "Realizado = pago (OB, PP e NL com valor). Empenhado e liquidado aparecem na aba Empenhos. Os documentos de pagamento somam exatamente o pago de cada empenho no extrato (diferença 0,00 em 70 empenhos)."
+   ],
+   [
+    "Classificação",
+    "Fato: regional identificada no histórico do empenho ou nome do servidor da lista no histórico. Cálculo: rateio de contrato comum às regionais pelos critérios da aba Rateio, e custo de CDS do quadro atual. Cenário: projeção de novembro e dezembro."
+   ],
+   [
+    "Pessoal (CDS)",
+    "Custo mensal = soma do subsídio do CDS de cada servidor da lista. Não inclui encargos patronais, férias nem a remuneração de origem dos efetivos. A folha das unidades da Governadoria não está no extrato, por isso o valor é cálculo e não pagamento. Premissa de cenário: quadro atual em todo o exercício."
+   ],
+   [
+    "Ação 4546",
+    "Todo o valor pago na ação 4546 (Fomentar o desenvolvimento nos 10 polos regionais) é custo das regionais: o que o histórico identifica vai para a regional; o restante é rateado (diárias sem beneficiário nas listas, pelo número de servidores de cada unidade). Nenhum valor pago nos empenhos das regionais fica fora do custo."
+   ],
+   [
+    "OBs com histórico do PRM",
+    "Duas OBs da ação 2087 pagas em empenhos de água das regionais (2026OB088609, R$ 90.238,48, e 2026OB154545, R$ 104.000,00) citam fatura do PRM no histórico. Como o empenho é das regionais e o histórico pode conter erro de digitação, o valor foi mantido no custo e rateado como a água da CAERD, com classificação própria na aba Pagamentos. A OB de outubro (R$ 104.000,00) eleva a média de ago-out da água e, por isso, a projeção desse item."
+   ],
+   [
+    "Fórmulas",
+    "Os valores partem dos documentos de pagamento (aba Pagamentos) e das listas de pessoal e veículos (abas Pessoal e Rateio). Fração, valor atribuído, base mensal, projeções, resumos e abas individuais são fórmulas; alterar um dado de entrada recalcula toda a planilha."
+   ],
+   [
+    "Projeção",
+    "Novembro e dezembro: média mensal paga em agosto, setembro e outubro de cada regional e objeto; em novembro desconta-se o que já foi pago até 12/11. CDS constante, com 13º em dezembro. A aba Saldo_Empenho mostra o saldo a pagar de cada regional como referência de cobertura."
+   ],
+   [
+    "Tipos de custo",
+    "Cada valor recebe um tipo: pessoal comissionado (CDS), pessoal cedido (ressarcimento), locação de veículos, combustível, manutenção de veículos, aluguel de imóvel, energia, água e taxas do imóvel, internet, manutenção predial e diárias. Manutenção de veículos e manutenção predial não foram identificadas nos empenhos das regionais e aparecem com zero."
+   ],
+   [
+    "Projeção 2027-2030",
+    "Base anual recorrente de 2026 = custo mensal de referência x 13 para pessoal (CDS e ressarcimento, com 13º) e x 12 para custeio. Custo mensal de referência: CDS de outubro; demais tipos, média paga de agosto a outubro. Cada ano é corrigido pelo IPCA do ano anterior (tabela abaixo), mantidos a estrutura, o quadro e os contratos atuais. É cenário, sem crescimento real."
+   ],
+   [
+    "Índice de correção",
+    "IPCA, mediana do Boletim Focus do Banco Central de 09/11/2026. Escolhido porque é o índice usual de reajuste anual dos contratos de serviço contínuo (Lei nº 14.133/2021, art. 92, § 3º) e a referência da revisão geral anual da remuneração (CF, art. 37, X) e das metas das LDOs. As taxas em azul podem ser alteradas e toda a projeção se recalcula."
+   ],
+   [
+    "Municípios",
+    "Regiões de Planejamento e Gestão da Lei nº 1.808/2007. A lei fixa Costa Marques como polo da Região IX; a SER IX funciona em São Francisco do Guaporé (empenho de aluguel 2026NE000120)."
+   ],
+   [
+    "Índice de correção aplicado na projeção (IPCA, Focus de 09/11/2026)"
+   ],
+   [
+    "Ano de aplicação",
+    "Índice aplicado",
+    "Taxa"
+   ],
+   [
+    "2027",
+    "IPCA de 2026",
+    0.0522
+   ],
+   [
+    "2028",
+    "IPCA de 2027",
+    0.049
+   ],
+   [
+    "2029",
+    "IPCA de 2028",
+    0.04
+   ],
+   [
+    "2030",
+    "IPCA de 2029",
+    0.04
+   ],
+   [
+    "Fonte das taxas: Boletim Focus de 09/11/2026 (IPCA 2026 5,22%; 2027 4,90%; 2028 4,00%; 2029 4,00%)."
+   ]
+  ]
+ },
+ "total": {
+  "servidores": 134,
+  "com_cds": 124,
+  "cds_mes": 672262.65,
+  "veic_proprios": 11,
+  "veic_locados": 10,
+  "pago_ate_12_11": 1959880.33,
+  "cds_jan_out": 6722626.5,
+  "projecao_nov_dez": 2290728.76,
+  "total_2026": 10973235.59,
+  "saldo_empenho": 437302.37
+ },
+ "tipos": {
+  "Pessoal comissionado (CDS)": {
+   "mensal": 672262.65,
+   "ate_12_11": 6722626.5,
+   "projecao": 2016787.95,
+   "total_2026": 8739414.45
+  },
+  "Pessoal cedido (ressarcimento)": {
+   "mensal": 56883.15,
+   "ate_12_11": 739232.93,
+   "projecao": 71704.43,
+   "total_2026": 810937.36
+  },
+  "Locação de veículos": {
+   "mensal": 68700.0,
+   "ate_12_11": 687000.0,
+   "projecao": 68700.0,
+   "total_2026": 755700.0
+  },
+  "Combustível": {
+   "mensal": 12374.39,
+   "ate_12_11": 122418.44,
+   "projecao": 24748.78,
+   "total_2026": 147167.22
+  },
+  "Manutenção de veículos": {
+   "mensal": 0,
+   "ate_12_11": 0,
+   "projecao": 0,
+   "total_2026": 0
+  },
+  "Aluguel de imóvel": {
+   "mensal": 3000,
+   "ate_12_11": 28800,
+   "projecao": 4200,
+   "total_2026": 33000
+  },
+  "Energia, água e taxas do imóvel": {
+   "mensal": 48405.6,
+   "ate_12_11": 302675.36,
+   "projecao": 96811.2,
+   "total_2026": 399486.56
+  },
+  "Internet": {
+   "mensal": 3200.0,
+   "ate_12_11": 29753.6,
+   "projecao": 6246.4,
+   "total_2026": 36000
+  },
+  "Manutenção predial": {
+   "mensal": 0,
+   "ate_12_11": 0,
+   "projecao": 0,
+   "total_2026": 0
+  },
+  "Diárias": {
+   "mensal": 765,
+   "ate_12_11": 50000,
+   "projecao": 1530,
+   "total_2026": 51530.0
+  }
+ },
+ "projecao": {
+  "Pessoal comissionado (CDS)": {
+   "2026": 8739414.45,
+   "base": 8739414.45,
+   "2027": 9195611.88,
+   "2028": 9646196.87,
+   "2029": 10032044.74,
+   "2030": 10433326.53,
+   "total": 39307180.02
+  },
+  "Pessoal cedido (ressarcimento)": {
+   "2026": 810937.36,
+   "base": 739480.95,
+   "2027": 778081.86,
+   "2028": 816207.87,
+   "2029": 848856.18,
+   "2030": 882810.43,
+   "total": 3325956.33
+  },
+  "Locação de veículos": {
+   "2026": 755700.0,
+   "base": 824400.0,
+   "2027": 867433.68,
+   "2028": 909937.93,
+   "2029": 946335.45,
+   "2030": 984188.87,
+   "total": 3707895.92
+  },
+  "Combustível": {
+   "2026": 147167.22,
+   "base": 148492.68,
+   "2027": 156244.0,
+   "2028": 163899.95,
+   "2029": 170455.95,
+   "2030": 177274.19,
+   "total": 667874.09
+  },
+  "Manutenção de veículos": {
+   "2026": 0,
+   "base": 0,
+   "2027": 0,
+   "2028": 0,
+   "2029": 0,
+   "2030": 0,
+   "total": 0
+  },
+  "Aluguel de imóvel": {
+   "2026": 33000,
+   "base": 36000,
+   "2027": 37879.2,
+   "2028": 39735.28,
+   "2029": 41324.69,
+   "2030": 42977.68,
+   "total": 161916.85
+  },
+  "Energia, água e taxas do imóvel": {
+   "2026": 399486.56,
+   "base": 580867.2,
+   "2027": 611188.47,
+   "2028": 641136.7,
+   "2029": 666782.17,
+   "2030": 693453.46,
+   "total": 2612560.8
+  },
+  "Internet": {
+   "2026": 36000,
+   "base": 38400.0,
+   "2027": 40404.48,
+   "2028": 42384.3,
+   "2029": 44079.67,
+   "2030": 45842.86,
+   "total": 172711.31
+  },
+  "Manutenção predial": {
+   "2026": 0,
+   "base": 0,
+   "2027": 0,
+   "2028": 0,
+   "2029": 0,
+   "2030": 0,
+   "total": 0
+  },
+  "Diárias": {
+   "2026": 51530.0,
+   "base": 9180.0,
+   "2027": 9659.2,
+   "2028": 10132.5,
+   "2029": 10537.8,
+   "2030": 10959.31,
+   "total": 41288.8
+  },
+  "Total": {
+   "2026": 10973235.59,
+   "base": 11116235.28,
+   "2027": 11696502.76,
+   "2028": 12269631.4,
+   "2029": 12760416.65,
+   "2030": 13270833.32,
+   "total": 49997384.13
+  }
+ },
+ "mensal": {
+  "Pessoal - cargos em comissão (CDS)": [
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   672262.65,
+   1344525.3
+  ],
+  "Pessoal - ressarcimento de cedidos": [
+   0.0,
+   8315.97,
+   158510.54,
+   48948.44,
+   59919.59,
+   122818.84,
+   118373.07,
+   86993.12,
+   72736.7,
+   10919.63,
+   66518.31,
+   56883.15
+  ],
+  "Custeio - identificado": [
+   0.0,
+   3436.4,
+   4476.33,
+   3964.95,
+   7089.18,
+   4318.59,
+   3660.29,
+   3593.9,
+   3689.22,
+   5310.34,
+   4197.82,
+   4197.82
+  ],
+  "Custeio - rateado": [
+   0.0,
+   81136.69,
+   94082.87,
+   97758.95,
+   145791.48,
+   192075.51,
+   102867.59,
+   110025.84,
+   90165.6,
+   196550.07,
+   132247.17,
+   132247.17
+  ],
+  "Total da regional": [
+   672262.65,
+   765151.71,
+   929332.39,
+   822934.99,
+   885062.9,
+   991475.59,
+   897163.6,
+   872875.51,
+   838854.17,
+   885042.69,
+   875225.95,
+   1537853.44
+  ]
+ },
+ "valor_simbolo": {
+  "CDS-15": 18317.1,
+  "CDS-14": 15014.02,
+  "CDS-13": 11729.71,
+  "CDS-12": 9022.86,
+  "CDS-11": 8128.71,
+  "CDS-10": 7193.55,
+  "CDS-9": 6201.34,
+  "CDS-8": 5083.07,
+  "CDS-7": 4006.46,
+  "CDS-6": 3630.77,
+  "CDS-5": 3184.89,
+  "CDS-4": 2745.6,
+  "CDS-3": 2196.48,
+  "CDS-2": 1716,
+  "CDS-1": 1320
+ },
+ "unidades": [
+  {
+   "codigo": "COOREG",
+   "nome": "COOREG - Coordenadoria-Geral (Porto Velho)",
+   "sede": "Porto Velho",
+   "servidores": 23,
+   "com_cds": 22,
+   "cds_mes": 136563.5,
+   "veic_proprios": 2,
+   "veic_locados": 1,
+   "pago_ate_12_11": 574237.37,
+   "cds_jan_out": 1365635,
+   "projecao_nov_dez": 452022.6,
+   "total_2026": 2391894.97,
+   "saldo_empenho": 46251.65,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 136563.5,
+     "ate_12_11": 1365635,
+     "projecao": 409690.5,
+     "total_2026": 1775325.5,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 31682.14,
+     "ate_12_11": 480044.16,
+     "projecao": 31682.14,
+     "total_2026": 511726.3,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1767.77,
+     "ate_12_11": 17488.35,
+     "projecao": 3535.54,
+     "total_2026": 21023.89,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 122.21,
+     "ate_12_11": 8004.86,
+     "projecao": 244.42,
+     "total_2026": 8249.28,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 1867997.49,
+     "2028": 1959529.37,
+     "2029": 2037910.54,
+     "2030": 2119426.96
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 433367.37,
+     "2028": 454602.37,
+     "2029": 472786.46,
+     "2030": 491697.92
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 22320.57,
+     "2028": 23414.28,
+     "2029": 24350.85,
+     "2030": 25324.88
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Internet": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 1543.06,
+     "2028": 1618.67,
+     "2029": 1683.42,
+     "2030": 1750.75
+    },
+    "Total da regional": {
+     "2027": 2411971.86,
+     "2028": 2530158.48,
+     "2029": 2631364.82,
+     "2030": 2736619.41
+    }
+   },
+   "polo": "-",
+   "titular": "Coordenador-Geral das Secretarias Regionais, CDS-14",
+   "municipios": [
+    "Atuação estadual (coordenação das dez regionais)"
+   ],
+   "vinculos": {
+    "cedido_federal": 2,
+    "cedido_municipal": 2,
+    "comissionado": 0,
+    "efetivo_estadual": 1,
+    "outro": 4
+   },
+   "cds": {
+    "CDS-15": 2,
+    "CDS-14": 1,
+    "CDS-13": 1,
+    "CDS-11": 1,
+    "CDS-9": 4,
+    "CDS-8": 1,
+    "CDS-7": 1,
+    "CDS-6": 2,
+    "CDS-5": 3,
+    "CDS-4": 3,
+    "CDS-3": 2,
+    "CDS-2": 1
+   }
+  },
+  {
+   "codigo": "SERI",
+   "nome": "SER I (Porto Velho)",
+   "sede": "Porto Velho",
+   "servidores": 16,
+   "com_cds": 16,
+   "cds_mes": 90345.08,
+   "veic_proprios": 0,
+   "veic_locados": 0,
+   "pago_ate_12_11": 50186.73,
+   "cds_jan_out": 903450.8,
+   "projecao_nov_dez": 284491.06,
+   "total_2026": 1238128.6,
+   "saldo_empenho": 3670.35,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 90345.08,
+     "ate_12_11": 903450.8,
+     "projecao": 271035.24,
+     "total_2026": 1174486.04,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 6330.58,
+     "ate_12_11": 38438.78,
+     "projecao": 12661.15,
+     "total_2026": 51099.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 85.01,
+     "ate_12_11": 8772.6,
+     "projecao": 170.03,
+     "total_2026": 8942.63,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 1235794.21,
+     "2028": 1296348.13,
+     "2029": 1348202.05,
+     "2030": 1402130.13
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Locação de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Combustível": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 79932.39,
+     "2028": 83849.08,
+     "2029": 87203.04,
+     "2030": 90691.16
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 1073.43,
+     "2028": 1126.03,
+     "2029": 1171.07,
+     "2030": 1217.91
+    },
+    "Total da regional": {
+     "2027": 1320840.48,
+     "2028": 1385561.67,
+     "2029": 1440984.13,
+     "2030": 1498623.5
+    }
+   },
+   "polo": "Porto Velho",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Porto Velho",
+    "Candeias do Jamari",
+    "Itapuã do Oeste"
+   ],
+   "vinculos": {
+    "cedido_federal": 0,
+    "cedido_municipal": 2,
+    "comissionado": 1,
+    "efetivo_estadual": 2,
+    "outro": 3
+   },
+   "cds": {
+    "CDS-13": 2,
+    "CDS-12": 1,
+    "CDS-10": 2,
+    "CDS-9": 3,
+    "CDS-8": 1,
+    "CDS-7": 1,
+    "CDS-6": 1,
+    "CDS-5": 2,
+    "CDS-4": 1,
+    "CDS-2": 1,
+    "CDS-1": 1
+   }
+  },
+  {
+   "codigo": "SERII",
+   "nome": "SER II (Ariquemes)",
+   "sede": "Ariquemes",
+   "servidores": 14,
+   "com_cds": 13,
+   "cds_mes": 42233.31,
+   "veic_proprios": 1,
+   "veic_locados": 1,
+   "pago_ate_12_11": 126645.56,
+   "cds_jan_out": 422333.1,
+   "projecao_nov_dez": 149361.53,
+   "total_2026": 698340.18,
+   "saldo_empenho": 39084.78,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 42233.31,
+     "ate_12_11": 422333.1,
+     "projecao": 126699.93,
+     "total_2026": 549033.03,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1178.51,
+     "ate_12_11": 11658.9,
+     "projecao": 2357.03,
+     "total_2026": 14015.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 6330.58,
+     "ate_12_11": 38438.78,
+     "projecao": 12661.15,
+     "total_2026": 51099.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 74.39,
+     "ate_12_11": 4872.52,
+     "projecao": 148.78,
+     "total_2026": 5021.3,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 577692.55,
+     "2028": 605999.49,
+     "2029": 630239.47,
+     "2030": 655449.05
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 14880.38,
+     "2028": 15609.52,
+     "2029": 16233.9,
+     "2030": 16883.26
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 79932.39,
+     "2028": 83849.08,
+     "2029": 87203.04,
+     "2030": 90691.16
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 939.25,
+     "2028": 985.28,
+     "2029": 1024.69,
+     "2030": 1065.68
+    },
+    "Total da regional": {
+     "2027": 764228.39,
+     "2028": 801675.59,
+     "2029": 833742.61,
+     "2030": 867092.31
+    }
+   },
+   "polo": "Ariquemes",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Ariquemes",
+    "Alto Paraíso",
+    "Buritis",
+    "Cacaulândia",
+    "Campo Novo de Rondônia",
+    "Cujubim",
+    "Machadinho do Oeste",
+    "Monte Negro",
+    "Rio Crespo"
+   ],
+   "vinculos": {
+    "cedido_federal": 1,
+    "cedido_municipal": 0,
+    "comissionado": 13,
+    "efetivo_estadual": 0,
+    "outro": 0
+   },
+   "cds": {
+    "CDS-13": 1,
+    "CDS-7": 1,
+    "CDS-5": 2,
+    "CDS-4": 4,
+    "CDS-3": 2,
+    "CDS-2": 2,
+    "CDS-1": 1
+   }
+  },
+  {
+   "codigo": "SERIII",
+   "nome": "SER III (Jaru)",
+   "sede": "Jaru",
+   "servidores": 8,
+   "com_cds": 8,
+   "cds_mes": 36478.65,
+   "veic_proprios": 1,
+   "veic_locados": 1,
+   "pago_ate_12_11": 97717.0,
+   "cds_jan_out": 364786.5,
+   "projecao_nov_dez": 122347.15,
+   "total_2026": 584850.65,
+   "saldo_empenho": 43783.84,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 36478.65,
+     "ate_12_11": 364786.5,
+     "projecao": 109435.95,
+     "total_2026": 474222.45,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1178.51,
+     "ate_12_11": 11658.9,
+     "projecao": 2357.03,
+     "total_2026": 14015.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 1487.26,
+     "ate_12_11": 11598.45,
+     "projecao": 2974.52,
+     "total_2026": 14572.96,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 42.51,
+     "ate_12_11": 2784.3,
+     "projecao": 85.01,
+     "total_2026": 2869.31,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 498976.86,
+     "2028": 523426.73,
+     "2029": 544363.8,
+     "2030": 566138.35
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 14880.38,
+     "2028": 15609.52,
+     "2029": 16233.9,
+     "2030": 16883.26
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 18778.72,
+     "2028": 19698.88,
+     "2029": 20486.83,
+     "2030": 21306.3
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 536.72,
+     "2028": 563.02,
+     "2029": 585.54,
+     "2030": 608.96
+    },
+    "Total da regional": {
+     "2027": 623956.49,
+     "2028": 654530.36,
+     "2029": 680711.58,
+     "2030": 707940.04
+    }
+   },
+   "polo": "Jaru",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Jaru",
+    "Governador Jorge Teixeira",
+    "Theobroma",
+    "Vale do Anari"
+   ],
+   "vinculos": {
+    "cedido_federal": 0,
+    "cedido_municipal": 1,
+    "comissionado": 0,
+    "efetivo_estadual": 0,
+    "outro": 0
+   },
+   "cds": {
+    "CDS-13": 1,
+    "CDS-8": 1,
+    "CDS-7": 3,
+    "CDS-5": 1,
+    "CDS-4": 1,
+    "CDS-2": 1
+   }
+  },
+  {
+   "codigo": "SERIV",
+   "nome": "SER IV (Ouro Preto do Oeste)",
+   "sede": "Ouro Preto do Oeste",
+   "servidores": 11,
+   "com_cds": 8,
+   "cds_mes": 28670.05,
+   "veic_proprios": 1,
+   "veic_locados": 1,
+   "pago_ate_12_11": 148299.16,
+   "cds_jan_out": 286700.5,
+   "projecao_nov_dez": 108745.87,
+   "total_2026": 543745.52,
+   "saldo_empenho": 39084.78,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 28670.05,
+     "ate_12_11": 286700.5,
+     "projecao": 86010.15,
+     "total_2026": 372710.65,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 0,
+     "ate_12_11": 22538.71,
+     "projecao": 0,
+     "total_2026": 22538.71,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1178.51,
+     "ate_12_11": 11658.9,
+     "projecao": 2357.03,
+     "total_2026": 14015.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 6330.58,
+     "ate_12_11": 38438.78,
+     "projecao": 12661.15,
+     "total_2026": 51099.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 111.45,
+     "ate_12_11": 3987.41,
+     "projecao": 222.9,
+     "total_2026": 4210.31,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 392166.15,
+     "2028": 411382.29,
+     "2029": 427837.58,
+     "2030": 444951.08
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 14880.38,
+     "2028": 15609.52,
+     "2029": 16233.9,
+     "2030": 16883.26
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 79932.39,
+     "2028": 83849.08,
+     "2029": 87203.04,
+     "2030": 90691.16
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 1407.18,
+     "2028": 1476.14,
+     "2029": 1535.18,
+     "2030": 1596.59
+    },
+    "Total da regional": {
+     "2027": 579169.92,
+     "2028": 607549.24,
+     "2029": 631851.21,
+     "2030": 657125.26
+    }
+   },
+   "polo": "Ouro Preto do Oeste",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Ouro Preto do Oeste",
+    "Mirante da Serra",
+    "Nova União",
+    "Teixeirópolis",
+    "Vale do Paraíso"
+   ],
+   "vinculos": {
+    "cedido_federal": 2,
+    "cedido_municipal": 1,
+    "comissionado": 8,
+    "efetivo_estadual": 0,
+    "outro": 0
+   },
+   "cds": {
+    "CDS-13": 1,
+    "CDS-5": 2,
+    "CDS-4": 1,
+    "CDS-3": 2,
+    "CDS-2": 2
+   }
+  },
+  {
+   "codigo": "SERV",
+   "nome": "SER V (Ji-Paraná)",
+   "sede": "Ji-Paraná",
+   "servidores": 14,
+   "com_cds": 12,
+   "cds_mes": 98593.07,
+   "veic_proprios": 0,
+   "veic_locados": 1,
+   "pago_ate_12_11": 120816.11,
+   "cds_jan_out": 985930.7,
+   "projecao_nov_dez": 317262.29,
+   "total_2026": 1424009.1,
+   "saldo_empenho": 28247.56,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 98593.07,
+     "ate_12_11": 985930.7,
+     "projecao": 295779.21,
+     "total_2026": 1281709.91,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 589.26,
+     "ate_12_11": 5829.45,
+     "projecao": 1178.51,
+     "total_2026": 7007.96,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 6330.58,
+     "ate_12_11": 38438.78,
+     "projecao": 12661.15,
+     "total_2026": 51099.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 74.39,
+     "ate_12_11": 4872.52,
+     "projecao": 148.78,
+     "total_2026": 5021.3,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 1348615.17,
+     "2028": 1414697.31,
+     "2029": 1471285.2,
+     "2030": 1530136.61
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 7440.19,
+     "2028": 7804.76,
+     "2029": 8116.95,
+     "2030": 8441.63
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 79932.39,
+     "2028": 83849.08,
+     "2029": 87203.04,
+     "2030": 90691.16
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 939.25,
+     "2028": 985.28,
+     "2029": 1024.69,
+     "2030": 1065.68
+    },
+    "Total da regional": {
+     "2027": 1527710.82,
+     "2028": 1602568.65,
+     "2029": 1666671.39,
+     "2030": 1733338.25
+    }
+   },
+   "polo": "Ji-Paraná",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Ji-Paraná",
+    "Alvorada do Oeste",
+    "Castanheiras",
+    "Presidente Médici",
+    "Urupá"
+   ],
+   "vinculos": {
+    "cedido_federal": 2,
+    "cedido_municipal": 0,
+    "comissionado": 9,
+    "efetivo_estadual": 3,
+    "outro": 0
+   },
+   "cds": {
+    "CDS-15": 2,
+    "CDS-13": 2,
+    "CDS-12": 1,
+    "CDS-9": 3,
+    "CDS-5": 1,
+    "CDS-4": 2,
+    "CDS-3": 1
+   }
+  },
+  {
+   "codigo": "SERVI",
+   "nome": "SER VI (Cacoal)",
+   "sede": "Cacoal",
+   "servidores": 8,
+   "com_cds": 7,
+   "cds_mes": 68160.63,
+   "veic_proprios": 1,
+   "veic_locados": 1,
+   "pago_ate_12_11": 248983.21,
+   "cds_jan_out": 681606.3,
+   "projecao_nov_dez": 241033.07,
+   "total_2026": 1171622.59,
+   "saldo_empenho": 39084.78,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 68160.63,
+     "ate_12_11": 681606.3,
+     "projecao": 204481.89,
+     "total_2026": 886088.19,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 12166.54,
+     "ate_12_11": 124425.88,
+     "projecao": 13953.35,
+     "total_2026": 138379.23,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1178.51,
+     "ate_12_11": 11658.9,
+     "projecao": 2357.03,
+     "total_2026": 14015.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 6330.58,
+     "ate_12_11": 38438.78,
+     "projecao": 12661.15,
+     "total_2026": 51099.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 42.51,
+     "ate_12_11": 2784.3,
+     "projecao": 85.01,
+     "total_2026": 2869.31,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 932341.99,
+     "2028": 978026.75,
+     "2029": 1017147.82,
+     "2030": 1057833.73
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 166421.23,
+     "2028": 174575.87,
+     "2029": 181558.91,
+     "2030": 188821.27
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 14880.38,
+     "2028": 15609.52,
+     "2029": 16233.9,
+     "2030": 16883.26
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 79932.39,
+     "2028": 83849.08,
+     "2029": 87203.04,
+     "2030": 90691.16
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 536.72,
+     "2028": 563.02,
+     "2029": 585.54,
+     "2030": 608.96
+    },
+    "Total da regional": {
+     "2027": 1284896.53,
+     "2028": 1347856.46,
+     "2029": 1401770.72,
+     "2030": 1457841.55
+    }
+   },
+   "polo": "Cacoal",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Cacoal",
+    "Ministro Andreazza",
+    "Espigão do Oeste",
+    "Pimenta Bueno",
+    "Primavera de Rondônia",
+    "São Felipe do Oeste",
+    "Parecis"
+   ],
+   "vinculos": {
+    "cedido_federal": 0,
+    "cedido_municipal": 2,
+    "comissionado": 5,
+    "efetivo_estadual": 1,
+    "outro": 0
+   },
+   "cds": {
+    "CDS-15": 1,
+    "CDS-14": 2,
+    "CDS-13": 1,
+    "CDS-5": 2,
+    "CDS-2": 1
+   }
+  },
+  {
+   "codigo": "SERVII",
+   "nome": "SER VII (Vilhena)",
+   "sede": "Vilhena",
+   "servidores": 11,
+   "com_cds": 9,
+   "cds_mes": 48109.29,
+   "veic_proprios": 1,
+   "veic_locados": 1,
+   "pago_ate_12_11": 98401.73,
+   "cds_jan_out": 481092.9,
+   "projecao_nov_dez": 156928.69,
+   "total_2026": 736423.32,
+   "saldo_empenho": 41624.5,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 48109.29,
+     "ate_12_11": 481092.9,
+     "projecao": 144327.87,
+     "total_2026": 625420.77,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1178.51,
+     "ate_12_11": 11658.9,
+     "projecao": 2357.03,
+     "total_2026": 14015.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 1316.13,
+     "ate_12_11": 11239.06,
+     "projecao": 2632.26,
+     "total_2026": 13871.31,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 58.45,
+     "ate_12_11": 3828.41,
+     "projecao": 116.9,
+     "total_2026": 3945.31,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 658067.73,
+     "2028": 690313.05,
+     "2029": 717925.58,
+     "2030": 746642.6
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 14880.38,
+     "2028": 15609.52,
+     "2029": 16233.9,
+     "2030": 16883.26
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 16617.96,
+     "2028": 17432.24,
+     "2029": 18129.53,
+     "2030": 18854.71
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 737.98,
+     "2028": 774.15,
+     "2029": 805.11,
+     "2030": 837.32
+    },
+    "Total da regional": {
+     "2027": 781087.88,
+     "2028": 819361.18,
+     "2029": 852135.63,
+     "2030": 886221.06
+    }
+   },
+   "polo": "Vilhena",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Vilhena",
+    "Chupinguaia",
+    "Colorado do Oeste",
+    "Cerejeiras",
+    "Cabixi",
+    "Pimenteiras do Oeste",
+    "Corumbiara"
+   ],
+   "vinculos": {
+    "cedido_federal": 1,
+    "cedido_municipal": 0,
+    "comissionado": 7,
+    "efetivo_estadual": 3,
+    "outro": 0
+   },
+   "cds": {
+    "CDS-13": 3,
+    "CDS-4": 2,
+    "CDS-3": 2,
+    "CDS-2": 1,
+    "CDS-1": 1
+   }
+  },
+  {
+   "codigo": "SERVIII",
+   "nome": "SER VIII (Rolim de Moura)",
+   "sede": "Rolim de Moura",
+   "servidores": 12,
+   "com_cds": 12,
+   "cds_mes": 53994.05,
+   "veic_proprios": 2,
+   "veic_locados": 1,
+   "pago_ate_12_11": 173116.03,
+   "cds_jan_out": 539940.5,
+   "projecao_nov_dez": 192634.9,
+   "total_2026": 905691.44,
+   "saldo_empenho": 51100.56,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 53994.05,
+     "ate_12_11": 539940.5,
+     "projecao": 161982.15,
+     "total_2026": 701922.65,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 8459.35,
+     "ate_12_11": 69009.45,
+     "projecao": 16918.69,
+     "total_2026": 85928.14,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1767.77,
+     "ate_12_11": 17488.35,
+     "projecao": 3535.54,
+     "total_2026": 21023.89,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 1288.18,
+     "ate_12_11": 10766.43,
+     "projecao": 2576.36,
+     "total_2026": 13342.78,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 63.76,
+     "ate_12_11": 4176.45,
+     "projecao": 127.52,
+     "total_2026": 4303.97,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 738563.01,
+     "2028": 774752.6,
+     "2029": 805742.7,
+     "2030": 837972.41
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 115712.02,
+     "2028": 121381.91,
+     "2029": 126237.18,
+     "2030": 131286.67
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 22320.57,
+     "2028": 23414.28,
+     "2029": 24350.85,
+     "2030": 25324.88
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 16265.05,
+     "2028": 17062.04,
+     "2029": 17744.52,
+     "2030": 18454.31
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 805.07,
+     "2028": 844.52,
+     "2029": 878.3,
+     "2030": 913.44
+    },
+    "Total da regional": {
+     "2027": 984449.55,
+     "2028": 1032687.58,
+     "2029": 1073995.08,
+     "2030": 1116954.88
+    }
+   },
+   "polo": "Rolim de Moura",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Rolim de Moura",
+    "Novo Horizonte do Oeste",
+    "Santa Luzia do Oeste",
+    "Alto Alegre dos Parecis",
+    "Nova Brasilândia do Oeste",
+    "Alta Floresta do Oeste"
+   ],
+   "vinculos": {
+    "cedido_federal": 0,
+    "cedido_municipal": 1,
+    "comissionado": 0,
+    "efetivo_estadual": 1,
+    "outro": 1
+   },
+   "cds": {
+    "CDS-13": 1,
+    "CDS-10": 1,
+    "CDS-9": 1,
+    "CDS-8": 1,
+    "CDS-7": 2,
+    "CDS-5": 2,
+    "CDS-4": 2,
+    "CDS-3": 1,
+    "CDS-2": 1
+   }
+  },
+  {
+   "codigo": "SERIX",
+   "nome": "SER IX (São Francisco do Guaporé)",
+   "sede": "São Francisco do Guaporé",
+   "servidores": 4,
+   "com_cds": 4,
+   "cds_mes": 19417.39,
+   "veic_proprios": 1,
+   "veic_locados": 1,
+   "pago_ate_12_11": 195179.91,
+   "cds_jan_out": 194173.9,
+   "projecao_nov_dez": 94157.74,
+   "total_2026": 483511.55,
+   "saldo_empenho": 66284.78,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 19417.39,
+     "ate_12_11": 194173.9,
+     "projecao": 58252.17,
+     "total_2026": 252426.07,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 4575.12,
+     "ate_12_11": 43214.73,
+     "projecao": 9150.24,
+     "total_2026": 52364.97,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1178.51,
+     "ate_12_11": 11658.9,
+     "projecao": 2357.03,
+     "total_2026": 14015.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 3000,
+     "ate_12_11": 28800,
+     "projecao": 4200,
+     "total_2026": 33000,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 6330.58,
+     "ate_12_11": 38438.78,
+     "projecao": 12661.15,
+     "total_2026": 51099.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 21.25,
+     "ate_12_11": 1392.15,
+     "projecao": 42.51,
+     "total_2026": 1434.66,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 265602.71,
+     "2028": 278617.24,
+     "2029": 289761.93,
+     "2030": 301352.41
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 62581.24,
+     "2028": 65647.72,
+     "2029": 68273.63,
+     "2030": 71004.57
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 14880.38,
+     "2028": 15609.52,
+     "2029": 16233.9,
+     "2030": 16883.26
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 37879.2,
+     "2028": 39735.28,
+     "2029": 41324.69,
+     "2030": 42977.68
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 79932.39,
+     "2028": 83849.08,
+     "2029": 87203.04,
+     "2030": 90691.16
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 268.36,
+     "2028": 281.51,
+     "2029": 292.77,
+     "2030": 304.48
+    },
+    "Total da regional": {
+     "2027": 551928.09,
+     "2028": 578972.57,
+     "2029": 602131.47,
+     "2030": 626216.73
+    }
+   },
+   "polo": "Costa Marques",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Costa Marques",
+    "São Francisco do Guaporé",
+    "São Miguel do Guaporé",
+    "Seringueiras"
+   ],
+   "vinculos": {
+    "cedido_federal": 0,
+    "cedido_municipal": 1,
+    "comissionado": 3,
+    "efetivo_estadual": 0,
+    "outro": 0
+   },
+   "cds": {
+    "CDS-13": 1,
+    "CDS-4": 2,
+    "CDS-3": 1
+   }
+  },
+  {
+   "codigo": "SERX",
+   "nome": "SER X (Guajará-Mirim)",
+   "sede": "Guajará-Mirim",
+   "servidores": 13,
+   "com_cds": 13,
+   "cds_mes": 49697.63,
+   "veic_proprios": 1,
+   "veic_locados": 1,
+   "pago_ate_12_11": 126297.52,
+   "cds_jan_out": 496976.3,
+   "projecao_nov_dez": 171743.86,
+   "total_2026": 795017.68,
+   "saldo_empenho": 39084.78,
+   "tipos": {
+    "Pessoal comissionado (CDS)": {
+     "mensal": 49697.63,
+     "ate_12_11": 496976.3,
+     "projecao": 149092.89,
+     "total_2026": 646069.19,
+     "natureza": "Cálculo (quadro atual)"
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Locação de veículos": {
+     "mensal": 6870.0,
+     "ate_12_11": 68700.0,
+     "projecao": 6870.0,
+     "total_2026": 75570.0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Combustível": {
+     "mensal": 1178.51,
+     "ate_12_11": 11658.9,
+     "projecao": 2357.03,
+     "total_2026": 14015.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção de veículos": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Aluguel de imóvel": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Energia, água e taxas do imóvel": {
+     "mensal": 6330.58,
+     "ate_12_11": 38438.78,
+     "projecao": 12661.15,
+     "total_2026": 51099.93,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Internet": {
+     "mensal": 320.0,
+     "ate_12_11": 2975.36,
+     "projecao": 624.64,
+     "total_2026": 3600,
+     "natureza": "Pago (SIGEF) e projeção"
+    },
+    "Manutenção predial": {
+     "mensal": 0,
+     "ate_12_11": 0,
+     "projecao": 0,
+     "total_2026": 0,
+     "natureza": "Não identificado na base"
+    },
+    "Diárias": {
+     "mensal": 69.07,
+     "ate_12_11": 4524.49,
+     "projecao": 138.15,
+     "total_2026": 4662.63,
+     "natureza": "Pago (SIGEF) e projeção"
+    }
+   },
+   "projecao": {
+    "Pessoal comissionado (CDS)": {
+     "2027": 679794.0,
+     "2028": 713103.91,
+     "2029": 741628.06,
+     "2030": 771293.19
+    },
+    "Pessoal cedido (ressarcimento)": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Locação de veículos": {
+     "2027": 86743.37,
+     "2028": 90993.79,
+     "2029": 94633.54,
+     "2030": 98418.89
+    },
+    "Combustível": {
+     "2027": 14880.38,
+     "2028": 15609.52,
+     "2029": 16233.9,
+     "2030": 16883.26
+    },
+    "Manutenção de veículos": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Aluguel de imóvel": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Energia, água e taxas do imóvel": {
+     "2027": 79932.39,
+     "2028": 83849.08,
+     "2029": 87203.04,
+     "2030": 90691.16
+    },
+    "Internet": {
+     "2027": 4040.45,
+     "2028": 4238.43,
+     "2029": 4407.97,
+     "2030": 4584.29
+    },
+    "Manutenção predial": {
+     "2027": 0,
+     "2028": 0,
+     "2029": 0,
+     "2030": 0
+    },
+    "Diárias": {
+     "2027": 872.16,
+     "2028": 914.9,
+     "2029": 951.5,
+     "2030": 989.56
+    },
+    "Total da regional": {
+     "2027": 866262.75,
+     "2028": 908709.63,
+     "2029": 945058.01,
+     "2030": 982860.33
+    }
+   },
+   "polo": "Guajará-Mirim",
+   "titular": "Secretário-Executivo Regional, CDS-13",
+   "municipios": [
+    "Guajará-Mirim",
+    "Nova Mamoré"
+   ],
+   "vinculos": {
+    "cedido_federal": 0,
+    "cedido_municipal": 1,
+    "comissionado": 0,
+    "efetivo_estadual": 0,
+    "outro": 2
+   },
+   "cds": {
+    "CDS-13": 1,
+    "CDS-9": 2,
+    "CDS-8": 1,
+    "CDS-5": 1,
+    "CDS-4": 3,
+    "CDS-3": 1,
+    "CDS-2": 4
+   }
+  }
+ ]
+}

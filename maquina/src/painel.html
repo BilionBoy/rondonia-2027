@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Custo da máquina · Rondônia</title>
+<style>
+/*__FONTES__*/
+/*__BASE_CSS__*/
+:root{--c1:var(--azul);--c2:#168821;--c3:#c2850c;--c4:#8a2be2;--c5:#5f6b7f;--c6:#2a9d8f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c2:#3fb950;--c3:#e3a23b;--c4:#b083f0;--c6:#4fc3b4}}
+:root[data-theme="dark"]{--c2:#3fb950;--c3:#e3a23b;--c4:#b083f0;--c6:#4fc3b4}
+.navp{display:flex;gap:8px;margin-left:auto}
+.navp button{all:unset;cursor:pointer;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--hair);font-size:18px;color:var(--ink)}
+.navp button:hover{border-color:var(--azul);color:var(--azul)}
+.navp button[disabled]{opacity:.35;cursor:default}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--mute);margin:4px 0 6px}
+.legenda i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.mapa path{stroke:var(--bg);stroke-width:.7;cursor:pointer;transition:opacity .15s}
+.mapa .reg.apagado path{opacity:.25}
+.mapa text{font-size:12px;font-weight:650;fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--bg);stroke-width:3px}
+.metodo{margin:6px 0 0;padding-left:20px;line-height:1.55;font-size:15px;color:var(--ink);overflow:auto}
+.metodo li{margin-bottom:8px}
+@media (max-width:860px){.rodape{flex-wrap:wrap;gap:10px}.rodape .fonte{flex:1 1 100%}}
+.clic{cursor:pointer;border-radius:8px;transition:background .15s}
+.clic:hover,.clic.sel{background:var(--azul-fundo)}
+.estat .clic{padding:4px 8px;margin:-4px -8px}
+.estat .clic .k::after,.numero.clic .s::after{content:" ⓘ";color:var(--azul);font-weight:700}
+.numero.clic{padding:6px 10px;margin:-6px -10px}
+.decisoes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;overflow:auto;padding:2px}
+.dec{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:6px;border:1px solid var(--hair);border-radius:12px;padding:14px 16px;background:var(--bg)}
+.dec:hover,.dec.sel{border-color:var(--azul);box-shadow:0 0 0 2px var(--azul-fundo)}
+.dec .q{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c3)}
+.dec .v{font-size:26px;font-weight:780;letter-spacing:-.02em;color:var(--azul);line-height:1.1}
+.dec .t{font-size:15px;font-weight:650;color:var(--ink);line-height:1.35}
+.dec .d{font-size:13.5px;color:var(--mute);line-height:1.45}
+.dec.urgente .q{color:#c0392b}
+</style>
+</head>
+<body>
+<nav class="trilha" id="trilha"></nav>
+<main class="tela" id="tela">
+  <section class="esq" id="esq"></section>
+  <aside class="dir">
+    <div class="dir-cab"><div class="topo-cab"><h3>As provas</h3><span class="botoes"><button class="btn-dados" id="btn-dados" type="button">▦ Ver os dados de origem</button></span></div><p id="provas-sub"></p><div class="aviso" id="aviso" hidden></div><div class="filtro" id="filtro"></div></div>
+    <div class="provas" id="provas"></div>
+  </aside>
+</main>
+<div class="cortina" id="cortina"></div>
+<aside class="painel" id="painel" aria-hidden="true">
+  <button class="painel-x" id="painel-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="painel-tit"></h3><input id="painel-busca" type="search" placeholder="Buscar órgão, empresa ou CNPJ…" aria-label="Buscar"></div>
+  <div class="provas" id="painel-lista"></div>
+</aside>
+<aside class="painel dados" id="dados" aria-hidden="true">
+  <button class="painel-x" id="dados-x" type="button" aria-label="Fechar">✕</button>
+  <div class="painel-cab"><h3 id="dados-tit"></h3></div>
+  <div class="dados-abas" id="dados-abas"></div>
+  <div class="ficha-fonte" id="dados-ficha"></div>
+  <div class="dados-nota" id="dados-nota"></div>
+  <div class="dados-ferr"><input id="dados-busca" type="search" placeholder="Buscar em todas as colunas…" aria-label="Buscar nos dados"><span class="cont" id="dados-cont"></span><button class="btn-dados contorno" id="dados-csv" type="button">⤓ Baixar CSV</button></div>
+  <div class="dados-tab" id="dados-tab"></div>
+  <div class="dados-pag" id="dados-pag"></div>
+</aside>
+<div id="dica" role="tooltip"></div>
+
+<script>
+const D = /*__DADOS__*/null;
+/*__BASE_JS__*/
+
+/*__TELAS__*/
+</script>
+</body>
+</html>

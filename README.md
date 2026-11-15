@@ -1,6 +1,6 @@
 # Rondônia em números
 
-Painel sobre o orçamento de Rondônia e a transição de governo, em cinco abas. É feito para alguém sem tempo: números grandes, uma ideia por tela, e tudo clicável para quem quiser se aprofundar.
+Painel sobre o orçamento de Rondônia e a transição de governo, em seis abas. É feito para alguém sem tempo: números grandes, uma ideia por tela, e tudo clicável para quem quiser se aprofundar.
 
 | Aba | Arquivo no ar | O que mostra |
 |---|---|---|
@@ -8,9 +8,10 @@ Painel sobre o orçamento de Rondônia e a transição de governo, em cinco abas
 | O que não aparece | `site/nao-aparece.html` | onde o dinheiro sai do retrato público, em 5 telas |
 | Convênios da SEAS | `site/convenios.html` | convênios e termos de fomento da SEAS, 2019–2026 |
 | Quem vende ao Estado | `site/empresas.html` | todas as empresas que receberam empenho em 2023–2026, por ano, órgão, modalidade e tema (tecnologia, frota) |
+| Custo da máquina | `site/custo-da-maquina.html` | folha, servidores por órgão, veículos, imóveis alugados, 2025 × 2026 e secretarias regionais, com o que decidir em 2027 |
 | Tecnologia no Estado | `site/tecnologia.html` | todos os contratos de tecnologia do Estado, 2023–2026: por órgão, tipo, função repetida, vencimento e empresa |
 
-**A raiz do site (`/`) abre o painel com as cinco abas.** `site/index.html` e `site/painel.html` são o mesmo arquivo.
+**A raiz do site (`/`) abre o painel com as seis abas.** `site/index.html` e `site/painel.html` são o mesmo arquivo.
 
 - **No ar:** a pasta `site/`, publicada na Vercel com Root Directory = `site`. As páginas levam `noindex`.
 - **Para gerar tudo:** `python3 build.py && python3 nao-aparece/build_s3.py && python3 convenios/build_convenios.py && python3 tecnologia/build_tecnologia.py`.
@@ -155,3 +156,20 @@ As abas pesadas (Tecnologia e Empresas) só carregam quando abertas. Regras em [
 ## Para depurar
 
 O endereço `?foto` desliga as animações. `&tipo=N`, `&mun=N`, `&org=SIGLA`, `&lista=1`, `&restos=1` e `&cargos=1` abrem as fichas direto.
+
+## Sexta aba (painel): "Custo da máquina" (14/11/2026, para a equipe de transição)
+
+Quanto custa manter o Executivo funcionando, em seis visões: resumo, folha de pagamento, servidores por órgão, veículos (combustível, manutenção e locação), imóveis alugados e secretarias executivas regionais. Também é a tela 12 do Observatório no SIPRE (`/observatorio/custo-da-maquina`).
+
+- **Folha:** `maquina/extrai_folha.py` lê a planilha da SEGEP de outubro/2026 (`../quadro-servidores/`, versão "Atualizado") e grava só totais em `dados-fonte/s8_folha_2026_10.json`. Precisa de `openpyxl`. O anual oficial vem do RGF (`rgf_executivo_2026_q2_siconfi.json`).
+- **Veículos e imóveis:** `maquina/coleta_pagamentos.py 2026 2025` baixa todas as ordens bancárias do Portal (Pagamentos de fornecedores), que trazem o **subelemento** da despesa. É o mesmo dado do extrato do SIGEF, em fonte pública. Rode com o IPv4 forçado: `python3 -u ../estudos/dossies/rondonia-rural-show/scripts/rodar_v4.py maquina/coleta_pagamentos.py 2026 2025`.
+- **Regionais:** `maquina/extrai_regionais.py` lê a planilha de execução das regionais (v04, SIGEF da SUGESP).
+- **Para gerar:** `python3 maquina/build_maquina.py`. Grava:
+  - `maquina/dados.json`;
+  - `esbocos/custo-da-maquina.html`: **o arquivo único para entregar**, no modelo das abas do painel (trilha de 6 etapas, "As provas" e "Ver os dados de origem" com busca e CSV, mapa das regionais). Usa o visual de `convenios/src/_base.*` e o modelo em `maquina/src/painel.html`;
+  - `esbocos/maquina.html` (versão no visual do Observatório);
+  - `maquina/sipre/`, que `maquina/copiar_para_sipre.sh` leva ao SIPRE.
+- **Não vai para `site/`** sem decisão expressa: a base de pessoal veio como restrita, mesmo que a tela só mostre totais.
+- `maquina/custeio.py` é a classificação das notas de 2023 a 2026 pelo histórico. Ficou como conferência; a tela usa os pagamentos por subelemento.
+
+Regras e fontes estão na própria tela (visão "Método e fontes") e em [FONTES.md](FONTES.md), seção 2f.

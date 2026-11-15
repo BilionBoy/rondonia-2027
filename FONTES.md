@@ -122,6 +122,22 @@ Ordem: `python3 coleta_contratos.py` → `python3 tecnologia/classificar.py` (tr
 - **Modalidade:** a do detalhe da nota.
 - **Sem detalhe:** notas abaixo de R$ 20 mil (fora dos elementos de TI) aparecem como "nota não aberta".
 
+## 2f. Custo da máquina (sexta aba), 14/11/2026
+
+| Arquivo | O que é | Origem |
+|---|---|---|
+| `dados-fonte/s8_folha_2026_10.json` | Folha de outubro/2026 do Executivo agregada por vínculo, órgão, CDS e faixa (sem matrícula) | SEGEP, Relação de Servidores Ativos e Afastados 10/2026 (versão "Atualizado", com unidade e departamento) e Servidores Aguardando Aposentadoria 10/2026, em `../quadro-servidores/` |
+| `dados-fonte/s8_pagamentos_2026.json`, `s8_pagamentos_2025.json` | Todas as ordens bancárias, com subelemento, UG, credor, nota, OB, data e valor | POST `/fornecedor/getempenhofornecedores` (`DataInicial`, `DataFinal`, `start`, `length` até 2000), mês a mês, conferido com `recordsTotal` |
+| `dados-fonte/s8_regionais_2026.json` | Custo das 10 SER e da COOREG em 2026 e projeção 2027-2030 | Planilha de execução v04 de 13/11/2026 (SIGEF, UG 110009, posição 12/11) |
+| `dados-fonte/s8_custeio.json` | Conferência: notas de 2023-2026 classificadas pelo histórico (combustível, manutenção, locação, aluguel) | Lista e ficha das notas (`s3_empenhos_*`, `s5_detalhes_por_chave_*`) |
+
+Cuidados:
+- **Subelemento só no pagamento.** O filtro de empenhos do portal aceita o elemento (6 dígitos) e ignora o subelemento: `33903001` devolve o mesmo que `33903000`. A ficha da nota traz "Item de despesa: Indefinido". O subelemento está nos pagamentos de fornecedores (`especificacaoDespesa`).
+- **Elemento de 2026 em `s5_elemento_por_nota.json` não serve:** foi coletado com `?id=` anteriores à recarga de 15/10, e ids reaproveitados levam a outras notas.
+- **Em 14/11/2026 a lista de empenhos de 2026 estava em recarga** (só jan-abr, 22.689 notas contra 62.988 em 30/10). Os pagamentos de fornecedores estavam completos.
+- **Pago de 2026 pelas notas de 2026 subestima o aluguel:** parte é paga com notas de 2025 (restos a pagar). Por isso vale a ordem bancária do ano, qualquer que seja o ano da nota.
+- **Empenhado de cartão de combustível e manutenção** fica abaixo do real (as notas estimativas não somam o reforço; ver seção 5). Por isso o pago.
+
 ## 3. Dados das 9 etapas (coleta de 07/10/2026)
 
 | Arquivo | Fonte |

@@ -1,0 +1,130 @@
+{
+ "meta": {
+  "fonte": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/rgf",
+  "consulta": "RGF, Anexo 1, Poder Executivo de Rondônia (id_ente 11), quadrimestral",
+  "coletado_em": "2026-11-14 23:58"
+ },
+ "dados": [
+  {
+   "ano": 2023,
+   "quadrimestre": 1,
+   "dtp": 4633213931.02,
+   "pct_rcl": 39.43,
+   "bruta": 5426575220,
+   "rcl_ajustada": 11751863272.85,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": null
+  },
+  {
+   "ano": 2023,
+   "quadrimestre": 2,
+   "dtp": 4746186121.84,
+   "pct_rcl": 39.93,
+   "bruta": 5620034248.49,
+   "rcl_ajustada": 11886267028.91,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": null
+  },
+  {
+   "ano": 2023,
+   "quadrimestre": 3,
+   "dtp": 4788916183.08,
+   "pct_rcl": 38.23,
+   "bruta": 5741983031.13,
+   "rcl_ajustada": 12525048292.81,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": null
+  },
+  {
+   "ano": 2024,
+   "quadrimestre": 1,
+   "dtp": 4968821703.23,
+   "pct_rcl": 37.86,
+   "bruta": 5997670238.93,
+   "rcl_ajustada": 13124505108.33,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  },
+  {
+   "ano": 2024,
+   "quadrimestre": 2,
+   "dtp": 5089667734.74,
+   "pct_rcl": 37.11,
+   "bruta": 6244050055.71,
+   "rcl_ajustada": 13715017261.99,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  },
+  {
+   "ano": 2024,
+   "quadrimestre": 3,
+   "dtp": 5308221759.41,
+   "pct_rcl": 37.41,
+   "bruta": 6678349033.08,
+   "rcl_ajustada": 14190334424.14,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  },
+  {
+   "ano": 2025,
+   "quadrimestre": 1,
+   "dtp": 5516499003.13,
+   "pct_rcl": 37.7,
+   "bruta": 6924477397.58,
+   "rcl_ajustada": 14631654010.74,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  },
+  {
+   "ano": 2025,
+   "quadrimestre": 2,
+   "dtp": 5736436913.53,
+   "pct_rcl": 37.55,
+   "bruta": 7214209080.1,
+   "rcl_ajustada": 15275356745.34,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  },
+  {
+   "ano": 2025,
+   "quadrimestre": 3,
+   "dtp": 6082163073.21,
+   "pct_rcl": 38.49,
+   "bruta": 7561085767.22,
+   "rcl_ajustada": 15800580902.64,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  },
+  {
+   "ano": 2026,
+   "quadrimestre": 1,
+   "dtp": 6317552242.97,
+   "pct_rcl": 38.82,
+   "bruta": 7882688179.34,
+   "rcl_ajustada": 16275323813.47,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  },
+  {
+   "ano": 2026,
+   "quadrimestre": 2,
+   "dtp": 6578737963.06,
+   "pct_rcl": 37.92,
+   "bruta": 8316807223.12,
+   "rcl_ajustada": 17349092801.32,
+   "limite_maximo": 49,
+   "limite_prudencial": 46.55,
+   "limite_alerta": 44.1
+  }
+ ]
+}

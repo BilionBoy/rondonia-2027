@@ -1,0 +1,8765 @@
+{
+ "meta": {
+  "fonte": "SEGEP, Relação de Servidores Ativos e Afastados, referência 10/2026 (versão Atualizado, com unidade e departamento)",
+  "aposentadoria": "SEGEP, Servidores Aguardando Aposentadoria, referência 10/2026",
+  "regra": "Uma pessoa por matrícula; bruto = salário bruto da matrícula; custo do CDS = verbas de representação, vencimento, diferença e indenização de CDS. Sem encargos patronais."
+ },
+ "total": {
+  "matriculas": 61322,
+  "bruto": 567063065.87,
+  "descontos": 189704790.2,
+  "ativos": 49838,
+  "bruto_ativos": 449496891.17,
+  "inativos": 11484,
+  "bruto_inativos": 117566174.7,
+  "afastados": 3156,
+  "com_cds": 8549,
+  "custo_cds": 34637751.47,
+  "sem_unidade": 3641,
+  "bruto_sem_unidade": 21464580.44,
+  "bruto_difere_proventos": 286
+ },
+ "grupos": [
+  {
+   "grupo": "inativo",
+   "nome": "Aposentados e pensionistas",
+   "pessoas": 11484,
+   "bruto": 117566174.7,
+   "afastados": 0,
+   "com_cds": 7
+  },
+  {
+   "grupo": "militar",
+   "nome": "Militares (PM e Bombeiros)",
+   "pessoas": 5558,
+   "bruto": 67008800.79,
+   "afastados": 132,
+   "com_cds": 157
+  },
+  {
+   "grupo": "efetivo",
+   "nome": "Efetivos civis",
+   "pessoas": 26582,
+   "bruto": 283502375.91,
+   "afastados": 2799,
+   "com_cds": 2348
+  },
+  {
+   "grupo": "comissionado",
+   "nome": "Comissionados sem vínculo",
+   "pessoas": 5809,
+   "bruto": 32289740.63,
+   "afastados": 37,
+   "com_cds": 5529
+  },
+  {
+   "grupo": "temporario",
+   "nome": "Temporários e CLT",
+   "pessoas": 9581,
+   "bruto": 59270431.69,
+   "afastados": 186,
+   "com_cds": 60
+  },
+  {
+   "grupo": "cedido",
+   "nome": "Cedidos e comissionados de outros entes",
+   "pessoas": 1546,
+   "bruto": 4926881.72,
+   "afastados": 2,
+   "com_cds": 297
+  },
+  {
+   "grupo": "apoio",
+   "nome": "Estagiários, bolsistas e voluntários",
+   "pessoas": 651,
+   "bruto": 2339914.07,
+   "afastados": 0,
+   "com_cds": 149
+  },
+  {
+   "grupo": "judicial",
+   "nome": "Pagamento por decisão judicial",
+   "pessoas": 111,
+   "bruto": 158746.36,
+   "afastados": 0,
+   "com_cds": 2
+  }
+ ],
+ "unidades": [
+  {
+   "unidade": "SEDUC",
+   "pessoas": 16736,
+   "bruto": 117433382.47,
+   "afastados": 1702,
+   "com_cds": 1446,
+   "custo_cds": 5081668.67,
+   "grupos": {
+    "temporario": {
+     "pessoas": 4302,
+     "bruto": 22886878.56
+    },
+    "comissionado": {
+     "pessoas": 289,
+     "bruto": 1537577.49
+    },
+    "efetivo": {
+     "pessoas": 12025,
+     "bruto": 92283517.13
+    },
+    "cedido": {
+     "pessoas": 92,
+     "bruto": 307247.21
+    },
+    "militar": {
+     "pessoas": 13,
+     "bruto": 234895.38
+    },
+    "apoio": {
+     "pessoas": 15,
+     "bruto": 183266.7
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CGP",
+     "pessoas": 644
+    },
+    {
+     "nome": "CP",
+     "pessoas": 234
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 190
+    },
+    {
+     "nome": "ADCREPVH",
+     "pessoas": 170
+    },
+    {
+     "nome": "CADCREPVH",
+     "pessoas": 166
+    },
+    {
+     "nome": "NMP",
+     "pessoas": 158
+    },
+    {
+     "nome": "EEEFMCCARI",
+     "pessoas": 119
+    },
+    {
+     "nome": "GADV",
+     "pessoas": 115
+    },
+    {
+     "nome": "EEEFMCAPF",
+     "pessoas": 105
+    },
+    {
+     "nome": "EEEFMBG",
+     "pessoas": 100
+    },
+    {
+     "nome": "EEEFMAT",
+     "pessoas": 97
+    },
+    {
+     "nome": "EEEFMPELS",
+     "pessoas": 96
+    },
+    {
+     "nome": "EEEMPJBC",
+     "pessoas": 89
+    },
+    {
+     "nome": "EEEFMOD",
+     "pessoas": 88
+    },
+    {
+     "nome": "CTPMVI",
+     "pessoas": 86
+    },
+    {
+     "nome": "PROTCRECER",
+     "pessoas": 85
+    },
+    {
+     "nome": "IEECD",
+     "pessoas": 85
+    },
+    {
+     "nome": "EEEFMMAB",
+     "pessoas": 79
+    },
+    {
+     "nome": "EEEFMPC",
+     "pessoas": 78
+    },
+    {
+     "nome": "EEEFMRCARI",
+     "pessoas": 75
+    },
+    {
+     "nome": "EEEFJVSS",
+     "pessoas": 74
+    },
+    {
+     "nome": "EEEFMEMS",
+     "pessoas": 72
+    },
+    {
+     "nome": "EEEFMPJAR",
+     "pessoas": 71
+    },
+    {
+     "nome": "EEEFMCDAI",
+     "pessoas": 71
+    },
+    {
+     "nome": "EEEFMMCF",
+     "pessoas": 71
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 8557
+    },
+    {
+     "nome": "Tecnico Educacional Nivel 2",
+     "pessoas": 4307
+    },
+    {
+     "nome": "Tecnico Educacional Nivel 1",
+     "pessoas": 2100
+    },
+    {
+     "nome": "Professor Classe A - Ch 40",
+     "pessoas": 388
+    },
+    {
+     "nome": "Professor Classe C - Ch25",
+     "pessoas": 350
+    },
+    {
+     "nome": "Professor Classe C - Ch20",
+     "pessoas": 233
+    },
+    {
+     "nome": "Analista Educacional",
+     "pessoas": 129
+    },
+    {
+     "nome": "Professor Classe A - Ch20",
+     "pessoas": 105
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 65
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 49
+    }
+   ]
+  },
+  {
+   "unidade": "PM",
+   "pessoas": 4199,
+   "bruto": 48605674.98,
+   "afastados": 110,
+   "com_cds": 48,
+   "custo_cds": 581834.72,
+   "grupos": {
+    "temporario": {
+     "pessoas": 41,
+     "bruto": 217507.88
+    },
+    "militar": {
+     "pessoas": 4096,
+     "bruto": 48080496.5
+    },
+    "apoio": {
+     "pessoas": 18,
+     "bruto": 33472.64
+    },
+    "efetivo": {
+     "pessoas": 31,
+     "bruto": 250744.13
+    },
+    "cedido": {
+     "pessoas": 10,
+     "bruto": 14526.86
+    },
+    "comissionado": {
+     "pessoas": 3,
+     "bruto": 8926.97
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "2BPMCMT",
+     "pessoas": 235
+    },
+    {
+     "nome": "BPACMT",
+     "pessoas": 223
+    },
+    {
+     "nome": "7BPMCMT",
+     "pessoas": 200
+    },
+    {
+     "nome": "CECMT",
+     "pessoas": 145
+    },
+    {
+     "nome": "5BPMCMT",
+     "pessoas": 111
+    },
+    {
+     "nome": "1BPMCMT",
+     "pessoas": 108
+    },
+    {
+     "nome": "8BPM1CIAOPERACIONAL",
+     "pessoas": 102
+    },
+    {
+     "nome": "6BPMCMT",
+     "pessoas": 100
+    },
+    {
+     "nome": "3BPM1CIAEFETIVO",
+     "pessoas": 95
+    },
+    {
+     "nome": "AJGERAL",
+     "pessoas": 84
+    },
+    {
+     "nome": "3BPMCMT",
+     "pessoas": 75
+    },
+    {
+     "nome": "4BPM1CIAOPERACIONAL",
+     "pessoas": 70
+    },
+    {
+     "nome": "BPTAREFETIVO",
+     "pessoas": 56
+    },
+    {
+     "nome": "BPCHOQ1CIAEFETIVO",
+     "pessoas": 54
+    },
+    {
+     "nome": "10BPM1CIAEFETIVO",
+     "pessoas": 52
+    },
+    {
+     "nome": "8BPM2CIAOPERACIONAL",
+     "pessoas": 45
+    },
+    {
+     "nome": "4BPMCMT",
+     "pessoas": 45
+    },
+    {
+     "nome": "4BPM3CIAEFETIVO",
+     "pessoas": 44
+    },
+    {
+     "nome": "9BPM1CIAPO",
+     "pessoas": 43
+    },
+    {
+     "nome": "BPTRAN1CIA",
+     "pessoas": 42
+    },
+    {
+     "nome": "CTPMXMONITOR",
+     "pessoas": 41
+    },
+    {
+     "nome": "11BPM2CIAOPER",
+     "pessoas": 40
+    },
+    {
+     "nome": "8BPMPROTOCOLO",
+     "pessoas": 38
+    },
+    {
+     "nome": "AJGERALOPERACIONAL",
+     "pessoas": 37
+    },
+    {
+     "nome": "4BPM3CIA2PEL",
+     "pessoas": 36
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "3SGT PM",
+     "pessoas": 1322
+    },
+    {
+     "nome": "CB PM",
+     "pessoas": 1237
+    },
+    {
+     "nome": "2 SARGENTO PM",
+     "pessoas": 581
+    },
+    {
+     "nome": "1SGT PM",
+     "pessoas": 513
+    },
+    {
+     "nome": "STEN PM",
+     "pessoas": 124
+    },
+    {
+     "nome": "1 TEN PM",
+     "pessoas": 79
+    },
+    {
+     "nome": "TCEL PM",
+     "pessoas": 74
+    },
+    {
+     "nome": "MAJ PM",
+     "pessoas": 57
+    },
+    {
+     "nome": "2 TEN PM",
+     "pessoas": 48
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 36
+    }
+   ]
+  },
+  {
+   "unidade": "SESAU",
+   "pessoas": 4120,
+   "bruto": 30119544.15,
+   "afastados": 310,
+   "com_cds": 677,
+   "custo_cds": 2976184.07,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 493,
+     "bruto": 2292881.48
+    },
+    "temporario": {
+     "pessoas": 1082,
+     "bruto": 8414060.78
+    },
+    "efetivo": {
+     "pessoas": 2456,
+     "bruto": 19226204.8
+    },
+    "cedido": {
+     "pessoas": 86,
+     "bruto": 174078.82
+    },
+    "apoio": {
+     "pessoas": 3,
+     "bruto": 12318.27
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GENF",
+     "pessoas": 208
+    },
+    {
+     "nome": "SEMED",
+     "pessoas": 179
+    },
+    {
+     "nome": "CREG",
+     "pessoas": 174
+    },
+    {
+     "nome": "NUC",
+     "pessoas": 151
+    },
+    {
+     "nome": "GRS1",
+     "pessoas": 119
+    },
+    {
+     "nome": "HRE",
+     "pessoas": 113
+    },
+    {
+     "nome": "NFE",
+     "pessoas": 108
+    },
+    {
+     "nome": "NENF",
+     "pessoas": 98
+    },
+    {
+     "nome": "HICD-GENF",
+     "pessoas": 93
+    },
+    {
+     "nome": "NUTI",
+     "pessoas": 85
+    },
+    {
+     "nome": "CAD",
+     "pessoas": 82
+    },
+    {
+     "nome": "GRS3",
+     "pessoas": 72
+    },
+    {
+     "nome": "HICD-GMED",
+     "pessoas": 72
+    },
+    {
+     "nome": "CERO",
+     "pessoas": 67
+    },
+    {
+     "nome": "NICC",
+     "pessoas": 65
+    },
+    {
+     "nome": "NPED",
+     "pessoas": 52
+    },
+    {
+     "nome": "GRS5",
+     "pessoas": 50
+    },
+    {
+     "nome": "GRS2",
+     "pessoas": 49
+    },
+    {
+     "nome": "NREAB",
+     "pessoas": 47
+    },
+    {
+     "nome": "NF",
+     "pessoas": 45
+    },
+    {
+     "nome": "CEAS",
+     "pessoas": 44
+    },
+    {
+     "nome": "GRS4",
+     "pessoas": 44
+    },
+    {
+     "nome": "HICD-NUE",
+     "pessoas": 43
+    },
+    {
+     "nome": "CGAF",
+     "pessoas": 40
+    },
+    {
+     "nome": "GMED",
+     "pessoas": 40
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 1067
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 480
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 430
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 378
+    },
+    {
+     "nome": "SESAU- Auxiliar de Servicos Gerais",
+     "pessoas": 267
+    },
+    {
+     "nome": "Fisioterapeuta",
+     "pessoas": 115
+    },
+    {
+     "nome": "Tecnico em Radiologia",
+     "pessoas": 84
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 79
+    },
+    {
+     "nome": "Auxiliar em Enfermagem",
+     "pessoas": 78
+    },
+    {
+     "nome": "Farmaceutico",
+     "pessoas": 76
+    }
+   ]
+  },
+  {
+   "unidade": "SEJUS",
+   "pessoas": 2618,
+   "bruto": 30006641.54,
+   "afastados": 103,
+   "com_cds": 395,
+   "custo_cds": 1118260.81,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 153,
+     "bruto": 571909.04
+    },
+    "efetivo": {
+     "pessoas": 2419,
+     "bruto": 29210693.15
+    },
+    "temporario": {
+     "pessoas": 29,
+     "bruto": 197069.66
+    },
+    "cedido": {
+     "pessoas": 16,
+     "bruto": 12116.73
+    },
+    "militar": {
+     "pessoas": 1,
+     "bruto": 14852.96
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CADESP",
+     "pessoas": 99
+    },
+    {
+     "nome": "PEJTAA",
+     "pessoas": 93
+    },
+    {
+     "nome": "PEMS",
+     "pessoas": 93
+    },
+    {
+     "nome": "CDPPVH",
+     "pessoas": 90
+    },
+    {
+     "nome": "PEMR",
+     "pessoas": 89
+    },
+    {
+     "nome": "PRAMC",
+     "pessoas": 80
+    },
+    {
+     "nome": "PRRDM",
+     "pessoas": 71
+    },
+    {
+     "nome": "GAPEPVH",
+     "pessoas": 68
+    },
+    {
+     "nome": "PESMM",
+     "pessoas": 67
+    },
+    {
+     "nome": "CDPIB",
+     "pessoas": 67
+    },
+    {
+     "nome": "CDGUM",
+     "pessoas": 57
+    },
+    {
+     "nome": "CRCVHA",
+     "pessoas": 56
+    },
+    {
+     "nome": "PMP",
+     "pessoas": 52
+    },
+    {
+     "nome": "CRARI",
+     "pessoas": 52
+    },
+    {
+     "nome": "CDPGS",
+     "pessoas": 51
+    },
+    {
+     "nome": "CRASK",
+     "pessoas": 45
+    },
+    {
+     "nome": "PEA",
+     "pessoas": 45
+    },
+    {
+     "nome": "CRADO",
+     "pessoas": 45
+    },
+    {
+     "nome": "USUP",
+     "pessoas": 44
+    },
+    {
+     "nome": "CRVDG",
+     "pessoas": 41
+    },
+    {
+     "nome": "GME",
+     "pessoas": 41
+    },
+    {
+     "nome": "PFSVHA",
+     "pessoas": 39
+    },
+    {
+     "nome": "CAPEPI",
+     "pessoas": 38
+    },
+    {
+     "nome": "CAPFARI",
+     "pessoas": 38
+    },
+    {
+     "nome": "PRNMA",
+     "pessoas": 36
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "POLICIAL PENAL",
+     "pessoas": 2168
+    },
+    {
+     "nome": "SEJUS- TECNICO EM ENFERMAGEM",
+     "pessoas": 72
+    },
+    {
+     "nome": "SEJUS- ENFERMEIRO",
+     "pessoas": 45
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 39
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 38
+    },
+    {
+     "nome": "SEJUS- ASSISTENTE SOCIAL",
+     "pessoas": 24
+    },
+    {
+     "nome": "FEASE - AGENTE DE SEGURANCA SOCIOEDUCATIVO",
+     "pessoas": 24
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 22
+    },
+    {
+     "nome": "SEJUS- AGENTE EM ATIV. ADMINIST.",
+     "pessoas": 20
+    },
+    {
+     "nome": "SEJUS- ODONTOLOGO",
+     "pessoas": 15
+    }
+   ]
+  },
+  {
+   "unidade": "PC",
+   "pessoas": 1615,
+   "bruto": 27793038.89,
+   "afastados": 89,
+   "com_cds": 49,
+   "custo_cds": 758648.93,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 1534,
+     "bruto": 27625533.41
+    },
+    "cedido": {
+     "pessoas": 33,
+     "bruto": 7037.86
+    },
+    "comissionado": {
+     "pessoas": 48,
+     "bruto": 160467.62
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "DEFLAG",
+     "pessoas": 84
+    },
+    {
+     "nome": "IML",
+     "pessoas": 61
+    },
+    {
+     "nome": "DGPC",
+     "pessoas": 48
+    },
+    {
+     "nome": "1DP-JIPA",
+     "pessoas": 39
+    },
+    {
+     "nome": "IICC",
+     "pessoas": 37
+    },
+    {
+     "nome": "1DP-ARQM",
+     "pessoas": 34
+    },
+    {
+     "nome": "DENARC",
+     "pessoas": 32
+    },
+    {
+     "nome": "1DP-RLMG",
+     "pessoas": 31
+    },
+    {
+     "nome": "DAF",
+     "pessoas": 29
+    },
+    {
+     "nome": "1DP-GJRM",
+     "pessoas": 29
+    },
+    {
+     "nome": "1DP-VILH",
+     "pessoas": 28
+    },
+    {
+     "nome": "DIP",
+     "pessoas": 26
+    },
+    {
+     "nome": "DETEINF",
+     "pessoas": 25
+    },
+    {
+     "nome": "1DP-MCDO",
+     "pessoas": 24
+    },
+    {
+     "nome": "1DP-COAL",
+     "pessoas": 24
+    },
+    {
+     "nome": "1DP-PMBN",
+     "pessoas": 23
+    },
+    {
+     "nome": "DEAM",
+     "pessoas": 23
+    },
+    {
+     "nome": "CORREGEPOL",
+     "pessoas": 22
+    },
+    {
+     "nome": "DREG-COAL",
+     "pessoas": 21
+    },
+    {
+     "nome": "1DP-OPTO",
+     "pessoas": 21
+    },
+    {
+     "nome": "1DP-PVHO",
+     "pessoas": 20
+    },
+    {
+     "nome": "DREG-VILH",
+     "pessoas": 20
+    },
+    {
+     "nome": "NADIICC",
+     "pessoas": 20
+    },
+    {
+     "nome": "1DP-ALFO",
+     "pessoas": 20
+    },
+    {
+     "nome": "1DP-ESPO",
+     "pessoas": 19
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Agente de Policia",
+     "pessoas": 844
+    },
+    {
+     "nome": "Escrivao de Policia",
+     "pessoas": 339
+    },
+    {
+     "nome": "Delegado Policia",
+     "pessoas": 129
+    },
+    {
+     "nome": "Datiloscopista Policial",
+     "pessoas": 112
+    },
+    {
+     "nome": "Medico Legista",
+     "pessoas": 48
+    },
+    {
+     "nome": "Tecnico em Necropsia",
+     "pessoas": 42
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 34
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 8
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 8
+    }
+   ]
+  },
+  {
+   "unidade": "DETRAN",
+   "pessoas": 1512,
+   "bruto": 26501941.15,
+   "afastados": 101,
+   "com_cds": 676,
+   "custo_cds": 2028288.97,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 423,
+     "bruto": 3993547.56
+    },
+    "efetivo": {
+     "pessoas": 892,
+     "bruto": 19976799.83
+    },
+    "cedido": {
+     "pessoas": 142,
+     "bruto": 1468102.87
+    },
+    "temporario": {
+     "pessoas": 48,
+     "bruto": 952753.81
+    },
+    "militar": {
+     "pessoas": 6,
+     "bruto": 104737.08
+    },
+    "apoio": {
+     "pessoas": 1,
+     "bruto": 6000.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CIRETRANARQM",
+     "pessoas": 32
+    },
+    {
+     "nome": "CIRETRANVILH",
+     "pessoas": 30
+    },
+    {
+     "nome": "GERLOT",
+     "pessoas": 29
+    },
+    {
+     "nome": "PGE",
+     "pessoas": 28
+    },
+    {
+     "nome": "GERPES",
+     "pessoas": 28
+    },
+    {
+     "nome": "CIRETRANOPTO",
+     "pessoas": 25
+    },
+    {
+     "nome": "CIRETRANPMBN",
+     "pessoas": 25
+    },
+    {
+     "nome": "CIRETRANCOAL",
+     "pessoas": 23
+    },
+    {
+     "nome": "PAVZS",
+     "pessoas": 22
+    },
+    {
+     "nome": "CIRETRANRLMA",
+     "pessoas": 22
+    },
+    {
+     "nome": "CIRETRANJIPA",
+     "pessoas": 21
+    },
+    {
+     "nome": "CIRETRANGJRM",
+     "pessoas": 19
+    },
+    {
+     "nome": "PAVJIPA",
+     "pessoas": 18
+    },
+    {
+     "nome": "CCONT",
+     "pessoas": 17
+    },
+    {
+     "nome": "CIRETRANCLRD",
+     "pessoas": 17
+    },
+    {
+     "nome": "CORGERAL",
+     "pessoas": 17
+    },
+    {
+     "nome": "GERDSIS",
+     "pessoas": 17
+    },
+    {
+     "nome": "CRH",
+     "pessoas": 17
+    },
+    {
+     "nome": "DIVEC",
+     "pessoas": 16
+    },
+    {
+     "nome": "PAVZL",
+     "pessoas": 15
+    },
+    {
+     "nome": "CORVV",
+     "pessoas": 15
+    },
+    {
+     "nome": "CIRETRANCERJ",
+     "pessoas": 14
+    },
+    {
+     "nome": "CIRETRANBRTS",
+     "pessoas": 14
+    },
+    {
+     "nome": "CIRETRANJARU",
+     "pessoas": 14
+    },
+    {
+     "nome": "GERSUP",
+     "pessoas": 14
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "AGENTE DE TRANSITO OPERACIONAL",
+     "pessoas": 385
+    },
+    {
+     "nome": "AGENTE DE TRANSITO",
+     "pessoas": 350
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 97
+    },
+    {
+     "nome": "AGENTE DE TRANSITO/TECNICO ADMINISTRATIVO",
+     "pessoas": 46
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 45
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 32
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 31
+    },
+    {
+     "nome": "AGENTE DE TRANSITO AUXILIAR",
+     "pessoas": 28
+    },
+    {
+     "nome": "CHEFE CIRETRAN 3 CATEG",
+     "pessoas": 24
+    },
+    {
+     "nome": "CHEFE DE DIVISAO DA CIRETRAN - 1º CATG",
+     "pessoas": 20
+    }
+   ]
+  },
+  {
+   "unidade": "SEFIN",
+   "pessoas": 620,
+   "bruto": 21988754.52,
+   "afastados": 41,
+   "com_cds": 212,
+   "custo_cds": 1043326.8,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 165,
+     "bruto": 694048.88
+    },
+    "efetivo": {
+     "pessoas": 409,
+     "bruto": 21038183.35
+    },
+    "cedido": {
+     "pessoas": 18,
+     "bruto": 81452.08
+    },
+    "apoio": {
+     "pessoas": 28,
+     "bruto": 175070.21
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "PFWS",
+     "pessoas": 59
+    },
+    {
+     "nome": "GETIC",
+     "pessoas": 56
+    },
+    {
+     "nome": "GEFIS",
+     "pessoas": 43
+    },
+    {
+     "nome": "1DRPVH",
+     "pessoas": 26
+    },
+    {
+     "nome": "PFI",
+     "pessoas": 25
+    },
+    {
+     "nome": "TATE",
+     "pessoas": 25
+    },
+    {
+     "nome": "GAF",
+     "pessoas": 22
+    },
+    {
+     "nome": "GEAR",
+     "pessoas": 20
+    },
+    {
+     "nome": "3DRVHA",
+     "pessoas": 17
+    },
+    {
+     "nome": "GETRI",
+     "pessoas": 16
+    },
+    {
+     "nome": "4DRCAC",
+     "pessoas": 14
+    },
+    {
+     "nome": "5DRRDM",
+     "pessoas": 13
+    },
+    {
+     "nome": "6DRARI",
+     "pessoas": 13
+    },
+    {
+     "nome": "GITEC",
+     "pessoas": 13
+    },
+    {
+     "nome": "NGP",
+     "pessoas": 13
+    },
+    {
+     "nome": "NCEC",
+     "pessoas": 13
+    },
+    {
+     "nome": "COTES",
+     "pessoas": 11
+    },
+    {
+     "nome": "NIF",
+     "pessoas": 11
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 10
+    },
+    {
+     "nome": "AGPVH",
+     "pessoas": 10
+    },
+    {
+     "nome": "GCDP",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASCOINT",
+     "pessoas": 9
+    },
+    {
+     "nome": "NLOG",
+     "pessoas": 9
+    },
+    {
+     "nome": "GEOP",
+     "pessoas": 9
+    },
+    {
+     "nome": "GCBT",
+     "pessoas": 9
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Auditor Fiscal",
+     "pessoas": 226
+    },
+    {
+     "nome": "Analista Tributario da Receita Estadual",
+     "pessoas": 149
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 40
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 37
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 29
+    },
+    {
+     "nome": "VOLUNTARIO PM",
+     "pessoas": 28
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 20
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 14
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 8
+    }
+   ]
+  },
+  {
+   "unidade": "SEM UNIDADE",
+   "pessoas": 3641,
+   "bruto": 21464580.44,
+   "afastados": 84,
+   "com_cds": 0,
+   "custo_cds": 573220.59,
+   "grupos": {
+    "temporario": {
+     "pessoas": 1542,
+     "bruto": 7930775.33
+    },
+    "apoio": {
+     "pessoas": 276,
+     "bruto": 1216610.91
+    },
+    "efetivo": {
+     "pessoas": 1005,
+     "bruto": 7713271.31
+    },
+    "cedido": {
+     "pessoas": 194,
+     "bruto": 392561.85
+    },
+    "judicial": {
+     "pessoas": 96,
+     "bruto": 138309.37
+    },
+    "comissionado": {
+     "pessoas": 248,
+     "bruto": 1259269.24
+    },
+    "militar": {
+     "pessoas": 280,
+     "bruto": 2813782.43
+    }
+   },
+   "departamentos": [],
+   "cargos": [
+    {
+     "nome": "Tecnico Educacional Nivel 2",
+     "pessoas": 1058
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 964
+    },
+    {
+     "nome": "AGENTE TEMPORARIO AMBIENTAL",
+     "pessoas": 216
+    },
+    {
+     "nome": "CARGO PARA PGTO. VERBAS RESCISORIAS",
+     "pessoas": 214
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 129
+    },
+    {
+     "nome": "CB PM",
+     "pessoas": 121
+    },
+    {
+     "nome": "Medico (BOLSISTA)",
+     "pessoas": 112
+    },
+    {
+     "nome": "PREST.VOL.SERVICO ADMINISTRATIVO",
+     "pessoas": 93
+    },
+    {
+     "nome": "PENSIONISTA",
+     "pessoas": 86
+    },
+    {
+     "nome": "3SGT PM",
+     "pessoas": 58
+    }
+   ]
+  },
+  {
+   "unidade": "HB",
+   "pessoas": 1958,
+   "bruto": 16769925.9,
+   "afastados": 110,
+   "com_cds": 69,
+   "custo_cds": 250779.93,
+   "grupos": {
+    "temporario": {
+     "pessoas": 541,
+     "bruto": 3901240.92
+    },
+    "efetivo": {
+     "pessoas": 1194,
+     "bruto": 12370852.24
+    },
+    "cedido": {
+     "pessoas": 167,
+     "bruto": 262825.63
+    },
+    "comissionado": {
+     "pessoas": 46,
+     "bruto": 190866.66
+    },
+    "apoio": {
+     "pessoas": 10,
+     "bruto": 44140.45
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GMED",
+     "pessoas": 183
+    },
+    {
+     "nome": "NUEMA",
+     "pessoas": 122
+    },
+    {
+     "nome": "NUEIN",
+     "pessoas": 121
+    },
+    {
+     "nome": "NUECI",
+     "pessoas": 80
+    },
+    {
+     "nome": "CAHEP",
+     "pessoas": 76
+    },
+    {
+     "nome": "NUTI",
+     "pessoas": 75
+    },
+    {
+     "nome": "ENFCIRU",
+     "pessoas": 67
+    },
+    {
+     "nome": "NUCLICI",
+     "pessoas": 66
+    },
+    {
+     "nome": "NUPACLIN",
+     "pessoas": 64
+    },
+    {
+     "nome": "NUEMED",
+     "pessoas": 63
+    },
+    {
+     "nome": "GNUD",
+     "pessoas": 58
+    },
+    {
+     "nome": "NUPSQ",
+     "pessoas": 57
+    },
+    {
+     "nome": "ORTOENF",
+     "pessoas": 57
+    },
+    {
+     "nome": "NRADIO",
+     "pessoas": 51
+    },
+    {
+     "nome": "NUDIAG",
+     "pessoas": 46
+    },
+    {
+     "nome": "NFISIO",
+     "pessoas": 44
+    },
+    {
+     "nome": "NUCLIMED",
+     "pessoas": 39
+    },
+    {
+     "nome": "NLAV",
+     "pessoas": 35
+    },
+    {
+     "nome": "GFAH",
+     "pessoas": 31
+    },
+    {
+     "nome": "NCME",
+     "pessoas": 31
+    },
+    {
+     "nome": "NUALM",
+     "pessoas": 29
+    },
+    {
+     "nome": "NUBLEI",
+     "pessoas": 29
+    },
+    {
+     "nome": "DORT",
+     "pessoas": 27
+    },
+    {
+     "nome": "NUMO",
+     "pessoas": 27
+    },
+    {
+     "nome": "ACOLHIMENTO",
+     "pessoas": 25
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 690
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 324
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 179
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 166
+    },
+    {
+     "nome": "SESAU- Auxiliar de Servicos Gerais",
+     "pessoas": 107
+    },
+    {
+     "nome": "Auxiliar em Enfermagem",
+     "pessoas": 58
+    },
+    {
+     "nome": "Fisioterapeuta",
+     "pessoas": 50
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 46
+    },
+    {
+     "nome": "Tecnico em Laboratorio",
+     "pessoas": 42
+    },
+    {
+     "nome": "Tecnico em Radiologia",
+     "pessoas": 36
+    }
+   ]
+  },
+  {
+   "unidade": "IDARON",
+   "pessoas": 854,
+   "bruto": 11467935.29,
+   "afastados": 52,
+   "com_cds": 370,
+   "custo_cds": 674902.87,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 230,
+     "bruto": 776365.32
+    },
+    "efetivo": {
+     "pessoas": 513,
+     "bruto": 10039146.5
+    },
+    "temporario": {
+     "pessoas": 49,
+     "bruto": 379963.33
+    },
+    "cedido": {
+     "pessoas": 32,
+     "bruto": 49359.46
+    },
+    "apoio": {
+     "pessoas": 30,
+     "bruto": 223100.68
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "ULSAVPVH",
+     "pessoas": 49
+    },
+    {
+     "nome": "PFVHA",
+     "pessoas": 35
+    },
+    {
+     "nome": "ULSAVCAC",
+     "pessoas": 25
+    },
+    {
+     "nome": "ULSAVJIP",
+     "pessoas": 24
+    },
+    {
+     "nome": "ULSAVRDM",
+     "pessoas": 20
+    },
+    {
+     "nome": "ULSAVARI",
+     "pessoas": 20
+    },
+    {
+     "nome": "ULSAVVHA",
+     "pessoas": 20
+    },
+    {
+     "nome": "ULSAVOPO",
+     "pessoas": 19
+    },
+    {
+     "nome": "ULSAVAFO",
+     "pessoas": 16
+    },
+    {
+     "nome": "ULSAVPIB",
+     "pessoas": 16
+    },
+    {
+     "nome": "ULSAVGUM",
+     "pessoas": 15
+    },
+    {
+     "nome": "ULSAVCDO",
+     "pessoas": 14
+    },
+    {
+     "nome": "ULSAVBUR",
+     "pessoas": 13
+    },
+    {
+     "nome": "ULSAVJAR",
+     "pessoas": 13
+    },
+    {
+     "nome": "ULSAVNBR",
+     "pessoas": 12
+    },
+    {
+     "nome": "ULSAVCER",
+     "pessoas": 12
+    },
+    {
+     "nome": "ULSAVVDP",
+     "pessoas": 11
+    },
+    {
+     "nome": "GIDSA",
+     "pessoas": 11
+    },
+    {
+     "nome": "ULSAVAPA",
+     "pessoas": 11
+    },
+    {
+     "nome": "ULSAVCDJ",
+     "pessoas": 11
+    },
+    {
+     "nome": "ULSAVPME",
+     "pessoas": 11
+    },
+    {
+     "nome": "ULSAVURP",
+     "pessoas": 10
+    },
+    {
+     "nome": "ULSAVMDO",
+     "pessoas": 10
+    },
+    {
+     "nome": "ULSAVEDO",
+     "pessoas": 10
+    },
+    {
+     "nome": "ULSAVSMG",
+     "pessoas": 10
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Idaron - Tecnico Fiscal Estadual Agropecuario",
+     "pessoas": 285
+    },
+    {
+     "nome": "Idaron - Auditor Fiscal Estadual Agropecuario",
+     "pessoas": 103
+    },
+    {
+     "nome": "Idaron - Assist. de Gest. da Def. Agrop.",
+     "pessoas": 71
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 70
+    },
+    {
+     "nome": "Medico Veterinario",
+     "pessoas": 36
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 32
+    },
+    {
+     "nome": "GERENTE DE DEF AGROSILVOPASTORIL 1",
+     "pessoas": 31
+    },
+    {
+     "nome": "VOLUNTARIO PM",
+     "pessoas": 30
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 28
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 26
+    }
+   ]
+  },
+  {
+   "unidade": "CBM",
+   "pessoas": 839,
+   "bruto": 10923559.14,
+   "afastados": 5,
+   "com_cds": 46,
+   "custo_cds": 351176.37,
+   "grupos": {
+    "militar": {
+     "pessoas": 761,
+     "bruto": 10556616.68
+    },
+    "efetivo": {
+     "pessoas": 17,
+     "bruto": 107021.07
+    },
+    "comissionado": {
+     "pessoas": 28,
+     "bruto": 83965.09
+    },
+    "temporario": {
+     "pessoas": 28,
+     "bruto": 158002.5
+    },
+    "cedido": {
+     "pessoas": 3,
+     "bruto": 14329.8
+    },
+    "apoio": {
+     "pessoas": 2,
+     "bruto": 3624.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "1SGB1GBCMD",
+     "pessoas": 69
+    },
+    {
+     "nome": "1SGB2GBCMD",
+     "pessoas": 38
+    },
+    {
+     "nome": "1SGB6GBCMD",
+     "pessoas": 30
+    },
+    {
+     "nome": "1SGB4GBCMD",
+     "pessoas": 30
+    },
+    {
+     "nome": "CPOF",
+     "pessoas": 28
+    },
+    {
+     "nome": "1SGB5GBCMD",
+     "pessoas": 26
+    },
+    {
+     "nome": "3SGB2GBCMD",
+     "pessoas": 24
+    },
+    {
+     "nome": "DATPVH",
+     "pessoas": 23
+    },
+    {
+     "nome": "1SGB3GBCMD",
+     "pessoas": 23
+    },
+    {
+     "nome": "CDPII1",
+     "pessoas": 23
+    },
+    {
+     "nome": "2SGB2GBCMD",
+     "pessoas": 22
+    },
+    {
+     "nome": "2SGB4GBCMD",
+     "pessoas": 21
+    },
+    {
+     "nome": "3SGB1GBCMD",
+     "pessoas": 20
+    },
+    {
+     "nome": "AJGERAL",
+     "pessoas": 19
+    },
+    {
+     "nome": "3SGB4GBCMD",
+     "pessoas": 19
+    },
+    {
+     "nome": "2SGBM1GBCMD",
+     "pessoas": 18
+    },
+    {
+     "nome": "2SGB3GBCMD",
+     "pessoas": 18
+    },
+    {
+     "nome": "CDPII2",
+     "pessoas": 18
+    },
+    {
+     "nome": "4SGBM1GBMCMD",
+     "pessoas": 18
+    },
+    {
+     "nome": "GOACMD",
+     "pessoas": 17
+    },
+    {
+     "nome": "2SGB5GBCMD",
+     "pessoas": 17
+    },
+    {
+     "nome": "2SGB6GBCMD",
+     "pessoas": 17
+    },
+    {
+     "nome": "DLOG",
+     "pessoas": 16
+    },
+    {
+     "nome": "CP",
+     "pessoas": 15
+    },
+    {
+     "nome": "3SGB5GBCMD",
+     "pessoas": 14
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "CB BM",
+     "pessoas": 179
+    },
+    {
+     "nome": "2o. SGT BM",
+     "pessoas": 151
+    },
+    {
+     "nome": "1o. SGT  BM",
+     "pessoas": 134
+    },
+    {
+     "nome": "BM TEMP CLASSE UNICA",
+     "pessoas": 95
+    },
+    {
+     "nome": "Subtenente",
+     "pessoas": 57
+    },
+    {
+     "nome": "2o. Ten BM",
+     "pessoas": 29
+    },
+    {
+     "nome": "Cap BM",
+     "pessoas": 25
+    },
+    {
+     "nome": "1o. Ten  BM",
+     "pessoas": 22
+    },
+    {
+     "nome": "3º SGT BM",
+     "pessoas": 22
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 18
+    }
+   ]
+  },
+  {
+   "unidade": "JP II",
+   "pessoas": 1250,
+   "bruto": 8998176.59,
+   "afastados": 61,
+   "com_cds": 42,
+   "custo_cds": 154475.04,
+   "grupos": {
+    "temporario": {
+     "pessoas": 373,
+     "bruto": 2940135.77
+    },
+    "efetivo": {
+     "pessoas": 798,
+     "bruto": 5903187.56
+    },
+    "cedido": {
+     "pessoas": 54,
+     "bruto": 66539.68
+    },
+    "comissionado": {
+     "pessoas": 25,
+     "bruto": 88313.58
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "JPII-GENF",
+     "pessoas": 460
+    },
+    {
+     "nome": "AMI-NENF",
+     "pessoas": 138
+    },
+    {
+     "nome": "JPII-GMED",
+     "pessoas": 119
+    },
+    {
+     "nome": "JPII-NLAB",
+     "pessoas": 49
+    },
+    {
+     "nome": "JPII-NIR",
+     "pessoas": 44
+    },
+    {
+     "nome": "JPII-NRAD",
+     "pessoas": 44
+    },
+    {
+     "nome": "AMI-DRCLIN",
+     "pessoas": 32
+    },
+    {
+     "nome": "AMI-COORD",
+     "pessoas": 29
+    },
+    {
+     "nome": "JPII-NN",
+     "pessoas": 27
+    },
+    {
+     "nome": "JPII-NFISIO",
+     "pessoas": 23
+    },
+    {
+     "nome": "JPII-GHF",
+     "pessoas": 23
+    },
+    {
+     "nome": "AMI-FISIO",
+     "pessoas": 22
+    },
+    {
+     "nome": "JPII-NH",
+     "pessoas": 21
+    },
+    {
+     "nome": "JPII-NGDP",
+     "pessoas": 20
+    },
+    {
+     "nome": "JPII-NFAT",
+     "pessoas": 18
+    },
+    {
+     "nome": "JPII-NGTI",
+     "pessoas": 12
+    },
+    {
+     "nome": "JPII-NIIS",
+     "pessoas": 12
+    },
+    {
+     "nome": "AMI-NUTRI",
+     "pessoas": 11
+    },
+    {
+     "nome": "JPII-NMAN",
+     "pessoas": 11
+    },
+    {
+     "nome": "JPII-NMP",
+     "pessoas": 9
+    },
+    {
+     "nome": "AMI-NUTRAN",
+     "pessoas": 9
+    },
+    {
+     "nome": "JPII-NS",
+     "pessoas": 9
+    },
+    {
+     "nome": "JPII-NT",
+     "pessoas": 9
+    },
+    {
+     "nome": "JPII-NR",
+     "pessoas": 8
+    },
+    {
+     "nome": "JPII-CCIH",
+     "pessoas": 8
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 528
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 160
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 103
+    },
+    {
+     "nome": "Auxiliar em Enfermagem",
+     "pessoas": 51
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 48
+    },
+    {
+     "nome": "Fisioterapeuta",
+     "pessoas": 48
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 45
+    },
+    {
+     "nome": "Tecnico em Radiologia",
+     "pessoas": 41
+    },
+    {
+     "nome": "Tecnico em Laboratorio",
+     "pessoas": 36
+    },
+    {
+     "nome": "SESAU- Auxiliar de Servicos Gerais",
+     "pessoas": 34
+    }
+   ]
+  },
+  {
+   "unidade": "DER",
+   "pessoas": 1369,
+   "bruto": 7139902.23,
+   "afastados": 69,
+   "com_cds": 578,
+   "custo_cds": 1772893.43,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 502,
+     "bruto": 2831997.8
+    },
+    "efetivo": {
+     "pessoas": 417,
+     "bruto": 2806608.17
+    },
+    "cedido": {
+     "pessoas": 239,
+     "bruto": 612190.2
+    },
+    "apoio": {
+     "pessoas": 85,
+     "bruto": 131410.4
+    },
+    "temporario": {
+     "pessoas": 117,
+     "bruto": 640939.51
+    },
+    "militar": {
+     "pessoas": 9,
+     "bruto": 116756.15
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "13RR",
+     "pessoas": 112
+    },
+    {
+     "nome": "3RR",
+     "pessoas": 66
+    },
+    {
+     "nome": "8RR",
+     "pessoas": 63
+    },
+    {
+     "nome": "2RR",
+     "pessoas": 62
+    },
+    {
+     "nome": "4RR",
+     "pessoas": 59
+    },
+    {
+     "nome": "5RR",
+     "pessoas": 55
+    },
+    {
+     "nome": "CLOG",
+     "pessoas": 50
+    },
+    {
+     "nome": "9RR",
+     "pessoas": 50
+    },
+    {
+     "nome": "11RR",
+     "pessoas": 45
+    },
+    {
+     "nome": "USJIPA",
+     "pessoas": 42
+    },
+    {
+     "nome": "1RR",
+     "pessoas": 42
+    },
+    {
+     "nome": "12RR",
+     "pessoas": 38
+    },
+    {
+     "nome": "USROM",
+     "pessoas": 34
+    },
+    {
+     "nome": "COUSA",
+     "pessoas": 30
+    },
+    {
+     "nome": "7RR",
+     "pessoas": 29
+    },
+    {
+     "nome": "GTOP",
+     "pessoas": 29
+    },
+    {
+     "nome": "USCAC",
+     "pessoas": 27
+    },
+    {
+     "nome": "COF",
+     "pessoas": 26
+    },
+    {
+     "nome": "USVHA",
+     "pessoas": 25
+    },
+    {
+     "nome": "15RR",
+     "pessoas": 23
+    },
+    {
+     "nome": "USJA",
+     "pessoas": 23
+    },
+    {
+     "nome": "CGP",
+     "pessoas": 21
+    },
+    {
+     "nome": "16RR",
+     "pessoas": 21
+    },
+    {
+     "nome": "DIREX",
+     "pessoas": 19
+    },
+    {
+     "nome": "USARI",
+     "pessoas": 17
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 194
+    },
+    {
+     "nome": "DER- Motorista",
+     "pessoas": 120
+    },
+    {
+     "nome": "DER- Auxiliar de Servicos Gerais",
+     "pessoas": 93
+    },
+    {
+     "nome": "ESTAGIARIO  (A)",
+     "pessoas": 85
+    },
+    {
+     "nome": "DER- Operador Maquinas Pesadas",
+     "pessoas": 62
+    },
+    {
+     "nome": "CHEFE DE EQUIPE DE CAMPO",
+     "pessoas": 48
+    },
+    {
+     "nome": "DER- Engenheiro Civil",
+     "pessoas": 38
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 31
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 28
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 27
+    }
+   ]
+  },
+  {
+   "unidade": "EMATER",
+   "pessoas": 816,
+   "bruto": 6797199.37,
+   "afastados": 60,
+   "com_cds": 154,
+   "custo_cds": 665673.16,
+   "grupos": {
+    "temporario": {
+     "pessoas": 696,
+     "bruto": 6401095.85
+    },
+    "comissionado": {
+     "pessoas": 116,
+     "bruto": 392103.52
+    },
+    "cedido": {
+     "pessoas": 4,
+     "bruto": 4000.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CENTRER",
+     "pessoas": 37
+    },
+    {
+     "nome": "ESREGJIP",
+     "pessoas": 28
+    },
+    {
+     "nome": "ESLOCJIP",
+     "pessoas": 22
+    },
+    {
+     "nome": "ESLOCPVH",
+     "pessoas": 21
+    },
+    {
+     "nome": "GETEC",
+     "pessoas": 20
+    },
+    {
+     "nome": "GESER",
+     "pessoas": 18
+    },
+    {
+     "nome": "ESREGPVH",
+     "pessoas": 18
+    },
+    {
+     "nome": "ESLOCJAR",
+     "pessoas": 18
+    },
+    {
+     "nome": "ESLOCOPO",
+     "pessoas": 18
+    },
+    {
+     "nome": "ESLOCAC",
+     "pessoas": 16
+    },
+    {
+     "nome": "ESLOCCDO",
+     "pessoas": 16
+    },
+    {
+     "nome": "ESLOCBUR",
+     "pessoas": 15
+    },
+    {
+     "nome": "ESLOCARI",
+     "pessoas": 15
+    },
+    {
+     "nome": "ESLOCNBO",
+     "pessoas": 14
+    },
+    {
+     "nome": "ESLOCCDJ",
+     "pessoas": 14
+    },
+    {
+     "nome": "ESLOCADO",
+     "pessoas": 13
+    },
+    {
+     "nome": "ESLOCPME",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 12
+    },
+    {
+     "nome": "GEAPE",
+     "pessoas": 12
+    },
+    {
+     "nome": "ESREGRDM",
+     "pessoas": 12
+    },
+    {
+     "nome": "ESLOCPIB",
+     "pessoas": 12
+    },
+    {
+     "nome": "ESLOCMDO",
+     "pessoas": 12
+    },
+    {
+     "nome": "ESLOCVHA",
+     "pessoas": 11
+    },
+    {
+     "nome": "ESLOCRDM",
+     "pessoas": 11
+    },
+    {
+     "nome": "ESLOCNMA",
+     "pessoas": 10
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "EXT.RURAL DE NIVEL SUPERIOR",
+     "pessoas": 158
+    },
+    {
+     "nome": "EXT.RURAL DE NIVEL MEDIO",
+     "pessoas": 134
+    },
+    {
+     "nome": "ADMINISTRATIVO",
+     "pessoas": 91
+    },
+    {
+     "nome": "EXTENSIONISTA SOCIAL N SUPERIO",
+     "pessoas": 70
+    },
+    {
+     "nome": "APOIO/SERVIÇOS GERAIS",
+     "pessoas": 61
+    },
+    {
+     "nome": "TEC.ADM. NIVEL SUPERIOR",
+     "pessoas": 45
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 33
+    },
+    {
+     "nome": "APOIO/VIGIA",
+     "pessoas": 32
+    },
+    {
+     "nome": "EXTENSIONISTA SOCIAL N MEDIO",
+     "pessoas": 26
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 20
+    }
+   ]
+  },
+  {
+   "unidade": "PGE",
+   "pessoas": 305,
+   "bruto": 6094294.29,
+   "afastados": 13,
+   "com_cds": 128,
+   "custo_cds": 533411.89,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 202,
+     "bruto": 5446871.01
+    },
+    "comissionado": {
+     "pessoas": 91,
+     "bruto": 531287.83
+    },
+    "cedido": {
+     "pessoas": 10,
+     "bruto": 58396.39
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 30349.76
+    },
+    "militar": {
+     "pessoas": 1,
+     "bruto": 27389.3
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "NLMS",
+     "pessoas": 26
+    },
+    {
+     "nome": "PT",
+     "pessoas": 17
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 17
+    },
+    {
+     "nome": "PAF",
+     "pessoas": 15
+    },
+    {
+     "nome": "PF",
+     "pessoas": 15
+    },
+    {
+     "nome": "PEJ",
+     "pessoas": 12
+    },
+    {
+     "nome": "PC",
+     "pessoas": 12
+    },
+    {
+     "nome": "PA",
+     "pessoas": 10
+    },
+    {
+     "nome": "CGP",
+     "pessoas": 10
+    },
+    {
+     "nome": "NGDA",
+     "pessoas": 9
+    },
+    {
+     "nome": "CCF",
+     "pessoas": 9
+    },
+    {
+     "nome": "DAL",
+     "pessoas": 8
+    },
+    {
+     "nome": "SESAU",
+     "pessoas": 8
+    },
+    {
+     "nome": "PCDS",
+     "pessoas": 8
+    },
+    {
+     "nome": "PAMB",
+     "pessoas": 7
+    },
+    {
+     "nome": "NEF",
+     "pessoas": 6
+    },
+    {
+     "nome": "PRV",
+     "pessoas": 5
+    },
+    {
+     "nome": "CASACIVIL",
+     "pessoas": 5
+    },
+    {
+     "nome": "SG",
+     "pessoas": 4
+    },
+    {
+     "nome": "DFIN",
+     "pessoas": 4
+    },
+    {
+     "nome": "SEGEP",
+     "pessoas": 4
+    },
+    {
+     "nome": "CDIST",
+     "pessoas": 4
+    },
+    {
+     "nome": "PROT",
+     "pessoas": 4
+    },
+    {
+     "nome": "PPI",
+     "pessoas": 4
+    },
+    {
+     "nome": "TJ",
+     "pessoas": 3
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Procurador do Estado",
+     "pessoas": 86
+    },
+    {
+     "nome": "Analista da Procuradoria - PGE",
+     "pessoas": 44
+    },
+    {
+     "nome": "TEC DA PROCURADORIA SEM ESPECIALIDADE",
+     "pessoas": 33
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR DE DIRETORIA",
+     "pessoas": 8
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 7
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 7
+    },
+    {
+     "nome": "Tec da Procuradoria Tec da Info - PGE",
+     "pessoas": 7
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 7
+    }
+   ]
+  },
+  {
+   "unidade": "POLITEC",
+   "pessoas": 191,
+   "bruto": 4405560.39,
+   "afastados": 7,
+   "com_cds": 36,
+   "custo_cds": 159724.1,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 18,
+     "bruto": 53650.75
+    },
+    "efetivo": {
+     "pessoas": 173,
+     "bruto": 4351909.64
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "IC",
+     "pessoas": 53
+    },
+    {
+     "nome": "CCRIMJIP",
+     "pessoas": 18
+    },
+    {
+     "nome": "CCRIMVHA",
+     "pessoas": 16
+    },
+    {
+     "nome": "GAF",
+     "pessoas": 14
+    },
+    {
+     "nome": "CCRIMCAC",
+     "pessoas": 13
+    },
+    {
+     "nome": "CCRIMRDM",
+     "pessoas": 13
+    },
+    {
+     "nome": "ILC",
+     "pessoas": 11
+    },
+    {
+     "nome": "CCRIMARI",
+     "pessoas": 11
+    },
+    {
+     "nome": "CCRIMJAR",
+     "pessoas": 9
+    },
+    {
+     "nome": "CCRIMSMG",
+     "pessoas": 8
+    },
+    {
+     "nome": "IDNAC",
+     "pessoas": 7
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 6
+    },
+    {
+     "nome": "CCRIMGUM",
+     "pessoas": 6
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 5
+    },
+    {
+     "nome": "ICCV",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Perito Criminal",
+     "pessoas": 72
+    },
+    {
+     "nome": "Agente de Criminalistica",
+     "pessoas": 36
+    },
+    {
+     "nome": "POLITEC - Perito Criminal",
+     "pessoas": 25
+    },
+    {
+     "nome": "POLITEC - Agente de Criminalistica",
+     "pessoas": 22
+    },
+    {
+     "nome": "Agente de Policia",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 7
+    },
+    {
+     "nome": "Tecnico em Laboratorio",
+     "pessoas": 3
+    },
+    {
+     "nome": "CHEFE DE NUCLEO DE GESTAO",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "SEAS",
+   "pessoas": 417,
+   "bruto": 4181613.21,
+   "afastados": 7,
+   "com_cds": 304,
+   "custo_cds": 1406669.29,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 89,
+     "bruto": 945303.44
+    },
+    "comissionado": {
+     "pessoas": 270,
+     "bruto": 2767778.75
+    },
+    "apoio": {
+     "pessoas": 30,
+     "bruto": 45465.2
+    },
+    "cedido": {
+     "pessoas": 15,
+     "bruto": 138412.81
+    },
+    "militar": {
+     "pessoas": 6,
+     "bruto": 239484.53
+    },
+    "temporario": {
+     "pessoas": 7,
+     "bruto": 45168.48
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CASA",
+     "pessoas": 41
+    },
+    {
+     "nome": "GLOG",
+     "pessoas": 15
+    },
+    {
+     "nome": "GSINE",
+     "pessoas": 14
+    },
+    {
+     "nome": "GAP",
+     "pessoas": 14
+    },
+    {
+     "nome": "GPAR",
+     "pessoas": 13
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 13
+    },
+    {
+     "nome": "GPSB",
+     "pessoas": 13
+    },
+    {
+     "nome": "GHAB",
+     "pessoas": 12
+    },
+    {
+     "nome": "GTIC",
+     "pessoas": 11
+    },
+    {
+     "nome": "GSAN",
+     "pessoas": 11
+    },
+    {
+     "nome": "GCONTRAT",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 8
+    },
+    {
+     "nome": "GC",
+     "pessoas": 8
+    },
+    {
+     "nome": "COTER",
+     "pessoas": 8
+    },
+    {
+     "nome": "GVENCER",
+     "pessoas": 8
+    },
+    {
+     "nome": "GCONSELHOS",
+     "pessoas": 8
+    },
+    {
+     "nome": "GSUAS",
+     "pessoas": 7
+    },
+    {
+     "nome": "GPM",
+     "pessoas": 7
+    },
+    {
+     "nome": "GERJAR",
+     "pessoas": 7
+    },
+    {
+     "nome": "CI",
+     "pessoas": 7
+    },
+    {
+     "nome": "GPG",
+     "pessoas": 7
+    },
+    {
+     "nome": "DIRT",
+     "pessoas": 7
+    },
+    {
+     "nome": "GPSE",
+     "pessoas": 7
+    },
+    {
+     "nome": "GINFRA",
+     "pessoas": 6
+    },
+    {
+     "nome": "GERPVH",
+     "pessoas": 6
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 79
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 46
+    },
+    {
+     "nome": "GERENTE",
+     "pessoas": 30
+    },
+    {
+     "nome": "ESTAGIARIO  (A)",
+     "pessoas": 30
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 28
+    },
+    {
+     "nome": "SEAS - Analista em Desenvolvimento Social",
+     "pessoas": 26
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 23
+    },
+    {
+     "nome": "SEAS - Agente em Atividades Admnistrativas",
+     "pessoas": 22
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 18
+    },
+    {
+     "nome": "SEAS - Tecnico em Enfermagem",
+     "pessoas": 16
+    }
+   ]
+  },
+  {
+   "unidade": "CEMETRON",
+   "pessoas": 574,
+   "bruto": 4002247.88,
+   "afastados": 21,
+   "com_cds": 25,
+   "custo_cds": 92666.66,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 313,
+     "bruto": 2415534.29
+    },
+    "temporario": {
+     "pessoas": 207,
+     "bruto": 1497509.45
+    },
+    "cedido": {
+     "pessoas": 39,
+     "bruto": 34174.17
+    },
+    "comissionado": {
+     "pessoas": 15,
+     "bruto": 55029.97
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "SINAMB",
+     "pessoas": 212
+    },
+    {
+     "nome": "DACLIN",
+     "pessoas": 77
+    },
+    {
+     "nome": "SFISIO",
+     "pessoas": 33
+    },
+    {
+     "nome": "SLAB",
+     "pessoas": 31
+    },
+    {
+     "nome": "SDIET",
+     "pessoas": 29
+    },
+    {
+     "nome": "SFARM",
+     "pessoas": 24
+    },
+    {
+     "nome": "SLAVH",
+     "pessoas": 23
+    },
+    {
+     "nome": "SFAME",
+     "pessoas": 22
+    },
+    {
+     "nome": "SRI",
+     "pessoas": 18
+    },
+    {
+     "nome": "SASG",
+     "pessoas": 13
+    },
+    {
+     "nome": "SGP",
+     "pessoas": 10
+    },
+    {
+     "nome": "SMENG",
+     "pessoas": 9
+    },
+    {
+     "nome": "SAP",
+     "pessoas": 9
+    },
+    {
+     "nome": "SSSOC",
+     "pessoas": 8
+    },
+    {
+     "nome": "GENF",
+     "pessoas": 7
+    },
+    {
+     "nome": "NEPD",
+     "pessoas": 7
+    },
+    {
+     "nome": "SPISC",
+     "pessoas": 6
+    },
+    {
+     "nome": "NR",
+     "pessoas": 4
+    },
+    {
+     "nome": "DAG",
+     "pessoas": 4
+    },
+    {
+     "nome": "CCIH",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 3
+    },
+    {
+     "nome": "NGA",
+     "pessoas": 3
+    },
+    {
+     "nome": "NSS",
+     "pessoas": 3
+    },
+    {
+     "nome": "NSPGAR",
+     "pessoas": 3
+    },
+    {
+     "nome": "NEP",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 167
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 73
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 55
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 40
+    },
+    {
+     "nome": "Fisioterapeuta",
+     "pessoas": 34
+    },
+    {
+     "nome": "SESAU- Auxiliar de Servicos Gerais",
+     "pessoas": 33
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 24
+    },
+    {
+     "nome": "Tecnico em Laboratorio",
+     "pessoas": 20
+    },
+    {
+     "nome": "Tecnico em Radiologia",
+     "pessoas": 16
+    },
+    {
+     "nome": "Auxiliar em Enfermagem",
+     "pessoas": 13
+    }
+   ]
+  },
+  {
+   "unidade": "SESDEC",
+   "pessoas": 392,
+   "bruto": 3633725.96,
+   "afastados": 2,
+   "com_cds": 302,
+   "custo_cds": 842025.73,
+   "grupos": {
+    "militar": {
+     "pessoas": 134,
+     "bruto": 2149434.84
+    },
+    "comissionado": {
+     "pessoas": 156,
+     "bruto": 578982.49
+    },
+    "apoio": {
+     "pessoas": 68,
+     "bruto": 131795.37
+    },
+    "efetivo": {
+     "pessoas": 30,
+     "bruto": 756146.95
+    },
+    "cedido": {
+     "pessoas": 3,
+     "bruto": 7738.31
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 9628.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GRH",
+     "pessoas": 66
+    },
+    {
+     "nome": "CIOP",
+     "pessoas": 57
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 32
+    },
+    {
+     "nome": "GELOG",
+     "pessoas": 28
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 28
+    },
+    {
+     "nome": "NOA",
+     "pessoas": 25
+    },
+    {
+     "nome": "GEI",
+     "pessoas": 25
+    },
+    {
+     "nome": "FUNESP",
+     "pessoas": 16
+    },
+    {
+     "nome": "GETEC",
+     "pessoas": 14
+    },
+    {
+     "nome": "ASSESS",
+     "pessoas": 13
+    },
+    {
+     "nome": "GISF",
+     "pessoas": 10
+    },
+    {
+     "nome": "GECONV",
+     "pessoas": 10
+    },
+    {
+     "nome": "CIOPPVSA",
+     "pessoas": 10
+    },
+    {
+     "nome": "GCI",
+     "pessoas": 9
+    },
+    {
+     "nome": "GEPLAN",
+     "pessoas": 9
+    },
+    {
+     "nome": "CIOPDIVADM",
+     "pessoas": 7
+    },
+    {
+     "nome": "GESPM",
+     "pessoas": 7
+    },
+    {
+     "nome": "NCOM",
+     "pessoas": 5
+    },
+    {
+     "nome": "SESDEC",
+     "pessoas": 3
+    },
+    {
+     "nome": "COM",
+     "pessoas": 2
+    },
+    {
+     "nome": "ATI",
+     "pessoas": 2
+    },
+    {
+     "nome": "NAGTEC",
+     "pessoas": 2
+    },
+    {
+     "nome": "OUV",
+     "pessoas": 2
+    },
+    {
+     "nome": "CIOPDIR",
+     "pessoas": 1
+    },
+    {
+     "nome": "APOIO",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "PREST.VOL.SERVICO ADMINISTRATIVO",
+     "pessoas": 64
+    },
+    {
+     "nome": "3SGT PM",
+     "pessoas": 44
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 35
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 27
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 22
+    },
+    {
+     "nome": "CHEFE DE NUCLEO III",
+     "pessoas": 19
+    },
+    {
+     "nome": "1SGT PM",
+     "pessoas": 18
+    },
+    {
+     "nome": "2 SARGENTO PM",
+     "pessoas": 18
+    },
+    {
+     "nome": "Agente de Policia",
+     "pessoas": 15
+    },
+    {
+     "nome": "CB PM",
+     "pessoas": 13
+    }
+   ]
+  },
+  {
+   "unidade": "IPERON",
+   "pessoas": 353,
+   "bruto": 3615782.25,
+   "afastados": 28,
+   "com_cds": 130,
+   "custo_cds": 751228.91,
+   "grupos": {
+    "apoio": {
+     "pessoas": 53,
+     "bruto": 83046.44
+    },
+    "comissionado": {
+     "pessoas": 96,
+     "bruto": 861847.32
+    },
+    "efetivo": {
+     "pessoas": 181,
+     "bruto": 2398230.2
+    },
+    "cedido": {
+     "pessoas": 23,
+     "bruto": 272658.29
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GEFPAP",
+     "pessoas": 23
+    },
+    {
+     "nome": "EQRH",
+     "pessoas": 18
+    },
+    {
+     "nome": "PGE",
+     "pessoas": 13
+    },
+    {
+     "nome": "EQBEN",
+     "pessoas": 13
+    },
+    {
+     "nome": "GCDA",
+     "pessoas": 11
+    },
+    {
+     "nome": "CI",
+     "pessoas": 11
+    },
+    {
+     "nome": "COPLAG",
+     "pessoas": 11
+    },
+    {
+     "nome": "GEPREV",
+     "pessoas": 10
+    },
+    {
+     "nome": "EQCERT",
+     "pessoas": 10
+    },
+    {
+     "nome": "DAF",
+     "pessoas": 10
+    },
+    {
+     "nome": "GECAD",
+     "pessoas": 9
+    },
+    {
+     "nome": "GADEB",
+     "pessoas": 9
+    },
+    {
+     "nome": "GAD",
+     "pessoas": 9
+    },
+    {
+     "nome": "EQSGT",
+     "pessoas": 9
+    },
+    {
+     "nome": "CORREG",
+     "pessoas": 9
+    },
+    {
+     "nome": "GESPE",
+     "pessoas": 9
+    },
+    {
+     "nome": "REGCAC",
+     "pessoas": 9
+    },
+    {
+     "nome": "DIPREV",
+     "pessoas": 8
+    },
+    {
+     "nome": "EQATE",
+     "pessoas": 8
+    },
+    {
+     "nome": "COOINVEST",
+     "pessoas": 8
+    },
+    {
+     "nome": "GECON",
+     "pessoas": 7
+    },
+    {
+     "nome": "DTIC",
+     "pessoas": 7
+    },
+    {
+     "nome": "EQCAL",
+     "pessoas": 7
+    },
+    {
+     "nome": "SEOC",
+     "pessoas": 7
+    },
+    {
+     "nome": "GERC",
+     "pessoas": 7
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Iperon - Tecnico em Previdencia",
+     "pessoas": 80
+    },
+    {
+     "nome": "ESTAGIARIO  (A)",
+     "pessoas": 51
+    },
+    {
+     "nome": "Iperon - Assistente em Previdencia",
+     "pessoas": 34
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 25
+    },
+    {
+     "nome": "ASSESSOR XI",
+     "pessoas": 19
+    },
+    {
+     "nome": "Iperon - Analista em Previdencia",
+     "pessoas": 15
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 14
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 12
+    },
+    {
+     "nome": "GERENTE X",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 8
+    }
+   ]
+  },
+  {
+   "unidade": "SEDAM",
+   "pessoas": 507,
+   "bruto": 3231273.97,
+   "afastados": 27,
+   "com_cds": 368,
+   "custo_cds": 1251278.58,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 323,
+     "bruto": 1239611.18
+    },
+    "efetivo": {
+     "pessoas": 128,
+     "bruto": 1546014.57
+    },
+    "temporario": {
+     "pessoas": 36,
+     "bruto": 258761.97
+    },
+    "cedido": {
+     "pessoas": 10,
+     "bruto": 33063.2
+    },
+    "militar": {
+     "pessoas": 10,
+     "bruto": 153823.05
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CUC",
+     "pessoas": 56
+    },
+    {
+     "nome": "COPAF",
+     "pessoas": 56
+    },
+    {
+     "nome": "COMRAR",
+     "pessoas": 45
+    },
+    {
+     "nome": "COLMAM",
+     "pessoas": 35
+    },
+    {
+     "nome": "COPAM",
+     "pessoas": 28
+    },
+    {
+     "nome": "COREH",
+     "pessoas": 25
+    },
+    {
+     "nome": "COGEO",
+     "pessoas": 21
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 20
+    },
+    {
+     "nome": "CODEF",
+     "pessoas": 19
+    },
+    {
+     "nome": "ErgasJPA",
+     "pessoas": 16
+    },
+    {
+     "nome": "ErgasPIB",
+     "pessoas": 15
+    },
+    {
+     "nome": "COAI",
+     "pessoas": 13
+    },
+    {
+     "nome": "ErgasARI",
+     "pessoas": 12
+    },
+    {
+     "nome": "CTI",
+     "pessoas": 11
+    },
+    {
+     "nome": "ErgasCAC",
+     "pessoas": 10
+    },
+    {
+     "nome": "CGRH",
+     "pessoas": 10
+    },
+    {
+     "nome": "ErgasVHA",
+     "pessoas": 9
+    },
+    {
+     "nome": "ErgasMDO",
+     "pessoas": 9
+    },
+    {
+     "nome": "CEAM",
+     "pessoas": 8
+    },
+    {
+     "nome": "ErgasROM",
+     "pessoas": 8
+    },
+    {
+     "nome": "GFP",
+     "pessoas": 8
+    },
+    {
+     "nome": "CCI",
+     "pessoas": 7
+    },
+    {
+     "nome": "ErgasCER",
+     "pessoas": 7
+    },
+    {
+     "nome": "ErgasCDO",
+     "pessoas": 7
+    },
+    {
+     "nome": "CFP",
+     "pessoas": 6
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 72
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 44
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 36
+    },
+    {
+     "nome": "SEDAM- Engenheiro Florestal",
+     "pessoas": 26
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 25
+    },
+    {
+     "nome": "CHEFE DE DIVISAO",
+     "pessoas": 21
+    },
+    {
+     "nome": "SEDAM- Tecnico em Agropecuaria",
+     "pessoas": 19
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 18
+    },
+    {
+     "nome": "SEDAM- Geografo",
+     "pessoas": 16
+    },
+    {
+     "nome": "CHEFE DE UNIDADE DE CONSERVACAO",
+     "pessoas": 15
+    }
+   ]
+  },
+  {
+   "unidade": "FEASE",
+   "pessoas": 384,
+   "bruto": 2538437.13,
+   "afastados": 11,
+   "com_cds": 18,
+   "custo_cds": 184754.62,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 371,
+     "bruto": 2475328.1
+    },
+    "comissionado": {
+     "pessoas": 11,
+     "bruto": 62748.49
+    },
+    "cedido": {
+     "pessoas": 2,
+     "bruto": 360.54
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CASEJIP",
+     "pessoas": 64
+    },
+    {
+     "nome": "UIMSII",
+     "pessoas": 49
+    },
+    {
+     "nome": "UIMP",
+     "pessoas": 36
+    },
+    {
+     "nome": "USCAC",
+     "pessoas": 34
+    },
+    {
+     "nome": "USVIL",
+     "pessoas": 34
+    },
+    {
+     "nome": "USARIQ",
+     "pessoas": 28
+    },
+    {
+     "nome": "CSERM",
+     "pessoas": 28
+    },
+    {
+     "nome": "CASSEM",
+     "pessoas": 25
+    },
+    {
+     "nome": "UNIF",
+     "pessoas": 25
+    },
+    {
+     "nome": "ASGP",
+     "pessoas": 9
+    },
+    {
+     "nome": "GET",
+     "pessoas": 8
+    },
+    {
+     "nome": "CAA",
+     "pessoas": 7
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 6
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 5
+    },
+    {
+     "nome": "CONTAB",
+     "pessoas": 2
+    },
+    {
+     "nome": "CT",
+     "pessoas": 2
+    },
+    {
+     "nome": "CASSEMDIRG",
+     "pessoas": 2
+    },
+    {
+     "nome": "USCACDIRG",
+     "pessoas": 2
+    },
+    {
+     "nome": "CPPAD",
+     "pessoas": 2
+    },
+    {
+     "nome": "UIMPDIRG",
+     "pessoas": 1
+    },
+    {
+     "nome": "OUV",
+     "pessoas": 1
+    },
+    {
+     "nome": "UIMPSETORADM",
+     "pessoas": 1
+    },
+    {
+     "nome": "UIMSIISETORADM",
+     "pessoas": 1
+    },
+    {
+     "nome": "UNIFDIRG",
+     "pessoas": 1
+    },
+    {
+     "nome": "USVILDIRG",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "FEASE - AGENTE DE SEGURANCA SOCIOEDUCATIVO",
+     "pessoas": 328
+    },
+    {
+     "nome": "FEASE - TECNICO DE ENFERMAGEM",
+     "pessoas": 10
+    },
+    {
+     "nome": "FEASE - PSICOLOGO",
+     "pessoas": 9
+    },
+    {
+     "nome": "FEASE - ASSISTENTE SOCIAL",
+     "pessoas": 7
+    },
+    {
+     "nome": "FEASE - ENFERMEIRO",
+     "pessoas": 6
+    },
+    {
+     "nome": "SEJUS- SOCIO-EDUCADOR",
+     "pessoas": 3
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR",
+     "pessoas": 2
+    },
+    {
+     "nome": "CONTROLADOR INTERNO",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "POC",
+   "pessoas": 256,
+   "bruto": 2462633.09,
+   "afastados": 11,
+   "com_cds": 34,
+   "custo_cds": 152210.91,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 26,
+     "bruto": 123860.97
+    },
+    "efetivo": {
+     "pessoas": 153,
+     "bruto": 1775261.77
+    },
+    "temporario": {
+     "pessoas": 55,
+     "bruto": 542152.58
+    },
+    "cedido": {
+     "pessoas": 22,
+     "bruto": 21357.77
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GMED",
+     "pessoas": 72
+    },
+    {
+     "nome": "NUCEN",
+     "pessoas": 67
+    },
+    {
+     "nome": "DG",
+     "pessoas": 24
+    },
+    {
+     "nome": "GASE",
+     "pessoas": 15
+    },
+    {
+     "nome": "CEO",
+     "pessoas": 12
+    },
+    {
+     "nome": "CAPS-NSP",
+     "pessoas": 8
+    },
+    {
+     "nome": "CAPS-NAD",
+     "pessoas": 7
+    },
+    {
+     "nome": "CAPS-PRONT",
+     "pessoas": 6
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 6
+    },
+    {
+     "nome": "GAP",
+     "pessoas": 6
+    },
+    {
+     "nome": "CAPS-NEP",
+     "pessoas": 5
+    },
+    {
+     "nome": "GEMAN",
+     "pessoas": 5
+    },
+    {
+     "nome": "NIR",
+     "pessoas": 4
+    },
+    {
+     "nome": "CAPS-NAM",
+     "pessoas": 4
+    },
+    {
+     "nome": "SESAU-CAPS",
+     "pessoas": 3
+    },
+    {
+     "nome": "NAME",
+     "pessoas": 3
+    },
+    {
+     "nome": "NTRANS",
+     "pessoas": 2
+    },
+    {
+     "nome": "NTI",
+     "pessoas": 2
+    },
+    {
+     "nome": "DGA",
+     "pessoas": 1
+    },
+    {
+     "nome": "CAPS-COORD",
+     "pessoas": 1
+    },
+    {
+     "nome": "NFAT",
+     "pessoas": 1
+    },
+    {
+     "nome": "GFAH",
+     "pessoas": 1
+    },
+    {
+     "nome": "CAPS-NRH",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Medico 40h",
+     "pessoas": 63
+    },
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 49
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 20
+    },
+    {
+     "nome": "Auxiliar em Enfermagem",
+     "pessoas": 14
+    },
+    {
+     "nome": "Medico 20h",
+     "pessoas": 14
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 13
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 13
+    },
+    {
+     "nome": "Psicologo ( LEI 1067/02 )",
+     "pessoas": 8
+    },
+    {
+     "nome": "CHEFE DE SETOR V",
+     "pessoas": 7
+    },
+    {
+     "nome": "Assistente Social",
+     "pessoas": 5
+    }
+   ]
+  },
+  {
+   "unidade": "SEPOG",
+   "pessoas": 259,
+   "bruto": 2305704.04,
+   "afastados": 26,
+   "com_cds": 194,
+   "custo_cds": 802038.47,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 87,
+     "bruto": 1384698.11
+    },
+    "cedido": {
+     "pessoas": 46,
+     "bruto": 117282.83
+    },
+    "comissionado": {
+     "pessoas": 124,
+     "bruto": 747104.55
+    },
+    "militar": {
+     "pessoas": 2,
+     "bruto": 56618.55
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CGP",
+     "pessoas": 35
+    },
+    {
+     "nome": "DIREX",
+     "pessoas": 19
+    },
+    {
+     "nome": "GEA",
+     "pessoas": 16
+    },
+    {
+     "nome": "GTG",
+     "pessoas": 12
+    },
+    {
+     "nome": "GMAG",
+     "pessoas": 11
+    },
+    {
+     "nome": "NT",
+     "pessoas": 11
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 11
+    },
+    {
+     "nome": "GEOG",
+     "pessoas": 10
+    },
+    {
+     "nome": "DEDP",
+     "pessoas": 10
+    },
+    {
+     "nome": "GGEMI",
+     "pessoas": 10
+    },
+    {
+     "nome": "GPG",
+     "pessoas": 10
+    },
+    {
+     "nome": "ADPLAN",
+     "pessoas": 10
+    },
+    {
+     "nome": "GCLC",
+     "pessoas": 9
+    },
+    {
+     "nome": "GAMPP",
+     "pessoas": 9
+    },
+    {
+     "nome": "NPAT",
+     "pessoas": 8
+    },
+    {
+     "nome": "ASTIC",
+     "pessoas": 7
+    },
+    {
+     "nome": "CI",
+     "pessoas": 7
+    },
+    {
+     "nome": "GAP",
+     "pessoas": 6
+    },
+    {
+     "nome": "NALMOX",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 5
+    },
+    {
+     "nome": "DGEPP",
+     "pessoas": 4
+    },
+    {
+     "nome": "DPG",
+     "pessoas": 4
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 4
+    },
+    {
+     "nome": "NEOF",
+     "pessoas": 4
+    },
+    {
+     "nome": "NFF",
+     "pessoas": 3
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 37
+    },
+    {
+     "nome": "Agente Atividade Administrativa LC 1117",
+     "pessoas": 27
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 21
+    },
+    {
+     "nome": "Esp. em Politicas Publica e Gest. Gov.",
+     "pessoas": 20
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 18
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 10
+    },
+    {
+     "nome": "Auxiliar Ativ Administrativa LC 1117",
+     "pessoas": 8
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 7
+    }
+   ]
+  },
+  {
+   "unidade": "FHEMERON",
+   "pessoas": 421,
+   "bruto": 2279437.36,
+   "afastados": 36,
+   "com_cds": 62,
+   "custo_cds": 281940.44,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 270,
+     "bruto": 1637547.95
+    },
+    "cedido": {
+     "pessoas": 49,
+     "bruto": 66547.48
+    },
+    "comissionado": {
+     "pessoas": 54,
+     "bruto": 236254.58
+    },
+    "temporario": {
+     "pessoas": 48,
+     "bruto": 339087.35
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GENF",
+     "pessoas": 35
+    },
+    {
+     "nome": "HEMOVILGETEC",
+     "pessoas": 31
+    },
+    {
+     "nome": "HEMOJIPA",
+     "pessoas": 29
+    },
+    {
+     "nome": "NUAGTREGGUM",
+     "pessoas": 26
+    },
+    {
+     "nome": "NUATHC",
+     "pessoas": 17
+    },
+    {
+     "nome": "ADMHEMOJIPA",
+     "pessoas": 17
+    },
+    {
+     "nome": "ADMHEMOARI",
+     "pessoas": 15
+    },
+    {
+     "nome": "ADMHEMOCAC",
+     "pessoas": 14
+    },
+    {
+     "nome": "ADMHEMOVIL",
+     "pessoas": 14
+    },
+    {
+     "nome": "HEMOROMGETEC",
+     "pessoas": 11
+    },
+    {
+     "nome": "GETRAN",
+     "pessoas": 11
+    },
+    {
+     "nome": "HEMOJIPAGETEC",
+     "pessoas": 10
+    },
+    {
+     "nome": "HEMOCACGETEC",
+     "pessoas": 9
+    },
+    {
+     "nome": "NUAGTREGCAC",
+     "pessoas": 9
+    },
+    {
+     "nome": "GELABES",
+     "pessoas": 9
+    },
+    {
+     "nome": "NUSOR",
+     "pessoas": 8
+    },
+    {
+     "nome": "ATCERE",
+     "pessoas": 8
+    },
+    {
+     "nome": "HEMOARIGETEC",
+     "pessoas": 8
+    },
+    {
+     "nome": "HEMOROM",
+     "pessoas": 7
+    },
+    {
+     "nome": "ADMHEMOROM",
+     "pessoas": 7
+    },
+    {
+     "nome": "GERUD",
+     "pessoas": 7
+    },
+    {
+     "nome": "NUAGTREGRDM",
+     "pessoas": 7
+    },
+    {
+     "nome": "NUPROC",
+     "pessoas": 6
+    },
+    {
+     "nome": "NGP",
+     "pessoas": 6
+    },
+    {
+     "nome": "NUATJPII",
+     "pessoas": 6
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 73
+    },
+    {
+     "nome": "Tecnico em Laboratorio",
+     "pessoas": 47
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 44
+    },
+    {
+     "nome": "Auxiliar de Servicos em Saude",
+     "pessoas": 35
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 32
+    },
+    {
+     "nome": "Auxiliar em Enfermagem",
+     "pessoas": 27
+    },
+    {
+     "nome": "BioMedico",
+     "pessoas": 21
+    },
+    {
+     "nome": "SESAU- Auxiliar de Servicos Gerais",
+     "pessoas": 21
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 18
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 14
+    }
+   ]
+  },
+  {
+   "unidade": "CASA MILITAR",
+   "pessoas": 228,
+   "bruto": 2093544.61,
+   "afastados": 1,
+   "com_cds": 43,
+   "custo_cds": 118320.49,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 6,
+     "bruto": 67988.93
+    },
+    "militar": {
+     "pessoas": 222,
+     "bruto": 2025555.68
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CASAMILITAR-GESEG",
+     "pessoas": 150
+    },
+    {
+     "nome": "CASAMILITAR-GERPAT",
+     "pessoas": 14
+    },
+    {
+     "nome": "CASAMILITAR-SISEL",
+     "pessoas": 13
+    },
+    {
+     "nome": "CASAMILITAR-GIAE",
+     "pessoas": 12
+    },
+    {
+     "nome": "CASAMILITAR-DIROP",
+     "pessoas": 8
+    },
+    {
+     "nome": "CASAMILITAR-GUARDAR1",
+     "pessoas": 8
+    },
+    {
+     "nome": "CASAMILITAR-DIRADM",
+     "pessoas": 6
+    },
+    {
+     "nome": "CASAMILITAR-CHEFE",
+     "pessoas": 4
+    },
+    {
+     "nome": "CASAMILITAR-GRH",
+     "pessoas": 3
+    },
+    {
+     "nome": "CASAMILITAR-DIREM",
+     "pessoas": 3
+    },
+    {
+     "nome": "CASAMILITAR-GAB",
+     "pessoas": 2
+    },
+    {
+     "nome": "CASAMILITAR-SAP",
+     "pessoas": 2
+    },
+    {
+     "nome": "CASAMILITAR-SUBCHEFE",
+     "pessoas": 1
+    },
+    {
+     "nome": "CASAMILITAR-SINTO",
+     "pessoas": 1
+    },
+    {
+     "nome": "CASAMILITAR-SESPE",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "LEI 0972",
+     "pessoas": 121
+    },
+    {
+     "nome": "3SGT PM",
+     "pessoas": 37
+    },
+    {
+     "nome": "2 SARGENTO PM",
+     "pessoas": 19
+    },
+    {
+     "nome": "CB PM",
+     "pessoas": 19
+    },
+    {
+     "nome": "1SGT PM",
+     "pessoas": 11
+    },
+    {
+     "nome": "STEN PM",
+     "pessoas": 6
+    },
+    {
+     "nome": "MAJ PM",
+     "pessoas": 3
+    },
+    {
+     "nome": "CHEFE DE NUCLEO DE MANUTENCAO",
+     "pessoas": 2
+    },
+    {
+     "nome": "CAP PM",
+     "pessoas": 2
+    },
+    {
+     "nome": "TCEL PM",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "SEGEP",
+   "pessoas": 372,
+   "bruto": 2054279.98,
+   "afastados": 8,
+   "com_cds": 138,
+   "custo_cds": 574990.48,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 118,
+     "bruto": 632349.13
+    },
+    "cedido": {
+     "pessoas": 109,
+     "bruto": 89408.88
+    },
+    "militar": {
+     "pessoas": 5,
+     "bruto": 84816.9
+    },
+    "efetivo": {
+     "pessoas": 124,
+     "bruto": 1219130.22
+    },
+    "judicial": {
+     "pessoas": 15,
+     "bruto": 20436.99
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 8137.86
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "NCP",
+     "pessoas": 34
+    },
+    {
+     "nome": "GSIP",
+     "pessoas": 32
+    },
+    {
+     "nome": "CGA",
+     "pessoas": 31
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 29
+    },
+    {
+     "nome": "CPMED",
+     "pessoas": 26
+    },
+    {
+     "nome": "CET",
+     "pessoas": 19
+    },
+    {
+     "nome": "NAO",
+     "pessoas": 18
+    },
+    {
+     "nome": "GBP",
+     "pessoas": 16
+    },
+    {
+     "nome": "CGER",
+     "pessoas": 15
+    },
+    {
+     "nome": "NC",
+     "pessoas": 15
+    },
+    {
+     "nome": "NAFAS",
+     "pessoas": 13
+    },
+    {
+     "nome": "GCP",
+     "pessoas": 11
+    },
+    {
+     "nome": "GSUP",
+     "pessoas": 10
+    },
+    {
+     "nome": "GETeSocial",
+     "pessoas": 9
+    },
+    {
+     "nome": "NCSR",
+     "pessoas": 9
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 9
+    },
+    {
+     "nome": "NAPF",
+     "pessoas": 8
+    },
+    {
+     "nome": "NPMEDJIP",
+     "pessoas": 8
+    },
+    {
+     "nome": "NDVS",
+     "pessoas": 8
+    },
+    {
+     "nome": "CGRH",
+     "pessoas": 7
+    },
+    {
+     "nome": "REOF",
+     "pessoas": 6
+    },
+    {
+     "nome": "GRH",
+     "pessoas": 6
+    },
+    {
+     "nome": "DESP",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 5
+    },
+    {
+     "nome": "NPMEDVHA",
+     "pessoas": 4
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 104
+    },
+    {
+     "nome": "Agente Atividade Administrativa LC 1117",
+     "pessoas": 41
+    },
+    {
+     "nome": "Auxiliar de Servicos Gerais LC 1117",
+     "pessoas": 18
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 18
+    },
+    {
+     "nome": "PENSIONISTA",
+     "pessoas": 15
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 15
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 14
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 12
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 11
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 10
+    }
+   ]
+  },
+  {
+   "unidade": "SEOSP",
+   "pessoas": 252,
+   "bruto": 1971753.88,
+   "afastados": 6,
+   "com_cds": 156,
+   "custo_cds": 771748.69,
+   "grupos": {
+    "temporario": {
+     "pessoas": 59,
+     "bruto": 439027.94
+    },
+    "comissionado": {
+     "pessoas": 135,
+     "bruto": 991226.83
+    },
+    "efetivo": {
+     "pessoas": 34,
+     "bruto": 432349.09
+    },
+    "cedido": {
+     "pessoas": 24,
+     "bruto": 109150.02
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "NPE",
+     "pessoas": 36
+    },
+    {
+     "nome": "CPO",
+     "pessoas": 19
+    },
+    {
+     "nome": "NGR",
+     "pessoas": 18
+    },
+    {
+     "nome": "NESP",
+     "pessoas": 17
+    },
+    {
+     "nome": "GEC",
+     "pessoas": 15
+    },
+    {
+     "nome": "NGPAC",
+     "pessoas": 14
+    },
+    {
+     "nome": "GAU",
+     "pessoas": 13
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 10
+    },
+    {
+     "nome": "GES",
+     "pessoas": 8
+    },
+    {
+     "nome": "DIREX",
+     "pessoas": 7
+    },
+    {
+     "nome": "CIN",
+     "pessoas": 7
+    },
+    {
+     "nome": "CGP",
+     "pessoas": 6
+    },
+    {
+     "nome": "GFIN",
+     "pessoas": 6
+    },
+    {
+     "nome": "NESPVILH",
+     "pessoas": 6
+    },
+    {
+     "nome": "CSB",
+     "pessoas": 6
+    },
+    {
+     "nome": "GLOG",
+     "pessoas": 5
+    },
+    {
+     "nome": "GGP",
+     "pessoas": 5
+    },
+    {
+     "nome": "GET",
+     "pessoas": 5
+    },
+    {
+     "nome": "NESPCOAL",
+     "pessoas": 5
+    },
+    {
+     "nome": "GAD",
+     "pessoas": 4
+    },
+    {
+     "nome": "CIS",
+     "pessoas": 4
+    },
+    {
+     "nome": "STRAN",
+     "pessoas": 4
+    },
+    {
+     "nome": "GPC",
+     "pessoas": 4
+    },
+    {
+     "nome": "SALMOX",
+     "pessoas": 3
+    },
+    {
+     "nome": "GPO",
+     "pessoas": 3
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR  VIII",
+     "pessoas": 29
+    },
+    {
+     "nome": "Engenheiro Civil - LC 959",
+     "pessoas": 21
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 17
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 15
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 11
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 11
+    },
+    {
+     "nome": "SEOSP-ADMINISTRADOR",
+     "pessoas": 10
+    },
+    {
+     "nome": "Oficial de Manutencao",
+     "pessoas": 9
+    },
+    {
+     "nome": "Agente em Ativ. Administrativa",
+     "pessoas": 8
+    },
+    {
+     "nome": "Arquiteto - LC 959",
+     "pessoas": 8
+    }
+   ]
+  },
+  {
+   "unidade": "COGES",
+   "pessoas": 100,
+   "bruto": 1810566.39,
+   "afastados": 4,
+   "com_cds": 47,
+   "custo_cds": 205231.07,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 68,
+     "bruto": 1679137.19
+    },
+    "comissionado": {
+     "pessoas": 29,
+     "bruto": 119032.57
+    },
+    "cedido": {
+     "pessoas": 3,
+     "bruto": 12396.63
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GAB",
+     "pessoas": 100
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Analista Contabil",
+     "pessoas": 48
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 11
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 3
+    },
+    {
+     "nome": "Agente Atividade Administrativa LC 1117",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 3
+    },
+    {
+     "nome": "SEJUS- AGENTE EM ATIV. ADMINIST.",
+     "pessoas": 2
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "GOV",
+   "pessoas": 185,
+   "bruto": 1804630.91,
+   "afastados": 0,
+   "com_cds": 176,
+   "custo_cds": 1283164.88,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 160,
+     "bruto": 1397801.42
+    },
+    "efetivo": {
+     "pessoas": 14,
+     "bruto": 212981.14
+    },
+    "cedido": {
+     "pessoas": 7,
+     "bruto": 77796.17
+    },
+    "militar": {
+     "pessoas": 3,
+     "bruto": 114532.84
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 1519.34
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GAB",
+     "pessoas": 63
+    },
+    {
+     "nome": "SERI",
+     "pessoas": 19
+    },
+    {
+     "nome": "COOREG",
+     "pessoas": 15
+    },
+    {
+     "nome": "SERII",
+     "pessoas": 11
+    },
+    {
+     "nome": "CASACIVIL-SERV",
+     "pessoas": 10
+    },
+    {
+     "nome": "SERVIII",
+     "pessoas": 10
+    },
+    {
+     "nome": "SERX",
+     "pessoas": 9
+    },
+    {
+     "nome": "SERVI",
+     "pessoas": 8
+    },
+    {
+     "nome": "SERIII",
+     "pessoas": 8
+    },
+    {
+     "nome": "SERIV",
+     "pessoas": 8
+    },
+    {
+     "nome": "SERVII",
+     "pessoas": 7
+    },
+    {
+     "nome": "SERIX",
+     "pessoas": 4
+    },
+    {
+     "nome": "CASACIVIL-SERI",
+     "pessoas": 3
+    },
+    {
+     "nome": "CASACIVIL-COOREG",
+     "pessoas": 3
+    },
+    {
+     "nome": "GRH",
+     "pessoas": 2
+    },
+    {
+     "nome": "SERV",
+     "pessoas": 1
+    },
+    {
+     "nome": "CASACIVIL-SERX",
+     "pessoas": 1
+    },
+    {
+     "nome": "CASACIVIL-SERVI",
+     "pessoas": 1
+    },
+    {
+     "nome": "CASACIVIL-SERVIII",
+     "pessoas": 1
+    },
+    {
+     "nome": "CASACIVIL-SERVII",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 22
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 19
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 16
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 14
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 12
+    },
+    {
+     "nome": "ASSESSOR XV",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR XIII",
+     "pessoas": 8
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 7
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 6
+    }
+   ]
+  },
+  {
+   "unidade": "SETIC",
+   "pessoas": 175,
+   "bruto": 1598749.65,
+   "afastados": 4,
+   "com_cds": 134,
+   "custo_cds": 690555.52,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 106,
+     "bruto": 559388.06
+    },
+    "efetivo": {
+     "pessoas": 37,
+     "bruto": 904223.45
+    },
+    "apoio": {
+     "pessoas": 18,
+     "bruto": 29192.8
+    },
+    "cedido": {
+     "pessoas": 7,
+     "bruto": 48792.61
+    },
+    "temporario": {
+     "pessoas": 6,
+     "bruto": 43342.8
+    },
+    "militar": {
+     "pessoas": 1,
+     "bruto": 13809.93
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GDEV",
+     "pessoas": 29
+    },
+    {
+     "nome": "COGE",
+     "pessoas": 20
+    },
+    {
+     "nome": "CAGD",
+     "pessoas": 17
+    },
+    {
+     "nome": "GUX",
+     "pessoas": 14
+    },
+    {
+     "nome": "GOPS",
+     "pessoas": 8
+    },
+    {
+     "nome": "GINFOVIA",
+     "pessoas": 6
+    },
+    {
+     "nome": "GPREVI",
+     "pessoas": 6
+    },
+    {
+     "nome": "GDC",
+     "pessoas": 6
+    },
+    {
+     "nome": "NCA",
+     "pessoas": 6
+    },
+    {
+     "nome": "GGP",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASDES",
+     "pessoas": 6
+    },
+    {
+     "nome": "CI",
+     "pessoas": 5
+    },
+    {
+     "nome": "GSUP",
+     "pessoas": 5
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 4
+    },
+    {
+     "nome": "GAP",
+     "pessoas": 4
+    },
+    {
+     "nome": "GCOMP",
+     "pessoas": 4
+    },
+    {
+     "nome": "GSERV",
+     "pessoas": 4
+    },
+    {
+     "nome": "GIE",
+     "pessoas": 3
+    },
+    {
+     "nome": "GVOIP",
+     "pessoas": 3
+    },
+    {
+     "nome": "NSD",
+     "pessoas": 3
+    },
+    {
+     "nome": "COINFRA",
+     "pessoas": 2
+    },
+    {
+     "nome": "DITEC",
+     "pessoas": 2
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASGAB",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 25
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 19
+    },
+    {
+     "nome": "ESTAGIARIO  (A)",
+     "pessoas": 18
+    },
+    {
+     "nome": "Tecnico Tec. da Informacao e Comunic.",
+     "pessoas": 17
+    },
+    {
+     "nome": "Analista Tec. da Informacao e Comunic.",
+     "pessoas": 14
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 12
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 11
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 3
+    }
+   ]
+  },
+  {
+   "unidade": "IDEP",
+   "pessoas": 337,
+   "bruto": 1480373.22,
+   "afastados": 5,
+   "com_cds": 49,
+   "custo_cds": 223788.4,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 44,
+     "bruto": 236977.14
+    },
+    "temporario": {
+     "pessoas": 249,
+     "bruto": 655660.06
+    },
+    "efetivo": {
+     "pessoas": 41,
+     "bruto": 584736.02
+    },
+    "cedido": {
+     "pessoas": 3,
+     "bruto": 3000.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "SETE",
+     "pessoas": 105
+    },
+    {
+     "nome": "ASTEPGEDE",
+     "pessoas": 78
+    },
+    {
+     "nome": "DIGCENTEC",
+     "pessoas": 66
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 21
+    },
+    {
+     "nome": "DIP",
+     "pessoas": 12
+    },
+    {
+     "nome": "GADM",
+     "pessoas": 11
+    },
+    {
+     "nome": "DAFIP",
+     "pessoas": 11
+    },
+    {
+     "nome": "GRH",
+     "pessoas": 9
+    },
+    {
+     "nome": "GCC",
+     "pessoas": 7
+    },
+    {
+     "nome": "GEFIN",
+     "pessoas": 6
+    },
+    {
+     "nome": "SPA",
+     "pessoas": 3
+    },
+    {
+     "nome": "FROTA",
+     "pessoas": 3
+    },
+    {
+     "nome": "GEDE",
+     "pessoas": 1
+    },
+    {
+     "nome": "TEMCENTEC",
+     "pessoas": 1
+    },
+    {
+     "nome": "PROJUR",
+     "pessoas": 1
+    },
+    {
+     "nome": "CONSUP",
+     "pessoas": 1
+    },
+    {
+     "nome": "CI",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Professor-Instrutor da Educacao Profissional",
+     "pessoas": 80
+    },
+    {
+     "nome": "ASSISTENTE ADMINISTRATIVO",
+     "pessoas": 44
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 23
+    },
+    {
+     "nome": "ORIENTADOR EDUCACIONAL",
+     "pessoas": 22
+    },
+    {
+     "nome": "Tecnico Educacional Nivel 1",
+     "pessoas": 17
+    },
+    {
+     "nome": "SUPERVISOR PEDAGOGICO",
+     "pessoas": 12
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 9
+    },
+    {
+     "nome": "MONITOR DE ALUNO",
+     "pessoas": 9
+    },
+    {
+     "nome": "INSPETOR DE PATIO",
+     "pessoas": 8
+    },
+    {
+     "nome": "Tecnico Educacional Nivel 2",
+     "pessoas": 8
+    }
+   ]
+  },
+  {
+   "unidade": "CASA CIVIL",
+   "pessoas": 102,
+   "bruto": 1260569.41,
+   "afastados": 1,
+   "com_cds": 99,
+   "custo_cds": 895451.4,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 82,
+     "bruto": 849837.36
+    },
+    "cedido": {
+     "pessoas": 5,
+     "bruto": 30916.39
+    },
+    "efetivo": {
+     "pessoas": 13,
+     "bruto": 315032.1
+    },
+    "militar": {
+     "pessoas": 2,
+     "bruto": 64783.56
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CASACIVIL-DE",
+     "pessoas": 24
+    },
+    {
+     "nome": "CASACIVIL-DITELGAB",
+     "pessoas": 19
+    },
+    {
+     "nome": "CASACIVIL-DECAANE",
+     "pessoas": 10
+    },
+    {
+     "nome": "CASACIVIL-ASTEC",
+     "pessoas": 9
+    },
+    {
+     "nome": "CASACIVIL-GAB",
+     "pessoas": 8
+    },
+    {
+     "nome": "CASACIVIL-DIOF",
+     "pessoas": 8
+    },
+    {
+     "nome": "DGM",
+     "pessoas": 8
+    },
+    {
+     "nome": "CASACIVIL-DEP",
+     "pessoas": 7
+    },
+    {
+     "nome": "CASACIVIL-NGP",
+     "pessoas": 6
+    },
+    {
+     "nome": "CASACIVIL-ASSEMUN",
+     "pessoas": 2
+    },
+    {
+     "nome": "CASACIVIL-SUBGAB",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 22
+    },
+    {
+     "nome": "COORDENADOR XII",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASSESSOR XI",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 4
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSESSOR XIV",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 3
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 3
+    }
+   ]
+  },
+  {
+   "unidade": "CGE",
+   "pessoas": 103,
+   "bruto": 1106722.61,
+   "afastados": 1,
+   "com_cds": 48,
+   "custo_cds": 260359.68,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 73,
+     "bruto": 928458.03
+    },
+    "comissionado": {
+     "pessoas": 28,
+     "bruto": 168132.01
+    },
+    "cedido": {
+     "pessoas": 2,
+     "bruto": 10132.57
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "DFAI",
+     "pessoas": 19
+    },
+    {
+     "nome": "DACC",
+     "pessoas": 14
+    },
+    {
+     "nome": "DCGR",
+     "pessoas": 13
+    },
+    {
+     "nome": "DTGA",
+     "pessoas": 12
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 9
+    },
+    {
+     "nome": "DAF",
+     "pessoas": 9
+    },
+    {
+     "nome": "DIREX",
+     "pessoas": 6
+    },
+    {
+     "nome": "OUV",
+     "pessoas": 6
+    },
+    {
+     "nome": "DRPJ",
+     "pessoas": 4
+    },
+    {
+     "nome": "CGEP",
+     "pessoas": 4
+    },
+    {
+     "nome": "DI",
+     "pessoas": 4
+    },
+    {
+     "nome": "CI",
+     "pessoas": 3
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Assistente de Controle Interno",
+     "pessoas": 38
+    },
+    {
+     "nome": "Auditor de Controle Interno",
+     "pessoas": 25
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 3
+    },
+    {
+     "nome": "Agente Atividade Administrativa LC 1117",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 2
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 2
+    },
+    {
+     "nome": "Farmaceutico",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "AGEVISA",
+   "pessoas": 163,
+   "bruto": 1055521.83,
+   "afastados": 11,
+   "com_cds": 37,
+   "custo_cds": 176000.31,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 132,
+     "bruto": 908710.55
+    },
+    "comissionado": {
+     "pessoas": 20,
+     "bruto": 105832.9
+    },
+    "cedido": {
+     "pessoas": 10,
+     "bruto": 31350.38
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 9628.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "NI",
+     "pessoas": 16
+    },
+    {
+     "nome": "NSGT",
+     "pessoas": 13
+    },
+    {
+     "nome": "NSS",
+     "pessoas": 13
+    },
+    {
+     "nome": "NDITHA",
+     "pessoas": 11
+    },
+    {
+     "nome": "NISTHV",
+     "pessoas": 10
+    },
+    {
+     "nome": "NRB",
+     "pessoas": 9
+    },
+    {
+     "nome": "CIEVS",
+     "pessoas": 9
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 9
+    },
+    {
+     "nome": "NASS",
+     "pessoas": 6
+    },
+    {
+     "nome": "GTAF",
+     "pessoas": 6
+    },
+    {
+     "nome": "NDCT",
+     "pessoas": 6
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 5
+    },
+    {
+     "nome": "NMC",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 5
+    },
+    {
+     "nome": "NDANT",
+     "pessoas": 4
+    },
+    {
+     "nome": "NRNB",
+     "pessoas": 4
+    },
+    {
+     "nome": "NA",
+     "pessoas": 4
+    },
+    {
+     "nome": "NDTV",
+     "pessoas": 4
+    },
+    {
+     "nome": "CI",
+     "pessoas": 3
+    },
+    {
+     "nome": "DIEX",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASJUR",
+     "pessoas": 2
+    },
+    {
+     "nome": "NPEVS",
+     "pessoas": 2
+    },
+    {
+     "nome": "NMF",
+     "pessoas": 2
+    },
+    {
+     "nome": "GTVISAT",
+     "pessoas": 2
+    },
+    {
+     "nome": "NEA",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 28
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 25
+    },
+    {
+     "nome": "Auxiliar em Enfermagem",
+     "pessoas": 12
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 10
+    },
+    {
+     "nome": "SESAU- Motorista",
+     "pessoas": 9
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 8
+    },
+    {
+     "nome": "SESAU- Auxiliar Ativ Administrativa",
+     "pessoas": 4
+    },
+    {
+     "nome": "Medico Veterinario",
+     "pessoas": 4
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 4
+    },
+    {
+     "nome": "BioMedico",
+     "pessoas": 4
+    }
+   ]
+  },
+  {
+   "unidade": "SEPAT",
+   "pessoas": 197,
+   "bruto": 894045.65,
+   "afastados": 1,
+   "com_cds": 194,
+   "custo_cds": 755375.17,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 188,
+     "bruto": 806704.17
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 6061.0
+    },
+    "cedido": {
+     "pessoas": 5,
+     "bruto": 16031.36
+    },
+    "militar": {
+     "pessoas": 1,
+     "bruto": 31735.73
+    },
+    "efetivo": {
+     "pessoas": 2,
+     "bruto": 33513.39
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "COOAF",
+     "pessoas": 38
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 33
+    },
+    {
+     "nome": "COORFURB",
+     "pessoas": 28
+    },
+    {
+     "nome": "NUGEO",
+     "pessoas": 25
+    },
+    {
+     "nome": "COOPI",
+     "pessoas": 22
+    },
+    {
+     "nome": "GERFR",
+     "pessoas": 18
+    },
+    {
+     "nome": "COOPMA",
+     "pessoas": 17
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 6
+    },
+    {
+     "nome": "CI",
+     "pessoas": 5
+    },
+    {
+     "nome": "DIREX",
+     "pessoas": 2
+    },
+    {
+     "nome": "MDNPCA",
+     "pessoas": 1
+    },
+    {
+     "nome": "GERH",
+     "pessoas": 1
+    },
+    {
+     "nome": "NUTRANS",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 44
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 31
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 20
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 17
+    },
+    {
+     "nome": "CHEFE DE NUCLEO",
+     "pessoas": 14
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 14
+    },
+    {
+     "nome": "GERENTE VIII",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 5
+    }
+   ]
+  },
+  {
+   "unidade": "SUGESP",
+   "pessoas": 181,
+   "bruto": 853956.6,
+   "afastados": 1,
+   "com_cds": 178,
+   "custo_cds": 689725.02,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 154,
+     "bruto": 596335.22
+    },
+    "efetivo": {
+     "pessoas": 12,
+     "bruto": 113899.22
+    },
+    "cedido": {
+     "pessoas": 12,
+     "bruto": 90867.71
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 9403.0
+    },
+    "militar": {
+     "pessoas": 2,
+     "bruto": 43451.45
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CGA",
+     "pessoas": 44
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 41
+    },
+    {
+     "nome": "COMAP",
+     "pessoas": 21
+    },
+    {
+     "nome": "ADPRM",
+     "pessoas": 20
+    },
+    {
+     "nome": "CGP",
+     "pessoas": 9
+    },
+    {
+     "nome": "TUDOAQUI",
+     "pessoas": 8
+    },
+    {
+     "nome": "CI",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 6
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 5
+    },
+    {
+     "nome": "TAJIP",
+     "pessoas": 5
+    },
+    {
+     "nome": "TACENTRO",
+     "pessoas": 3
+    },
+    {
+     "nome": "TACAC",
+     "pessoas": 3
+    },
+    {
+     "nome": "TAZL",
+     "pessoas": 3
+    },
+    {
+     "nome": "GTR",
+     "pessoas": 2
+    },
+    {
+     "nome": "TAVIL",
+     "pessoas": 2
+    },
+    {
+     "nome": "TAARI",
+     "pessoas": 1
+    },
+    {
+     "nome": "TARDM",
+     "pessoas": 1
+    },
+    {
+     "nome": "GAP",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 40
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 31
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 26
+    },
+    {
+     "nome": "GERENTE VIII",
+     "pessoas": 14
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 9
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 8
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 8
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 7
+    },
+    {
+     "nome": "CHEFE DE NUCLEO V",
+     "pessoas": 6
+    }
+   ]
+  },
+  {
+   "unidade": "SEDEC",
+   "pessoas": 120,
+   "bruto": 744938.76,
+   "afastados": 0,
+   "com_cds": 116,
+   "custo_cds": 472002.01,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 108,
+     "bruto": 482937.39
+    },
+    "efetivo": {
+     "pessoas": 10,
+     "bruto": 193376.25
+    },
+    "militar": {
+     "pessoas": 2,
+     "bruto": 68625.12
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "PROCON",
+     "pessoas": 14
+    },
+    {
+     "nome": "CONSIC",
+     "pessoas": 10
+    },
+    {
+     "nome": "FROTAS",
+     "pessoas": 8
+    },
+    {
+     "nome": "INVEST",
+     "pessoas": 8
+    },
+    {
+     "nome": "CODMPE",
+     "pessoas": 7
+    },
+    {
+     "nome": "PATRIMONIO",
+     "pessoas": 6
+    },
+    {
+     "nome": "NCC",
+     "pessoas": 5
+    },
+    {
+     "nome": "PARCERIAS",
+     "pessoas": 5
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 4
+    },
+    {
+     "nome": "GETS",
+     "pessoas": 4
+    },
+    {
+     "nome": "CONTAB",
+     "pessoas": 4
+    },
+    {
+     "nome": "RH",
+     "pessoas": 4
+    },
+    {
+     "nome": "CTI",
+     "pessoas": 4
+    },
+    {
+     "nome": "CI",
+     "pessoas": 4
+    },
+    {
+     "nome": "NPO",
+     "pessoas": 3
+    },
+    {
+     "nome": "NDS",
+     "pessoas": 3
+    },
+    {
+     "nome": "GEODE",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSTI",
+     "pessoas": 2
+    },
+    {
+     "nome": "PROCONGUM",
+     "pessoas": 2
+    },
+    {
+     "nome": "COMPRAS",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 2
+    },
+    {
+     "nome": "PROCONJIP",
+     "pessoas": 2
+    },
+    {
+     "nome": "PROCONARI",
+     "pessoas": 2
+    },
+    {
+     "nome": "PROCONRDM",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 17
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 15
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 14
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 9
+    },
+    {
+     "nome": "CONCILIADOR III",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR XIV",
+     "pessoas": 3
+    },
+    {
+     "nome": "GERENTE REGIONAL PROCON",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR XV",
+     "pessoas": 2
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "JUCER",
+   "pessoas": 110,
+   "bruto": 714417.44,
+   "afastados": 0,
+   "com_cds": 36,
+   "custo_cds": 132463.54,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 20,
+     "bruto": 98654.89
+    },
+    "apoio": {
+     "pessoas": 14,
+     "bruto": 21400.0
+    },
+    "efetivo": {
+     "pessoas": 63,
+     "bruto": 550377.83
+    },
+    "cedido": {
+     "pessoas": 7,
+     "bruto": 11678.99
+    },
+    "temporario": {
+     "pessoas": 6,
+     "bruto": 32305.73
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "DRH",
+     "pessoas": 11
+    },
+    {
+     "nome": "REDESIM",
+     "pessoas": 10
+    },
+    {
+     "nome": "DCI",
+     "pessoas": 8
+    },
+    {
+     "nome": "DRC",
+     "pessoas": 7
+    },
+    {
+     "nome": "DAF",
+     "pessoas": 6
+    },
+    {
+     "nome": "CPD",
+     "pessoas": 6
+    },
+    {
+     "nome": "DIMAP",
+     "pessoas": 5
+    },
+    {
+     "nome": "ERJIP",
+     "pessoas": 5
+    },
+    {
+     "nome": "AT",
+     "pessoas": 5
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 4
+    },
+    {
+     "nome": "SG",
+     "pessoas": 4
+    },
+    {
+     "nome": "DL",
+     "pessoas": 3
+    },
+    {
+     "nome": "CI",
+     "pessoas": 3
+    },
+    {
+     "nome": "DICON",
+     "pessoas": 3
+    },
+    {
+     "nome": "DIOF",
+     "pessoas": 3
+    },
+    {
+     "nome": "ERCAC",
+     "pessoas": 3
+    },
+    {
+     "nome": "ERVHA",
+     "pessoas": 3
+    },
+    {
+     "nome": "ERGUM",
+     "pessoas": 2
+    },
+    {
+     "nome": "ERARI",
+     "pessoas": 2
+    },
+    {
+     "nome": "ERRDM",
+     "pessoas": 2
+    },
+    {
+     "nome": "PROC",
+     "pessoas": 2
+    },
+    {
+     "nome": "ERJAR",
+     "pessoas": 2
+    },
+    {
+     "nome": "COPLAN",
+     "pessoas": 2
+    },
+    {
+     "nome": "PRES",
+     "pessoas": 2
+    },
+    {
+     "nome": "DAI",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Técnico do Reg. do Comércio",
+     "pessoas": 31
+    },
+    {
+     "nome": "ESTAGIARIO  (A)",
+     "pessoas": 14
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 12
+    },
+    {
+     "nome": "Técnico Administrativo",
+     "pessoas": 8
+    },
+    {
+     "nome": "Analista do Reg. do Comércio",
+     "pessoas": 7
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 5
+    },
+    {
+     "nome": "Auxiliar Administrativo",
+     "pessoas": 4
+    },
+    {
+     "nome": "Assistente Administrativo",
+     "pessoas": 3
+    },
+    {
+     "nome": "Téc. Reg. Comércio/Jí-Paraná",
+     "pessoas": 2
+    },
+    {
+     "nome": "Motorista",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "SEAGRI",
+   "pessoas": 174,
+   "bruto": 701646.54,
+   "afastados": 7,
+   "com_cds": 166,
+   "custo_cds": 542665.19,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 155,
+     "bruto": 600666.81
+    },
+    "cedido": {
+     "pessoas": 11,
+     "bruto": 30623.41
+    },
+    "efetivo": {
+     "pessoas": 7,
+     "bruto": 61009.32
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 9347.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "SPA",
+     "pessoas": 16
+    },
+    {
+     "nome": "DE",
+     "pessoas": 16
+    },
+    {
+     "nome": "UTE",
+     "pessoas": 9
+    },
+    {
+     "nome": "CDAP",
+     "pessoas": 8
+    },
+    {
+     "nome": "NPCC",
+     "pessoas": 8
+    },
+    {
+     "nome": "GEAG",
+     "pessoas": 8
+    },
+    {
+     "nome": "NCP",
+     "pessoas": 8
+    },
+    {
+     "nome": "NAF",
+     "pessoas": 7
+    },
+    {
+     "nome": "VILH",
+     "pessoas": 7
+    },
+    {
+     "nome": "GESAAAF",
+     "pessoas": 7
+    },
+    {
+     "nome": "TRANSP",
+     "pessoas": 7
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 6
+    },
+    {
+     "nome": "GECOC",
+     "pessoas": 6
+    },
+    {
+     "nome": "NC",
+     "pessoas": 6
+    },
+    {
+     "nome": "NPO",
+     "pessoas": 5
+    },
+    {
+     "nome": "JIPA",
+     "pessoas": 5
+    },
+    {
+     "nome": "CI",
+     "pessoas": 5
+    },
+    {
+     "nome": "NAPC",
+     "pessoas": 5
+    },
+    {
+     "nome": "GEPE",
+     "pessoas": 4
+    },
+    {
+     "nome": "GECAPTAR",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSCOM",
+     "pessoas": 3
+    },
+    {
+     "nome": "GEAGROIN",
+     "pessoas": 3
+    },
+    {
+     "nome": "CAFAMILIAR",
+     "pessoas": 3
+    },
+    {
+     "nome": "EQCF",
+     "pessoas": 2
+    },
+    {
+     "nome": "GEPROJE",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 27
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 25
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 20
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 15
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 12
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 6
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 5
+    },
+    {
+     "nome": "Medico Veterinario",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 3
+    },
+    {
+     "nome": "CHEFE DE NUCLEO TECNICO EXECUTIVO",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "LACEN",
+   "pessoas": 113,
+   "bruto": 567612.49,
+   "afastados": 2,
+   "com_cds": 13,
+   "custo_cds": 64373.38,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 71,
+     "bruto": 416662.91
+    },
+    "temporario": {
+     "pessoas": 27,
+     "bruto": 108125.24
+    },
+    "comissionado": {
+     "pessoas": 8,
+     "bruto": 36985.51
+    },
+    "cedido": {
+     "pessoas": 7,
+     "bruto": 5838.83
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "BIOMED",
+     "pessoas": 50
+    },
+    {
+     "nome": "PRODEMA",
+     "pessoas": 18
+    },
+    {
+     "nome": "APOIO",
+     "pessoas": 13
+    },
+    {
+     "nome": "NLAFRON",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 7
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 4
+    },
+    {
+     "nome": "GTEC",
+     "pessoas": 3
+    },
+    {
+     "nome": "BIOANIMAL",
+     "pessoas": 3
+    },
+    {
+     "nome": "DG",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Laboratorio",
+     "pessoas": 40
+    },
+    {
+     "nome": "BioMedico",
+     "pessoas": 17
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 8
+    },
+    {
+     "nome": "Farmaceutico Bioquimico",
+     "pessoas": 7
+    },
+    {
+     "nome": "Biologo",
+     "pessoas": 6
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 6
+    },
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 4
+    },
+    {
+     "nome": "Farmaceutico",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 3
+    },
+    {
+     "nome": "CHEFE DE SETOR V",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "IPEM",
+   "pessoas": 88,
+   "bruto": 527394.33,
+   "afastados": 3,
+   "com_cds": 62,
+   "custo_cds": 175585.73,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 26,
+     "bruto": 207797.19
+    },
+    "comissionado": {
+     "pessoas": 55,
+     "bruto": 276026.43
+    },
+    "cedido": {
+     "pessoas": 7,
+     "bruto": 43570.71
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GAB",
+     "pessoas": 14
+    },
+    {
+     "nome": "NRM",
+     "pessoas": 12
+    },
+    {
+     "nome": "GETRAN",
+     "pessoas": 11
+    },
+    {
+     "nome": "CAP",
+     "pessoas": 9
+    },
+    {
+     "nome": "NINT",
+     "pessoas": 6
+    },
+    {
+     "nome": "GETEC",
+     "pessoas": 6
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 4
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 4
+    },
+    {
+     "nome": "GRH",
+     "pessoas": 3
+    },
+    {
+     "nome": "NPM",
+     "pessoas": 3
+    },
+    {
+     "nome": "GTI",
+     "pessoas": 3
+    },
+    {
+     "nome": "GEPLAN",
+     "pessoas": 2
+    },
+    {
+     "nome": "PROTOCOLO",
+     "pessoas": 2
+    },
+    {
+     "nome": "CI",
+     "pessoas": 2
+    },
+    {
+     "nome": "NDIA",
+     "pessoas": 2
+    },
+    {
+     "nome": "GABADJ",
+     "pessoas": 2
+    },
+    {
+     "nome": "CPL",
+     "pessoas": 1
+    },
+    {
+     "nome": "GECON",
+     "pessoas": 1
+    },
+    {
+     "nome": "GGCONT",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "CARGO PARA PAGAMENTO DE INDENIZACAO",
+     "pessoas": 26
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 10
+    },
+    {
+     "nome": "IPEM - MOTORISTA AUXILIAR",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 7
+    },
+    {
+     "nome": "IPEM - AGENTE ATIVIDADES ADMINISTRATIVAS",
+     "pessoas": 5
+    },
+    {
+     "nome": "IPEM - ESPECIALISTA EM METROLOGIA",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR",
+     "pessoas": 2
+    },
+    {
+     "nome": "IPEM - COMUNICOLOGO",
+     "pessoas": 1
+    },
+    {
+     "nome": "GERENTE ADMINISTRATIVO FINANCEIRO",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "SUPEL",
+   "pessoas": 110,
+   "bruto": 526485.38,
+   "afastados": 2,
+   "com_cds": 107,
+   "custo_cds": 449410.46,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 97,
+     "bruto": 407254.5
+    },
+    "militar": {
+     "pessoas": 1,
+     "bruto": 12602.13
+    },
+    "cedido": {
+     "pessoas": 2,
+     "bruto": 11890.6
+    },
+    "efetivo": {
+     "pessoas": 10,
+     "bruto": 94738.15
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CAF",
+     "pessoas": 9
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 8
+    },
+    {
+     "nome": "RH",
+     "pessoas": 8
+    },
+    {
+     "nome": "CPEAP",
+     "pessoas": 7
+    },
+    {
+     "nome": "CRP",
+     "pessoas": 6
+    },
+    {
+     "nome": "COGEN2",
+     "pessoas": 6
+    },
+    {
+     "nome": "COOBR1",
+     "pessoas": 6
+    },
+    {
+     "nome": "COESP",
+     "pessoas": 5
+    },
+    {
+     "nome": "CTI",
+     "pessoas": 5
+    },
+    {
+     "nome": "COSAU2",
+     "pessoas": 5
+    },
+    {
+     "nome": "COSEG1",
+     "pessoas": 4
+    },
+    {
+     "nome": "COGEN4",
+     "pessoas": 4
+    },
+    {
+     "nome": "PAT",
+     "pessoas": 4
+    },
+    {
+     "nome": "COTEC",
+     "pessoas": 4
+    },
+    {
+     "nome": "CAP",
+     "pessoas": 4
+    },
+    {
+     "nome": "COEDU",
+     "pessoas": 4
+    },
+    {
+     "nome": "COGEN5",
+     "pessoas": 4
+    },
+    {
+     "nome": "COSAU1",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 3
+    },
+    {
+     "nome": "COSAU4",
+     "pessoas": 3
+    },
+    {
+     "nome": "COGEN1",
+     "pessoas": 3
+    },
+    {
+     "nome": "CI",
+     "pessoas": 2
+    },
+    {
+     "nome": "ATP",
+     "pessoas": 2
+    },
+    {
+     "nome": "NCOMP",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 25
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 21
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 16
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 8
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 6
+    },
+    {
+     "nome": "MEMBRO DE LICITACAO",
+     "pessoas": 5
+    },
+    {
+     "nome": "SUPEL- Agente Administrativo",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 4
+    },
+    {
+     "nome": "SUPEL- Tecnico em Lic.,Reg. Pesq. Preco",
+     "pessoas": 3
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "SECOM",
+   "pessoas": 81,
+   "bruto": 416278.55,
+   "afastados": 0,
+   "com_cds": 81,
+   "custo_cds": 356005.56,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 78,
+     "bruto": 399943.87
+    },
+    "efetivo": {
+     "pessoas": 3,
+     "bruto": 16334.68
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CEPP",
+     "pessoas": 20
+    },
+    {
+     "nome": "DRPC",
+     "pessoas": 15
+    },
+    {
+     "nome": "CCON",
+     "pessoas": 14
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 12
+    },
+    {
+     "nome": "SDI",
+     "pessoas": 8
+    },
+    {
+     "nome": "GCON",
+     "pessoas": 8
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 4
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 16
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 12
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 2
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 2
+    },
+    {
+     "nome": "GERENTE DE CONTEUDO DIGITAL",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "SEJUCEL",
+   "pessoas": 92,
+   "bruto": 346215.41,
+   "afastados": 0,
+   "com_cds": 89,
+   "custo_cds": 271740.76,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 85,
+     "bruto": 286431.97
+    },
+    "efetivo": {
+     "pessoas": 6,
+     "bruto": 54202.23
+    },
+    "cedido": {
+     "pessoas": 1,
+     "bruto": 5581.21
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CEL",
+     "pessoas": 26
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 16
+    },
+    {
+     "nome": "CODEC",
+     "pessoas": 11
+    },
+    {
+     "nome": "SP",
+     "pessoas": 10
+    },
+    {
+     "nome": "SECONV",
+     "pessoas": 7
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 5
+    },
+    {
+     "nome": "CJUV",
+     "pessoas": 4
+    },
+    {
+     "nome": "COTAB",
+     "pessoas": 2
+    },
+    {
+     "nome": "RH",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSEJUR",
+     "pessoas": 2
+    },
+    {
+     "nome": "CI",
+     "pessoas": 2
+    },
+    {
+     "nome": "SPA",
+     "pessoas": 1
+    },
+    {
+     "nome": "SDIRFUN",
+     "pessoas": 1
+    },
+    {
+     "nome": "SCONT",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 1
+    },
+    {
+     "nome": "PROT",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 22
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 16
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 13
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 12
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 4
+    },
+    {
+     "nome": "Professor Classe C - Ch20",
+     "pessoas": 2
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 2
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "LEPAC",
+   "pessoas": 48,
+   "bruto": 282833.63,
+   "afastados": 2,
+   "com_cds": 5,
+   "custo_cds": 27957.52,
+   "grupos": {
+    "temporario": {
+     "pessoas": 15,
+     "bruto": 71874.35
+    },
+    "efetivo": {
+     "pessoas": 31,
+     "bruto": 205058.39
+    },
+    "comissionado": {
+     "pessoas": 2,
+     "bruto": 5900.89
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "NLOG",
+     "pessoas": 44
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 2
+    },
+    {
+     "nome": "NUADM",
+     "pessoas": 1
+    },
+    {
+     "nome": "DG",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Tecnico em Laboratorio",
+     "pessoas": 21
+    },
+    {
+     "nome": "BioMedico",
+     "pessoas": 11
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 3
+    },
+    {
+     "nome": "Farmaceutico Bioquimico",
+     "pessoas": 3
+    },
+    {
+     "nome": "SESAU- Motorista",
+     "pessoas": 2
+    },
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 2
+    },
+    {
+     "nome": "Farmaceutico",
+     "pessoas": 2
+    },
+    {
+     "nome": "SESAU- Auxiliar de Servicos Gerais",
+     "pessoas": 1
+    },
+    {
+     "nome": "CHEFE DE SETOR V",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "SIBRA",
+   "pessoas": 28,
+   "bruto": 276590.16,
+   "afastados": 2,
+   "com_cds": 26,
+   "custo_cds": 198011.07,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 25,
+     "bruto": 262537.19
+    },
+    "cedido": {
+     "pessoas": 1,
+     "bruto": 1976.83
+    },
+    "efetivo": {
+     "pessoas": 2,
+     "bruto": 12076.14
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GAB",
+     "pessoas": 28
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 9
+    },
+    {
+     "nome": "ASSESSOR XI",
+     "pessoas": 7
+    },
+    {
+     "nome": "ASSESSOR XII",
+     "pessoas": 2
+    },
+    {
+     "nome": "COORDENADOR DE ASSUNTOS GOVERNAMENTAIS",
+     "pessoas": 1
+    },
+    {
+     "nome": "COORDENADOR DE CAPTACAO DE RECURSOS",
+     "pessoas": 1
+    },
+    {
+     "nome": "CHEFE DE GABINETE",
+     "pessoas": 1
+    },
+    {
+     "nome": "SECRETARIO ADJUNTO",
+     "pessoas": 1
+    },
+    {
+     "nome": "DIRETOR EXECUTIVO",
+     "pessoas": 1
+    },
+    {
+     "nome": "SECRETARIO DE INTEGRACAO DO ESTADO DE RONDONIA EM BRASILIA",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "AGERO",
+   "pessoas": 53,
+   "bruto": 271870.48,
+   "afastados": 1,
+   "com_cds": 14,
+   "custo_cds": 95173.76,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 12,
+     "bruto": 88134.16
+    },
+    "efetivo": {
+     "pessoas": 39,
+     "bruto": 174395.72
+    },
+    "cedido": {
+     "pessoas": 2,
+     "bruto": 9340.6
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "TRANSPJIP",
+     "pessoas": 9
+    },
+    {
+     "nome": "TRANSPJAR",
+     "pessoas": 4
+    },
+    {
+     "nome": "TRANSPPIB",
+     "pessoas": 4
+    },
+    {
+     "nome": "DNFS",
+     "pessoas": 3
+    },
+    {
+     "nome": "TRANSPOPO",
+     "pessoas": 3
+    },
+    {
+     "nome": "TRANSPARI",
+     "pessoas": 3
+    },
+    {
+     "nome": "TRANSPRLM",
+     "pessoas": 3
+    },
+    {
+     "nome": "GAD",
+     "pessoas": 3
+    },
+    {
+     "nome": "GGP",
+     "pessoas": 2
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 2
+    },
+    {
+     "nome": "TRANSPMDO",
+     "pessoas": 2
+    },
+    {
+     "nome": "DAFP",
+     "pessoas": 1
+    },
+    {
+     "nome": "TRANSPNVM",
+     "pessoas": 1
+    },
+    {
+     "nome": "DRET",
+     "pessoas": 1
+    },
+    {
+     "nome": "GFC",
+     "pessoas": 1
+    },
+    {
+     "nome": "SAN",
+     "pessoas": 1
+    },
+    {
+     "nome": "TRANSPVLH",
+     "pessoas": 1
+    },
+    {
+     "nome": "PRES",
+     "pessoas": 1
+    },
+    {
+     "nome": "NPE",
+     "pessoas": 1
+    },
+    {
+     "nome": "AJES",
+     "pessoas": 1
+    },
+    {
+     "nome": "TRANSPCAC",
+     "pessoas": 1
+    },
+    {
+     "nome": "TRANSPSMG",
+     "pessoas": 1
+    },
+    {
+     "nome": "TRANSPPVH",
+     "pessoas": 1
+    },
+    {
+     "nome": "OUV",
+     "pessoas": 1
+    },
+    {
+     "nome": "CI",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "DER- Fiscal de Transporte",
+     "pessoas": 36
+    },
+    {
+     "nome": "DIRETOR",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 2
+    },
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 1
+    },
+    {
+     "nome": "DER- Engenheiro Civil",
+     "pessoas": 1
+    },
+    {
+     "nome": "DIRETOR EXECUTIVO",
+     "pessoas": 1
+    },
+    {
+     "nome": "DIRETOR PRESIDENTE",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "IESPRO",
+   "pessoas": 50,
+   "bruto": 269384.87,
+   "afastados": 1,
+   "com_cds": 20,
+   "custo_cds": 87873.22,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 15,
+     "bruto": 59408.69
+    },
+    "efetivo": {
+     "pessoas": 33,
+     "bruto": 193433.28
+    },
+    "cedido": {
+     "pessoas": 1,
+     "bruto": 13512.62
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 3030.28
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GAD",
+     "pessoas": 10
+    },
+    {
+     "nome": "GETEC",
+     "pessoas": 9
+    },
+    {
+     "nome": "GEP",
+     "pessoas": 6
+    },
+    {
+     "nome": "GESUP",
+     "pessoas": 5
+    },
+    {
+     "nome": "GFIN",
+     "pessoas": 4
+    },
+    {
+     "nome": "GP",
+     "pessoas": 4
+    },
+    {
+     "nome": "APAT",
+     "pessoas": 3
+    },
+    {
+     "nome": "CI",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSEJUR",
+     "pessoas": 1
+    },
+    {
+     "nome": "TRANSP",
+     "pessoas": 1
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 1
+    },
+    {
+     "nome": "COMP",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 1
+    },
+    {
+     "nome": "AEP",
+     "pessoas": 1
+    },
+    {
+     "nome": "LABINF",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "SESAU- Agente Atividade Administrativa",
+     "pessoas": 13
+    },
+    {
+     "nome": "Tecnico em Enfermagem",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 4
+    },
+    {
+     "nome": "Fisioterapeuta",
+     "pessoas": 4
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 3
+    },
+    {
+     "nome": "SESAU- Auxiliar de Servicos Gerais",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR",
+     "pessoas": 2
+    },
+    {
+     "nome": "SESAU- Administrador",
+     "pessoas": 1
+    },
+    {
+     "nome": "Psicologo ( LEI 1067/02 )",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "SI",
+   "pessoas": 34,
+   "bruto": 221873.48,
+   "afastados": 0,
+   "com_cds": 33,
+   "custo_cds": 204485.96,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 29,
+     "bruto": 184378.23
+    },
+    "cedido": {
+     "pessoas": 3,
+     "bruto": 13761.78
+    },
+    "efetivo": {
+     "pessoas": 2,
+     "bruto": 23733.47
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "COOPI",
+     "pessoas": 7
+    },
+    {
+     "nome": "COPAF",
+     "pessoas": 6
+    },
+    {
+     "nome": "CPPO",
+     "pessoas": 5
+    },
+    {
+     "nome": "GDP",
+     "pessoas": 4
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 3
+    },
+    {
+     "nome": "DIREX",
+     "pessoas": 2
+    },
+    {
+     "nome": "NULCON",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASGAB",
+     "pessoas": 1
+    },
+    {
+     "nome": "CI",
+     "pessoas": 1
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 1
+    },
+    {
+     "nome": "NMA",
+     "pessoas": 1
+    },
+    {
+     "nome": "CONT",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "CHEFE DE NUCLEO",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 6
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 3
+    },
+    {
+     "nome": "CHEFE DE GABINETE",
+     "pessoas": 2
+    },
+    {
+     "nome": "FEDERAL A DISPOSICAO DO ESTADO",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 2
+    },
+    {
+     "nome": "GERENTE DE PROJETOS",
+     "pessoas": 2
+    },
+    {
+     "nome": "COORDENADOR DE PLANEJAMENTO E ORCAMENTO",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 1
+    },
+    {
+     "nome": "SUPERINTENDENTE",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "HRE",
+   "pessoas": 14,
+   "bruto": 197877.29,
+   "afastados": 0,
+   "com_cds": 4,
+   "custo_cds": 17161.45,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 4,
+     "bruto": 63160.36
+    },
+    "comissionado": {
+     "pessoas": 2,
+     "bruto": 10213.84
+    },
+    "temporario": {
+     "pessoas": 8,
+     "bruto": 124503.09
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GMED",
+     "pessoas": 9
+    },
+    {
+     "nome": "DG",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASTEC",
+     "pessoas": 1
+    },
+    {
+     "nome": "GENF",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Medico 40h",
+     "pessoas": 9
+    },
+    {
+     "nome": "Assistente Social",
+     "pessoas": 1
+    },
+    {
+     "nome": "GERENTE VI",
+     "pessoas": 1
+    },
+    {
+     "nome": "Nutricionista",
+     "pessoas": 1
+    },
+    {
+     "nome": "DIRETOR ADJUNTO DO HOSPITAL REGIONAL DE EXTREMA",
+     "pessoas": 1
+    },
+    {
+     "nome": "Enfermeiro",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "SETUR",
+   "pessoas": 40,
+   "bruto": 189196.4,
+   "afastados": 1,
+   "com_cds": 37,
+   "custo_cds": 138533.21,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 35,
+     "bruto": 125326.58
+    },
+    "efetivo": {
+     "pessoas": 4,
+     "bruto": 62681.82
+    },
+    "cedido": {
+     "pessoas": 1,
+     "bruto": 1188.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "CONV",
+     "pessoas": 8
+    },
+    {
+     "nome": "CAF",
+     "pessoas": 7
+    },
+    {
+     "nome": "CAT",
+     "pessoas": 5
+    },
+    {
+     "nome": "EVTUR",
+     "pessoas": 4
+    },
+    {
+     "nome": "CTUR",
+     "pessoas": 4
+    },
+    {
+     "nome": "CAD",
+     "pessoas": 3
+    },
+    {
+     "nome": "CI",
+     "pessoas": 3
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 3
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 2
+    },
+    {
+     "nome": "PAT",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 5
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 4
+    },
+    {
+     "nome": "CHEFE DO NUCLEO DE ATENDIMENTO AOS TURISTAS CAT",
+     "pessoas": 2
+    },
+    {
+     "nome": "CH DE NUCLEO DE ATEND AOS TURISTAS/CAT",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 2
+    },
+    {
+     "nome": "CHEFE DO NUCLEO DE CAPTAÇÃO DE REC PROJ E PREST CONTAS",
+     "pessoas": 1
+    },
+    {
+     "nome": "COORDENADOR DE ADMINISTRACAO E FINANCAS",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "FAPERO",
+   "pessoas": 20,
+   "bruto": 152902.24,
+   "afastados": 1,
+   "com_cds": 17,
+   "custo_cds": 88813.68,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 10,
+     "bruto": 69020.79
+    },
+    "efetivo": {
+     "pessoas": 4,
+     "bruto": 43354.87
+    },
+    "cedido": {
+     "pessoas": 6,
+     "bruto": 40526.58
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "DAF",
+     "pessoas": 5
+    },
+    {
+     "nome": "DPE",
+     "pessoas": 3
+    },
+    {
+     "nome": "DITT",
+     "pessoas": 3
+    },
+    {
+     "nome": "NRH",
+     "pessoas": 2
+    },
+    {
+     "nome": "PRESIDENCIA",
+     "pessoas": 2
+    },
+    {
+     "nome": "NCAPT",
+     "pessoas": 1
+    },
+    {
+     "nome": "PJ",
+     "pessoas": 1
+    },
+    {
+     "nome": "NCPB",
+     "pessoas": 1
+    },
+    {
+     "nome": "GCI",
+     "pessoas": 1
+    },
+    {
+     "nome": "DC",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 5
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 3
+    },
+    {
+     "nome": "Agente Atividade Administrativa LC 1117",
+     "pessoas": 1
+    },
+    {
+     "nome": "CHEFE DE GABINETE DA PRESIDENCIA",
+     "pessoas": 1
+    },
+    {
+     "nome": "SECRETARIA DO PRESIDENTE",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR XII",
+     "pessoas": 1
+    },
+    {
+     "nome": "DIRETOR DEPART. PLANEJ. ESTRATEGICO",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 1
+    },
+    {
+     "nome": "GERENTE DE DEPARTAMENTO ADMINISTRATIVO E  FINANCEIRO",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "FUNCER",
+   "pessoas": 31,
+   "bruto": 85917.31,
+   "afastados": 0,
+   "com_cds": 31,
+   "custo_cds": 77915.31,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 30,
+     "bruto": 84729.31
+    },
+    "cedido": {
+     "pessoas": 1,
+     "bruto": 1188.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "TEAR",
+     "pessoas": 6
+    },
+    {
+     "nome": "RH",
+     "pessoas": 4
+    },
+    {
+     "nome": "MERO",
+     "pessoas": 3
+    },
+    {
+     "nome": "BPE",
+     "pessoas": 2
+    },
+    {
+     "nome": "DART",
+     "pessoas": 2
+    },
+    {
+     "nome": "SPA",
+     "pessoas": 2
+    },
+    {
+     "nome": "CCIM",
+     "pessoas": 2
+    },
+    {
+     "nome": "SDT",
+     "pessoas": 1
+    },
+    {
+     "nome": "SCOM",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASCOM",
+     "pessoas": 1
+    },
+    {
+     "nome": "SEM",
+     "pessoas": 1
+    },
+    {
+     "nome": "CI",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSEJUR",
+     "pessoas": 1
+    },
+    {
+     "nome": "SOF",
+     "pessoas": 1
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 1
+    },
+    {
+     "nome": "PROL",
+     "pessoas": 1
+    },
+    {
+     "nome": "DAF",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 10
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 5
+    },
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 4
+    },
+    {
+     "nome": "ASSESSOR I",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR VI",
+     "pessoas": 1
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 1
+    },
+    {
+     "nome": "CONTROLADOR(A) INTERNO",
+     "pessoas": 1
+    },
+    {
+     "nome": "GESTOR",
+     "pessoas": 1
+    },
+    {
+     "nome": "ADMINISTRADOR DE MUSEU",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "VICEGOV",
+   "pessoas": 4,
+   "bruto": 64762.61,
+   "afastados": 0,
+   "com_cds": 4,
+   "custo_cds": 28583.71,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 4,
+     "bruto": 64762.61
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "ASS",
+     "pessoas": 2
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 1
+    },
+    {
+     "nome": "SECRETARIO EXECUTIVO DO VICE GONERNADOR",
+     "pessoas": 1
+    },
+    {
+     "nome": "Assessor VIII",
+     "pessoas": 1
+    },
+    {
+     "nome": "VICE GOVERNADOR",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "CEPEM",
+   "pessoas": 2,
+   "bruto": 62400.87,
+   "afastados": 0,
+   "com_cds": 1,
+   "custo_cds": 5581.21,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 2,
+     "bruto": 62400.87
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "DG",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Medico 20h",
+     "pessoas": 1
+    },
+    {
+     "nome": "Medico 40h",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "CONEPODFESPREN",
+   "pessoas": 11,
+   "bruto": 57396.86,
+   "afastados": 0,
+   "com_cds": 10,
+   "custo_cds": 41791.8,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 10,
+     "bruto": 49302.04
+    },
+    "efetivo": {
+     "pessoas": 1,
+     "bruto": 8094.82
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "PROTOCOLO",
+     "pessoas": 11
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR IV",
+     "pessoas": 3
+    },
+    {
+     "nome": "ASSESSOR V",
+     "pessoas": 2
+    },
+    {
+     "nome": "GERENTE VIII",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR VIII - CDS 8",
+     "pessoas": 1
+    },
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR IX",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR V - SEPAT",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "CAERD",
+   "pessoas": 4,
+   "bruto": 25010.91,
+   "afastados": 4,
+   "com_cds": 0,
+   "custo_cds": 0.0,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 4,
+     "bruto": 25010.91
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GAGP",
+     "pessoas": 1
+    },
+    {
+     "nome": "DVDI",
+     "pessoas": 1
+    },
+    {
+     "nome": "AUD",
+     "pessoas": 1
+    },
+    {
+     "nome": "CTR",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Professor Classe C - Ch 40",
+     "pessoas": 3
+    },
+    {
+     "nome": "Tecnico Educacional Nivel 2",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "SOPH",
+   "pessoas": 5,
+   "bruto": 20865.6,
+   "afastados": 0,
+   "com_cds": 5,
+   "custo_cds": 20015.6,
+   "grupos": {
+    "comissionado": {
+     "pessoas": 5,
+     "bruto": 20865.6
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "SRH",
+     "pessoas": 2
+    },
+    {
+     "nome": "GAB",
+     "pessoas": 1
+    },
+    {
+     "nome": "DINF",
+     "pessoas": 1
+    },
+    {
+     "nome": "CGP",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "ASSESSOR II",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR X",
+     "pessoas": 2
+    },
+    {
+     "nome": "ASSESSOR III",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "CERO",
+   "pessoas": 2,
+   "bruto": 12716.98,
+   "afastados": 0,
+   "com_cds": 1,
+   "custo_cds": 0.0,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 1,
+     "bruto": 7332.47
+    },
+    "temporario": {
+     "pessoas": 1,
+     "bruto": 5384.51
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "GAB",
+     "pessoas": 1
+    },
+    {
+     "nome": "DRCLINICA",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "Fisioterapeuta",
+     "pessoas": 2
+    }
+   ]
+  },
+  {
+   "unidade": "OGE",
+   "pessoas": 2,
+   "bruto": 10816.61,
+   "afastados": 0,
+   "com_cds": 2,
+   "custo_cds": 7612.27,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 1,
+     "bruto": 6560.15
+    },
+    "comissionado": {
+     "pessoas": 1,
+     "bruto": 4256.46
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "OUVGER",
+     "pessoas": 2
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "SEJUS- AGENTE EM ATIV. ADMINIST.",
+     "pessoas": 1
+    },
+    {
+     "nome": "ASSESSOR VII",
+     "pessoas": 1
+    }
+   ]
+  },
+  {
+   "unidade": "TCE",
+   "pessoas": 1,
+   "bruto": 3805.0,
+   "afastados": 1,
+   "com_cds": 0,
+   "custo_cds": 0.0,
+   "grupos": {
+    "efetivo": {
+     "pessoas": 1,
+     "bruto": 3805.0
+    }
+   },
+   "departamentos": [
+    {
+     "nome": "PRES",
+     "pessoas": 1
+    }
+   ],
+   "cargos": [
+    {
+     "nome": "SEJUS- SOCIO-EDUCADOR",
+     "pessoas": 1
+    }
+   ]
+  }
+ ],
+ "cds": [
+  {
+   "simbolo": "CDS-01",
+   "pessoas": 944,
+   "custo_cds": 1196626.34,
+   "bruto": 6625493.07,
+   "sem_vinculo": 658
+  },
+  {
+   "simbolo": "CDS-02",
+   "pessoas": 648,
+   "custo_cds": 1038955.33,
+   "bruto": 4042640.98,
+   "sem_vinculo": 263
+  },
+  {
+   "simbolo": "CDS-03",
+   "pessoas": 1047,
+   "custo_cds": 2252672.78,
+   "bruto": 7114300.1,
+   "sem_vinculo": 673
+  },
+  {
+   "simbolo": "CDS-04",
+   "pessoas": 1384,
+   "custo_cds": 3599538.23,
+   "bruto": 11239997.1,
+   "sem_vinculo": 822
+  },
+  {
+   "simbolo": "CDS-05",
+   "pessoas": 867,
+   "custo_cds": 2714757.37,
+   "bruto": 5582660.55,
+   "sem_vinculo": 678
+  },
+  {
+   "simbolo": "CDS-06",
+   "pessoas": 666,
+   "custo_cds": 2417773.72,
+   "bruto": 5128082.01,
+   "sem_vinculo": 502
+  },
+  {
+   "simbolo": "CDS-07",
+   "pessoas": 378,
+   "custo_cds": 1457400.83,
+   "bruto": 3304539.08,
+   "sem_vinculo": 233
+  },
+  {
+   "simbolo": "CDS-08",
+   "pessoas": 612,
+   "custo_cds": 3016734.49,
+   "bruto": 5449680.24,
+   "sem_vinculo": 426
+  },
+  {
+   "simbolo": "CDS-09",
+   "pessoas": 478,
+   "custo_cds": 2917754.72,
+   "bruto": 5135437.41,
+   "sem_vinculo": 327
+  },
+  {
+   "simbolo": "CDS-10",
+   "pessoas": 324,
+   "custo_cds": 2232757.69,
+   "bruto": 3801742.32,
+   "sem_vinculo": 210
+  },
+  {
+   "simbolo": "CDS-11",
+   "pessoas": 96,
+   "custo_cds": 737762.9,
+   "bruto": 1275260.22,
+   "sem_vinculo": 61
+  },
+  {
+   "simbolo": "CDS-12",
+   "pessoas": 119,
+   "custo_cds": 1051345.78,
+   "bruto": 1741494.38,
+   "sem_vinculo": 66
+  },
+  {
+   "simbolo": "CDS-13",
+   "pessoas": 72,
+   "custo_cds": 754262.57,
+   "bruto": 1265562.41,
+   "sem_vinculo": 38
+  },
+  {
+   "simbolo": "CDS-14",
+   "pessoas": 77,
+   "custo_cds": 1079688.86,
+   "bruto": 1727887.0,
+   "sem_vinculo": 48
+  },
+  {
+   "simbolo": "CDS-15",
+   "pessoas": 51,
+   "custo_cds": 851041.89,
+   "bruto": 1145933.07,
+   "sem_vinculo": 32
+  },
+  {
+   "simbolo": "CDS-16",
+   "pessoas": 19,
+   "custo_cds": 337960.92,
+   "bruto": 433952.55,
+   "sem_vinculo": 12
+  },
+  {
+   "simbolo": "CDS-17",
+   "pessoas": 39,
+   "custo_cds": 866061.21,
+   "bruto": 1496690.89,
+   "sem_vinculo": 15
+  },
+  {
+   "simbolo": "CDS-31",
+   "pessoas": 1,
+   "custo_cds": 0.0,
+   "bruto": 4100.0,
+   "sem_vinculo": 1
+  },
+  {
+   "simbolo": "sem símbolo",
+   "pessoas": 727,
+   "custo_cds": 1288840.62,
+   "bruto": 4028127.17,
+   "sem_vinculo": 464
+  }
+ ],
+ "faixas": [
+  {
+   "de": 0,
+   "ate": 3000,
+   "pessoas": 4381,
+   "bruto": 8662971.55
+  },
+  {
+   "de": 3000,
+   "ate": 6000,
+   "pessoas": 15869,
+   "bruto": 65587980.6
+  },
+  {
+   "de": 6000,
+   "ate": 10000,
+   "pessoas": 16703,
+   "bruto": 134767530.53
+  },
+  {
+   "de": 10000,
+   "ate": 20000,
+   "pessoas": 9525,
+   "bruto": 128901136.15
+  },
+  {
+   "de": 20000,
+   "ate": 30000,
+   "pessoas": 1842,
+   "bruto": 43561724.72
+  },
+  {
+   "de": 30000,
+   "ate": 46367,
+   "pessoas": 1076,
+   "bruto": 39517801.65
+  },
+  {
+   "de": 46367,
+   "ate": null,
+   "pessoas": 442,
+   "bruto": 28497745.97
+  }
+ ],
+ "verbas": [
+  {
+   "verba": "VENCIMENTO",
+   "pessoas": 35256,
+   "valor": 185123903.3
+  },
+  {
+   "verba": "SOLDO PM/BM",
+   "pessoas": 7489,
+   "valor": 87022582.98
+  },
+  {
+   "verba": "PROVENTOS INATIVOS",
+   "pessoas": 9300,
+   "valor": 58759841.89
+  },
+  {
+   "verba": "AUXILIO ALIMENTACAO",
+   "pessoas": 31297,
+   "valor": 16136020.36
+  },
+  {
+   "verba": "GRATIFICACAO DE ATIVIDADE TRIBUTARIA 12",
+   "pessoas": 320,
+   "valor": 14950683.14
+  },
+  {
+   "verba": "ADICIONAL DE SERVICO EXTRAORDINARIO 200H",
+   "pessoas": 4291,
+   "valor": 10410861.35
+  },
+  {
+   "verba": "DIF AUXILIO ALIMENTACAO",
+   "pessoas": 1994,
+   "valor": 9280549.02
+  },
+  {
+   "verba": "GRAT POR ESPECIALIZACAO",
+   "pessoas": 10776,
+   "valor": 8921839.91
+  },
+  {
+   "verba": "GRATIFICACAO DE INCENTIVO A DOCENCIA",
+   "pessoas": 6795,
+   "valor": 8690218.13
+  },
+  {
+   "verba": "SUBSIDIOS",
+   "pessoas": 220,
+   "valor": 7748612.42
+  },
+  {
+   "verba": "LICENCA PECUNIA",
+   "pessoas": 221,
+   "valor": 6166267.48
+  },
+  {
+   "verba": "AUXILIO DESLOCAMENTO",
+   "pessoas": 25627,
+   "valor": 5122968.05
+  },
+  {
+   "verba": "COMPLEMENTO CONST.IRREDUTIBILIDADE REMUN",
+   "pessoas": 854,
+   "valor": 4320803.2
+  },
+  {
+   "verba": "REPRESENTACAO CDS-04",
+   "pessoas": 1533,
+   "valor": 3787527.75
+  },
+  {
+   "verba": "GRATIFICACAO DE ATIVIDADE TRIBUTARIA 8",
+   "pessoas": 67,
+   "valor": 3388387.67
+  },
+  {
+   "verba": "GRATIFICACAO DE UNIDADE ESCOLAR",
+   "pessoas": 6772,
+   "valor": 3385233.34
+  },
+  {
+   "verba": "REPRESENTACAO CDS-08",
+   "pessoas": 682,
+   "valor": 3119833.83
+  },
+  {
+   "verba": "ADICIONAL DE 1/3 FERIAS",
+   "pessoas": 1089,
+   "valor": 3073123.46
+  },
+  {
+   "verba": "REPRESENTACAO CDS-09",
+   "pessoas": 541,
+   "valor": 3013109.24
+  },
+  {
+   "verba": "VANTAGEM PESSOAL PM/BM",
+   "pessoas": 2173,
+   "valor": 3004362.18
+  },
+  {
+   "verba": "AUXILIO SAUDE CONDICIONAL",
+   "pessoas": 19259,
+   "valor": 2888775.0
+  },
+  {
+   "verba": "REPRESENTACAO CDS-05",
+   "pessoas": 1008,
+   "valor": 2885413.78
+  },
+  {
+   "verba": "RRA - REND.RECEB.ACUMULADAMENTE",
+   "pessoas": 304,
+   "valor": 2845049.46
+  },
+  {
+   "verba": "ADIC. SERVICO EXTRAORDINARIO (200H) JUDICIAL",
+   "pessoas": 691,
+   "valor": 2825382.07
+  },
+  {
+   "verba": "VANTAGEM PESSOAL",
+   "pessoas": 11474,
+   "valor": 2813624.94
+  },
+  {
+   "verba": "AUXILIO ALIMENTACAO - DETRAN",
+   "pessoas": 1391,
+   "valor": 2709292.43
+  },
+  {
+   "verba": "REPRESENTACAO CDS-06",
+   "pessoas": 779,
+   "valor": 2540520.05
+  },
+  {
+   "verba": "ABONO PECUNIARIO - EVENTUAL",
+   "pessoas": 631,
+   "valor": 2469278.05
+  },
+  {
+   "verba": "REPRESENTACAO CDS-10",
+   "pessoas": 376,
+   "valor": 2434299.2
+  },
+  {
+   "verba": "REPRESENTACAO CDS-03",
+   "pessoas": 1228,
+   "valor": 2423198.22
+  },
+  {
+   "verba": "ABONO DE PERMANENCIA EM SERVICO",
+   "pessoas": 1971,
+   "valor": 2365760.06
+  },
+  {
+   "verba": "FARDAMENTO PM/BM",
+   "pessoas": 5423,
+   "valor": 2344200.07
+  },
+  {
+   "verba": "DEVOP - ADICIONAL DE PRODUTIVIDADE",
+   "pessoas": 1062,
+   "valor": 2290305.08
+  },
+  {
+   "verba": "DIF ADICIONAL DE 1/3 DE FERIAS",
+   "pessoas": 1343,
+   "valor": 2074802.61
+  },
+  {
+   "verba": "DIF ABONO PECUNIARIO",
+   "pessoas": 1127,
+   "valor": 2002077.91
+  },
+  {
+   "verba": "GRATIFICACAO POR ACUMULACAO DE ACERVO",
+   "pessoas": 178,
+   "valor": 1965286.9
+  },
+  {
+   "verba": "VENCIMENTO-AD",
+   "pessoas": 556,
+   "valor": 1962265.46
+  },
+  {
+   "verba": "GRATIFICACAO DE ATIVIDADE TRIBUTARIA 9",
+   "pessoas": 40,
+   "valor": 1937208.92
+  },
+  {
+   "verba": "IDARON - ADICIONAL DE DESEMPENHO 12E",
+   "pessoas": 100,
+   "valor": 1888387.0
+  },
+  {
+   "verba": "GRATIFICACAO DIFICIL ACESSO",
+   "pessoas": 869,
+   "valor": 1787446.1
+  }
+ ],
+ "aposentadoria": {
+  "pessoas": 898,
+  "bruto_mes": 7393405.65,
+  "afastados": 856,
+  "tempo": {
+   "mais de 2 anos": 267,
+   "1 a 2 anos": 183,
+   "7 a 12 meses": 169,
+   "até 6 meses": 279
+  }
+ }
+}

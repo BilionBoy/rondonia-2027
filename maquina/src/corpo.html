@@ -1,0 +1,324 @@
+<main id="conteudo" class="max-w-[1440px] mx-auto px-4 sm:px-6 py-6">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <div class="min-w-0">
+      <h1 class="titulo-pagina">Custo da máquina do Estado</h1>
+      <p class="text-texto-2 mt-1" id="subtitulo"></p>
+    </div>
+  </div>
+
+  <nav id="visoes" class="flex flex-wrap gap-2 mt-5" aria-label="Visões do custo da máquina"></nav>
+
+  <!-- 0. resumo -->
+  <section id="v-resumo" data-visao hidden>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-5" id="rKpis"></div>
+    <div class="grid lg:grid-cols-12 gap-4 mt-4">
+      <div class="card p-5 lg:col-span-7 min-w-0">
+        <h2 class="titulo-secao">Para onde vai o custeio da máquina em 2026</h2>
+        <p class="text-sm text-texto-2 mt-1" id="rCusteioTxt"></p>
+        <div id="gResumo" class="h-[320px] mt-3"></div>
+      </div>
+      <div class="card p-5 lg:col-span-5 min-w-0">
+        <h2 class="titulo-secao">O que está em cada número</h2>
+        <ul id="rLeitura" class="mt-3 flex flex-col gap-3 text-sm"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. folha -->
+  <section id="v-folha" data-visao hidden>
+    <div class="grid lg:grid-cols-[380px_minmax(0,1fr)] gap-4 mt-5">
+      <div class="flex flex-col gap-4 min-w-0">
+        <div class="rounded bg-azul-noite text-white p-6">
+          <div class="text-xs font-semibold uppercase tracking-wide opacity-70">Despesa com pessoal do Executivo, 12 meses</div>
+          <div id="fAno" class="text-[2.6rem] font-bold leading-none mt-3 tabular-nums"></div>
+          <p id="fAnoTxt" class="text-sm opacity-80 mt-2"></p>
+          <div class="text-xs font-semibold uppercase tracking-wide opacity-70 mt-5">Folha bruta de outubro de 2026</div>
+          <div id="fMes" class="text-[1.9rem] font-bold leading-none mt-2 tabular-nums"></div>
+          <p id="fMesTxt" class="text-sm opacity-80 mt-2"></p>
+        </div>
+        <div class="card p-5"><div class="rotulo">Como se divide o ano (RGF)</div><ul id="fRgf" class="mt-2 flex flex-col"></ul></div>
+        <div class="card p-5 border-l-4 border-amarelo"><div class="rotulo">Afastados aguardando aposentadoria</div><div id="fApoValor" class="numero text-[1.75rem] leading-tight mt-1"></div><p id="fApoTxt" class="text-sm text-texto-2 mt-1"></p></div>
+      </div>
+      <div class="flex flex-col gap-4 min-w-0">
+        <div class="card p-5 min-w-0"><h2 class="titulo-secao text-base">Quem está na folha de outubro</h2><p class="text-sm text-texto-2 mt-1">Pessoas e valor bruto do mês, por vínculo. Clique numa barra.</p><div id="gVinculo" class="h-[340px] mt-2"></div><p id="fVinculoTxt" class="text-sm mt-1"></p></div>
+        <div class="grid xl:grid-cols-2 gap-4 min-w-0">
+          <div class="card p-5 min-w-0"><h2 class="titulo-secao text-base">Cargos em comissão (CDS)</h2><p class="text-sm text-texto-2 mt-1" id="fCdsTxt"></p><div id="gCds" class="h-[360px] mt-2"></div></div>
+          <div class="card p-5 min-w-0"><h2 class="titulo-secao text-base">Quanto cada um recebe (ativos)</h2><p class="text-sm text-texto-2 mt-1">Pessoas por faixa de salário bruto em outubro.</p><div id="gFaixa" class="h-[360px] mt-2"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. servidores por órgão -->
+  <section id="v-orgaos" data-visao hidden>
+    <div class="card mt-5 p-5 flex flex-wrap items-center justify-between gap-4">
+      <div class="min-w-0"><div class="rotulo">Servidores ativos por órgão, folha de outubro de 2026</div><div class="text-sm text-texto-2 mt-1" id="oTxt"></div></div>
+      <div class="flex flex-wrap gap-2" id="oOrdem"></div>
+    </div>
+    <div class="grid lg:grid-cols-[minmax(0,1fr)_420px] gap-4 mt-4">
+      <div class="card p-3 min-w-0"><div id="gOrgaos" class="h-[1200px]"></div></div>
+      <div class="flex flex-col gap-4 min-w-0"><div class="card p-5 lg:sticky lg:top-16" id="oFicha"></div></div>
+    </div>
+  </section>
+
+  <!-- 3. veículos -->
+  <section id="v-veiculos" data-visao hidden>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-5" id="vKpis"></div>
+    <div class="grid lg:grid-cols-12 gap-4 mt-4">
+      <div class="card p-5 lg:col-span-7 min-w-0"><h2 class="titulo-secao text-base">Mês a mês em 2026</h2><p class="text-sm text-texto-2 mt-1" id="vMesTxt"></p><div id="gVMes" class="h-[320px] mt-2"></div></div>
+      <div class="card p-5 lg:col-span-5 min-w-0"><h2 class="titulo-secao text-base">2025 × 2026</h2><p class="text-sm text-texto-2 mt-1">Pago no ano inteiro de 2025 e em 2026 (pago até agora e projeção até dezembro).</p><div id="gVAnos" class="h-[320px] mt-2"></div></div>
+      <div class="card p-5 lg:col-span-7 min-w-0"><div class="flex flex-wrap items-center justify-between gap-2"><h2 class="titulo-secao text-base">Quem gasta</h2><span class="text-xs text-texto-2">Pago em 2026, por órgão. Clique num órgão.</span></div><div id="gVOrg" class="h-[520px] mt-2"></div></div>
+      <div class="card p-5 lg:col-span-5 min-w-0"><h2 class="titulo-secao text-base" id="vCredTit">Quem recebe</h2><p class="text-sm text-texto-2 mt-1" id="vCredTxt"></p><ul id="vCred" class="mt-2 flex flex-col"></ul></div>
+    </div>
+  </section>
+
+  <!-- 4. imóveis -->
+  <section id="v-imoveis" data-visao hidden>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-5" id="iKpis"></div>
+    <div class="grid lg:grid-cols-12 gap-4 mt-4">
+      <div class="card p-5 lg:col-span-7 min-w-0"><div class="flex flex-wrap items-center justify-between gap-2"><h2 class="titulo-secao text-base">Quem paga aluguel</h2><span class="text-xs text-texto-2">Pago em 2026, por órgão. Clique num órgão.</span></div><div id="gIOrg" class="h-[520px] mt-2"></div></div>
+      <div class="flex flex-col gap-4 lg:col-span-5 min-w-0">
+        <div class="card p-5 min-w-0"><h2 class="titulo-secao text-base" id="iCredTit">Quem recebe</h2><p class="text-sm text-texto-2 mt-1" id="iCredTxt"></p><ul id="iCred" class="mt-2 flex flex-col"></ul></div>
+        <div class="card p-5 min-w-0"><h2 class="titulo-secao text-base">Mês a mês em 2026</h2><div id="gIMes" class="h-[220px] mt-2"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. regionais -->
+  <section id="v-regionais" data-visao hidden>
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-5" id="sKpis"></div>
+    <div class="grid lg:grid-cols-12 gap-4 mt-4">
+      <div class="card p-5 lg:col-span-7 min-w-0"><h2 class="titulo-secao text-base">Custo estimado de 2026 por unidade</h2><p class="text-sm text-texto-2 mt-1">Pessoal (CDS e cedidos) e custeio. Clique numa unidade.</p><div id="gSUn" class="h-[460px] mt-2"></div></div>
+      <div class="card p-5 lg:col-span-5 min-w-0" id="sFicha"></div>
+      <div class="card p-5 lg:col-span-7 min-w-0"><h2 class="titulo-secao text-base">Por tipo de despesa, 2026</h2><div id="gSTipo" class="h-[340px] mt-2"></div></div>
+      <div class="card p-5 lg:col-span-5 min-w-0"><h2 class="titulo-secao text-base">Se nada mudar: 2027 a 2030</h2><p class="text-sm text-texto-2 mt-1" id="sProjTxt"></p><div id="gSProj" class="h-[300px] mt-2"></div></div>
+    </div>
+  </section>
+
+  <!-- 6. método -->
+  <section id="v-metodo" data-visao hidden>
+    <div class="grid lg:grid-cols-2 gap-4 mt-5">
+      <div class="card p-6 min-w-0"><h2 class="titulo-secao">Fontes</h2><ul id="mFontes" class="mt-3 flex flex-col gap-3 text-sm"></ul></div>
+      <div class="card p-6 min-w-0"><h2 class="titulo-secao">Regras de contagem</h2><ul id="mRegras" class="mt-3 flex flex-col gap-3 text-sm list-disc pl-5"></ul></div>
+    </div>
+  </section>
+</main>
+
+<script>
+(() => {
+const M = window.M, $ = id => document.getElementById(id), esc = F.esc, nf = F.nf;
+// valor por extenso, como nos documentos: "R$ 8,32 bilhões", "R$ 567 milhões", "R$ 7,4 mil"
+const ext = v => { if (v == null || isNaN(v)) return "—"; const a = Math.abs(v);
+  if (a >= 1e9) return "R$ " + nf(v / 1e9, 2) + (a >= 2e9 ? " bilhões" : " bilhão");
+  if (a >= 1e6) return "R$ " + nf(v / 1e6, a >= 1e8 ? 0 : 1) + (a >= 2e6 ? " milhões" : " milhão");
+  if (a >= 1e3) return "R$ " + nf(v / 1e3, 0) + " mil";
+  return "R$ " + nf(v, 0); };
+const pct = (a, b) => b ? F.pct(100 * a / b) : "—";
+const graficos = [];
+const grafico = id => { const el = $(id); let g = echarts.getInstanceByDom(el); if (!g) { g = echarts.init(el, null, { renderer: "svg" }); graficos.push(g); } return g; };
+window.addEventListener("resize", () => graficos.forEach(g => g.resize()));
+const kpi = (rotulo, valor, txt, destaque) => `<div class="${destaque ? "rounded bg-azul-noite text-white" : "card"} p-5 min-w-0">
+  <div class="${destaque ? "text-xs font-semibold uppercase tracking-wide opacity-70" : "rotulo"}">${rotulo}</div>
+  <div class="${destaque ? "font-bold tabular-nums" : "numero"} text-[1.9rem] leading-tight mt-2">${valor}</div>
+  <p class="text-sm ${destaque ? "opacity-80" : "text-texto-2"} mt-1">${txt}</p></div>`;
+const linha = (esq, dir, sub, attrs = "") => `<li class="flex items-start justify-between gap-3 py-2 border-b border-linha last:border-0"${attrs}>
+  <div class="min-w-0"><div class="font-semibold text-azul-noite leading-snug">${esq}</div>${sub ? `<div class="text-xs text-texto-2 mt-0.5">${sub}</div>` : ""}</div>
+  <div class="numero shrink-0 text-right">${dir}</div></li>`;
+const COR = { combustivel: "#1351b4", manutencao: "#c2850c", locacao: "#168821", imovel: "#8a2be2" };
+const MES = F.MESES;
+
+$("subtitulo").textContent = `Poder Executivo de Rondônia · folha de ${M.coleta.folha}, pagamentos até ${M.coleta.pagamentos} e RGF de ${M.coleta.rgf}. Tudo de fonte pública, com a regra de cada número em "Método e fontes".`;
+
+// ------- visões
+const VISOES = [["resumo", "Resumo", "fa-house"], ["folha", "Folha de pagamento", "fa-money-check-dollar"], ["orgaos", "Servidores por órgão", "fa-users"],
+  ["veiculos", "Veículos", "fa-car"], ["imoveis", "Imóveis alugados", "fa-building"], ["regionais", "Secretarias regionais", "fa-map-location-dot"],
+  ["metodo", "Método e fontes", "fa-circle-info"]];
+const DESENHO = {};
+let atual = null;
+$("visoes").innerHTML = VISOES.map(v => `<button type="button" class="chip gap-2" data-v="${v[0]}"><i class="fa-solid ${v[2]} text-xs"></i>${v[1]}</button>`).join("");
+function trocaVisao(id, inicio) {
+  atual = id;
+  document.querySelectorAll("[data-visao]").forEach(s => s.hidden = s.id !== "v-" + id);
+  document.querySelectorAll("#visoes [data-v]").forEach(b => b.classList.toggle("chip-on", b.dataset.v === id));
+  if (!inicio) history.replaceState(null, "", "#" + id);
+  F.pronto(() => { DESENHO[id]?.(); graficos.forEach(g => g.resize()); });
+}
+$("visoes").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (b) trocaVisao(b.dataset.v); });
+
+// ------- 0. resumo
+DESENHO.resumo = () => {
+  const r = M.resumo;
+  $("rKpis").innerHTML = [
+    kpi("Folha de pessoal por ano", ext(M.folha.rgf.bruta), `Despesa bruta com pessoal do Executivo nos 12 meses até ${M.folha.rgf.ate} (RGF). Outubro de 2026: ${ext(M.folha.total.bruto)} brutos.`, true),
+    kpi("Pessoas na folha", nf(M.folha.total.matriculas), `${nf(M.folha.total.ativos)} ativos e ${nf(M.folha.total.inativos)} aposentados e pensionistas, em ${nf(M.unidades.length - 1)} órgãos.`),
+    kpi("Veículos em 2026", ext(r.veiculos_ano), `Combustível, manutenção e locação: ${ext(r.veiculos_pago)} pagos até ${M.coleta.pagamentos} e projeção até dezembro.`),
+    kpi("Imóveis alugados em 2026", ext(r.imoveis_ano), `${nf(r.imoveis_contratos)} locadores pagos por ${nf(r.imoveis_orgaos)} órgãos até ${M.coleta.pagamentos}, com projeção até dezembro.`)].join("");
+  $("rCusteioTxt").textContent = `Pago de janeiro a ${M.coleta.pagamentos} (barra cheia) e projeção até dezembro (barra clara), pela média de agosto a outubro.`;
+  const itens = [["Combustível", "combustivel"], ["Locação de veículos", "locacao"], ["Manutenção de veículos", "manutencao"], ["Aluguel de imóveis", "imovel"]];
+  grafico("gResumo").setOption({ grid: { left: 8, right: 90, top: 10, bottom: 10, containLabel: true }, tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" }, valueFormatter: F.brl }, F.dica),
+    xAxis: { type: "value", ...F.grade, splitNumber: 4 }, yAxis: { type: "category", inverse: true, data: itens.map(i => i[0]), ...F.eixo, axisLabel: { ...F.eixo.axisLabel, fontSize: 13, fontWeight: 600, color: "#071d41" } },
+    series: [{ name: "Pago até " + M.coleta.pagamentos, type: "bar", stack: "t", barWidth: 30, data: itens.map(i => ({ value: M.custeio[i[1]].pago_2026, itemStyle: { color: COR[i[1]] } })) },
+      { name: "Projeção até dezembro", type: "bar", stack: "t", data: itens.map(i => ({ value: M.custeio[i[1]].projecao_2026, itemStyle: { color: COR[i[1]], opacity: .35 } })),
+        label: { show: true, position: "right", fontFamily: "Inter", fontWeight: 700, color: "#071d41", formatter: p => F.brl(M.custeio[itens[p.dataIndex][1]].ano_2026) } }] });
+  $("rLeitura").innerHTML = M.leitura.map(t => `<li class="flex gap-3"><i class="fa-solid fa-circle-check text-verde mt-1"></i><span>${t}</span></li>`).join("");
+};
+
+// ------- 1. folha
+DESENHO.folha = () => {
+  const f = M.folha, g = f.rgf;
+  $("fAno").textContent = ext(g.bruta);
+  $("fAnoTxt").textContent = `RGF do Executivo, ${g.periodo}. Inclui ativos, aposentados, pensionistas e a contribuição patronal.`;
+  $("fMes").textContent = ext(f.total.bruto);
+  $("fMesTxt").textContent = `${nf(f.total.matriculas)} matrículas (SEGEP). Descontos do mês: ${ext(f.total.descontos)}.`;
+  $("fRgf").innerHTML = [["Salários dos ativos", g.vencimentos], ["Contribuição patronal", g.patronais], ["Aposentadorias e reformas", g.aposentadorias], ["Pensões", g.pensoes], ["Terceirização que conta como pessoal", g.terceirizacao]]
+    .map(([n, v]) => linha(n, ext(v), pct(v, g.bruta) + " do total")).join("");
+  const ap = f.aposentadoria;
+  $("fApoValor").textContent = `${nf(ap.pessoas)} servidores · ${ext(ap.bruto_mes)}/mês`;
+  $("fApoTxt").textContent = `Afastados da função enquanto o processo de aposentadoria anda: ${ext(ap.bruto_mes * 13)} por ano em salário. ${nf(ap.tempo["mais de 2 anos"] || 0)} esperam há mais de 2 anos e ${nf(ap.tempo["1 a 2 anos"] || 0)} entre 1 e 2 anos.`;
+  const G = f.grupos.filter(x => x.pessoas > 0);
+  const ch = grafico("gVinculo");
+  ch.setOption({ grid: { left: 8, right: 110, top: 8, bottom: 8, containLabel: true }, tooltip: Object.assign({ formatter: p => { const x = G[p.dataIndex]; return `<b>${esc(x.nome)}</b><br>${nf(x.pessoas)} pessoas · ${F.brl(x.bruto)} no mês<br>média de ${F.brl(x.bruto / x.pessoas)} por pessoa`; } }, F.dica),
+    xAxis: { type: "value", ...F.grade, splitNumber: 4 }, yAxis: { type: "category", inverse: true, data: G.map(x => x.nome), ...F.eixo, axisLabel: { ...F.eixo.axisLabel, width: 230, overflow: "truncate", fontWeight: 600, color: "#071d41" } },
+    series: [{ type: "bar", barWidth: 22, data: G.map(x => ({ value: x.bruto, itemStyle: { color: x.grupo === "inativo" ? "#888888" : x.grupo === "comissionado" ? "#c2850c" : "#1351b4" } })),
+      label: { show: true, position: "right", fontFamily: "Inter", color: "#333", formatter: p => `${F.brl(G[p.dataIndex].bruto)} · ${nf(G[p.dataIndex].pessoas)}` } }] });
+  const explica = x => $("fVinculoTxt").innerHTML = `<b>${esc(x.nome)}:</b> ${nf(x.pessoas)} pessoas, ${ext(x.bruto)} brutos em outubro (${pct(x.bruto, f.total.bruto)} da folha), média de ${ext(x.bruto / x.pessoas)} por pessoa${x.com_cds ? `; ${nf(x.com_cds)} ocupam CDS` : ""}.`;
+  explica(G.find(x => x.grupo === "comissionado") || G[0]);
+  ch.off("click"); ch.on("click", p => explica(G[p.dataIndex]));
+  const C = f.cds.filter(c => c.simbolo !== "sem símbolo");
+  const sem = f.cds.find(c => c.simbolo === "sem símbolo");
+  $("fCdsTxt").textContent = `${nf(f.total.com_cds)} pessoas ocupam CDS; as verbas do cargo somam ${ext(f.total.custo_cds)} no mês. ${nf(f.grupos.find(x => x.grupo === "comissionado")?.pessoas || 0)} não têm cargo efetivo no Estado.${sem ? ` ${nf(sem.pessoas)} aparecem sem símbolo na planilha.` : ""}`;
+  grafico("gCds").setOption({ grid: { left: 8, right: 16, top: 30, bottom: 8, containLabel: true }, legend: { top: 0, textStyle: { fontFamily: "Inter" } },
+    tooltip: Object.assign({ trigger: "axis", formatter: ps => { const c = C[ps[0].dataIndex]; return `<b>${c.simbolo}</b><br>${nf(c.pessoas)} pessoas (${nf(c.sem_vinculo)} sem vínculo)<br>verba do CDS: ${F.brl(c.custo_cds)} no mês`; } }, F.dica),
+    xAxis: { type: "category", data: C.map(c => c.simbolo.replace("CDS-", "")), ...F.eixo, name: "símbolo", nameLocation: "middle", nameGap: 26 },
+    yAxis: [{ type: "value", ...F.eixo, axisLabel: { ...F.eixo.axisLabel, formatter: v => nf(v) }, splitLine: { lineStyle: { color: "#eee" } } }, { type: "value", ...F.grade, splitLine: { show: false } }],
+    series: [{ name: "Pessoas", type: "bar", data: C.map(c => c.pessoas), itemStyle: { color: "#1351b4" } },
+      { name: "Verba do CDS no mês", type: "line", yAxisIndex: 1, data: C.map(c => c.custo_cds), itemStyle: { color: "#c2850c" }, lineStyle: { width: 3 }, symbolSize: 7 }] });
+  const FX = f.faixas, rot = x => x.ate ? `${F.curto(x.de)}–${F.curto(x.ate)}` : `acima de ${F.curto(x.de)}`;
+  grafico("gFaixa").setOption({ grid: { left: 8, right: 70, top: 8, bottom: 8, containLabel: true }, tooltip: Object.assign({ formatter: p => { const x = FX[p.dataIndex]; return `<b>${rot(x)}</b><br>${nf(x.pessoas)} pessoas · ${F.brl(x.bruto)} no mês`; } }, F.dica),
+    xAxis: { type: "value", ...F.eixo, axisLabel: { ...F.eixo.axisLabel, formatter: v => nf(v) }, splitLine: { lineStyle: { color: "#eee" } } }, yAxis: { type: "category", data: FX.map(rot), ...F.eixo },
+    series: [{ type: "bar", barWidth: 22, data: FX.map(x => x.pessoas), itemStyle: { color: "#2670e8" }, label: { show: true, position: "right", fontFamily: "Inter", formatter: p => nf(p.value) } }] });
+};
+
+// ------- 2. servidores por órgão
+let oOrdem = "pessoas", oSel = null;
+const GN = Object.fromEntries(M.folha.grupos.map(g => [g.grupo, g.nome]));
+const GCOR = { efetivo: "#1351b4", militar: "#0c326f", comissionado: "#c2850c", temporario: "#168821", cedido: "#8a2be2", apoio: "#81aefc", judicial: "#888", outro: "#bbb" };
+function oFicha(u) {
+  oSel = u.unidade;
+  const gs = Object.entries(u.grupos).sort((a, b) => b[1].pessoas - a[1].pessoas);
+  $("oFicha").innerHTML = `<div class="rotulo">${esc(u.unidade === "SEM UNIDADE" ? "Sem unidade na planilha" : u.unidade)}</div>
+    <div class="text-lg font-semibold text-azul-noite mt-1 leading-snug">${esc(u.nome || "")}</div>
+    <div class="grid grid-cols-2 gap-3 mt-3"><div><div class="numero text-[1.75rem] leading-none">${nf(u.pessoas)}</div><div class="text-xs text-texto-2 mt-1">servidores ativos</div></div>
+      <div><div class="numero text-[1.75rem] leading-none">${ext(u.bruto)}</div><div class="text-xs text-texto-2 mt-1">bruto de outubro · ${ext(u.bruto * 13.33)} no ano</div></div></div>
+    <p class="text-sm text-texto-2 mt-3">${nf(u.com_cds)} ocupam CDS (verba do cargo: ${ext(u.custo_cds)} no mês); ${nf(u.afastados)} afastados.</p>
+    <div class="rotulo mt-4">Por vínculo</div><ul class="mt-1">${gs.map(([g, x]) => linha(`<span class="inline-block w-2.5 h-2.5 rounded-sm mr-2" style="background:${GCOR[g] || "#999"}"></span>${esc(GN[g] || g)}`, nf(x.pessoas), ext(x.bruto) + " no mês")).join("")}</ul>
+    ${u.departamentos.length ? `<div class="rotulo mt-4">Onde trabalham (maiores lotações)</div><ul class="mt-1 text-sm">${u.departamentos.slice(0, 10).map(d => `<li class="flex justify-between gap-3 py-1 border-b border-linha last:border-0"><span class="min-w-0 truncate" title="${esc(d.nome)}">${esc(d.nome)}</span><b class="tabular-nums">${nf(d.pessoas)}</b></li>`).join("")}</ul>` : ""}`;
+}
+DESENHO.orgaos = () => {
+  const U = M.unidades.slice().sort((a, b) => b[oOrdem] - a[oOrdem]);
+  $("oTxt").textContent = `${nf(M.folha.total.ativos)} servidores ativos e ${ext(M.folha.total.bruto_ativos)} brutos no mês. ${nf(M.folha.total.sem_unidade)} ativos vieram sem unidade na planilha da SEGEP (${ext(M.folha.total.bruto_sem_unidade)}).`;
+  $("oOrdem").innerHTML = [["pessoas", "Por pessoas"], ["bruto", "Por valor"]].map(([k, n]) => `<button type="button" class="chip ${k === oOrdem ? "chip-on" : ""}" data-o="${k}">${n}</button>`).join("");
+  const grupos = ["efetivo", "militar", "comissionado", "temporario", "cedido", "apoio"];
+  const ch = grafico("gOrgaos");
+  $("gOrgaos").style.height = Math.max(600, U.length * 19 + 60) + "px"; ch.resize();
+  ch.setOption({ grid: { left: 8, right: 80, top: 84, bottom: 8, containLabel: true }, legend: { top: 0, textStyle: { fontFamily: "Inter" } },
+    tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" }, formatter: ps => { const u = U[ps[0].dataIndex]; return `<b>${esc(u.unidade)}</b> ${esc(u.nome || "")}<br>${nf(u.pessoas)} servidores · ${F.brl(u.bruto)} no mês<br>` + ps.filter(p => p.value).map(p => `${p.marker}${p.seriesName}: ${oOrdem === "pessoas" ? nf(p.value) : F.brl(p.value)}`).join("<br>"); } }, F.dica),
+    xAxis: { type: "value", ...(oOrdem === "bruto" ? F.grade : { ...F.eixo, axisLabel: { ...F.eixo.axisLabel, formatter: v => nf(v) }, splitLine: { lineStyle: { color: "#eee" } } }), position: "top" },
+    yAxis: { type: "category", inverse: true, data: U.map(u => u.unidade === "SEM UNIDADE" ? "Sem unidade" : u.unidade), ...F.eixo, axisLabel: { ...F.eixo.axisLabel, fontWeight: 600, color: "#1351b4", fontSize: 11 }, triggerEvent: true },
+    series: grupos.map(g => ({ name: GN[g], type: "bar", stack: "t", barWidth: 13, itemStyle: { color: GCOR[g] }, data: U.map(u => (u.grupos[g] || {})[oOrdem === "pessoas" ? "pessoas" : "bruto"] || 0) })) }, { replaceMerge: ["series"] });
+  ch.off("click"); ch.on("click", p => { const u = U[p.dataIndex ?? U.findIndex(x => (x.unidade === "SEM UNIDADE" ? "Sem unidade" : x.unidade) === p.value)]; if (u) oFicha(u); });
+  oFicha(U.find(u => u.unidade === oSel) || U[0]);
+};
+$("oOrdem").addEventListener("click", e => { const b = e.target.closest("[data-o]"); if (b) { oOrdem = b.dataset.o; DESENHO.orgaos(); } });
+
+// ------- 3. veículos e 4. imóveis (mesmo desenho)
+function ranking(id, orgaos, temas, aoClicar) {
+  const L = orgaos.slice(0, 25), ch = grafico(id);
+  ch.setOption({ grid: { left: 8, right: 70, top: temas.length > 1 ? 30 : 8, bottom: 8, containLabel: true }, legend: { show: temas.length > 1, top: 0, textStyle: { fontFamily: "Inter" } },
+    tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" }, formatter: ps => { const o = L[ps[0].dataIndex]; return `<b>${esc(o.sigla)}</b> ${esc(o.nome || "")}<br>` + ps.filter(p => p.value).map(p => `${p.marker}${p.seriesName}: ${F.brl(p.value)}`).join("<br>") + `<br><b>Total: ${F.brl(o.total)}</b>`; } }, F.dica),
+    xAxis: { type: "value", ...F.grade, splitNumber: 4, position: "top" }, yAxis: { type: "category", inverse: true, data: L.map(o => o.sigla), ...F.eixo, axisLabel: { ...F.eixo.axisLabel, fontWeight: 600, color: "#1351b4" }, triggerEvent: true },
+    series: temas.map(([t, n]) => ({ name: n, type: "bar", stack: "t", barWidth: 14, itemStyle: { color: COR[t] }, data: L.map(o => o[t] || 0) })) }, { replaceMerge: ["series"] });
+  ch.off("click"); ch.on("click", p => { const o = L[p.dataIndex ?? L.findIndex(x => x.sigla === p.value)]; if (o) aoClicar(o); });
+}
+function mensal(id, temas, comProj = true) {
+  const ch = grafico(id), ult = M.coleta.mes_pagamentos;
+  ch.setOption({ grid: { left: 8, right: 8, top: temas.length > 1 ? 30 : 10, bottom: 8, containLabel: true }, legend: { show: temas.length > 1, top: 0, textStyle: { fontFamily: "Inter" } },
+    tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" }, valueFormatter: F.brl }, F.dica),
+    xAxis: { type: "category", data: MES, ...F.eixo }, yAxis: { type: "value", ...F.grade, splitNumber: 4 },
+    series: temas.map(([t, n]) => ({ name: n, type: "bar", stack: "t", itemStyle: { color: COR[t] },
+      data: M.custeio[t].mensal_2026.map((v, i) => ({ value: v, itemStyle: { opacity: i + 1 > ult ? .35 : 1 } })) })) });
+}
+const TV = [["combustivel", "Combustível"], ["locacao", "Locação de veículos"], ["manutencao", "Manutenção de veículos"]];
+function credores(lista, tituloEl, txtEl, ulEl, titulo, txt) {
+  $(tituloEl).textContent = titulo; $(txtEl).textContent = txt;
+  $(ulEl).innerHTML = lista.slice(0, 12).map(c => linha(esc(c.pf ? "Pessoas físicas (locadores)" : F.nomeEmp(c.credor)), F.brl(c.valor), `${c.pf ? nf(c.n) + " locadores · " : ""}${esc((c.orgaos || []).slice(0, 6).join(", "))}${(c.orgaos || []).length > 6 ? "…" : ""}${c.temas ? " · " + c.temas.map(t => esc(t)).join(", ") : ""}`)).join("");
+}
+DESENHO.veiculos = () => {
+  const C = M.custeio, tot = TV.reduce((s, [t]) => s + C[t].ano_2026, 0), pago = TV.reduce((s, [t]) => s + C[t].pago_2026, 0);
+  $("vKpis").innerHTML = [kpi("Veículos em 2026", ext(tot), `${ext(pago)} pagos até ${M.coleta.pagamentos}; o resto é projeção até dezembro. Em 2025: ${ext(TV.reduce((s, [t]) => s + C[t].anos["2025"], 0))}.`, true)]
+    .concat(TV.map(([t, n]) => kpi(n, ext(C[t].ano_2026), `${ext(C[t].pago_2026)} pagos até ${M.coleta.pagamentos}. Em 2025: ${ext(C[t].anos["2025"])}. ${C[t].nota || ""}`))).join("");
+  $("vMesTxt").textContent = `Pago a cada mês; ${MES.slice(M.coleta.mes_pagamentos - 1).join(", ")} em tom claro são projeção (média de agosto a outubro).`;
+  mensal("gVMes", TV);
+  const anos = ["2025", "2026"];
+  grafico("gVAnos").setOption({ grid: { left: 8, right: 8, top: 30, bottom: 8, containLabel: true }, legend: { top: 0, textStyle: { fontFamily: "Inter" } }, tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" }, valueFormatter: F.brl }, F.dica),
+    xAxis: { type: "category", data: ["2025", "2026 (com projeção)"], ...F.eixo }, yAxis: { type: "value", ...F.grade, splitNumber: 4 },
+    series: TV.map(([t, n]) => ({ name: n, type: "bar", stack: "t", barWidth: 70, itemStyle: { color: COR[t] }, data: anos.map(a => a === "2026" ? C[t].ano_2026 : C[t].anos[a]) })) });
+  const mostra = o => credores(o ? M.veiculos.credores.filter(c => c.orgaos.includes(o.sigla)) : M.veiculos.credores, "vCredTit", "vCredTxt", "vCred",
+    o ? `Quem recebe do ${o.sigla}` : "Quem recebe", o ? `${esc(o.nome || o.sigla)}: ${ext(o.total)} pagos em 2026 com veículos.` : `Empresas que mais receberam do Executivo em 2026 por veículos. Clique num órgão para filtrar.`);
+  ranking("gVOrg", M.veiculos.orgaos, TV, mostra); mostra(null);
+};
+DESENHO.imoveis = () => {
+  const c = M.custeio.imovel, i = M.imoveis;
+  $("iKpis").innerHTML = [kpi("Aluguel de imóveis em 2026", ext(c.ano_2026), `${ext(c.pago_2026)} pagos até ${M.coleta.pagamentos}; o resto é projeção até dezembro. Em 2025: ${ext(c.anos["2025"])}.`, true),
+    kpi("Imóveis alugados", nf(i.locadores), `Locadores diferentes pagos em 2026, órgão a órgão (cada locador conta um imóvel; quem aluga dois ao mesmo órgão conta um).`),
+    kpi("De pessoas físicas", nf(i.pf), `${ext(i.pf_valor)} pagos a ${nf(i.pf)} proprietários pessoa física; ${nf(i.pj)} imóveis de empresas (${ext(i.pj_valor)}).`),
+    kpi("Órgãos que pagam aluguel", nf(i.orgaos_total), `${esc(M.imoveis.orgaos.slice(0, 3).map(o => o.sigla).join(", "))} são os que mais pagam.`)].join("");
+  const mostra = o => credores(o ? i.credores_por_orgao[o.sigla] || [] : i.credores, "iCredTit", "iCredTxt", "iCred",
+    o ? `Quem recebe aluguel do ${o.sigla}` : "Quem recebe", o ? `${esc(o.nome || o.sigla)}: ${ext(o.total)} pagos em 2026 a ${nf(o.locadores)} locadores.` : `Maiores locadores do Executivo em 2026. Pessoas físicas aparecem somadas, sem nome. Clique num órgão para filtrar.`);
+  ranking("gIOrg", i.orgaos, [["imovel", "Aluguel de imóveis"]], mostra); mostra(null);
+  mensal("gIMes", [["imovel", "Aluguel"]]);
+};
+
+// ------- 5. regionais
+const TIPOS_S = ["Pessoal comissionado (CDS)", "Pessoal cedido (ressarcimento)", "Locação de veículos", "Combustível", "Aluguel de imóvel", "Energia, água e taxas do imóvel", "Internet", "Diárias"];
+const SCOR = ["#1351b4", "#5992ed", "#168821", "#2670e8", "#8a2be2", "#c2850c", "#81aefc", "#888888"];
+function sFicha(u) {
+  const t = u.tipos;
+  $("sFicha").innerHTML = `<div class="rotulo">${esc(u.codigo)} · sede em ${esc(u.sede)}</div><div class="text-lg font-semibold text-azul-noite mt-1">${esc(u.nome)}</div>
+    <div class="grid grid-cols-2 gap-3 mt-3"><div><div class="numero text-[1.6rem] leading-none">${ext(u.total_2026)}</div><div class="text-xs text-texto-2 mt-1">estimado em 2026</div></div>
+    <div><div class="numero text-[1.6rem] leading-none">${nf(u.servidores)}</div><div class="text-xs text-texto-2 mt-1">servidores · ${nf(u.com_cds)} com CDS · ${nf(u.veic_proprios + u.veic_locados)} veículos</div></div></div>
+    <ul class="mt-3">${TIPOS_S.filter(k => t[k]?.total_2026).map(k => linha(esc(k), F.brl(t[k].total_2026), `${F.brl(t[k].mensal)} por mês`)).join("")}</ul>
+    ${u.municipios ? `<p class="text-sm text-texto-2 mt-3">${u.municipios.length > 1 ? `<b>${nf(u.municipios.length)} municípios:</b> ` : ""}${esc(u.municipios.join(", "))}.</p>` : ""}`;
+}
+DESENHO.regionais = () => {
+  const R = M.regionais, T = R.total, P = R.projecao.Total;
+  $("sKpis").innerHTML = [kpi("Custo das regionais em 2026", ext(T.total_2026), `${ext(T.pago_ate_12_11)} pagos no SIGEF até 12/11, ${ext(T.cds_jan_out)} de CDS (cálculo) e projeção até dezembro.`, true),
+    kpi("Servidores", nf(T.servidores), `${nf(T.com_cds)} com CDS; ${ext(T.cds_mes)} por mês só em CDS, sem encargos.`),
+    kpi("Veículos", nf(T.veic_proprios + T.veic_locados), `${nf(T.veic_proprios)} próprios e ${nf(T.veic_locados)} caminhonetes locadas (${ext(R.tipos["Locação de veículos"].total_2026)} no ano).`),
+    kpi("2027 a 2030", ext(P.total), `Se estrutura, quadro e contratos continuarem como hoje, corrigidos pelo IPCA.`)].join("");
+  const U = R.unidades.slice().sort((a, b) => b.total_2026 - a.total_2026), ch = grafico("gSUn");
+  ch.setOption({ grid: { left: 8, right: 80, top: 30, bottom: 8, containLabel: true }, legend: { top: 0, textStyle: { fontFamily: "Inter" }, type: "scroll" },
+    tooltip: Object.assign({ trigger: "axis", axisPointer: { type: "shadow" }, valueFormatter: F.brl }, F.dica),
+    xAxis: { type: "value", ...F.grade, splitNumber: 4 }, yAxis: { type: "category", inverse: true, data: U.map(u => u.codigo === "COOREG" ? "COOREG" : u.nome.replace(/\s*\(.*/, "") + " · " + u.sede), ...F.eixo, axisLabel: { ...F.eixo.axisLabel, fontWeight: 600, color: "#1351b4" }, triggerEvent: true },
+    series: TIPOS_S.map((k, i) => ({ name: k, type: "bar", stack: "t", barWidth: 18, itemStyle: { color: SCOR[i] }, data: U.map(u => u.tipos[k]?.total_2026 || 0) })) });
+  ch.off("click"); ch.on("click", p => { const u = U[p.dataIndex ?? 0]; if (u) sFicha(u); });
+  sFicha(U[0]);
+  const TT = TIPOS_S.map((k, i) => ({ name: k, value: R.tipos[k]?.total_2026 || 0, itemStyle: { color: SCOR[i] } })).filter(x => x.value);
+  grafico("gSTipo").setOption({ tooltip: Object.assign({ formatter: p => `<b>${esc(p.name)}</b><br>${F.brl(p.value)} · ${F.pct(p.percent)}` }, F.dica),
+    series: [{ type: "pie", radius: ["45%", "75%"], center: ["50%", "52%"], data: TT, label: { fontFamily: "Inter", formatter: p => p.percent >= 3 ? `${p.name}\n${F.brl(p.value)}` : "" } }] });
+  $("sProjTxt").textContent = `${ext(P["2027"])} em 2027 e ${ext(P["2030"])} em 2030: ${ext(P.total)} nos quatro anos. Manutenção de veículos e predial não aparecem nos empenhos das regionais.`;
+  grafico("gSProj").setOption({ grid: { left: 8, right: 8, top: 20, bottom: 8, containLabel: true }, tooltip: Object.assign({ trigger: "axis", valueFormatter: F.brl }, F.dica),
+    xAxis: { type: "category", data: ["2026", "2027", "2028", "2029", "2030"], ...F.eixo }, yAxis: { type: "value", ...F.grade, splitNumber: 4 },
+    series: [{ type: "bar", barWidth: 34, data: ["2026", "2027", "2028", "2029", "2030"].map((a, i) => ({ value: P[a], itemStyle: { color: i ? "#5992ed" : "#1351b4" } })), label: { show: true, position: "top", fontFamily: "Inter", formatter: p => F.brl(p.value) } }] });
+};
+
+// ------- 6. método
+DESENHO.metodo = () => {
+  $("mFontes").innerHTML = M.fontes.map(f => `<li><a class="link" href="${esc(f[1])}" target="_blank" rel="noopener">${esc(f[0])}</a><div class="text-texto-2">${esc(f[2])}</div></li>`).join("");
+  $("mRegras").innerHTML = M.regras.map(r => `<li>${r}</li>`).join("");
+};
+
+const pedida = location.hash.slice(1);
+trocaVisao(VISOES.some(v => v[0] === pedida) ? pedida : "resumo", true);
+})();
+</script>

@@ -11,3 +11,9 @@ __pycache__/
 # respostas brutas da API do PNCP (consolidadas em dados-fonte/s5_pncp_*.json; refazer com tecnologia/coleta_pncp*.py)
 dados-fonte/pncp/
 dados-fonte/pncp_contratos/
+
+# custo da máquina: ordens bancárias brutas (têm nome de pessoa física; refazer com maquina/coleta_pagamentos.py),
+# a conferência por notas e os arquivos gerados para o SIPRE
+dados-fonte/s8_pagamentos_*.json
+dados-fonte/s8_custeio.json
+maquina/sipre/
