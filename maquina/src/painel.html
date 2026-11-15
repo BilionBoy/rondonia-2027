@@ -94,6 +94,15 @@
 /* estradas: mapa 3D */
 .mapa-slot{min-height:300px}
 .mapa3d{position:absolute;inset:0;border-radius:12px;overflow:hidden;background:#0b1622;font-variant-numeric:normal}
+/* o painel inteiro é ampliado para o telão (zoom); o mapa desfaz o zoom e desenha na resolução real da tela (mais leve e o mouse acerta) */
+.mapa3d{zoom:var(--zi, 1)}
+.m3-dica{position:absolute;left:50%;bottom:90px;transform:translateX(-50%);z-index:5;background:rgba(8,16,28,.8);color:#fff;font-size:15px;padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);transition:opacity .8s;pointer-events:none;white-space:nowrap}
+.m3-dica.some{opacity:0}
+/* o que fica dentro do mapa volta a ter o tamanho do resto do painel */
+.mapa3d>.m3-botoes,.mapa3d>.m3-dica,.mapa3d>.m3-carrega,.mapa3d>.m3-aviso,.mapa3d .maplibregl-ctrl-top-right,.mapa3d .maplibregl-ctrl-bottom-right{zoom:var(--z,1)}
+.m3-pop .maplibregl-popup-content{font-size:calc(14px * var(--z, 1)) !important}
+.m3-pop .maplibregl-popup-content b{font-size:calc(15px * var(--z, 1)) !important}
+.m3-pop .maplibregl-popup-content span{font-size:calc(13px * var(--z, 1)) !important}
 .mapa3d:fullscreen{border-radius:0}
 .mapa3d .m3-mapa{position:absolute;inset:0;width:100%;height:100%}
 .m3-carrega,.m3-aviso{position:absolute;left:12px;top:10px;z-index:2;font-size:13px;color:#fff;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:8px}

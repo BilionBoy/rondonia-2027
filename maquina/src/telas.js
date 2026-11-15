@@ -29,7 +29,8 @@ let atual = 0;
 // Telão: a base escala pela referência Full HD (1920 × 1080 = zoom 1), o que deixa a letra pequena numa TV.
 // Aqui a referência é 1440 × 900: numa TV Full HD tudo fica 20% maior (além da letra já aumentada); em 4K, 2,4 vezes.
 // A altura de 900 garante que cada etapa caiba sem rolar. Abaixo disso nada muda.
-const zoomTelao = () => document.documentElement.style.setProperty("--z", Math.max(1, Math.min(2.6, innerWidth / 1440, innerHeight / 900)).toFixed(3));
+const zoomTelao = () => { const z = Math.max(1, Math.min(2.6, innerWidth / 1440, innerHeight / 900));
+  document.documentElement.style.setProperty("--z", z.toFixed(3)); document.documentElement.style.setProperty("--zi", (1 / z).toFixed(5)); };
 zoomTelao(); addEventListener("resize", zoomTelao);
 
 // Animação curta: a base espera até 2 s para empilhar dez partes; aqui tudo aparece em menos de meio segundo,
@@ -450,8 +451,8 @@ const mostraUm = it => cartaoItem(it);
 function padMapa() {
   const r = mapaEl?.getBoundingClientRect(), n = $(".est-nums")?.getBoundingClientRect(), c = $("#est-card")?.getBoundingClientRect(), t = $(".est-topo")?.getBoundingClientRect();
   if (!r || innerWidth < 760) return 30;
-  const z = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--z")) || 1;
-  return {left: n ? (n.right - r.left) / z + 20 : 30, right: c ? (r.right - c.left) / z + 20 : 30, top: t ? (t.bottom - r.top) / z + 10 : 60, bottom: 50};
+  // o mapa desfaz o zoom do telão: as medidas da tela já estão na unidade do mapa
+  return {left: n ? n.right - r.left + 20 : 30, right: c ? r.right - c.left + 20 : 30, top: t ? t.bottom - r.top + 10 : 60, bottom: 60};
 }
 function voa(item) {
   if (!item) return;
@@ -565,11 +566,13 @@ function criaMapa(pronto) {
   mapaEl.innerHTML = "";
   const caixa = el_("div", "m3-mapa"); mapaEl.append(caixa);
   mapa3d = new maplibregl.Map({container: caixa, bounds: CAIXA_RO, fitBoundsOptions: {padding: padMapa()}, pitch: 0, bearing: 0, maxPitch: 75, attributionControl: false,
+    // desempenho: no máximo 1,5 pixel por ponto (telão 4K e retina pesam), sem esmaecer os ladrilhos, cache maior
+    pixelRatio: Math.min(window.devicePixelRatio || 1, 1.5), fadeDuration: 0, maxTileCacheSize: 300, refreshExpiredTiles: false,
     style: {version: 8, glyphs: "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
       sources: {
         sat: {type: "raster", tiles: ["https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/g/{z}/{y}/{x}.jpg"], tileSize: 256, maxzoom: 15,
           attribution: "Sentinel-2 cloudless 2016 por EOX (CC BY 4.0), com dados Copernicus Sentinel"},
-        dem: {type: "raster-dem", tiles: ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"], tileSize: 256, encoding: "terrarium", maxzoom: 12, attribution: "Relevo: Terrain Tiles (AWS, Mapzen)"},
+        dem: {type: "raster-dem", tiles: ["https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"], tileSize: 256, encoding: "terrarium", maxzoom: 10, attribution: "Relevo: Terrain Tiles (AWS, Mapzen)"},
         mun: {type: "geojson", data: GEO_MUN, promoteId: "k"}, rot: {type: "geojson", data: ROTULOS},
         vias: {type: "geojson", data: GEO_VIAS}, fed: {type: "geojson", data: GEO_FED}, pontes: {type: "geojson", data: GEO_PONTES, promoteId: "i"}},
       layers: [
@@ -580,11 +583,15 @@ function criaMapa(pronto) {
           "fill-extrusion-color": ["interpolate", ["linear"], ["get", "repasse"], 0, "rgba(255,201,74,0.15)", maxRep, "#ffc94a"],
           "fill-extrusion-height": ["*", ["/", ["get", "repasse"], maxRep], 60000], "fill-extrusion-opacity": 0.85}},
         {id: "mun-linha", type: "line", source: "mun", paint: {"line-color": "#ffffff", "line-opacity": 0.45, "line-width": ["case", ["boolean", ["feature-state", "sel"], false], 3, 0.8]}},
-        {id: "fed", type: "line", source: "fed", paint: {"line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1, 10, 3], "line-opacity": 0.55}},
-        {id: "via-plan", type: "line", source: "vias", filter: ["==", ["get", "c"], "plan"], paint: {"line-color": COR_VIA.plan, "line-width": ["interpolate", ["linear"], ["zoom"], 5, 0.8, 10, 2.5], "line-dasharray": [2, 2], "line-opacity": 0.75}},
-        {id: "via-terra", type: "line", source: "vias", filter: ["==", ["get", "c"], "terra"], paint: {"line-color": COR_VIA.terra, "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1.2, 10, 4]}},
-        {id: "via-pav", type: "line", source: "vias", filter: ["==", ["get", "c"], "pav"], paint: {"line-color": COR_VIA.pav, "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1.6, 10, 5]}},
-        {id: "via-sel", type: "line", source: "vias", filter: ["==", ["get", "i"], -1], paint: {"line-color": "#ffffff", "line-width": 7, "line-opacity": 0.9}},
+        // estradas com contorno escuro por baixo: saltam do satélite em qualquer zoom
+        {id: "fed-casa", type: "line", source: "fed", layout: {"line-join": "round", "line-cap": "round"}, paint: {"line-color": "rgba(0,0,0,.55)", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 2.6, 9, 5, 13, 10]}},
+        {id: "fed", type: "line", source: "fed", layout: {"line-join": "round", "line-cap": "round"}, paint: {"line-color": "#f4f6f8", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1, 9, 2.4, 13, 6], "line-opacity": 0.8}},
+        {id: "via-plan", type: "line", source: "vias", filter: ["==", ["get", "c"], "plan"], layout: {"line-join": "round"}, paint: {"line-color": COR_VIA.plan, "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1, 9, 2, 13, 4], "line-dasharray": [2, 1.6], "line-opacity": 0.8}},
+        {id: "via-casa", type: "line", source: "vias", filter: ["!=", ["get", "c"], "plan"], layout: {"line-join": "round", "line-cap": "round"}, paint: {"line-color": "rgba(0,0,0,.6)", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 3.4, 9, 6.5, 13, 13]}},
+        {id: "via-terra", type: "line", source: "vias", filter: ["==", ["get", "c"], "terra"], layout: {"line-join": "round", "line-cap": "round"}, paint: {"line-color": COR_VIA.terra, "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1.6, 9, 3.4, 13, 8]}},
+        {id: "via-pav", type: "line", source: "vias", filter: ["==", ["get", "c"], "pav"], layout: {"line-join": "round", "line-cap": "round"}, paint: {"line-color": COR_VIA.pav, "line-width": ["interpolate", ["linear"], ["zoom"], 5, 2.2, 9, 4.4, 13, 10]}},
+        {id: "via-hov", type: "line", source: "vias", filter: ["==", ["get", "i"], -1], layout: {"line-join": "round", "line-cap": "round"}, paint: {"line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 3, 9, 6, 13, 12], "line-opacity": 0.55}},
+        {id: "via-sel", type: "line", source: "vias", filter: ["==", ["get", "i"], -1], layout: {"line-join": "round", "line-cap": "round"}, paint: {"line-color": "#ffffff", "line-width": ["interpolate", ["linear"], ["zoom"], 5, 4, 9, 7, 13, 14], "line-opacity": 0.95}},
         {id: "ponte", type: "circle", source: "pontes", filter: ["==", ["get", "madeira"], 1], paint: {
           "circle-radius": ["interpolate", ["linear"], ["get", "ext"], 4, 4, 90, 13], "circle-color": "#ff3b30", "circle-stroke-color": "#ffffff",
           "circle-stroke-width": ["case", ["boolean", ["feature-state", "sel"], false], 4, 1.5], "circle-opacity": 0.95}},
@@ -595,9 +602,15 @@ function criaMapa(pronto) {
   const pop = new maplibregl.Popup({closeButton: false, closeOnClick: false, className: "m3-pop", offset: 10});
   let hov = null;
   const tira = () => { if (hov != null) mapa3d.setFeatureState({source: "mun", id: hov}, {hover: false}); hov = null; };
-  mapa3d.on("mousemove", e => {
+  // o mouse consulta o mapa no máximo uma vez por quadro e nunca enquanto a câmera se move
+  let quadro = 0, ultimo = null, viaHov = -1;
+  const viaHover = i => { if (i !== viaHov) { viaHov = i; mapa3d.setFilter("via-hov", ["==", ["get", "i"], i]); } };
+  mapa3d.on("mousemove", e => { ultimo = e; if (!quadro) quadro = requestAnimationFrame(() => { quadro = 0; if (!mapa3d.isMoving()) passa(ultimo); }); });
+  mapa3d.on("movestart", () => { pop.remove(); });
+  const passa = e => {
     const f = mapa3d.queryRenderedFeatures(e.point, {layers: ["ponte", "via-pav", "via-terra", "via-plan", estVer === 2 ? "mun-ext" : "mun-fill"].filter(l => mapa3d.getLayer(l))})[0];
     mapa3d.getCanvas().style.cursor = f ? "pointer" : "";
+    viaHover(f && f.layer.id.startsWith("via") ? f.properties.i : -1);
     if (!f) { pop.remove(); tira(); return; }
     let h;
     if (f.layer.id === "ponte") { const p = E.pontes[f.properties.i]; h = `<b>${esc(p.n)}</b><span>${p.t} · ${br(p.ext, 1)} m · ${esc(p.rod)} · ${esc(p.mun)}</span>`; tira(); }
@@ -605,8 +618,8 @@ function criaMapa(pronto) {
     else { const k = f.properties.k, x = munE(k); if (hov !== k) { tira(); hov = k; mapa3d.setFeatureState({source: "mun", id: k}, {hover: true}); }
       h = `<b>${esc(f.properties.nome)}</b><span>${x ? (estVer === 2 ? `${mi(x.repasse)} do DER em 2026` : `${km(x.pav)} asfalto · ${km(x.terra)} terra · ${x.pontes_madeira} pontes de madeira`) : "sem rodovia estadual"}</span>`; }
     pop.setLngLat(e.lngLat).setHTML(h).addTo(mapa3d);
-  });
-  mapa3d.getCanvas().addEventListener("mouseleave", () => { pop.remove(); tira(); });
+  };
+  mapa3d.getCanvas().addEventListener("mouseleave", () => { pop.remove(); tira(); viaHover(-1); });
   mapa3d.on("click", e => {
     const f = mapa3d.queryRenderedFeatures(e.point, {layers: ["ponte", "via-pav", "via-terra", "via-plan", estVer === 2 ? "mun-ext" : "mun-fill"].filter(l => mapa3d.getLayer(l))})[0];
     if (!f) return;
@@ -626,7 +639,8 @@ function criaMapa(pronto) {
   // ao abrir: o Estado visto de cima, e a câmera inclina devagar até o relevo aparecer
   mapa3d.on("load", () => { mapaPronto = true; pronto(); mapa3d.setTerrain({source: "dem", exaggeration: 2.2}); aplicaVista();
     mapa3d.fitBounds(CAIXA_RO, {padding: padMapa(), pitch: 48, bearing: -6, duration: 3200});
-    caixa.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show"); });
+    caixa.querySelector(".maplibregl-ctrl-attrib")?.classList.remove("maplibregl-compact-show");
+    const dica_ = el_("div", "m3-dica"); dica_.textContent = "Passe o mouse ou clique numa estrada, ponte ou município"; mapaEl.append(dica_); setTimeout(() => dica_.classList.add("some"), 6000); });
   mapa3d.on("error", () => {});
 }
 let selAnt = null;

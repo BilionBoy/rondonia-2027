@@ -11070,62 +11070,31 @@
    }
   ],
   "credores_por_orgao": {
-   "SESDEC": [
+   "SEAS": [
+    {
+     "credor": "BONSUCESSO EMPREENDIMENTOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 610604.73,
+     "orgaos": [
+      "SEAS"
+     ],
+     "n": 1
+    },
     {
      "credor": "",
      "pf": true,
-     "valor": 70032.93,
+     "valor": 122902.38,
      "orgaos": [
-      "SESDEC"
+      "SEAS"
      ],
      "n": 1
     },
     {
-     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
+     "credor": "ANJOS E SILVA LTDA",
      "pf": false,
-     "valor": 44757.8,
+     "valor": 106475.44,
      "orgaos": [
-      "SESDEC"
-     ],
-     "n": 1
-    }
-   ],
-   "SEJUS": [
-    {
-     "credor": "VALENTIM IMOVEIS LTDA",
-     "pf": false,
-     "valor": 17508.82,
-     "orgaos": [
-      "SEJUS"
-     ],
-     "n": 1
-    }
-   ],
-   "AGEVISA": [
-    {
-     "credor": "POLIANO DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 342720.0,
-     "orgaos": [
-      "AGEVISA"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 258300.88,
-     "orgaos": [
-      "AGEVISA"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
-     "pf": false,
-     "valor": 178400.0,
-     "orgaos": [
-      "AGEVISA"
+      "SEAS"
      ],
      "n": 1
     }
@@ -11150,243 +11119,6 @@
      "n": 1
     }
    ],
-   "SUGESP": [
-    {
-     "credor": "IMBUIA EMPREENDIMENTOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 623919.65,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "SOMAR PATRIMONIO LTDA",
-     "pf": false,
-     "valor": 558622.46,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "PARK SHOPPING VILHENA ADM DE S CENTER LTDA-ME",
-     "pf": false,
-     "valor": 275355.46,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "R P C ADMINISTRADORA DE IMOVEIS LTDA",
-     "pf": false,
-     "valor": 244307.63,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "IRMAOS GONÇALVES COMERCIO E INDUSTRIA LTDA",
-     "pf": false,
-     "valor": 162213.21,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ASSOCIACAO DE ASSISTENCIA A CULTURA NA AMAZONIA MOACYR GRECHI - AASCAM",
-     "pf": false,
-     "valor": 44000.0,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 28576.64,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    }
-   ],
-   "FECOEP": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 40967.46,
-     "orgaos": [
-      "FECOEP"
-     ],
-     "n": 1
-    }
-   ],
-   "SETUR": [
-    {
-     "credor": "CARGNIN & CARGNIN LTDA",
-     "pf": false,
-     "valor": 1615.0,
-     "orgaos": [
-      "SETUR"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "BRASIL AÇO EPITÁCIO IMPORT. E EXPORT. LTDA",
-     "pf": false,
-     "valor": 1599.36,
-     "orgaos": [
-      "SETUR"
-     ],
-     "n": 1
-    }
-   ],
-   "SEJUCEL": [
-    {
-     "credor": "ANJOS E SILVA LTDA",
-     "pf": false,
-     "valor": 19400.48,
-     "orgaos": [
-      "SEJUCEL"
-     ],
-     "n": 1
-    }
-   ],
-   "IDARON": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 1025794.0,
-     "orgaos": [
-      "IDARON"
-     ],
-     "n": 51
-    },
-    {
-     "credor": "FERNANDES E REZENDES LTDA ME",
-     "pf": false,
-     "valor": 904400.0,
-     "orgaos": [
-      "IDARON"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "SPAZIO BUSINESS LTDA ME",
-     "pf": false,
-     "valor": 257040.0,
-     "orgaos": [
-      "IDARON"
-     ],
-     "n": 1
-    }
-   ],
-   "DETRAN": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 1418077.82,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 38
-    },
-    {
-     "credor": "A VALDIR LEBKUCHEN",
-     "pf": false,
-     "valor": 907151.4,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "RIO MADEIRA GRAFICA EDITORA LTDA",
-     "pf": false,
-     "valor": 848232.0,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "SAMUEL SILVA NEGOCIOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 385996.37,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "IMOBILIARIA 2B LTDA",
-     "pf": false,
-     "valor": 337858.6,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "J. F. PARTICIPACOES LTDA - ME",
-     "pf": false,
-     "valor": 269270.73,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "CONCREACO DA AMAZONIA LTDA",
-     "pf": false,
-     "valor": 197186.4,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "SUPORTE NEGOCIOS IMOBILIARIOS LTDA ME",
-     "pf": false,
-     "valor": 93978.27,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "VENETO HOLDING PATRIMONIAL S/A",
-     "pf": false,
-     "valor": 46686.6,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "INCOEST CONSTRUÇÕES E EMPREENDIMENTOS LTDA",
-     "pf": false,
-     "valor": 25307.33,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "CENTRO DE EDUCACAO DE ROLIM DE MOURA LTDA",
-     "pf": false,
-     "valor": 24024.13,
-     "orgaos": [
-      "DETRAN"
-     ],
-     "n": 1
-    }
-   ],
    "AGERO": [
     {
      "credor": "DNB EMPREENDIMENTOS DE IMOVEIS LTDA",
@@ -11394,180 +11126,6 @@
      "valor": 85680.0,
      "orgaos": [
       "AGERO"
-     ],
-     "n": 1
-    }
-   ],
-   "SEPAT": [
-    {
-     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
-     "pf": false,
-     "valor": 228480.0,
-     "orgaos": [
-      "SEPAT"
-     ],
-     "n": 1
-    }
-   ],
-   "SEGEP": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 141758.52,
-     "orgaos": [
-      "SEGEP"
-     ],
-     "n": 3
-    }
-   ],
-   "EMATER": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 363950.35,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 18
-    },
-    {
-     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 77395.72,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "TERRANORTE IMOVEIS",
-     "pf": false,
-     "valor": 37891.88,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "IMOBILIARIA TERRA E BENS LTDA",
-     "pf": false,
-     "valor": 4607.5,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 1
-    }
-   ],
-   "SESAU": [
-    {
-     "credor": "POLIANO DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 793951.9,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 340302.78,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "MFH SERVIÇOS DE ADMINISTRAÇÃO DE IMÓVEIS LTDA",
-     "pf": false,
-     "valor": 130820.66,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 75782.34,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "PEROLA HOTEIS E RESTAURANTES LTDA",
-     "pf": false,
-     "valor": 10613.76,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "GOLDEN PLAZA HOTEL LTDA",
-     "pf": false,
-     "valor": 9025.61,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "RKV ALIMENTOS LTDA",
-     "pf": false,
-     "valor": 3292.0,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ACINOX EMPREENDIMENTOS E PARTIPACOES LTDA",
-     "pf": false,
-     "valor": 0.06,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    }
-   ],
-   "DER": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 216450.51,
-     "orgaos": [
-      "DER"
-     ],
-     "n": 3
-    }
-   ],
-   "IPERON": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 81587.3,
-     "orgaos": [
-      "IPERON"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "GOLDEN PLAZA HOTEL LTDA",
-     "pf": false,
-     "valor": 5412.0,
-     "orgaos": [
-      "IPERON"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ANJOS E SILVA LTDA",
-     "pf": false,
-     "valor": 3053.45,
-     "orgaos": [
-      "IPERON"
      ],
      "n": 1
     }
@@ -11583,142 +11141,15 @@
      "n": 3
     }
    ],
-   "SEDAM": [
+   "DER": [
     {
      "credor": "",
      "pf": true,
-     "valor": 79889.59,
+     "valor": 216450.51,
      "orgaos": [
-      "SEDAM"
+      "DER"
      ],
-     "n": 2
-    }
-   ],
-   "POLITEC": [
-    {
-     "credor": "SOCIAL ADMINISTRADORA DE IMOVEIS LTDA - EPP",
-     "pf": false,
-     "valor": 131358.19,
-     "orgaos": [
-      "POLITEC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "NOGUEIRA IMOVEIS LTDA",
-     "pf": false,
-     "valor": 105616.3,
-     "orgaos": [
-      "POLITEC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "IMOBILIARIA ATALAIA LTDA",
-     "pf": false,
-     "valor": 66102.03,
-     "orgaos": [
-      "POLITEC"
-     ],
-     "n": 1
-    }
-   ],
-   "IDEP": [
-    {
-     "credor": "L A FACHIN EIRELI",
-     "pf": false,
-     "valor": 1490572.71,
-     "orgaos": [
-      "IDEP"
-     ],
-     "n": 1
-    }
-   ],
-   "FIDER": [
-    {
-     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
-     "pf": false,
-     "valor": 166600.0,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "TORRES E TORRES ORGANIZAÇÕES DE EVENTOS E SERV. LTDA",
-     "pf": false,
-     "valor": 53000.0,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 9748.86,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ANJOS E SILVA LTDA",
-     "pf": false,
-     "valor": 7147.59,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ADMINISTRADORA PORTO VELHO SHOPPING LTDA-EPP",
-     "pf": false,
-     "valor": 5614.75,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    }
-   ],
-   "FEDIPI": [
-    {
-     "credor": "GOLDEN PLAZA HOTEL LTDA",
-     "pf": false,
-     "valor": 5412.0,
-     "orgaos": [
-      "FEDIPI"
-     ],
-     "n": 1
-    }
-   ],
-   "FUNESBOM": [
-    {
-     "credor": "BRASIL INCORPORAÇÕES IMOBILIÁRIAS S/A",
-     "pf": false,
-     "valor": 71163.05,
-     "orgaos": [
-      "FUNESBOM"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "OMINIA PARTICIPACOES EIRELI",
-     "pf": false,
-     "valor": 19968.3,
-     "orgaos": [
-      "FUNESBOM"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 18000.0,
-     "orgaos": [
-      "FUNESBOM"
-     ],
-     "n": 1
+     "n": 3
     }
    ],
    "PGE": [
@@ -11916,91 +11347,203 @@
      "n": 1
     }
    ],
-   "SEDEC": [
+   "IDEP": [
     {
-     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
+     "credor": "L A FACHIN EIRELI",
      "pf": false,
-     "valor": 133280.0,
+     "valor": 1490572.71,
      "orgaos": [
-      "SEDEC"
+      "IDEP"
      ],
      "n": 1
+    }
+   ],
+   "EMATER": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 363950.35,
+     "orgaos": [
+      "EMATER"
+     ],
+     "n": 18
     },
     {
      "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
      "pf": false,
-     "valor": 9528.4,
+     "valor": 77395.72,
      "orgaos": [
-      "SEDEC"
-     ],
-     "n": 1
-    }
-   ],
-   "FEAS": [
-    {
-     "credor": "GOLDEN PLAZA HOTEL LTDA",
-     "pf": false,
-     "valor": 23812.8,
-     "orgaos": [
-      "FEAS"
+      "EMATER"
      ],
      "n": 1
     },
     {
-     "credor": "ANJOS E SILVA LTDA",
+     "credor": "TERRANORTE IMOVEIS",
      "pf": false,
-     "valor": 22134.54,
+     "valor": 37891.88,
      "orgaos": [
-      "FEAS"
+      "EMATER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "IMOBILIARIA TERRA E BENS LTDA",
+     "pf": false,
+     "valor": 4607.5,
+     "orgaos": [
+      "EMATER"
      ],
      "n": 1
     }
    ],
-   "SEAS": [
+   "CBOMB": [
     {
-     "credor": "BONSUCESSO EMPREENDIMENTOS IMOBILIARIOS LTDA",
+     "credor": "OMINIA PARTICIPACOES EIRELI",
      "pf": false,
-     "valor": 610604.73,
+     "valor": 20361.51,
      "orgaos": [
-      "SEAS"
+      "CBOMB"
+     ],
+     "n": 1
+    }
+   ],
+   "SUGESP": [
+    {
+     "credor": "IMBUIA EMPREENDIMENTOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 623919.65,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SOMAR PATRIMONIO LTDA",
+     "pf": false,
+     "valor": 558622.46,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "PARK SHOPPING VILHENA ADM DE S CENTER LTDA-ME",
+     "pf": false,
+     "valor": 275355.46,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "R P C ADMINISTRADORA DE IMOVEIS LTDA",
+     "pf": false,
+     "valor": 244307.63,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "IRMAOS GONÇALVES COMERCIO E INDUSTRIA LTDA",
+     "pf": false,
+     "valor": 162213.21,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ASSOCIACAO DE ASSISTENCIA A CULTURA NA AMAZONIA MOACYR GRECHI - AASCAM",
+     "pf": false,
+     "valor": 44000.0,
+     "orgaos": [
+      "SUGESP"
      ],
      "n": 1
     },
     {
      "credor": "",
      "pf": true,
-     "valor": 122902.38,
+     "valor": 28576.64,
      "orgaos": [
-      "SEAS"
+      "SUGESP"
+     ],
+     "n": 1
+    }
+   ],
+   "AGEVISA": [
+    {
+     "credor": "POLIANO DE LIMA MARQUES EIRELI",
+     "pf": false,
+     "valor": 342720.0,
+     "orgaos": [
+      "AGEVISA"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
+     "pf": false,
+     "valor": 258300.88,
+     "orgaos": [
+      "AGEVISA"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
+     "pf": false,
+     "valor": 178400.0,
+     "orgaos": [
+      "AGEVISA"
+     ],
+     "n": 1
+    }
+   ],
+   "FIDER": [
+    {
+     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
+     "pf": false,
+     "valor": 166600.0,
+     "orgaos": [
+      "FIDER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "TORRES E TORRES ORGANIZAÇÕES DE EVENTOS E SERV. LTDA",
+     "pf": false,
+     "valor": 53000.0,
+     "orgaos": [
+      "FIDER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 9748.86,
+     "orgaos": [
+      "FIDER"
      ],
      "n": 1
     },
     {
      "credor": "ANJOS E SILVA LTDA",
      "pf": false,
-     "valor": 106475.44,
+     "valor": 7147.59,
      "orgaos": [
-      "SEAS"
-     ],
-     "n": 1
-    }
-   ],
-   "FHEMERON": [
-    {
-     "credor": "SARTORI IMONILIARIA LTDA",
-     "pf": false,
-     "valor": 234735.36,
-     "orgaos": [
-      "FHEMERON"
+      "FIDER"
      ],
      "n": 1
     },
     {
-     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
+     "credor": "ADMINISTRADORA PORTO VELHO SHOPPING LTDA-EPP",
      "pf": false,
-     "valor": 137815.37,
+     "valor": 5614.75,
      "orgaos": [
-      "FHEMERON"
+      "FIDER"
      ],
      "n": 1
     }
@@ -12070,6 +11613,354 @@
      "n": 1
     }
    ],
+   "SESDEC": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 70032.93,
+     "orgaos": [
+      "SESDEC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
+     "pf": false,
+     "valor": 44757.8,
+     "orgaos": [
+      "SESDEC"
+     ],
+     "n": 1
+    }
+   ],
+   "SEDAM": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 79889.59,
+     "orgaos": [
+      "SEDAM"
+     ],
+     "n": 2
+    }
+   ],
+   "SEJUCEL": [
+    {
+     "credor": "ANJOS E SILVA LTDA",
+     "pf": false,
+     "valor": 19400.48,
+     "orgaos": [
+      "SEJUCEL"
+     ],
+     "n": 1
+    }
+   ],
+   "FHEMERON": [
+    {
+     "credor": "SARTORI IMONILIARIA LTDA",
+     "pf": false,
+     "valor": 234735.36,
+     "orgaos": [
+      "FHEMERON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
+     "pf": false,
+     "valor": 137815.37,
+     "orgaos": [
+      "FHEMERON"
+     ],
+     "n": 1
+    }
+   ],
+   "POLITEC": [
+    {
+     "credor": "SOCIAL ADMINISTRADORA DE IMOVEIS LTDA - EPP",
+     "pf": false,
+     "valor": 131358.19,
+     "orgaos": [
+      "POLITEC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "NOGUEIRA IMOVEIS LTDA",
+     "pf": false,
+     "valor": 105616.3,
+     "orgaos": [
+      "POLITEC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "IMOBILIARIA ATALAIA LTDA",
+     "pf": false,
+     "valor": 66102.03,
+     "orgaos": [
+      "POLITEC"
+     ],
+     "n": 1
+    }
+   ],
+   "SESAU": [
+    {
+     "credor": "POLIANO DE LIMA MARQUES EIRELI",
+     "pf": false,
+     "valor": 793951.9,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
+     "pf": false,
+     "valor": 340302.78,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "MFH SERVIÇOS DE ADMINISTRAÇÃO DE IMÓVEIS LTDA",
+     "pf": false,
+     "valor": 130820.66,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 75782.34,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "PEROLA HOTEIS E RESTAURANTES LTDA",
+     "pf": false,
+     "valor": 10613.76,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "GOLDEN PLAZA HOTEL LTDA",
+     "pf": false,
+     "valor": 9025.61,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "RKV ALIMENTOS LTDA",
+     "pf": false,
+     "valor": 3292.0,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ACINOX EMPREENDIMENTOS E PARTIPACOES LTDA",
+     "pf": false,
+     "valor": 0.06,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    }
+   ],
+   "SEJUS": [
+    {
+     "credor": "VALENTIM IMOVEIS LTDA",
+     "pf": false,
+     "valor": 17508.82,
+     "orgaos": [
+      "SEJUS"
+     ],
+     "n": 1
+    }
+   ],
+   "SEGEP": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 141758.52,
+     "orgaos": [
+      "SEGEP"
+     ],
+     "n": 3
+    }
+   ],
+   "IDARON": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 1025794.0,
+     "orgaos": [
+      "IDARON"
+     ],
+     "n": 51
+    },
+    {
+     "credor": "FERNANDES E REZENDES LTDA ME",
+     "pf": false,
+     "valor": 904400.0,
+     "orgaos": [
+      "IDARON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SPAZIO BUSINESS LTDA ME",
+     "pf": false,
+     "valor": 257040.0,
+     "orgaos": [
+      "IDARON"
+     ],
+     "n": 1
+    }
+   ],
+   "SETUR": [
+    {
+     "credor": "CARGNIN & CARGNIN LTDA",
+     "pf": false,
+     "valor": 1615.0,
+     "orgaos": [
+      "SETUR"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "BRASIL AÇO EPITÁCIO IMPORT. E EXPORT. LTDA",
+     "pf": false,
+     "valor": 1599.36,
+     "orgaos": [
+      "SETUR"
+     ],
+     "n": 1
+    }
+   ],
+   "FEDIPI": [
+    {
+     "credor": "GOLDEN PLAZA HOTEL LTDA",
+     "pf": false,
+     "valor": 5412.0,
+     "orgaos": [
+      "FEDIPI"
+     ],
+     "n": 1
+    }
+   ],
+   "DETRAN": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 1418077.82,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 38
+    },
+    {
+     "credor": "A VALDIR LEBKUCHEN",
+     "pf": false,
+     "valor": 907151.4,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "RIO MADEIRA GRAFICA EDITORA LTDA",
+     "pf": false,
+     "valor": 848232.0,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SAMUEL SILVA NEGOCIOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 385996.37,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "IMOBILIARIA 2B LTDA",
+     "pf": false,
+     "valor": 337858.6,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "J. F. PARTICIPACOES LTDA - ME",
+     "pf": false,
+     "valor": 269270.73,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "CONCREACO DA AMAZONIA LTDA",
+     "pf": false,
+     "valor": 197186.4,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SUPORTE NEGOCIOS IMOBILIARIOS LTDA ME",
+     "pf": false,
+     "valor": 93978.27,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "VENETO HOLDING PATRIMONIAL S/A",
+     "pf": false,
+     "valor": 46686.6,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "INCOEST CONSTRUÇÕES E EMPREENDIMENTOS LTDA",
+     "pf": false,
+     "valor": 25307.33,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "CENTRO DE EDUCACAO DE ROLIM DE MOURA LTDA",
+     "pf": false,
+     "valor": 24024.13,
+     "orgaos": [
+      "DETRAN"
+     ],
+     "n": 1
+    }
+   ],
    "JUCER": [
     {
      "credor": "",
@@ -12126,13 +12017,122 @@
      "n": 1
     }
    ],
-   "CBOMB": [
+   "SEDEC": [
+    {
+     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
+     "pf": false,
+     "valor": 133280.0,
+     "orgaos": [
+      "SEDEC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 9528.4,
+     "orgaos": [
+      "SEDEC"
+     ],
+     "n": 1
+    }
+   ],
+   "FUNESBOM": [
+    {
+     "credor": "BRASIL INCORPORAÇÕES IMOBILIÁRIAS S/A",
+     "pf": false,
+     "valor": 71163.05,
+     "orgaos": [
+      "FUNESBOM"
+     ],
+     "n": 1
+    },
     {
      "credor": "OMINIA PARTICIPACOES EIRELI",
      "pf": false,
-     "valor": 20361.51,
+     "valor": 19968.3,
      "orgaos": [
-      "CBOMB"
+      "FUNESBOM"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 18000.0,
+     "orgaos": [
+      "FUNESBOM"
+     ],
+     "n": 1
+    }
+   ],
+   "FECOEP": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 40967.46,
+     "orgaos": [
+      "FECOEP"
+     ],
+     "n": 1
+    }
+   ],
+   "SEPAT": [
+    {
+     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
+     "pf": false,
+     "valor": 228480.0,
+     "orgaos": [
+      "SEPAT"
+     ],
+     "n": 1
+    }
+   ],
+   "FEAS": [
+    {
+     "credor": "GOLDEN PLAZA HOTEL LTDA",
+     "pf": false,
+     "valor": 23812.8,
+     "orgaos": [
+      "FEAS"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ANJOS E SILVA LTDA",
+     "pf": false,
+     "valor": 22134.54,
+     "orgaos": [
+      "FEAS"
+     ],
+     "n": 1
+    }
+   ],
+   "IPERON": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 81587.3,
+     "orgaos": [
+      "IPERON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "GOLDEN PLAZA HOTEL LTDA",
+     "pf": false,
+     "valor": 5412.0,
+     "orgaos": [
+      "IPERON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ANJOS E SILVA LTDA",
+     "pf": false,
+     "valor": 3053.45,
+     "orgaos": [
+      "IPERON"
      ],
      "n": 1
     }
