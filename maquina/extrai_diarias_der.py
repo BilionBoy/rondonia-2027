@@ -7,6 +7,7 @@ Grava dados-fonte/s8_diarias_der.json só com totais: por mês, por ano, quantos
 Conferência: a soma da base de pagamentos tem de bater com o total que a própria planilha mostra no painel (R$ 118.981.956,55).
 """
 import json
+import re
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -66,12 +67,40 @@ def main():
     for (a, m, _), v in serv_mes.items():
         mes[(a, m)]["maior"] = max(mes[(a, m)]["maior"], v)
 
-    passagens = defaultdict(float)
-    for r in linhas(wb["Base Passagens"], "Valor pago no mês"):
+    # processo SEI e nota de empenho de cada pagamento (sem o servidor)
+    proc = defaultdict(lambda: {"pagamentos": 0, "valor": 0.0, "notas": set(), "anos": set()})
+    serv_info = defaultdict(lambda: {"meses": set(), "pagamentos": 0})
+    for r in linhas(wb["Base Diárias"], "Beneficiário"):
         try:
-            passagens[(int(r["Ano"]), int(r["Mês"]))] += float(r["Valor pago no mês"] or 0)
+            a, m, v = int(r["Ano"]), int(r["Mês"]), float(r["Valor pago"] or 0)
         except (TypeError, ValueError):
             continue
+        if v <= 0:
+            continue
+        x = proc[str(r["Processo"] or "sem processo").strip()]
+        x["pagamentos"] += 1
+        x["valor"] += v
+        x["notas"].add(f"{a}|{r['Empenho']}")
+        x["anos"].add(a)
+        k = (a, f"{r['CPF']}|{str(r['Beneficiário']).strip()}")
+        serv_info[k]["meses"].add(m)
+        serv_info[k]["pagamentos"] += 1
+
+    passagens = defaultdict(float)
+    pag_passagens = []
+    for r in linhas(wb["Base Passagens"], "Valor pago no mês"):
+        try:
+            a, m, v = int(r["Ano"]), int(r["Mês"]), float(r["Valor pago no mês"] or 0)
+        except (TypeError, ValueError):
+            continue
+        passagens[(a, m)] += v
+        cred = str(r["Credor"] or "")
+        cnpj, _, nome = cred.partition(" - ")
+        cnpj = re.sub(r"\D", "", cnpj)
+        pag_passagens.append({"data": str(r["Data"])[:10], "doc": r["Documento"], "ne": r["Empenho"], "processo": r["Processo"],
+                              "cnpj": f"{cnpj[:2]}.{cnpj[2:5]}.{cnpj[5:8]}/{cnpj[8:12]}-{cnpj[12:]}" if len(cnpj) == 14 else cnpj,
+                              "credor": nome.strip(" -") or cred, "historico": str(r["Histórico do pagamento"] or "").strip(),
+                              "valor_relatorio": round(float(r["Valor no relatório"] or 0), 2), "valor": round(v, 2)})
 
     anos = sorted({a for a, _ in mes})
     por_ano = {}
@@ -88,6 +117,9 @@ def main():
             "faixas": [{"de": lo, "ate": hi if hi < 1e12 else None, "servidores": sum(lo <= v < hi for v in vs),
                         "valor": round(sum(v for v in vs if lo <= v < hi), 2)} for lo, hi in FAIXAS],
             "maiores": [round(v, 2) for v in vs[:10]],
+            # os 20 que mais receberam, sem nome: posição, total, meses com diária e pagamentos
+            "ranking": [{"pos": i + 1, "valor": round(v, 2), "meses": len(serv_info[(a, k)]["meses"]), "pagamentos": serv_info[(a, k)]["pagamentos"]}
+                        for i, (k, v) in enumerate(sorted(ano_serv[a].items(), key=lambda x: -x[1])[:20])],
             "mensal": [{"mes": m, "diarias": round(mes[(a, m)]["valor"], 2), "pagamentos": mes[(a, m)]["pagamentos"],
                         "servidores": len(mes[(a, m)]["servidores"]), "maior": round(mes[(a, m)]["maior"], 2),
                         "passagens": round(passagens.get((a, m), 0), 2)} for m in range(1, 13)],
@@ -98,6 +130,9 @@ def main():
         "total": {"diarias": round(total, 2), "passagens": round(sum(passagens.values()), 2), "servidores": len(serv_anos),
                   "todos_os_anos": sum(len(x) == len(anos) for x in serv_anos.values())},
         "anos": por_ano,
+        "processos": sorted(({"processo": k, "pagamentos": x["pagamentos"], "valor": round(x["valor"], 2), "notas": len(x["notas"]), "anos": sorted(x["anos"])}
+                             for k, x in proc.items()), key=lambda x: -x["valor"]),
+        "passagens": sorted(pag_passagens, key=lambda x: x["data"]),
     }
     SAIDA.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"diárias R$ {total:,.2f} (planilha: 118.981.956,55); passagens R$ {out['total']['passagens']:,.2f}; servidores {len(serv_anos)}")

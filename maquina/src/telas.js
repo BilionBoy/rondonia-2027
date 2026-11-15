@@ -249,6 +249,54 @@ function provasOrgaos(U, i, limpar) {
   else mostraProvas(`${U[i].nome || U[i].unidade}`, [lista[i]], {filtro: U[i].unidade, limpar, abrir: 0});
 }
 
+// ---------- servidores afastados aguardando a aposentadoria (SEGEP, outubro de 2026)
+const AP = F.aposentadoria, LK_IPERON = ["IPERON (concede a aposentadoria)", "https://rondonia.ro.gov.br/iperon/"];
+const FONTE_AP = "SEGEP, Servidores Aguardando Aposentadoria (referência 10/2026), cruzada com a folha de outubro pela matrícula criptografada";
+const FAIXAS_AP = ["até 6 meses", "7 a 12 meses", "1 a 2 anos", "mais de 2 anos"];
+let apVer = 0;
+const nomeUn = u => u === "SEM UNIDADE" ? "Sem unidade na folha" : u;
+// unidades da SESAU que a folha lista com sigla própria
+Object.assign(D.nomes, {HB: "Hospital de Base Dr. Ary Pinheiro (SESAU)", "JP II": "Hospital e Pronto-Socorro João Paulo II (SESAU)", CEMETRON: "Centro de Medicina Tropical de Rondônia (SESAU)",
+  POC: "Policlínica Oswaldo Cruz (SESAU)", LACEN: "Laboratório Central de Saúde Pública (SESAU)", FHEMERON: D.nomes.FHEMERON || "Fundação de Hematologia e Hemoterapia"});
+function provaApUn(x) {
+  return pr(`${nomeUn(x.unidade)}${D.nomes[x.unidade] ? " · " + D.nomes[x.unidade] : ""}`, br(x.pessoas) + " servidores", "afastados aguardando a aposentadoria, outubro de 2026",
+    [["Servidores", br(x.pessoas)], ["Salário bruto por mês", mi(x.bruto_mes)], ["Por ano (13 salários)", mi(x.bruto_mes * 13)], ["Parte do total", br(100 * x.pessoas / AP.pessoas, 1) + "%"]], LK.pessoal);
+}
+function provasAp() {
+  const como = pr("Como funciona", br(AP.pessoas) + " servidores", "o servidor pede a aposentadoria, é afastado para aguardar e segue recebendo o salário até a concessão",
+    [["Quem afasta", "o órgão do servidor (SEGEP registra o motivo: afastamento para aguardar aposentadoria)"], ["Quem concede", "o IPERON, que analisa e publica a aposentadoria"],
+      ["Enquanto isso", "o salário sai da folha ativa do órgão, e a vaga não pode ser reposta"], ["Afastados de fato (situação AFA)", br(AP.afastados)],
+      ["Tempo de espera mais comum (mediana)", br(AP.mediana_meses) + " meses"], ["Afastado há mais tempo", "desde " + dataBR(AP.mais_antigo)]], LK_IPERON);
+  const max = AP.por_unidade[0].pessoas;
+  mostraProvas("Como funciona e em que órgãos estão, do maior para o menor. Nomes e matrículas não aparecem.",
+    [como, ...AP.por_unidade.map(x => ({...provaApUn(x), barra: x.pessoas / max}))], {todas: AP.por_unidade.map(provaApUn), tituloTodas: "Aguardando aposentadoria por órgão", limite: 7});
+}
+function telaAposentadoria() {
+  const ano = AP.bruto_mes * 13, mais2 = AP.tempo["mais de 2 anos"] || 0, ultimo = AP.por_ano_inicio.at(-1), penult = AP.por_ano_inicio.at(-2);
+  esq({kicker: "Servidores afastados aguardando a aposentadoria · outubro de 2026", titulo: `${br(AP.pessoas)} servidores recebem em casa à espera da aposentadoria`,
+    n: mi(ano), s: `por ano (${mi(AP.bruto_mes)} por mês) a quem já não trabalha<br><b>${br(mais2)}</b> esperam há mais de 2 anos; o mais antigo, desde ${AP.mais_antigo.slice(0, 4)}`,
+    provaN: pr("Salário de quem aguarda a aposentadoria", mi(ano) + "/ano", FONTE_AP, [["Servidores", br(AP.pessoas)], ["Salário bruto em outubro", "R$ " + br(AP.bruto_mes, 2)], ["Por ano (13 salários)", mi(ano)],
+      ["Efetivos civis", br(AP.por_grupo.efetivo || 0)], ["Militares", br(AP.por_grupo.militar || 0)], ["Sem encargos", "a conta não inclui a contribuição patronal"]], LK.pessoal),
+    estat: [["Servidores", br(AP.pessoas), pr("Quem está esperando", br(AP.pessoas), FONTE_AP, FAIXAS_AP.map(k => ["Esperando há " + k, br(AP.tempo[k] || 0)]), LK.pessoal)],
+      ["Por mês", mi(AP.bruto_mes), pr("Salário por mês", mi(AP.bruto_mes), "bruto de outubro de 2026, sem encargos", AP.por_unidade.slice(0, 8).map(x => [nomeUn(x.unidade), mi(x.bruto_mes)]), LK.pessoal)],
+      ["Entraram em 2026", br(ultimo.pessoas), pr("A fila cresce", br(ultimo.pessoas), "servidores afastados para aguardar em cada ano, que ainda aguardam", AP.por_ano_inicio.slice().reverse().map(x => [String(x.ano), `${br(x.pessoas)} · ${mi(x.bruto_mes)}/mês`]), LK.pessoal)],
+      ["Já custou (estimativa)", mi(AP.custo_acumulado_estimado), pr("Quanto já se pagou a quem espera", mi(AP.custo_acumulado_estimado), "estimativa: salário de hoje × meses desde o afastamento, com 13º",
+        [["Regra", "usa o salário de outubro de 2026 para todo o período; é ordem de grandeza, não valor exato"], ["Espera mais comum", br(AP.mediana_meses) + " meses"]], LK.pessoal)]],
+    alterna: ["Ver:", ["Há quanto tempo", "Por órgão", "Ano do afastamento", "Por cargo"], apVer, i => { apVer = i; telaAposentadoria(); }],
+    dicaUso: ["Quantos esperam em cada faixa de tempo. Clique numa faixa.", "Os órgãos com mais servidores aguardando. Clique num órgão.",
+      `Ano em que o servidor foi afastado, entre os que ainda aguardam: ${br(penult.pessoas)} em ${penult.ano} e ${br(ultimo.pessoas)} só em ${ultimo.ano}.`, "Os cargos com mais servidores aguardando."][apVer],
+    fonte: `Fonte: ${FONTE_AP} · nomes e matrículas não aparecem`, dados: ["aposentadoria"], padrao: provasAp});
+  if (apVer === 0) barras($("#graf"), FAIXAS_AP.map(k => ({rot: "há " + k, partes: [{v: AP.tempo[k] || 0, cor: k === "mais de 2 anos" ? "#c0392b" : "var(--c3)"}], dir: br(AP.tempo[k] || 0) + " servidores",
+    dica: ["Esperando há " + k, [["Servidores", br(AP.tempo[k] || 0)]]]})));
+  else if (apVer === 1) { const L_ = AP.por_unidade.slice(0, 18);
+    barras($("#graf"), L_.map(x => ({rot: nomeUn(x.unidade), partes: [{v: x.pessoas, cor: "var(--c1)"}], dir: `${br(x.pessoas)} · ${mi(x.bruto_mes)}/mês`,
+      dica: [D.nomes[x.unidade] || nomeUn(x.unidade), [["Servidores", br(x.pessoas)], ["Por mês", mi(x.bruto_mes)]], "Clique para abrir"],
+      clique: (g, s_) => { foco(s_, g); mostraProvas(nomeUn(x.unidade), [provaApUn(x)], {abrir: 0, filtro: nomeUn(x.unidade), limpar: () => { foco(s_, null); provasAp(); }}); }}))); }
+  else if (apVer === 2) colunas($("#graf"), AP.por_ano_inicio.map(x => ({rot: String(x.ano).slice(2) === "26" ? "2026" : "'" + String(x.ano).slice(2), partes: [{v: x.pessoas, cor: x.ano === 2026 ? "var(--c1)" : claro("var(--c1)")}], topo: br(x.pessoas), destaque: x.ano === 2026,
+    dica: [`Afastados em ${x.ano} que ainda aguardam`, [["Servidores", br(x.pessoas)], ["Por mês", mi(x.bruto_mes)]]]})));
+  else barras($("#graf"), AP.por_cargo.slice(0, 14).map(x => ({rot: x.cargo, partes: [{v: x.pessoas, cor: "var(--c4)"}], dir: br(x.pessoas), dica: [x.cargo, [["Servidores aguardando", br(x.pessoas)]]]})));
+}
+
 // ---------- 3 e 4. pagamentos (veículos e imóveis), agregados aqui a partir das linhas
 const mesDe = d => +String(d).slice(3, 5);
 function agrupa(ls, chave) {
@@ -686,7 +734,7 @@ function desenha2D(sel) {
 // ---------- diárias e passagens do DER, 2022 a 2026 (planilha da equipe de transição; só totais)
 const DD = M.diarias_der, ANOS_D = Object.keys(DD.anos), A25 = DD.anos["2025"], A26 = DD.anos["2026"];
 const LK_DD = ["Diárias no Portal da Transparência (consulta por órgão)", "https://transparencia.ro.gov.br/Diarias"];
-const FONTE_DD = "relatórios de pagamentos do DER (unidade 110025), planilha da equipe de transição de 14/11/2026";
+const FONTE_DD = "SIGEF/SEFIN, relatórios de pagamentos do DER (unidade 110025), planilha da equipe de transição de 14/11/2026";
 const faixaTxt = f => f.ate ? `${f.de ? "de R$ " + br(f.de / 1000) + " mil " : ""}até R$ ${br(f.ate / 1000)} mil` : `mais de R$ ${br(f.de / 1000)} mil`;
 const jo = (a, m) => DD.anos[a].mensal.slice(0, m).reduce((x, y) => x + y.diarias, 0);   // de janeiro até o mês m
 let ddVer = 0;
@@ -696,8 +744,17 @@ function provaAnoD(a) {
     [["Diárias pagas", "R$ " + br(y.diarias, 2)], ["Passagens pagas", mi(y.passagens)], ["Servidores que receberam", br(y.servidores)], ["Média por servidor no ano", "R$ " + br(y.media_servidor)],
       ["O servidor que mais recebeu (sem nome)", "R$ " + br(y.maior_servidor)], [`Os ${br(y.top10_n)} que mais receberam (10%)`, `ficaram com ${br(y.top10_pct, 1)}% do total`],
       ["Receberam mais de R$ 100 mil", br(y.acima_100mil) + " servidores"], ["Receberam mais de R$ 60 mil", br(y.acima_60mil) + " servidores"],
-      ...y.mensal.filter(x => x.diarias).map(x => [MESES_L[x.mes - 1], `${mi(x.diarias)} · ${br(x.servidores)} servidores`])], LK_DD);
+      ...y.mensal.filter(x => x.diarias).map((x, i, l) => [MESES_L[x.mes - 1], `${mi(x.diarias)} · ${br(100 * x.diarias / y.diarias, 0)}% do ano · ${br(x.servidores)} servidores${i ? " · " + var_(l[i - 1].diarias, x.diarias) + " sobre o mês anterior" : ""}`]),
+      ["Processo SEI das diárias do ano", DD.processos.filter(p => p.anos.includes(+a)).map(p => `${p.processo} (${mi(p.valor)})`).join("; ")]], LK_DD);
 }
+const provaRanking = a => pr(`Os 20 que mais receberam em ${a} (sem nome)`, mi(DD.anos[a].ranking.reduce((x, r) => x + r.valor, 0)), `${br(100 * DD.anos[a].ranking.reduce((x, r) => x + r.valor, 0) / DD.anos[a].diarias, 1)}% de todas as diárias do ano`,
+  DD.anos[a].ranking.map(r => [`${r.pos}º`, `R$ ${br(r.valor)} · ${r.meses} meses com diária · ${r.pagamentos} pagamentos`]), LK_DD);
+const provaProcessos = () => pr("Processos SEI das diárias", br(DD.processos.length) + " processos", "cada ano tem um processo que concentra quase todas as diárias",
+  DD.processos.map(p => [p.processo, `${mi(p.valor)} · ${br(p.pagamentos)} pagamentos · ${p.notas} notas · ${p.anos.join(", ")}`]), LK_DD);
+const notaPass = p => ({credor: p.credor, valor: p.valor / 1e6, l2: `${dataBR(p.data)} · ${p.doc} · nota ${p.ne}`, cnpj: p.cnpj, historico: p.historico, fonte: p.processo ? "Processo SEI " + p.processo : "", link: PORTAL_PAG});
+const provaPassagens = a => { const ls = DD.passagens.filter(p => !a || p.data.startsWith(a));
+  return pr(`Passagens pagas pelo DER${a ? " em " + a : ", 2022 a 2026"}`, mi(ls.reduce((x, p) => x + p.valor, 0)), `${br(ls.length)} pagamentos a agências de viagem, natureza 3.3.90.33`,
+    Object.entries(ls.reduce((o, p) => { o[p.credor] = (o[p.credor] || 0) + p.valor; return o; }, {})).sort((x, y) => y[1] - x[1]).map(([k, v]) => [k, mi(v)]), LK_DD, ls.slice().reverse().map(notaPass)); };
 function telaDiariasDer() {
   const t = DD.total, cresce = 100 * (A25.diarias - DD.anos["2022"].diarias) / DD.anos["2022"].diarias;
   const out25 = jo("2025", 10), out26 = jo("2026", 10);
@@ -712,10 +769,12 @@ function telaDiariasDer() {
       ["2026 até 10/11", mi(A26.diarias), pr("2026 × 2025, de janeiro a outubro", mi(out26), "mesmo período nos dois anos", [["2025 (jan a out)", mi(out25)], ["2026 (jan a out)", mi(out26)], ["Diferença", var_(out25, out26)], ["Novembro de 2026", "até 10/11, ainda incompleto"]], LK_DD)],
       ["Servidores", br(t.servidores), provaAnoD("2025")],
       ["No Portal", "R$ 0", portal]],
-    alterna: ["Ver:", ["Ano a ano", "Mês a mês", "Quanto cada servidor recebeu"], ddVer, i => { ddVer = i; telaDiariasDer(); }],
+    alterna: ["Ver:", ["Ano a ano", "Mês a mês", "Quanto cada servidor recebeu", "Passagens"], ddVer, i => { ddVer = i; telaDiariasDer(); }],
     legenda: ddVer === 1 ? legenda(ANOS_D.map((a, i) => [a, `color-mix(in srgb, var(--c1) ${30 + 17 * i}%, transparent)`])) : ddVer === 2 ? legenda([["2025: servidores em cada faixa do total recebido no ano", "var(--c3)"]]) : "",
-    dicaUso: ["Diárias pagas a cada ano; 2026 vai até 10/11. Clique num ano.", "Diárias pagas a cada mês, de 2022 a 2026. Clique num mês.", "Quantos servidores receberam quanto em diárias em 2025, somado o ano. Clique numa faixa."][ddVer],
-    fonte: `Fonte: ${FONTE_DD} · nomes e CPF não aparecem`, dados: ["diarias-der"], padrao: () => mostraProvas("Ano a ano. Clique para abrir; nomes não aparecem.", [...ANOS_D.map(provaAnoD).reverse(), portal], {limite: 6})});
+    dicaUso: ["Diárias pagas a cada ano; 2026 vai até 10/11. Clique num ano.", "Diárias pagas a cada mês, de 2022 a 2026. Clique num mês.", "Quantos servidores receberam quanto em diárias em 2025, somado o ano. Clique numa faixa.",
+      "Passagens pagas a agências de viagem a cada ano. Clique num ano para ver cada pagamento."][ddVer],
+    fonte: `Fonte: ${FONTE_DD} · nomes e CPF não aparecem`, dados: ["diarias-der", "diarias-der-processos", "passagens-der"], padrao: () => mostraProvas("Ano a ano, quem mais recebeu (sem nome), os processos SEI e as passagens. Clique para abrir.",
+      [...ANOS_D.map(provaAnoD).reverse(), provaRanking("2025"), provaRanking("2026"), provaProcessos(), provaPassagens(), portal], {limite: 11})});
   if (ddVer === 0) colunas($("#graf"), ANOS_D.map(a => ({rot: a + (a === "2026" ? "*" : ""), partes: [{v: DD.anos[a].diarias, cor: a === "2026" ? claro("var(--c1)") : "var(--c1)"}], topo: mi(DD.anos[a].diarias), destaque: a === "2025",
     dica: [`Diárias do DER em ${a}`, [["Pago", mi(DD.anos[a].diarias)], ["Servidores", br(DD.anos[a].servidores)], ["Mais de R$ 100 mil", br(DD.anos[a].acima_100mil)]], "Clique para abrir"],
     clique: (g, s_) => { foco(s_, g); mostraProvas("O ano em detalhe", [provaAnoD(a)], {abrir: 0, filtro: a, limpar: () => { foco(s_, null); telaDiariasDer(); }}); }})));
@@ -724,6 +783,9 @@ function telaDiariasDer() {
     clique: (g, s_) => { foco(s_, g); mostraProvas(`${MESES_L[x.mes - 1]} de ${a}`, [pr(`Diárias em ${MESES_L[x.mes - 1].toLowerCase()} de ${a}`, mi(x.diarias), FONTE_DD,
       [["Pago", "R$ " + br(x.diarias, 2)], ["Pagamentos", br(x.pagamentos)], ["Servidores", br(x.servidores)], ["Média por servidor no mês", "R$ " + br(x.servidores ? x.diarias / x.servidores : 0)], ["Maior a um servidor no mês (sem nome)", "R$ " + br(x.maior)], ["Passagens no mês", mi(x.passagens)]], LK_DD)],
       {abrir: 0, filtro: `${MESES_L[x.mes - 1]}/${a}`, limpar: () => { foco(s_, null); telaDiariasDer(); }}); }}))));
+  else if (ddVer === 3) colunas($("#graf"), ANOS_D.map(a => ({rot: a + (a === "2026" ? "*" : ""), partes: [{v: DD.anos[a].passagens, cor: "var(--c4)"}], topo: mi(DD.anos[a].passagens),
+    dica: [`Passagens em ${a}`, [["Pago", mi(DD.anos[a].passagens)], ["Pagamentos", br(DD.passagens.filter(p => p.data.startsWith(a)).length)]], "Clique para ver cada pagamento"],
+    clique: (g, s_) => { foco(s_, g); mostraProvas(`Passagens em ${a}`, [provaPassagens(a)], {abrir: 0, filtro: a, limpar: () => { foco(s_, null); telaDiariasDer(); }}); }})));
   else barras($("#graf"), A25.faixas.map(f => ({rot: faixaTxt(f), partes: [{v: f.servidores, cor: f.de >= 60000 ? "#c0392b" : "var(--c3)"}], dir: `${br(f.servidores)} · ${mi(f.valor)}`,
     dica: [faixaTxt(f) + " em 2025", [["Servidores", br(f.servidores)], ["Receberam juntos", mi(f.valor)]], "Clique para abrir"],
     clique: (g, s_) => { foco(s_, g); mostraProvas("Faixa de 2025", [pr(`Receberam ${faixaTxt(f)} em diárias em 2025`, br(f.servidores) + " servidores", "total de diárias de cada servidor no ano, somado",
@@ -936,7 +998,7 @@ function telaMetodo() {
     padrao: () => { $("#aviso").hidden = true; mostraProvas("As fontes, com o endereço oficial para conferir.", [...M.fontes.map(f => pr(f[0], "", f[2], [], [f[0], f[1]])), pr("Lei de Responsabilidade Fiscal", "", "limites da despesa com pessoal (arts. 19, 20, 22 e 59)", [], LK.lrf)], {limite: 10}); }});
 }
 
-const TELAS = [{curto: "Decidir", f: telaDecidir}, {curto: "Folha", f: telaFolha}, {curto: "Servidores", f: telaOrgaos}, {curto: "Secretarias", f: telaSecretarias},
+const TELAS = [{curto: "Decidir", f: telaDecidir}, {curto: "Folha", f: telaFolha}, {curto: "Servidores", f: telaOrgaos}, {curto: "Aposentadoria", f: telaAposentadoria}, {curto: "Secretarias", f: telaSecretarias},
   {curto: "Veículos", f: telaVeiculos}, {curto: "Imóveis", f: telaImoveis}, {curto: "Contas", f: telaConsumo}, {curto: "Diárias DER", f: telaDiariasDer}, {curto: "2025 × 2026", f: telaComparativo},
   {curto: "Regionais", f: telaRegionais}, {curto: "Organograma", f: telaOrganograma, cheia: true}];
 $("#trilha").innerHTML = TELAS.map((t, i) => `<button class="passo" type="button"><b>${i}</b><span>${t.curto}</span></button>`).join("")
@@ -944,7 +1006,7 @@ $("#trilha").innerHTML = TELAS.map((t, i) => `<button class="passo" type="button
 $("#trilha").querySelectorAll(".passo").forEach((p, i) => p.onclick = () => ir(i));
 function ir(i) {
   atual = Math.max(0, Math.min(TELAS.length - 1, i));
-  $("#trilha").querySelectorAll(".passo").forEach((p, j) => { p.classList.toggle("on", j === atual); p.classList.toggle("visto", j < atual); });
+  $("#trilha").querySelectorAll(".passo").forEach((p, j) => { p.classList.toggle("on", j === atual); p.classList.toggle("visto", j < atual); if (j === atual) p.scrollIntoView?.({inline: "nearest", block: "nearest"}); });
   $("#aviso").hidden = true; $("#aviso").innerHTML = "";
   history.replaceState(null, "", "#" + atual);
   $("#tela").classList.toggle("cheia", !!TELAS[atual].cheia);

@@ -132,21 +132,52 @@ def main():
                   "pessoas": sum(a <= p["bruto"] < b for p in ativos),
                   "bruto": round(sum(p["bruto"] for p in ativos if a <= p["bruto"] < b), 2)} for a, b in faixas]
 
-    # Aguardando aposentadoria: matrícula real, por isso só o total sai daqui
+    # Aguardando aposentadoria: a lista traz a matrícula real; o MD5 dela é a matrícula criptografada da folha, o que dá órgão,
+    # cargo e vínculo. Daqui só saem totais.
+    import hashlib
+    from datetime import date
     ws = openpyxl.load_workbook(APOSENTADORIA, read_only=True, data_only=True).worksheets[0]
     ap = {}
     for r in list(ws.iter_rows(values_only=True))[1:]:
         if r[0]:
-            ap[str(r[0])] = r
-    tempo = Counter()
-    for r in ap.values():
-        ini = r[1]
-        meses = (2026 - ini.year) * 12 + (10 - ini.month) if ini else None
+            ap[str(r[0]).strip()] = r
+    ref = date(2026, 10, 31)
+    tempo, por_ano, por_un, por_cargo, ap_grupo = Counter(), defaultdict(lambda: [0, 0.0]), defaultdict(lambda: [0, 0.0]), Counter(), Counter()
+    meses_l, custo_acum, achados, sem_data = [], 0.0, 0, 0
+    for m, r in ap.items():
+        ini, bruto = r[1], numero(r[5])
+        meses = (ref.year - ini.year) * 12 + (ref.month - ini.month) if ini else None
         tempo["até 6 meses" if meses is not None and meses <= 6 else "7 a 12 meses" if meses is not None and meses <= 12
               else "1 a 2 anos" if meses is not None and meses <= 24 else "mais de 2 anos" if meses is not None else "sem data"] += 1
+        if ini:
+            por_ano[ini.year][0] += 1
+            por_ano[ini.year][1] += bruto
+            meses_l.append(meses)
+            custo_acum += bruto * max(meses, 0) * 13 / 12   # estimativa: salário de hoje × meses afastado, com 13º
+        else:
+            sem_data += 1
+        p = pessoas.get(hashlib.md5(m.encode()).hexdigest().upper())
+        if p:
+            achados += 1
+            por_un[p["unidade"] or "SEM UNIDADE"][0] += 1
+            por_un[p["unidade"] or "SEM UNIDADE"][1] += bruto
+            por_cargo[p["cargo"]] += 1
+            ap_grupo[p["grupo"]] += 1
+        else:
+            por_un["Não achado na folha de outubro"][0] += 1
+            por_un["Não achado na folha de outubro"][1] += bruto
+    meses_l.sort()
+    inicios = [r[1] for r in ap.values() if r[1]]
     aposentadoria = {"pessoas": len(ap), "bruto_mes": round(sum(numero(r[5]) for r in ap.values()), 2),
                      "afastados": sum(str(r[4]).strip() == "AFA" for r in ap.values()),
-                     "tempo": dict(tempo)}
+                     "tempo": dict(tempo), "achados_na_folha": achados, "sem_data": sem_data,
+                     "mais_antigo": min(inicios).date().isoformat() if inicios else None,
+                     "mediana_meses": meses_l[len(meses_l) // 2] if meses_l else None,
+                     "custo_acumulado_estimado": round(custo_acum, 2),
+                     "por_ano_inicio": [{"ano": a, "pessoas": n, "bruto_mes": round(v, 2)} for a, (n, v) in sorted(por_ano.items())],
+                     "por_unidade": [{"unidade": u, "pessoas": n, "bruto_mes": round(v, 2)} for u, (n, v) in sorted(por_un.items(), key=lambda x: -x[1][0])],
+                     "por_cargo": [{"cargo": c, "pessoas": n} for c, n in por_cargo.most_common(15)],
+                     "por_grupo": dict(ap_grupo)}
 
     out = {
         "meta": {"fonte": "SEGEP, Relação de Servidores Ativos e Afastados, referência 10/2026 (versão Atualizado, com unidade e departamento)",

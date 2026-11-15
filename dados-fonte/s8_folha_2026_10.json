@@ -8760,6 +8760,287 @@
    "1 a 2 anos": 183,
    "7 a 12 meses": 169,
    "até 6 meses": 279
+  },
+  "achados_na_folha": 898,
+  "sem_data": 0,
+  "mais_antigo": "2014-01-01",
+  "mediana_meses": 13,
+  "custo_acumulado_estimado": 172776681.07,
+  "por_ano_inicio": [
+   {
+    "ano": 2014,
+    "pessoas": 1,
+    "bruto_mes": 7435.07
+   },
+   {
+    "ano": 2015,
+    "pessoas": 6,
+    "bruto_mes": 57634.45
+   },
+   {
+    "ano": 2016,
+    "pessoas": 16,
+    "bruto_mes": 89280.67
+   },
+   {
+    "ano": 2017,
+    "pessoas": 9,
+    "bruto_mes": 70276.9
+   },
+   {
+    "ano": 2018,
+    "pessoas": 11,
+    "bruto_mes": 61963.56
+   },
+   {
+    "ano": 2019,
+    "pessoas": 27,
+    "bruto_mes": 303726.69
+   },
+   {
+    "ano": 2020,
+    "pessoas": 15,
+    "bruto_mes": 94883.69
+   },
+   {
+    "ano": 2021,
+    "pessoas": 18,
+    "bruto_mes": 93850.95
+   },
+   {
+    "ano": 2022,
+    "pessoas": 49,
+    "bruto_mes": 309208.02
+   },
+   {
+    "ano": 2023,
+    "pessoas": 50,
+    "bruto_mes": 271563.51
+   },
+   {
+    "ano": 2024,
+    "pessoas": 100,
+    "bruto_mes": 751525.96
+   },
+   {
+    "ano": 2025,
+    "pessoas": 233,
+    "bruto_mes": 1929634.87
+   },
+   {
+    "ano": 2026,
+    "pessoas": 363,
+    "bruto_mes": 3352421.31
+   }
+  ],
+  "por_unidade": [
+   {
+    "unidade": "SEDUC",
+    "pessoas": 556,
+    "bruto_mes": 3332788.12
+   },
+   {
+    "unidade": "SESAU",
+    "pessoas": 76,
+    "bruto_mes": 535190.98
+   },
+   {
+    "unidade": "PM",
+    "pessoas": 66,
+    "bruto_mes": 893230.52
+   },
+   {
+    "unidade": "HB",
+    "pessoas": 46,
+    "bruto_mes": 748052.68
+   },
+   {
+    "unidade": "SEJUS",
+    "pessoas": 30,
+    "bruto_mes": 215218.26
+   },
+   {
+    "unidade": "FHEMERON",
+    "pessoas": 25,
+    "bruto_mes": 122916.26
+   },
+   {
+    "unidade": "SEFIN",
+    "pessoas": 14,
+    "bruto_mes": 598678.4
+   },
+   {
+    "unidade": "PC",
+    "pessoas": 12,
+    "bruto_mes": 245291.67
+   },
+   {
+    "unidade": "JP II",
+    "pessoas": 12,
+    "bruto_mes": 47740.93
+   },
+   {
+    "unidade": "SEM UNIDADE",
+    "pessoas": 11,
+    "bruto_mes": 94595.98
+   },
+   {
+    "unidade": "AGEVISA",
+    "pessoas": 7,
+    "bruto_mes": 56177.98
+   },
+   {
+    "unidade": "CEMETRON",
+    "pessoas": 5,
+    "bruto_mes": 40865.62
+   },
+   {
+    "unidade": "POC",
+    "pessoas": 4,
+    "bruto_mes": 101445.57
+   },
+   {
+    "unidade": "SEAGRI",
+    "pessoas": 4,
+    "bruto_mes": 43262.05
+   },
+   {
+    "unidade": "SEDAM",
+    "pessoas": 4,
+    "bruto_mes": 32757.6
+   },
+   {
+    "unidade": "CBM",
+    "pessoas": 4,
+    "bruto_mes": 52585.73
+   },
+   {
+    "unidade": "FEASE",
+    "pessoas": 3,
+    "bruto_mes": 17177.59
+   },
+   {
+    "unidade": "DETRAN",
+    "pessoas": 3,
+    "bruto_mes": 40807.59
+   },
+   {
+    "unidade": "DER",
+    "pessoas": 3,
+    "bruto_mes": 46662.56
+   },
+   {
+    "unidade": "SEGEP",
+    "pessoas": 3,
+    "bruto_mes": 13206.97
+   },
+   {
+    "unidade": "SEPOG",
+    "pessoas": 2,
+    "bruto_mes": 10677.26
+   },
+   {
+    "unidade": "IDARON",
+    "pessoas": 2,
+    "bruto_mes": 25686.97
+   },
+   {
+    "unidade": "IPERON",
+    "pessoas": 1,
+    "bruto_mes": 9095.06
+   },
+   {
+    "unidade": "PGE",
+    "pessoas": 1,
+    "bruto_mes": 18273.52
+   },
+   {
+    "unidade": "LACEN",
+    "pessoas": 1,
+    "bruto_mes": 4299.05
+   },
+   {
+    "unidade": "COGES",
+    "pessoas": 1,
+    "bruto_mes": 13870.17
+   },
+   {
+    "unidade": "CASA MILITAR",
+    "pessoas": 1,
+    "bruto_mes": 18726.0
+   },
+   {
+    "unidade": "SESDEC",
+    "pessoas": 1,
+    "bruto_mes": 14124.56
+   }
+  ],
+  "por_cargo": [
+   {
+    "cargo": "Professor Classe C - Ch 40",
+    "pessoas": 338
+   },
+   {
+    "cargo": "Tecnico Educacional Nivel 1",
+    "pessoas": 98
+   },
+   {
+    "cargo": "Professor Classe A - Ch 40",
+    "pessoas": 37
+   },
+   {
+    "cargo": "Medico 40h",
+    "pessoas": 36
+   },
+   {
+    "cargo": "SESAU- Auxiliar de Servicos Gerais",
+    "pessoas": 30
+   },
+   {
+    "cargo": "Professor Classe C - Ch20",
+    "pessoas": 29
+   },
+   {
+    "cargo": "Tecnico em Enfermagem",
+    "pessoas": 27
+   },
+   {
+    "cargo": "Professor Classe A - Ch20",
+    "pessoas": 21
+   },
+   {
+    "cargo": "POLICIAL PENAL",
+    "pessoas": 21
+   },
+   {
+    "cargo": "Tecnico Educacional Nivel 2",
+    "pessoas": 18
+   },
+   {
+    "cargo": "Auxiliar em Enfermagem",
+    "pessoas": 17
+   },
+   {
+    "cargo": "CB PM",
+    "pessoas": 17
+   },
+   {
+    "cargo": "Auxiliar de Servicos em Saude",
+    "pessoas": 16
+   },
+   {
+    "cargo": "1SGT PM",
+    "pessoas": 13
+   },
+   {
+    "cargo": "STEN PM",
+    "pessoas": 10
+   }
+  ],
+  "por_grupo": {
+   "efetivo": 824,
+   "militar": 73,
+   "temporario": 1
   }
  }
 }

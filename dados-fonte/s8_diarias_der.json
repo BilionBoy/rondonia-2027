@@ -73,6 +73,128 @@
     57625.0,
     57500.0
    ],
+   "ranking": [
+    {
+     "pos": 1,
+     "valor": 64750.0,
+     "meses": 12,
+     "pagamentos": 21
+    },
+    {
+     "pos": 2,
+     "valor": 62500.0,
+     "meses": 12,
+     "pagamentos": 38
+    },
+    {
+     "pos": 3,
+     "valor": 61875.0,
+     "meses": 11,
+     "pagamentos": 26
+    },
+    {
+     "pos": 4,
+     "valor": 61375.0,
+     "meses": 11,
+     "pagamentos": 22
+    },
+    {
+     "pos": 5,
+     "valor": 60750.0,
+     "meses": 10,
+     "pagamentos": 24
+    },
+    {
+     "pos": 6,
+     "valor": 59000.0,
+     "meses": 11,
+     "pagamentos": 25
+    },
+    {
+     "pos": 7,
+     "valor": 58750.0,
+     "meses": 11,
+     "pagamentos": 24
+    },
+    {
+     "pos": 8,
+     "valor": 58125.0,
+     "meses": 11,
+     "pagamentos": 24
+    },
+    {
+     "pos": 9,
+     "valor": 57625.0,
+     "meses": 11,
+     "pagamentos": 35
+    },
+    {
+     "pos": 10,
+     "valor": 57500.0,
+     "meses": 12,
+     "pagamentos": 37
+    },
+    {
+     "pos": 11,
+     "valor": 57375.0,
+     "meses": 11,
+     "pagamentos": 36
+    },
+    {
+     "pos": 12,
+     "valor": 57375.0,
+     "meses": 10,
+     "pagamentos": 26
+    },
+    {
+     "pos": 13,
+     "valor": 57250.0,
+     "meses": 11,
+     "pagamentos": 27
+    },
+    {
+     "pos": 14,
+     "valor": 57125.0,
+     "meses": 9,
+     "pagamentos": 21
+    },
+    {
+     "pos": 15,
+     "valor": 57000.0,
+     "meses": 12,
+     "pagamentos": 21
+    },
+    {
+     "pos": 16,
+     "valor": 57000.0,
+     "meses": 10,
+     "pagamentos": 21
+    },
+    {
+     "pos": 17,
+     "valor": 56875.0,
+     "meses": 11,
+     "pagamentos": 23
+    },
+    {
+     "pos": 18,
+     "valor": 56375.0,
+     "meses": 10,
+     "pagamentos": 20
+    },
+    {
+     "pos": 19,
+     "valor": 55875.0,
+     "meses": 10,
+     "pagamentos": 23
+    },
+    {
+     "pos": 20,
+     "valor": 55875.0,
+     "meses": 10,
+     "pagamentos": 20
+    }
+   ],
    "mensal": [
     {
      "mes": 1,
@@ -232,6 +354,128 @@
     95452.5,
     95230.0,
     93005.0
+   ],
+   "ranking": [
+    {
+     "pos": 1,
+     "valor": 139908.0,
+     "meses": 11,
+     "pagamentos": 29
+    },
+    {
+     "pos": 2,
+     "valor": 108980.5,
+     "meses": 10,
+     "pagamentos": 23
+    },
+    {
+     "pos": 3,
+     "valor": 108580.0,
+     "meses": 10,
+     "pagamentos": 23
+    },
+    {
+     "pos": 4,
+     "valor": 102795.0,
+     "meses": 11,
+     "pagamentos": 26
+    },
+    {
+     "pos": 5,
+     "valor": 99680.0,
+     "meses": 11,
+     "pagamentos": 25
+    },
+    {
+     "pos": 6,
+     "valor": 97900.0,
+     "meses": 9,
+     "pagamentos": 33
+    },
+    {
+     "pos": 7,
+     "valor": 97232.5,
+     "meses": 10,
+     "pagamentos": 24
+    },
+    {
+     "pos": 8,
+     "valor": 95452.5,
+     "meses": 10,
+     "pagamentos": 23
+    },
+    {
+     "pos": 9,
+     "valor": 95230.0,
+     "meses": 9,
+     "pagamentos": 20
+    },
+    {
+     "pos": 10,
+     "valor": 93005.0,
+     "meses": 9,
+     "pagamentos": 18
+    },
+    {
+     "pos": 11,
+     "valor": 92782.5,
+     "meses": 10,
+     "pagamentos": 24
+    },
+    {
+     "pos": 12,
+     "valor": 91447.5,
+     "meses": 10,
+     "pagamentos": 21
+    },
+    {
+     "pos": 13,
+     "valor": 90557.5,
+     "meses": 10,
+     "pagamentos": 20
+    },
+    {
+     "pos": 14,
+     "valor": 88110.0,
+     "meses": 9,
+     "pagamentos": 27
+    },
+    {
+     "pos": 15,
+     "valor": 86997.5,
+     "meses": 9,
+     "pagamentos": 20
+    },
+    {
+     "pos": 16,
+     "valor": 85662.5,
+     "meses": 11,
+     "pagamentos": 26
+    },
+    {
+     "pos": 17,
+     "valor": 85440.0,
+     "meses": 9,
+     "pagamentos": 22
+    },
+    {
+     "pos": 18,
+     "valor": 84995.0,
+     "meses": 9,
+     "pagamentos": 22
+    },
+    {
+     "pos": 19,
+     "valor": 84772.5,
+     "meses": 10,
+     "pagamentos": 19
+    },
+    {
+     "pos": 20,
+     "valor": 84327.5,
+     "meses": 9,
+     "pagamentos": 22
+    }
    ],
    "mensal": [
     {
@@ -393,6 +637,128 @@
     101682.5,
     101015.0
    ],
+   "ranking": [
+    {
+     "pos": 1,
+     "valor": 129762.0,
+     "meses": 11,
+     "pagamentos": 28
+    },
+    {
+     "pos": 2,
+     "valor": 123781.8,
+     "meses": 12,
+     "pagamentos": 36
+    },
+    {
+     "pos": 3,
+     "valor": 109692.5,
+     "meses": 11,
+     "pagamentos": 29
+    },
+    {
+     "pos": 4,
+     "valor": 109692.5,
+     "meses": 11,
+     "pagamentos": 29
+    },
+    {
+     "pos": 5,
+     "valor": 109692.5,
+     "meses": 11,
+     "pagamentos": 29
+    },
+    {
+     "pos": 6,
+     "valor": 108357.5,
+     "meses": 11,
+     "pagamentos": 28
+    },
+    {
+     "pos": 7,
+     "valor": 108357.5,
+     "meses": 11,
+     "pagamentos": 28
+    },
+    {
+     "pos": 8,
+     "valor": 104352.5,
+     "meses": 10,
+     "pagamentos": 31
+    },
+    {
+     "pos": 9,
+     "valor": 101682.5,
+     "meses": 11,
+     "pagamentos": 26
+    },
+    {
+     "pos": 10,
+     "valor": 101015.0,
+     "meses": 12,
+     "pagamentos": 31
+    },
+    {
+     "pos": 11,
+     "valor": 101015.0,
+     "meses": 10,
+     "pagamentos": 26
+    },
+    {
+     "pos": 12,
+     "valor": 100792.5,
+     "meses": 10,
+     "pagamentos": 27
+    },
+    {
+     "pos": 13,
+     "valor": 100570.0,
+     "meses": 11,
+     "pagamentos": 26
+    },
+    {
+     "pos": 14,
+     "valor": 100570.0,
+     "meses": 11,
+     "pagamentos": 26
+    },
+    {
+     "pos": 15,
+     "valor": 100347.5,
+     "meses": 10,
+     "pagamentos": 26
+    },
+    {
+     "pos": 16,
+     "valor": 99506.89,
+     "meses": 11,
+     "pagamentos": 40
+    },
+    {
+     "pos": 17,
+     "valor": 97010.0,
+     "meses": 10,
+     "pagamentos": 24
+    },
+    {
+     "pos": 18,
+     "valor": 96787.5,
+     "meses": 11,
+     "pagamentos": 25
+    },
+    {
+     "pos": 19,
+     "valor": 95586.0,
+     "meses": 11,
+     "pagamentos": 33
+    },
+    {
+     "pos": 20,
+     "valor": 94785.0,
+     "meses": 11,
+     "pagamentos": 24
+    }
+   ],
    "mensal": [
     {
      "mes": 1,
@@ -552,6 +918,128 @@
     127937.5,
     127270.0,
     126824.5
+   ],
+   "ranking": [
+    {
+     "pos": 1,
+     "valor": 145248.0,
+     "meses": 11,
+     "pagamentos": 35
+    },
+    {
+     "pos": 2,
+     "valor": 138973.5,
+     "meses": 11,
+     "pagamentos": 33
+    },
+    {
+     "pos": 3,
+     "valor": 131497.0,
+     "meses": 11,
+     "pagamentos": 35
+    },
+    {
+     "pos": 4,
+     "valor": 130384.5,
+     "meses": 11,
+     "pagamentos": 34
+    },
+    {
+     "pos": 5,
+     "valor": 130162.0,
+     "meses": 11,
+     "pagamentos": 35
+    },
+    {
+     "pos": 6,
+     "valor": 129049.5,
+     "meses": 11,
+     "pagamentos": 35
+    },
+    {
+     "pos": 7,
+     "valor": 127937.5,
+     "meses": 11,
+     "pagamentos": 37
+    },
+    {
+     "pos": 8,
+     "valor": 127937.5,
+     "meses": 11,
+     "pagamentos": 38
+    },
+    {
+     "pos": 9,
+     "valor": 127270.0,
+     "meses": 11,
+     "pagamentos": 37
+    },
+    {
+     "pos": 10,
+     "valor": 126824.5,
+     "meses": 11,
+     "pagamentos": 34
+    },
+    {
+     "pos": 11,
+     "valor": 123265.0,
+     "meses": 11,
+     "pagamentos": 36
+    },
+    {
+     "pos": 12,
+     "valor": 123264.5,
+     "meses": 11,
+     "pagamentos": 36
+    },
+    {
+     "pos": 13,
+     "valor": 122375.0,
+     "meses": 11,
+     "pagamentos": 36
+    },
+    {
+     "pos": 14,
+     "valor": 122374.5,
+     "meses": 11,
+     "pagamentos": 33
+    },
+    {
+     "pos": 15,
+     "valor": 121930.0,
+     "meses": 11,
+     "pagamentos": 34
+    },
+    {
+     "pos": 16,
+     "valor": 121262.5,
+     "meses": 11,
+     "pagamentos": 35
+    },
+    {
+     "pos": 17,
+     "valor": 119171.0,
+     "meses": 11,
+     "pagamentos": 34
+    },
+    {
+     "pos": 18,
+     "valor": 118815.0,
+     "meses": 11,
+     "pagamentos": 35
+    },
+    {
+     "pos": 19,
+     "valor": 117924.5,
+     "meses": 11,
+     "pagamentos": 32
+    },
+    {
+     "pos": 20,
+     "valor": 116812.5,
+     "meses": 11,
+     "pagamentos": 34
+    }
    ],
    "mensal": [
     {
@@ -713,6 +1201,128 @@
     82102.5,
     81880.0
    ],
+   "ranking": [
+    {
+     "pos": 1,
+     "valor": 110271.0,
+     "meses": 7,
+     "pagamentos": 21
+    },
+    {
+     "pos": 2,
+     "valor": 91670.0,
+     "meses": 7,
+     "pagamentos": 20
+    },
+    {
+     "pos": 3,
+     "valor": 89000.0,
+     "meses": 8,
+     "pagamentos": 18
+    },
+    {
+     "pos": 4,
+     "valor": 88555.0,
+     "meses": 7,
+     "pagamentos": 20
+    },
+    {
+     "pos": 5,
+     "valor": 88110.0,
+     "meses": 8,
+     "pagamentos": 18
+    },
+    {
+     "pos": 6,
+     "valor": 86997.5,
+     "meses": 9,
+     "pagamentos": 20
+    },
+    {
+     "pos": 7,
+     "valor": 84327.5,
+     "meses": 7,
+     "pagamentos": 19
+    },
+    {
+     "pos": 8,
+     "valor": 82992.5,
+     "meses": 9,
+     "pagamentos": 17
+    },
+    {
+     "pos": 9,
+     "valor": 82102.5,
+     "meses": 7,
+     "pagamentos": 18
+    },
+    {
+     "pos": 10,
+     "valor": 81880.0,
+     "meses": 8,
+     "pagamentos": 17
+    },
+    {
+     "pos": 11,
+     "valor": 81435.0,
+     "meses": 7,
+     "pagamentos": 17
+    },
+    {
+     "pos": 12,
+     "valor": 81435.0,
+     "meses": 7,
+     "pagamentos": 17
+    },
+    {
+     "pos": 13,
+     "valor": 81212.5,
+     "meses": 8,
+     "pagamentos": 17
+    },
+    {
+     "pos": 14,
+     "valor": 81212.5,
+     "meses": 8,
+     "pagamentos": 17
+    },
+    {
+     "pos": 15,
+     "valor": 79877.5,
+     "meses": 8,
+     "pagamentos": 16
+    },
+    {
+     "pos": 16,
+     "valor": 79877.5,
+     "meses": 8,
+     "pagamentos": 16
+    },
+    {
+     "pos": 17,
+     "valor": 79210.0,
+     "meses": 8,
+     "pagamentos": 18
+    },
+    {
+     "pos": 18,
+     "valor": 79210.0,
+     "meses": 7,
+     "pagamentos": 17
+    },
+    {
+     "pos": 19,
+     "valor": 79210.0,
+     "meses": 7,
+     "pagamentos": 17
+    },
+    {
+     "pos": 20,
+     "valor": 78942.5,
+     "meses": 7,
+     "pagamentos": 14
+    }
+   ],
    "mensal": [
     {
      "mes": 1,
@@ -812,5 +1422,861 @@
     }
    ]
   }
- }
+ },
+ "processos": [
+  {
+   "processo": "0009.001444/2025-49",
+   "pagamentos": 16607,
+   "valor": 34386156.95,
+   "notas": 32,
+   "anos": [
+    2025
+   ]
+  },
+  {
+   "processo": "0009.000905/2024-85",
+   "pagamentos": 11207,
+   "valor": 24643575.92,
+   "notas": 22,
+   "anos": [
+    2024
+   ]
+  },
+  {
+   "processo": "0009.001359/2026-61",
+   "pagamentos": 7630,
+   "valor": 21314785.28,
+   "notas": 9,
+   "anos": [
+    2026
+   ]
+  },
+  {
+   "processo": "0009.001152/2023-44",
+   "pagamentos": 7799,
+   "valor": 19126304.9,
+   "notas": 18,
+   "anos": [
+    2023
+   ]
+  },
+  {
+   "processo": "0009.029458/2022-84",
+   "pagamentos": 5780,
+   "valor": 8045092.5,
+   "notas": 10,
+   "anos": [
+    2022
+   ]
+  },
+  {
+   "processo": "0009.074499/2022-25",
+   "pagamentos": 4745,
+   "valor": 6789487.5,
+   "notas": 4,
+   "anos": [
+    2022
+   ]
+  },
+  {
+   "processo": "0009.074508/2022-88",
+   "pagamentos": 1197,
+   "valor": 1640575.0,
+   "notas": 3,
+   "anos": [
+    2022
+   ]
+  },
+  {
+   "processo": "0009.074509/2022-22",
+   "pagamentos": 1063,
+   "valor": 1499770.0,
+   "notas": 3,
+   "anos": [
+    2022
+   ]
+  },
+  {
+   "processo": "0009.067806/2022-11",
+   "pagamentos": 554,
+   "valor": 1033225.0,
+   "notas": 2,
+   "anos": [
+    2022
+   ]
+  },
+  {
+   "processo": "0009.074507/2022-33",
+   "pagamentos": 193,
+   "valor": 313550.0,
+   "notas": 2,
+   "anos": [
+    2022
+   ]
+  },
+  {
+   "processo": "sem processo",
+   "pagamentos": 7,
+   "valor": 111626.02,
+   "notas": 1,
+   "anos": [
+    2025
+   ]
+  },
+  {
+   "processo": "0021.077075/2025-05",
+   "pagamentos": 10,
+   "valor": 41162.5,
+   "notas": 1,
+   "anos": [
+    2026
+   ]
+  },
+  {
+   "processo": "0009.074689/2022-42",
+   "pagamentos": 15,
+   "valor": 24625.0,
+   "notas": 1,
+   "anos": [
+    2022
+   ]
+  },
+  {
+   "processo": "nan",
+   "pagamentos": 1,
+   "valor": 12019.98,
+   "notas": 1,
+   "anos": [
+    2026
+   ]
+  }
+ ],
+ "passagens": [
+  {
+   "data": "2022-04-11",
+   "doc": "2022OB020504",
+   "ne": "2022NE000010",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO REFERENTE PARTE FINAL DA FATURA 16714 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO 0009043581201741",
+   "valor_relatorio": 31938.57,
+   "valor": 3548.73
+  },
+  {
+   "data": "2022-05-16",
+   "doc": "2022OB030609",
+   "ne": "2022NE000537",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO REFERENTE A PARTE FINAL DA FATURA 16778 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO 0009043581201741",
+   "valor_relatorio": 149289.92,
+   "valor": 18661.24
+  },
+  {
+   "data": "2022-05-16",
+   "doc": "2022OB030530",
+   "ne": "2022NE000010",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO REFERENTE A PARTE DA FATURA 16778 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO 0009043581201741",
+   "valor_relatorio": 32532.64,
+   "valor": 4066.58
+  },
+  {
+   "data": "2022-05-17",
+   "doc": "2022OB031093",
+   "ne": "2022NE000698",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO REFERENTE A FATURA 16705 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO 0009043581201741",
+   "valor_relatorio": 23468.56,
+   "valor": 2933.57
+  },
+  {
+   "data": "2022-05-30",
+   "doc": "2022OB035030",
+   "ne": "2022NE000537",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO REFERENTE A PARTE FINAL DA FATURA 16705 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO 0009043581201741",
+   "valor_relatorio": 10710.08,
+   "valor": 1338.76
+  },
+  {
+   "data": "2022-05-30",
+   "doc": "2022OB035032",
+   "ne": "2022NE000698",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO REFERENTE A PARTE FINAL DA FATURA 16705 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO 0009043581201741",
+   "valor_relatorio": 12774.48,
+   "valor": 1596.81
+  },
+  {
+   "data": "2022-06-07",
+   "doc": "2022OB037753",
+   "ne": "2022NE000698",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA COM PASSAGENS AEREAS REF A FATURA N? 16877 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 152414.29,
+   "valor": 21773.47
+  },
+  {
+   "data": "2022-06-27",
+   "doc": "2022OB043289",
+   "ne": "2022NE000698",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA COM PASSAGENS AEREAS REF A FATURA N? 16920 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 62923.56,
+   "valor": 8989.08
+  },
+  {
+   "data": "2022-06-30",
+   "doc": "2022OB045489",
+   "ne": "2022NE000698",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA COM PASSAGENS AEREAS REF A FATURA N? 16848 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 50953.84,
+   "valor": 7279.12
+  },
+  {
+   "data": "2022-07-29",
+   "doc": "2022OB055853",
+   "ne": "2022NE000537",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA COM PASSAGENS AEREAS REF A FATURA N? 16961 e 963 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 78981.42,
+   "valor": 13163.57
+  },
+  {
+   "data": "2022-08-23",
+   "doc": "2022OB064208",
+   "ne": "2022NE001283",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA COM PASSAGENS AEREAS REF A Parte da FATURA N? 16991 EM FAVOR DA EMPRESA MA VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 37848.85,
+   "valor": 7569.77
+  },
+  {
+   "data": "2022-08-23",
+   "doc": "2022OB064208",
+   "ne": "2022NE000698",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA COM PASSAGENS AEREAS REF A Parte da FATURA N? 16991 EM FAVOR DA EMPRESA MA VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 37139.75,
+   "valor": 7427.95
+  },
+  {
+   "data": "2022-08-23",
+   "doc": "2022OB064210",
+   "ne": "2022NE000537",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA COM PASSAGENS AEREAS REF PARTE FINAL  DA FATURA N? 16991 EM FAVOR DA EMPRESA MA VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 46105.6,
+   "valor": 9221.12
+  },
+  {
+   "data": "2022-11-15",
+   "doc": "2022OB094884",
+   "ne": "2022NE001283",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA REFERENTE AS FATURAS N 122604 E 125994 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO 0009043581201741",
+   "valor_relatorio": 32585.8,
+   "valor": 16292.9
+  },
+  {
+   "data": "2022-12-12",
+   "doc": "2022NL071403",
+   "ne": "2022NE001283",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "Libera??o da Ordem Banc?ria no.2022OB107588, referente ? Prepara??o Pagamento no.2022PP018920 na assinatura da Ordem Banc?ria, efetuada pelo usu?rio 708.163.282-34-Felipe Costa Manussakis.",
+   "valor_relatorio": 0.0,
+   "valor": 0.0
+  },
+  {
+   "data": "2022-12-12",
+   "doc": "2022PP018920",
+   "ne": "2022NE001283",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "nan",
+   "valor_relatorio": 362.27,
+   "valor": 362.27
+  },
+  {
+   "data": "2022-12-13",
+   "doc": "2022OB107588",
+   "ne": "2022NE001283",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA REFERENTE AS FATURAS N 122604 E 125994 EMFAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO0009043581201741",
+   "valor_relatorio": 14732.49,
+   "valor": 14732.49
+  },
+  {
+   "data": "2023-04-06",
+   "doc": "2023OB025757",
+   "ne": "2023NE000147",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA REFERENTE AS FATURAS N 17278EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO0009043581201741",
+   "valor_relatorio": 64121.58,
+   "valor": 7124.62
+  },
+  {
+   "data": "2023-05-24",
+   "doc": "2023OB043768",
+   "ne": "2023NE000147",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA REFERENTE AS FATURAS N17354EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO0009043581201741",
+   "valor_relatorio": 187007.52,
+   "valor": 23375.94
+  },
+  {
+   "data": "2023-06-14",
+   "doc": "2023OB051066",
+   "ne": "2023NE000147",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "05.543.356/0001-95",
+   "credor": "M A VIAGENS E TURISMO LTDA - ME",
+   "historico": "PAGAMENTO DE DESPESA REFERENTE AS FATURAS N 17377EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO0009043581201741",
+   "valor_relatorio": 27934.55,
+   "valor": 3990.65
+  },
+  {
+   "data": "2023-08-25",
+   "doc": "2023OB082441",
+   "ne": "2023NE000948",
+   "processo": "0009.043581/2017-41",
+   "cnpj": "0000001",
+   "credor": "CN0000001  -  ",
+   "historico": "PAGAMENTO DE DESPESA REFERENTE A REQUISI??O DE PASSAGEM A?REA N? 17489 EM FAVOR DA EMPRESA M A VIAGENS E TURISMO LTDA  ME PROCESSO N? 0009043581201741",
+   "valor_relatorio": 39916.2,
+   "valor": 7983.24
+  },
+  {
+   "data": "2023-12-29",
+   "doc": "2023OB138406",
+   "ne": "2023NE001525",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EM AGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENS EIRELI CONFORME NOTA FISCAL N? 2698 PROCESSO N? 0009015024202388",
+   "valor_relatorio": 14887.0,
+   "valor": 14887.0
+  },
+  {
+   "data": "2024-04-09",
+   "doc": "2024OB030934",
+   "ne": "2024NE000094",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMETO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EM AGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENS EIRELI CONFORME NOTA FISCAL N? 2789 E 2790 PROCESSO N?0009015024202388",
+   "valor_relatorio": 85438.17,
+   "valor": 9493.13
+  },
+  {
+   "data": "2024-05-07",
+   "doc": "2024OB043376",
+   "ne": "2024NE000094",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EMAGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENSEIRELI CONFORME NOTA FISCAL N? 2860 E 2861 PROCESSO N?0009015024202388",
+   "valor_relatorio": 154533.12,
+   "valor": 19316.64
+  },
+  {
+   "data": "2024-06-04",
+   "doc": "2024OB055316",
+   "ne": "2024NE000094",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EMAGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENSEIRELI CONFORME NOTA FISCAL N? 2911 e 2912 PROCESSO N?0009015024202388",
+   "valor_relatorio": 136779.3,
+   "valor": 19539.9
+  },
+  {
+   "data": "2024-07-04",
+   "doc": "2024OB070421",
+   "ne": "2024NE000094",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EMAGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENSEIRELI CONFORME NOTA FISCAL N? 2935 2936 E 2953 PROCESSO N?0009015024202388",
+   "valor_relatorio": 119706.84,
+   "valor": 19951.14
+  },
+  {
+   "data": "2024-07-25",
+   "doc": "2024OB080753",
+   "ne": "2024NE000094",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EMAGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENSEIRELI CONFORME NOTA FISCAL N? 2966 PROCESSO N?0009015024202388",
+   "valor_relatorio": 33592.5,
+   "valor": 5598.75
+  },
+  {
+   "data": "2024-09-03",
+   "doc": "2024OB099423",
+   "ne": "2024NE000094",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EM AGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI CONFORME NOTA FISCAL N? 298029812982 e 2983 PROCESSO N?0009015024202388 PARTE 12",
+   "valor_relatorio": 104401.76,
+   "valor": 26100.44
+  },
+  {
+   "data": "2024-09-10",
+   "doc": "2024OB102789",
+   "ne": "2024NE000815",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EM AGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENS EIRELI CONFORME NOTA FISCAL N? 298029812982 E 2983 PROCESSO N? 0009015024202388PARTE 22",
+   "valor_relatorio": 108314.08,
+   "valor": 27078.52
+  },
+  {
+   "data": "2024-10-17",
+   "doc": "2024OB119676",
+   "ne": "2024NE001158",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA NA PRESTA??O DE SERVI?O DE AGENCIAMENTO DE VIAGENS CONFORME NF FT00142595 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N? 0009009496202482",
+   "valor_relatorio": 80200.77,
+   "valor": 26733.59
+  },
+  {
+   "data": "2024-11-26",
+   "doc": "2024OB135868",
+   "ne": "2024NE001158",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA NAPRESTA??O DE SERVI?O DE AGENCIAMENTO DE VIAGENS CONFORME NF 143700EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N? 0009009496202482",
+   "valor_relatorio": 63235.94,
+   "valor": 31617.97
+  },
+  {
+   "data": "2024-11-28",
+   "doc": "2024OB137566",
+   "ne": "2024NE000815",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?NCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA EMAGENCIAMENTO DE VIAGENS EMPRESA FLY OPERADORA E AGENCIA DE VIAGENSEIRELI CONFORME NOTA FISCAL N? 3017 PROCESSO N?0009015024202388",
+   "valor_relatorio": 13637.02,
+   "valor": 6818.51
+  },
+  {
+   "data": "2024-12-16",
+   "doc": "2024OB146164",
+   "ne": "2024NE001158",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA??O DE EMPRESA ESPECIALIZADA NAPRESTA??O DE SERVI?O DE AGENCIAMENTO DE VIAGENS CONFORME NF 144394EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N? 0009009496202482",
+   "valor_relatorio": 11435.82,
+   "valor": 11435.82
+  },
+  {
+   "data": "2025-04-16",
+   "doc": "2025OB037366",
+   "ne": "2025NE000222",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM A?EA CONFORME AS NOTAS FISCAIS N? 3182 3183 3184 EM FAVOR DA EMPRESA FLY OPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388 PARTE 22",
+   "valor_relatorio": 16331.58,
+   "valor": 1814.62
+  },
+  {
+   "data": "2025-04-24",
+   "doc": "2025OB039555",
+   "ne": "2025NE000315",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NAPRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME Fatura N? 146516 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N? 0009009496202482",
+   "valor_relatorio": 44014.95,
+   "valor": 4890.55
+  },
+  {
+   "data": "2025-05-08",
+   "doc": "2025OB045350",
+   "ne": "2025NE000222",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM A?EA CONFORME AS NOTAS FISCAIS N? 3197 EM FAVOR DA EMPRESA FLY OPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388",
+   "valor_relatorio": 41579.6,
+   "valor": 5197.45
+  },
+  {
+   "data": "2025-05-26",
+   "doc": "2025OB055085",
+   "ne": "2025NE000315",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NAPRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME FATURA N? FT00147276EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N? 0009009496202482",
+   "valor_relatorio": 144434.8,
+   "valor": 18054.35
+  },
+  {
+   "data": "2025-06-27",
+   "doc": "2025OB074797",
+   "ne": "2025NE000315",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NA PRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME FATURA N?FT00147941EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N? 0009009496202482",
+   "valor_relatorio": 75632.62,
+   "valor": 10804.66
+  },
+  {
+   "data": "2025-06-27",
+   "doc": "2025OB075177",
+   "ne": "2025NE000222",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM A?EA CONFORME AS NOTAS FISCAIS N? 3257 e 3258 EM FAVOR DA EMPRESA FLY OPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388",
+   "valor_relatorio": 182608.65,
+   "valor": 26086.95
+  },
+  {
+   "data": "2025-08-01",
+   "doc": "2025OB094900",
+   "ne": "2025NE000222",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM A?EA CONFORME AS NOTAS FISCAIS N? 3283 E 3284 EM FAVOR DA EMPRESA FLY OPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388",
+   "valor_relatorio": 84359.2,
+   "valor": 16871.84
+  },
+  {
+   "data": "2025-09-02",
+   "doc": "2025OB112288",
+   "ne": "2025NE000222",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE CERTIFICA?O DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM A?EA CONFORME AS NOTAS FISCAIS N? 3292 E 3328 EM FAVOR DA EMPRESA FLY OPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388",
+   "valor_relatorio": 144795.52,
+   "valor": 36198.88
+  },
+  {
+   "data": "2025-09-25",
+   "doc": "2025OB126030",
+   "ne": "2025NE000222",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM A?EA CONFORME A NOTA FISCAL N? 3338 EM FAVOR DA EMPRESA FLY OPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388",
+   "valor_relatorio": 69903.84,
+   "valor": 17475.96
+  },
+  {
+   "data": "2025-09-29",
+   "doc": "2025OB127697",
+   "ne": "2025NE000315",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NA PRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME FATURA N? FT00150231EMPRESA R MORAES AG?CIA DE TURISMO LTDA PROCESSOS N? 0009009496202482",
+   "valor_relatorio": 57699.6,
+   "valor": 14424.9
+  },
+  {
+   "data": "2025-10-17",
+   "doc": "2025OB138571",
+   "ne": "2025NE000315",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NAPRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME FATURA N?FT00150720 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N?0009009496202482",
+   "valor_relatorio": 36472.14,
+   "valor": 12157.38
+  },
+  {
+   "data": "2025-12-02",
+   "doc": "2025OB163636",
+   "ne": "2025NE000315",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NAPRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME FATURA N?FT00151960 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N?0009009496202482",
+   "valor_relatorio": 59221.26,
+   "valor": 59221.26
+  },
+  {
+   "data": "2025-12-17",
+   "doc": "2025OB174795",
+   "ne": "2025NE001364",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NAPRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME FATURA N?FT00152549 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N?0009009496202482",
+   "valor_relatorio": 36883.94,
+   "valor": 36883.94
+  },
+  {
+   "data": "2025-12-17",
+   "doc": "2025OB174795",
+   "ne": "2025NE000315",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "PAGAMENTO DE DESPESA COM CONTRATA?O DE EMPRESA ESPECIALIZADA NAPRESTA?O DE SERVI? DE AGENCIAMENTO DE VIAGENS CONFORME FATURA N?FT00152549 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC N?0009009496202482",
+   "valor_relatorio": 16800.9,
+   "valor": 16800.9
+  },
+  {
+   "data": "2025-12-24",
+   "doc": "2025OB180292",
+   "ne": "2025NE001396",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DEPASSAGEM A?EA CONFORME A NOTA FISCAL N? 3505 EM FAVOR DA EMPRESA FLYOPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388",
+   "valor_relatorio": 7980.02,
+   "valor": 7980.02
+  },
+  {
+   "data": "2025-12-24",
+   "doc": "2025OB180292",
+   "ne": "2025NE000222",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AG?CIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVI?S DE FORNECIMENTO DE AGENCIAMENTO DEPASSAGEM A?EA CONFORME A NOTA FISCAL N? 3505 EM FAVOR DA EMPRESA FLYOPERADORA E AG?CIA DE VIAGENS EIRELI PROCESSO N? 0009015024202388",
+   "valor_relatorio": 0.3,
+   "valor": 0.3
+  },
+  {
+   "data": "2026-03-17",
+   "doc": "2026OB028069",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "PAGAMENTO DE DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DEPASSAGEM AÉREA CONFORME A NOTA FISCAL Nº 3541 E 3542 EM FAVOR DA EMPRESA FLYOPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº 0009015024202388 PARTE 12",
+   "valor_relatorio": 270331.38,
+   "valor": 30036.82
+  },
+  {
+   "data": "2026-04-29",
+   "doc": "2026OB053740",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA CONFORME A NOTA FISCAL Nº 3585 e 3586 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº 0009015024202388",
+   "valor_relatorio": 101172.4,
+   "valor": 12646.55
+  },
+  {
+   "data": "2026-05-26",
+   "doc": "2026OB069907",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA CONFORME AS NOTAS FISCAIS Nº 3641 3642 3643 3644 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº 0009015024202388",
+   "valor_relatorio": 275705.64,
+   "valor": 39386.52
+  },
+  {
+   "data": "2026-06-19",
+   "doc": "2026OB084675",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA CONFORME A NOTA FISCAL Nº 3681 e 3682 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº 0009015024202388",
+   "valor_relatorio": 118448.76,
+   "valor": 19741.46
+  },
+  {
+   "data": "2026-07-16",
+   "doc": "2026OB100323",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEMAÉREA CONFORME A NOTA FISCAL Nº 37043705370637073708 e 3709 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº 0009015024202388",
+   "valor_relatorio": 421034.5,
+   "valor": 84206.9
+  },
+  {
+   "data": "2026-07-27",
+   "doc": "2026OB105803",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA CONFORME A NOTA FISCAL Nº 3729 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº 0009015024202388",
+   "valor_relatorio": 34896.35,
+   "valor": 6979.27
+  },
+  {
+   "data": "2026-08-25",
+   "doc": "2026NL035653",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA, CONFORME A NOTA FISCAL Nº 3762, EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI, PROCESSO Nº  0009.015024/2023-88.",
+   "valor_relatorio": 95.2,
+   "valor": 23.8
+  },
+  {
+   "data": "2026-08-26",
+   "doc": "2026OB122338",
+   "ne": "2026NE000688",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "DESPESA COM CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA PRESTAÇÃO DE SERVIÇO DE AGENCIAMENTO DE VIAGENS CONFORME FATURA Nº FT00157797 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC Nº0009009496202482",
+   "valor_relatorio": 193475.8,
+   "valor": 48368.95
+  },
+  {
+   "data": "2026-09-02",
+   "doc": "2026NL036852",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM MULTA E JUROS DE ISSQN REFERENTE A NOTA FISCAL Nº 3762, EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI, PROCESSO Nº 0009.015024/2023-88.",
+   "valor_relatorio": 1.14,
+   "valor": 0.38
+  },
+  {
+   "data": "2026-09-03",
+   "doc": "2026OB126957",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA CONFORME A NOTA FISCAL Nº 3762 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº",
+   "valor_relatorio": 18985.77,
+   "valor": 6328.59
+  },
+  {
+   "data": "2026-09-22",
+   "doc": "2026OB136974",
+   "ne": "2026NE000688",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "DESPESA COM CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA PRESTAÇÃO DE SERVIÇO DE AGENCIAMENTO DE VIAGENS CONFORME FATURA Nº FT00158505 EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC Nº0009009496202482",
+   "valor_relatorio": 103453.23,
+   "valor": 34484.41
+  },
+  {
+   "data": "2026-09-24",
+   "doc": "2026NL041139",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA, CONFORME A NOTA FISCAL Nº 3796, EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI, PROCESSO Nº  0009.015024/2023-88.",
+   "valor_relatorio": 152.97,
+   "valor": 50.99
+  },
+  {
+   "data": "2026-09-30",
+   "doc": "2026OB141644",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA CONFORME A NOTA FISCAL Nº 3796 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI PROCESSO Nº0009015024202388",
+   "valor_relatorio": 40639.2,
+   "valor": 13546.4
+  },
+  {
+   "data": "2026-10-19",
+   "doc": "2026NL045942",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA, CONFORME A NOTA FISCAL Nº 3766, EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENS  EIRELI, PROCESSO Nº0009.015024/2023-88. [22/10/2026 09:00] ONDE SE LÊ: 3766             LEIA-SE: 3817",
+   "valor_relatorio": 78.52,
+   "valor": 39.26
+  },
+  {
+   "data": "2026-10-20",
+   "doc": "2026OB151821",
+   "ne": "2026NE001278",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "DESPESA COM CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA PRESTAÇÃO DESERVIÇO DE AGENCIAMENTO DE VIAGENS CONFORME FATURA Nº FT00159296EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC Nº0009009496202482 PARTE 22",
+   "valor_relatorio": 11426.86,
+   "valor": 5713.43
+  },
+  {
+   "data": "2026-10-20",
+   "doc": "2026OB151817",
+   "ne": "2026NE000688",
+   "processo": "0009.009496/2024-82",
+   "cnpj": "06.955.770/0001-74",
+   "credor": "R MORAES AGENCIA DE TURISMO LTDA",
+   "historico": "DESPESA COM CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA PRESTAÇÃO DESERVIÇO DE AGENCIAMENTO DE VIAGENS CONFORME FATURA Nº FT00159296EMPRESA R MORAES AGENCIA DE TURISMO LTDA PROC Nº0009009496202482PARTE 12",
+   "valor_relatorio": 34293.28,
+   "valor": 17146.64
+  },
+  {
+   "data": "2026-10-23",
+   "doc": "2026OB153882",
+   "ne": "2026NE000060",
+   "processo": "0009.015024/2023-88",
+   "cnpj": "14.335.618/0001-17",
+   "credor": "FLY OPERADORA E AGÊNCIA DE VIAGENS EIRELI",
+   "historico": "DESPESA COM SERVIÇOS DE FORNECIMENTO DE AGENCIAMENTO DE PASSAGEM AÉREA CONFORME A NOTA FISCAL Nº 3817 EM FAVOR DA EMPRESA FLY OPERADORA E AGÊNCIA DE VIAGENSEIRELI PROCESSO Nº0009015024202388",
+   "valor_relatorio": 20859.48,
+   "valor": 10429.74
+  }
+ ]
 }
