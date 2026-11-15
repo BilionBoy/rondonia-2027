@@ -260,8 +260,9 @@ function credoresDe(ls) {
   return agrupa(ls, r => r[2]).map(c => notaPag(c.k === "Pessoa física" ? `Pessoas físicas (sem nome)` : c.k, c.total,
     `${[...new Set(c.ls.map(r => r[4]))].join(", ")} · ${br(c.ls.length)} pagamentos · ${[...new Set(c.ls.map(r => r[1]))].slice(0, 5).join(", ")}`, c.ls[0][3]));
 }
+const AVISO_DIARIAS = ["Atenção", "diária paga direto ao servidor quase não aparece em Pagamentos de fornecedores: só o DER pagou R$ 34,5 mi em diárias em 2025 (relatório do próprio DER) e ali aparece R$ 0. O valor real é maior; ver a etapa Diárias DER."];
 const provaTema = (k, extra = []) => {
-  const c = C[k];
+  const c = C[k]; if (k === "diarias") extra = [...extra, AVISO_DIARIAS];
   return pr(c.nome + " em 2026", mi(c.ano_2026), `pago até ${DATA_PAG} mais projeção até dezembro, só Poder Executivo`,
     [["Pago de 1º/01 a " + DATA_PAG, "R$ " + br(c.pago_2026, 2)], ["Projeção (nov e dez)", mi(c.projecao_2026)], ["Média mensal ago–out", mi(c.media_ago_out)], ["2025, o ano inteiro", mi(c.anos["2025"])],
       ...c.subelementos.map(x => [`Subelemento ${x.cod}`, `${x.nome}: ${mi(x.valor)}`]), ...extra], LK.pag);
@@ -344,7 +345,7 @@ function telaConsumo() {
   const ano = somaK(ks, "ano_2026"), pago = somaK(ks, "pago_2026"), a25 = somaK(ks, "2025");
   const nomes = new Set(ks.map(k => C[k].nome)), ls = PCs.filter(r => nomes.has(r[4]));
   const provaFam = ([n, k]) => pr(`${n} em 2026`, mi(somaK(k, "ano_2026")), `pago até ${DATA_PAG} mais projeção até dezembro, só Executivo`,
-    [["Pago até " + DATA_PAG, mi(somaK(k, "pago_2026"))], ["2025, o ano inteiro", mi(somaK(k, "2025"))], ...k.map(x => [C[x].nome, `${mi(C[x].ano_2026)} · subelemento ${C[x].subelementos.map(s => s.cod).join(", ")}`])], LK.pag);
+    [["Pago até " + DATA_PAG, mi(somaK(k, "pago_2026"))], ["2025, o ano inteiro", mi(somaK(k, "2025"))], ...k.map(x => [C[x].nome, `${mi(C[x].ano_2026)} · subelemento ${C[x].subelementos.map(s => s.cod).join(", ")}`]), ...(k.includes("diarias") ? [AVISO_DIARIAS] : [])], LK.pag);
   esq({kicker: "Contas, serviços de apoio e viagens · Poder Executivo", titulo: f ? `${f[0]}: quanto custam` : "Quanto custa manter a máquina",
     n: mi(ano), s: `em 2026 · <b>${mi(pago)}</b> pagos até ${DATA_PAG.slice(0, 5)}<br>2025 inteiro: <b>${mi(a25)}</b>`,
     provaN: pr("Contas, apoio e viagens em 2026", mi(ano), "pago até " + DATA_PAG + " mais projeção", [["Pago até " + DATA_PAG, mi(pago)], ["Projeção nov e dez", mi(ano - pago)], ["Pagamentos", br(ls.length)],
@@ -682,6 +683,54 @@ function desenha2D(sel) {
     c.addEventListener("click", () => { const it = cartaoPonte(p); desenha2D(it); mostraUm(it, "ponte"); }); });
 }
 
+// ---------- diárias e passagens do DER, 2022 a 2026 (planilha da equipe de transição; só totais)
+const DD = M.diarias_der, ANOS_D = Object.keys(DD.anos), A25 = DD.anos["2025"], A26 = DD.anos["2026"];
+const LK_DD = ["Diárias no Portal da Transparência (consulta por órgão)", "https://transparencia.ro.gov.br/Diarias"];
+const FONTE_DD = "relatórios de pagamentos do DER (unidade 110025), planilha da equipe de transição de 14/11/2026";
+const faixaTxt = f => f.ate ? `${f.de ? "de R$ " + br(f.de / 1000) + " mil " : ""}até R$ ${br(f.ate / 1000)} mil` : `mais de R$ ${br(f.de / 1000)} mil`;
+const jo = (a, m) => DD.anos[a].mensal.slice(0, m).reduce((x, y) => x + y.diarias, 0);   // de janeiro até o mês m
+let ddVer = 0;
+function provaAnoD(a) {
+  const y = DD.anos[a];
+  return pr(`Diárias do DER em ${a}${a === "2026" ? " (até 10/11)" : ""}`, mi(y.diarias), `${br(y.servidores)} servidores · ${br(y.pagamentos)} pagamentos`,
+    [["Diárias pagas", "R$ " + br(y.diarias, 2)], ["Passagens pagas", mi(y.passagens)], ["Servidores que receberam", br(y.servidores)], ["Média por servidor no ano", "R$ " + br(y.media_servidor)],
+      ["O servidor que mais recebeu (sem nome)", "R$ " + br(y.maior_servidor)], [`Os ${br(y.top10_n)} que mais receberam (10%)`, `ficaram com ${br(y.top10_pct, 1)}% do total`],
+      ["Receberam mais de R$ 100 mil", br(y.acima_100mil) + " servidores"], ["Receberam mais de R$ 60 mil", br(y.acima_60mil) + " servidores"],
+      ...y.mensal.filter(x => x.diarias).map(x => [MESES_L[x.mes - 1], `${mi(x.diarias)} · ${br(x.servidores)} servidores`])], LK_DD);
+}
+function telaDiariasDer() {
+  const t = DD.total, cresce = 100 * (A25.diarias - DD.anos["2022"].diarias) / DD.anos["2022"].diarias;
+  const out25 = jo("2025", 10), out26 = jo("2026", 10);
+  const portal = pr("As diárias do DER não aparecem em Pagamentos de fornecedores", "R$ 0", "Portal da Transparência, pagamentos de 2025 e de 2026 do DER e do FITHA, subelemento 3.3.90.14",
+    [["Pago em diárias pelo DER em 2025 (relatório do DER)", mi(A25.diarias)], ["Encontrado em Pagamentos de fornecedores", "R$ 0"],
+      ["Onde ver", "na consulta de Diárias do Portal, por servidor, ou no relatório do SIGEF; a soma por órgão e mês não aparece em Pagamentos de fornecedores"]], LK.pag);
+  esq({kicker: "Diárias e passagens do DER · 2022 a 2026", titulo: `Diárias do DER: +${br(cresce, 0)}% em três anos`,
+    n: mi(t.diarias), s: `em diárias, de 2022 a 10/11/2026<br><b>${br(A25.acima_100mil)} servidores</b> passaram de R$ 100 mil cada em 2025`,
+    provaN: pr("Diárias pagas pelo DER, 2022 a 2026", mi(t.diarias), FONTE_DD, [...ANOS_D.map(a => [a + (a === "2026" ? " (até 10/11)" : ""), mi(DD.anos[a].diarias)]), ["Passagens no mesmo período", mi(t.passagens)],
+      ["Servidores que receberam alguma diária", br(t.servidores)], ["Receberam em todos os anos", br(t.todos_os_anos)], ["Nomes", "não aparecem no painel: só totais"]], LK_DD),
+    estat: [["2025", mi(A25.diarias), provaAnoD("2025")],
+      ["2026 até 10/11", mi(A26.diarias), pr("2026 × 2025, de janeiro a outubro", mi(out26), "mesmo período nos dois anos", [["2025 (jan a out)", mi(out25)], ["2026 (jan a out)", mi(out26)], ["Diferença", var_(out25, out26)], ["Novembro de 2026", "até 10/11, ainda incompleto"]], LK_DD)],
+      ["Servidores", br(t.servidores), provaAnoD("2025")],
+      ["No Portal", "R$ 0", portal]],
+    alterna: ["Ver:", ["Ano a ano", "Mês a mês", "Quanto cada servidor recebeu"], ddVer, i => { ddVer = i; telaDiariasDer(); }],
+    legenda: ddVer === 1 ? legenda(ANOS_D.map((a, i) => [a, `color-mix(in srgb, var(--c1) ${30 + 17 * i}%, transparent)`])) : ddVer === 2 ? legenda([["2025: servidores em cada faixa do total recebido no ano", "var(--c3)"]]) : "",
+    dicaUso: ["Diárias pagas a cada ano; 2026 vai até 10/11. Clique num ano.", "Diárias pagas a cada mês, de 2022 a 2026. Clique num mês.", "Quantos servidores receberam quanto em diárias em 2025, somado o ano. Clique numa faixa."][ddVer],
+    fonte: `Fonte: ${FONTE_DD} · nomes e CPF não aparecem`, dados: ["diarias-der"], padrao: () => mostraProvas("Ano a ano. Clique para abrir; nomes não aparecem.", [...ANOS_D.map(provaAnoD).reverse(), portal], {limite: 6})});
+  if (ddVer === 0) colunas($("#graf"), ANOS_D.map(a => ({rot: a + (a === "2026" ? "*" : ""), partes: [{v: DD.anos[a].diarias, cor: a === "2026" ? claro("var(--c1)") : "var(--c1)"}], topo: mi(DD.anos[a].diarias), destaque: a === "2025",
+    dica: [`Diárias do DER em ${a}`, [["Pago", mi(DD.anos[a].diarias)], ["Servidores", br(DD.anos[a].servidores)], ["Mais de R$ 100 mil", br(DD.anos[a].acima_100mil)]], "Clique para abrir"],
+    clique: (g, s_) => { foco(s_, g); mostraProvas("O ano em detalhe", [provaAnoD(a)], {abrir: 0, filtro: a, limpar: () => { foco(s_, null); telaDiariasDer(); }}); }})));
+  else if (ddVer === 1) colunas($("#graf"), ANOS_D.flatMap((a, i) => DD.anos[a].mensal.filter(x => !(a === "2026" && x.mes > 11)).map(x => ({rot: x.mes === 1 ? a : "", partes: [{v: x.diarias, cor: `color-mix(in srgb, var(--c1) ${30 + 17 * i}%, transparent)`}], topo: "",
+    dica: [`${MESES_L[x.mes - 1]} de ${a}`, [["Diárias", mi(x.diarias)], ["Servidores", br(x.servidores)], ["Pagamentos", br(x.pagamentos)], ["Maior a um servidor no mês", "R$ " + br(x.maior)]], "Clique para abrir"],
+    clique: (g, s_) => { foco(s_, g); mostraProvas(`${MESES_L[x.mes - 1]} de ${a}`, [pr(`Diárias em ${MESES_L[x.mes - 1].toLowerCase()} de ${a}`, mi(x.diarias), FONTE_DD,
+      [["Pago", "R$ " + br(x.diarias, 2)], ["Pagamentos", br(x.pagamentos)], ["Servidores", br(x.servidores)], ["Média por servidor no mês", "R$ " + br(x.servidores ? x.diarias / x.servidores : 0)], ["Maior a um servidor no mês (sem nome)", "R$ " + br(x.maior)], ["Passagens no mês", mi(x.passagens)]], LK_DD)],
+      {abrir: 0, filtro: `${MESES_L[x.mes - 1]}/${a}`, limpar: () => { foco(s_, null); telaDiariasDer(); }}); }}))));
+  else barras($("#graf"), A25.faixas.map(f => ({rot: faixaTxt(f), partes: [{v: f.servidores, cor: f.de >= 60000 ? "#c0392b" : "var(--c3)"}], dir: `${br(f.servidores)} · ${mi(f.valor)}`,
+    dica: [faixaTxt(f) + " em 2025", [["Servidores", br(f.servidores)], ["Receberam juntos", mi(f.valor)]], "Clique para abrir"],
+    clique: (g, s_) => { foco(s_, g); mostraProvas("Faixa de 2025", [pr(`Receberam ${faixaTxt(f)} em diárias em 2025`, br(f.servidores) + " servidores", "total de diárias de cada servidor no ano, somado",
+      [["Servidores", br(f.servidores)], ["Receberam juntos", "R$ " + br(f.valor, 2)], ["Parte do total do ano", br(100 * f.valor / A25.diarias, 1) + "%"], ...ANOS_D.map(a => [`Na mesma faixa em ${a}`, br(DD.anos[a].faixas.find(x => x.de === f.de).servidores)])], LK_DD)],
+      {abrir: 0, filtro: faixaTxt(f), limpar: () => { foco(s_, null); telaDiariasDer(); }}); }})));
+}
+
 // ---------- 5. 2025 × 2026 no mesmo período
 let compVer = 0;
 const BLOCOS_C = {veiculos: ["Veículos", ["combustivel", "transporte", "locacao", "ambulancia", "manutencao"]], imovel: ["Aluguel", ["imovel"]],
@@ -888,7 +937,7 @@ function telaMetodo() {
 }
 
 const TELAS = [{curto: "Decidir", f: telaDecidir}, {curto: "Folha", f: telaFolha}, {curto: "Servidores", f: telaOrgaos}, {curto: "Secretarias", f: telaSecretarias},
-  {curto: "Veículos", f: telaVeiculos}, {curto: "Imóveis", f: telaImoveis}, {curto: "Contas", f: telaConsumo}, {curto: "Estradas", f: telaEstradas, cheia: true}, {curto: "2025 × 2026", f: telaComparativo},
+  {curto: "Veículos", f: telaVeiculos}, {curto: "Imóveis", f: telaImoveis}, {curto: "Contas", f: telaConsumo}, {curto: "Diárias DER", f: telaDiariasDer}, {curto: "2025 × 2026", f: telaComparativo},
   {curto: "Regionais", f: telaRegionais}, {curto: "Organograma", f: telaOrganograma, cheia: true}];
 $("#trilha").innerHTML = TELAS.map((t, i) => `<button class="passo" type="button"><b>${i}</b><span>${t.curto}</span></button>`).join("")
   + `<span class="meta"><span title="pagamentos até ${DATA_PAG}">até ${DATA_PAG.slice(0, 5)}</span><button class="tema" id="tema" type="button" aria-label="Claro ou escuro">◐</button></span>`;

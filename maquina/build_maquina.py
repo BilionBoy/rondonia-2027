@@ -461,7 +461,7 @@ def main():
         "unidades": folha["unidades"],
         "custeio": C, "veiculos": veiculos, "imoveis": {**imoveis, "orgaos_n": imoveis["orgaos_total"]}, "consumo": consumo, "secretarias": secretarias,
         "outros_poderes": fora, "comparativo": comp, "vencem": vencem, "cartao": cartao,
-        "regionais": {k: regionais[k] for k in ("total", "tipos", "projecao", "unidades")}, "estradas": est,
+        "regionais": {k: regionais[k] for k in ("total", "tipos", "projecao", "unidades")}, "estradas": est, "diarias_der": ler("s8_diarias_der.json"),
         "leitura": [
             f"<b>Folha:</b> {fmt(G['bruta'])} em 12 meses, pelo Relatório de Gestão Fiscal do Executivo; outubro de 2026 teve {fmt(folha['total']['bruto'])} brutos para {milhar(folha['total']['matriculas'])} matrículas.",
             f"<b>Veículos:</b> {fmt(veic_ano)} em 2026 com combustível, locação, manutenção, transporte escolar e ambulâncias (pago até {data_pag} e projeção até dezembro). Em 2025 foram {fmt(sum(C[t]['anos']['2025'] for t in VEICULOS))}.",
@@ -589,6 +589,13 @@ def painel(M, linhas_pag, meta_pag, VIAS):
                                             ["Repasses do DER à prefeitura em 2026", "r"], ["População (Censo 2022)", "n"], ["Rodovias", "t"]],
                                 "linhas": [[x["nome"], round(x["pav"], 1), round(x["terra"], 1), round(x["plan"], 1), x["pontes_madeira"], x["madeira_m"], x["repasse"], x["pop"] or 0, ", ".join(x["rodovias"])]
                                            for x in sorted(M["estradas"]["municipios"].values(), key=lambda x: -(x["pav"] + x["terra"]))]},
+        "diarias-der": {"titulo": "Diárias e passagens do DER por mês, 2022 a 2026", "curto": "Diárias DER", "fonte": "Equipe de transição, sobre os relatórios de pagamentos do DER (unidade 110025)",
+                        "url": "https://transparencia.ro.gov.br/", "coletado_em": "2026-11-14 00:00",
+                        "consulta": "Relatório de pagamentos de diárias (uma linha por ordem bancária a servidor) e relatório de pagamentos do exercício, natureza 3.3.90.33; 2026 até 10/11",
+                        "nota": "Só totais: nome e CPF dos servidores não aparecem. Maior a um servidor = soma do que o servidor que mais recebeu naquele mês ganhou em diárias no mês.",
+                        "colunas": [["Ano", "n"], ["Mês", "n"], ["Diárias pagas", "r"], ["Pagamentos", "n"], ["Servidores", "n"], ["Maior a um servidor no mês", "r"], ["Passagens pagas", "r"]],
+                        "linhas": [[int(a), x["mes"], x["diarias"], x["pagamentos"], x["servidores"], x["maior"], x["passagens"]]
+                                   for a, y in M["diarias_der"]["anos"].items() for x in y["mensal"] if x["diarias"] or x["passagens"]]},
         "pontes": {"titulo": "Pontes e pontilhões das rodovias estaduais", "curto": "Pontes", "fonte": "Geoportal do DER-RO", "url": "https://geo.der.ro.gov.br/",
                    "coletado_em": M["estradas"]["meta"]["coletado_em"] + " 00:00", "consulta": "Camada de pontes do Geoportal do DER, com coordenadas",
                    "nota": "Madeira: ponte de madeira, pontilhão de madeira e pontilhão de madeira e aço.",

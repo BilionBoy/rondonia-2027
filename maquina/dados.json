@@ -11070,55 +11070,6 @@
    }
   ],
   "credores_por_orgao": {
-   "SEAS": [
-    {
-     "credor": "BONSUCESSO EMPREENDIMENTOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 610604.73,
-     "orgaos": [
-      "SEAS"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 122902.38,
-     "orgaos": [
-      "SEAS"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ANJOS E SILVA LTDA",
-     "pf": false,
-     "valor": 106475.44,
-     "orgaos": [
-      "SEAS"
-     ],
-     "n": 1
-    }
-   ],
-   "FEASE": [
-    {
-     "credor": "J. F. PARTICIPACOES LTDA - ME",
-     "pf": false,
-     "valor": 117534.11,
-     "orgaos": [
-      "FEASE"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "SOCIAL ADMINISTRADORA DE IMOVEIS LTDA - EPP",
-     "pf": false,
-     "valor": 113081.8,
-     "orgaos": [
-      "FEASE"
-     ],
-     "n": 1
-    }
-   ],
    "AGERO": [
     {
      "credor": "DNB EMPREENDIMENTOS DE IMOVEIS LTDA",
@@ -11126,6 +11077,133 @@
      "valor": 85680.0,
      "orgaos": [
       "AGERO"
+     ],
+     "n": 1
+    }
+   ],
+   "PC": [
+    {
+     "credor": "M A LOPES DE OLIVEIRA LTDA",
+     "pf": false,
+     "valor": 409593.32,
+     "orgaos": [
+      "PC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ROCHA E MUNIZ LTDA",
+     "pf": false,
+     "valor": 347729.31,
+     "orgaos": [
+      "PC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 192510.38,
+     "orgaos": [
+      "PC"
+     ],
+     "n": 4
+    },
+    {
+     "credor": "MAGALHÃES SERV D ADM D MOVEIS PROPRIOS EIRELI",
+     "pf": false,
+     "valor": 134139.65,
+     "orgaos": [
+      "PC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "BERNARDO EMPREENDIMENTOS E PARTICIPAÇÕES LTDA",
+     "pf": false,
+     "valor": 128551.38,
+     "orgaos": [
+      "PC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "PASSARELI ALUGUÉIS DE IMÓVEIS",
+     "pf": false,
+     "valor": 96950.42,
+     "orgaos": [
+      "PC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "BERNARDO ALIMENTOS IND. E COM. LTDA",
+     "pf": false,
+     "valor": 64275.68,
+     "orgaos": [
+      "PC"
+     ],
+     "n": 1
+    }
+   ],
+   "SEDAM": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 79889.59,
+     "orgaos": [
+      "SEDAM"
+     ],
+     "n": 2
+    }
+   ],
+   "FECOEP": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 40967.46,
+     "orgaos": [
+      "FECOEP"
+     ],
+     "n": 1
+    }
+   ],
+   "CBOMB": [
+    {
+     "credor": "OMINIA PARTICIPACOES EIRELI",
+     "pf": false,
+     "valor": 20361.51,
+     "orgaos": [
+      "CBOMB"
+     ],
+     "n": 1
+    }
+   ],
+   "IDARON": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 1025794.0,
+     "orgaos": [
+      "IDARON"
+     ],
+     "n": 51
+    },
+    {
+     "credor": "FERNANDES E REZENDES LTDA ME",
+     "pf": false,
+     "valor": 904400.0,
+     "orgaos": [
+      "IDARON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SPAZIO BUSINESS LTDA ME",
+     "pf": false,
+     "valor": 257040.0,
+     "orgaos": [
+      "IDARON"
      ],
      "n": 1
     }
@@ -11141,6 +11219,55 @@
      "n": 3
     }
    ],
+   "FEAS": [
+    {
+     "credor": "GOLDEN PLAZA HOTEL LTDA",
+     "pf": false,
+     "valor": 23812.8,
+     "orgaos": [
+      "FEAS"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ANJOS E SILVA LTDA",
+     "pf": false,
+     "valor": 22134.54,
+     "orgaos": [
+      "FEAS"
+     ],
+     "n": 1
+    }
+   ],
+   "POLITEC": [
+    {
+     "credor": "SOCIAL ADMINISTRADORA DE IMOVEIS LTDA - EPP",
+     "pf": false,
+     "valor": 131358.19,
+     "orgaos": [
+      "POLITEC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "NOGUEIRA IMOVEIS LTDA",
+     "pf": false,
+     "valor": 105616.3,
+     "orgaos": [
+      "POLITEC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "IMOBILIARIA ATALAIA LTDA",
+     "pf": false,
+     "valor": 66102.03,
+     "orgaos": [
+      "POLITEC"
+     ],
+     "n": 1
+    }
+   ],
    "DER": [
     {
      "credor": "",
@@ -11152,31 +11279,254 @@
      "n": 3
     }
    ],
-   "PGE": [
+   "FUNESBOM": [
     {
-     "credor": "IVONE MARINI LTDA",
+     "credor": "BRASIL INCORPORAÇÕES IMOBILIÁRIAS S/A",
      "pf": false,
-     "valor": 90000.0,
+     "valor": 71163.05,
      "orgaos": [
-      "PGE"
+      "FUNESBOM"
      ],
      "n": 1
     },
     {
-     "credor": "REALIZE ASSESSORIA E NEGOC IMOBILIARIOS LTDA",
+     "credor": "OMINIA PARTICIPACOES EIRELI",
      "pf": false,
-     "valor": 40021.41,
+     "valor": 19968.3,
      "orgaos": [
-      "PGE"
+      "FUNESBOM"
      ],
      "n": 1
     },
     {
-     "credor": "APART IMOVEIS LTDA",
-     "pf": false,
-     "valor": 3506.69,
+     "credor": "",
+     "pf": true,
+     "valor": 18000.0,
      "orgaos": [
-      "PGE"
+      "FUNESBOM"
+     ],
+     "n": 1
+    }
+   ],
+   "SETUR": [
+    {
+     "credor": "CARGNIN & CARGNIN LTDA",
+     "pf": false,
+     "valor": 1615.0,
+     "orgaos": [
+      "SETUR"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "BRASIL AÇO EPITÁCIO IMPORT. E EXPORT. LTDA",
+     "pf": false,
+     "valor": 1599.36,
+     "orgaos": [
+      "SETUR"
+     ],
+     "n": 1
+    }
+   ],
+   "SEGEP": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 141758.52,
+     "orgaos": [
+      "SEGEP"
+     ],
+     "n": 3
+    }
+   ],
+   "SEPAT": [
+    {
+     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
+     "pf": false,
+     "valor": 228480.0,
+     "orgaos": [
+      "SEPAT"
+     ],
+     "n": 1
+    }
+   ],
+   "SEDEC": [
+    {
+     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
+     "pf": false,
+     "valor": 133280.0,
+     "orgaos": [
+      "SEDEC"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 9528.4,
+     "orgaos": [
+      "SEDEC"
+     ],
+     "n": 1
+    }
+   ],
+   "EMATER": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 363950.35,
+     "orgaos": [
+      "EMATER"
+     ],
+     "n": 18
+    },
+    {
+     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 77395.72,
+     "orgaos": [
+      "EMATER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "TERRANORTE IMOVEIS",
+     "pf": false,
+     "valor": 37891.88,
+     "orgaos": [
+      "EMATER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "IMOBILIARIA TERRA E BENS LTDA",
+     "pf": false,
+     "valor": 4607.5,
+     "orgaos": [
+      "EMATER"
+     ],
+     "n": 1
+    }
+   ],
+   "FHEMERON": [
+    {
+     "credor": "SARTORI IMONILIARIA LTDA",
+     "pf": false,
+     "valor": 234735.36,
+     "orgaos": [
+      "FHEMERON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
+     "pf": false,
+     "valor": 137815.37,
+     "orgaos": [
+      "FHEMERON"
+     ],
+     "n": 1
+    }
+   ],
+   "FIDER": [
+    {
+     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
+     "pf": false,
+     "valor": 166600.0,
+     "orgaos": [
+      "FIDER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "TORRES E TORRES ORGANIZAÇÕES DE EVENTOS E SERV. LTDA",
+     "pf": false,
+     "valor": 53000.0,
+     "orgaos": [
+      "FIDER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 9748.86,
+     "orgaos": [
+      "FIDER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ANJOS E SILVA LTDA",
+     "pf": false,
+     "valor": 7147.59,
+     "orgaos": [
+      "FIDER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ADMINISTRADORA PORTO VELHO SHOPPING LTDA-EPP",
+     "pf": false,
+     "valor": 5614.75,
+     "orgaos": [
+      "FIDER"
+     ],
+     "n": 1
+    }
+   ],
+   "JUCER": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 39483.62,
+     "orgaos": [
+      "JUCER"
+     ],
+     "n": 3
+    },
+    {
+     "credor": "ASSOC COMERCIAL,IND.E SERV.DE GUAJARA MIRIM",
+     "pf": false,
+     "valor": 24917.76,
+     "orgaos": [
+      "JUCER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SARAIVA & TANAKA EMPREENDIMENTOS IMOBIL. LTDA",
+     "pf": false,
+     "valor": 22735.6,
+     "orgaos": [
+      "JUCER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ASSOCIAÇÃO COMERCIAL E INDUSTRIAL DE JARU (ACIJ)",
+     "pf": false,
+     "valor": 21187.6,
+     "orgaos": [
+      "JUCER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ACSER-ASSOC.DOS CONTAB.DO SUL DO EST.RONDONIA",
+     "pf": false,
+     "valor": 14824.53,
+     "orgaos": [
+      "JUCER"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "GRAUNA RESORT HOTEL LTDA",
+     "pf": false,
+     "valor": 7000.0,
+     "orgaos": [
+      "JUCER"
      ],
      "n": 1
     }
@@ -11208,6 +11558,133 @@
       "PM"
      ],
      "n": 2
+    }
+   ],
+   "AGEVISA": [
+    {
+     "credor": "POLIANO DE LIMA MARQUES EIRELI",
+     "pf": false,
+     "valor": 342720.0,
+     "orgaos": [
+      "AGEVISA"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
+     "pf": false,
+     "valor": 258300.88,
+     "orgaos": [
+      "AGEVISA"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
+     "pf": false,
+     "valor": 178400.0,
+     "orgaos": [
+      "AGEVISA"
+     ],
+     "n": 1
+    }
+   ],
+   "IPERON": [
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 81587.3,
+     "orgaos": [
+      "IPERON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "GOLDEN PLAZA HOTEL LTDA",
+     "pf": false,
+     "valor": 5412.0,
+     "orgaos": [
+      "IPERON"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ANJOS E SILVA LTDA",
+     "pf": false,
+     "valor": 3053.45,
+     "orgaos": [
+      "IPERON"
+     ],
+     "n": 1
+    }
+   ],
+   "PGE": [
+    {
+     "credor": "IVONE MARINI LTDA",
+     "pf": false,
+     "valor": 90000.0,
+     "orgaos": [
+      "PGE"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "REALIZE ASSESSORIA E NEGOC IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 40021.41,
+     "orgaos": [
+      "PGE"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "APART IMOVEIS LTDA",
+     "pf": false,
+     "valor": 3506.69,
+     "orgaos": [
+      "PGE"
+     ],
+     "n": 1
+    }
+   ],
+   "SEJUS": [
+    {
+     "credor": "VALENTIM IMOVEIS LTDA",
+     "pf": false,
+     "valor": 17508.82,
+     "orgaos": [
+      "SEJUS"
+     ],
+     "n": 1
+    }
+   ],
+   "SEAS": [
+    {
+     "credor": "BONSUCESSO EMPREENDIMENTOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 610604.73,
+     "orgaos": [
+      "SEAS"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 122902.38,
+     "orgaos": [
+      "SEAS"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ANJOS E SILVA LTDA",
+     "pf": false,
+     "valor": 106475.44,
+     "orgaos": [
+      "SEAS"
+     ],
+     "n": 1
     }
    ],
    "SEDUC": [
@@ -11347,508 +11824,6 @@
      "n": 1
     }
    ],
-   "IDEP": [
-    {
-     "credor": "L A FACHIN EIRELI",
-     "pf": false,
-     "valor": 1490572.71,
-     "orgaos": [
-      "IDEP"
-     ],
-     "n": 1
-    }
-   ],
-   "EMATER": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 363950.35,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 18
-    },
-    {
-     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 77395.72,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "TERRANORTE IMOVEIS",
-     "pf": false,
-     "valor": 37891.88,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "IMOBILIARIA TERRA E BENS LTDA",
-     "pf": false,
-     "valor": 4607.5,
-     "orgaos": [
-      "EMATER"
-     ],
-     "n": 1
-    }
-   ],
-   "CBOMB": [
-    {
-     "credor": "OMINIA PARTICIPACOES EIRELI",
-     "pf": false,
-     "valor": 20361.51,
-     "orgaos": [
-      "CBOMB"
-     ],
-     "n": 1
-    }
-   ],
-   "SUGESP": [
-    {
-     "credor": "IMBUIA EMPREENDIMENTOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 623919.65,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "SOMAR PATRIMONIO LTDA",
-     "pf": false,
-     "valor": 558622.46,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "PARK SHOPPING VILHENA ADM DE S CENTER LTDA-ME",
-     "pf": false,
-     "valor": 275355.46,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "R P C ADMINISTRADORA DE IMOVEIS LTDA",
-     "pf": false,
-     "valor": 244307.63,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "IRMAOS GONÇALVES COMERCIO E INDUSTRIA LTDA",
-     "pf": false,
-     "valor": 162213.21,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ASSOCIACAO DE ASSISTENCIA A CULTURA NA AMAZONIA MOACYR GRECHI - AASCAM",
-     "pf": false,
-     "valor": 44000.0,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 28576.64,
-     "orgaos": [
-      "SUGESP"
-     ],
-     "n": 1
-    }
-   ],
-   "AGEVISA": [
-    {
-     "credor": "POLIANO DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 342720.0,
-     "orgaos": [
-      "AGEVISA"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 258300.88,
-     "orgaos": [
-      "AGEVISA"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
-     "pf": false,
-     "valor": 178400.0,
-     "orgaos": [
-      "AGEVISA"
-     ],
-     "n": 1
-    }
-   ],
-   "FIDER": [
-    {
-     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
-     "pf": false,
-     "valor": 166600.0,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "TORRES E TORRES ORGANIZAÇÕES DE EVENTOS E SERV. LTDA",
-     "pf": false,
-     "valor": 53000.0,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
-     "pf": false,
-     "valor": 9748.86,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ANJOS E SILVA LTDA",
-     "pf": false,
-     "valor": 7147.59,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ADMINISTRADORA PORTO VELHO SHOPPING LTDA-EPP",
-     "pf": false,
-     "valor": 5614.75,
-     "orgaos": [
-      "FIDER"
-     ],
-     "n": 1
-    }
-   ],
-   "PC": [
-    {
-     "credor": "M A LOPES DE OLIVEIRA LTDA",
-     "pf": false,
-     "valor": 409593.32,
-     "orgaos": [
-      "PC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ROCHA E MUNIZ LTDA",
-     "pf": false,
-     "valor": 347729.31,
-     "orgaos": [
-      "PC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 192510.38,
-     "orgaos": [
-      "PC"
-     ],
-     "n": 4
-    },
-    {
-     "credor": "MAGALHÃES SERV D ADM D MOVEIS PROPRIOS EIRELI",
-     "pf": false,
-     "valor": 134139.65,
-     "orgaos": [
-      "PC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "BERNARDO EMPREENDIMENTOS E PARTICIPAÇÕES LTDA",
-     "pf": false,
-     "valor": 128551.38,
-     "orgaos": [
-      "PC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "PASSARELI ALUGUÉIS DE IMÓVEIS",
-     "pf": false,
-     "valor": 96950.42,
-     "orgaos": [
-      "PC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "BERNARDO ALIMENTOS IND. E COM. LTDA",
-     "pf": false,
-     "valor": 64275.68,
-     "orgaos": [
-      "PC"
-     ],
-     "n": 1
-    }
-   ],
-   "SESDEC": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 70032.93,
-     "orgaos": [
-      "SESDEC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
-     "pf": false,
-     "valor": 44757.8,
-     "orgaos": [
-      "SESDEC"
-     ],
-     "n": 1
-    }
-   ],
-   "SEDAM": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 79889.59,
-     "orgaos": [
-      "SEDAM"
-     ],
-     "n": 2
-    }
-   ],
-   "SEJUCEL": [
-    {
-     "credor": "ANJOS E SILVA LTDA",
-     "pf": false,
-     "valor": 19400.48,
-     "orgaos": [
-      "SEJUCEL"
-     ],
-     "n": 1
-    }
-   ],
-   "FHEMERON": [
-    {
-     "credor": "SARTORI IMONILIARIA LTDA",
-     "pf": false,
-     "valor": 234735.36,
-     "orgaos": [
-      "FHEMERON"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
-     "pf": false,
-     "valor": 137815.37,
-     "orgaos": [
-      "FHEMERON"
-     ],
-     "n": 1
-    }
-   ],
-   "POLITEC": [
-    {
-     "credor": "SOCIAL ADMINISTRADORA DE IMOVEIS LTDA - EPP",
-     "pf": false,
-     "valor": 131358.19,
-     "orgaos": [
-      "POLITEC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "NOGUEIRA IMOVEIS LTDA",
-     "pf": false,
-     "valor": 105616.3,
-     "orgaos": [
-      "POLITEC"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "IMOBILIARIA ATALAIA LTDA",
-     "pf": false,
-     "valor": 66102.03,
-     "orgaos": [
-      "POLITEC"
-     ],
-     "n": 1
-    }
-   ],
-   "SESAU": [
-    {
-     "credor": "POLIANO DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 793951.9,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
-     "pf": false,
-     "valor": 340302.78,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "MFH SERVIÇOS DE ADMINISTRAÇÃO DE IMÓVEIS LTDA",
-     "pf": false,
-     "valor": 130820.66,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 75782.34,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "PEROLA HOTEIS E RESTAURANTES LTDA",
-     "pf": false,
-     "valor": 10613.76,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "GOLDEN PLAZA HOTEL LTDA",
-     "pf": false,
-     "valor": 9025.61,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "RKV ALIMENTOS LTDA",
-     "pf": false,
-     "valor": 3292.0,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ACINOX EMPREENDIMENTOS E PARTIPACOES LTDA",
-     "pf": false,
-     "valor": 0.06,
-     "orgaos": [
-      "SESAU"
-     ],
-     "n": 1
-    }
-   ],
-   "SEJUS": [
-    {
-     "credor": "VALENTIM IMOVEIS LTDA",
-     "pf": false,
-     "valor": 17508.82,
-     "orgaos": [
-      "SEJUS"
-     ],
-     "n": 1
-    }
-   ],
-   "SEGEP": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 141758.52,
-     "orgaos": [
-      "SEGEP"
-     ],
-     "n": 3
-    }
-   ],
-   "IDARON": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 1025794.0,
-     "orgaos": [
-      "IDARON"
-     ],
-     "n": 51
-    },
-    {
-     "credor": "FERNANDES E REZENDES LTDA ME",
-     "pf": false,
-     "valor": 904400.0,
-     "orgaos": [
-      "IDARON"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "SPAZIO BUSINESS LTDA ME",
-     "pf": false,
-     "valor": 257040.0,
-     "orgaos": [
-      "IDARON"
-     ],
-     "n": 1
-    }
-   ],
-   "SETUR": [
-    {
-     "credor": "CARGNIN & CARGNIN LTDA",
-     "pf": false,
-     "valor": 1615.0,
-     "orgaos": [
-      "SETUR"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "BRASIL AÇO EPITÁCIO IMPORT. E EXPORT. LTDA",
-     "pf": false,
-     "valor": 1599.36,
-     "orgaos": [
-      "SETUR"
-     ],
-     "n": 1
-    }
-   ],
    "FEDIPI": [
     {
      "credor": "GOLDEN PLAZA HOTEL LTDA",
@@ -11961,178 +11936,203 @@
      "n": 1
     }
    ],
-   "JUCER": [
+   "SESDEC": [
     {
      "credor": "",
      "pf": true,
-     "valor": 39483.62,
+     "valor": 70032.93,
      "orgaos": [
-      "JUCER"
-     ],
-     "n": 3
-    },
-    {
-     "credor": "ASSOC COMERCIAL,IND.E SERV.DE GUAJARA MIRIM",
-     "pf": false,
-     "valor": 24917.76,
-     "orgaos": [
-      "JUCER"
+      "SESDEC"
      ],
      "n": 1
     },
     {
-     "credor": "SARAIVA & TANAKA EMPREENDIMENTOS IMOBIL. LTDA",
+     "credor": "AMAZONJUMP AVIACAO, ESPORTES E TURISMO LTDA",
      "pf": false,
-     "valor": 22735.6,
+     "valor": 44757.8,
      "orgaos": [
-      "JUCER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ASSOCIAÇÃO COMERCIAL E INDUSTRIAL DE JARU (ACIJ)",
-     "pf": false,
-     "valor": 21187.6,
-     "orgaos": [
-      "JUCER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "ACSER-ASSOC.DOS CONTAB.DO SUL DO EST.RONDONIA",
-     "pf": false,
-     "valor": 14824.53,
-     "orgaos": [
-      "JUCER"
-     ],
-     "n": 1
-    },
-    {
-     "credor": "GRAUNA RESORT HOTEL LTDA",
-     "pf": false,
-     "valor": 7000.0,
-     "orgaos": [
-      "JUCER"
+      "SESDEC"
      ],
      "n": 1
     }
    ],
-   "SEDEC": [
+   "SESAU": [
     {
-     "credor": "NORTE COMERCIO E SERVICOS DE TERRAPLENAGEM E EXPORTACAO E IMPORTACAO LTDA",
+     "credor": "POLIANO DE LIMA MARQUES EIRELI",
      "pf": false,
-     "valor": 133280.0,
+     "valor": 793951.9,
      "orgaos": [
-      "SEDEC"
+      "SESAU"
      ],
      "n": 1
     },
     {
-     "credor": "META NEGOCIOS IMOBILIARIOS LTDA",
+     "credor": "DAIANA ROSSI DE LIMA MARQUES EIRELI",
      "pf": false,
-     "valor": 9528.4,
+     "valor": 340302.78,
      "orgaos": [
-      "SEDEC"
-     ],
-     "n": 1
-    }
-   ],
-   "FUNESBOM": [
-    {
-     "credor": "BRASIL INCORPORAÇÕES IMOBILIÁRIAS S/A",
-     "pf": false,
-     "valor": 71163.05,
-     "orgaos": [
-      "FUNESBOM"
+      "SESAU"
      ],
      "n": 1
     },
     {
-     "credor": "OMINIA PARTICIPACOES EIRELI",
+     "credor": "MFH SERVIÇOS DE ADMINISTRAÇÃO DE IMÓVEIS LTDA",
      "pf": false,
-     "valor": 19968.3,
+     "valor": 130820.66,
      "orgaos": [
-      "FUNESBOM"
+      "SESAU"
      ],
      "n": 1
     },
     {
      "credor": "",
      "pf": true,
-     "valor": 18000.0,
+     "valor": 75782.34,
      "orgaos": [
-      "FUNESBOM"
-     ],
-     "n": 1
-    }
-   ],
-   "FECOEP": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 40967.46,
-     "orgaos": [
-      "FECOEP"
-     ],
-     "n": 1
-    }
-   ],
-   "SEPAT": [
-    {
-     "credor": "GGK NEGÓCIOS IMOBILIÁRIOS S/S LTDA",
-     "pf": false,
-     "valor": 228480.0,
-     "orgaos": [
-      "SEPAT"
-     ],
-     "n": 1
-    }
-   ],
-   "FEAS": [
-    {
-     "credor": "GOLDEN PLAZA HOTEL LTDA",
-     "pf": false,
-     "valor": 23812.8,
-     "orgaos": [
-      "FEAS"
+      "SESAU"
      ],
      "n": 1
     },
     {
-     "credor": "ANJOS E SILVA LTDA",
+     "credor": "PEROLA HOTEIS E RESTAURANTES LTDA",
      "pf": false,
-     "valor": 22134.54,
+     "valor": 10613.76,
      "orgaos": [
-      "FEAS"
-     ],
-     "n": 1
-    }
-   ],
-   "IPERON": [
-    {
-     "credor": "",
-     "pf": true,
-     "valor": 81587.3,
-     "orgaos": [
-      "IPERON"
+      "SESAU"
      ],
      "n": 1
     },
     {
      "credor": "GOLDEN PLAZA HOTEL LTDA",
      "pf": false,
-     "valor": 5412.0,
+     "valor": 9025.61,
      "orgaos": [
-      "IPERON"
+      "SESAU"
      ],
      "n": 1
     },
     {
+     "credor": "RKV ALIMENTOS LTDA",
+     "pf": false,
+     "valor": 3292.0,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ACINOX EMPREENDIMENTOS E PARTIPACOES LTDA",
+     "pf": false,
+     "valor": 0.06,
+     "orgaos": [
+      "SESAU"
+     ],
+     "n": 1
+    }
+   ],
+   "IDEP": [
+    {
+     "credor": "L A FACHIN EIRELI",
+     "pf": false,
+     "valor": 1490572.71,
+     "orgaos": [
+      "IDEP"
+     ],
+     "n": 1
+    }
+   ],
+   "SEJUCEL": [
+    {
      "credor": "ANJOS E SILVA LTDA",
      "pf": false,
-     "valor": 3053.45,
+     "valor": 19400.48,
      "orgaos": [
-      "IPERON"
+      "SEJUCEL"
+     ],
+     "n": 1
+    }
+   ],
+   "FEASE": [
+    {
+     "credor": "J. F. PARTICIPACOES LTDA - ME",
+     "pf": false,
+     "valor": 117534.11,
+     "orgaos": [
+      "FEASE"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SOCIAL ADMINISTRADORA DE IMOVEIS LTDA - EPP",
+     "pf": false,
+     "valor": 113081.8,
+     "orgaos": [
+      "FEASE"
+     ],
+     "n": 1
+    }
+   ],
+   "SUGESP": [
+    {
+     "credor": "IMBUIA EMPREENDIMENTOS IMOBILIARIOS LTDA",
+     "pf": false,
+     "valor": 623919.65,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "SOMAR PATRIMONIO LTDA",
+     "pf": false,
+     "valor": 558622.46,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "PARK SHOPPING VILHENA ADM DE S CENTER LTDA-ME",
+     "pf": false,
+     "valor": 275355.46,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "R P C ADMINISTRADORA DE IMOVEIS LTDA",
+     "pf": false,
+     "valor": 244307.63,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "IRMAOS GONÇALVES COMERCIO E INDUSTRIA LTDA",
+     "pf": false,
+     "valor": 162213.21,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "ASSOCIACAO DE ASSISTENCIA A CULTURA NA AMAZONIA MOACYR GRECHI - AASCAM",
+     "pf": false,
+     "valor": 44000.0,
+     "orgaos": [
+      "SUGESP"
+     ],
+     "n": 1
+    },
+    {
+     "credor": "",
+     "pf": true,
+     "valor": 28576.64,
+     "orgaos": [
+      "SUGESP"
      ],
      "n": 1
     }
@@ -23917,6 +23917,822 @@
    "repasses": 84623338.65,
    "repasses_sem_municipio": 3100988.33,
    "municipios_com_repasse": 49
+  }
+ },
+ "diarias_der": {
+  "meta": {
+   "fonte": "Planilha da equipe de transição sobre os relatórios do DER (pagamentos de diárias; pagamentos do exercício, natureza 3.3.90.33), unidade 110025",
+   "arquivo": "Diarias_Passagens_DER_Mensal_2022_2026_v03_2026-11-14.xlsx",
+   "posicao": "2026 até 10/11/2026",
+   "gerado": "sem nome nem CPF: só totais"
+  },
+  "total": {
+   "diarias": 118981956.55,
+   "passagens": 1013997.36,
+   "servidores": 1675,
+   "todos_os_anos": 550
+  },
+  "anos": {
+   "2022": {
+    "diarias": 19346325.0,
+    "passagens": 138957.43,
+    "pagamentos": 13547,
+    "servidores": 1088,
+    "media_servidor": 17781.55,
+    "maior_servidor": 64750.0,
+    "top10_pct": 27.2,
+    "top10_n": 109,
+    "acima_100mil": 0,
+    "acima_60mil": 5,
+    "faixas": [
+     {
+      "de": 0,
+      "ate": 5000,
+      "servidores": 286,
+      "valor": 670770.0
+     },
+     {
+      "de": 5000,
+      "ate": 15000,
+      "servidores": 278,
+      "valor": 2639480.0
+     },
+     {
+      "de": 15000,
+      "ate": 30000,
+      "servidores": 278,
+      "valor": 6057205.0
+     },
+     {
+      "de": 30000,
+      "ate": 60000,
+      "servidores": 241,
+      "valor": 9667620.0
+     },
+     {
+      "de": 60000,
+      "ate": 100000,
+      "servidores": 5,
+      "valor": 311250.0
+     },
+     {
+      "de": 100000,
+      "ate": null,
+      "servidores": 0,
+      "valor": 0
+     }
+    ],
+    "maiores": [
+     64750.0,
+     62500.0,
+     61875.0,
+     61375.0,
+     60750.0,
+     59000.0,
+     58750.0,
+     58125.0,
+     57625.0,
+     57500.0
+    ],
+    "mensal": [
+     {
+      "mes": 1,
+      "diarias": 336675.0,
+      "pagamentos": 194,
+      "servidores": 165,
+      "maior": 5500.0,
+      "passagens": 0
+     },
+     {
+      "mes": 2,
+      "diarias": 1402790.0,
+      "pagamentos": 899,
+      "servidores": 511,
+      "maior": 8000.0,
+      "passagens": 0
+     },
+     {
+      "mes": 3,
+      "diarias": 1945620.0,
+      "pagamentos": 1234,
+      "servidores": 560,
+      "maior": 13125.0,
+      "passagens": 0
+     },
+     {
+      "mes": 4,
+      "diarias": 1394255.0,
+      "pagamentos": 1007,
+      "servidores": 548,
+      "maior": 8250.0,
+      "passagens": 3548.73
+     },
+     {
+      "mes": 5,
+      "diarias": 2192755.0,
+      "pagamentos": 1601,
+      "servidores": 696,
+      "maior": 9875.0,
+      "passagens": 28596.96
+     },
+     {
+      "mes": 6,
+      "diarias": 2200535.0,
+      "pagamentos": 1590,
+      "servidores": 677,
+      "maior": 10000.0,
+      "passagens": 38041.67
+     },
+     {
+      "mes": 7,
+      "diarias": 2042650.0,
+      "pagamentos": 1440,
+      "servidores": 637,
+      "maior": 9125.0,
+      "passagens": 13163.57
+     },
+     {
+      "mes": 8,
+      "diarias": 2109685.0,
+      "pagamentos": 1533,
+      "servidores": 655,
+      "maior": 8625.0,
+      "passagens": 24218.84
+     },
+     {
+      "mes": 9,
+      "diarias": 1915900.0,
+      "pagamentos": 1371,
+      "servidores": 576,
+      "maior": 8875.0,
+      "passagens": 0
+     },
+     {
+      "mes": 10,
+      "diarias": 1581775.0,
+      "pagamentos": 1154,
+      "servidores": 518,
+      "maior": 9000.0,
+      "passagens": 0
+     },
+     {
+      "mes": 11,
+      "diarias": 1477160.0,
+      "pagamentos": 961,
+      "servidores": 508,
+      "maior": 8525.0,
+      "passagens": 16292.9
+     },
+     {
+      "mes": 12,
+      "diarias": 746525.0,
+      "pagamentos": 563,
+      "servidores": 402,
+      "maior": 6750.0,
+      "passagens": 15094.76
+     }
+    ]
+   },
+   "2023": {
+    "diarias": 19126304.9,
+    "passagens": 57361.45,
+    "pagamentos": 7799,
+    "servidores": 972,
+    "media_servidor": 19677.27,
+    "maior_servidor": 139908.0,
+    "top10_pct": 35.7,
+    "top10_n": 97,
+    "acima_100mil": 4,
+    "acima_60mil": 68,
+    "faixas": [
+     {
+      "de": 0,
+      "ate": 5000,
+      "servidores": 233,
+      "valor": 566444.24
+     },
+     {
+      "de": 5000,
+      "ate": 15000,
+      "servidores": 319,
+      "valor": 3049309.5
+     },
+     {
+      "de": 15000,
+      "ate": 30000,
+      "servidores": 211,
+      "valor": 4534913.86
+     },
+     {
+      "de": 30000,
+      "ate": 60000,
+      "servidores": 141,
+      "valor": 5700162.8
+     },
+     {
+      "de": 60000,
+      "ate": 100000,
+      "servidores": 64,
+      "valor": 4815211.0
+     },
+     {
+      "de": 100000,
+      "ate": null,
+      "servidores": 4,
+      "valor": 460263.5
+     }
+    ],
+    "maiores": [
+     139908.0,
+     108980.5,
+     108580.0,
+     102795.0,
+     99680.0,
+     97900.0,
+     97232.5,
+     95452.5,
+     95230.0,
+     93005.0
+    ],
+    "mensal": [
+     {
+      "mes": 1,
+      "diarias": 0.0,
+      "pagamentos": 0,
+      "servidores": 0,
+      "maior": 0.0,
+      "passagens": 0
+     },
+     {
+      "mes": 2,
+      "diarias": 413533.74,
+      "pagamentos": 202,
+      "servidores": 141,
+      "maior": 15219.0,
+      "passagens": 0
+     },
+     {
+      "mes": 3,
+      "diarias": 1252613.3,
+      "pagamentos": 551,
+      "servidores": 354,
+      "maior": 17355.0,
+      "passagens": 0
+     },
+     {
+      "mes": 4,
+      "diarias": 1522345.0,
+      "pagamentos": 647,
+      "servidores": 427,
+      "maior": 18156.0,
+      "passagens": 7124.62
+     },
+     {
+      "mes": 5,
+      "diarias": 1969666.3,
+      "pagamentos": 868,
+      "servidores": 509,
+      "maior": 20025.0,
+      "passagens": 23375.94
+     },
+     {
+      "mes": 6,
+      "diarias": 2943639.16,
+      "pagamentos": 1161,
+      "servidores": 596,
+      "maior": 18912.5,
+      "passagens": 3990.65
+     },
+     {
+      "mes": 7,
+      "diarias": 2269810.5,
+      "pagamentos": 886,
+      "servidores": 487,
+      "maior": 14907.0,
+      "passagens": 0
+     },
+     {
+      "mes": 8,
+      "diarias": 850600.3,
+      "pagamentos": 303,
+      "servidores": 198,
+      "maior": 12682.5,
+      "passagens": 7983.24
+     },
+     {
+      "mes": 9,
+      "diarias": 1322981.5,
+      "pagamentos": 537,
+      "servidores": 289,
+      "maior": 12015.0,
+      "passagens": 0
+     },
+     {
+      "mes": 10,
+      "diarias": 1977580.0,
+      "pagamentos": 677,
+      "servidores": 369,
+      "maior": 15130.0,
+      "passagens": 0
+     },
+     {
+      "mes": 11,
+      "diarias": 2647038.0,
+      "pagamentos": 1028,
+      "servidores": 496,
+      "maior": 17088.0,
+      "passagens": 0
+     },
+     {
+      "mes": 12,
+      "diarias": 1956497.1,
+      "pagamentos": 939,
+      "servidores": 442,
+      "maior": 17355.0,
+      "passagens": 14887.0
+     }
+    ]
+   },
+   "2024": {
+    "diarias": 24643575.92,
+    "passagens": 203684.41,
+    "pagamentos": 11207,
+    "servidores": 984,
+    "media_servidor": 25044.28,
+    "maior_servidor": 129762.0,
+    "top10_pct": 31.1,
+    "top10_n": 98,
+    "acima_100mil": 15,
+    "acima_60mil": 92,
+    "faixas": [
+     {
+      "de": 0,
+      "ate": 5000,
+      "servidores": 183,
+      "valor": 447385.8
+     },
+     {
+      "de": 5000,
+      "ate": 15000,
+      "servidores": 239,
+      "valor": 2276768.0
+     },
+     {
+      "de": 15000,
+      "ate": 30000,
+      "servidores": 273,
+      "valor": 6100013.6
+     },
+     {
+      "de": 30000,
+      "ate": 60000,
+      "servidores": 197,
+      "valor": 8508649.33
+     },
+     {
+      "de": 60000,
+      "ate": 100000,
+      "servidores": 77,
+      "valor": 5701077.89
+     },
+     {
+      "de": 100000,
+      "ate": null,
+      "servidores": 15,
+      "valor": 1609681.3
+     }
+    ],
+    "maiores": [
+     129762.0,
+     123781.8,
+     109692.5,
+     109692.5,
+     109692.5,
+     108357.5,
+     108357.5,
+     104352.5,
+     101682.5,
+     101015.0
+    ],
+    "mensal": [
+     {
+      "mes": 1,
+      "diarias": 33909.0,
+      "pagamentos": 24,
+      "servidores": 20,
+      "maior": 2670.0,
+      "passagens": 0
+     },
+     {
+      "mes": 2,
+      "diarias": 1079925.7,
+      "pagamentos": 442,
+      "servidores": 297,
+      "maior": 13127.5,
+      "passagens": 0
+     },
+     {
+      "mes": 3,
+      "diarias": 1681017.8,
+      "pagamentos": 756,
+      "servidores": 416,
+      "maior": 13617.0,
+      "passagens": 0
+     },
+     {
+      "mes": 4,
+      "diarias": 1665567.59,
+      "pagamentos": 738,
+      "servidores": 384,
+      "maior": 27256.09,
+      "passagens": 9493.13
+     },
+     {
+      "mes": 5,
+      "diarias": 1036257.3,
+      "pagamentos": 521,
+      "servidores": 281,
+      "maior": 13617.0,
+      "passagens": 19316.64
+     },
+     {
+      "mes": 6,
+      "diarias": 1407375.63,
+      "pagamentos": 795,
+      "servidores": 386,
+      "maior": 10012.5,
+      "passagens": 19539.9
+     },
+     {
+      "mes": 7,
+      "diarias": 2563131.2,
+      "pagamentos": 1248,
+      "servidores": 575,
+      "maior": 15352.5,
+      "passagens": 25549.89
+     },
+     {
+      "mes": 8,
+      "diarias": 2878923.4,
+      "pagamentos": 1361,
+      "servidores": 591,
+      "maior": 16020.0,
+      "passagens": 0
+     },
+     {
+      "mes": 9,
+      "diarias": 3290087.0,
+      "pagamentos": 1492,
+      "servidores": 622,
+      "maior": 15352.5,
+      "passagens": 53178.96
+     },
+     {
+      "mes": 10,
+      "diarias": 2926973.3,
+      "pagamentos": 1324,
+      "servidores": 577,
+      "maior": 15797.5,
+      "passagens": 26733.59
+     },
+     {
+      "mes": 11,
+      "diarias": 3018532.4,
+      "pagamentos": 1176,
+      "servidores": 537,
+      "maior": 18423.0,
+      "passagens": 38436.48
+     },
+     {
+      "mes": 12,
+      "diarias": 3061875.6,
+      "pagamentos": 1330,
+      "servidores": 577,
+      "maior": 16020.0,
+      "passagens": 11435.82
+     }
+    ]
+   },
+   "2025": {
+    "diarias": 34497782.97,
+    "passagens": 284863.96,
+    "pagamentos": 16614,
+    "servidores": 1096,
+    "media_servidor": 31476.08,
+    "maior_servidor": 145248.0,
+    "top10_pct": 31.5,
+    "top10_n": 110,
+    "acima_100mil": 46,
+    "acima_60mil": 176,
+    "faixas": [
+     {
+      "de": 0,
+      "ate": 5000,
+      "servidores": 199,
+      "valor": 457586.4
+     },
+     {
+      "de": 5000,
+      "ate": 15000,
+      "servidores": 223,
+      "valor": 2090847.5
+     },
+     {
+      "de": 15000,
+      "ate": 30000,
+      "servidores": 233,
+      "valor": 5194518.7
+     },
+     {
+      "de": 30000,
+      "ate": 60000,
+      "servidores": 265,
+      "valor": 11510706.5
+     },
+     {
+      "de": 60000,
+      "ate": 100000,
+      "servidores": 130,
+      "valor": 9891251.05
+     },
+     {
+      "de": 100000,
+      "ate": null,
+      "servidores": 46,
+      "valor": 5352872.82
+     }
+    ],
+    "maiores": [
+     145248.0,
+     138973.5,
+     131497.0,
+     130384.5,
+     130162.0,
+     129049.5,
+     127937.5,
+     127937.5,
+     127270.0,
+     126824.5
+    ],
+    "mensal": [
+     {
+      "mes": 1,
+      "diarias": 0.0,
+      "pagamentos": 0,
+      "servidores": 0,
+      "maior": 0.0,
+      "passagens": 0
+     },
+     {
+      "mes": 2,
+      "diarias": 2689313.5,
+      "pagamentos": 934,
+      "servidores": 412,
+      "maior": 24564.0,
+      "passagens": 0
+     },
+     {
+      "mes": 3,
+      "diarias": 2363205.8,
+      "pagamentos": 1059,
+      "servidores": 544,
+      "maior": 14685.0,
+      "passagens": 0
+     },
+     {
+      "mes": 4,
+      "diarias": 3343198.92,
+      "pagamentos": 1442,
+      "servidores": 667,
+      "maior": 17889.0,
+      "passagens": 6705.17
+     },
+     {
+      "mes": 5,
+      "diarias": 3625447.95,
+      "pagamentos": 1357,
+      "servidores": 616,
+      "maior": 17577.5,
+      "passagens": 23251.8
+     },
+     {
+      "mes": 6,
+      "diarias": 3330805.85,
+      "pagamentos": 1364,
+      "servidores": 662,
+      "maior": 26086.95,
+      "passagens": 36891.61
+     },
+     {
+      "mes": 7,
+      "diarias": 2969960.3,
+      "pagamentos": 1697,
+      "servidores": 711,
+      "maior": 14685.0,
+      "passagens": 0
+     },
+     {
+      "mes": 8,
+      "diarias": 1812083.74,
+      "pagamentos": 1314,
+      "servidores": 658,
+      "maior": 16871.84,
+      "passagens": 16871.84
+     },
+     {
+      "mes": 9,
+      "diarias": 2234291.24,
+      "pagamentos": 1610,
+      "servidores": 650,
+      "maior": 53674.84,
+      "passagens": 68099.74
+     },
+     {
+      "mes": 10,
+      "diarias": 3524897.3,
+      "pagamentos": 1868,
+      "servidores": 694,
+      "maior": 24564.0,
+      "passagens": 12157.38
+     },
+     {
+      "mes": 11,
+      "diarias": 4000658.5,
+      "pagamentos": 1846,
+      "servidores": 710,
+      "maior": 20469.5,
+      "passagens": 0
+     },
+     {
+      "mes": 12,
+      "diarias": 4603919.87,
+      "pagamentos": 2123,
+      "servidores": 729,
+      "maior": 25721.0,
+      "passagens": 120886.42
+     }
+    ]
+   },
+   "2026": {
+    "diarias": 21367967.76,
+    "passagens": 329130.11,
+    "pagamentos": 7641,
+    "servidores": 973,
+    "media_servidor": 21960.91,
+    "maior_servidor": 110271.0,
+    "top10_pct": 30.1,
+    "top10_n": 97,
+    "acima_100mil": 1,
+    "acima_60mil": 59,
+    "faixas": [
+     {
+      "de": 0,
+      "ate": 5000,
+      "servidores": 179,
+      "valor": 460536.4
+     },
+     {
+      "de": 5000,
+      "ate": 15000,
+      "servidores": 262,
+      "valor": 2474224.48
+     },
+     {
+      "de": 15000,
+      "ate": 30000,
+      "servidores": 284,
+      "valor": 6152341.18
+     },
+     {
+      "de": 30000,
+      "ate": 60000,
+      "servidores": 189,
+      "valor": 7913609.9
+     },
+     {
+      "de": 60000,
+      "ate": 100000,
+      "servidores": 58,
+      "valor": 4256984.8
+     },
+     {
+      "de": 100000,
+      "ate": null,
+      "servidores": 1,
+      "valor": 110271.0
+     }
+    ],
+    "maiores": [
+     110271.0,
+     91670.0,
+     89000.0,
+     88555.0,
+     88110.0,
+     86997.5,
+     84327.5,
+     82992.5,
+     82102.5,
+     81880.0
+    ],
+    "mensal": [
+     {
+      "mes": 1,
+      "diarias": 0.0,
+      "pagamentos": 0,
+      "servidores": 0,
+      "maior": 0.0,
+      "passagens": 0
+     },
+     {
+      "mes": 2,
+      "diarias": 940089.8,
+      "pagamentos": 345,
+      "servidores": 262,
+      "maior": 13350.0,
+      "passagens": 0
+     },
+     {
+      "mes": 3,
+      "diarias": 2053086.78,
+      "pagamentos": 817,
+      "servidores": 446,
+      "maior": 14418.0,
+      "passagens": 30036.82
+     },
+     {
+      "mes": 4,
+      "diarias": 1795228.3,
+      "pagamentos": 667,
+      "servidores": 433,
+      "maior": 13884.0,
+      "passagens": 12646.55
+     },
+     {
+      "mes": 5,
+      "diarias": 2502663.4,
+      "pagamentos": 878,
+      "servidores": 492,
+      "maior": 22161.0,
+      "passagens": 39386.52
+     },
+     {
+      "mes": 6,
+      "diarias": 669796.0,
+      "pagamentos": 300,
+      "servidores": 205,
+      "maior": 14907.5,
+      "passagens": 19741.46
+     },
+     {
+      "mes": 7,
+      "diarias": 2983119.3,
+      "pagamentos": 1038,
+      "servidores": 538,
+      "maior": 30705.0,
+      "passagens": 91186.17
+     },
+     {
+      "mes": 8,
+      "diarias": 3480268.3,
+      "pagamentos": 1281,
+      "servidores": 618,
+      "maior": 15575.0,
+      "passagens": 48392.75
+     },
+     {
+      "mes": 9,
+      "diarias": 3878676.88,
+      "pagamentos": 1186,
+      "servidores": 558,
+      "maior": 18423.0,
+      "passagens": 54410.77
+     },
+     {
+      "mes": 10,
+      "diarias": 2945957.0,
+      "pagamentos": 1081,
+      "servidores": 574,
+      "maior": 14017.5,
+      "passagens": 33329.07
+     },
+     {
+      "mes": 11,
+      "diarias": 119082.0,
+      "pagamentos": 48,
+      "servidores": 41,
+      "maior": 8232.5,
+      "passagens": 0
+     },
+     {
+      "mes": 12,
+      "diarias": 0.0,
+      "pagamentos": 0,
+      "servidores": 0,
+      "maior": 0.0,
+      "passagens": 0
+     }
+    ]
+   }
   }
  },
  "leitura": [
