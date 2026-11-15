@@ -36,6 +36,27 @@
 .dec .t{font-size:15px;font-weight:650;color:var(--ink);line-height:1.35}
 .dec .d{font-size:13.5px;color:var(--mute);line-height:1.45}
 .dec.urgente .q{color:#c0392b}
+/* organograma das regionais */
+.org{flex:1 1 0;min-height:300px;overflow:auto;display:flex;flex-direction:column;align-items:stretch;margin-top:14px}
+.org-topo{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.org-no{border-radius:10px;padding:8px 12px;font-size:14px;font-weight:650;color:#fff;background:#0c326f}
+.org-gov{background:#071d41}
+.org-co{all:unset;cursor:pointer;border-radius:10px;padding:9px 14px;background:var(--azul);color:#fff;flex:1;min-width:260px;display:flex;flex-direction:column;gap:2px}
+.org-co b{font-size:14px}.org-co small{font-size:13px;opacity:.9;font-weight:500}
+.org-co:hover,.org-co.sel{box-shadow:0 0 0 3px var(--azul-fundo)}
+.org-seta{color:var(--mute);font-size:18px}
+.org-desce{height:10px;margin:0 50%;border-left:2px solid var(--hair)}
+.org-grade{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;border-top:2px solid var(--hair);padding-top:10px}
+.org-ser{all:unset;cursor:pointer;display:flex;flex-direction:column;gap:1px;border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:var(--bg);padding-bottom:6px;min-width:0}
+.org-ser:hover,.org-ser.sel{border-color:var(--azul);box-shadow:0 0 0 2px var(--azul-fundo)}
+.org-cab{display:flex;flex-direction:column;padding:6px 10px;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.org-cab b{font-size:13.5px;line-height:1.25;overflow:hidden;text-overflow:ellipsis}.org-cab small{font-size:12.5px;opacity:.9}
+.org-v{font-size:18px;font-weight:780;color:var(--azul);padding:0 10px;letter-spacing:-.01em}
+.org-l{font-size:12.5px;color:var(--mute);padding:0 10px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:1100px){.org-grade{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.org-grade{grid-template-columns:repeat(2,minmax(0,1fr))}.org-seta{display:none}}
+/* linhas das provas com texto longo quebram em vez de passar da borda */
+.linha b{white-space:normal;text-align:right;min-width:0}
 /* letra maior para apresentação (somada ao zoom de telão) */
 svg text{font-size:15px}
 .mapa text{font-size:14px}

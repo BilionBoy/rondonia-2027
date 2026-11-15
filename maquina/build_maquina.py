@@ -28,14 +28,17 @@ SUBELEMENTOS = {
     "combustivel": {"33903001": "Combustíveis e lubrificantes automotivos", "33903955": "Gerenciamento de abastecimento"},
     "manutencao": {"33903919": "Manutenção e conservação de veículos", "33903039": "Material para manutenção de veículos"},
     "locacao": {"33903913": "Locação de veículos", "33903303": "Locação de meios de transporte (elemento 33)"},
+    "transporte": {"33903993": "Transporte escolar (serviço contratado pela SEDUC)"},
     "imovel": {"33903910": "Locação de imóveis (pessoa jurídica)", "33903615": "Locação de imóveis (pessoa física)",
                "33909244": "Aluguel de exercício anterior e indenização"},
 }
 # "Outros serviços": o subelemento não diz o que é; entra só o pagamento cuja nota tem histórico de frota ou de aluguel
 GENERICOS = {"33903999": "Outros serviços de terceiros (pelo histórico da nota)", "33903699": "Outros serviços de pessoa física (pelo histórico da nota)"}
-# Fora de propósito: transporte escolar (33903993, serviço de transporte de alunos) e combustível de aviação (33903002)
+# Fora: combustível de aviação (33903002) e aeronaves pagas como veículo (táxi aéreo, helicóptero)
 TEMA_DE = {cod: t for t, cods in SUBELEMENTOS.items() for cod in cods}
-NOME_TEMA = {"combustivel": "Combustível", "manutencao": "Manutenção de veículos", "locacao": "Locação de veículos", "imovel": "Aluguel de imóveis"}
+NOME_TEMA = {"combustivel": "Combustível", "manutencao": "Manutenção de veículos", "locacao": "Locação de veículos", "transporte": "Transporte escolar",
+             "imovel": "Aluguel de imóveis"}
+VEICULOS = ("combustivel", "manutencao", "locacao", "transporte")
 OUTROS_PODERES = {"ALE", "TJ", "FUJU", "MP", "FUNDIMPER", "FRBL", "TCE", "FDI/TC", "DPE", "FUNDEP", "FUNDEP/DPE"}
 RX_AVIACAO = re.compile(r"TAXI AEREO|AEROTAXI|AERO TAXI|HELICOPTER|HELISUL|AVIACAO|AERONAVE|AEROCLUBE|\bAIR\b")
 RX_OUTROS = re.compile(r"TRIBUNAL|ASSEMBLEIA|MINISTERIO PUBLICO|DEFENSORIA|PODER JUDICIARIO|JUSTICA DO ESTADO|FUNDO DE INFORMATIZACAO.*JUDIC")
@@ -170,7 +173,7 @@ def custeio(p26, p25, sigla, nomes, ate):
 
     veic = [p for p in a26 if tema(p) != "imovel"]
     imov = [p for p in a26 if tema(p) == "imovel"]
-    veiculos = {"orgaos": por_orgao({"combustivel", "manutencao", "locacao"}), "credores": por_credor(veic, True)[:60]}
+    veiculos = {"orgaos": por_orgao(set(VEICULOS)), "credores": por_credor(veic, True)[:60]}
     for c in veiculos["credores"]:
         if len(c["temas"]) == 1:
             c.pop("temas")
@@ -282,6 +285,16 @@ def rgf():
 def main():
     folha = ler("s8_folha_2026_10.json")
     regionais = ler("s8_regionais_2026.json")
+    # população de cada região (IBGE, Censo 2022) para o custo por habitante do organograma
+    series = ler("ibge/ro-populacao-censo2022.json")[0]["resultados"][0]["series"]
+    norm_m = lambda n: re.sub(r"[^A-Z]", "", re.sub(r"D'? ?OESTE|DO OESTE", "DOESTE", sem_acento(n)))  # noqa: E731
+    pop = {norm_m(x["localidade"]["nome"].replace(" - RO", "")): int(x["serie"]["2022"]) for x in series}
+    for u in regionais["unidades"]:
+        ms = [m for m in u.get("municipios") or [] if norm_m(m) in pop]
+        if len(ms) > 1 or u["codigo"] != "COOREG":
+            u["populacao"] = sum(pop[norm_m(m)] for m in ms)
+            u["municipios_sem_pop"] = [m for m in u.get("municipios") or [] if norm_m(m) not in pop]
+            u["custo_hab"] = round(u["total_2026"] / u["populacao"], 2) if u["populacao"] else None
     p26, m26 = pagamentos(2026)
     p25, _ = pagamentos(2025)
     sigla, nomes = siglas_por_codigo(p26 + p25)
@@ -295,12 +308,12 @@ def main():
     G["limites"] = {"alerta": 44.1, "prudencial": 46.55, "maximo": 49}
     comp = comparativo(p25, p26, sigla, ate)
     vencem, cartao = contratos_vencendo(ate.isoformat())
-    veic_ano = sum(C[t]["ano_2026"] for t in ("combustivel", "manutencao", "locacao"))
+    veic_ano = sum(C[t]["ano_2026"] for t in VEICULOS)
     data_pag = ate.strftime("%d/%m/%Y")
     M = {
         "hoje": date.today().isoformat(),
         "coleta": {"folha": "outubro de 2026", "pagamentos": data_pag, "mes_pagamentos": ate.month, "rgf": "agosto de 2026 (2º quadrimestre)"},
-        "resumo": {"veiculos_ano": round(veic_ano, 2), "veiculos_pago": round(sum(C[t]["pago_2026"] for t in ("combustivel", "manutencao", "locacao")), 2),
+        "resumo": {"veiculos_ano": round(veic_ano, 2), "veiculos_pago": round(sum(C[t]["pago_2026"] for t in VEICULOS), 2),
                    "imoveis_ano": C["imovel"]["ano_2026"], "imoveis_contratos": imoveis["locadores"], "imoveis_orgaos": imoveis["orgaos_total"]},
         "folha": {**{k: folha[k] for k in ("total", "grupos", "faixas", "cds", "aposentadoria")}, "rgf": G},
         "unidades": folha["unidades"],
@@ -309,7 +322,7 @@ def main():
         "regionais": {k: regionais[k] for k in ("total", "tipos", "projecao", "unidades")},
         "leitura": [
             f"<b>Folha:</b> {fmt(G['bruta'])} em 12 meses, pelo Relatório de Gestão Fiscal do Executivo; outubro de 2026 teve {fmt(folha['total']['bruto'])} brutos para {milhar(folha['total']['matriculas'])} matrículas.",
-            f"<b>Veículos:</b> {fmt(veic_ano)} em 2026 com combustível, locação e manutenção (pago até {data_pag} e projeção até dezembro). Em 2025 foram {fmt(sum(C[t]['anos']['2025'] for t in ('combustivel', 'manutencao', 'locacao')))}.",
+            f"<b>Veículos:</b> {fmt(veic_ano)} em 2026 com combustível, locação, manutenção e transporte escolar (pago até {data_pag} e projeção até dezembro). Em 2025 foram {fmt(sum(C[t]['anos']['2025'] for t in VEICULOS))}.",
             f"<b>Imóveis:</b> {imoveis['locadores']} imóveis alugados por {imoveis['orgaos_total']} órgãos, {fmt(C['imovel']['ano_2026'])} em 2026.",
             f"<b>Regionais:</b> as 10 secretarias executivas regionais e a coordenação custam {fmt(regionais['total']['total_2026'])} em 2026; {fmt(regionais['projecao']['Total']['total'])} de 2027 a 2030 se nada mudar.",
             "Só o Poder Executivo. Legislativo, Judiciário, Ministério Público, TCE e Defensoria ficam de fora.",
@@ -331,7 +344,7 @@ def main():
             "Veículos e imóveis: pagamentos (ordens bancárias) do Executivo pelo subelemento da despesa: " +
             "; ".join(f"{NOME_TEMA[t].lower()} = " + ", ".join(f"{c[:1]}.{c[1:2]}.{c[2:4]}.{c[4:6]}.{c[6:]} ({n.lower()})" for c, n in cods.items()) for t, cods in SUBELEMENTOS.items()) +
             ". Em outros serviços (3.3.90.39.99 e 3.3.90.36.99) entra só o pagamento cuja nota tem histórico de combustível, manutenção, locação de veículo ou aluguel.",
-            "Fora da conta: transporte escolar (3.3.90.39.93, serviço de transporte de alunos), combustível de aviação (3.3.90.30.02) e locação ou manutenção de aeronaves (táxi aéreo e helicóptero), mesmo quando pagas no subelemento de veículo.",
+            "Fora da conta: combustível de aviação (3.3.90.30.02) e locação ou manutenção de aeronaves (táxi aéreo e helicóptero), mesmo quando pagas no subelemento de veículo. O transporte escolar (3.3.90.39.93) entra em veículos: é serviço de transporte contratado e pago pelo Estado (SEDUC).",
             f"2026 inteiro: pago de 1º/01 a {data_pag} mais a projeção do que falta, pela média mensal paga de agosto a outubro.",
             "Imóveis alugados: cada locador (CPF ou CNPJ) pago por um órgão conta um imóvel. Quem aluga dois imóveis ao mesmo órgão conta um, então o número é piso.",
             "Pessoa física aparece somada, sem nome.",
@@ -391,9 +404,9 @@ def painel(M, linhas_pag, meta_pag):
                 "coletado_em": meta_pag["coletado_em"], "colunas": col_pag}
     U = M["unidades"]
     tabelas = {
-        "veiculos-2026": {**base_tab, "titulo": "Pagamentos de 2026 com veículos (combustível, locação e manutenção), Poder Executivo", "curto": "Veículos",
-                          "consulta": "Pagamentos de fornecedores, 01/01/2026 a hoje, mês a mês; subelementos de combustível, gerenciamento de abastecimento, locação e manutenção de veículos",
-                          "nota": "Pessoa física aparece sem nome. Transporte escolar e aeronaves ficam de fora.",
+        "veiculos-2026": {**base_tab, "titulo": "Pagamentos de 2026 com veículos (combustível, locação, manutenção e transporte escolar), Poder Executivo", "curto": "Veículos",
+                          "consulta": "Pagamentos de fornecedores, 01/01/2026 a hoje, mês a mês; subelementos de combustível, gerenciamento de abastecimento, locação, manutenção de veículos e transporte escolar",
+                          "nota": "Pessoa física aparece sem nome. Aeronaves e combustível de aviação ficam de fora.",
                           "linhas": [r for r in linhas_pag if r[4] != "Aluguel de imóveis"]},
         "imoveis-2026": {**base_tab, "titulo": "Pagamentos de aluguel de imóveis em 2026, Poder Executivo", "curto": "Imóveis",
                          "consulta": "Pagamentos de fornecedores, 01/01/2026 a hoje, mês a mês; subelementos de locação de imóveis (pessoa jurídica e física) e aluguel de exercício anterior",

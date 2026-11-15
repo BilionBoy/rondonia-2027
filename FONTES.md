@@ -136,6 +136,8 @@ Cuidados:
 - **Elemento de 2026 em `s5_elemento_por_nota.json` não serve:** foi coletado com `?id=` anteriores à recarga de 15/10, e ids reaproveitados levam a outras notas.
 - **Em 14/11/2026 a lista de empenhos de 2026 estava em recarga** (só jan-abr, 22.689 notas contra 62.988 em 30/10). Os pagamentos de fornecedores estavam completos.
 - **Pago de 2026 pelas notas de 2026 subestima o aluguel:** parte é paga com notas de 2025 (restos a pagar). Por isso vale a ordem bancária do ano, qualquer que seja o ano da nota.
+- **Transporte escolar entra em veículos** (3.3.90.39.93, R$ 42,6 mi pagos em 2026 até 12/11): é serviço de transporte de alunos contratado e pago pelo Estado (SEDUC). Ficam fora só aeronaves (táxi aéreo, helicóptero, peças e combustível de aviação) e os outros Poderes.
+- **Organograma das regionais:** custo por habitante = custo estimado de 2026 da regional ÷ população dos seus municípios (IBGE, Censo 2022, `dados-fonte/ibge/ro-populacao-censo2022.json`); os 52 municípios casam pelo nome.
 - **Empenhado de cartão de combustível e manutenção** fica abaixo do real (as notas estimativas não somam o reforço; ver seção 5). Por isso o pago.
 
 ## 3. Dados das 9 etapas (coleta de 07/10/2026)

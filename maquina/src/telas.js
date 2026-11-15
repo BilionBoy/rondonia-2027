@@ -10,9 +10,10 @@ const LK = {
   pag: ["Pagamentos de fornecedores no Portal da Transparência", PORTAL_PAG],
   contratos: ["Contratos no Portal da Transparência", "https://transparencia.ro.gov.br/Contratos"],
 };
-const COR_TEMA = {"Combustível": "var(--c1)", "Locação de veículos": "var(--c2)", "Manutenção de veículos": "var(--c3)", "Aluguel de imóveis": "var(--c4)"};
-const CHAVE_TEMA = {"Combustível": "combustivel", "Locação de veículos": "locacao", "Manutenção de veículos": "manutencao", "Aluguel de imóveis": "imovel"};
+const COR_TEMA = {"Combustível": "var(--c1)", "Locação de veículos": "var(--c2)", "Manutenção de veículos": "var(--c3)", "Transporte escolar": "var(--c6)", "Aluguel de imóveis": "var(--c4)"};
+const CHAVE_TEMA = {"Combustível": "combustivel", "Locação de veículos": "locacao", "Manutenção de veículos": "manutencao", "Transporte escolar": "transporte", "Aluguel de imóveis": "imovel"};
 const NOME_CHAVE = Object.fromEntries(Object.entries(CHAVE_TEMA).map(([n, k]) => [k, n]));
+const CURTO = {"Combustível": "Combustível", "Locação de veículos": "Locação", "Transporte escolar": "Transporte escolar", "Manutenção de veículos": "Manutenção", "Aluguel de imóveis": "Aluguel"};
 const claro = cor => `color-mix(in srgb, ${cor} 35%, transparent)`;
 const GRUPOS = F.grupos.filter(g => g.grupo !== "inativo");
 const COR_GRUPO = {efetivo: "var(--c1)", militar: "var(--c5)", comissionado: "var(--c3)", temporario: "var(--c2)", cedido: "var(--c4)", apoio: "var(--c6)", judicial: "var(--cinza)", inativo: "var(--cinza)"};
@@ -255,20 +256,19 @@ const provaTema = (k, extra = []) => {
 };
 
 let veicTema = 0, veicPor = 0;
-const TEMAS_V = ["Combustível", "Locação de veículos", "Manutenção de veículos"];
+const TEMAS_V = ["Combustível", "Locação de veículos", "Transporte escolar", "Manutenção de veículos"];
 function telaVeiculos() {
   const temas = veicTema ? [TEMAS_V[veicTema - 1]] : TEMAS_V, ks = temas.map(t => CHAVE_TEMA[t]);
   const ano = ks.reduce((a, k) => a + C[k].ano_2026, 0), pago = ks.reduce((a, k) => a + C[k].pago_2026, 0), a25 = ks.reduce((a, k) => a + C[k].anos["2025"], 0);
   const cartao = pagoA(/PRIME CONSULT|UZZIPAY|LINK CARD|NEO CONSULT/i);
   const ls = PV.filter(r => temas.includes(r[4]));
-  esq({kicker: "Veículos do Estado · Poder Executivo", titulo: "Quanto custam os carros do Estado em 2026",
-    n: mi(ano), s: `em 2026 com ${veicTema ? temas[0].toLowerCase() : "combustível, locação e manutenção"}: <b>${mi(pago)}</b> pagos até ${DATA_PAG} e projeção até dezembro<br>Em 2025, o ano inteiro: <b>${mi(a25)}</b>`,
+  esq({kicker: "Veículos do Estado · Poder Executivo", titulo: "Quanto o Estado gasta com veículos em 2026",
+    n: mi(ano), s: `em 2026 com ${veicTema ? temas[0].toLowerCase() : "combustível, locação, transporte escolar e manutenção"}: <b>${mi(pago)}</b> pagos até ${DATA_PAG} e projeção até dezembro<br>Em 2025, o ano inteiro: <b>${mi(a25)}</b>`,
     provaN: pr("Veículos em 2026", mi(ano), `soma de ${temas.join(", ").toLowerCase()}`, [["Pago até " + DATA_PAG, "R$ " + br(pago, 2)], ["Projeção nov e dez", mi(ano - pago)], ["Pagamentos", br(ls.length)],
-      ["Fora da conta", "transporte escolar (3.3.90.39.93), combustível de aviação e aeronaves, e os outros Poderes"]], LK.pag),
-    estat: [...TEMAS_V.map(t => [t, mi(C[CHAVE_TEMA[t]].ano_2026), provaTema(CHAVE_TEMA[t])]),
-      ["Cartões (Prime, Uzzipay e outras)", `${mi(cartao)} pagos`, pr("Gerenciadoras de cartão", mi(cartao), `pago em 2026 até ${DATA_PAG}, só Executivo`, [["Prime", mi(pagoA(/PRIME CONSULT/i))], ["Uzzipay", mi(pagoA(/UZZIPAY/i))], ["Link Card e Neo", mi(pagoA(/LINK CARD|NEO CONSULT/i))],
-        ["Por que é mais que o empenhado", "Nas notas estimativas de cartão o portal não soma o reforço no empenhado; o pago soma."]], LK.pag, M.cartao.map(notaContrato))]],
-    alterna: ["Mostrar:", ["Tudo", ...TEMAS_V], veicTema, i => { veicTema = i; telaVeiculos(); }],
+      ["Transporte escolar", "entra: é serviço de transporte de alunos contratado e pago pelo Estado (SEDUC, subelemento 3.3.90.39.93)"],
+      ["Fora da conta", "aviões e helicópteros (táxi aéreo, peças e combustível de aviação) e os outros Poderes (Assembleia, Defensoria, MP e TCE)"]], LK.pag),
+    estat: [...TEMAS_V.map(t => [t, mi(C[CHAVE_TEMA[t]].ano_2026), provaTema(CHAVE_TEMA[t])])],
+    alterna: ["Mostrar:", ["Tudo", ...TEMAS_V.map(t => CURTO[t])], veicTema, i => { veicTema = i; telaVeiculos(); }],
     legenda: legenda(temas.map(t => [t, COR_TEMA[t]]).concat([["projeção (nov e dez)", "var(--hair)"]])),
     dicaUso: `Pago a cada mês de 2026; nov e dez em tom claro completam o ano pela média de agosto a outubro. Clique num mês para ver quem gastou.`,
     fonte: `Fonte: Portal da Transparência RO, Pagamentos de fornecedores, 01/01 a ${DATA_PAG}, pelo subelemento da despesa`, dados: ["veiculos-2026", "contratos-vencem"], padrao: () => provasPag(ls)});
@@ -322,7 +322,7 @@ function telaImoveis() {
 
 // ---------- 5. 2025 × 2026 no mesmo período
 let compVer = 0;
-const TEMAS_C = ["combustivel", "locacao", "manutencao", "imovel"];
+const TEMAS_C = ["combustivel", "locacao", "transporte", "manutencao", "imovel"];
 const seta = (a, b) => { if (!a) return "—"; const p = 100 * (b - a) / a, cor = Math.abs(p) < 1 ? "var(--mute)" : p > 0 ? "var(--c3)" : "var(--c2)";
   return `<span style="color:${cor}">${Math.abs(p) < 1 ? `≈ praticamente igual (${p >= 0 ? "+" : "−"}${br(Math.abs(p), 1)}%)` : `${p > 0 ? "▲" : "▼"} ${br(Math.abs(p), 0)}% a ${p > 0 ? "mais" : "menos"}`}</span>`; };
 const fraseVar = (a, b) => { const p = 100 * (b - a) / a; return Math.abs(p) < 3 ? "quase o mesmo que" : `${br(Math.abs(p), 0)}% a ${p > 0 ? "mais" : "menos"} que`; };
@@ -335,15 +335,15 @@ function telaComparativo() {
   const provaTipo = k => pr(`${NOME_CHAVE[k]}: 2025 × 2026`, var_(...v(k)), `pago de ${periodo}, em cada ano, só Executivo`,
     [["2025", mi(v(k)[0])], ["2026", mi(v(k)[1])], ["Diferença", (v(k)[1] >= v(k)[0] ? "+" : "−") + mi(Math.abs(v(k)[1] - v(k)[0]))],
       ["Estimativa do ano inteiro", `2025: ${mi(C[k].anos["2025"])} · 2026: ${mi(C[k].ano_2026)} (com projeção de nov e dez)`]], LK.pag);
-  esq({kicker: `Comparação justa: ${periodo}, nos dois anos`, titulo: `Em 2026 o Estado gastou ${fraseVar(s25, s26)} 2025 com carros e aluguel`,
-    n: mi(s26), s: `pagos em 2026 com combustível, locação, manutenção e aluguel<br>No mesmo período de 2025 foram <b>${mi(s25)}</b> · ${seta(s25, s26)}`,
+  esq({kicker: `Comparação justa: ${periodo}, nos dois anos`, titulo: `Em 2026 o Estado gastou ${fraseVar(s25, s26)} 2025 com veículos e aluguel`,
+    n: mi(s26), s: `pagos em 2026 com combustível, locação, transporte escolar, manutenção e aluguel<br>No mesmo período de 2025 foram <b>${mi(s25)}</b> · ${seta(s25, s26)}`,
     provaN: pr("Como a comparação é feita", mi(s26), "mesmo período, mesma régua", [["Período", `${periodo} de 2025 e de 2026`], ["2025", mi(s25)], ["2026", mi(s26)],
       ["Régua", "pagamentos (ordens bancárias) pelo subelemento da despesa, só Executivo"],
       ["Por que não o ano inteiro", "2026 ainda não terminou. O ano inteiro de 2026 só existe como estimativa (com projeção de novembro e dezembro) e aparece dentro de cada tipo de gasto."]], LK.pag),
-    estat: TEMAS_C.map(k => [NOME_CHAVE[k], `${seta(...v(k))}<div style="font-size:13px;font-weight:500;color:var(--mute);margin-top:2px">${mi(v(k)[0])} → ${mi(v(k)[1])}</div>`, provaTipo(k)]),
+    estat: TEMAS_C.map(k => [CURTO[NOME_CHAVE[k]], `${seta(...v(k))}<div style="font-size:13px;font-weight:500;color:var(--mute);margin-top:2px">${mi(v(k)[0])} → ${mi(v(k)[1])}</div>`, provaTipo(k)]),
     alterna: ["Ver:", ["Por tipo de gasto", "Mês a mês"], compVer, i => { compVer = i; telaComparativo(); }],
     legenda: legenda([["2025", "var(--cinza)"], ["2026", "var(--c1)"]]),
-    dicaUso: compVer ? `Quanto já tinha sido pago até o fim de cada mês, somados os quatro tipos de gasto. Em novembro, os dois anos param no dia ${CP.ate.slice(0, 2)}.`
+    dicaUso: compVer ? `Quanto já tinha sido pago até o fim de cada mês, somados os cinco tipos de gasto. Em novembro, os dois anos param no dia ${CP.ate.slice(0, 2)}.`
       : `Cinza é 2025 e azul é 2026, sempre de ${periodo}. Clique numa barra para ver a conta. À direita, os órgãos que mais mudaram.`,
     fonte: `Fonte: Portal da Transparência RO, Pagamentos de fornecedores de 2025 e 2026, pelo subelemento da despesa`, dados: ["veiculos-2026", "imoveis-2026"], padrao: () => provasComp(os)});
   if (compVer === 0) colunas($("#graf"), TEMAS_C.flatMap(k => [
@@ -382,24 +382,57 @@ function telaRegionais() {
       ["CDS por mês", mi(T.cds_mes), provaR("Cargos em comissão das regionais", mi(T.cds_mes) + "/mês", Object.entries(M.regionais.unidades.reduce((a, u) => { Object.entries(u.cds || {}).forEach(([k, v]) => a[k] = (a[k] || 0) + v); return a; }, {})).map(([k, v]) => [k, br(v)]))],
       ["Veículos", `${br(T.veic_proprios + T.veic_locados)} · ${br(T.veic_locados)} locados`, provaR("Veículos das regionais", br(T.veic_proprios + T.veic_locados), [["Próprios (SUGESP)", br(T.veic_proprios)], ["Locados (S10)", br(T.veic_locados)], ["Locação em 2026", mi(R.tipos["Locação de veículos"].total_2026)]])],
       ["2027", mi(P["2027"]), provaR("Projeção 2027 a 2030", mi(P.total), [["2027", mi(P["2027"])], ["2028", mi(P["2028"])], ["2029", mi(P["2029"])], ["2030", mi(P["2030"])], ["Correção", "IPCA do Focus de 09/11/2026: 5,22%, 4,90%, 4,00% e 4,00%"]])]],
-    alterna: ["Ver:", ["Mapa", "Por tipo de despesa", "2026 a 2030"], regVer, i => { regVer = i; telaRegionais(); }],
-    legenda: regVer === 0 ? legenda([["mais caro", "var(--c1)"], ["mais barato", "color-mix(in srgb, var(--c1) 22%, transparent)"]]) : "",
-    dicaUso: regVer === 0 ? "Cada região com seus municípios; a cor mais forte é a de maior custo em 2026. Clique numa região. A coordenação (COOREG) fica em Porto Velho." :
-      regVer === 1 ? "Custo estimado de 2026 por tipo de despesa, somadas as 11 unidades." : "Base de 2026 corrigida pelo IPCA do Focus de 09/11/2026, mantidos quadro, estrutura e contratos.",
-    fonte: "Fonte: planilha de execução das regionais (v04, 13/11/2026), sobre o SIGEF da SUGESP (UG 110009), posição 12/11/2026", dados: ["regionais"], padrao: () => provasRegionais(U, regSel)});
-  if (regVer === 0) mapa(U);
-  else if (regVer === 1) barras($("#graf"), TIPOS_R.map((k, i) => ({rot: k.replace(" do imóvel", ""), partes: [{v: R.tipos[k]?.total_2026 || 0, cor: COR_R[i]}], dir: mi(R.tipos[k]?.total_2026), dica: [k, [["2026", mi(R.tipos[k]?.total_2026)], ["Por mês", mi(R.tipos[k]?.mensal)]]]})));
+    alterna: ["Ver:", ["Organograma", "Mapa", "Por tipo de despesa", "2026 a 2030"], regVer, i => { regVer = i; telaRegionais(); }],
+    legenda: regVer <= 1 ? legenda([["mais caro em 2026", "var(--c1)"], ["mais barato", "color-mix(in srgb, var(--c1) 22%, transparent)"]]) : "",
+    corpo: regVer === 0 ? `<div class="org" id="org"></div>` : undefined,
+    dicaUso: ["Quem responde a quem. Cor mais forte, custo maior em 2026. Clique numa caixa para ver os números e os municípios.",
+      "Cada região com seus municípios; a cor mais forte é a de maior custo em 2026. Clique numa região. A coordenação (COOREG) fica em Porto Velho.",
+      "Custo estimado de 2026 por tipo de despesa, somadas as 11 unidades.", "Base de 2026 corrigida pelo IPCA do Focus de 09/11/2026, mantidos quadro, estrutura e contratos."][regVer],
+    fonte: "Fonte: planilha de execução das regionais (v04, 13/11/2026), sobre o SIGEF da SUGESP (UG 110009), posição 12/11/2026 · população: IBGE, Censo 2022", dados: ["regionais"], padrao: () => provasRegionais(U, regSel)});
+  if (regVer === 0) organograma(U);
+  else if (regVer === 1) mapa(U);
+  else if (regVer === 2) barras($("#graf"), TIPOS_R.map((k, i) => ({rot: k.replace(" do imóvel", ""), partes: [{v: R.tipos[k]?.total_2026 || 0, cor: COR_R[i]}], dir: mi(R.tipos[k]?.total_2026), dica: [k, [["2026", mi(R.tipos[k]?.total_2026)], ["Por mês", mi(R.tipos[k]?.mensal)]]]})));
   else colunas($("#graf"), ["2026", "2027", "2028", "2029", "2030"].map(a => ({rot: a, partes: [{v: R.projecao.Total[a], cor: a === "2026" ? "var(--c1)" : claro("var(--c1)")}], topo: mi(R.projecao.Total[a]), destaque: a === "2026"})));
+}
+// organograma: a hierarquia da LC 965/2017, art. 87, II, com os números de cada unidade
+const FUNCOES_SER = ["agentes de transformação regional", "indução do engajamento da sociedade civil", "auxílio às Secretarias de Estado na região",
+  "apoio técnico aos municípios e às organizações comunitárias", "apoio aos municípios na implantação de políticas públicas",
+  "representação do Governo nas Regiões de Planejamento e Gestão", "apoio à SEPOG no Seminário Anual de Avaliação", "colaboração no Plano de Desenvolvimento Estadual Sustentável (PDES)"];
+function organograma(U) {
+  const ser = R.unidades.filter(u => u.codigo !== "COOREG"), co = R.unidades.find(u => u.codigo === "COOREG");
+  const vs = ser.map(u => u.total_2026), max = Math.max(...vs), min = Math.min(...vs);
+  const fundo = u => `color-mix(in srgb, var(--c1) ${(22 + 78 * (u.total_2026 - min) / (max - min || 1)).toFixed(0)}%, var(--bg))`;
+  const claroTxt = u => (u.total_2026 - min) / (max - min || 1) > .45;
+  const caixa = u => `<button type="button" class="org-ser" data-cod="${u.codigo}">
+      <span class="org-cab" style="background:${fundo(u)};color:${claroTxt(u) ? "#fff" : "var(--ink)"}"><b>${esc(u.nome.replace(/\s*\(.*/, ""))} · ${esc(u.sede)}</b></span>
+      <span class="org-v">${mi(u.total_2026)}</span>
+      <span class="org-l">${br(u.servidores)} servidores · ${br(u.veic_proprios + u.veic_locados)} veíc.</span>
+      <span class="org-l">R$ ${br(u.custo_hab || 0, 2)} por habitante</span></button>`;
+  $("#org").innerHTML = `<div class="org-topo">
+      <div class="org-no org-gov">Governador do Estado</div><span class="org-seta">→</span>
+      <div class="org-no org-gab">Gabinete do Governador</div><span class="org-seta">→</span>
+      <button type="button" class="org-no org-co" data-cod="COOREG"><b>Coordenadoria-Geral das Regionais (COOREG)</b>
+        <small>CDS-14 · ${br(co.servidores)} servidores · ${br(co.veic_proprios + co.veic_locados)} veículos · ${mi(co.total_2026)} em 2026</small></button></div>
+    <div class="org-desce"></div>
+    <div class="org-grade">${ser.map(caixa).join("")}</div>`;
+  $("#org").querySelectorAll("[data-cod]").forEach(b => b.onclick = () => {
+    $("#org").querySelectorAll("[data-cod]").forEach(x => x.classList.toggle("sel", x === b));
+    regSel = R.unidades.find(u => u.codigo === b.dataset.cod); provasRegionais(U, regSel);
+  });
 }
 function provasRegionais(U, sel) {
   const max = U[0].total_2026;
-  const lista = U.map(u => ({nome: u.codigo === "COOREG" ? "COOREG · Coordenação-Geral" : `${u.nome.replace(/\s*\(.*/, "")} · ${u.sede}`, sub: `${br(u.servidores)} servidores · ${br(u.veic_proprios + u.veic_locados)} veículos · ${u.municipios?.length > 1 ? br(u.municipios.length) + " municípios" : "atuação estadual"}`,
+  const lista = U.map(u => ({nome: u.codigo === "COOREG" ? "COOREG · Coordenação-Geral" : `${u.nome.replace(/\s*\(.*/, "")} · ${u.sede}`, sub: `${br(u.servidores)} servidores · ${br(u.veic_proprios + u.veic_locados)} veículo${u.veic_proprios + u.veic_locados === 1 ? "" : "s"} · ${u.municipios?.length > 1 ? br(u.municipios.length) + " municípios" : "atuação estadual"}`,
     valor: mi(u.total_2026), barra: u.total_2026 / max,
-    linhas: [...TIPOS_R.filter(k => u.tipos[k]?.total_2026).map(k => [k, `${mi(u.tipos[k].total_2026)} · ${mi(u.tipos[k].mensal)}/mês`]), ["2027 a 2030", mi(Object.values(u.projecao).reduce((a, p) => a + p["2027"] + p["2028"] + p["2029"] + p["2030"], 0))],
+    linhas: [["Titular", u.titular || ""], ...(u.populacao ? [["População da região (Censo 2022)", br(u.populacao)], ["Custo por habitante em 2026", "R$ " + br(u.custo_hab, 2)]] : []),
+      ...Object.entries(u.cds || {}).length ? [["Cargos em comissão", Object.entries(u.cds).map(([k, v]) => `${v}× ${k}`).join(", ")]] : [],
+      ...TIPOS_R.filter(k => u.tipos[k]?.total_2026).map(k => [k, `${mi(u.tipos[k].total_2026)} · ${mi(u.tipos[k].mensal)}/mês`]), ["2027 a 2030", mi(Object.values(u.projecao).reduce((a, p) => a + p["2027"] + p["2028"] + p["2029"] + p["2030"], 0))],
       ...(u.municipios?.length > 1 ? [["Municípios", u.municipios.join(", ")]] : [])], link: LK_REG}));
   const i = sel ? U.indexOf(sel) : -1;
   if (i >= 0) mostraProvas(lista[i].nome, [lista[i]], {filtro: sel.codigo, limpar: () => { regSel = null; telaRegionais(); }, abrir: 0});
-  else mostraProvas("As 11 unidades, da mais cara para a mais barata em 2026. Clique para ver por tipo de despesa.", lista, {limite: 11});
+  else mostraProvas("As 11 unidades, da mais cara para a mais barata em 2026, e o que a lei manda as regionais fazerem. Clique para abrir.",
+    [...lista, pr("O que as regionais fazem (LC 965/2017, art. 90, parágrafo único)", "", "funções comuns às dez secretarias executivas regionais, em síntese",
+      FUNCOES_SER.map((f, i) => [["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][i], f]).concat([["Vínculo", "subordinadas ao Gabinete do Governador (art. 87, II); sem unidade orçamentária própria: a SUGESP paga"]]), LK_REG)], {limite: 12});
 }
 function mapa(U) {
   const cont = $("#graf"); cont.innerHTML = "";
