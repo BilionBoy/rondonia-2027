@@ -159,17 +159,18 @@ O endereço `?foto` desliga as animações. `&tipo=N`, `&mun=N`, `&org=SIGLA`, `
 
 ## Sexta aba (painel): "Custo da máquina" (14/11/2026, para a equipe de transição)
 
-Quanto custa manter o Executivo funcionando, em seis visões: resumo, folha de pagamento, servidores por órgão, veículos (combustível, manutenção e locação), imóveis alugados e secretarias executivas regionais. Também é a tela 12 do Observatório no SIPRE (`/observatorio/custo-da-maquina`).
+Quanto custa manter o Executivo funcionando, em 11 etapas: o que decidir, folha, servidores, custo de cada secretaria, veículos (combustível, manutenção, locação, transporte escolar e ambulâncias), imóveis alugados, contas e apoio (energia, água, telefone e internet, correios, vigilância, limpeza, manutenção de prédios, diárias e passagens), estradas (mapa 3D), 2025 × 2026, regionais e o organograma das regionais. Também é a tela 12 do Observatório no SIPRE (`/observatorio/custo-da-maquina`; versão mais antiga, sem as etapas de 15/11).
 
 - **Folha:** `maquina/extrai_folha.py` lê a planilha da SEGEP de outubro/2026 (`../quadro-servidores/`, versão "Atualizado") e grava só totais em `dados-fonte/s8_folha_2026_10.json`. Precisa de `openpyxl`. O anual oficial vem do RGF (`rgf_executivo_2026_q2_siconfi.json`).
 - **Veículos e imóveis:** `maquina/coleta_pagamentos.py 2026 2025` baixa todas as ordens bancárias do Portal (Pagamentos de fornecedores), que trazem o **subelemento** da despesa. É o mesmo dado do extrato do SIGEF, em fonte pública. Rode com o IPv4 forçado: `python3 -u ../estudos/dossies/rondonia-rural-show/scripts/rodar_v4.py maquina/coleta_pagamentos.py 2026 2025`.
 - **Regionais:** `maquina/extrai_regionais.py` lê a planilha de execução das regionais (v04, SIGEF da SUGESP).
+- **Estradas:** `maquina/coleta_estradas.py` lê o Geoportal do DER-RO (`https://geo.der.ro.gov.br`, página pública de uns 40 MB com os dados embutidos) e grava `dados-fonte/s8_estradas.json` (traçado simplificado, pontes, trechos, somas por município e residência). A cópia integral fica em `dados-fonte/der/` (fora do Git). O mapa 3D usa MapLibre (unpkg), satélite Sentinel-2 cloudless 2016 da EOX (CC BY 4.0) e relevo Terrain Tiles da AWS; sem internet ou sem WebGL, cai sozinho num mapa desenhado.
 - **Para gerar:** `python3 maquina/build_maquina.py`. Grava:
   - `maquina/dados.json`;
-  - `esbocos/custo-da-maquina.html`: **o arquivo único para entregar**, no modelo das abas do painel (trilha de 6 etapas, "As provas" e "Ver os dados de origem" com busca e CSV, mapa das regionais). Usa o visual de `convenios/src/_base.*` e o modelo em `maquina/src/painel.html`;
+  - `esbocos/custo-da-maquina.html`: **o arquivo único para entregar**, no modelo das abas do painel (trilha de 11 etapas, "As provas" e "Ver os dados de origem" com busca e CSV, mapa das regionais). Usa o visual de `convenios/src/_base.*` e o modelo em `maquina/src/painel.html`;
   - `esbocos/maquina.html` (versão no visual do Observatório);
   - `maquina/sipre/`, que `maquina/copiar_para_sipre.sh` leva ao SIPRE.
 - **Não vai para `site/`** sem decisão expressa: a base de pessoal veio como restrita, mesmo que a tela só mostre totais.
 - `maquina/custeio.py` é a classificação das notas de 2023 a 2026 pelo histórico. Ficou como conferência; a tela usa os pagamentos por subelemento.
 
-Regras e fontes estão na própria tela (visão "Método e fontes") e em [FONTES.md](FONTES.md), seção 2f.
+Cada número abre a própria prova com o link oficial (a etapa "Fontes" saiu em 15/11). Regras em [FONTES.md](FONTES.md), seção 2f.

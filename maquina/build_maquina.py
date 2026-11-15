@@ -29,6 +29,18 @@ SUBELEMENTOS = {
     "manutencao": {"33903919": "Manutenção e conservação de veículos", "33903039": "Material para manutenção de veículos"},
     "locacao": {"33903913": "Locação de veículos", "33903303": "Locação de meios de transporte (elemento 33)"},
     "transporte": {"33903993": "Transporte escolar (serviço contratado pela SEDUC)"},
+    "ambulancia": {"33903961": "Socorro e salvamento: remoção de pacientes por ambulância (SESAU)"},
+    # contas de consumo, serviços de apoio e viagens: o custo de manter a máquina funcionando (conferido pelos credores e históricos)
+    "energia": {"33903943": "Energia elétrica"},
+    "agua": {"33903944": "Água e esgoto", "33913944": "Água e esgoto (CAERD, intraorçamentário)"},
+    "telecom": {"33904005": "Internet e comunicação de dados", "33904006": "Telefonia", "33903958": "Telefonia"},
+    "correios": {"33903974": "Correios (pacote de serviços e cargas)", "33903947": "Correios"},
+    "vigilancia": {"33903977": "Vigilância e segurança patrimonial", "33903705": "Vigilância ostensiva (locação de mão de obra)"},
+    "limpeza": {"33903978": "Limpeza e conservação", "33903703": "Limpeza e conservação (locação de mão de obra)"},
+    "predial": {"33903916": "Manutenção e conservação de prédios"},
+    "maoobra": {"33903701": "Apoio administrativo, técnico e operacional (mão de obra)"},
+    "diarias": {"33901414": "Diárias (civil)", "33901514": "Diárias (militar)"},
+    "passagens": {"33903301": "Passagens e despesas com locomoção"},
     "imovel": {"33903910": "Locação de imóveis (pessoa jurídica)", "33903615": "Locação de imóveis (pessoa física)",
                "33909244": "Aluguel de exercício anterior e indenização"},
 }
@@ -37,8 +49,24 @@ GENERICOS = {"33903999": "Outros serviços de terceiros (pelo histórico da nota
 # Fora: combustível de aviação (33903002) e aeronaves pagas como veículo (táxi aéreo, helicóptero)
 TEMA_DE = {cod: t for t, cods in SUBELEMENTOS.items() for cod in cods}
 NOME_TEMA = {"combustivel": "Combustível", "manutencao": "Manutenção de veículos", "locacao": "Locação de veículos", "transporte": "Transporte escolar",
-             "imovel": "Aluguel de imóveis"}
-VEICULOS = ("combustivel", "manutencao", "locacao", "transporte")
+             "ambulancia": "Ambulâncias", "imovel": "Aluguel de imóveis",
+             "energia": "Energia elétrica", "agua": "Água e esgoto", "telecom": "Telefone e internet", "correios": "Correios",
+             "vigilancia": "Vigilância", "limpeza": "Limpeza", "predial": "Manutenção de prédios", "maoobra": "Mão de obra de apoio",
+             "diarias": "Diárias", "passagens": "Passagens"}
+VEICULOS = ("combustivel", "manutencao", "locacao", "transporte", "ambulancia")
+CONTAS, APOIO, VIAGENS = ("energia", "agua", "telecom", "correios"), ("vigilancia", "limpeza", "predial", "maoobra"), ("diarias", "passagens")
+CONSUMO = CONTAS + APOIO + VIAGENS
+# unidades da folha (SEGEP) que são hospitais e laboratórios da SESAU, e siglas de pagamento do mesmo órgão
+UNIDADE_DO_ORGAO = {"HB": "SESAU", "JP II": "SESAU", "CEMETRON": "SESAU", "POC": "SESAU", "LACEN": "SESAU", "HRE": "SESAU", "CEPEM": "SESAU",
+                    "CERO": "SESAU", "LEPAC": "SESAU", "CBOMB": "CBM", "FUNESBOM": "CBM", "FEAS": "SEAS"}
+# 3.3.90.39.61 (socorro e salvamento): no Fundo Estadual de Saúde é o transporte de pacientes entre hospitais por ambulância
+# contratada (tipos B e D); guincho de viatura no mesmo código vai para manutenção; o resto (alarme etc.) fica fora
+UG_SAUDE = {"170012"}
+# Estatais que passaram a pagar pelo SIGEF em 2026 (CAERD e SOPH): ficam fora, como no resto do painel e para comparar com 2025
+UG_ESTATAIS, ESTATAIS = {"110050", "110051"}, {"CAERD", "SOPH"}
+# Fundo aparece com a secretaria que o administra, que é o nome que todo mundo conhece
+FUNDO_DA_SECRETARIA = {"FES": "SESAU", "FITHA": "DER", "FEPRAM": "SEDAM"}
+RX_REBOQUE = re.compile(r"REBOQUE|GUINCHO")
 OUTROS_PODERES = {"ALE", "TJ", "FUJU", "MP", "FUNDIMPER", "FRBL", "TCE", "FDI/TC", "DPE", "FUNDEP", "FUNDEP/DPE"}
 RX_AVIACAO = re.compile(r"TAXI AEREO|AEROTAXI|AERO TAXI|HELICOPTER|HELISUL|AVIACAO|AERONAVE|AEROCLUBE|\bAIR\b")
 RX_OUTROS = re.compile(r"TRIBUNAL|ASSEMBLEIA|MINISTERIO PUBLICO|DEFENSORIA|PODER JUDICIARIO|JUSTICA DO ESTADO|FUNDO DE INFORMATIZACAO.*JUDIC")
@@ -74,7 +102,8 @@ def siglas_por_codigo(pagamentos):
         if s:
             votos[p["codUnidadeGestora"]][s] += 1
         nomes.setdefault(p["codUnidadeGestora"], p["unidadeGestora"])
-    return {c: v.most_common(1)[0][0].upper() for c, v in votos.items()}, nomes
+    sig = {c: v.most_common(1)[0][0].upper() for c, v in votos.items()}
+    return {c: FUNDO_DA_SECRETARIA.get(x, x) for c, x in sig.items()}, nomes
 
 
 def pagamentos(ano):
@@ -99,23 +128,32 @@ def carregar_historicos():
                 TEMA_HIST[(n["numeroEmpenho"], nome15(n["credor"]))] = t
 
 
+def tema_pag(p):
+    """Tema do pagamento pelo subelemento; nos genéricos, pelo histórico da nota."""
+    cod = str(p["especificacaoDespesa"])
+    if cod == "33903961":
+        if RX_REBOQUE.search(sem_acento(p["credor"])):
+            return "manutencao"
+        return "ambulancia" if str(p["codUnidadeGestora"]) in UG_SAUDE else None
+    return TEMA_DE.get(cod) or (TEMA_HIST.get((p["ne"], nome15(p["credor"]))) if cod in GENERICOS else None)
+
+
 def custeio(p26, p25, sigla, nomes, ate):
     """Pago por tema, 2026 mês a mês com projeção, por órgão e por credor."""
-    def tema(p):
-        cod = str(p["especificacaoDespesa"])
-        return TEMA_DE.get(cod) or (TEMA_HIST.get((p["ne"], nome15(p["credor"]))) if cod in GENERICOS else None)
+    tema = tema_pag
 
     def sg(p):
         return sigla.get(p["codUnidadeGestora"]) or "UG " + str(p["codUnidadeGestora"])
 
     def executivo(p):
-        return sg(p) not in OUTROS_PODERES and not RX_OUTROS.search(sem_acento(p["unidadeGestora"]))
+        return (sg(p) not in OUTROS_PODERES and not RX_OUTROS.search(sem_acento(p["unidadeGestora"]))
+                and str(p["codUnidadeGestora"]) not in UG_ESTATAIS)
 
     def pf(p):
         return not re.search(r"\d{2}\.?\d{3}\.?\d{3}/\d{4}", p["docCredor"] or "")
 
     def aviao(p):  # aluguel e manutenção de aeronave entram no mesmo subelemento de veículo; ficam fora
-        return tema(p) != "imovel" and RX_AVIACAO.search(sem_acento(p["credor"]))
+        return tema(p) in VEICULOS and RX_AVIACAO.search(sem_acento(p["credor"]))
 
     a26 = [p for p in p26 if tema(p) and executivo(p) and not aviao(p)]
     a25 = [p for p in p25 if tema(p) and executivo(p) and not aviao(p)]
@@ -143,7 +181,7 @@ def custeio(p26, p25, sigla, nomes, ate):
         out[t] = {"nome": NOME_TEMA[t], "pago_2026": round(pago, 2), "projecao_2026": round(sum(proj), 2),
                   "ano_2026": round(pago + sum(proj), 2), "media_ago_out": round(media, 2),
                   "mensal_2026": [round(mensal[i] + proj[i], 2) for i in range(12)], "pago_mensal_2026": [round(x, 2) for x in mensal],
-                  "anos": anos, "subelementos": [{"cod": c, "nome": nomes_sub[c], "valor": round(v, 2)} for c, v in por_sub.most_common()]}
+                  "anos": anos, "subelementos": [{"cod": c, "nome": nomes_sub.get(c, "Socorro e salvamento: guincho e reboque de viatura"), "valor": round(v, 2)} for c, v in por_sub.most_common()]}
 
     def por_orgao(temas):
         o = defaultdict(lambda: defaultdict(float))
@@ -171,7 +209,7 @@ def custeio(p26, p25, sigla, nomes, ate):
                         "orgaos": sorted(x["orgaos"]), "temas": sorted(x["temas"]), "n": len(x["docs"])} for x in c.values()),
                       key=lambda x: -x["valor"])
 
-    veic = [p for p in a26 if tema(p) != "imovel"]
+    veic = [p for p in a26 if tema(p) in VEICULOS]
     imov = [p for p in a26 if tema(p) == "imovel"]
     veiculos = {"orgaos": por_orgao(set(VEICULOS)), "credores": por_credor(veic, True)[:60]}
     for c in veiculos["credores"]:
@@ -187,27 +225,129 @@ def custeio(p26, p25, sigla, nomes, ate):
                "orgaos_n": len({x[0] for x in pares}),
                "locadores_2025": len({(sg(p), p["docCredor"] or p["credor"]) for p in a25 if tema(p) == "imovel"})}
     imoveis["orgaos_total"] = imoveis.pop("orgaos_n")
-    fora = {t: round(sum(p["valor"] for p in p26 if tema(p) == t and not executivo(p)), 2) for t in SUBELEMENTOS}
+    cons = [p for p in a26 if tema(p) in CONSUMO]
+    consumo = {"orgaos": por_orgao(set(CONSUMO)), "credores": por_credor(cons, True)[:60]}
+    fora = {t: round(sum(p["valor"] for p in p26 if tema(p) == t and not executivo(p) and str(p["codUnidadeGestora"]) not in UG_ESTATAIS), 2) for t in SUBELEMENTOS}
+    fora_estatais = round(sum(p["valor"] for p in p26 if tema(p) and str(p["codUnidadeGestora"]) in UG_ESTATAIS), 2)
     # linha a linha (para o painel filtrar e para a tabela de origem); pessoa física sem nome nem CPF
     nomes_sub = {c: n for t_ in SUBELEMENTOS for c, n in {**SUBELEMENTOS[t_], **GENERICOS}.items()}
     linhas = sorted(([p["dataDocumento"], sg(p), "Pessoa física" if pf(p) else p["credor"], "" if pf(p) else (p["docCredor"] or ""),
                       NOME_TEMA[tema(p)], f"{p['especificacaoDespesa']} · {nomes_sub.get(str(p['especificacaoDespesa']), '')}",
                       p["ne"], p["ob"], round(p["valor"], 2)] for p in a26), key=lambda r: (r[0][6:] + r[0][3:5] + r[0][:2]), reverse=True)
-    return out, veiculos, imoveis, fora, linhas
+    consumo["fora_estatais"] = fora_estatais
+    return out, veiculos, imoveis, consumo, fora, linhas
+
+
+def por_secretaria(folha, C, veiculos, imoveis, consumo):
+    """Custo de cada órgão do Executivo em 2026: folha (outubro × 13⅓, sem encargos) e o custeio pago, cada tipo
+    estendido até dezembro na mesma proporção do total do tipo (ano estimado ÷ pago até agora)."""
+    fator = {t: (C[t]["ano_2026"] / C[t]["pago_2026"]) if C[t]["pago_2026"] else 1 for t in C}
+    org = defaultdict(lambda: {"pessoas": 0, "folha_mes": 0.0, "unidades": [], "temas": defaultdict(float)})
+    for u in folha["unidades"]:
+        if u["unidade"] == "SEM UNIDADE":
+            continue
+        o = org[UNIDADE_DO_ORGAO.get(u["unidade"], u["unidade"])]
+        o["pessoas"] += u["pessoas"]
+        o["folha_mes"] += u["bruto"]
+        o["unidades"].append(u["unidade"])
+    for bloco in (veiculos, imoveis, consumo):
+        for x in bloco["orgaos"]:
+            o = org[UNIDADE_DO_ORGAO.get(x["sigla"], x["sigla"])]
+            o["pagadoras"] = sorted(set(o.get("pagadoras", [])) | {x["sigla"]})
+            for t in C:
+                if x.get(t):
+                    o["temas"][t] += x[t] * fator[t]
+    grupos = {"veiculos": VEICULOS, "imoveis": ("imovel",), "contas": CONTAS, "apoio": APOIO, "viagens": VIAGENS}
+    out = []
+    for sg_, o in org.items():
+        if sg_ in OUTROS_PODERES or sg_ in ESTATAIS:
+            continue
+        d = {"sigla": sg_, "nome": NOME_CURTO.get(sg_, ""), "pessoas": o["pessoas"], "folha_mes": round(o["folha_mes"], 2),
+             "folha_ano": round(o["folha_mes"] * 40 / 3, 2), "unidades": sorted(set(o["unidades"]) - {sg_}), "pagadoras": sorted(set(o.get("pagadoras", [])) - {sg_}),
+             "temas": {t: round(v, 2) for t, v in sorted(o["temas"].items(), key=lambda x: -x[1])}}
+        for g, ts in grupos.items():
+            d[g] = round(sum(o["temas"].get(t, 0) for t in ts), 2)
+        d["custeio"] = round(sum(d[g] for g in grupos), 2)
+        d["total"] = round(d["folha_ano"] + d["custeio"], 2)
+        if d["total"] > 0:
+            out.append(d)
+    return sorted(out, key=lambda x: -x["total"])
+
+
+UG_DER = {"110025", "140011"}  # DER e FITHA (o fundo do DER)
+
+
+def estradas(p26):
+    """Malha e pontes do Geoportal do DER (coleta_estradas.py) e o dinheiro do DER em 2026: o que pagou por grupo de despesa
+    e o que repassou a cada prefeitura (convênios), com o município achado no nome do credor ou no histórico da nota."""
+    E = ler("s8_estradas.json")
+    ibge = ler("ibge/ro-populacao-censo2022.json")[0]["resultados"][0]["series"]
+    norm_m = lambda n: re.sub(r"[^A-Z]", "", re.sub(r"D'? ?OESTE|DO OESTE", "DOESTE", sem_acento(n)))  # noqa: E731
+    nome_m = {norm_m(x["localidade"]["nome"].replace(" - RO", "")): x["localidade"]["nome"].replace(" - RO", "") for x in ibge}
+    pop = {norm_m(x["localidade"]["nome"].replace(" - RO", "")): int(x["serie"]["2022"]) for x in ibge}
+    hist = {}
+    lista = ler("s3_empenhos_2026.json")["dados"]
+    det = ler("s5_detalhes_por_chave_2026.json")["detalhes"]
+    for n in lista:
+        if n["unidadeGestora"].upper() not in ("DER", "FITHA"):   # mesmo número de nota existe em outros órgãos
+            continue
+        d = det.get(f"2026|{n['unidadeGestora']}|{n['numeroEmpenho']}")
+        if d:
+            hist[(n["numeroEmpenho"], nome15(n["credor"]))] = d.get("Histórico") or ""
+    # fundo municipal: o nome não diz o município; o histórico das notas do mesmo CNPJ (2024 a 2026) diz ("em favor do Município de ...")
+    hist_cnpj = defaultdict(str)
+    for ano in (2024, 2025, 2026):
+        for d in ler(f"s5_detalhes_por_chave_{ano}.json")["detalhes"].values():
+            doc = d.get("CPF/CNPJ do credor")
+            if doc and re.search(r"MUNIC|PREF", sem_acento(d.get("Razão social do credor"))):
+                hist_cnpj[re.sub(r"\D", "", doc)] += " " + (d.get("Histórico") or "")
+    chaves = sorted(nome_m, key=len, reverse=True)   # "SAO FELIPE DOESTE" antes de "SAO..." curto
+
+    def acha(txt):
+        t = re.sub(r"[^A-Z]", "", re.sub(r"D'? ?OESTE|DO OESTE", "DOESTE", sem_acento(txt)))
+        return next((k for k in chaves if k in t), None)
+
+    vistos, grupos, rep, rep_n, sem = set(), defaultdict(float), defaultdict(float), defaultdict(int), 0.0
+    for p in p26:
+        if str(p["codUnidadeGestora"]) not in UG_DER:
+            continue
+        k = (p["ob"], p["ne"], p["codUnidadeGestora"], p["valor"], p["dataDocumento"], p["especificacaoDespesa"])
+        if k in vistos:
+            continue
+        vistos.add(k)
+        grupos[re.sub(r"^\d+ - ", "", p["codDescGrupoDespesa"]).capitalize()] += p["valor"]
+        if re.search(r"MUNIC|PREF", sem_acento(p["credor"])):
+            m = (acha(p["credor"]) or acha(hist.get((p["ne"], nome15(p["credor"])), ""))
+                 or acha(hist_cnpj.get(re.sub(r"\D", "", p["docCredor"] or ""), "")))
+            if m:
+                rep[m] += p["valor"]
+                rep_n[m] += 1
+            else:
+                sem += p["valor"]
+    mun = {}
+    for m in nome_m:
+        x = E["municipios"].get(m, {"pav": 0, "terra": 0, "plan": 0, "rodovias": [], "pontes_madeira": 0, "rr": ""})
+        pts = [q for q in E["pontes"] if q["m"] == m and q["madeira"]]
+        mun[m] = {**x, "nome": nome_m[m], "pop": pop.get(m), "repasse": round(rep.get(m, 0), 2), "repasse_n": rep_n.get(m, 0),
+                  "madeira_m": round(sum(q["ext"] for q in pts), 1)}
+    r = E["resumo"]
+    der = {"pago": round(sum(grupos.values()), 2), "grupos": {k: round(v, 2) for k, v in sorted(grupos.items(), key=lambda x: -x[1])},
+           "repasses": round(sum(rep.values()) + sem, 2), "repasses_sem_municipio": round(sem, 2), "municipios_com_repasse": len(rep)}
+    return {"meta": E["meta"], "resumo": r, "municipios": mun, "residencias": E["residencias"], "valor_por_residencia": E["valor_por_residencia"],
+            "pontes": E["pontes"], "der": der}, {"rodovias": E["rodovias"], "federais": E["federais"]}
 
 
 def comparativo(p25, p26, sigla, ate):
     """2025 × 2026 no MESMO período (1º/01 a ate) por tema e por órgão, e 2025 inteiro × 2026 com projeção."""
     from datetime import date as _d
 
-    def tema(p):
-        cod = str(p["especificacaoDespesa"])
-        return TEMA_DE.get(cod) or (TEMA_HIST.get((p["ne"], nome15(p["credor"]))) if cod in GENERICOS else None)
+    tema = tema_pag
 
     def ok(p):
         sg_ = sigla.get(p["codUnidadeGestora"]) or ""
         return (tema(p) and sg_ not in OUTROS_PODERES and not RX_OUTROS.search(sem_acento(p["unidadeGestora"]))
-                and not (tema(p) != "imovel" and RX_AVIACAO.search(sem_acento(p["credor"]))))
+                and str(p["codUnidadeGestora"]) not in UG_ESTATAIS
+                and not (tema(p) in VEICULOS and RX_AVIACAO.search(sem_acento(p["credor"]))))
 
     def ate_dia(p, ano):
         a, m, dd = mes_de(p["dataDocumento"])
@@ -300,13 +440,15 @@ def main():
     sigla, nomes = siglas_por_codigo(p26 + p25)
     carregar_historicos()
     ate = max(date(*mes_de(p["dataDocumento"])) for p in p26)
-    C, veiculos, imoveis, fora, linhas_pag = custeio(p26, p25, sigla, nomes, ate)
+    C, veiculos, imoveis, consumo, fora, linhas_pag = custeio(p26, p25, sigla, nomes, ate)
     for u in folha["unidades"]:
         u["nome"] = NOME_CURTO.get(u["unidade"], "")
+    secretarias = por_secretaria(folha, C, veiculos, imoveis, consumo)
     G = rgf()
     G["historico"] = ler("s8_rgf_pessoal.json")["dados"]
     G["limites"] = {"alerta": 44.1, "prudencial": 46.55, "maximo": 49}
     comp = comparativo(p25, p26, sigla, ate)
+    est, VIAS = estradas(p26)
     vencem, cartao = contratos_vencendo(ate.isoformat())
     veic_ano = sum(C[t]["ano_2026"] for t in VEICULOS)
     data_pag = ate.strftime("%d/%m/%Y")
@@ -317,12 +459,12 @@ def main():
                    "imoveis_ano": C["imovel"]["ano_2026"], "imoveis_contratos": imoveis["locadores"], "imoveis_orgaos": imoveis["orgaos_total"]},
         "folha": {**{k: folha[k] for k in ("total", "grupos", "faixas", "cds", "aposentadoria")}, "rgf": G},
         "unidades": folha["unidades"],
-        "custeio": C, "veiculos": veiculos, "imoveis": {**imoveis, "orgaos_n": imoveis["orgaos_total"]},
+        "custeio": C, "veiculos": veiculos, "imoveis": {**imoveis, "orgaos_n": imoveis["orgaos_total"]}, "consumo": consumo, "secretarias": secretarias,
         "outros_poderes": fora, "comparativo": comp, "vencem": vencem, "cartao": cartao,
-        "regionais": {k: regionais[k] for k in ("total", "tipos", "projecao", "unidades")},
+        "regionais": {k: regionais[k] for k in ("total", "tipos", "projecao", "unidades")}, "estradas": est,
         "leitura": [
             f"<b>Folha:</b> {fmt(G['bruta'])} em 12 meses, pelo Relatório de Gestão Fiscal do Executivo; outubro de 2026 teve {fmt(folha['total']['bruto'])} brutos para {milhar(folha['total']['matriculas'])} matrículas.",
-            f"<b>Veículos:</b> {fmt(veic_ano)} em 2026 com combustível, locação, manutenção e transporte escolar (pago até {data_pag} e projeção até dezembro). Em 2025 foram {fmt(sum(C[t]['anos']['2025'] for t in VEICULOS))}.",
+            f"<b>Veículos:</b> {fmt(veic_ano)} em 2026 com combustível, locação, manutenção, transporte escolar e ambulâncias (pago até {data_pag} e projeção até dezembro). Em 2025 foram {fmt(sum(C[t]['anos']['2025'] for t in VEICULOS))}.",
             f"<b>Imóveis:</b> {imoveis['locadores']} imóveis alugados por {imoveis['orgaos_total']} órgãos, {fmt(C['imovel']['ano_2026'])} em 2026.",
             f"<b>Regionais:</b> as 10 secretarias executivas regionais e a coordenação custam {fmt(regionais['total']['total_2026'])} em 2026; {fmt(regionais['projecao']['Total']['total'])} de 2027 a 2030 se nada mudar.",
             "Só o Poder Executivo. Legislativo, Judiciário, Ministério Público, TCE e Defensoria ficam de fora.",
@@ -344,7 +486,11 @@ def main():
             "Veículos e imóveis: pagamentos (ordens bancárias) do Executivo pelo subelemento da despesa: " +
             "; ".join(f"{NOME_TEMA[t].lower()} = " + ", ".join(f"{c[:1]}.{c[1:2]}.{c[2:4]}.{c[4:6]}.{c[6:]} ({n.lower()})" for c, n in cods.items()) for t, cods in SUBELEMENTOS.items()) +
             ". Em outros serviços (3.3.90.39.99 e 3.3.90.36.99) entra só o pagamento cuja nota tem histórico de combustível, manutenção, locação de veículo ou aluguel.",
-            "Fora da conta: combustível de aviação (3.3.90.30.02) e locação ou manutenção de aeronaves (táxi aéreo e helicóptero), mesmo quando pagas no subelemento de veículo. O transporte escolar (3.3.90.39.93) entra em veículos: é serviço de transporte contratado e pago pelo Estado (SEDUC).",
+            "Fora da conta: combustível de aviação (3.3.90.30.02) e locação ou manutenção de aeronaves (táxi aéreo e helicóptero), mesmo quando pagas no subelemento de veículo. O transporte escolar (3.3.90.39.93, SEDUC) e a remoção de pacientes por ambulância (3.3.90.39.61, SESAU) entram em veículos: são transporte contratado e pago pelo Estado. A UTI aérea fica fora com as aeronaves; guincho de viatura no 3.3.90.39.61 conta como manutenção.",
+            "Estatais (CAERD e SOPH, que passaram a pagar pelo SIGEF em 2026) ficam fora.",
+            "Contas e apoio: energia (3.3.90.39.43), água e esgoto (3.3.90.39.44 e 3.3.91.39.44), telefone e internet (3.3.90.40.05, 3.3.90.40.06 e 3.3.90.39.58), correios (3.3.90.39.74 e 3.3.90.39.47), vigilância (3.3.90.39.77 e 3.3.90.37.05), limpeza (3.3.90.39.78 e 3.3.90.37.03), manutenção de prédios (3.3.90.39.16), mão de obra de apoio (3.3.90.37.01), diárias (3.3.90.14.14 e 3.3.90.15.14) e passagens (3.3.90.33.01). Ficam fora remédio, serviço hospitalar, alimentação de presos e pacientes e repasses a municípios: são a política pública, não a máquina.",
+            "Por secretaria: folha bruta de outubro × 13⅓ (12 salários, 13º e 1/3 de férias), sem encargos; hospitais e laboratórios da SESAU somados à SESAU. Cada tipo de custeio pago até agora é estendido a dezembro na mesma proporção do total do tipo.",
+            "Fundo aparece com a secretaria que o administra: Fundo Estadual de Saúde na SESAU, FITHA no DER e FEPRAM na SEDAM.",
             f"2026 inteiro: pago de 1º/01 a {data_pag} mais a projeção do que falta, pela média mensal paga de agosto a outubro.",
             "Imóveis alugados: cada locador (CPF ou CNPJ) pago por um órgão conta um imóvel. Quem aluga dois imóveis ao mesmo órgão conta um, então o número é piso.",
             "Pessoa física aparece somada, sem nome.",
@@ -378,14 +524,14 @@ def main():
 <footer class="max-w-[1440px] mx-auto px-6 pb-8 text-xs text-texto-2">Leitura de dado público, não é auditoria. Pessoa física aparece somada, sem nome.</footer>
 </div></body></html>"""
     (RAIZ / "esbocos" / "maquina.html").write_text(html, encoding="utf-8")
-    painel(M, linhas_pag, m26)
+    painel(M, linhas_pag, m26, VIAS)
     print(f"pagamentos até {data_pag}; UGs com sigla {len(sigla)} de {len(nomes)}")
     for t, c in C.items():
         print(f"  {c['nome']:24} pago R$ {c['pago_2026'] / 1e6:6.1f} mi + proj {c['projecao_2026'] / 1e6:5.1f} = {c['ano_2026'] / 1e6:6.1f} | 2025 {c['anos']['2025'] / 1e6:6.1f} | {c['subelementos']}")
     print("  imóveis:", {k: imoveis[k] for k in ("locadores", "pf", "pj", "orgaos_total", "locadores_2025")}, "| outros poderes:", fora)
 
 
-def painel(M, linhas_pag, meta_pag):
+def painel(M, linhas_pag, meta_pag, VIAS):
     """Arquivo único no modelo das abas do Rondônia 2027 (visual de convenios/src/_base.*): esbocos/custo-da-maquina.html."""
     import base64
     geo_js = (RAIZ.parent.parent / "sipre" / "lib" / "observatorio" / "mapa.js").read_text(encoding="utf-8")
@@ -404,10 +550,13 @@ def painel(M, linhas_pag, meta_pag):
                 "coletado_em": meta_pag["coletado_em"], "colunas": col_pag}
     U = M["unidades"]
     tabelas = {
-        "veiculos-2026": {**base_tab, "titulo": "Pagamentos de 2026 com veículos (combustível, locação, manutenção e transporte escolar), Poder Executivo", "curto": "Veículos",
-                          "consulta": "Pagamentos de fornecedores, 01/01/2026 a hoje, mês a mês; subelementos de combustível, gerenciamento de abastecimento, locação, manutenção de veículos e transporte escolar",
+        "veiculos-2026": {**base_tab, "titulo": "Pagamentos de 2026 com veículos (combustível, locação, manutenção, transporte escolar e ambulâncias), Poder Executivo", "curto": "Veículos",
+                          "consulta": "Pagamentos de fornecedores, 01/01/2026 a hoje, mês a mês; subelementos de combustível, gerenciamento de abastecimento, locação, manutenção de veículos, transporte escolar e remoção de pacientes por ambulância",
                           "nota": "Pessoa física aparece sem nome. Aeronaves e combustível de aviação ficam de fora.",
-                          "linhas": [r for r in linhas_pag if r[4] != "Aluguel de imóveis"]},
+                          "linhas": [r for r in linhas_pag if r[4] in {NOME_TEMA[t] for t in VEICULOS}]},
+        "consumo-2026": {**base_tab, "titulo": "Pagamentos de 2026 com contas de consumo, serviços de apoio e viagens, Poder Executivo", "curto": "Contas e apoio",
+                         "consulta": "Pagamentos de fornecedores, 01/01/2026 a hoje, mês a mês; subelementos de energia, água, telefone e internet, correios, vigilância, limpeza, manutenção de prédios, mão de obra de apoio, diárias e passagens",
+                         "nota": "Pessoa física (diárias) aparece sem nome.", "linhas": [r for r in linhas_pag if r[4] in {NOME_TEMA[t] for t in CONSUMO}]},
         "imoveis-2026": {**base_tab, "titulo": "Pagamentos de aluguel de imóveis em 2026, Poder Executivo", "curto": "Imóveis",
                          "consulta": "Pagamentos de fornecedores, 01/01/2026 a hoje, mês a mês; subelementos de locação de imóveis (pessoa jurídica e física) e aluguel de exercício anterior",
                          "nota": "Pessoa física aparece sem nome.", "linhas": [r for r in linhas_pag if r[4] == "Aluguel de imóveis"]},
@@ -432,6 +581,19 @@ def painel(M, linhas_pag, meta_pag):
                              "colunas": [["Vence em", "d"], ["Tipo", "t"], ["Órgão", "t"], ["Contratada", "t"], ["Número", "t"], ["Processo SEI", "t"], ["Valor", "r"], ["Objeto", "t"], ["Contrato", "u"]],
                              "linhas": [["/".join(reversed(c["vigencia"].split("-"))) if c["vigencia"] else "", {"imovel": "Aluguel de imóvel", "locacao": "Locação de veículo"}.get(c.get("tipo"), "Gerenciadora de cartão"),
                                          c["sigla"], c["contratado"], c["numero"], c["processo"], c["valor"], c["objeto"], c["link"]] for c in M["cartao"] + M["vencem"]]},
+        "estradas-municipios": {"titulo": "Rodovias estaduais, pontes de madeira e repasses do DER por município", "curto": "Estradas",
+                                "fonte": "Geoportal do DER-RO e Portal da Transparência RO", "url": "https://geo.der.ro.gov.br/", "coletado_em": M["estradas"]["meta"]["coletado_em"] + " 00:00",
+                                "consulta": "Geoportal do DER (página pública, camadas de rodovias pavimentadas, não pavimentadas e de interesse de incorporar; pontes); pagamentos do DER e do FITHA a prefeituras em 2026",
+                                "nota": "Trecho que passa por mais de um município tem a extensão dividida em partes iguais entre eles. Interesse de incorporar: estrada que ainda não é do Estado.",
+                                "colunas": [["Município", "t"], ["Asfalto (km)", "n"], ["Terra (km)", "n"], ["Interesse de incorporar (km)", "n"], ["Pontes de madeira", "n"], ["Metros de ponte de madeira", "n"],
+                                            ["Repasses do DER à prefeitura em 2026", "r"], ["População (Censo 2022)", "n"], ["Rodovias", "t"]],
+                                "linhas": [[x["nome"], round(x["pav"], 1), round(x["terra"], 1), round(x["plan"], 1), x["pontes_madeira"], x["madeira_m"], x["repasse"], x["pop"] or 0, ", ".join(x["rodovias"])]
+                                           for x in sorted(M["estradas"]["municipios"].values(), key=lambda x: -(x["pav"] + x["terra"]))]},
+        "pontes": {"titulo": "Pontes e pontilhões das rodovias estaduais", "curto": "Pontes", "fonte": "Geoportal do DER-RO", "url": "https://geo.der.ro.gov.br/",
+                   "coletado_em": M["estradas"]["meta"]["coletado_em"] + " 00:00", "consulta": "Camada de pontes do Geoportal do DER, com coordenadas",
+                   "nota": "Madeira: ponte de madeira, pontilhão de madeira e pontilhão de madeira e aço.",
+                   "colunas": [["Ponte", "t"], ["Tipo", "t"], ["Rodovia", "t"], ["Rio", "t"], ["Município", "t"], ["Residência", "t"], ["Extensão (m)", "n"], ["Latitude", "t"], ["Longitude", "t"]],
+                   "linhas": [[x["n"], x["t"], x["rod"], x["rio"], x["mun"], x["rr"], x["ext"], str(x["lat"]), str(x["lon"])] for x in sorted(M["estradas"]["pontes"], key=lambda x: (not x["madeira"], -x["ext"]))]},
         "regionais": {"titulo": "Secretarias Executivas Regionais: custo de 2026 por tipo", "curto": "Regionais", "fonte": "Equipe de transição, sobre o extrato do SIGEF (UG 110009 SUGESP)",
                       "url": "https://transparencia.ro.gov.br/fornecedor", "coletado_em": "2026-11-13 00:00",
                       "consulta": "Execução das Secretarias Executivas Regionais 2026, v04 de 13/11/2026, posição 12/11/2026",
@@ -441,7 +603,7 @@ def painel(M, linhas_pag, meta_pag):
     }
     D = {"coletado_em": meta_pag["coletado_em"], "links": {"portal": "https://transparencia.ro.gov.br/fornecedor", "detalhe": ""}, "tabelas": tabelas,
          "nomes": {**{o["sigla"]: o["nome"] for o in M["veiculos"]["orgaos"] + M["imoveis"]["orgaos"]},
-                   **{u["unidade"]: u["nome"] for u in U if u.get("nome")}}, "M": M, "geo": geo}
+                   **{u["unidade"]: u["nome"] for u in U if u.get("nome")}}, "M": M, "geo": geo, "vias": VIAS}
     payload = json.dumps(D, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     fonte = base64.b64encode((RAIZ / "vendor" / "fontes" / "inter-var.woff2").read_bytes()).decode()
     css_fonte = f"@font-face{{font-family:'Inter';font-style:normal;font-weight:400 800;font-display:block;src:url(data:font/woff2;base64,{fonte}) format('woff2')}}"

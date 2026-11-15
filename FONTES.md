@@ -122,13 +122,14 @@ Ordem: `python3 coleta_contratos.py` → `python3 tecnologia/classificar.py` (tr
 - **Modalidade:** a do detalhe da nota.
 - **Sem detalhe:** notas abaixo de R$ 20 mil (fora dos elementos de TI) aparecem como "nota não aberta".
 
-## 2f. Custo da máquina (sexta aba), 14/11/2026
+## 2f. Custo da máquina (sexta aba), 14 e 15/11/2026
 
 | Arquivo | O que é | Origem |
 |---|---|---|
 | `dados-fonte/s8_folha_2026_10.json` | Folha de outubro/2026 do Executivo agregada por vínculo, órgão, CDS e faixa (sem matrícula) | SEGEP, Relação de Servidores Ativos e Afastados 10/2026 (versão "Atualizado", com unidade e departamento) e Servidores Aguardando Aposentadoria 10/2026, em `../quadro-servidores/` |
 | `dados-fonte/s8_pagamentos_2026.json`, `s8_pagamentos_2025.json` | Todas as ordens bancárias, com subelemento, UG, credor, nota, OB, data e valor | POST `/fornecedor/getempenhofornecedores` (`DataInicial`, `DataFinal`, `start`, `length` até 2000), mês a mês, conferido com `recordsTotal` |
 | `dados-fonte/s8_regionais_2026.json` | Custo das 10 SER e da COOREG em 2026 e projeção 2027-2030 | Planilha de execução v04 de 13/11/2026 (SIGEF, UG 110009, posição 12/11) |
+| `dados-fonte/s8_estradas.json` | Malha estadual (traçado simplificado), pontes com coordenadas, trechos, valor reavaliado e somas por município e residência | Geoportal do DER-RO, página pública `https://geo.der.ro.gov.br` (dados embutidos no atributo `data-page`), 15/11/2026; `maquina/coleta_estradas.py` |
 | `dados-fonte/s8_custeio.json` | Conferência: notas de 2023-2026 classificadas pelo histórico (combustível, manutenção, locação, aluguel) | Lista e ficha das notas (`s3_empenhos_*`, `s5_detalhes_por_chave_*`) |
 
 Cuidados:
@@ -138,6 +139,12 @@ Cuidados:
 - **Pago de 2026 pelas notas de 2026 subestima o aluguel:** parte é paga com notas de 2025 (restos a pagar). Por isso vale a ordem bancária do ano, qualquer que seja o ano da nota.
 - **Transporte escolar entra em veículos** (3.3.90.39.93, R$ 42,6 mi pagos em 2026 até 12/11): é serviço de transporte de alunos contratado e pago pelo Estado (SEDUC). Ficam fora só aeronaves (táxi aéreo, helicóptero, peças e combustível de aviação) e os outros Poderes.
 - **Organograma das regionais:** custo por habitante = custo estimado de 2026 da regional ÷ população dos seus municípios (IBGE, Censo 2022, `dados-fonte/ibge/ro-populacao-censo2022.json`); os 52 municípios casam pelo nome.
+- **Ambulâncias entram em veículos** (3.3.90.39.61, socorro e salvamento, só no Fundo Estadual de Saúde): transporte de pacientes entre hospitais por ambulância contratada (tipos B e D), R$ 24,7 mi pagos em 2026 até 12/11. A UTI aérea (táxi aéreo) fica fora com as aeronaves; guincho de viatura no mesmo código conta como manutenção.
+- **Fundo com a secretaria:** o Fundo Estadual de Saúde aparece como SESAU, o FITHA como DER e o FEPRAM como SEDAM.
+- **Estatais fora:** CAERD e SOPH passaram a pagar pelo SIGEF em 2026 (UG 110050 e 110051; R$ 22,7 mi nos tipos do painel, quase tudo energia da CAERD). Ficam fora para comparar com 2025.
+- **Contas e apoio** (subelementos conferidos pelos credores e históricos): energia 3.3.90.39.43; água e esgoto 3.3.90.39.44 e 3.3.91.39.44; telefone e internet 3.3.90.40.05, 3.3.90.40.06 e 3.3.90.39.58; correios 3.3.90.39.74 e 3.3.90.39.47; vigilância 3.3.90.39.77 e 3.3.90.37.05; limpeza 3.3.90.39.78 e 3.3.90.37.03; manutenção de prédios 3.3.90.39.16; mão de obra de apoio 3.3.90.37.01; diárias 3.3.90.14.14 e 3.3.90.15.14; passagens 3.3.90.33.01 (na SESAU inclui passagem de paciente em tratamento fora do domicílio). Ficam fora remédio, serviço hospitalar, alimentação de presos e pacientes e repasse a município: são a política pública, não a máquina.
+- **Custo por secretaria:** folha bruta de outubro × 13⅓ (12 salários, 13º e 1/3 de férias), sem encargos, mais o custeio pago, cada tipo estendido a dezembro na mesma proporção do total do tipo. Hospitais e laboratórios (HB, João Paulo II, Cemetron, Policlínica, Lacen, HRE, Cepem, Cero, Lepac) somam na SESAU; os 3.641 servidores sem unidade na planilha ficam fora.
+- **Estradas** (`dados-fonte/s8_estradas.json`, Geoportal do DER de 15/11/2026): quilômetros pela soma do cadastro de trechos (6.967 km: 1.629 asfalto, 3.691 terra, 176 planejada, 1.471 de interesse de incorporar, que ainda não é do Estado), a mesma conta do relatório "Rodovias DER"; o traçado é só desenho (simplificado em ~33 m). Trecho em mais de um município divide a extensão em partes iguais. Pontes de madeira = ponte de madeira, pontilhão de madeira e pontilhão de madeira e aço (108, 2.467 m). Repasses do DER (DER e FITHA) a prefeituras: município pelo nome do credor, pelo histórico da nota ou pelo histórico das notas do mesmo CNPJ (fundo municipal); R$ 3,1 mi ficaram sem município.
 - **Empenhado de cartão de combustível e manutenção** fica abaixo do real (as notas estimativas não somam o reforço; ver seção 5). Por isso o pago.
 
 ## 3. Dados das 9 etapas (coleta de 07/10/2026)

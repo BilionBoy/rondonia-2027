@@ -17,3 +17,6 @@ dados-fonte/pncp_contratos/
 dados-fonte/s8_pagamentos_*.json
 dados-fonte/s8_custeio.json
 maquina/sipre/
+
+# cópia integral do Geoportal do DER (grande; refazer com maquina/coleta_estradas.py)
+dados-fonte/der/
