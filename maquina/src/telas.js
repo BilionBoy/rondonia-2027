@@ -293,38 +293,49 @@ function telaImoveis() {
 }
 
 // ---------- 5. 2025 × 2026 no mesmo período
-let compTema = 0;
+let compVer = 0;
 const TEMAS_C = ["combustivel", "locacao", "manutencao", "imovel"];
+const seta = (a, b) => { if (!a) return "—"; const p = 100 * (b - a) / a, cor = Math.abs(p) < 1 ? "var(--mute)" : p > 0 ? "var(--c3)" : "var(--c2)";
+  return `<span style="color:${cor}">${Math.abs(p) < 1 ? `≈ praticamente igual (${p >= 0 ? "+" : "−"}${br(Math.abs(p), 1)}%)` : `${p > 0 ? "▲" : "▼"} ${br(Math.abs(p), 0)}% a ${p > 0 ? "mais" : "menos"}`}</span>`; };
+const fraseVar = (a, b) => { const p = 100 * (b - a) / a; return Math.abs(p) < 3 ? "quase o mesmo que" : `${br(Math.abs(p), 0)}% a ${p > 0 ? "mais" : "menos"} que`; };
 function telaComparativo() {
-  const ks = compTema ? [TEMAS_C[compTema - 1]] : TEMAS_C;
-  const s25 = ks.reduce((a, k) => a + (CP.temas[k]?.["2025"] || 0), 0), s26 = ks.reduce((a, k) => a + (CP.temas[k]?.["2026"] || 0), 0);
-  const ano25 = ks.reduce((a, k) => a + C[k].anos["2025"], 0), ano26 = ks.reduce((a, k) => a + C[k].ano_2026, 0);
-  const os = CP.orgaos.map(o => ({...o, a: ks.reduce((x, k) => x + (o[k + "_2025"] || 0), 0), b: ks.reduce((x, k) => x + (o[k + "_2026"] || 0), 0)})).filter(o => o.a + o.b > 0)
+  const v = k => [CP.temas[k]?.["2025"] || 0, CP.temas[k]?.["2026"] || 0];
+  const s25 = TEMAS_C.reduce((a, k) => a + v(k)[0], 0), s26 = TEMAS_C.reduce((a, k) => a + v(k)[1], 0);
+  const os = CP.orgaos.map(o => ({...o, a: TEMAS_C.reduce((x, k) => x + (o[k + "_2025"] || 0), 0), b: TEMAS_C.reduce((x, k) => x + (o[k + "_2026"] || 0), 0)})).filter(o => o.a + o.b > 0)
     .map(o => ({...o, d: o.b - o.a})).sort((x, y) => Math.abs(y.d) - Math.abs(x.d));
-  const provaPeriodo = k => pr(`${NOME_CHAVE[k]}: 2025 × 2026`, var_(CP.temas[k]?.["2025"], CP.temas[k]?.["2026"]), `pago de 1º/01 a ${CP.ate} de cada ano, só Executivo`,
-    [["2025 (1º/01 a " + CP.ate + ")", mi(CP.temas[k]?.["2025"])], ["2026 (1º/01 a " + CP.ate + ")", mi(CP.temas[k]?.["2026"])], ["Diferença", mi((CP.temas[k]?.["2026"] || 0) - (CP.temas[k]?.["2025"] || 0))],
-      ["2025 inteiro", mi(C[k].anos["2025"])], ["2026 com projeção", mi(C[k].ano_2026) + " (estimativa)"]], LK.pag);
-  esq({kicker: "Comparação justa · mesmo período nos dois anos", titulo: `2025 × 2026: o que subiu e o que caiu`,
-    n: var_(s25, s26), s: `de 1º/01 a ${CP.ate} de cada ano: <b>${mi(s25)}</b> em 2025 e <b>${mi(s26)}</b> em 2026<br>Ano inteiro: ${mi(ano25)} em 2025 e ${mi(ano26)} em 2026 (com projeção)`,
-    provaN: pr("Como a comparação é feita", var_(s25, s26), "mesmo período, mesma régua", [["Período", `1º/01 a ${CP.ate} em 2025 e em 2026`], ["Régua", "pagamentos (ordens bancárias) pelo subelemento da despesa, só Executivo"],
-      ["Por que não comparar o ano", "2026 ainda não terminou: comparar o ano inteiro de 2025 com 2026 até novembro mostraria uma queda que não existe"], ["2026 com projeção", "aparece só como estimativa, marcada"]], LK.pag),
-    estat: TEMAS_C.map(k => [NOME_CHAVE[k], `${var_(CP.temas[k]?.["2025"], CP.temas[k]?.["2026"])} · ${mi(CP.temas[k]?.["2026"])}`, provaPeriodo(k)]),
-    alterna: ["Mostrar:", ["Tudo", ...TEMAS_C.map(k => NOME_CHAVE[k])], compTema, i => { compTema = i; telaComparativo(); }],
+  const periodo = `1º de janeiro a ${CP.ate.slice(0, 2)} de novembro`;
+  const provaTipo = k => pr(`${NOME_CHAVE[k]}: 2025 × 2026`, var_(...v(k)), `pago de ${periodo}, em cada ano, só Executivo`,
+    [["2025", mi(v(k)[0])], ["2026", mi(v(k)[1])], ["Diferença", (v(k)[1] >= v(k)[0] ? "+" : "−") + mi(Math.abs(v(k)[1] - v(k)[0]))],
+      ["Estimativa do ano inteiro", `2025: ${mi(C[k].anos["2025"])} · 2026: ${mi(C[k].ano_2026)} (com projeção de nov e dez)`]], LK.pag);
+  esq({kicker: `Comparação justa: ${periodo}, nos dois anos`, titulo: `Em 2026 o Estado gastou ${fraseVar(s25, s26)} 2025 com carros e aluguel`,
+    n: mi(s26), s: `pagos em 2026 com combustível, locação, manutenção e aluguel<br>No mesmo período de 2025 foram <b>${mi(s25)}</b> · ${seta(s25, s26)}`,
+    provaN: pr("Como a comparação é feita", mi(s26), "mesmo período, mesma régua", [["Período", `${periodo} de 2025 e de 2026`], ["2025", mi(s25)], ["2026", mi(s26)],
+      ["Régua", "pagamentos (ordens bancárias) pelo subelemento da despesa, só Executivo"],
+      ["Por que não o ano inteiro", "2026 ainda não terminou. O ano inteiro de 2026 só existe como estimativa (com projeção de novembro e dezembro) e aparece dentro de cada tipo de gasto."]], LK.pag),
+    estat: TEMAS_C.map(k => [NOME_CHAVE[k], `${seta(...v(k))}<div style="font-size:13px;font-weight:500;color:var(--mute);margin-top:2px">${mi(v(k)[0])} → ${mi(v(k)[1])}</div>`, provaTipo(k)]),
+    alterna: ["Ver:", ["Por tipo de gasto", "Mês a mês"], compVer, i => { compVer = i; telaComparativo(); }],
     legenda: legenda([["2025", "var(--cinza)"], ["2026", "var(--c1)"]]),
-    dicaUso: `Gasto acumulado mês a mês: cinza é 2025 e azul é 2026, no mesmo calendário. As provas mostram os órgãos que mais mudaram entre os dois períodos.`,
-    fonte: `Fonte: Portal da Transparência RO, Pagamentos de fornecedores de 2025 e 2026, pelo subelemento da despesa, até ${CP.ate}`, dados: ["veiculos-2026", "imoveis-2026"], padrao: () => provasComp(os)});
-  const ult = MES_PAG;
-  colunas($("#graf"), MESES.slice(0, ult).flatMap((m, i) => {
-    const a = ks.reduce((x, k) => x + CP.acumulado[k]["2025"][i], 0), b = ks.reduce((x, k) => x + CP.acumulado[k]["2026"][i], 0);
+    dicaUso: compVer ? `Quanto já tinha sido pago até o fim de cada mês, somados os quatro tipos de gasto. Em novembro, os dois anos param no dia ${CP.ate.slice(0, 2)}.`
+      : `Cinza é 2025 e azul é 2026, sempre de ${periodo}. Clique numa barra para ver a conta. À direita, os órgãos que mais mudaram.`,
+    fonte: `Fonte: Portal da Transparência RO, Pagamentos de fornecedores de 2025 e 2026, pelo subelemento da despesa`, dados: ["veiculos-2026", "imoveis-2026"], padrao: () => provasComp(os)});
+  if (compVer === 0) colunas($("#graf"), TEMAS_C.flatMap(k => [
+    {rot: NOME_CHAVE[k].replace(" de veículos", "").replace(" de imóveis", ""), partes: [{v: v(k)[0], cor: "var(--cinza)"}], topo: mi(v(k)[0]), dica: [`${NOME_CHAVE[k]} · 2025`, [["Pago de " + periodo, mi(v(k)[0])]]],
+      clique: () => mostraProvas("A conta", [provaTipo(k)], {abrir: 0, filtro: NOME_CHAVE[k], limpar: () => provasComp(os)})},
+    {rot: "", partes: [{v: v(k)[1], cor: "var(--c1)"}], topo: mi(v(k)[1]), destaque: true, dica: [`${NOME_CHAVE[k]} · 2026`, [["Pago de " + periodo, mi(v(k)[1])], ["Em relação a 2025", var_(...v(k))]]],
+      clique: () => mostraProvas("A conta", [provaTipo(k)], {abrir: 0, filtro: NOME_CHAVE[k], limpar: () => provasComp(os)})}]));
+  else colunas($("#graf"), MESES.slice(0, MES_PAG).flatMap((m, i) => {
+    const a = TEMAS_C.reduce((x, k) => x + CP.acumulado[k]["2025"][i], 0), b = TEMAS_C.reduce((x, k) => x + CP.acumulado[k]["2026"][i], 0);
     return [{rot: m, partes: [{v: a, cor: "var(--cinza)"}], topo: "", dica: [`Até ${MESES_L[i]} de 2025`, [["Acumulado", mi(a)]]]},
-      {rot: "", partes: [{v: b, cor: "var(--c1)"}], topo: i === ult - 1 ? mi(b) : "", destaque: i === ult - 1, dica: [`Até ${MESES_L[i]} de 2026`, [["Acumulado", mi(b)], ["Diferença para 2025", `${mi(b - a)} (${var_(a, b)})`]], i === ult - 1 ? `Novembro de 2026 vai até ${DATA_PAG}` : ""]}];
+      {rot: "", partes: [{v: b, cor: "var(--c1)"}], topo: i === MES_PAG - 1 ? mi(b) : "", destaque: i === MES_PAG - 1, dica: [`Até ${MESES_L[i]} de 2026`, [["Acumulado", mi(b)], ["Em relação a 2025", var_(a, b)]]]}];
   }));
 }
 function provasComp(os) {
   const max = Math.max(...os.map(o => Math.abs(o.d)), 1);
-  const lista = os.map(o => ({nome: o.sigla, sub: `${D.nomes[o.sigla] || ""} · ${mi(o.a)} → ${mi(o.b)}`, valor: `${o.d >= 0 ? "+" : "−"}${mi(Math.abs(o.d)).replace("R$ ", "R$ ")}`, barra: Math.abs(o.d) / max,
-    linhas: [["2025 (mesmo período)", mi(o.a)], ["2026", mi(o.b)], ["Variação", var_(o.a, o.b)], ...TEMAS_C.filter(k => o[k + "_2025"] || o[k + "_2026"]).map(k => [NOME_CHAVE[k], `${mi(o[k + "_2025"] || 0)} → ${mi(o[k + "_2026"] || 0)}`])], link: LK.pag}));
-  mostraProvas(`Órgãos que mais mudaram entre 1º/01 e ${CP.ate} de 2025 e de 2026. Valor positivo: gastou mais em 2026.`, lista, {todas: lista, tituloTodas: "2025 × 2026 por órgão", limite: 6});
+  const lista = os.map(o => ({nome: o.sigla, sub: `${D.nomes[o.sigla] || ""} · ${mi(o.a)} em 2025 → ${mi(o.b)} em 2026`,
+    valor: `${o.d >= 0 ? "▲" : "▼"} ${mi(Math.abs(o.d))}`, barra: Math.abs(o.d) / max,
+    linhas: [["2025", mi(o.a)], ["2026", mi(o.b)], ["Mudança", `${o.d >= 0 ? "gastou " + mi(o.d) + " a mais" : "gastou " + mi(-o.d) + " a menos"} (${var_(o.a, o.b)})`],
+      ...TEMAS_C.filter(k => o[k + "_2025"] || o[k + "_2026"]).map(k => [NOME_CHAVE[k], `${mi(o[k + "_2025"] || 0)} → ${mi(o[k + "_2026"] || 0)}`])], link: LK.pag}));
+  mostraProvas(`Órgãos que mais mudaram. ▲ gastou mais em 2026; ▼ gastou menos. Mesmo período nos dois anos.`, lista, {todas: lista, tituloTodas: "2025 × 2026 por órgão", limite: 6});
 }
 
 // ---------- 6. secretarias regionais
