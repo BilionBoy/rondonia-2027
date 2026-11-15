@@ -25,6 +25,34 @@ const var_ = (a, b) => a ? `${b >= a ? "+" : "−"}${br(Math.abs(100 * (b - a) /
 const dataBR = iso => iso ? iso.split("-").reverse().join("/") : "—";
 let atual = 0;
 
+// Telão: a base escala pela referência Full HD (1920 × 1080 = zoom 1), o que deixa a letra pequena numa TV.
+// Aqui a referência é 1440 × 900: numa TV Full HD tudo fica 20% maior (além da letra já aumentada); em 4K, 2,4 vezes.
+// A altura de 900 garante que cada etapa caiba sem rolar. Abaixo disso nada muda.
+const zoomTelao = () => document.documentElement.style.setProperty("--z", Math.max(1, Math.min(2.6, innerWidth / 1440, innerHeight / 900)).toFixed(3));
+zoomTelao(); addEventListener("resize", zoomTelao);
+
+// Barras que ocupam a altura do quadro (a base limita a 40 px por linha e sobra espaço embaixo)
+barras = function (cont, itens, ref) {
+  const h0 = cont.clientHeight || 300;
+  itens = itens.slice(0, Math.max(5, Math.floor(h0 / 28)));   // cada linha com pelo menos 28 px; o resto fica em As provas
+  const {s, w, h} = novoSvg(cont), n = itens.length, linha = Math.min(72, h / n), rot = Math.min(230, w * .34), area = w - rot - 170;
+  const max = Math.max(...itens.map(i => i.partes.reduce((a, p) => a + p.v, 0)), 1e-9);
+  itens.forEach((it, i) => {
+    const g = el(s, "g", {class: "alvo"}), y = i * linha, bh = Math.min(linha * .62, 34);
+    el(g, "rect", {x: 0, y, width: w, height: linha, fill: "transparent"});
+    el(g, "text", {x: rot - 12, y: y + linha / 2 + 5, "text-anchor": "end", class: it.destaque ? "forte" : ""}, it.rot);
+    let acum = 0;
+    it.partes.forEach((p, j) => {
+      const ww = area * p.v / max, r = el(g, "rect", {class: "b", x: rot + acum, y: y + (linha - bh) / 2, width: 0, height: bh, fill: p.cor, rx: 3});
+      alarga(r, ww, i * 40 + j * 200); acum += ww;
+    });
+    el(g, "text", {x: rot + acum + 10, y: y + linha / 2 + 5, class: "forte"}, it.dir);
+    if (it.dica) dica(g, ...it.dica);
+    if (it.clique) g.addEventListener("click", () => it.clique(g, s));
+  });
+  return s;
+};
+
 function esq(o) {
   $("#esq").innerHTML = `<div class="entra"><div class="kicker">${o.kicker}</div><h2 class="titulo">${o.titulo}</h2>
     ${o.n ? `<div class="numero${o.provaN ? " clic" : ""}" data-pn="1"><span class="n">${o.n}</span><span class="s">${o.s}</span></div>` : `<p class="dica-uso" style="margin:4px 0 8px">${o.s}</p>`}
@@ -179,7 +207,7 @@ function telaOrgaos() {
     estat: [["Efetivos civis", br(gp("efetivo").pessoas), provaGrupo("efetivo")], ["Militares", br(gp("militar").pessoas), provaGrupo("militar")], ["Temporários e CLT", br(gp("temporario").pessoas), provaGrupo("temporario")], ["Comissionados sem vínculo", br(gp("comissionado").pessoas), provaGrupo("comissionado")]],
     alterna: ["Ordenar por:", ["Pessoas", "Valor do mês", "% de comissionados"], orgOrdem, i => { orgOrdem = i; telaOrgaos(); }],
     legenda: legenda(GRUPOS.slice(0, 6).map(g => [g.nome.replace(" e comissionados de outros entes", ""), COR_GRUPO[g.grupo]])),
-    dicaUso: orgOrdem === 2 ? "Peso dos comissionados sem vínculo no quadro de cada órgão (órgãos com 20 servidores ou mais). Clique num órgão para abrir." : "Os 18 maiores órgãos, por vínculo. Clique num órgão para ver os números dele; a lista completa está em As provas.",
+    dicaUso: orgOrdem === 2 ? "Peso dos comissionados sem vínculo no quadro de cada órgão (órgãos com 20 servidores ou mais). Clique num órgão para abrir." : "Os maiores órgãos, por vínculo. Clique num órgão para ver os números dele; a lista completa, com todos os órgãos, está em As provas.",
     fonte: "Fonte: SEGEP, Relação de Servidores Ativos e Afastados, outubro de 2026 (versão com unidade e departamento)", dados: ["servidores-orgao"], padrao: () => provasOrgaos(ordenaU())});
   const U = ordenaU();
   if (orgOrdem === 2) barras($("#graf"), U.slice(0, 18).map((u, i) => ({rot: u.unidade, partes: [{v: pctCom(u), cor: "var(--c3)"}], dir: `${br(pctCom(u), 0)}% · ${br(u.grupos.comissionado?.pessoas || 0)} de ${br(u.pessoas)}`,
